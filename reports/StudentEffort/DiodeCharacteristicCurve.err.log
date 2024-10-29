@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 721, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+circuit = Circuit('Diode Characteristic Curve')
+
+circuit.include(spice_library['1N4148'])
+
+circuit.V('input', 'in', circuit.gnd, 10@u_V)
+circuit.R(1, 'in', 'out', 1@u_Ω)
+circuit.X(1 , '1N4148', 'out', circuit.gnd)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mKeyError[0m                                  Traceback (most recent call last)
+Cell [1;32mIn[3], line 3[0m
+[0;32m      1[0m circuit [38;5;241m=[39m Circuit([38;5;124m'[39m[38;5;124mDiode Characteristic Curve[39m[38;5;124m'[39m)
+[1;32m----> 3[0m circuit[38;5;241m.[39minclude([43mspice_library[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43m1N4148[39;49m[38;5;124;43m'[39;49m[43m][49m)
+[0;32m      5[0m circuit[38;5;241m.[39mV([38;5;124m'[39m[38;5;124minput[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124min[39m[38;5;124m'[39m, circuit[38;5;241m.[39mgnd, [38;5;241m10[39m[38;5;129m@u_V[39m)
+[0;32m      6[0m circuit[38;5;241m.[39mR([38;5;241m1[39m, [38;5;124m'[39m[38;5;124min[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mout[39m[38;5;124m'[39m, [38;5;241m1[39m[38;5;129m@u_Ω[39m)
+
+File [1;32mH:\HadiSadoghiYazdi\Circuit\Lib\site-packages\PySpice\Spice\Library.py:117[0m, in [0;36mSpiceLibrary.__getitem__[1;34m(self, name)[0m
+[0;32m    113[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_models[name]
+[0;32m    114[0m [38;5;28;01melse[39;00m:
+[0;32m    115[0m     [38;5;66;03m# print('Library {} not found in {}'.format(name, self._directory))[39;00m
+[0;32m    116[0m     [38;5;66;03m# self._logger.warn('Library {} not found in {}'.format(name, self._directory))[39;00m
+[1;32m--> 117[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(name)
+
+[1;31mKeyError[0m: '1N4148'
+
