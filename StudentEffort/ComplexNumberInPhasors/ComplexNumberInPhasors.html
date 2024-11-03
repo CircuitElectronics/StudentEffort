@@ -1,0 +1,1084 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Complex Number in Phasors &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/ComplexNumberInPhasors/ComplexNumberInPhasors';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="Supernode" href="../Supernode/Supernode.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode.html">Supernode</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Complex Number in Phasors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/ComplexNumberInPhasors/ComplexNumberInPhasors.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/ComplexNumberInPhasors/ComplexNumberInPhasors.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Complex Number in Phasors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-complex-number">Definition of Complex Number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-properties-of-complex-numbers">Some properties of complex numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-form-of-complex-numbers">Polar Form of Complex Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-form-of-complex-numbers">Exponential Form of Complex Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-formula">Euler’s formula</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-phasor-analys">About Phasor Analys</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intrudoction">Intrudoction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-phasor-forms">Finding phasor forms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-degree-in-phasor-equations">Effect of degree in phasor equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-with-some-common-relations-in-complex-number">Table with some common relations in Complex Number:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-number-in-rc-circuit">Complex Number in RC circuit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-number-in-rl-circuit">Complex Number in RL circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="complex-number-in-phasors">
+<h1>Complex Number in Phasors<a class="headerlink" href="#complex-number-in-phasors" title="Link to this heading">#</a></h1>
+<p><strong>Autor: Mahdi Hashemi</strong></p>
+<section id="definition-of-complex-number">
+<h2>Definition of Complex Number<a class="headerlink" href="#definition-of-complex-number" title="Link to this heading">#</a></h2>
+<p>A complex number is any number that can be written in the form <span class="math notranslate nohighlight">\(z = x + yi\)</span> where <span class="math notranslate nohighlight">\(x\)</span> is called the <strong>real</strong> part and <span class="math notranslate nohighlight">\(yi\)</span> the <strong>imaginary</strong> part. The complex number <span class="math notranslate nohighlight">\(z = x + yi\)</span> is said to be written in real-imaginary form.The imaginary unit i is defined to be i=√−1. The imaginary unit is sometimes labelled j, usually in engineering.</p>
+<p>In phasors,imaginary unit labelled by j.</p>
+<p>A complex number can be represented in three ways:</p>
+<ul class="simple">
+<li><p>Rectangular Form</p></li>
+<li><p>Polar Form</p></li>
+<li><p>Exponential Form</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(z = x + yi\)</span> is an example from <strong>Rectangular Form</strong> .</p>
+<p>examples:
+$<span class="math notranslate nohighlight">\(
+z = j+1 \\
+z = \sqrt 2 + \frac{j}{2}\\\
+z = 3+\pi j 
+\)</span>$</p>
+<section id="some-properties-of-complex-numbers">
+<h3>Some properties of complex numbers<a class="headerlink" href="#some-properties-of-complex-numbers" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z = x + yj \\
+\bar z = x -yj \\
+\bar{z} . z = x^2+y^2
+\end{split}\]</div>
+</section>
+<section id="addition-and-subtraction">
+<h3>Addition and Subtraction<a class="headerlink" href="#addition-and-subtraction" title="Link to this heading">#</a></h3>
+<p>Given two complex numbers :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1 = x_1 + y_1j \\
+z_2 = x_2 + y_2j \\
+\end{split}\]</div>
+<p>their sum and difference is found by adding or subtracting their real and imaginary parts separately:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+(z_1 + z_2) = (x_1 + x_2) + (y_1 + y_2)j \\
+(z_1 - z_2) = (x_1 - x_2) + (y_1 - y_2)j \\
+\end{split}\]</div>
+</section>
+<section id="multiplication">
+<h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+z_1.z_2 = (x_1x_2 - y_1y_2) + (x_1y_2 +y_1x_2)j
+\]</div>
+<p>example :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z_1.z_2 = (3-j)(-5+2i) \\
+= -13 +11j \\
+j.z = j(3-2j) \\
+= 2+3j
+\end{split}\]</div>
+</section>
+</section>
+<section id="polar-form-of-complex-numbers">
+<h2>Polar Form of Complex Numbers<a class="headerlink" href="#polar-form-of-complex-numbers" title="Link to this heading">#</a></h2>
+<p>In polar form, complex numbers are represented as the combination of the modulus r and argument <span class="math notranslate nohighlight">\(\theta\)</span> of the complex number.</p>
+<p>We write complex numbers in terms of the distance from the origin and a direction (or angle) from the positive horizontal axis. Polar coordinates are expressed as <span class="math notranslate nohighlight">\((r, \theta)\)</span>.</p>
+<p>The values of polar coordinates and rectangular coordinates depend on each other. If we know any two values, the remaining two values can be found easily using the relation established between them.</p>
+<p>Polar form for a complex number <span class="math notranslate nohighlight">\(z=x+yj\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z = x + jy &lt;=&gt; z = r ∠ \theta \\
+r = \sqrt{x^2 + y^2} \\
+\theta = \tan^{-1} (\frac{y}{x})
+\end{split}\]</div>
+<p>The components of polar form of a complex number are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : It signifies absolute value or represents the <strong>modulus</strong> of the complex number.</p></li>
+<li><p>Angle <span class="math notranslate nohighlight">\(\theta\)</span> : It is called the <strong>argument</strong> of the complex number.</p></li>
+</ul>
+<p>example:</p>
+<ul class="simple">
+<li><p>Find polar form of <span class="math notranslate nohighlight">\(z = 5j\)</span>
+$<span class="math notranslate nohighlight">\(
+r = \sqrt{0^2 + 5^2} = 5 , \theta = \tan^{-1}\frac{5}{0} = \tan^{-1} ∞ = \frac{\pi}{2}  \\
+=&gt; z = 5 ∠ \frac{\pi}{2}
+\)</span>$</p></li>
+<li><p>diagram of <span class="math notranslate nohighlight">\(z = 2-3j\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+r = \sqrt{2^2 + (-3)^2} = \sqrt 13 , \theta = \tan^{-1}\frac{-3}{2} = -56.3^\circ
+\]</div>
+<p><img alt="diagramComplexNumber" src="../../_images/diagramComplexNumber.png" /></p>
+</section>
+<section id="exponential-form-of-complex-numbers">
+<h2>Exponential Form of Complex Numbers<a class="headerlink" href="#exponential-form-of-complex-numbers" title="Link to this heading">#</a></h2>
+<p>We have considered complex numbers in the Rectangular Form, ( a + jb ) and the Polar Form, ( A ∠±θ ). Third method for representing a complex number which is similar to the polar form that corresponds to the length (magnitude) and phase angle of the sinusoid but uses the base of the natural logarithm, e = 2.718 281.. to find the value of the complex number. This third method is called the Exponential Form.</p>
+<p>The Exponential Form uses the trigonometric functions of both the sine ( sin ) and the cosine ( cos ) values of a right angled triangle to define the complex exponential as a rotating point in the complex plane.</p>
+<div class="math notranslate nohighlight">
+\[
+z = re^{j\theta}
+\]</div>
+<section id="eulers-formula">
+<h3>Euler’s formula<a class="headerlink" href="#eulers-formula" title="Link to this heading">#</a></h3>
+<p>Euler’s formula gives us a way of converting a complex number from its exponential form into its rectangular form.</p>
+<div class="math notranslate nohighlight">
+\[
+z = re^{j\theta} &lt;=&gt; z = r(\cos{\theta} + j\sin{\theta})
+\]</div>
+<p>example : Find rectangular form of z</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(z = 2e^{\frac{\pi}{3}j} \)</span>
+$<span class="math notranslate nohighlight">\(
+z = 2(\cos\frac{\pi}{3} + j\sin\frac{\pi}{3}) = 1 + j\sqrt 3 
+\)</span>$</p></li>
+</ul>
+<p>This is an introduction to complex numbers.Now in a short introduction, we introduce phasors</p>
+</section>
+</section>
+<section id="about-phasor-analys">
+<h2>About Phasor Analys<a class="headerlink" href="#about-phasor-analys" title="Link to this heading">#</a></h2>
+<section id="intrudoction">
+<h3>Intrudoction<a class="headerlink" href="#intrudoction" title="Link to this heading">#</a></h3>
+<p>A phasor is a complex number in polar form that you can apply to circuit analysis. When you plot the amplitude and phase shift of a sinusoid in a complex plane, you form a phase vector, or phasor.</p>
+<p>We can also think of a phasor as a rotating vector. Unlike a vector having magnitude and direction, a phasor has magnitude
+<span class="math notranslate nohighlight">\(V_a\)</span>
+and angular displacement
+<span class="math notranslate nohighlight">\(ϕ\)</span>
+. You measure angular displacement in the counterclockwise direction from the positive x-axis.</p>
+<p>Here is a diagram of a voltage phasor as a rotating vector at some frequency, with its tail at the origin. If you need to add or subtract phasors, you can convert the vector into its x-component (
+<span class="math notranslate nohighlight">\(V_a\cosϕ\)</span>
+) and its y-component (
+<span class="math notranslate nohighlight">\(V_a\sinϕ\)</span>
+) with some trigonometry.</p>
+<p><img alt="RC1_charging" src="../../_images/PhasorDiagram.png" /></p>
+<p>The following sections explain how to find the different forms of phasors and introduce you to the properties of phasors.</p>
+</section>
+<section id="finding-phasor-forms">
+<h3>Finding phasor forms<a class="headerlink" href="#finding-phasor-forms" title="Link to this heading">#</a></h3>
+<p>Phasors, which you describe with complex numbers, embody the amplitude and phase of a sinusoidal voltage or current. The phase is the angular shift of the sinusoid, which corresponds to a time shift
+<span class="math notranslate nohighlight">\(t0\)</span>
+. So if you have
+<span class="math notranslate nohighlight">\(\cos[ω(t – t_0)]\)</span>, then
+<span class="math notranslate nohighlight">\(ωt_0 = ϕ_O\)</span>, where
+<span class="math notranslate nohighlight">\(ϕ_O\)</span>
+is the angular phase shift.</p>
+<div class="math notranslate nohighlight">
+\[
+\cos[ωt + ϕ]
+\]</div>
+<p>To establish a connection between complex numbers and sine and cosine waves, you need the complex exponential
+<span class="math notranslate nohighlight">\(e^jθ\)</span>
+and Euler’s formula:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+e^jθ = \cosθ + j\sinθ \\
+where:j = \sqrt-1
+\end{split}\]</div>
+<p>The left side of Euler’s formula is the polar phasor form, and the right side is the rectangular phasor form. You can write the cosine and sine as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\cosθ = Re[e^jθ] \\
+\sinθ = Img[e^jθ]
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(Re[e^jθ]\)</span>
+is real part of
+<span class="math notranslate nohighlight">\(e^jθ\)</span>
+and
+<span class="math notranslate nohighlight">\(Img[e^jθ]\)</span>
+is imagination part of
+<span class="math notranslate nohighlight">\(e^jθ\)</span> .</p>
+<p>As a result :</p>
+<div class="math notranslate nohighlight">
+\[
+V(t) = V_A\cos(ωt + ϕ)  &lt;=&gt; V = V_A ∠ ϕ
+\]</div>
+<p>Now we will solve some examples.</p>
+<ul class="simple">
+<li><p>example : if currunt <span class="math notranslate nohighlight">\(I = (20 + j20\sqrt 3)\)</span> A , find <span class="math notranslate nohighlight">\(I(t)\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+r_I = \sqrt{20^2 + (20\sqrt 3)^2} = 40A \\
+θ_I = \tan^{-1}\frac{20\sqrt 3}{20} = \tan^{-1}\sqrt 3 = 60^\circ \\
+=&gt; I = 40 ∠ 60^\circ =&gt; I(t) = 40\cos(ωt + 60^\circ)
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span>  
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>     <span class="c1"># convert degree to radiant</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  
+
+<span class="n">I_t</span> <span class="o">=</span> <span class="mi">40</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">phi</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">I_t</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I(t) = 40cos(ωt + 60°)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;I(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time(second)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;currunt(A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/111195be64b7d76d90fb88a05022f7af5983b5cf1cfb81c27dc358e17d0e1cc4.png" src="../../_images/111195be64b7d76d90fb88a05022f7af5983b5cf1cfb81c27dc358e17d0e1cc4.png" />
+</div>
+</div>
+</section>
+<section id="effect-of-degree-in-phasor-equations">
+<h3>Effect of degree in phasor equations<a class="headerlink" href="#effect-of-degree-in-phasor-equations" title="Link to this heading">#</a></h3>
+<p>Now we change degree (<span class="math notranslate nohighlight">\(\phi\)</span>) and <span class="math notranslate nohighlight">\(V_A\)</span> (<span class="math notranslate nohighlight">\(r\)</span>) to see its effect on coordinate diagram</p>
+<div class="math notranslate nohighlight">
+\[
+I(t) = 40\cos(ωt + 60^\circ)
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt2</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span>  
+<span class="n">omega2</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span> 
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">phi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>     
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">I_t</span> <span class="o">=</span> <span class="mi">40</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">I_t2</span> <span class="o">=</span> <span class="mi">80</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">I_t3</span> <span class="o">=</span> <span class="mi">40</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega2</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">phi2</span><span class="p">)</span>
+
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">I_t</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I(t) = 40cos(ωt + 30°)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">I_t2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I(t) = 80cos(ωt + 30°)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">I_t3</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I(t) = 40cos(2ωt + 60°)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;I(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time(second)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;currunt(A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dcf655dc9167c298fd247a9fd6fc3874d19e25528708c147ef6cbaad4971c6c9.png" src="../../_images/dcf655dc9167c298fd247a9fd6fc3874d19e25528708c147ef6cbaad4971c6c9.png" />
+</div>
+</div>
+</section>
+<section id="table-with-some-common-relations-in-complex-number">
+<h3>Table with some common relations in Complex Number:<a class="headerlink" href="#table-with-some-common-relations-in-complex-number" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Relationship</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rectangular Form</p></td>
+<td><p><span class="math notranslate nohighlight">\( z = x + jy \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Polar Form</p></td>
+<td><p><span class="math notranslate nohighlight">\( z = r ∠ \theta \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Exponential Form</p></td>
+<td><p><span class="math notranslate nohighlight">\( z = re^{j\theta} \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Reverse of a complex number</p></td>
+<td><p><span class="math notranslate nohighlight">\( z = x + jb =&gt; \bar z = x -jb \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Imaginary part of a complex number</p></td>
+<td><p><span class="math notranslate nohighlight">\( j = \sqrt{-1} \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Euler’s identity</p></td>
+<td><p><span class="math notranslate nohighlight">\(z = re^{j\theta} &lt;=&gt; z = r(\cos{\theta} + j\sin{\theta}\)</span>)</p></td>
+</tr>
+<tr class="row-even"><td><p>Finding r in polar form</p></td>
+<td><p><span class="math notranslate nohighlight">\(z = x + jy =&gt; r_Z = \sqrt{x^2 + y^2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Finding <span class="math notranslate nohighlight">\(\theta\)</span> in polar form</p></td>
+<td><p><span class="math notranslate nohighlight">\( z = x + jy =&gt; \theta_Z = \tan^{-1} (\frac{y}{x}) \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Phasor</p></td>
+<td><p><span class="math notranslate nohighlight">\( V(t) = V_A\cos({\omega t + \phi}) =&gt; V = V_A ∠ \phi \)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="complex-number-in-rc-circuit">
+<h3>Complex Number in RC circuit<a class="headerlink" href="#complex-number-in-rc-circuit" title="Link to this heading">#</a></h3>
+<p>This example is a RC circuit</p>
+<ul class="simple">
+<li><p>example: Find the current in terms of t in the circuit below</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2Ω&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;1F&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/32aa79a54e43602731debc2f78a51738acac120292f84aa3b1797535eac204ad.svg" src="../../_images/32aa79a54e43602731debc2f78a51738acac120292f84aa3b1797535eac204ad.svg" />
+</div>
+</div>
+<p>First find <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(V_A\)</span><br />
+$<span class="math notranslate nohighlight">\(
+V(t) = \cos t = 1 ∠ 0^\circ \\
+=&gt; V_A = 1 , \phi = 0^\circ , \omega = 1 \\
+\)</span>$</p>
+<p>Now, we draw the shape of the circuit in the <strong>phasor</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;1 ∠ 0°&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2Ω&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;1/jw&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/aa8ec75c0c3a0b8a082d84dee4f06110b3f81bb70c27345368a6ded90e6889f9.svg" src="../../_images/aa8ec75c0c3a0b8a082d84dee4f06110b3f81bb70c27345368a6ded90e6889f9.svg" />
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+I = \frac{V_A}{R+\frac{1}{j\omega}} \\
+=&gt; I = \frac{1}{2+\frac{1}{j\omega}} = \frac{j\omega}{2j\omega+1} \\
+=&gt; I = \frac{j}{2j+1} * \frac{1-2j}{1-2j} = \frac{j-2j^2}{1-4j^2} \\
+\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(j=\sqrt{-1} =&gt; j^2 = -1\)</span>
+$<span class="math notranslate nohighlight">\(
+=&gt; I = \frac{j+2}{5}
+\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(a + jb = \sqrt{a^2 + b^2} ∠ \tan^{-1} \frac{b}{a} \)</span>
+$<span class="math notranslate nohighlight">\(
+=&gt; 2 + j = \sqrt{2^2 + 1^2} ∠ \tan^{-1} \frac{1}{2} = \sqrt 5 ∠ 26.5^\circ \\
+=&gt;I = \frac {\sqrt 5 ∠ 26.5^\circ}{5} =&gt; I(t) = \frac{\sqrt 5}{5}\cos{(t + 26.5^\circ)}
+\)</span>$</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span>  
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mf">26.5</span><span class="p">)</span>  
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> 
+
+<span class="n">I_t</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">phi</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">I_t</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I(t) = √5/5cos(t + 26.5°)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;I(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time(second)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;currunt(A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1e21f776917e3d1daf899178a9a6b4475fc5a756b8639c82e3aab70a5238aa54.png" src="../../_images/1e21f776917e3d1daf899178a9a6b4475fc5a756b8639c82e3aab70a5238aa54.png" />
+</div>
+</div>
+</section>
+<section id="complex-number-in-rl-circuit">
+<h3>Complex Number in RL circuit<a class="headerlink" href="#complex-number-in-rl-circuit" title="Link to this heading">#</a></h3>
+<p>This example is a RL circuit</p>
+<ul class="simple">
+<li><p>example: Find the current in terms of t in the circuit below(<span class="math notranslate nohighlight">\(V_s = 3\sin({2t+\frac{\pi}{2}})\)</span>)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Vs&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2Ω&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;3H&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/07c062a6f111489b48449ca047bae07e473361da3a4552122832a4a775fc6b69.svg" src="../../_images/07c062a6f111489b48449ca047bae07e473361da3a4552122832a4a775fc6b69.svg" />
+</div>
+</div>
+<p>First find <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(V_A\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(z = re^jθ = r(\cos θ + j\sin θ)\)</span>
+$<span class="math notranslate nohighlight">\(
+V_s = 3\sin({2t+\frac{\pi}{2}}) = 3e^{j\frac{\pi}{2}} \\
+=&gt; V_A = 3 , \phi = \frac{\pi}{2} , \omega = 2 \\
+\)</span>$</p></li>
+</ul>
+<p>Now, we draw the shape of the circuit in the <strong>phasor</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;3 ∠ 0°&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2Ω&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;3jw&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/58aef4a5bae35e9f71e27035fb239eb363643ecbc63b8e18e08ab14517117844.svg" src="../../_images/58aef4a5bae35e9f71e27035fb239eb363643ecbc63b8e18e08ab14517117844.svg" />
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+I = \frac{V_A}{R + Lj\omega} \\
+=&gt; I = \frac{3}{2 + 3j\omega} = \frac{3}{2 + 6j} \\
+=&gt; I = \frac{3}{2 + 6j} * \frac{2 - 6j}{2 - 6j} \\
+=&gt; I = \frac{6-18j}{4 - 36j^2} = \frac{3-9j}{20} \\
+=&gt; 3 - 9j = \sqrt{3^2 + (-9)^2} ∠ \tan^{-1}{ \frac{-9}{3}} = \sqrt{90} ∠ -71.5^\circ\\ 
+=&gt; I = \frac{\sqrt{90} ∠ -71.5^\circ}{20} =&gt; I(t) = \frac{\sqrt{90}}{20}\sin{(2t - 71.5^\circ)}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span>  
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="o">-</span><span class="mf">71.5</span><span class="p">)</span>    
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> 
+
+<span class="n">I_t</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span><span class="o">/</span><span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">phi</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">I_t</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;I(t) = √90/20sin(2t + -71.5°)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;I(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time(second)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;currunt(A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e05e774c081f92b9cba527a4c8b4b3495695145a690379ec5f6186de06ae21c6.png" src="../../_images/e05e774c081f92b9cba527a4c8b4b3495695145a690379ec5f6186de06ae21c6.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A complex number is any number that consist of two distinct numbers , a <strong>real</strong> number and an <strong>imaginary</strong> number.</p></li>
+<li><p>A complex number can be represented in one of three ways:Rectangular Form,Polar Form,Exponential Form</p></li>
+<li><p>Imaginary numbers can be added, subtracted, multiplied and divided the same as real numbers.</p></li>
+<li><p>Euler’s formula can be used to convert Complex Numbers from exponential form into rectangular form.</p></li>
+</ul>
+<p>In this tutorial , we have seen that we can use phasors to represent sinusoidal waveforms and that their amplitude and phase angle can be written in the form of a complex number. We have also seen that Complex Numbers can be presented in rectangular, polar or exponential form with the conversion between each complex number algebra form including addition, subtracting, multiplication and division.</p>
+</section>
+<section id="refrences">
+<h2>Refrences:<a class="headerlink" href="#refrences" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.dummies.com/article/technology/electronics/circuitry/how-to-use-phasors-for-circuit-analysis-166276/">https://www.dummies.com/article/technology/electronics/circuitry/how-to-use-phasors-for-circuit-analysis-166276/</a></p></li>
+<li><p><a class="reference external" href="https://www.electronics-tutorials.ws/accircuits/complex-numbers.html">https://www.electronics-tutorials.ws/accircuits/complex-numbers.html</a></p></li>
+<li><p><a class="reference external" href="https://www.cuemath.com/numbers/polar-form-of-complex-numbers/">https://www.cuemath.com/numbers/polar-form-of-complex-numbers/</a></p></li>
+<li><p><a class="reference external" href="https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/core-mathematics/pure-maths/algebra/complex-arithmetic.html">https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/core-mathematics/pure-maths/algebra/complex-arithmetic.html</a></p></li>
+<li><p><a class="reference external" href="https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/core-mathematics/pure-maths/algebra/polar-form-and-de-moivre-s-theorem.html">https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/core-mathematics/pure-maths/algebra/polar-form-and-de-moivre-s-theorem.html</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\ComplexNumberInPhasors"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Supernode/Supernode.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Supernode</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-complex-number">Definition of Complex Number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-properties-of-complex-numbers">Some properties of complex numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-form-of-complex-numbers">Polar Form of Complex Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-form-of-complex-numbers">Exponential Form of Complex Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-formula">Euler’s formula</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-phasor-analys">About Phasor Analys</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intrudoction">Intrudoction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-phasor-forms">Finding phasor forms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-degree-in-phasor-equations">Effect of degree in phasor equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-with-some-common-relations-in-complex-number">Table with some common relations in Complex Number:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-number-in-rc-circuit">Complex Number in RC circuit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-number-in-rl-circuit">Complex Number in RL circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

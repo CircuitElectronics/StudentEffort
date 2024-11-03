@@ -1,0 +1,1058 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Supernode &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Supernode/Supernode';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Complex Number in Phasors" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html" />
+    <link rel="prev" title="Using The BJT as Current Source" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Supernode/Supernode.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Supernode/Supernode.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Supernode</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-supernode">What is supernode?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-nodal-analysis-and-supernode-method">Comparing nodal analysis and supernode method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-problem-using-nodal-analysis">Solving the problem using nodal analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-problem-using-supermesh-method">Solving the problem using supermesh method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drawing-the-circuit-using-schemdraw">Drawing the circuit using Schemdraw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-circuit-using-pyspice">Solving the circuit using PySpice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solving the circuit using PySpice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3">Example 3:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Solving the circuit using PySpice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4">Example 4:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Solving the circuit using PySpice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-supernode-analysis-procedure">Summary of Supernode Analysis Procedure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="supernode">
+<h1>Supernode<a class="headerlink" href="#supernode" title="Link to this heading">#</a></h1>
+<p><strong>Author</strong> : Saman Hooshvar</p>
+<p>Contact : <a class="reference external" href="mailto:saman&#46;hooshvarfeyzabadi&#37;&#52;&#48;mail&#46;um&#46;ac&#46;ir">saman<span>&#46;</span>hooshvarfeyzabadi<span>&#64;</span>mail<span>&#46;</span>um<span>&#46;</span>ac<span>&#46;</span>ir</a></p>
+<section id="what-is-supernode">
+<h2>What is supernode?<a class="headerlink" href="#what-is-supernode" title="Link to this heading">#</a></h2>
+<p>A <strong>supernode</strong> is basically a theoretical model in which we consider two non-reference nodes having <strong>an ideal voltage source present between them</strong> (<span class="math notranslate nohighlight">\( N_1\)</span> and <span class="math notranslate nohighlight">\( N_2\)</span> in our case), as a single node. In simple terms, we combine those two non-reference nodes to make a single node called a “supernode”.</p>
+</section>
+<section id="comparing-nodal-analysis-and-supernode-method">
+<h2>Comparing nodal analysis and supernode method<a class="headerlink" href="#comparing-nodal-analysis-and-supernode-method" title="Link to this heading">#</a></h2>
+<section id="example-1">
+<h3>Example 1:<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h3>
+<p>Consider the network shown below. Let’s try to find the branch currents, using the nodal analysis method, following the same steps as we followed in the KCL tutorial.</p>
+<p><img alt="circuit" src="../../_images/supernode-analysis-problem-1a.jpg.webp" /></p>
+</section>
+<section id="solving-the-problem-using-nodal-analysis">
+<h3>Solving the problem using nodal analysis<a class="headerlink" href="#solving-the-problem-using-nodal-analysis" title="Link to this heading">#</a></h3>
+<p><strong>Step 1 :</strong> Reviewing the network, we can see that we are given two resistors and two current sources, along with their values. But there’s also a <strong>voltage source of <span class="math notranslate nohighlight">\( 2V\)</span></strong> present between the nodes <strong>N1</strong> and <strong>N2</strong>.</p>
+<p>We’ll assume that the voltages at the nodes N1 and N2 are <span class="math notranslate nohighlight">\( V1\)</span> and <span class="math notranslate nohighlight">\( V2\)</span> respectively. The current through the <strong>2Ω resistor is <span class="math notranslate nohighlight">\( I1\)</span></strong></p>
+<p>and through the <strong>1Ω resistor is <span class="math notranslate nohighlight">\( I3\)</span></strong> , both flowing downwards.</p>
+<p>The current <strong><span class="math notranslate nohighlight">\( I2\)</span></strong> is flowing towards the right <strong>from node N1 to node N2</strong>, but if you notice, the branch has no resistance! The current is only passing through an ideal voltage source of <span class="math notranslate nohighlight">\( 2V\)</span>. How do we know that it’s an ideal voltage source? Because the voltage source has no series resistance. This is how we differentiate between an ideal and a practical voltage source.</p>
+<p><strong>Step 2 :</strong> Here we already have our reference node at the bottom of the network. So this step will not bother us at all.</p>
+<p><strong>Step 3 :</strong> Let’s try to write down the branch current equations for the three currents <span class="math notranslate nohighlight">\( I1\)</span>, <span class="math notranslate nohighlight">\( I2\)</span>, and <span class="math notranslate nohighlight">\( I3\)</span>.</p>
+<p><span class="math notranslate nohighlight">\( I_1 = \frac{V_1 - 0}{2} = \frac{V_1}{2}\)</span></p>
+<p><span class="math notranslate nohighlight">\( I_3 = \frac{V_2 - 0}{1} = \frac{V_2}{1}\)</span></p>
+<p><span class="math notranslate nohighlight">\( I_2 = \frac{V_1 - V_2}{0} = ?\)</span></p>
+<p>We have a zero in the denominator of I2. That will make the value of I2 infinite. Obviously, we cannot have an infinite amount of current flowing through our network. <strong>This is not the correct way to solve this problem</strong>.</p>
+<p>The branch current equations for <span class="math notranslate nohighlight">\( I_1\)</span> and <span class="math notranslate nohighlight">\( I_3\)</span> are valid and can be used as is. But for <span class="math notranslate nohighlight">\(I_2\)</span>, we don’t have enough information at this moment to find the exact equation which would give us its value. So one thing we can do is to suppose the current I2 as some unknown term <span class="math notranslate nohighlight">\( x\)</span>.</p>
+<p><span class="math notranslate nohighlight">\( I_2 = x\)</span></p>
+<p><strong>Step 4 :</strong> Applying nodal analysis at node N1 and putting in the expressions we obtained in the previous step, we get:</p>
+<p><span class="math notranslate nohighlight">\( 3 = I_1 + I_2\)</span></p>
+<p><span class="math notranslate nohighlight">\( 3 = \frac{V_1}{2} + x\)</span></p>
+<p>Similarly for node <span class="math notranslate nohighlight">\( N_2\)</span>, we’ll get:</p>
+<p><span class="math notranslate nohighlight">\( I_2 = I_3 + 2\)</span></p>
+<p><span class="math notranslate nohighlight">\( x = \frac{V_2}{1} + 2\)</span></p>
+<p>You can see that we have the term x in both the node equations. so we can take the value of x from the second equation and put it into the first one to get this:</p>
+<p><span class="math notranslate nohighlight">\( 3 = \frac{V_1}{2} + (\frac{V_2}{1} + 2)\)</span></p>
+<p>by simplyfing it we have:</p>
+<p><span class="math notranslate nohighlight">\( 1 - \frac{V_1}{2} - \frac{V_2}{1} = 0\)</span></p>
+<p>we have two unknowns in this equation, that’s why we need a second equation</p>
+<p>we can easily get that from the branch containing the ideal voltage source. As you can see in the network, the potential at node N1 is <span class="math notranslate nohighlight">\(2V\)</span> greater than the potential at node <span class="math notranslate nohighlight">\(N_2\)</span>, which can be written as:</p>
+<p><span class="math notranslate nohighlight">\( V_1 - V_2 = 2\)</span></p>
+<p><strong>Step 5 :</strong> We finally have two unknowns and also two equations. Now we just need to do some basic math and we can get the values of <span class="math notranslate nohighlight">\( V_1\)</span> and <span class="math notranslate nohighlight">\( V_2\)</span>.</p>
+<p><span class="math notranslate nohighlight">\( V_1 = 2V\)</span></p>
+<p><span class="math notranslate nohighlight">\( V_2 = 0V\)</span></p>
+</section>
+<section id="solving-the-problem-using-supermesh-method">
+<h3>Solving the problem using supermesh method<a class="headerlink" href="#solving-the-problem-using-supermesh-method" title="Link to this heading">#</a></h3>
+<p>Let’s redraw the same network, but this time we’ll do some modifications to suit our needs.</p>
+<p><img alt="supernode" src="../../_images/supernode-analysis-problem-1b.jpg.webp" /></p>
+<p>Let’s apply nodal analysis to the supernode we’ve just created to get a common node equation. We can see that 3A is moving towards the supernode and the rest of the currents are moving away from the supernode. We can write it as,</p>
+<p><span class="math notranslate nohighlight">\( 3 = I_1 + I_3 + 2\)</span></p>
+<p>And we know from ohm’s law that:</p>
+<p><span class="math notranslate nohighlight">\( I_1 = \frac{V_1}{2}\)</span></p>
+<p><span class="math notranslate nohighlight">\( I_3 = \frac{V_2}{1}\)</span></p>
+<p>we can rewrite the equation as:</p>
+<p><span class="math notranslate nohighlight">\( 3 = \frac{V_1}{2} + (\frac{V_2}{1} + 2)\)</span></p>
+<p>By simplyfing it we have:</p>
+<p><span class="math notranslate nohighlight">\( 1 - \frac{V_1}{2} - \frac{V_2}{1} = 0\)</span></p>
+<p>which is the same as we got from nodal analysis.</p>
+<p>we also need another equation which we can write from whitin our supernode:</p>
+<p><span class="math notranslate nohighlight">\( V_1 - V_2 = 2\)</span></p>
+<p>Solving the equations:</p>
+<p><span class="math notranslate nohighlight">\( 1 - \frac{V_1}{2} - \frac{V_2}{1} = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\( \frac{V_1 + 2V_2}{2} = 1\)</span></p>
+<p><span class="math notranslate nohighlight">\( V_1 + 2V_2 = 2\)</span></p>
+<p>Rearranging the terms in the second equation to get <span class="math notranslate nohighlight">\(V_1\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(V_1 = 2 + V_2\)</span></p>
+<p>So that we can substitute it in the first equatio:</p>
+<p><span class="math notranslate nohighlight">\( (2 + V_2)+ 2V_2 = 2\)</span></p>
+<p><span class="math notranslate nohighlight">\( V_2 = 0V\)</span></p>
+<p>Placing this value in the second equation:</p>
+<p><span class="math notranslate nohighlight">\(V_1 = 2 + V_2\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_1 = 2V\)</span></p>
+<p>and for <span class="math notranslate nohighlight">\(I_1\)</span> to <span class="math notranslate nohighlight">\(I_3\)</span> we have:</p>
+<p><span class="math notranslate nohighlight">\(I_1 = 1A\)</span></p>
+<p><span class="math notranslate nohighlight">\( I_2 = 2A\)</span></p>
+<p><span class="math notranslate nohighlight">\( I_3 = 0A\)</span></p>
+</section>
+<section id="drawing-the-circuit-using-schemdraw">
+<h3>Drawing the circuit using Schemdraw<a class="headerlink" href="#drawing-the-circuit-using-schemdraw" title="Link to this heading">#</a></h3>
+<p>Below is an implementation of the circuit using shemedraw.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;3A&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">N1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;N1&#39;</span><span class="p">)</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2V&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">CurrentLabel</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">V</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;I2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+    <span class="n">N2</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;N2&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2A&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">N3</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">N4</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span>
+    <span class="n">R2</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">N1</span><span class="o">.</span><span class="n">start</span> <span class="p">,</span> <span class="n">N4</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2Ω&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">CurrentLabel</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R2</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;I1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+    <span class="n">R1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">N2</span><span class="o">.</span><span class="n">start</span> <span class="p">,</span> <span class="n">N3</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;1Ω&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">CurrentLabel</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;I3&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9bc28afcac105762113ded8089fc22d4873379f94c27c412abcf7cc9ca1765a4.svg" src="../../_images/9bc28afcac105762113ded8089fc22d4873379f94c27c412abcf7cc9ca1765a4.svg" />
+</div>
+</div>
+</section>
+<section id="solving-the-circuit-using-pyspice">
+<h3>Solving the circuit using PySpice<a class="headerlink" href="#solving-the-circuit-using-pyspice" title="Link to this heading">#</a></h3>
+<p>Below is an implementation to find the voltages in <span class="math notranslate nohighlight">\(N1\)</span> and <span class="math notranslate nohighlight">\(N2\)</span> using Pyspice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Initialize the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s2">&quot;Correct Circuit&quot;</span><span class="p">)</span>
+
+<span class="c1"># Define voltage source and current sources with explicit node labels</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;N1&quot;</span><span class="p">,</span><span class="s2">&quot;N2&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_V</span><span class="p">)</span>    <span class="c1"># 2V voltage source between N1 and ground</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span> <span class="p">,</span> <span class="s2">&quot;N1&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="nd">@u_A</span><span class="p">)</span>           <span class="c1"># 3A current source into N1</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;N2&quot;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_A</span><span class="p">)</span>    <span class="c1"># 2A current source from N2 to ground</span>
+
+<span class="c1"># Define resistors based on the diagram</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;N1&quot;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_Ohm</span><span class="p">)</span>         <span class="c1"># 2Ω resistor between N1 and N2</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;N2&quot;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_Ohm</span><span class="p">)</span>  <span class="c1"># 1Ω resistor between N2 and ground</span>
+
+<span class="c1"># Perform DC operating point analysis</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Simulation</span> <span class="kn">import</span> <span class="n">OperatingPointAnalysisParameters</span>
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+
+    <span class="c1"># Output voltages at N1 and N2</span>
+    <span class="n">voltage_N1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s2">&quot;N1&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">voltage_N2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s2">&quot;N2&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Voltage at N1: </span><span class="si">{</span><span class="n">voltage_N1</span><span class="si">}</span><span class="s2"> V&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Voltage at N2: </span><span class="si">{</span><span class="n">voltage_N2</span><span class="si">}</span><span class="s2"> V&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;An error occurred during simulation: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Voltage at N1: 2.0 V
+Voltage at N2: 0.0 V
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="example-2">
+<h2>Example 2:<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h2>
+<p>The previous problem was fairly easy. Let’s take another one, upping the complexity of the network. Once again, our task is to find all the branch currents, <span class="math notranslate nohighlight">\(I_1, I_2, I_3, I_4\)</span> , and I5. Take some time to review the network and figure out what can be done.</p>
+<p><img alt="hard-circuit" src="../../_images/supernode-analysis-problem-2a.jpg.webp" /></p>
+<section id="solution">
+<h3>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h3>
+<p>**Step 1 :**We,ll assume that the voltages at the nodes N1, N2, and N3 are <span class="math notranslate nohighlight">\(V_1, V_2\)</span>, and <span class="math notranslate nohighlight">\(V_3\)</span> respectively.</p>
+<p>However, this time there are two ideal voltage sources present in our network. A 10V ideal voltage source is present between node N3 and the reference node.because it is connected between a reference and a non-reference node. In this case, we can directly write that the <strong>voltage at N3 or <span class="math notranslate nohighlight">\(V_3\)</span> is <span class="math notranslate nohighlight">\(10V\)</span></strong>.</p>
+<p>But if we talk about the second ideal voltage source of 5V, it is connected between nodes N1 and N2. And because N1 and N2 are non-reference nodes, they form a supernode. So this time we don’t need to follow the longer method of solving the problem, instead, we can directly solve it using the supernode method.</p>
+<p><img alt="hard-circuit-supernode" src="../../_images/supernode-analysis-problem-2b.jpg.webp" /></p>
+<p><strong>Step 3 :</strong> After considering the supernode, we can write the branch currents as</p>
+<p><span class="math notranslate nohighlight">\(I_1 = \frac{10 - v_1}{2} \)</span></p>
+<p><span class="math notranslate nohighlight">\(I_2 = \frac{V_1}{8}\)</span></p>
+<p><span class="math notranslate nohighlight">\( I_3 = \frac{10 - V_2}{4}\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_4 = \frac{V_2}{6} \)</span></p>
+<p><strong>Step 4 :</strong> Now that we’ve obtained the expressions for all the branch currents entering and leaving the supernode, we can write a common nodal equation for the supernode as:</p>
+<p><span class="math notranslate nohighlight">\(I_1 + I_3 = I_2 + I_4 \)</span></p>
+<p>Replacing the currents with their expressions we obtained in the previous step, we get:</p>
+<p><span class="math notranslate nohighlight">\(\frac{10-V_1}{2} + \frac{10 - V_2}{4} = \frac{V_1}{8} + \frac{V_2}{6} \)</span></p>
+<p>By simplyfing it we have:</p>
+<p><span class="math notranslate nohighlight">\(7.5 = V_1(\frac{1}{8} + \frac{1}{2}) + V_2(\frac{1}{6} + \frac{1}{4}) \)</span></p>
+<p>That’s one out of the two required equations. The second equation will be obtained from the branch which has the 5V voltage source(supernode branch),</p>
+<p><span class="math notranslate nohighlight">\(V_1 - V_2 = 5\)</span></p>
+<p>**Step 5 :**Now that we have both the equations, we’ll solve it and we get the values of <span class="math notranslate nohighlight">\(V1\)</span> and <span class="math notranslate nohighlight">\(V2\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(V_1 = 9.199V ≈ 9.2V\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_2 = 4.199V ≈ 4.2V\)</span></p>
+<p>Now we have everything we need to find out the currents in the branches of the network. We just need to plug in the values of V1 and V2 in the branch current equations obtained in step 3 to get the values of currents:</p>
+<p><span class="math notranslate nohighlight">\(I_1 = 0.4A\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_2 = 1.15A\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_3 = 1.45A\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_4 = 0.7A\)</span></p>
+<p>The only thing left to do now is to apply nodal analysis on any one of the two nodes, N1 and N2, of the network to obtain the current through the 5V voltage source.</p>
+<p><img alt="last-step" src="../../_images/supernode-analysis-problem-2c.jpg.webp" /></p>
+<p>We can see it from the figure that:</p>
+<p><span class="math notranslate nohighlight">\(I_1 = I_2 + I_5\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_5 = 0.4 - 1.15\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_5 = -0.75A\)</span></p>
+<p>What does this negative sign indicate? It means that the current <span class="math notranslate nohighlight">\(I_5\)</span> flows in the direction opposite to the marked direction.(the current flows from N2 towards N1)</p>
+</section>
+<section id="id1">
+<h3>Solving the circuit using PySpice<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Below is an implementation to find the voltages in <span class="math notranslate nohighlight">\(N1\)</span> to <span class="math notranslate nohighlight">\(N3\)</span> and also <span class="math notranslate nohighlight">\(I_1\)</span> to <span class="math notranslate nohighlight">\(I_5\)</span> using Pyspice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Probe.Plot</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Library</span> <span class="kn">import</span> <span class="n">SpiceLibrary</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Initialize the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Sample Circuit&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the voltage sources</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;N3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">10</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># 10V source between N3 and ground</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;N1&#39;</span><span class="p">,</span> <span class="s1">&#39;N2&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># 5V source between N1 and N2</span>
+
+<span class="c1"># Define the resistors according to the diagram</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;N3&#39;</span><span class="p">,</span> <span class="s1">&#39;N1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_Ohm</span><span class="p">)</span>  <span class="c1"># 2Ω resistor between N3 and N1</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;N1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">8</span><span class="nd">@u_Ohm</span><span class="p">)</span>  <span class="c1"># 8Ω resistor between N1 and ground</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;N3&#39;</span><span class="p">,</span> <span class="s1">&#39;N2&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="nd">@u_Ohm</span><span class="p">)</span>  <span class="c1"># 4Ω resistor between N3 and N2</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;N2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">6</span><span class="nd">@u_Ohm</span><span class="p">)</span>  <span class="c1"># 6Ω resistor between N2 and ground</span>
+
+<span class="c1"># Run a DC analysis</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Simulation</span> <span class="kn">import</span> <span class="n">OperatingPointAnalysisParameters</span>
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+
+<span class="c1"># Display the node voltages</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node Voltages:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;N1&#39;</span><span class="p">,</span> <span class="s1">&#39;N2&#39;</span><span class="p">,</span> <span class="s1">&#39;N3&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Voltage at </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2"> V&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate branch currents</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Branch Currents:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate I1 (current through the 2Ω resistor between N3 and N1)</span>
+<span class="n">I1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;N3&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;N1&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I1: </span><span class="si">{</span><span class="n">I1</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate I2 (current through the 8Ω resistor between N1 and ground)</span>
+<span class="n">I2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;N1&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">8</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I2: </span><span class="si">{</span><span class="n">I2</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate I3 (current through the 4Ω resistor between N3 and N2)</span>
+<span class="n">I3</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;N3&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;N2&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I3: </span><span class="si">{</span><span class="n">I3</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate I4 (current through the 6Ω resistor between N2 and ground)</span>
+<span class="n">I4</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;N2&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I4: </span><span class="si">{</span><span class="n">I4</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate I5 (current through the 5V source between N1 and N2)</span>
+<span class="n">I5</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;N1&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;N2&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="o">/</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I5: </span><span class="si">{</span><span class="n">I5</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node Voltages:
+Voltage at N1: 9.2 V
+Voltage at N2: 4.2 V
+Voltage at N3: 10.0 V
+
+Branch Currents:
+I1: 0.40000000000000036 A
+I2: 1.15 A
+I3: 1.45 A
+I4: 0.7000000000000001 A
+I5: 0.9999999999999998 A
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-3">
+<h3>Example 3:<a class="headerlink" href="#example-3" title="Link to this heading">#</a></h3>
+<p>Determine the nodal voltages as labeled in the below circuit. making use of the supernode technique as appropriate.</p>
+<p><img alt="image" src="../../_images/haytcircuit.png" /></p>
+</section>
+<section id="id2">
+<h3>Solution<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Fisrt the nodal equation of V1 which we can write normally.</p>
+<p><span class="math notranslate nohighlight">\( 3 -5 = \frac{V_1 - V_3}{1} + \frac{V_1 - V_2}{5} \)</span></p>
+<p>then beacuse of the voltage source between two other nodes we create a supernode from nodes 2 and 3. Then our nodal equation is:</p>
+<p><span class="math notranslate nohighlight">\(5-8 = \frac{V_2}{3} + \frac{V_2 - V_1}{5} + \frac{V_3}{2} + \frac{V_3 - V_1}{1} \)</span></p>
+<p>We also require a KVL equation that relates the two nodes involved in the supernode:</p>
+<p><span class="math notranslate nohighlight">\(V_2 - V_3 = 4\)</span></p>
+<p>Now we have 3 equations and 3 unknowns by solving them we have:</p>
+<p><span class="math notranslate nohighlight">\(V_1 = -8.6V\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_2 = -3.6V\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_3 = -7.6V\)</span></p>
+</section>
+<section id="id3">
+<h3>Solving the circuit using PySpice<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Below is an implementation to find the voltages in <span class="math notranslate nohighlight">\(V_1\)</span> to <span class="math notranslate nohighlight">\(V_3\)</span> using Pyspice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Initialize the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Corrected Circuit&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the independent current sources as per the image</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">3</span><span class="nd">@u_A</span><span class="p">)</span>   <span class="c1"># 3A source flowing from v1 to reference</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_A</span><span class="p">)</span>          <span class="c1"># 5A source flowing from v2 to v1</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="nd">@u_A</span><span class="p">)</span>   <span class="c1"># 8A source flowing from reference to v3</span>
+
+<span class="c1"># Define the resistors according to the diagram</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_Ohm</span><span class="p">)</span>        <span class="c1"># 5Ω resistor between v1 and v2</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_Ohm</span><span class="p">)</span>        <span class="c1"># 1Ω resistor between v1 and v3</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">3</span><span class="nd">@u_Ohm</span><span class="p">)</span> <span class="c1"># 3Ω resistor between v2 and reference</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="nd">@u_Ohm</span><span class="p">)</span>        <span class="c1"># 4Ω resistor between v2 and v3</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_Ohm</span><span class="p">)</span> <span class="c1"># 2Ω resistor between v3 and reference</span>
+
+<span class="c1"># Define the voltage source with correct polarity between v2 and v3</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># 4V source between v3 and v2</span>
+
+<span class="c1"># Run a DC analysis</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Simulation</span> <span class="kn">import</span> <span class="n">OperatingPointAnalysisParameters</span>
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+
+<span class="c1"># Display the node voltages</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node Voltages:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Voltage at </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> V&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node Voltages:
+Voltage at v1: -8.60 V
+Voltage at v2: -3.60 V
+Voltage at v3: -7.60 V
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-4">
+<h3>Example 4:<a class="headerlink" href="#example-4" title="Link to this heading">#</a></h3>
+<p>Determine the node-to-reference voltages in the below circuit.</p>
+<p><img alt="hayt" src="../../_images/haytcircuit2.png" /></p>
+</section>
+<section id="id4">
+<h3>Solution<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>After establishing a supernode around each voltage source, we see that
+we need to write KCL equations only at node 2 and at the supernode
+containing the dependent voltage source. By inspection, it is clear that
+<span class="math notranslate nohighlight">\(v_1 = −12 V.\)</span></p>
+<p>At node 2 we have:</p>
+<p><span class="math notranslate nohighlight">\( \frac{v_2 - v_1}{0.5} + \frac{v_2 - v_3}{2} = 14 \)</span></p>
+<p>while at the 3–4 supernode we have:</p>
+<p><span class="math notranslate nohighlight">\( \frac{v_3 - v_2}{2} + \frac{v_4}{1} + \frac{v_4 - v_1}{2.5} = 0.5v_x \)</span></p>
+<p>We next relate the source voltages to the node voltages:</p>
+<p><span class="math notranslate nohighlight">\(v_3 - v_4 = 0.2v_y\)</span></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(0.2v_y = 0.2(v_4 - v_1)\)</span></p>
+<p>Finally, we express the dependent current source in terms of the
+assigned variables:</p>
+<p><span class="math notranslate nohighlight">\(0.5v_x = 0.5(v_2 - v_1)\)</span></p>
+<p>Five nodes requires four KCL equations in general nodal analysis,
+but we have reduced this requirement to only two, as we formed
+two separate supernodes. Each supernode required a KVL equation.</p>
+<p>Neither dependent source was controlled by a nodal voltage, so two additional
+equations were needed as a result.</p>
+<p>With this done, we can now eliminate vx and vy to obtain a set of four
+equations in the four node voltages:</p>
+<p><span class="math notranslate nohighlight">\(-2v_1 + 2.5v_2 - 0.5v_3 = 14\)</span></p>
+<p><span class="math notranslate nohighlight">\(0.1v_1 - v_2 + 0.5v_3 + 1.4v_4 = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\( v_1 = -12\)</span></p>
+<p><span class="math notranslate nohighlight">\( 0.2v_1 + v_3 - 1.2v_4 = 0\)</span></p>
+<p>By solving it we have:</p>
+<p><span class="math notranslate nohighlight">\(v_1 = -12V\)</span></p>
+<p><span class="math notranslate nohighlight">\(v_2 = 14.67V\)</span></p>
+<p><span class="math notranslate nohighlight">\(v_3 = -2.67\)</span></p>
+<p><span class="math notranslate nohighlight">\(v_4 = -1.33\)</span></p>
+</section>
+<section id="id5">
+<h3>Solving the circuit using PySpice<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Below is an implementation to find the voltages in <span class="math notranslate nohighlight">\(V_1\)</span> to <span class="math notranslate nohighlight">\(V_4\)</span> using Pyspice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Initialize the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Debugged Complex Circuit with Dependent Sources&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the independent voltage source with reversed polarity</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">12</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># 12V source with ground connected to positive terminal</span>
+
+<span class="c1"># Define the independent current source</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v4&#39;</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="nd">@u_A</span><span class="p">)</span>  <span class="c1"># 14A source from v4 to v2</span>
+
+<span class="c1"># Define the resistors</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="nd">@u_Ohm</span><span class="p">)</span>      <span class="c1"># 0.5Ω between v1 and v2</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_Ohm</span><span class="p">)</span>        <span class="c1"># 2Ω between v2 and v3</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n_aux&#39;</span><span class="p">,</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="mf">2.5</span><span class="nd">@u_Ohm</span><span class="p">)</span>   <span class="c1"># 2.5Ω between v1 and v4 (through auxiliary node n_aux)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;v4&#39;</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_Ohm</span><span class="p">)</span>        <span class="c1"># 1Ω between v4 and v3</span>
+
+<span class="c1"># Insert a zero-volt voltage source in series with the 2.5Ω resistor to measure current for CCCS</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;aux&#39;</span><span class="p">,</span> <span class="s1">&#39;n_aux&#39;</span><span class="p">,</span> <span class="s1">&#39;v4&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># Zero-voltage source between n_aux and v4</span>
+
+<span class="c1"># Define the voltage-controlled voltage source (VCVS) with 0.5 * vx</span>
+<span class="c1"># Ensure it&#39;s correctly defined based on the potential difference between v1 and v2</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">VCVS</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="s1">&#39;v4&#39;</span><span class="p">,</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># 0.5 * vx (vx is v1 - v2)</span>
+
+<span class="c1"># Define the current-controlled current source (CCCS) with 0.2 * vy</span>
+<span class="c1"># Use the current through the zero-voltage source as the controlling current</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">CCCS</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="s1">&#39;v4&#39;</span><span class="p">,</span> <span class="s1">&#39;Vaux&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># 0.2 * current through aux (which is the current through 2.5Ω resistor)</span>
+
+<span class="c1"># Run a DC operating point analysis</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Simulation</span> <span class="kn">import</span> <span class="n">OperatingPointAnalysisParameters</span>
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+
+<span class="c1"># Display the node voltages with the correct sign adjustments</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node Voltages :&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="s1">&#39;v4&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Voltage at </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> V&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node Voltages :
+Voltage at v1: 12.00 V
+Voltage at v2: 14.67 V
+Voltage at v3: -2.67 V
+Voltage at v4: -1.33 V
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="summary-of-supernode-analysis-procedure">
+<h2>Summary of Supernode Analysis Procedure<a class="headerlink" href="#summary-of-supernode-analysis-procedure" title="Link to this heading">#</a></h2>
+<p>1 - <strong>Select a reference node</strong>. The number of terms in your nodal
+equations can be minimized by selecting the reference node as the
+one with the greatest number of branches connected to it.</p>
+<p>2 - <strong>Count and label the voltage at each node in the circuit</strong>, relative to the reference node you have selected.</p>
+<p>3 - <strong>If the circuit contains voltage sources, form a supernode around each one</strong>. This is done by enclosing the source, its two
+terminals, and any other elements connected between the two
+terminals within a broken-line enclosure.</p>
+<p>4 - <strong>Write a KCL equation for each of the nonreference nodes and for each supernode that does not contain the reference node</strong>.
+Sum the currents flowing out of the node/supernode through resistors on one side of the equation. On the other side,
+sum the currents flowing into a node/supernode from sources.
+Pay close attention to minus signs.</p>
+<p>5 - <strong>Relate the voltage across each voltage source to nodal voltages</strong>. This is accomplished by simple application of KVL; one
+such equation is needed for each supernode defined.</p>
+<p>6 - <strong>Express any additional unknowns in terms of appropriate nodal voltages</strong>. This situation can occur if voltage sources or
+dependent sources appear in our circuit.</p>
+<p>7 - <strong>Organize the equations.</strong> Group terms according to nodal voltages.</p>
+<p>8 - <strong>Solve the system of equations for the nodal voltages</strong></p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In conclusion, the supernode method serves as a powerful and efficient tool for analyzing electrical circuits, particularly those with voltage sources connected between non-reference nodes. By simplifying complex circuits and reducing the number of necessary equations, this approach streamlines the process of determining node voltages and allows for more systematic and organized circuit analysis. The supernode method is especially valuable in circuits with multiple nodes and interdependencies, where traditional methods may become cumbersome. Mastering this technique enhances analytical capabilities and broadens the range of circuit problems that can be tackled with confidence and precision, making it an essential skill for anyone engaged in electrical engineering or circuit design.</p>
+</section>
+<section id="refrences">
+<h2>Refrences<a class="headerlink" href="#refrences" title="Link to this heading">#</a></h2>
+<p>1 - ENGINEERING CIRCUIT ANALYSIS(William H. Hayt, Jr. (deceased))</p>
+<p>2 - <a class="reference external" href="https://www.circuitbread.com/tutorials/special-case-of-kcl-supernode-analysis">https://www.circuitbread.com/tutorials/special-case-of-kcl-supernode-analysis</a></p>
+<p>3 - <a class="reference external" href="https://en.wikipedia.org/wiki/Supernode_(circuit)">https://en.wikipedia.org/wiki/Supernode_(circuit)</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Supernode"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../UsingBJTasCurrentSource/BJT_As_currentSource.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Using The BJT as Current Source</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Complex Number in Phasors</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-supernode">What is supernode?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-nodal-analysis-and-supernode-method">Comparing nodal analysis and supernode method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-problem-using-nodal-analysis">Solving the problem using nodal analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-problem-using-supermesh-method">Solving the problem using supermesh method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drawing-the-circuit-using-schemdraw">Drawing the circuit using Schemdraw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-circuit-using-pyspice">Solving the circuit using PySpice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solving the circuit using PySpice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3">Example 3:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Solving the circuit using PySpice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4">Example 4:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Solving the circuit using PySpice</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-supernode-analysis-procedure">Summary of Supernode Analysis Procedure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
