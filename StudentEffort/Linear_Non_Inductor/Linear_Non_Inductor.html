@@ -1,0 +1,1097 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Linear and Non-Linear inductors &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Linear_Non_Inductor/Linear_Non_Inductor';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="Complex Number in Phasors" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear and Non-Linear inductors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Linear_Non_Inductor/Linear_Non_Inductor.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Linear_Non_Inductor/Linear_Non_Inductor.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linear and Non-Linear inductors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-inductor">What is inductor ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-explanation-about-passive-elements">Brief explanation about passive elements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-inductors">Linear Inductors:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-variant-and-time-invariant-linear-inductors">Time-variant and Time-invariant Linear Inductors :</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-invariant-inductors">Time-invariant Inductors:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tevnan-and-norton-with-inductors">Tevnan and Norton with inductors :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#current-cant-jump-from-a-value-to-other-incidentally-in-inductor">current can’t jump from a value to other incidentally in inductor:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-inductors-characteristic-curve">Linear inductors characteristic curve</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-variant-inductors">Time-variant Inductors:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-inductors">Non-Linear Inductors:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-explanation-about-magnetic-saturation">Brief explanation about Magnetic saturation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saturation-effects">Saturation Effects:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q-factor"><span class="math notranslate nohighlight">\(Q\)</span> factor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-model">Non-linear Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-explanation">Parameters explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-explanation">Functions explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-and-visualization">Simulation and Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-vs-current">Flux vs Current:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-explanation">Chart explanation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inductance-vs-current">Inductance vs Current:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Chart explanation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-inductor">Types of inductor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#air-core-inductor">Air-core inductor:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iron-core-inductor">Iron Core Inductor:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-iron-core-inductor">Benefits of Iron Core Inductor</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ferrite-core-inductor">Ferrite core inductor:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-ferrite-core-inductor">Benefits of Ferrite core inductor</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ferrite-core-inductor-vs-iron-core-inductor">Ferrite core inductor VS Iron Core Inductor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rf-inductors">RF Inductors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-applications">Inductor applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-circuits">Tuning Circuits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensors">Sensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-storage">Energy Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction-motors">Induction Motors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformers">Transformers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filters">Filters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-of-inductive-filters">Basic Types of Inductive Filters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#low-pass-filters">Low-Pass Filters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#high-pass-filters">High-pass Filters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#band-pass-filters">Band-pass Filters</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chokes">Chokes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-and-non-linear-inductors">
+<h1>Linear and Non-Linear inductors<a class="headerlink" href="#linear-and-non-linear-inductors" title="Link to this heading">#</a></h1>
+<p>Author : <strong>Ali Houshyar</strong></p>
+<p>Contact : <a class="reference external" href="mailto:alihoshyarkhoshdell&#37;&#52;&#48;mail&#46;um&#46;ac&#46;ir">alihoshyarkhoshdell<span>&#64;</span>mail<span>&#46;</span>um<span>&#46;</span>ac<span>&#46;</span>ir</a></p>
+<section id="what-is-inductor">
+<h2>What is inductor ?<a class="headerlink" href="#what-is-inductor" title="Link to this heading">#</a></h2>
+<p>An inductor, also called a coil, choke, or reactor, is a <strong>passive</strong> two-terminal electrical component that stores energy in a magnetic field when electric current flows through it. An inductor typically consists of an insulated wire wound into a coil.</p>
+<p>When the current flowing through the coil changes, the time-varying magnetic field induces an electromotive force (emf) (voltage) in the conductor, described by Faraday’s law of induction. According to Lenz’s law, the induced voltage has a polarity (direction) which opposes the change in current that created it. As a result, inductors oppose any changes in current through them.</p>
+<section id="brief-explanation-about-passive-elements">
+<h3>Brief explanation about passive elements<a class="headerlink" href="#brief-explanation-about-passive-elements" title="Link to this heading">#</a></h3>
+<p>A passive element is an electrical component that does not generate power, but instead dissipates, stores, and/or releases it. Passive elements include resistances, capacitors, and coils (also called inductors). These components are labeled in circuit diagrams as <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(L\)</span>, respectively. In most circuits, they are connected to active elements</p>
+</section>
+</section>
+<section id="linear-inductors">
+<h2>Linear Inductors:<a class="headerlink" href="#linear-inductors" title="Link to this heading">#</a></h2>
+<p>Linear inductors have a constant inductance value regardless of the current or frequency applied to them.</p>
+</section>
+<section id="time-variant-and-time-invariant-linear-inductors">
+<h2>Time-variant and Time-invariant Linear Inductors :<a class="headerlink" href="#time-variant-and-time-invariant-linear-inductors" title="Link to this heading">#</a></h2>
+<p>Linear induct ors can be classified into Time-variant and Time-invariant types based on how their Key Characteristics changes by time.</p>
+<section id="time-invariant-inductors">
+<h3>Time-invariant Inductors:<a class="headerlink" href="#time-invariant-inductors" title="Link to this heading">#</a></h3>
+<p>By definition, characteristic curve of a time-invariant inductor have a relationship that can be expressed as :</p>
+<p><span class="math notranslate nohighlight">\( Φ = Li(t) \)</span></p>
+<p>The voltage-current (V-I) relationship for a linear inductor follows the equation:</p>
+<p><span class="math notranslate nohighlight">\( V = L\frac{di}{dt} \)</span></p>
+<p>where :</p>
+<ul class="simple">
+<li><p>V is the voltage across the inductor.</p></li>
+<li><p>I is the current through the inductor.</p></li>
+<li><p>L is the inductance.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{di}{dt} \)</span> is the rate of change of current.</p></li>
+</ul>
+<p>In a graph of voltage versus the rate of change of current, linear inductors produce a straight line with a slope equal to the inductance.</p>
+<p>If Integrate both sides over <span class="math notranslate nohighlight">\([0,t]\)</span> interval :</p>
+<p><span class="math notranslate nohighlight">\( i(t) = i(0) + \frac{1}{L}\int_0^t v(t')dt' \)</span></p>
+<p>The integral in the above equation is the area under the curve . it is clear that i(t) is depends on i(0) and all Values of voltage over <span class="math notranslate nohighlight">\([0,t]\)</span> interval. Whis this we can assum that “inductors have memory” like capacitors.</p>
+<p>we define a time-invariant inductor as a circuit element with two parameter :</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(i(0)\)</span> : the current of inductor in <span class="math notranslate nohighlight">\(t=0\)</span></p></li>
+<li><p>L : the inductance</p></li>
+</ul>
+<section id="tevnan-and-norton-with-inductors">
+<h4>Tevnan and Norton with inductors :<a class="headerlink" href="#tevnan-and-norton-with-inductors" title="Link to this heading">#</a></h4>
+<p>if we have time-invariant inductor with inductance of L and <span class="math notranslate nohighlight">\(i(0) = I_0\)</span> then we can change the circuit into independent current sources with <span class="math notranslate nohighlight">\(I = I_0\)</span> and a time-invariant inductor with inductance of L and <span class="math notranslate nohighlight">\(i(0) = 0\)</span> which are parallel to each other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">Arrowhead</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">([</span><span class="mf">1.6</span><span class="p">,</span><span class="mf">0.0</span><span class="p">])</span><span class="o">.</span><span class="n">linewidth</span><span class="p">(</span><span class="mf">4.0</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;$ i_t $&quot;</span><span class="p">)</span>
+    <span class="n">inc</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">BatteryCell</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">CurrentLabel</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">inc</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;$i(0) = I_0$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9fefbcf175a333abd801cadc26a196e241ad5f069b8856a8cfeb18a53930468d.svg" src="../../_images/9fefbcf175a333abd801cadc26a196e241ad5f069b8856a8cfeb18a53930468d.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">Arrowhead</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">([</span><span class="mf">1.6</span><span class="p">,</span><span class="mf">0.0</span><span class="p">])</span><span class="o">.</span><span class="n">linewidth</span><span class="p">(</span><span class="mf">4.0</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;$ i_t $&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mf">11.1</span><span class="p">)</span>
+    <span class="n">Isrc</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;$I_0$&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">Isrc</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s2">&quot;L&quot;</span><span class="p">,</span><span class="s2">&quot;$i(0) = 0$&quot;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mf">9.1</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">+=</span><span class="n">elm</span><span class="o">.</span><span class="n">BatteryCell</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d05496a9b51235de103d7eec2456368d885609fb14d2eff5808923a77ccd49ee.svg" src="../../_images/d05496a9b51235de103d7eec2456368d885609fb14d2eff5808923a77ccd49ee.svg" />
+</div>
+</div>
+</section>
+<section id="current-cant-jump-from-a-value-to-other-incidentally-in-inductor">
+<h4>current can’t jump from a value to other incidentally in inductor:<a class="headerlink" href="#current-cant-jump-from-a-value-to-other-incidentally-in-inductor" title="Link to this heading">#</a></h4>
+<p>If for all <span class="math notranslate nohighlight">\(t\)</span> over the <span class="math notranslate nohighlight">\([0,t]\)</span> interval, The voltage on both sides of the inductor is bounded then current over the <span class="math notranslate nohighlight">\([0,t]\)</span> interval is continuous function. This means if voltage stay bounded on both side of inductor, current can’t jump from a value to other incidentally.</p>
+</section>
+<section id="linear-inductors-characteristic-curve">
+<h4>Linear inductors characteristic curve<a class="headerlink" href="#linear-inductors-characteristic-curve" title="Link to this heading">#</a></h4>
+<p>We will use a simple circuit to analysis the linear inductor and define their characteristic curve using PySpice :</p>
+<p>Two array named “voltage” and “current” will keep our values during the simulations. Then we have a for loop that goes from 0 to 5.1 with step of 0.1. in each loop we create a new simple circuit with source, resistor and inductor and run the simulation and append the values into the aaray that we defined. at the end, we show the curve using matplotlip.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">PySpice</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+
+<span class="n">voltage</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">current</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">time_step</span> <span class="o">=</span> <span class="mf">1e-3</span> 
+<span class="n">stop_time</span> <span class="o">=</span> <span class="mf">0.5</span> 
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">):</span>
+    <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;circuit </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">L</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="mf">10e-3</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="mf">1e3</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;V</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">transient</span><span class="p">(</span><span class="n">step_time</span><span class="o">=</span><span class="n">time_step</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="n">stop_time</span><span class="p">)</span>
+    <span class="n">sv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">][</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.1</span><span class="o">/</span><span class="n">time_step</span><span class="p">):])</span>
+    <span class="n">sc</span> <span class="o">=</span> <span class="n">sv</span> <span class="o">/</span> <span class="mi">1000</span>
+    <span class="n">voltage</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">current</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;V-I Curve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Inductor V-I Characteristic Curve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;I [A]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;V [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.006</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8e9d5bcf8bbcc2956eaee28db3542a6b41eeb21d916e3e5a0adb67046ebb12e7.png" src="../../_images/8e9d5bcf8bbcc2956eaee28db3542a6b41eeb21d916e3e5a0adb67046ebb12e7.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="time-variant-inductors">
+<h3>Time-variant Inductors:<a class="headerlink" href="#time-variant-inductors" title="Link to this heading">#</a></h3>
+<p>If inductor is linear but changes by time , characteristic curve of it in every second is straight line that passes from the origin and it slope is function of time</p>
+<p><span class="math notranslate nohighlight">\( Φ = L(t)i(t) \)</span></p>
+<p>where <span class="math notranslate nohighlight">\(L(i)\)</span> is specific function of time. With derivation of above equation we reach voltage equation that is :</p>
+<p><span class="math notranslate nohighlight">\( V(T) = L(t)\frac{di}{dt}\ + i(t)\frac{dL}{dt} \)</span></p>
+</section>
+</section>
+<section id="non-linear-inductors">
+<h2>Non-Linear Inductors:<a class="headerlink" href="#non-linear-inductors" title="Link to this heading">#</a></h2>
+<p>Inductors are fundamental components in electrical circuits that store energy in a magnetic field generated by the flow of electric current through their coils. The relationship between current (<span class="math notranslate nohighlight">\(I\)</span>), magnetic flux (<span class="math notranslate nohighlight">\(Φ\)</span>), and inductance (<span class="math notranslate nohighlight">\(L\)</span>) is traditionally linear and given by the equation <span class="math notranslate nohighlight">\(Φ = L⋅I\)</span>. However, real-world inductors often incorporate magnetic cores made of materials such as iron, which exhibit non-linear behavior due to magnetic saturation effects.</p>
+<section id="brief-explanation-about-magnetic-saturation">
+<h3>Brief explanation about Magnetic saturation<a class="headerlink" href="#brief-explanation-about-magnetic-saturation" title="Link to this heading">#</a></h3>
+<p>Magnetic saturation occurs when a material’s magnetic properties reach their limit, resulting in a plateau in the relationship between magnetic flux density (<span class="math notranslate nohighlight">\(B\)</span>) and magnetic field intensity (<span class="math notranslate nohighlight">\(H\)</span>). This phenomenon is critical in inductor design because it alters the inductance (<span class="math notranslate nohighlight">\(L\)</span>) as a function of current (<span class="math notranslate nohighlight">\(I\)</span>).</p>
+</section>
+<section id="saturation-effects">
+<h3>Saturation Effects:<a class="headerlink" href="#saturation-effects" title="Link to this heading">#</a></h3>
+<p>In magnetic materials like iron, as the magnetic field intensity (<span class="math notranslate nohighlight">\(H\)</span>) increases, the magnetic flux density (<span class="math notranslate nohighlight">\(B\)</span>) initially rises linearly. However, beyond a certain point known as the saturation point, (<span class="math notranslate nohighlight">\(B\)</span>) ceases to increase linearly with (<span class="math notranslate nohighlight">\(H\)</span>) and begins to saturate. This saturation effect means that even if (<span class="math notranslate nohighlight">\(H\)</span>) continues to increase, (<span class="math notranslate nohighlight">\(B\)</span>) remains relatively constant or increases very slowly. Consequently, the inductance (<span class="math notranslate nohighlight">\(L\)</span>), which is typically calculated as the ratio of magnetic flux (<span class="math notranslate nohighlight">\(Φ\)</span>) to current (<span class="math notranslate nohighlight">\(I\)</span>), also shows non-linear behavior as it approaches and reaches saturation.</p>
+</section>
+<section id="q-factor">
+<h3><span class="math notranslate nohighlight">\(Q\)</span> factor<a class="headerlink" href="#q-factor" title="Link to this heading">#</a></h3>
+<p>The winding resistance appears as a resistance in series with the inductor; it is referred to as DCR (DC resistance). This resistance dissipates some of the reactive energy. The quality factor (or <span class="math notranslate nohighlight">\(Q\)</span>) of an inductor is the ratio of its inductive reactance to its resistance at a given frequency, and is a measure of its efficiency. The higher the Q factor of the inductor, the closer it approaches the behavior of an ideal inductor. High <span class="math notranslate nohighlight">\(Q\)</span> inductors are used with capacitors to make LC circuits in radio transmitters and receivers.</p>
+<p>The Q factor of an inductor is defined as :</p>
+<p><span class="math notranslate nohighlight">\(\huge Q = \frac{\omega L}{R} \)</span></p>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the inductance, <span class="math notranslate nohighlight">\(R\)</span> is the DC resistance, and the product <span class="math notranslate nohighlight">\( \omega L \)</span> is the inductive reactance</p>
+</section>
+<section id="non-linear-model">
+<h3>Non-linear Model<a class="headerlink" href="#non-linear-model" title="Link to this heading">#</a></h3>
+<p>To accurately model and simulate the behavior of inductors with non-linear magnetic cores, numerical methods are employed. The Python code provided below illustrates how to implement such a model and visualize its characteristics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">B_sat</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">H_sat</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">mu_0</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mf">1e-7</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">A_core</span> <span class="o">=</span> <span class="mf">1e-4</span>
+<span class="n">l_mag</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mf">4.9754</span><span class="o">*</span><span class="mf">10e-3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="parameters-explanation">
+<h3>Parameters explanation<a class="headerlink" href="#parameters-explanation" title="Link to this heading">#</a></h3>
+<p>These parameters define essential characteristics of the magnetic core and the physical dimensions of the inductor:</p>
+<ul class="simple">
+<li><p><strong>Saturation Flux Density (B_sat):</strong> The maximum magnetic flux density the core material can sustain before saturation.</p></li>
+<li><p><strong>Saturation Magnetic Field Intensity (H_sat)</strong>: The corresponding magnetic field intensity at which the core material saturates.</p></li>
+<li><p><strong>Permeability of Free Space (μ0):</strong> The constant representing the magnetic permeability of free space.</p></li>
+<li><p><strong>Number of Turns (N):</strong> The total number of wire turns in the inductor’s coil.</p></li>
+<li><p><strong>Cross-sectional Area of the Core (A_core):</strong> The area through which the magnetic flux passes.</p></li>
+<li><p><strong>Magnetic Path Length (l_mag):</strong> The distance along which the magnetic flux travels within the core.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">B</span><span class="p">(</span><span class="n">H</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">B_sat</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">H</span> <span class="o">/</span> <span class="n">H_sat</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">H</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">N</span> <span class="o">*</span> <span class="n">I</span> <span class="o">/</span> <span class="n">l_mag</span>
+
+<span class="k">def</span> <span class="nf">flux</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">A_core</span> <span class="o">*</span> <span class="n">B</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="n">I</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">inductance</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="n">dI</span> <span class="o">=</span> <span class="mf">1e-5</span>  <span class="c1"># Small change in current for numerical differentiation</span>
+    <span class="n">dPhi</span> <span class="o">=</span> <span class="n">flux</span><span class="p">(</span><span class="n">I</span> <span class="o">+</span> <span class="n">dI</span><span class="p">)</span> <span class="o">-</span> <span class="n">flux</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dPhi</span> <span class="o">/</span> <span class="n">dI</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="functions-explanation">
+<h3>Functions explanation<a class="headerlink" href="#functions-explanation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>B(H):</strong> Computes the magnetic flux density (<span class="math notranslate nohighlight">\(B\)</span>) as a function of the magnetic field intensity (<span class="math notranslate nohighlight">\(H\)</span>), using the hyperbolic tangent function (np.tanh) to model saturation. This function determines how (<span class="math notranslate nohighlight">\(B\)</span>) changes with increasing (<span class="math notranslate nohighlight">\(H\)</span>) until saturation is reached. The formula of magnetic flux density (<span class="math notranslate nohighlight">\(B\)</span>) is
+$<span class="math notranslate nohighlight">\( B = \mu H \)</span><span class="math notranslate nohighlight">\(
+Where \)</span> \mu <span class="math notranslate nohighlight">\( is the permeability of the material (in Henrys per meter, H/m). But in real world, the relationship can become non-linear and may include saturation effects :
+\)</span><span class="math notranslate nohighlight">\( B = B_{sat} * tanh(\frac{H}{H_{sat}}) \)</span>$</p></li>
+<li><p><strong>H(I):</strong> Calculates the magnetic field intensity (<span class="math notranslate nohighlight">\(H\)</span>) based on the current (<span class="math notranslate nohighlight">\(I\)</span>), taking into account the number of turns N and the magnetic path length l_mag. This relationship indicates how the magnetic flux density varies with the current through the coil.
+$<span class="math notranslate nohighlight">\( H = N\frac{I}{I_{mag}} \)</span>$</p></li>
+<li><p><strong>flux(I):</strong> Determines the magnetic flux (<span class="math notranslate nohighlight">\(Φ\)</span>) generated by the inductor for a given current (<span class="math notranslate nohighlight">\(I\)</span>). It combines the magnetic flux density (<span class="math notranslate nohighlight">\(B\)</span>) with the cross-sectional area A_core of the core.
+$<span class="math notranslate nohighlight">\( Φ = \int \vec{B}.d\vec{A} \)</span>$</p></li>
+<li><p><strong>inductance(I):</strong> Numerically computes the inductance (<span class="math notranslate nohighlight">\(L\)</span>) by differentiating the magnetic flux (<span class="math notranslate nohighlight">\(Φ\)</span>) with respect to the current (<span class="math notranslate nohighlight">\(I\)</span>). This method captures the non-linear relationship between magnetic flux and current, crucial for understanding how inductance changes under varying operating conditions.</p></li>
+</ul>
+</section>
+<section id="simulation-and-visualization">
+<h3>Simulation and Visualization<a class="headerlink" href="#simulation-and-visualization" title="Link to this heading">#</a></h3>
+<p>The Python script simulates the behavior of the inductor across different current levels and visualizes several key relationships:</p>
+<section id="flux-vs-current">
+<h4>Flux vs Current:<a class="headerlink" href="#flux-vs-current" title="Link to this heading">#</a></h4>
+<p>Plots the magnetic flux Φ versus current I. As current increases, the flux also increases, but the rate of increase slows down due to magnetic saturation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">H_values</span> <span class="o">=</span> <span class="n">H</span><span class="p">(</span><span class="n">I_values</span><span class="p">)</span>
+<span class="n">B_values</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="n">H_values</span><span class="p">)</span>
+<span class="n">flux_values</span> <span class="o">=</span> <span class="n">flux</span><span class="p">(</span><span class="n">I_values</span><span class="p">)</span>
+<span class="n">L_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">inductance</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="n">I_values</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">I_values</span><span class="p">,</span> <span class="n">flux_values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Flux vs Current&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Flux vs Current Curve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Current I (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Magnetic Flux Φ (Wb)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4833f543d7237b31436b4eff4bbf128e6c720b11b9bacbb622d01853019b677c.png" src="../../_images/4833f543d7237b31436b4eff4bbf128e6c720b11b9bacbb622d01853019b677c.png" />
+</div>
+</div>
+</section>
+<section id="chart-explanation">
+<h4>Chart explanation<a class="headerlink" href="#chart-explanation" title="Link to this heading">#</a></h4>
+<p>As current increases, the magnetic flux also increases. However, every inductor has a limit to how much magnetic flux it can handle before reaching saturation. When current saturate , the core material of the inductor can no longer linearly respond to increases in current due to magnetic domain alignment. So the curve have two part : <strong>Linear Part</strong> and <strong>Saturation Part</strong></p>
+<ul class="simple">
+<li><p><strong>Linear Part</strong>: In the initial part of the current-flux curve, the relationship is linear. This means that as you increase the current, the flux increases proportionally.</p></li>
+<li><p><strong>Saturation Region</strong>: Once you reach a certain level of current (the saturation current,  <span class="math notranslate nohighlight">\( I_{sat} \)</span>), the inductor begins to saturate. Beyond this point, increases in current do not result in proportional increases in magnetic flux. The curve flattens out, indicating that additional current leads to minimal increases in flux.</p></li>
+</ul>
+<p>We can see all above explanations in figure below :</p>
+<p><img alt="Flux vs Current Curve" src="../../_images/curve1.JPG" /></p>
+</section>
+<section id="inductance-vs-current">
+<h4>Inductance vs Current:<a class="headerlink" href="#inductance-vs-current" title="Link to this heading">#</a></h4>
+<p>Shows how inductance (<span class="math notranslate nohighlight">\(L\)</span>) varies with current (<span class="math notranslate nohighlight">\(I\)</span>). Initially, (<span class="math notranslate nohighlight">\(L\)</span>) increases linearly with (<span class="math notranslate nohighlight">\(I\)</span>), but it starts to saturate as the magnetic core reaches its limit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">H_values</span> <span class="o">=</span> <span class="n">H</span><span class="p">(</span><span class="n">I_values</span><span class="p">)</span>
+<span class="n">B_values</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="n">H_values</span><span class="p">)</span>
+<span class="n">flux_values</span> <span class="o">=</span> <span class="n">flux</span><span class="p">(</span><span class="n">I_values</span><span class="p">)</span>
+<span class="n">L_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">inductance</span><span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="n">I_values</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">I_values</span><span class="p">,</span> <span class="n">L_values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inductance vs Current&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Inductance vs Current Saturation Curve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Current I (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Inductance L (H)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/93ebc63ed2dd3055fad78b2a317d162f1bcd7d6c315198f4586abfb7123a4626.png" src="../../_images/93ebc63ed2dd3055fad78b2a317d162f1bcd7d6c315198f4586abfb7123a4626.png" />
+</div>
+</div>
+</section>
+<section id="id1">
+<h4>Chart explanation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Inductance (L) is a property of an electrical component (usually a coil or inductor) that quantifies its ability to store energy in a magnetic field when an electric current flows through it. So again the curve have two part : <strong>Linear Part</strong> and <strong>Saturation Part</strong></p>
+<ul class="simple">
+<li><p><strong>Linear Part</strong>: At low currents, the inductor behaves linearly. This means that as you increase the current, the inductance decrease proportionally. In this part, the inductance ( <span class="math notranslate nohighlight">\( L \)</span> ) remains relatively constant, and the relationship can be described as a straight line on a graph of inductance ( <span class="math notranslate nohighlight">\( L \)</span> ) versus current ( <span class="math notranslate nohighlight">\( I \)</span> ).</p></li>
+<li><p><strong>Saturation Region</strong>: Beyond the saturation point, the curve starts to flatten out. This means that increases in current produce only minimal increases in magnetic flux. In this part, the inductance effectively decreases because the core material is unable to store additional magnetic energy efficiently.</p></li>
+</ul>
+<p>We can see all above explanations in figure below :</p>
+<p><img alt="Inductance vs Current Saturation Curve" src="../../_images/curve2.JPG" /></p>
+</section>
+</section>
+</section>
+<section id="types-of-inductor">
+<h2>Types of inductor<a class="headerlink" href="#types-of-inductor" title="Link to this heading">#</a></h2>
+<section id="air-core-inductor">
+<h3>Air-core inductor:<a class="headerlink" href="#air-core-inductor" title="Link to this heading">#</a></h3>
+<p>The term air core coil describes an inductor that does not use a magnetic core made of a ferromagnetic material. The term refers to coils wound on plastic, ceramic, or other nonmagnetic forms, as well as those that have only air inside the windings. Air core coils have lower inductance than ferromagnetic core coils, but are often used at high frequencies because they are free from energy losses called core losses that occur in ferromagnetic cores, which increase with frequency</p>
+<p><img alt="Air-core inductor" src="../../_images/ind.PNG" /></p>
+</section>
+<section id="iron-core-inductor">
+<h3>Iron Core Inductor:<a class="headerlink" href="#iron-core-inductor" title="Link to this heading">#</a></h3>
+<p>The fixed value inductor in which an iron core is used within the coil to increase the inductance value of an inductor is known as an iron core inductor. These inductors have a very low inductance value and the iron core of this inductor has very unique magnetic characteristics which strengthen the magnetic field</p>
+<p><img alt="Iron Core Inductor" src="../../_images/ind2.PNG" /></p>
+<section id="benefits-of-iron-core-inductor">
+<h4>Benefits of Iron Core Inductor<a class="headerlink" href="#benefits-of-iron-core-inductor" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>These inductors have fewer losses.</p></li>
+<li><p>Its size and construction are simple.</p></li>
+<li><p>This type of inductor has a high Q-factor.</p></li>
+<li><p>These inductors have a large inductance value.</p></li>
+</ul>
+</section>
+</section>
+<section id="ferrite-core-inductor">
+<h3>Ferrite core inductor:<a class="headerlink" href="#ferrite-core-inductor" title="Link to this heading">#</a></h3>
+<p>Inductors that are manufactured with a ferrite core inside their coil are Ferrite core inductor. When these solid metal cores are used in inductors, the changing magnetic field exhibits large eddy currents because of the electrical conductivity of the metal. These currents circulate within the inductors alongside the closed-loop of electric current.</p>
+<p><img alt="Ferrite core inductor" src="../../_images/ind3.PNG" /></p>
+<section id="benefits-of-ferrite-core-inductor">
+<h4>Benefits of Ferrite core inductor<a class="headerlink" href="#benefits-of-ferrite-core-inductor" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>High inductance with low loss</p></li>
+<li><p>High permeability with temperature stability</p></li>
+<li><p>Operates at medium and high frequency</p></li>
+<li><p>Air gap adjustment controls various parameters</p></li>
+<li><p>Provides higher inductance and complete screening</p></li>
+<li><p>Q factor can be adjusted for appropriate frequency</p></li>
+</ul>
+</section>
+</section>
+<section id="ferrite-core-inductor-vs-iron-core-inductor">
+<h3>Ferrite core inductor VS Iron Core Inductor<a class="headerlink" href="#ferrite-core-inductor-vs-iron-core-inductor" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>When there is a requirement for power or better current carrying capacity, iron core inductors make the best choice. The energy handling capacity of a ferrite core inductor will decrease as the flux density of the magnetic field rises, which can happen when load currents rise.</p></li>
+<li><p>Iron core inductors may transfer more energy due to this factor, however, the Q factor may reduce. At higher frequencies, ferrite cores have a larger Q factor but are less efficient in transferring energy.</p></li>
+<li><p>At high frequencies, iron core inductors have high magnetic losses and reach saturation easily whereas ferrites have fewer losses at high frequencies and also have resistance to saturation at higher frequencies.</p></li>
+<li><p>Ferrite inductors are commonly used in applications like RF filters, high-frequency inductors, and power supplies that operate at high frequencies whereas iron core inductors are used in power transformers, audio equipment, and other low-frequency applications where inductance and current-carrying capability are primary concerns.</p></li>
+</ol>
+</section>
+<section id="rf-inductors">
+<h3>RF Inductors<a class="headerlink" href="#rf-inductors" title="Link to this heading">#</a></h3>
+<p>RF inductors are the radio frequency inductors, which are used at high resonant frequencies. These can be multilayered coil inductor or a thin film coated ceramic inductor or some wire wound ceramic inductor. The following figure represents few RF inductors. These inductors are characterized by low current rating and high electrical resistance. But as the high frequencies are used here, the wire resistance increases</p>
+<p><img alt="RF Inductors" src="../../_images/ind4.PNG" /></p>
+</section>
+</section>
+<section id="inductor-applications">
+<h2>Inductor applications<a class="headerlink" href="#inductor-applications" title="Link to this heading">#</a></h2>
+<section id="tuning-circuits">
+<h3>Tuning Circuits<a class="headerlink" href="#tuning-circuits" title="Link to this heading">#</a></h3>
+<p>Inductors are used in tuning circuits to select the desired frequency. In a tuned circuit, a capacitor is connected along with the inductor, either in parallel or series. The frequency of the tuning circuit at which the capacitive reactance is equal to the inductive reactance (<span class="math notranslate nohighlight">\(X_C = X_L\)</span>) is called ‘Resonant Frequency’. Electronic devices such as radio tuning circuits and television use capacitors along with the inductor to modify the frequency and select within multiple channels of frequency.</p>
+</section>
+<section id="sensors">
+<h3>Sensors<a class="headerlink" href="#sensors" title="Link to this heading">#</a></h3>
+<p>Inductive proximity sensors are very reliable in operation and are a contactless sensor. An inductive sensor is a non-contact type of sensor, helpful in the detection of metallic objects. It can sense ferrous as well as non-ferrous materials. The sensing range is up to 100 mm.</p>
+<p><img alt="Sensors" src="../../_images/ind5.PNG" /></p>
+<p>This type of sensor, due to its internal structure, has a certain inductive sensor working principle. It uses a unique generator that produces a certain amplitude of oscillation. When an object consisting of a metallic or ferromagnetic material enters the field of action of the unit, the vibrations begin to change, which indicates the presence of an object. Because of this, the sensors work only with similar materials and are useless in other cases.inductive sensor works for</p>
+<p>When starting work, the limit switch is energized, which contributes to the formation of a magnetic field. It is it that affects the eddy currents, which, in turn, change the amplitude of the oscillations of a working generator.</p>
+<p>The result of all these transformations is an output signal, which can vary depending on the distance between the working sensor and the object under study. Then, using a special device, the analog signal is converted into a logical one.</p>
+<p><img alt="Sensors2" src="../../_images/sensor.JPG" /></p>
+</section>
+<section id="energy-storage">
+<h3>Energy Storage<a class="headerlink" href="#energy-storage" title="Link to this heading">#</a></h3>
+<p>Inductors can store energy for a small period of time because the energy which is being stored as a magnetic field will be gone when the power supply is removed. The energy stored in an inductor is due to the magnetic field created by the current flowing through it. As the current through the inductor changes, the magnetic field also changes, and energy is either stored or released.</p>
+</section>
+<section id="induction-motors">
+<h3>Induction Motors<a class="headerlink" href="#induction-motors" title="Link to this heading">#</a></h3>
+<p>In induction motors, the shaft in the motor will rotate due to the presence of the magnetic field produced due to alternating current. An induction motor works by using electromagnets to create a rotating magnetic field. This field then induces an electric current in the rotor, which creates its own magnetic field. The interaction between the two fields causes the rotor to turn, effectively rotating around the motor.</p>
+<p><img alt="Induction Motors" src="../../_images/ind6.PNG" /></p>
+</section>
+<section id="transformers">
+<h3>Transformers<a class="headerlink" href="#transformers" title="Link to this heading">#</a></h3>
+<p>A combination of multiple inductors with a shared magnetic field can be designed into a transformer. Transformers do not rely on the inductive properties of an electric circuit to transfer energy. Instead, they use magnetic induction, making them more efficient and allowing them to transfer higher voltages with less loss.</p>
+<p><img alt="Transformers" src="../../_images/ind7.PNG" /></p>
+</section>
+<section id="filters">
+<h3>Filters<a class="headerlink" href="#filters" title="Link to this heading">#</a></h3>
+<p>Inductors when combined with capacitors will be used as filters. LC filters refer to circuits consisting of a combination of inductors (L) and capacitors © to cut or pass specific frequency bands of an electric signal. Capacitors block DC currents but pass AC more easily at higher frequencies. Conversely, inductors pass DC currents as they are, but pass AC less easily at higher frequencies.</p>
+<p><img alt="Filters" src="../../_images/ind8.PNG" /></p>
+<section id="basic-types-of-inductive-filters">
+<h4>Basic Types of Inductive Filters<a class="headerlink" href="#basic-types-of-inductive-filters" title="Link to this heading">#</a></h4>
+</section>
+<section id="low-pass-filters">
+<h4>Low-Pass Filters<a class="headerlink" href="#low-pass-filters" title="Link to this heading">#</a></h4>
+<p>Low-pass filters are filter circuits that pass DC and low-frequency signals and cut high-frequency signals. They are the most widely used filter circuits and are mainly used to cut high-frequency noise. In audio, they are also used to cut treble/mid-range sound components of bass speakers.</p>
+<p><img alt="Low-Pass Filters" src="../../_images/fig1.JPG" /></p>
+</section>
+<section id="high-pass-filters">
+<h4>High-pass Filters<a class="headerlink" href="#high-pass-filters" title="Link to this heading">#</a></h4>
+<p>High-pass filters are filter circuits that cut DC and low-frequency signals and pass high-frequency signals. They are used to cut low-frequency noise in the audible range, cut mid-range/bass sound components of treble speakers, etc.</p>
+<p><img alt="High-pass Filters" src="../../_images/fig2.JPG" /></p>
+</section>
+<section id="band-pass-filters">
+<h4>Band-pass Filters<a class="headerlink" href="#band-pass-filters" title="Link to this heading">#</a></h4>
+<p>Band-pass filters are filter circuits that pass only signals at a specific frequency and cut signals at other frequencies. They are used for radio tuning (frequency adjustment) or for cutting the bass/treble sound components of mid-range speakers, etc.</p>
+<p><img alt="Band-pass Filters" src="../../_images/fig3.JPG" /></p>
+</section>
+</section>
+<section id="chokes">
+<h3>Chokes<a class="headerlink" href="#chokes" title="Link to this heading">#</a></h3>
+<p>Choke is an inductor used to block higher-frequency alternating currents (AC) while passing direct current (DC) and lower-frequency ACs in a circuit. A choke usually consists of a coil of insulated wire often wound on a magnetic core, although some consist of a doughnut-shaped ferrite bead strung on a wire. The choke’s impedance increases with frequency. Its low electrical resistance passes both AC and DC with little power loss, but its reactance limits the amount of AC passed.</p>
+<p><img alt="Chokes" src="../../_images/ind9.PNG" /></p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>So we learnthat an inductor, also known as a coil, choke, or reactor, is a passive electrical component that stores energy in a magnetic field when current passes through it and types of it.</p>
+</section>
+<section id="refrences">
+<h2>Refrences<a class="headerlink" href="#refrences" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Renesas : <a class="reference external" href="https://www.renesas.com/en/support/engineer-school/electronic-circuits-01-passive-elements">https://www.renesas.com/en/support/engineer-school/electronic-circuits-01-passive-elements</a></p></li>
+<li><p>Medium : <a class="reference external" href="https://medium.com/&#64;karishmaagarwal2505/modeling-inductors-non-linear-model-for-circuit-analysis-b3dd61b8ab68">https://medium.com/&#64;karishmaagarwal2505/modeling-inductors-non-linear-model-for-circuit-analysis-b3dd61b8ab68</a></p></li>
+<li><p>Elprocus : <a class="reference external" href="https://www.elprocus.com/iron-core-inductor/">https://www.elprocus.com/iron-core-inductor/</a></p></li>
+<li><p>Alliedcomponents : <a class="reference external" href="https://www.alliedcomponents.com/blog/ferrite-core-inductors">https://www.alliedcomponents.com/blog/ferrite-core-inductors</a></p></li>
+<li><p>eepower : <a class="reference external" href="https://eepower.com/technical-articles/introduction-to-inductor-filter-types-and-applications/#">https://eepower.com/technical-articles/introduction-to-inductor-filter-types-and-applications/#</a></p></li>
+<li><p>wikipedia : <a class="reference external" href="https://en.wikipedia.org/wiki/Choke_(electronics)">https://en.wikipedia.org/wiki/Choke_(electronics)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=gJYiOetl7sM">https://www.youtube.com/watch?v=gJYiOetl7sM</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=e26A3-V19Nw">https://www.youtube.com/watch?v=e26A3-V19Nw</a></p></li>
+<li><p>Engineering Electromagnetics. John Buck and William H. Hayt</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Linear_Non_Inductor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Complex Number in Phasors</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-inductor">What is inductor ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-explanation-about-passive-elements">Brief explanation about passive elements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-inductors">Linear Inductors:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-variant-and-time-invariant-linear-inductors">Time-variant and Time-invariant Linear Inductors :</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-invariant-inductors">Time-invariant Inductors:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tevnan-and-norton-with-inductors">Tevnan and Norton with inductors :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#current-cant-jump-from-a-value-to-other-incidentally-in-inductor">current can’t jump from a value to other incidentally in inductor:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-inductors-characteristic-curve">Linear inductors characteristic curve</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-variant-inductors">Time-variant Inductors:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-inductors">Non-Linear Inductors:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-explanation-about-magnetic-saturation">Brief explanation about Magnetic saturation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saturation-effects">Saturation Effects:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q-factor"><span class="math notranslate nohighlight">\(Q\)</span> factor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-model">Non-linear Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-explanation">Parameters explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-explanation">Functions explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-and-visualization">Simulation and Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-vs-current">Flux vs Current:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-explanation">Chart explanation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inductance-vs-current">Inductance vs Current:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Chart explanation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-inductor">Types of inductor</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#air-core-inductor">Air-core inductor:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iron-core-inductor">Iron Core Inductor:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-iron-core-inductor">Benefits of Iron Core Inductor</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ferrite-core-inductor">Ferrite core inductor:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-ferrite-core-inductor">Benefits of Ferrite core inductor</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ferrite-core-inductor-vs-iron-core-inductor">Ferrite core inductor VS Iron Core Inductor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rf-inductors">RF Inductors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor-applications">Inductor applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-circuits">Tuning Circuits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensors">Sensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-storage">Energy Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#induction-motors">Induction Motors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformers">Transformers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filters">Filters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-of-inductive-filters">Basic Types of Inductive Filters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#low-pass-filters">Low-Pass Filters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#high-pass-filters">High-pass Filters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#band-pass-filters">Band-pass Filters</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chokes">Chokes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

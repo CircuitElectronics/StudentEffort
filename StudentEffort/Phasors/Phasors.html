@@ -1,0 +1,1034 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Phasors &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Phasors/Phasors';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="Linear and Non-Linear inductors" href="../Linear_Non_Inductor/Linear_Non_Inductor.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Phasors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Phasors/Phasors.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Phasors/Phasors.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Phasors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-diagrams">Phasor Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-diagrams-for-a-sinusoidal-waveform">Phasor Diagrams for a Sinusoidal Waveform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference-of-a-sinusoidal-waveform">Phase Difference of a Sinusoidal Waveform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-diagram-of-a-sinusoidal-waveform">Phasor Diagram of a Sinusoidal Waveform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-addition-of-phasor-diagrams">Phasor Addition of Phasor Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-addition-of-two-phasors">Phasor Addition of two Phasors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-a-complex-sinusoid">Definition of a Complex Sinusoid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-addition-using-rectangular-form">Phasor Addition using Rectangular Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-subtraction-of-phasor-diagrams">Phasor Subtraction of Phasor Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-3-phase-phasor-diagrams">The 3-Phase Phasor Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-phase-voltage-equations">Three-phase Voltage Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-and-phasors">Complex Numbers and Phasors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-rotation-of-the-j-operator">Vector Rotation of the j-operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-using-the-rectangular-form">Complex Numbers using the Rectangular Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-using-the-complex-or-s-plane">Complex Numbers using the Complex or s-plane</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-quadrant-argand-diagram">Four Quadrant Argand Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction-of-complex-numbers">Addition and Subtraction of Complex Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-example-no1">Complex Numbers Example No1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication-and-division-of-complex-numbers">Multiplication and Division of Complex Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-complex-conjugate">The Complex Conjugate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-using-polar-form">Complex Numbers using Polar Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-rectangular-form-and-polar-form">Converting between Rectangular Form and Polar Form</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-polar-form-into-rectangular-form-pr">Converting Polar Form into Rectangular Form, ( P→R )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-rectangular-form-into-polar-form-rp">Converting Rectangular Form into Polar Form, ( R→P )</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-form-multiplication-and-division">Polar Form Multiplication and Division</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication-in-polar-form">Multiplication in Polar Form</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division-in-polar-form">Division in Polar Form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-using-exponential-form">Complex Numbers using Exponential Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-notation">Phasor Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="phasors">
+<h1>Phasors<a class="headerlink" href="#phasors" title="Link to this heading">#</a></h1>
+<p>Author : Emad Etehadi</p>
+<section id="phasor-diagrams">
+<h2>Phasor Diagrams<a class="headerlink" href="#phasor-diagrams" title="Link to this heading">#</a></h2>
+<p>Phasor diagrams present a graphical representation, plotted on a coordinate system, of the phase relationship between the voltages and currents within passive components or a whole circuit. Generally, phasors are defined relative to a reference phasor which is always points to the right along the x-axis.
+Sinusoidal waveforms of the same frequency can have a Phase Difference between themselves which represents the angular difference of the two sinusoidal waveforms. Also the terms “lead” and “lag” as well as “in-phase” and “out-of-phase” are commonly used to indicate the relationship of one sinusoidal waveform to another. The generalised sinusoidal expression given as: A(t) = Am sin(ωt ± Φ) represents the sinusoid in the time-domain form.
+But when presented mathematically in this way it can sometimes be difficult to visualise the angular or phasor difference between the two (or more) sinusoidal waveforms. One way to overcome this problem is to represent the sinusoids graphically within the spacial or phasor-domain form by using Phasor Diagrams, and this is achieved by the rotating vector method.
+Basically a rotating vector, also regarded as a “Phase Vector“, is a scaled line whose length represents an AC quantity that has both magnitude (“peak amplitude”) and direction (“phase”) and which has been “frozen” at some point in time.
+A vector that has an arrow head at one end which signifies partly the maximum value of the vector quantity ( Vm or Im ) and partly the end of the vector which rotates.
+Generally, vectors are assumed to pivot at one end around a fixed zero point known as the “point of origin”. The arrowed end represents the quantity which freely rotates in an anti-clockwise direction at an angular velocity, ( ω ). This anti-clockwise rotation of the vector is considered to be a positive rotation. Likewise, a clockwise rotation is considered to be a negative rotation.
+Although the both the terms vectors and phasors are used to describe a rotating line that itself has both magnitude and direction, the main difference between the two is that a vectors magnitude is the “peak value” of the sinusoid while a phasors complex magnitude is the “rms value” of the sinusoid as they deal with AC circuits which have reactance. In both cases the phase angle, direction and angular velocity remains the same.
+The phase of an alternating quantity at any instant in time can be represented by phasor diagrams. Thus phasor diagrams can be thought of as representing “functions of time”. A complete sine wave can be constructed by a single vector rotating anti-clockwise at an angular velocity of ω = 2πƒ, where ƒ denotes the frequency of the waveform. Then a Phasor is a quantity that has both “Magnitude” and “Direction”.
+Also, vectors obey the parallelogram law of addition and subtraction so can be added together to produce a vector sum which rotates anticlockwise at an angular speed. Phasors on the otherhand represent the mathematical: Rectangular, Polar or Exponential form. For example, (a + jb). Thus, phasor notation defines the effective (rms) magnitude of voltages and currents.
+Generally, when constructing a phasor diagram, angular velocity of a sine wave is always assumed to be: ω in rad/sec. Consider the phasor diagram below.</p>
+<p><img alt="Alt text" src="../../_images/Phasor-Diagram.gif" /></p>
+</section>
+<section id="phasor-diagrams-for-a-sinusoidal-waveform">
+<h2>Phasor Diagrams for a Sinusoidal Waveform<a class="headerlink" href="#phasor-diagrams-for-a-sinusoidal-waveform" title="Link to this heading">#</a></h2>
+<p>As the single vector rotates in an anti-clockwise direction, its tip at point A will rotate one complete revolution of 360o or 2π representing one complete cycle.
+If the length of its moving tip is transferred at different angular intervals in time to a graph as shown above, a sinusoidal waveform would be drawn starting at the left with zero time. Each position along the horizontal axis indicates the time that has elapsed since zero time, t = 0. When the vector is horizontal the tip of the vector represents the angles at 0o, 180o and at 360o.
+Likewise, when the tip of the vector is vertical it represents the positive peak value, ( +Am ) at 90o or π/2 and the negative peak value, ( -Am ) at 270o or 3π/2. Then the time axis of the waveform represents the angle either in degrees or radians through which the phasor has moved. So we can say that a phasor represent a scaled voltage or current value of a rotating vector which is “frozen” at some point in time, ( t ) and in our example above, this is at an angle of 30o.
+Sometimes when we are analysing alternating waveforms we may need to know the position of the phasor, representing the alternating quantity at some particular point especially when we want to compare two different waveforms on the same axis. For example, voltage and current. We have assumed in the waveform above that the waveform starts at time t = 0 with a corresponding phase angle in either degrees or radians.</p>
+<p><img alt="Alt text" src="../../_images/img3.png" /></p>
+<p>But if a second waveform starts to the left or to the right of this zero point or we want to represent in phasor notation the relationship between the two waveforms then we will need to take into account this phase difference, Φ of the waveform. Consider the diagram below from the previous Phase Difference tutorial.</p>
+</section>
+<section id="phase-difference-of-a-sinusoidal-waveform">
+<h2>Phase Difference of a Sinusoidal Waveform<a class="headerlink" href="#phase-difference-of-a-sinusoidal-waveform" title="Link to this heading">#</a></h2>
+<p><img alt="Alt text" src="../../_images/img_14.png" /></p>
+<p>The generalised mathematical expression to define these two sinusoidal quantities will be written as:
+$<span class="math notranslate nohighlight">\(  
+v(t) = V_m \sin(\omega t)   
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[  
+i(t) = I_m \sin(\omega t - \phi)  
+\]</div>
+<p>The current, i is lagging the voltage, v by angle Φ and in our example above this is 30o. So the difference between the two phasors representing the two sinusoidal quantities is angle Φ and the resulting phasor diagram will be.</p>
+</section>
+<section id="phasor-diagram-of-a-sinusoidal-waveform">
+<h2>Phasor Diagram of a Sinusoidal Waveform<a class="headerlink" href="#phasor-diagram-of-a-sinusoidal-waveform" title="Link to this heading">#</a></h2>
+<p><img alt="Alt text" src="../../_images/img_21.png" /></p>
+<p>The phasor diagram is drawn corresponding to time zero ( t = 0 ) on the horizontal axis. The lengths of the phasors are proportional to the values of the voltage, ( V ) and the current, ( I ) at the instant in time that the phasor diagram is drawn.
+The current phasor lags the voltage phasor by the angle, Φ, as the two phasors rotate in an anticlockwise direction as stated earlier, therefore the angle, Φ is also measured in the same anticlockwise direction.</p>
+<p><img alt="Alt text" src="../../_images/img_31.png" /></p>
+<p>If however, the waveforms are frozen at time, t = 30o, the corresponding phasor diagram would look like the one shown on the right. Once again the current phasor lags behind the voltage phasor as the two waveforms are of the same frequency.However, as the current waveform is now crossing the horizontal zero axis line at this instant in time we can use the current phasor as our new reference and correctly say that the voltage phasor is “leading” the current phasor by angle, Φ. Either way, one phasor is designated as the reference phasor and all the other phasors will be either leading or lagging with respect to this reference.</p>
+</section>
+<section id="phasor-addition-of-phasor-diagrams">
+<h2>Phasor Addition of Phasor Diagrams<a class="headerlink" href="#phasor-addition-of-phasor-diagrams" title="Link to this heading">#</a></h2>
+<p>One good use of phasors is for the summing of sinusoids of the same frequency. Sometimes it is necessary when studying sinusoids to add together two alternating waveforms, for example in an AC series circuit, that are not in-phase with each other.
+If they are “in-phase” that is, there is no phase shift then they can be added together in the same way as DC values to find the algebraic sum of the two vectors. For example, if two voltages of say 50 volts and 25 volts respectively are together “in-phase”, they will add or sum together to form one voltage of 75 volts (50 + 25).
+If however, they are not in-phase that is, they do not have identical directions or starting point then the phase angle between them needs to be taken into account so they are added together using phasor diagrams to determine their Resultant Phasor or Vector Sum by using the parallelogram law.
+Consider two AC voltages, V1 having a peak voltage of 20 volts, and V2 having a peak voltage of 30 volts where V1 leads V2 by 60o.</p>
+</section>
+<section id="phasor-addition-of-two-phasors">
+<h2>Phasor Addition of two Phasors<a class="headerlink" href="#phasor-addition-of-two-phasors" title="Link to this heading">#</a></h2>
+<p>The total voltage, VT of the two voltages can be found by firstly drawing a phasor diagram representing the two vectors and then constructing a parallelogram in which two of the sides are the voltages, V1 and V2 as shown below.</p>
+<p><img alt="Alt text" src="../../_images/img_41.png" /></p>
+<p>By drawing out the two phasors to scale onto graph paper, their phasor sum V1 + V2 can be easily found by measuring the length of the diagonal line, known as the “resultant r-vector”, from the zero point to the intersection of the construction lines 0-A. The downside of this graphical method is that it is time consuming when drawing the phasors to scale.
+Also, while this graphical method gives an answer which is accurate enough for most purposes, it may produce an error if not drawn accurately or correctly to scale. Then one way to ensure that the correct answer is always obtained is by an analytical method.
+Mathematically we can add the two voltages together by firstly finding their “vertical” and “horizontal” directions, and from this we can then calculate both the “vertical” and “horizontal” components for the resultant “r vector”, VT. This analytical method which uses the cosine and sine rule to find this resultant value is commonly called the Rectangular Form.</p>
+<p><img alt="Alt text" src="../../_images/Sum-of-Phasors.gif" /></p>
+</section>
+<section id="definition-of-a-complex-sinusoid">
+<h2>Definition of a Complex Sinusoid<a class="headerlink" href="#definition-of-a-complex-sinusoid" title="Link to this heading">#</a></h2>
+<p>n the rectangular form, the phasor is divided up into a real part, x and an imaginary part, y forming the generalised expression  Z = x ± jy. ( we will discuss this in more detail in the next tutorial ). This then gives us a mathematical expression that represents both the magnitude and the phase of the sinusoidal voltage as:
+$<span class="math notranslate nohighlight">\(  
+v = V_m \cos(\phi) + j V_m (\sin(\phi))  
+\)</span><span class="math notranslate nohighlight">\(
+So the addition of two vectors, A and B using the previous generalised expression is as follows:
+\)</span><span class="math notranslate nohighlight">\(  
+A = x + jy \quad B = w + jz  
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[  
+A + B = (x + w) + j(y + z)  
+\]</div>
+</section>
+<section id="phasor-addition-using-rectangular-form">
+<h2>Phasor Addition using Rectangular Form<a class="headerlink" href="#phasor-addition-using-rectangular-form" title="Link to this heading">#</a></h2>
+<p>Voltage, V2 of 30 volts points in the reference direction along the horizontal zero axis, then it has a horizontal component but no vertical component as follows.
+• Horizontal Component = 30 cos 0o = 30 volts
+• Vertical Component = 30 sin 0o = 0 volts
+This then gives us the rectangular expression for voltage V2 of:  30 + j0
+Voltage, V1 of 20 volts leads voltage, V2 by 60o, then it has both horizontal and vertical components as follows.
+• Horizontal Component = 20 cos 60o = 20 x 0.5 = 10 volts
+• Vertical Component = 20 sin 60o = 20 x 0.866 = 17.32 volts
+This then gives us the rectangular expression for voltage V1 of:  10 + j17.32
+The resultant voltage, VT is found by adding together the horizontal and vertical components as follows.
+VHorizontal = sum of real parts of V1 and V2 = 30 + 10 = 40 volts
+VVertical = sum of imaginary parts of V1 and V2 = 0 + 17.32 = 17.32 volts
+Now that both the real and imaginary values have been found the magnitude of voltage, VT is determined by simply using Pythagoras’s Theorem for a 90o triangle as follows.
+$<span class="math notranslate nohighlight">\(  
+V_T = \sqrt{(\text{Real or Horizontal Component})^2 + (\text{Imaginary or Vertical Component})^2}  
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[  
+V_T = \sqrt{40^2 + 17.32^2}  
+\]</div>
+<div class="math notranslate nohighlight">
+\[  
+\therefore V_T = 43.6 \text{ volts}  
+\]</div>
+<p>Then the resulting phasor diagram will be:</p>
+<p><img alt="Alt text" src="../../_images/img_51.png" /></p>
+</section>
+<section id="phasor-subtraction-of-phasor-diagrams">
+<h2>Phasor Subtraction of Phasor Diagrams<a class="headerlink" href="#phasor-subtraction-of-phasor-diagrams" title="Link to this heading">#</a></h2>
+<p>Phasor subtraction is very similar to the above rectangular method of addition, except this time the vector difference is the other diagonal of the parallelogram between the two voltages of V1 and V2 as shown.</p>
+<p><img alt="Alt text" src="../../_images/img_61.png" /></p>
+<p>This time instead of “adding” together both the horizontal and vertical components we take them away, subtraction.
+$<span class="math notranslate nohighlight">\(  
+A = x + jy \quad B = w + jz  
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[  
+A - B = (x - w) + j(y - z)  
+\]</div>
+</section>
+<section id="the-3-phase-phasor-diagrams">
+<h2>The 3-Phase Phasor Diagrams<a class="headerlink" href="#the-3-phase-phasor-diagrams" title="Link to this heading">#</a></h2>
+<p>Previously we have only looked at single-phase AC waveforms where a single multi-turn coil rotates within a magnetic field. But if three identical coils each with the same number of coil turns are placed at an electrical angle of 120o to each other on the same rotor shaft, a three-phase voltage supply would be generated.
+A balanced three-phase voltage supply consists of three individual sinusoidal voltages that are all equal in magnitude and frequency but are out-of-phase with each other by exactly 120o electrical degrees.
+Standard practice is to colour code the three phases as Red, Yellow and Blue to identify each individual phase with the red phase as the reference phase. The normal sequence of rotation for a three phase supply is Red followed by Yellow followed by Blue, ( R, Y, B ).
+As with the single-phase phasors above, the phasors representing a three-phase system also rotate in an anti-clockwise direction around a central point as indicated by the arrow marked ω in rad/s. The phasors for a three-phase balanced star or delta connected system are shown below.</p>
+<p><img alt="Alt text" src="../../_images/img_7.png" /></p>
+<p>The phase voltages are all equal in magnitude but only differ in their phase angle. The three windings of the coils are connected together at points, a1, b1 and c1 to produce a common neutral connection for the three individual phases. Then if the red phase is taken as the reference phase each individual phase voltage can be defined with respect to the common neutral as.</p>
+</section>
+<section id="three-phase-voltage-equations">
+<h2>Three-phase Voltage Equations<a class="headerlink" href="#three-phase-voltage-equations" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[  
+V_{RN} = V_m \sin(\theta)  
+\]</div>
+<div class="math notranslate nohighlight">
+\[  
+V_{YN} = V_m \sin(\theta - 120^\circ)  
+\]</div>
+<div class="math notranslate nohighlight">
+\[  
+V_{BN} = V_m \sin(\theta - 240^\circ) \quad \text{or} \quad V_{BN} = V_m \sin(\theta + 120^\circ)  
+\]</div>
+<p>If the red phase voltage, VRN is taken as the reference voltage as stated earlier then the phase sequence will be R – Y – B so the voltage in the yellow phase lags VRN by 120o, and the voltage in the blue phase lags VYN also by 120o. But we can also say the blue phase voltage, VBN leads the red phase voltage, VRN by 120o.
+One final point about a three-phase system. As the three individual sinusoidal voltages have a fixed relationship between each other of 120o they are said to be “balanced” therefore, in a set of balanced three phase voltages their phasor sum will always be zero as:  Va + Vb + Vc = 0</p>
+</section>
+<section id="complex-numbers-and-phasors">
+<h2>Complex Numbers and Phasors<a class="headerlink" href="#complex-numbers-and-phasors" title="Link to this heading">#</a></h2>
+<p>But real numbers are not the only kind of numbers we need to use especially when dealing with frequency dependent sinusoidal sources and vectors. As well as using normal or real numbers, Complex Numbers were introduced to allow complex equations to be solved with numbers that are the square roots of negative numbers, <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span> .
+In electrical engineering this type of number is called an “imaginary number” and to distinguish an imaginary number from a real number the letter ” j ” known commonly in electrical engineering as the j-operator, is used. Thus the letter “j” is placed in front of a real number to signify its imaginary number operation.
+Examples of imaginary numbers are: j3, j12, j100 etc. Then a complex number consists of two distinct but very much related parts, a ” Real Number ” plus an ” Imaginary Number “.
+Complex Numbers represent points in a two dimensional complex or s-plane that are referenced to two distinct axes. The horizontal axis is called the “real axis” while the vertical axis is called the “imaginary axis”. The real and imaginary parts of a complex number are abbreviated as Re(z) and Im(z), respectively.
+Complex numbers that are made up of real (the active component) and imaginary (the reactive component) numbers can be added, subtracted and used in exactly the same way as elementary algebra is used to analyse DC Circuits.
+The rules and laws used in mathematics for the addition or subtraction of imaginary numbers are the same as for real numbers, j2 + j4 = j6 etc. The only difference is in multiplication because two imaginary numbers multiplied together becomes a negative real number. Real numbers can also be thought of as a complex number but with a zero imaginary part labelled j0.
+The j-operator has a value exactly equal to <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span>, so successive multiplication of “ j “, ( j x j ) will result in j having the following values of, -1, -j and +1. As the j-operator is commonly used to indicate the anticlockwise rotation of a vector, each successive multiplication or power of “ j “, j2, j3 etc, will force the vector to rotate through a fixed angle of 90’ in an anticlockwise direction as shown below. Likewise, if the multiplication of the vector results in a  -j  operator then the phase shift will be -90o, i.e. a clockwise rotation.</p>
+</section>
+<section id="vector-rotation-of-the-j-operator">
+<h2>Vector Rotation of the j-operator<a class="headerlink" href="#vector-rotation-of-the-j-operator" title="Link to this heading">#</a></h2>
+<p><img alt="Alt text" src="../../_images/img_8.png" />
+<strong>90° rotation:</strong><br />
+$<span class="math notranslate nohighlight">\(  
+j^1 = \sqrt{-1} = +j  
+\)</span>$</p>
+<p><strong>180° rotation:</strong><br />
+$<span class="math notranslate nohighlight">\(  
+j^2 = \left(\sqrt{-1}\right)^2 = -1  
+\)</span>$</p>
+<p><strong>270° rotation:</strong><br />
+$<span class="math notranslate nohighlight">\(  
+j^3 = \left(\sqrt{-1}\right)^3 = -j  
+\)</span>$</p>
+<p><strong>360° rotation:</strong><br />
+$<span class="math notranslate nohighlight">\(  
+j^4 = \left(\sqrt{-1}\right)^4 = +1  
+\)</span>$<br />
+So by multiplying an imaginary number by j2 will rotate the vector by  180o anticlockwise, multiplying by j3 rotates it  270o and by j4 rotates it  360o or back to its original position. Multiplication by j10 or by j30 will cause the vector to rotate anticlockwise by the appropriate amount. In each successive rotation, the magnitude of the vector always remains the same.</p>
+</section>
+<section id="complex-numbers-using-the-rectangular-form">
+<h2>Complex Numbers using the Rectangular Form<a class="headerlink" href="#complex-numbers-using-the-rectangular-form" title="Link to this heading">#</a></h2>
+<p>In Electrical Engineering there are different ways to represent a complex number either graphically or mathematically. One such way that uses the cosine and sine rule is called the Cartesian or Rectangular Form.
+In the last tutorial about Phasors, we saw that a complex number is represented by a real part and an imaginary part that takes the generalised form of:
+$<span class="math notranslate nohighlight">\(  
+Z = x + jy  
+\)</span><span class="math notranslate nohighlight">\(
+Where:
+  Z  –  is the Complex Number representing the Vector
+  x  –  is the Real part or the Active component
+  y  –  is the Imaginary part or the Reactive component
+  j  –  is defined by \)</span>\sqrt{-1}$</p>
+</section>
+<section id="complex-numbers-using-the-complex-or-s-plane">
+<h2>Complex Numbers using the Complex or s-plane<a class="headerlink" href="#complex-numbers-using-the-complex-or-s-plane" title="Link to this heading">#</a></h2>
+<p>In the rectangular form, a complex number can be represented as a point on a two dimensional plane called the complex or s-plane. So for example, Z = 6 + j4 represents a single point whose coordinates represent 6 on the horizontal real axis and 4 on the vertical imaginary axis as shown.</p>
+<p><img alt="Alt text" src="../../_images/img_9.png" /></p>
+</section>
+<section id="four-quadrant-argand-diagram">
+<h2>Four Quadrant Argand Diagram<a class="headerlink" href="#four-quadrant-argand-diagram" title="Link to this heading">#</a></h2>
+<p>But as both the real and imaginary parts of a complex number in the rectangular form can be either a positive number or a negative number, then both the real and imaginary axis must also extend in both the positive and negative directions. This then produces a complex plane with four quadrants called an Argand Diagram as shown below.</p>
+<p><img alt="Alt text" src="../../_images/img_101.png" /></p>
+<p>On the Argand diagram, the horizontal axis represents all positive real numbers to the right of the vertical imaginary axis and all negative real numbers to the left of the vertical imaginary axis. All positive imaginary numbers are represented above the horizontal axis while all the negative imaginary numbers are below the horizontal real axis. This then produces a two dimensional complex plane with four distinct quadrants labelled, Q-I, Q-II, Q-III, and Q-IV.
+The Argand diagram above can also be used to represent a rotating phasor as a point in the complex plane whose radius is given by the magnitude of the phasor will draw a full circle around it for every 2π/ω seconds.
+Then we can extend this idea further to show the definition of a complex number in both the polar and rectangular form for rotations of 90’.
+$<span class="math notranslate nohighlight">\(  
+\begin{align*}  
+0^\circ &amp; = \pm 360^\circ = +1 = 1 \angle 0^\circ = 1 + j0 \\
++90^\circ &amp; = +\sqrt{-1} = +j = 1 \angle +90^\circ = 0 + j1 \\
+-90^\circ &amp; = -\sqrt{-1} = -j = 1 \angle -90^\circ = 0 - j1 \\
+\pm 180^\circ &amp; = \left(\sqrt{-1}\right)^2 = -1 = 1 \angle \pm 180^\circ = -1 + j0  
+\end{align*}  
+\)</span><span class="math notranslate nohighlight">\(
+Complex Numbers can also have “zero” real or imaginary parts such as: Z = 6 + j0 or Z = 0 + j4. In this case the points are plotted directly onto the real or imaginary axis. Also, the angle of a complex number can be calculated using simple trigonometry to calculate the angles of right-angled triangles, or measured anti-clockwise around the Argand diagram starting from the positive real axis.
+Then angles between 0 and 90o will be in the first quadrant ( I ), angles ( θ ) between 90 and 180o in the second quadrant ( II ). The third quadrant ( III ) includes angles between 180 and 270o while the fourth and final quadrant ( IV ) which completes the full circle, includes the angles between 270 and 360o and so on. In all the four quadrants the relevant angles can be found from:
+\)</span><span class="math notranslate nohighlight">\(  
+\tan^{-1} \left( \frac{\text{imaginary component}}{\text{real component}} \right)  
+\)</span>$</p>
+</section>
+<section id="addition-and-subtraction-of-complex-numbers">
+<h2>Addition and Subtraction of Complex Numbers<a class="headerlink" href="#addition-and-subtraction-of-complex-numbers" title="Link to this heading">#</a></h2>
+<p>The addition or subtraction of complex numbers can be done either mathematically or graphically in rectangular form. For addition, the real parts are firstly added together to form the real part of the sum, and then the imaginary parts to form the imaginary part of the sum and this process is as follows using two complex numbers A and B as examples.
+$<span class="math notranslate nohighlight">\(  
+\begin{align*}  
+A &amp; = x + jy \\
+B &amp; = w + jz \\
+\\
+A + B &amp; = (x + w) + j(y + z) \\
+A - B &amp; = (x - w) + j(y - z)  
+\end{align*}  
+\)</span>$</p>
+</section>
+<section id="complex-numbers-example-no1">
+<h2>Complex Numbers Example No1<a class="headerlink" href="#complex-numbers-example-no1" title="Link to this heading">#</a></h2>
+<p>Two vectors are defined as, A = 4 + j1 and B = 2 + j3 respectively. Determine the sum and difference of the two vectors in both rectangular ( a + jb ) form and graphically as an Argand Diagram.
+Mathematical Addition and Subtraction:
+Addition:
+$<span class="math notranslate nohighlight">\(  
+\begin{align*}  
+A + B &amp; = (4 + j1) + (2 + j3) \\
+&amp; = (4 + 2) + j(1 + 3) \\
+&amp; = 6 + j4  
+\end{align*}  
+\)</span><span class="math notranslate nohighlight">\(
+Subtraction:
+\)</span><span class="math notranslate nohighlight">\(  
+\begin{align*}  
+A - B &amp; = (4 + j1) - (2 + j3) \\
+&amp; = (4 - 2) + j(1 - 3) \\
+&amp; = 2 - j2 \\
+\\
+A + B &amp; = (4 - 2) + j(1 - 3) \\
+&amp; = 2 - j2  
+\end{align*}  
+\)</span>$
+Graphical Addition and Subtraction:</p>
+<p><img alt="Alt text" src="../../_images/img_111.png" /></p>
+</section>
+<section id="multiplication-and-division-of-complex-numbers">
+<h2>Multiplication and Division of Complex Numbers<a class="headerlink" href="#multiplication-and-division-of-complex-numbers" title="Link to this heading">#</a></h2>
+<p>The multiplication of complex numbers in the rectangular form follows more or less the same rules as for normal algebra along with some additional rules for the successive multiplication of the j-operator where: j2 = -1. So for example, multiplying together our two vectors from above of A = 4 + j1 and B = 2 + j3 will give us the following result.
+$<span class="math notranslate nohighlight">\(  
+\begin{align*}  
+A \times B &amp; = (4 + j1)(2 + j3) \\
+           &amp; = 8 + j12 + j2 + j^2 3 \\
+           &amp; \text{but } j^2 = -1, \\
+           &amp; = 8 + j4 - 3 \\
+           &amp; = 5 + j4  
+\end{align*}  
+\)</span><span class="math notranslate nohighlight">\(
+Mathematically, the division of complex numbers in rectangular form is a little more difficult to perform as it requires the use of the denominators conjugate function to convert the denominator of the equation into a real number. This is called “rationalising”. Then the division of complex numbers is best carried out using “Polar Form”, which we will look at later. However, as an example in rectangular form lets find the value of vector A divided by vector B.
+\)</span><span class="math notranslate nohighlight">\(  
+\frac{A}{B} = \frac{4 + j1}{2 + j3}  
+\)</span><span class="math notranslate nohighlight">\(  
+\)</span>\text{Multiply top &amp; bottom by the Conjugate of } 2 + j3:<span class="math notranslate nohighlight">\(  
+\)</span><span class="math notranslate nohighlight">\(  
+\frac{4 + j1 \times (2 - j3)}{2 + j3 \times (2 - j3)} = \frac{8 - j12 + j2 - j^2 3}{4 - j6 + j6 - j^2 9}   
+\)</span><span class="math notranslate nohighlight">\(  
+\)</span>\text{Since } j^2 = -1:<span class="math notranslate nohighlight">\(  
+\)</span><span class="math notranslate nohighlight">\(  
+= \frac{8 - j0 + 3}{4 + 9} = \frac{11 - j0}{13}  
+\)</span><span class="math notranslate nohighlight">\(  
+\)</span><span class="math notranslate nohighlight">\(  
+= \frac{11}{13} + \frac{-j0}{13} = 0.85 - j0.77  
+\)</span>$</p>
+</section>
+<section id="the-complex-conjugate">
+<h2>The Complex Conjugate<a class="headerlink" href="#the-complex-conjugate" title="Link to this heading">#</a></h2>
+<p>The Complex Conjugate, or simply Conjugate of a complex number is found by reversing the algebraic sign of the complex numbers imaginary number only while keeping the algebraic sign of the real number the same and to identify the complex conjugate of z the symbol z is used. For example, the conjugate of z = 6 + j4 is z = 6 – j4, likewise the conjugate of z = 6 – j4 is z = 6 + j4.
+The points on the Argand diagram for a complex conjugate have the same horizontal position on the real axis as the original complex number, but opposite vertical positions. Thus, complex conjugates can be thought of as a reflection of a complex number. The following example shows a complex number, 6 + j4 and its conjugate in the complex plane.
+Conjugate Complex Numbers:</p>
+<p><img alt="Alt text" src="../../_images/img_121.png" /></p>
+<p>The sum of a complex number and its complex conjugate will always be a real number as we have seen above. Then the addition of a complex number and its conjugate gives the result as a real number or active component only, while their subtraction gives an imaginary number or reactive component only. The conjugate of a complex number is an important element used in Electrical Engineering to determine the apparent power of an AC circuit using rectangular form.</p>
+</section>
+<section id="complex-numbers-using-polar-form">
+<h2>Complex Numbers using Polar Form<a class="headerlink" href="#complex-numbers-using-polar-form" title="Link to this heading">#</a></h2>
+<p>Unlike rectangular form which plots points in the complex plane, the Polar Form of a complex number is written in terms of its magnitude and angle. Thus, a polar form vector is presented as:  Z = A ∠±θ, where: Z is the complex number in polar form, A is the magnitude or modulo of the vector and θ is its angle or argument of A which can be either positive or negative. The magnitude and angle of the point still remains the same as for the rectangular form above, this time in polar form the location of the point is represented in a “triangular form” as shown below.</p>
+<p><img alt="Alt text" src="../../_images/img_131.png" /></p>
+<p>As the polar representation of a point is based around the triangular form, we can use simple geometry of the triangle and especially trigonometry and Pythagoras’s Theorem on triangles to find both the magnitude and the angle of the complex number. As we remember from school, trigonometry deals with the relationship between the sides and the angles of triangles so we can describe the relationships between the sides as:
+$<span class="math notranslate nohighlight">\(  
+A^2 = x^2 + y^2  
+\)</span><span class="math notranslate nohighlight">\(  
+\)</span><span class="math notranslate nohighlight">\(  
+A = \sqrt{x^2 + y^2}  
+\)</span><span class="math notranslate nohighlight">\(  
+Also,   
+\)</span><span class="math notranslate nohighlight">\(  
+x = A \cdot \cos(\theta), \quad y = A \cdot \sin(\theta)  
+\)</span><span class="math notranslate nohighlight">\(
+Using trigonometry again, the angle θ of A is given as follows.
+\)</span><span class="math notranslate nohighlight">\(  
+\theta = \tan^{-1} \left( \frac{y}{x} \right)  
+\)</span>$
+Then in Polar form the length of A and its angle represents the complex number instead of a point. Also in polar form, the conjugate of the complex number has the same magnitude or modulus it is the sign of the angle that changes, so for example the conjugate of 6 ∠30’ would be 6 ∠– 30’.</p>
+</section>
+<section id="converting-between-rectangular-form-and-polar-form">
+<h2>Converting between Rectangular Form and Polar Form<a class="headerlink" href="#converting-between-rectangular-form-and-polar-form" title="Link to this heading">#</a></h2>
+<p>In the rectangular form we can express a vector in terms of its rectangular coordinates, with the horizontal axis being its real axis and the vertical axis being its imaginary axis or j-component. In polar form these real and imaginary axes are simply represented by “A ∠θ“. Then using our example above, the relationship between rectangular form and polar form can be defined as.</p>
+<section id="converting-polar-form-into-rectangular-form-pr">
+<h3>Converting Polar Form into Rectangular Form, ( P→R )<a class="headerlink" href="#converting-polar-form-into-rectangular-form-pr" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[  
+6 \angle 30^\circ = x + jy  
+\]</div>
+<p>However,<br />
+$<span class="math notranslate nohighlight">\(  
+x = A \cdot \cos \theta \quad y = A \cdot \sin \theta  
+\)</span><span class="math notranslate nohighlight">\(  
+Therefore,  
+\)</span><span class="math notranslate nohighlight">\(  
+6 \angle 30^\circ = (6 \cos \theta) + j(6 \sin \theta)   
+= (6 \cos 30^\circ) + j(6 \sin 30^\circ)   
+= (6 \times 0.866) + j(6 \times 0.5)   
+= 5.2 + j3  
+\)</span>$</p>
+</section>
+<section id="converting-rectangular-form-into-polar-form-rp">
+<h3>Converting Rectangular Form into Polar Form, ( R→P )<a class="headerlink" href="#converting-rectangular-form-into-polar-form-rp" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[  
+(5.2 + j3) = A \angle \theta  
+\]</div>
+<p>where:<br />
+$<span class="math notranslate nohighlight">\(  
+A = \sqrt{5.2^2 + 3^2} = 6  
+\)</span><span class="math notranslate nohighlight">\(  
+and   
+\)</span><span class="math notranslate nohighlight">\(  
+\theta = \tan^{-1} \left( \frac{3}{5.2} \right) = 30^\circ  
+\)</span><span class="math notranslate nohighlight">\(  
+Hence,  
+\)</span><span class="math notranslate nohighlight">\(  
+(5.2 + j3) = 6 \angle 30^\circ  
+\)</span>$</p>
+</section>
+</section>
+<section id="polar-form-multiplication-and-division">
+<h2>Polar Form Multiplication and Division<a class="headerlink" href="#polar-form-multiplication-and-division" title="Link to this heading">#</a></h2>
+<p>Rectangular form is best for adding and subtracting complex numbers as we saw above, but polar form is often better for multiplying and dividing. To multiply together two vectors in polar form, we must first multiply together the two modulus or magnitudes and then add together their angles.</p>
+<section id="multiplication-in-polar-form">
+<h3>Multiplication in Polar Form<a class="headerlink" href="#multiplication-in-polar-form" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[  
+Z_1 \times Z_2 = A_1 \times A_2 \angle \left( \theta_1 + \theta_2 \right)  
+\]</div>
+<p>Multiplying together <span class="math notranslate nohighlight">\(\(6 \angle 30^\circ\) and \(8 \angle -45^\circ\)\)</span> in polar form gives us:<br />
+$<span class="math notranslate nohighlight">\(  
+Z_1 \times Z_2 = 6 \times 8 \angle \left( 30^\circ + (-45^\circ) \right) = 48 \angle -15^\circ  
+\)</span>$</p>
+</section>
+<section id="division-in-polar-form">
+<h3>Division in Polar Form<a class="headerlink" href="#division-in-polar-form" title="Link to this heading">#</a></h3>
+<p>Likewise, to divide together two vectors in polar form, we must divide the two modulus and then subtract their angles as shown.
+$<span class="math notranslate nohighlight">\(  
+\frac{Z_1}{Z_2} = \left( \frac{A_1}{A_2} \right) \angle \left( \theta_1 - \theta_2 \right)  
+\)</span><span class="math notranslate nohighlight">\(  
+\)</span><span class="math notranslate nohighlight">\(  
+\frac{Z_1}{Z_2} = \left( \frac{6}{8} \right) \angle \left( 30^\circ - (-45^\circ) \right) = 0.75 \angle 75^\circ  
+\)</span>$
+Fortunately today’s modern scientific calculators have built in mathematical functions (check your book) that allows for the easy conversion of rectangular to polar form, ( R → P ) and back from polar to rectangular form, ( R → P ).</p>
+</section>
+</section>
+<section id="complex-numbers-using-exponential-form">
+<h2>Complex Numbers using Exponential Form<a class="headerlink" href="#complex-numbers-using-exponential-form" title="Link to this heading">#</a></h2>
+<p>So far we have considered complex numbers in the Rectangular Form, ( a + jb ) and the Polar Form, ( A ∠±θ ). But there is also a third method for representing a complex number which is similar to the polar form that corresponds to the length (magnitude) and phase angle of the sinusoid but uses the base of the natural logarithm, e = 2.718 281.. to find the value of the complex number. This third method is called the Exponential Form.
+The Exponential Form uses the trigonometric functions of both the sine ( sin ) and the cosine ( cos ) values of a right angled triangle to define the complex exponential as a rotating point in the complex plane. The exponential form for finding the position of the point is based around Euler’s Identity, named after Swiss mathematician, Leonhard Euler and is given as:
+$<span class="math notranslate nohighlight">\(  
+Z = A e^{j \phi}  
+\)</span><span class="math notranslate nohighlight">\(  
+\)</span><span class="math notranslate nohighlight">\(  
+Z = A (\cos \phi + j \sin \phi)  
+\)</span>$
+Then Euler’s identity can be represented by the following rotating phasor diagram in the complex plane.</p>
+<p><img alt="Alt text" src="../../_images/img_141.png" /></p>
+<p>We can see that Euler’s identity is very similar to the polar form above and that it shows us that a number such as Ae jθ which has a magnitude of 1 is also a complex number. Not only can we convert complex numbers that are in exponential form easily into polar form such as: 2e j30 = 2∠30, 10e j120 = 10∠120 or -6e j90 = -6∠90, but Euler’s identity also gives us a way of converting a complex number from its exponential form into its rectangular form. Then the relationship between, Exponential, Polar and Rectangular form in defining a complex number is given as.
+Complex Number Forms:
+$<span class="math notranslate nohighlight">\(  
+Z = x + jy = A \angle \theta = A \left( \cos \phi + j \sin \phi \right)  
+\)</span>$</p>
+</section>
+<section id="phasor-notation">
+<h2>Phasor Notation<a class="headerlink" href="#phasor-notation" title="Link to this heading">#</a></h2>
+<p>So far we have look at different ways to represent either a rotating vector or a stationary vector using complex numbers to define a point on the complex plane. Phasor notation is the process of constructing a single complex number that has the amplitude and the phase angle of the given sinusoidal waveform.
+Then phasor notation or phasor transform as it is sometimes called, transfers the real part of the sinusoidal function: A(t) = Am cos(ωt ± Φ) from the time domain into the complex number domain which is also called the frequency domain. For example:
+$<span class="math notranslate nohighlight">\(  
+V(t) = V_m \cos(\omega t + \theta) \quad \Longleftrightarrow \quad \text{Euler's identity:} \; e^{j\theta} = \cos \theta + j \sin \theta  
+\)</span><span class="math notranslate nohighlight">\(  
+\)</span>1. or (V(t) = 20 \cos(\omega t + 30^\circ) ; \text{Volts} )<span class="math notranslate nohighlight">\(  
+   \)</span><span class="math notranslate nohighlight">\( \Rightarrow \left( \frac{20}{\sqrt{2}} \right) \angle 30^\circ \Rightarrow V_{RMS} = 14.14 \angle 30^\circ \)</span><span class="math notranslate nohighlight">\(  
+\)</span>2. or (V(t) = 35 \cos(\omega t + 45^\circ) ; \text{Volts} )<span class="math notranslate nohighlight">\(  
+   \)</span><span class="math notranslate nohighlight">\( \Rightarrow \left( \frac{35}{\sqrt{2}} \right) \angle 45^\circ \Rightarrow V_{RMS} = 24.75 \angle 45^\circ \)</span><span class="math notranslate nohighlight">\(  
+\)</span>3. or (V(t) = 10 \cos(\omega t - 30^\circ) ; \text{Volts} )<span class="math notranslate nohighlight">\(  
+   \)</span><span class="math notranslate nohighlight">\( \Rightarrow \left( \frac{10}{\sqrt{2}} \right) \angle -30^\circ \Rightarrow V_{RMS} = 7.07 \angle -30^\circ \)</span><span class="math notranslate nohighlight">\(  
+\)</span>4. or (V(t) = 100 \cos(\omega t) ; \text{Volts} )<span class="math notranslate nohighlight">\(  
+   \)</span><span class="math notranslate nohighlight">\( \Rightarrow \left( \frac{100}{\sqrt{2}} \right) \angle 0^\circ \Rightarrow V_{RMS} = 70.72 \angle 0^\circ \)</span><span class="math notranslate nohighlight">\(
+Please note that the \)</span>\sqrt{2}$ converts the maximum amplitude into an effective or RMS value with the phase angle given in radians, ( ω ).</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this part of this research, we got acquainted with phasor diagrams and complex numbers.We explored how phasor diagrams serve as a powerful tool for visualizing the relationships between sinusoidal voltages and currents in electrical circuits. By representing alternating current (AC) waveforms as rotating vectors, or phasors, we are able to simplify complex calculations involving these quantities.
+In this context, we delved into the use of complex numbers to effectively represent and manipulate our phasors. The real part of a complex number corresponds to the horizontal projection of the phasor, while the imaginary part corresponds to the vertical projection. This duality enables us to perform arithmetic operations through addition and subtraction of phasors, as well as to compute their magnitudes and phases with ease.</p>
+</section>
+<section id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.electronics-tutorials.ws/accircuits/phasors.html">https://www.electronics-tutorials.ws/accircuits/phasors.html</a>
+<a class="reference external" href="https://www.electronics-tutorials.ws/accircuits/complex-numbers.html">https://www.electronics-tutorials.ws/accircuits/complex-numbers.html</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Phasors"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Linear_Non_Inductor/Linear_Non_Inductor.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linear and Non-Linear inductors</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-diagrams">Phasor Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-diagrams-for-a-sinusoidal-waveform">Phasor Diagrams for a Sinusoidal Waveform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-difference-of-a-sinusoidal-waveform">Phase Difference of a Sinusoidal Waveform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-diagram-of-a-sinusoidal-waveform">Phasor Diagram of a Sinusoidal Waveform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-addition-of-phasor-diagrams">Phasor Addition of Phasor Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-addition-of-two-phasors">Phasor Addition of two Phasors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-a-complex-sinusoid">Definition of a Complex Sinusoid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-addition-using-rectangular-form">Phasor Addition using Rectangular Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-subtraction-of-phasor-diagrams">Phasor Subtraction of Phasor Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-3-phase-phasor-diagrams">The 3-Phase Phasor Diagrams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-phase-voltage-equations">Three-phase Voltage Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-and-phasors">Complex Numbers and Phasors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-rotation-of-the-j-operator">Vector Rotation of the j-operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-using-the-rectangular-form">Complex Numbers using the Rectangular Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-using-the-complex-or-s-plane">Complex Numbers using the Complex or s-plane</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-quadrant-argand-diagram">Four Quadrant Argand Diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction-of-complex-numbers">Addition and Subtraction of Complex Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-example-no1">Complex Numbers Example No1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication-and-division-of-complex-numbers">Multiplication and Division of Complex Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-complex-conjugate">The Complex Conjugate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-using-polar-form">Complex Numbers using Polar Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-rectangular-form-and-polar-form">Converting between Rectangular Form and Polar Form</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-polar-form-into-rectangular-form-pr">Converting Polar Form into Rectangular Form, ( P→R )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-rectangular-form-into-polar-form-rp">Converting Rectangular Form into Polar Form, ( R→P )</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-form-multiplication-and-division">Polar Form Multiplication and Division</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication-in-polar-form">Multiplication in Polar Form</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division-in-polar-form">Division in Polar Form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers-using-exponential-form">Complex Numbers using Exponential Form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phasor-notation">Phasor Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
