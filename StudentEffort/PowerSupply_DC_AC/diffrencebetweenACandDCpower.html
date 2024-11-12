@@ -1,0 +1,954 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>What is AC and DC power/current &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/PowerSupply_DC_AC/diffrencebetweenACandDCpower';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bias in Artificial Intelligence" href="../biasInAI/bias.html" />
+    <link rel="prev" title="Phasors" href="../Phasors1/Phasors1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/PowerSupply_DC_AC/diffrencebetweenACandDCpower.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/PowerSupply_DC_AC/diffrencebetweenACandDCpower.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>What is AC and DC power/current</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-alternating-current"><strong>Characteristics of alternating current</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-and-disadvantages-of-dc-power-supply"><strong>Advantages and disadvantages of DC power supply</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-and-disadvantages-ac-power-supply"><strong>Advantages and disadvantages AC power supply</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#active-and-reactive-power-in-ac-sources"><strong>Active and reactive power in AC sources</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-vs-switching-ac-dc-power-supply"><strong>Linear vs. Switching AC/DC Power Supply</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-ac-dc-power-supply">Linear AC/DC Power Supply:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drawing-a-linear-ac-dc-power-supply-using-schemdraw">Drawing a linear AC/DC power supply using schemdraw</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-ac-dc-power-supply">Switching AC/DC Power Supply:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-phase-vs-three-phase-power-supplies"><strong>Single-Phase vs. Three-Phase Power Supplies</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-and-delta-three-phase-configurations"><strong>Y and Delta Three-phase configurations</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-and-delta-configurations-example-using-pyspice">Y and Delta configurations example using PySpice:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusion</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources"><strong>Sources</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="what-is-ac-and-dc-power-current">
+<h1><strong>What is AC and DC power/current</strong><a class="headerlink" href="#what-is-ac-and-dc-power-current" title="Link to this heading">#</a></h1>
+<p><strong>Author: Melika Dehestani</strong></p>
+<p><strong>Gmail:</strong> <a class="reference external" href="mailto:dehestanimelika2004&#37;&#52;&#48;gmail&#46;com">dehestanimelika2004<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p><strong>Fall 2024</strong></p>
+<section id="introduction">
+<h2><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>A power supply is an electrical device that converts the electric current that comes in from a power source, such as the power mains, to the voltage and current values necessary for powering a load, such as a motor or electronic device. The objective of a power supply is to power the load with the proper voltage and current. The current must be in an controlled manner and with an accurate voltage. The one thing all power supplies have in common is that they take electric power from the source at the input, transform it in some way, and deliver it to the load at the output. The power at the input and output can be either alternating current (AC) or direct current (DC):</p>
+<ul>
+<li><h2 class="rubric" id="direct-current-dc">Direct current (DC):</h2>
+<p>occurs when the current flows in one constant direction, as compared to the flow of the river. It usually comes from batteries, solar cells, or from AC/DC converters. DC is the preferred type of power for electronic devices.</p>
+</li>
+<li><h2 class="rubric" id="alternating-current-ac">Alternating current (AC):</h2>
+<p>occurs when the electric current periodically inverts its direction (negtaive and positive sides switch periodically). AC is the method used to deliver electricity through power transmission lines to homes and businesses.</p>
+</li>
+</ul>
+</section>
+<section id="characteristics-of-alternating-current">
+<h2><strong>Characteristics of alternating current</strong><a class="headerlink" href="#characteristics-of-alternating-current" title="Link to this heading">#</a></h2>
+<p>The typical waveform for an alternating current is a sine wave, when working with an AC power supply there are several indicators that must be taken into account:</p>
+<ul>
+<li><p><strong>Peak voltage/current</strong>:  The maximum value of amplitude the wave can reach.</p></li>
+<li><p><strong>Frequency</strong>: The number of cycles the wave completes per second. The time it takes to complete a single cycle is called the period.</p></li>
+<li><p><strong>Mean voltage/current</strong>: The average value of all the points the voltage takes during one cycle. In a purely AC wave with no superimposed DC voltage, this value will be zero, because the positive and negative halves cancel each other out.</p></li>
+<li><p><strong>Root-mean-square voltage/current</strong>: It is defined as the square root of the mean over one cycle of the square of the instantaneous voltage. In a pure AC sinusoidal wave, its value can be calculated with: $<span class="math notranslate nohighlight">\(V_{RMS}=\frac{V_{PEAK}}{\sqrt{2}}\)</span>$        It can also be defined as the equivalent DC power needed to produce the same heating effect. Despite its complicated definition, it is widely used in electrical engineering because it allows you to find the effective value of an AC voltage or current. Because of this, it is sometimes expressed as VAC.</p></li>
+<li><p><strong>Phase</strong>: The angular difference between two waves. A complete cycle of a sine wave is divided into 360°, starting at 0°, having peaks at 90° (positive peak) and 270° (negative peak) and crossing the start point twice, at 180° and 360°. If two waves are plotted together, and one wave reaches its positive peak at the same time that the other reaches its negative peak, then, the first wave will be at 90°, while the second wave will be at 270°; this means the phase difference is 180°. These waves are considered to be in antiphase, as their values will always have opposite signs. If the phase difference is 0°, then we say the two waves are in phase.</p></li>
+<li><p>Here we see an example of an AC wave:</p>
+<p><img alt="title" src="../../_images/AC.png" /></p>
+</li>
+</ul>
+</section>
+<section id="advantages-and-disadvantages-of-dc-power-supply">
+<h2><strong>Advantages and disadvantages of DC power supply</strong><a class="headerlink" href="#advantages-and-disadvantages-of-dc-power-supply" title="Link to this heading">#</a></h2>
+<p>Direct current, in which electricity always flows in a constant direction, has the following merits and demerits:</p>
+<ul class="simple">
+<li><p>In alternating current, the direction of the current is constantly changing. Therefore, when a capacitor or inductor is included in the circuit, for example, there is a delay or advance in the current flowing to the load in relation to the voltage behavior. However, with direct current, the voltage and the direction of the current are always constant, so the behavior of the capacitors and coils is also always constant. Therefore, in DC, there is no advance or delay in the circuit.</p></li>
+<li><p>In alternating current (AC), the direction of the current is switched, so not all the electricity passes through the load, and some power is generated just traveling back and forth between the load and the power source. This is called reactive power, which will be discussed in later chapters. In direct current, all electricity passes through the load because the current always flows in a constant direction. Therefore, no reactive power is generated and power can be used efficiently.</p></li>
+<li><p>Another advantage of direct current is that it can be stored by batteries or capacitors.</p></li>
+<li><p>When a direct current flows through a circuit, it encounters various components, such as resistors, capacitors, and inductors, all of which influence its behavior. Resistors restrict current flow. There is no continuous current flow through the capacitor, while the inductor offers almost no resistance to the constant current and acts like a short circuit.</p></li>
+<li><p>On the other hand, direct current also has its disadvantages. One of them is that it is difficult to interrupt the current. In the case of alternating current, when the voltage switches from positive to negative or negative to positive, the voltage momentarily drops to zero. If you aim for a time when the voltage is low, you can interrupt the current more safely than with a direct current.</p></li>
+<li><p>Also, when converting DC voltage, it is necessary to convert it to AC once and then back to DC again. For this reason, DC voltage conversion equipment is larger and more costly than AC.</p></li>
+<li><p>Another disadvantage of direct current is the severe corrosion of underground pipes and insulators required for power transmission.</p></li>
+<li><p>The plot below shows a diagram of a DC volatge source:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Create a new circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;DC Signal&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define a DC voltage source</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># DC voltage of 5V</span>
+
+<span class="c1"># Simulate the circuit</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+
+<span class="c1"># Extract the voltage value</span>
+<span class="n">voltage</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;n1&#39;</span><span class="p">])</span>
+
+<span class="c1"># Time array for plotting (0 to 10 seconds)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="c1"># Create an array with the DC voltage value</span>
+<span class="n">dc_voltage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">voltage</span><span class="p">)</span>
+
+<span class="c1"># Plot the DC signal</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">dc_voltage</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DC Voltage&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adding labels and title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Display the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_724\1577006566.py:17: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  voltage = float(analysis[&#39;n1&#39;])
+</pre></div>
+</div>
+<img alt="../../_images/7be8077ff43d340b8b2a2a13160f8eaa4cda511f1bbc6f3e1f98a7ded5355608.png" src="../../_images/7be8077ff43d340b8b2a2a13160f8eaa4cda511f1bbc6f3e1f98a7ded5355608.png" />
+</div>
+</div>
+</section>
+<section id="advantages-and-disadvantages-ac-power-supply">
+<h2><strong>Advantages and disadvantages AC power supply</strong><a class="headerlink" href="#advantages-and-disadvantages-ac-power-supply" title="Link to this heading">#</a></h2>
+<p>Alternating current, with its cyclic positive and negative voltage, has the following advantages and disadvantages:</p>
+<ul class="simple">
+<li><p>Compared to direct current, alternating current can be easily transformed by transformers, making it more suitable for power supply as infrastructure.</p></li>
+<li><p>Another advantage of AC is that it is easy to shut down while power is being supplied since the timing at which the voltage drops to zero comes periodically.</p></li>
+<li><p>It can also be used without distinguishing between positive and negative, like a household power supply (outlet), which simplifies the connection and operation of devices.</p></li>
+<li><p>On the other hand, AC requires a higher voltage than the target voltage for the required amount of heat because the voltage value is always changing, and there are times when the voltage goes to zero. The waveform of AC voltage is sinusoidal, and the maximum voltage is √2 times the running value. Insulation performance and equipment specifications must be higher than the effective value.</p></li>
+<li><p>Another characteristic of AC is that it is strongly affected by coils and capacitors. Coils and capacitors generate voltages that cause the current to flow in the opposite direction of the current direction, causing the current in the circuit to advance or lag.</p></li>
+<li><p>There are two types of AC: three-phase AC and one-phase AC. A three-phase AC is used specifically for high-voltage power transmission. When it is sent to a household outlet, it is converted to one phase along with the voltage conversion. In a power plant, three waves of AC are sent out at the same time, with the waveform of the AC shifted by 120 degrees. This type of electricity is called a three-phase alternating current. At the end of this chapter we will discuss more about three phase AC.</p></li>
+<li><p>The plot below shows a Three-phase AC:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Time variable (0 to 2π for full cycle representation)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Three-phase waveforms with 120-degree phase shift</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>                       <span class="c1"># Phase A</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>       <span class="c1"># Phase B (120-degree shift)</span>
+<span class="n">V3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>       <span class="c1"># Phase C (240-degree shift)</span>
+
+<span class="c1"># Plot the waveforms</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Phase A&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Phase B&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Phase C&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adding labels and title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Three-phase AC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Display the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7ecdb32f7c7b70b8abd2adea798b15f476779888fa76e53d38191f09c1e243f1.png" src="../../_images/7ecdb32f7c7b70b8abd2adea798b15f476779888fa76e53d38191f09c1e243f1.png" />
+</div>
+</div>
+</section>
+<section id="active-and-reactive-power-in-ac-sources">
+<h2><strong>Active and reactive power in AC sources</strong><a class="headerlink" href="#active-and-reactive-power-in-ac-sources" title="Link to this heading">#</a></h2>
+<ul>
+<li><h2 class="rubric" id="active-power">Active power:</h2>
+</li>
+</ul>
+<p>Active power is the usable or consumed electrical energy in an AC circuit and has units of watt (W) or kilowatt (kW). True power or real power is another name for active power. Active power is the energy actually used in load. Rector shows how Armstrong finds active power by multiplying together the root mean square (RMS) values of voltage and current, as well as a parameter called the power factor, some measure for reflecting offset between them. The formula for active power is: $<span class="math notranslate nohighlight">\(P=V×I×cosϕ\)</span>$
+Where P is the active power, V is the RMS voltage, I is the RMS current, and ϕ is the phase angle between the voltage and current.</p>
+<ul>
+<li><h2 class="rubric" id="reactive-power">Reactive power:</h2>
+</li>
+</ul>
+<p>Reactive power is the alternating current flowing back and forth in an electric circuit. The unit used for reactive power is volt-amperes reactive (VAR) or kilovolt-ampere active (kVAR). R.P., a term also used for imaginary power or wattless power, is the form of energy stored and released by the reactive components within current flowing through an electric circuit–most commonly inductors (inductance) and capacitors (capacitance). This power is not useful to the circuit, but it must be maintained for the voltage and current levels. Also, reactive power creates inefficiencies and loss of energy by increasing apparent power, which promotes a greater flow of current. The formula for reactive power is: $<span class="math notranslate nohighlight">\(Q=V×I×sinϕ\)</span>$
+Where Q is the reactive power, V is the RMS voltage, I is the RMS current, and ϕ is the phase angle between the voltage and current.</p>
+<ul>
+<li><h2 class="rubric" id="apparent-power">Apparent power:</h2>
+</li>
+</ul>
+<p>The apparent power of a sinusoidal AC circuit can be calculated simply as the product of its RMS values for voltage and current. It is measured in volt-amperes (VA) or kilovolt-amps (kVA). Power is called apparent power, complex power, or total gave, and this refers to the net delivered from a source by a line. The apparent power is found by multiplying the RMS values of voltage and current, regardless of any phase relationship. The formula for apparent power is: $<span class="math notranslate nohighlight">\(S=V×I\)</span>$
+Where S is the apparent power, V is the RMS voltage, and I is the RMS current.</p>
+<ul>
+<li><p>The relation between active,reactive and apparent power can be seen in the images below:</p>
+<p><img alt="title" src="../../_images/power.png" /></p>
+</li>
+</ul>
+</section>
+<section id="linear-vs-switching-ac-dc-power-supply">
+<h2><strong>Linear vs. Switching AC/DC Power Supply</strong><a class="headerlink" href="#linear-vs-switching-ac-dc-power-supply" title="Link to this heading">#</a></h2>
+</section>
+<section id="linear-ac-dc-power-supply">
+<h2>Linear AC/DC Power Supply:<a class="headerlink" href="#linear-ac-dc-power-supply" title="Link to this heading">#</a></h2>
+<p>A linear AC/DC power supply has a simple design. The components of a linear AC/DC power supply are transformers, rectifier and filter. By using a transformer, the alternating current (AC) input voltage is reduced to a value more suitable for the intended application. Then, the reduced AC voltage is rectified (A rectifier is an electrical device that converts alternating current (AC), which periodically reverses direction, to direct current (DC), which flows in only one direction.) and turned into a direct current (DC) voltage, which is filtered in order to further improve the waveform quality. The process inside a linear DC power supply is described as below:</p>
+<ul>
+<li><p>Transformer: The AC voltage from the wall outlet has a high magnitude, like 110/220 V AC. Thereby, the first thing to do is transform it into a signal with a lower magnitude. This is achieved using a component called a transformer.</p></li>
+<li><p>Rectifier: Once the AC voltage is transformed, it is then passed through a rectifier. The rectifier converts the AC voltage into pulsating DC voltage by allowing current flow in only one direction and removing the negative portion of the AC waveform.</p></li>
+<li><p>Filter: After rectifying, a filter is used to smooth out and minimize the pulsating DC voltage. Typically, due to their ability to store energy, capacitors are used in this kind of filter circuit.
+Regulator: To have a stable DC voltage value output, a voltage regulator is needed. It ensures a constant and stable DC voltage output, compensating for fluctuations in the load or input voltage.</p>
+<p><img alt="title" src="../../_images/process.png" /></p>
+</li>
+</ul>
+<p>A huge limitation in a linear AC/DC power supply is the size of the transformer. Because the input voltage is transformed at the input, the necessary transformer would have to be very large and therefore very heavy.</p>
+</section>
+<section id="drawing-a-linear-ac-dc-power-supply-using-schemdraw">
+<h2>Drawing a linear AC/DC power supply using schemdraw<a class="headerlink" href="#drawing-a-linear-ac-dc-power-supply-using-schemdraw" title="Link to this heading">#</a></h2>
+<p>The code below shows a simple linear power supply:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">dsp</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span>
+    <span class="n">tr</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Transformer</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Transformer&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;p1&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">s1</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">rec</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Rectifier</span><span class="p">()</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Rectifier&#39;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Gap</span><span class="p">()</span><span class="o">.</span><span class="n">toy</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">p2</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;AC IN&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">s2</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">toy</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">W</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">lineRec</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">*</span><span class="mf">1.3</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">lineOne</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">E</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span>
+    <span class="n">lineTwo</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span>
+    <span class="n">lineThree</span> <span class="o">=</span> <span class="n">dsp</span><span class="o">.</span><span class="n">Square</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Regulator&#39;</span><span class="p">)</span>
+    <span class="n">lineFour</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">lineFive</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Gap</span><span class="p">()</span><span class="o">.</span><span class="n">toy</span><span class="p">(</span><span class="n">lineRec</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;DC OUT&#39;</span><span class="p">,</span> <span class="s1">&#39;–&#39;</span><span class="p">])</span>
+    <span class="n">lineFiveEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+    <span class="n">lineThreeEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">lineThree</span><span class="o">.</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+    <span class="n">lineTwoEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">lineTwo</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+    <span class="n">lineEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+    <span class="n">lineOneEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">lineOne</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">lineRec</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">lineOne</span><span class="o">.</span><span class="n">end</span><span class="p">,</span><span class="n">lineOneEnd</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Filter&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">lineTwo</span><span class="o">.</span><span class="n">start</span><span class="p">,</span><span class="n">lineEnd</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">lineTwoEnd</span><span class="o">.</span><span class="n">start</span><span class="p">,</span><span class="n">lineThree</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">lineFive</span><span class="o">.</span><span class="n">start</span><span class="p">,</span><span class="n">lineFiveEnd</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;C2&#39;</span><span class="p">)</span>
+
+
+
+
+    
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ba74959f51511bb285a92666e825e6fcc67612021b09b01ccf474ffa1239ae5d.svg" src="../../_images/ba74959f51511bb285a92666e825e6fcc67612021b09b01ccf474ffa1239ae5d.svg" />
+</div>
+</div>
+</section>
+<section id="switching-ac-dc-power-supply">
+<h2>Switching AC/DC Power Supply:<a class="headerlink" href="#switching-ac-dc-power-supply" title="Link to this heading">#</a></h2>
+<p>New design methodology has been developed to solve many of the problems associated with linear or traditional AC/DC power supply design, including transformer size and voltage regulation. Switching power supplies are now possible thanks to the evolution of semiconductor technology, especially thanks to the creation of high-power MOSFET transistors, which can switch on and off very quickly and efficiently, even if large voltages and currents are present. A switching AC/DC power supply enables the creation of more efficient power converters, which no longer dissipate the excess power.</p>
+<p>In switching AC power supplies, the input voltage is no longer reduced; rather, it is rectified and filtered at the input. Then the DC voltage goes through a chopper, which converts the voltage into a high-frequency pulse train. Finally, the wave goes through another rectifier and filter, which converts it back to direct current (DC) and eliminates any remaining alternating current (AC) component that may be present before reaching the output. The process is shown as below:</p>
+<ul class="simple">
+<li><p>Bridge rectifier—AC main to DC pulse: Normally, we will find this rectifier circuit at the input side of the switching power supply. Then, the DC pulse passes through to an RF switch circuit.</p></li>
+<li><p>Half-wave rectifier for RF AC Signal: In a switching power supply, the input DC signal will be switched with a high-frequency RF signal. Then, the step-down transformer transforms it into low-voltage AC. Next, it flows through a half-wave rectifier to be rectified into a DC pulse. The heart of every switching power supply is the RF Regulator. Also known as the “Switching Regulator.”</p></li>
+<li><p>Full-wave rectifier using Center Tap Transformer: This is a step up from a half-wave rectifier. And it uses the center tap of the transformer’s secondary coil. When operating at high frequencies, the transformer’s inductor is able to transfer more power without reaching saturation, which means the core can become smaller and smaller. Therefore, the transformer used in switching AC/DC power supplies to reduce the voltage amplitude to the intended value can be a fraction of the size of the transformer needed for a linear AC/DC power supply.</p></li>
+<li><p>Full-wave bridge rectifier after a Step-down transformer: Or we can instead use two more diodes.</p></li>
+<li><p>Output Rectifier and Filter: Converts the AC output from the transformer back to DC and smooths it. Switching AC/DC power converters can generate a significant amount of noise in the system, which must be treated to ensure it is not present at the output. This creates a need for more complex control circuitry, which in turn adds complexity to the design. Nevertheless, these filters are made up of components that can be easily integrated, so it does not affect the size of the power supply significantly.</p></li>
+</ul>
+<p>Although there are many different switching circuits. But the most common one used is PWM (Pulse Width Modulation). The figure is a basic block diagram of the PWM switching regulator. It maintains the voltage level in a closed-loop form:</p>
+<p><img alt="title" src="../../_images/switches.png" /></p>
+<p>Smaller transformers and increased voltage regulator efficiency in switching AC/DC power supplies are the reason why we can now convert a 220V¬RMS AC voltage to a 5V DC voltage with a power converter that can fit in the palm of your hand.</p>
+</section>
+<section id="single-phase-vs-three-phase-power-supplies">
+<h2><strong>Single-Phase vs. Three-Phase Power Supplies</strong><a class="headerlink" href="#single-phase-vs-three-phase-power-supplies" title="Link to this heading">#</a></h2>
+<p>An alternating current (AC) power supply can either be single-phase or three-phase:</p>
+<ul class="simple">
+<li><p>A three-phase power supply is composed of three conductors, called lines, which each carry an alternating current (AC) of the same frequency and voltage amplitude, but with a relative phase difference of 120°, or one-third of a cycle. These systems are the most efficient at delivering large amounts of power, and are therefore used for delivering electricity from generating facilities to homes and businesses all around the world. An example of this was provided above.</p></li>
+<li><p>A single-phase power supply is the preferred method to supply current to individual homes or offices, so as to distribute the load evenly between lines. In this case, the current flows from the power line through the load, then back through the neutral wire. This is the type of supply found in most installations, except large industrial or commercial buildings. Single-phase systems cannot transfer as much power to loads and are more prone to power failures, but single-phase power also allows use of much simpler networks and devices.</p></li>
+</ul>
+</section>
+<section id="y-and-delta-three-phase-configurations">
+<h2><strong>Y and Delta Three-phase configurations</strong><a class="headerlink" href="#y-and-delta-three-phase-configurations" title="Link to this heading">#</a></h2>
+<p>There are two configurations for the transmission of power through a three-phase power supply: delta (Δ) and wye (Y) configurations, also referred to as triangle and star configurations, respectively. The main difference between these two configurations is the ability to add a neutral wire. Delta connections offer greater reliability, but Y connections can supply two different voltages: phase voltage, which is the single-phase voltage supplied to homes, and line voltage, for powering larger loads. The Delta configuration has the 3 phases connected like in a triangle. They don’t normally have a neutral cable. In Delta configuration, the phase voltage is equal to the line voltage whereas in Y configuration, the phase voltage is the line voltage divided by root 3. Wye configurations are typically used for systems where a neutral is required, such as in distribution networks for residential or commercial buildings, because they allow for both 120V and 240V outputs; Delta configurations are often used in industrial settings where high power is required, and a neutral is not necessary, such as in motors and heavy machinery.</p>
+<p>The image below shows how a Y and Delta configurations wires are attached:</p>
+<p><img alt="title" src="../../_images/delta.png" /></p>
+<p>As mentioned before, three-phase power is not only used for transportation, but is also used to power large loads, such as electric motors or charging large batteries. This is because the parallel application of power in three-phase systems can transfer much more energy to a load, and can do so more evenly, due to the overlapping of the three phases. For example, when charging an electric vehicle (EV), the amount of power you can transfer to the battery determines how fast it charges. Single-phase chargers are plugged into the alternating current (AC) mains and converted to direct current (DC) by the car’s internal AC/DC power converter (also called an on-board charger). These chargers, are limited in power by the grid and the AC socket.</p>
+<p>The image below shows the power transfered in Single-Phase and Three-Phase systems:</p>
+<p><img alt="title" src="../../_images/phase.png" /></p>
+</section>
+<section id="y-and-delta-configurations-example-using-pyspice">
+<h2>Y and Delta configurations example using PySpice:<a class="headerlink" href="#y-and-delta-configurations-example-using-pyspice" title="Link to this heading">#</a></h2>
+<p>This examples shows the computation of the voltage for the Y and Delta configurations. Lets use an 220 V / 50 Hz electric network. The phase voltages in Y configuration are dephased of <span class="math notranslate nohighlight">\(\frac{2\pi}{3}\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[V_{L1-N} = V_{pp} cos(𝜔t)\]</div>
+<div class="math notranslate nohighlight">
+\[V_{L2-N} = V_{pp} cos(𝜔t-\frac{2\pi}{3})\]</div>
+<div class="math notranslate nohighlight">
+\[V_{L3-N} = V_{pp} cos(𝜔t-\frac{4\pi}{3})\]</div>
+<p>We rewrite them in complex notation:
+$<span class="math notranslate nohighlight">\(V_{L1-N} = V_{pp} e^{jwt}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(V_{L2-N} = V_{pp} e^{j(wt-\frac{2\pi}{3})}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(V_{L3-N} = V_{pp} e^{j(wt-\frac{4\pi}{3})}\)</span>$</p>
+<p>From these expressions, we compute the voltage in delta configuration using trigonometric identities :</p>
+<div class="math notranslate nohighlight">
+\[V_{L1-L2} = V_{L1} \sqrt{3}\ e^{j\frac{\pi}{6}}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{L2-L3} = V_{L2} \sqrt{3}\ e^{j\frac{\pi}{6}}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{L3-L1} = V_{L3} \sqrt{3}\ e^{j\frac{\pi}{6}}\]</div>
+<p>In comparison to the Y configuration, the voltages in delta configuration are magnified by a factor <span class="math notranslate nohighlight">\(/sqrt{3}\)</span> and dephased of <span class="math notranslate nohighlight">\(\frac{\pi}{6}\)</span> .</p>
+<p>Finally we rewrite them in temporal notation:</p>
+<div class="math notranslate nohighlight">
+\[V_{L1-L2} = V_{pp} \sqrt{3} cos(𝜔t+\frac{\pi}{6})\]</div>
+<div class="math notranslate nohighlight">
+\[V_{L2-L3} = V_{pp} \sqrt{3} cos(𝜔t-\frac{\pi}{2})\]</div>
+<div class="math notranslate nohighlight">
+\[V_{L3-L1} = V_{pp} \sqrt{3} cos(𝜔t-\frac{7\pi}{6})\]</div>
+<p>Now we plot the waveforms:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">frequency</span> <span class="o">=</span> <span class="mi">50</span><span class="nd">@u_Hz</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">frequency</span><span class="o">.</span><span class="n">pulsation</span>
+<span class="n">period</span> <span class="o">=</span> <span class="n">frequency</span><span class="o">.</span><span class="n">period</span>
+<span class="n">rms_mono</span> <span class="o">=</span> <span class="mi">220</span>
+<span class="n">amplitude_mono</span> <span class="o">=</span> <span class="n">rms_mono</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">period</span><span class="p">),</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1">##Y configuration</span>
+<span class="n">L1</span> <span class="o">=</span> <span class="n">amplitude_mono</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">w</span><span class="p">)</span> <span class="c1">##phase one</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="n">amplitude_mono</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">w</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="c1">##phase two</span>
+<span class="n">L3</span> <span class="o">=</span> <span class="n">amplitude_mono</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">w</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="c1">##phase three</span>
+
+<span class="n">rms_tri</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">rms_mono</span>
+<span class="n">amplitude_tri</span> <span class="o">=</span> <span class="n">rms_tri</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">##Delta configuration</span>
+<span class="n">L12</span> <span class="o">=</span> <span class="n">amplitude_tri</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">L23</span> <span class="o">=</span> <span class="n">amplitude_tri</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">w</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">L31</span> <span class="o">=</span> <span class="n">amplitude_tri</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">w</span> <span class="o">-</span> <span class="mi">7</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">L1</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L3</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">L12</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L23</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">L31</span><span class="p">,</span>
+    <span class="c1"># t, L1-L2, t, L2-L3, t, L3-L1,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Three-phase electric power: Y and Delta configurations (220V Mono/400V Tri 50Hz Iran)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+    <span class="p">(</span><span class="s1">&#39;L1-N&#39;</span><span class="p">,</span> <span class="s1">&#39;L2-N&#39;</span><span class="p">,</span> <span class="s1">&#39;L3-N&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;L1-L2&#39;</span><span class="p">,</span> <span class="s1">&#39;L2-L3&#39;</span><span class="p">,</span> <span class="s1">&#39;L3-L1&#39;</span><span class="p">),</span>
+    <span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">.7</span><span class="p">,</span><span class="mf">.5</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;[V]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">rms_mono</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=-</span><span class="n">rms_mono</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">rms_tri</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=-</span><span class="n">rms_tri</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/43077e3c2c4628a0ee82529805e80701c2f4be0d641e8cbd0ed8fb0baf21c38c.png" src="../../_images/43077e3c2c4628a0ee82529805e80701c2f4be0d641e8cbd0ed8fb0baf21c38c.png" />
+</div>
+</div>
+</section>
+<section id="conclusion">
+<h2><strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>To summarise, this project reviewed the opration mechanism of AC and DC power supplies and their the advantages and disadvantages. The vast usages of AC power supplies were studied, with details on how it could be applied in circuits and its conversion to DC for house usage. Furthermore, linear and switching methods for converting AC to DC were investigated and it was concluded that switching method is more practical in terms of the size of the transformer. Finally  AC power supplies were investigated in detail and the Three-Phase and Single-Phase electric powers were introduced.  Y and Delta configuratiion were also analysed with the key learning point in which how Three-Phase configuration systems could increase the transferred power.</p>
+</section>
+<section id="sources">
+<h2><strong>Sources</strong><a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sciencefacts.net/direct-current.html">https://www.sciencefacts.net/direct-current.html</a></p></li>
+<li><p><a class="reference external" href="https://www.monolithicpower.com/en/learning/resources/ac-dc-power-supply-basics#:~:text=Direct%20current%20(DC)%20occurs%20when,current%20periodically%20inverts%20its%20direction">https://www.monolithicpower.com/en/learning/resources/ac-dc-power-supply-basics#:~:text=Direct current (DC) occurs when,current periodically inverts its direction</a></p></li>
+<li><p><a class="reference external" href="https://www.matsusada.com/column/dc_and_ac.html">https://www.matsusada.com/column/dc_and_ac.html</a></p></li>
+<li><p><a class="reference external" href="https://eshop.se.com/in/blog/post/difference-between-active-power-reactive-power-and-apparent-power.html#:~:text=Reactive%20power%20is%20the%20power,comes%20into%20contact%20with%20resistance">https://eshop.se.com/in/blog/post/difference-between-active-power-reactive-power-and-apparent-power.html#:~:text=Reactive power is the power,comes into contact with resistance</a>.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Rectifier#:~:text=A%20rectifier%20is%20an%20electrical,rectifier%20and%20associated%20mounting%20hardware">https://en.wikipedia.org/wiki/Rectifier#:~:text=A rectifier is an electrical,rectifier and associated mounting hardware</a>.</p></li>
+<li><p><a class="reference external" href="https://pyspice.fabrice-salvaire.fr/releases/v1.4/examples/electricity/three-phase.html">https://pyspice.fabrice-salvaire.fr/releases/v1.4/examples/electricity/three-phase.html</a></p></li>
+<li><p><a class="reference external" href="https://www.build-electronic-circuits.com/linear-power-supply/">https://www.build-electronic-circuits.com/linear-power-supply/</a></p></li>
+<li><p><a class="reference external" href="https://www.eleccircuit.com/what-switching-power-supply-how-does-it-work/">https://www.eleccircuit.com/what-switching-power-supply-how-does-it-work/</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\PowerSupply_DC_AC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Phasors1/Phasors1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Phasors</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../biasInAI/bias.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bias in Artificial Intelligence</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-alternating-current"><strong>Characteristics of alternating current</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-and-disadvantages-of-dc-power-supply"><strong>Advantages and disadvantages of DC power supply</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-and-disadvantages-ac-power-supply"><strong>Advantages and disadvantages AC power supply</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#active-and-reactive-power-in-ac-sources"><strong>Active and reactive power in AC sources</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-vs-switching-ac-dc-power-supply"><strong>Linear vs. Switching AC/DC Power Supply</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-ac-dc-power-supply">Linear AC/DC Power Supply:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drawing-a-linear-ac-dc-power-supply-using-schemdraw">Drawing a linear AC/DC power supply using schemdraw</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-ac-dc-power-supply">Switching AC/DC Power Supply:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-phase-vs-three-phase-power-supplies"><strong>Single-Phase vs. Three-Phase Power Supplies</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-and-delta-three-phase-configurations"><strong>Y and Delta Three-phase configurations</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-and-delta-configurations-example-using-pyspice">Y and Delta configurations example using PySpice:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusion</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources"><strong>Sources</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

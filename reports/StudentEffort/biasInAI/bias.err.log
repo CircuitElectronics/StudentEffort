@@ -1,0 +1,100 @@
+Traceback (most recent call last):
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 721, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "H:\HadiSadoghiYazdi\Circuit\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+!pip install tensorflow-addons
+import tensorflow_addons as tfa
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+# from spp.SpatialPyramidPooling import SpatialPyramidPooling # Ilia
+
+from tensorflow.keras.metrics import FalsePositives, FalseNegatives, TrueNegatives, TruePositives
+
+batch_size = 32
+img_height = 100
+img_width = 143
+
+train_ds = tf.keras.preprocessing.image_dataset_from_directory(
+  'Data',
+  validation_split=0.1,
+  subset="training",
+  seed=123,
+  # image_size=(img_height, img_width),
+  batch_size=batch_size
+)
+
+val_ds = tf.keras.preprocessing.image_dataset_from_directory(
+  'Data',
+  validation_split=0.1,
+  subset="validation",
+  seed=123,
+  # image_size=(img_height, img_width),
+  batch_size=batch_size
+)
+
+model = keras.models.Sequential([
+  layers.experimental.preprocessing.Rescaling(1./255),
+  layers.Conv2D(2, 3, padding='same', activation='relu'),
+  layers.MaxPooling2D(),
+  layers.Conv2D(4, 3, padding='same', activation='relu'),
+  layers.MaxPooling2D(),
+  layers.Conv2D(8, 3, padding='same', activation='relu'),
+  layers.MaxPooling2D(),
+  layers.Conv2D(16, 3, padding='same', activation='relu'),
+  layers.MaxPooling2D(),
+  layers.Conv2D(32, 3, padding='same', activation='relu'),
+  layers.MaxPooling2D(),
+  tfa.layers.SpatialPyramidPooling2D([1, 2, 4]),
+  layers.Flatten(),
+  #layers.SpatialPyramidPooling([1, 2, 4]), # Ilia
+
+  layers.Dense(32, activation='relu'),
+  layers.Dense(1, activation='sigmoid')
+])
+------------------
+
+----- stderr -----
+ERROR: Could not find a version that satisfies the requirement tensorflow-addons (from versions: none)
+
+[notice] A new release of pip is available: 24.2 -> 24.3.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+ERROR: No matching distribution found for tensorflow-addons
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[1], line 2[0m
+[0;32m      1[0m get_ipython()[38;5;241m.[39msystem([38;5;124m'[39m[38;5;124mpip install tensorflow-addons[39m[38;5;124m'[39m)
+[1;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mtensorflow_addons[39;00m [38;5;28;01mas[39;00m [38;5;21;01mtfa[39;00m
+[0;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mtensorflow[39;00m [38;5;28;01mas[39;00m [38;5;21;01mtf[39;00m
+[0;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow[39;00m [38;5;28;01mimport[39;00m keras
+
+[1;31mModuleNotFoundError[0m: No module named 'tensorflow_addons'
+

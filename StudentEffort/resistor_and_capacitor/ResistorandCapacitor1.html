@@ -1,0 +1,982 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>RESISTOR &amp; CAPACITOR DATA &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/resistor_and_capacitor/ResistorandCapacitor1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="Bias in Artificial Intelligence" href="../biasInAI/bias.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">RESISTOR &amp; CAPACITOR DATA</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/resistor_and_capacitor/ResistorandCapacitor1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/resistor_and_capacitor/ResistorandCapacitor1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>RESISTOR & CAPACITOR DATA</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistors">Resistors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-resistor">What is Resistor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-resistors-by-resistance-value">Types of Resistors by resistance value</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-resistor">Fixed Resistor</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#carbon-composition-resistors">Carbon-Composition Resistors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wire-wound-resistors">Wire Wound Resistors</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-resistors">Variable Resistors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tolerance">Tolerance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-resistor-values">Standard Resistor Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e12-series">E12 Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e24-series">E24 Series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistor-color-code">Resistor Color Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#band-resistor-color-code">5-band Resistor Color Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-a-5-band-resistor-colour-code">How To Read a 5-band Resistor Colour Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#band-resistor-colour-code">4-band Resistor Colour Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-a-4-band-resistor-colour-code">How To Read a 4-band Resistor Colour Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors">Capacitors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-capacitor">What is Capacitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-capacitance-of-a-capacitor">The Capacitance of a Capacitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-capacitors">Types of Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#film-capacitors">Film Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ceramic-capacitor">Ceramic Capacitor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electrolytic-capacitors">Electrolytic Capacitors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-markings-and-their-importance">Capacitor Markings and Their Importance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-marking-codes">Capacitor Marking Codes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-coded-markings-on-capacitors">Non-Coded Markings on Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abbreviated-capacitor-marking-codes">Abbreviated Capacitor Marking Codes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-color-codes">Capacitor Color Codes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-colour-code-table">Capacitor Colour Code Table</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-voltage-colour-code-table">Capacitor Voltage Colour Code Table</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-voltage-reference">Capacitor Voltage Reference</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-tolerance-codes">Capacitor Tolerance Codes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-working-voltage-codes">Capacitor Working Voltage Codes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-coefficient-codes-on-capacitors">Temperature Coefficient Codes on Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-polarity-markings">Capacitor Polarity Markings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markings-for-different-types-of-capacitors">Markings for Different Types of Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-codes-for-plastic-film-capacitors">Material Codes for Plastic Film Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ceramic-capacitor-colour-coding-for-temperature-coefficient">Ceramic Capacitor Colour coding for Temperature Coefficient</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#color-code">Color Code</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Electrolytic Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aluminium-electrolytic-capacitors">Aluminium Electrolytic Capacitors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tantalum-electrolytic-capacitors">Tantalum Electrolytic Capacitors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="resistor-capacitor-data">
+<h1>RESISTOR &amp; CAPACITOR DATA<a class="headerlink" href="#resistor-capacitor-data" title="Link to this heading">#</a></h1>
+<p>Author : Kourosh Arfae Shahidi</p>
+<p>Email : <a class="reference external" href="mailto:kourosh&#46;a&#46;shahidi&#37;&#52;&#48;gmail&#46;com">kourosh<span>&#46;</span>a<span>&#46;</span>shahidi<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p>fall 2024</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In electronic circuits, resistors and capacitors are fundamental components that play a crucial role in controlling and managing current and voltage. These two components are widely used in various circuits to regulate performance and ensure that electronic devices operate properly. The accurate and appropriate selection of resistor and capacitor values, based on established standards, is key to optimizing circuit performance and achieving design objectives. One of the most commonly used standards is the E-series, which provides standard resistor values such as E12, E24, and E96, tailored to meet practical design needs. Similarly, capacitors come in a wide range of values, selected based on factors like the type of circuit, required precision, and stability.</p>
+<p>This research explores the standard resistor values, focusing on the E-series, and also investigates the various capacitor values. It will further discuss the differences in the structure and materials used in manufacturing these components, providing a deeper understanding of how they function and their applications in electronic circuit design. For any circuit designer, a solid grasp of these components and their values is essential, as the efficient use of resistors and capacitors can significantly enhance the accuracy, stability, and overall performance of electronic systems.</p>
+</section>
+<section id="resistors">
+<h2>Resistors<a class="headerlink" href="#resistors" title="Link to this heading">#</a></h2>
+</section>
+<section id="what-is-resistor">
+<h2>What is Resistor<a class="headerlink" href="#what-is-resistor" title="Link to this heading">#</a></h2>
+<p>The resistor is a passive electrical component that creates resistance in the flow of electric current. In almost all electrical networks and electronic circuits they can be found. The resistance is measured in ohms (Ω). An ohm is the resistance that occurs when a current of one ampere (A) passes through a resistor with a one volt (V) drop across its terminals.</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(R = \frac{V}{I}\)</span></p>
+</div></blockquote>
+</section>
+<section id="types-of-resistors-by-resistance-value">
+<h2>Types of Resistors by resistance value<a class="headerlink" href="#types-of-resistors-by-resistance-value" title="Link to this heading">#</a></h2>
+<section id="fixed-resistor">
+<h3>Fixed Resistor<a class="headerlink" href="#fixed-resistor" title="Link to this heading">#</a></h3>
+<p>Fixed resistors are electronic components designed to provide a constant resistance value in a circuit. Their resistance cannot be changed or adjusted, meaning they offer a fixed amount of opposition to the flow of electrical current. These resistors are fundamental to controlling current and voltage in nearly all electronic devices and systems.</p>
+<p>Fixed resistors are available in a wide range of resistance values, from fractions of an ohm to several mega ohms, and are used based on the specific needs of the circuit. They come in various types, each with unique characteristics, such as carbon composition, metal film, and wire wound resistors.</p>
+<p>The key benefits of fixed resistors are their reliability, simplicity, and ease of use. Once placed in a circuit, they maintain their set resistance value without requiring further adjustments. This makes them essential for applications where consistent performance is critical, such as in signal processing, power distribution, and various control circuits.</p>
+<section id="carbon-composition-resistors">
+<h4>Carbon-Composition Resistors<a class="headerlink" href="#carbon-composition-resistors" title="Link to this heading">#</a></h4>
+<p>Carbon composition resistors (CCR) consist of a solid cylindrical resistive element with embedded wire leads or metal end caps to which the lead wires are attached. The body of the resistor is protected with paint or plastic. Early 20th-century carbon composition resistors had uninsulated bodies; the lead wires were wrapped around the ends of the resistance element rod and soldered. The completed resistor was painted for color-coding of its value.</p>
+<p><img alt="title" src="../../_images/Image1.jpg" /></p>
+<p>The resistive element in carbon composition resistors is made from a mixture of finely powdered carbon and an insulating material, usually ceramic. A resin holds the mixture together. The resistance is determined by the ratio of the fill material (the powdered ceramic) to the carbon.</p>
+<p>The big advantage of carbon composition resistors is their ability to withstand high energy pulses. When current flows through the resistor, the entire carbon composition body conducts the energy.</p>
+</section>
+<section id="wire-wound-resistors">
+<h4>Wire Wound Resistors<a class="headerlink" href="#wire-wound-resistors" title="Link to this heading">#</a></h4>
+<p>Wire wound resistors are commonly made by winding a metal wire, usually nichrome, around a ceramic, plastic, or fiberglass core. The ends of the wire are soldered or welded to two caps or rings, attached to the ends of the core. The assembly is protected with a layer of paint, molded plastic, or an enamel coating baked at high temperature.</p>
+<p><img alt="title" src="../../_images/Image2.jpg" /></p>
+<p>In this case, the resistor value is determined by first of all the type of wire and then the diameter. How thick is the wire, the thicker the wire the less the resistance and the length of the wire, the longer the wire the great the resistance. They’re used for high power and precise values.</p>
+</section>
+</section>
+<section id="variable-resistors">
+<h3>Variable Resistors<a class="headerlink" href="#variable-resistors" title="Link to this heading">#</a></h3>
+<p>Variable resistors are electronic components that allow for the adjustment of resistance values within a circuit. Unlike fixed resistors, which provide a constant resistance, variable resistors can be manually or electronically altered, enabling users to control current flow and voltage levels precisely. Common types of variable resistors include potentiometers, which are often used in volume controls and light dimmers, and rheostats, which are typically used for adjusting current in high-power applications. Their versatility makes them essential in various applications, from consumer electronics to industrial equipment, as they enable fine-tuning and calibration of circuit performance to meet specific requirements.</p>
+</section>
+</section>
+<section id="tolerance">
+<h2>Tolerance<a class="headerlink" href="#tolerance" title="Link to this heading">#</a></h2>
+<p>Resistor tolerance is a measure of the resistor’s variation from the specified value. Resistor tolerance is expressed as a percentage of its nominal value. Typical resistor tolerances are one percent and five percent, with tighter-tolerance resistors being somewhat more expensive. If the resistors have tolerances of less than two percent, typically they are referred to as precision resistors.</p>
+</section>
+<section id="standard-resistor-values">
+<h2>Standard Resistor Values<a class="headerlink" href="#standard-resistor-values" title="Link to this heading">#</a></h2>
+<p>Fixed resistors come in a variety of types, sizes and resistance values. But to have a resistor available for every possible resistance value calculated, literally millions of individual resistors would need to exist. Clearly this is not practical but instead, resistors are manufactured in what are commonly known as Standard Resistor Values, also known as Preferred values.</p>
+<p>The standardisation of resistor values has several major advantages. Instead of sequential values of resistance from say 1Ω and upwards, certain values of resistors exist within certain tolerance bands which are evenly distributed as best as possible on a logarithmic scale. Also, the use of standard resistor values allows compatibility among resistors from various manufacturers for a given design, which in itself is advantageous for electrical engineers.</p>
+<p>The tolerance band of a fixed resistor is the maximum difference allowed between its actual resistive value and the required or expected resistive value. This difference is commonly expressed as a plus or minus percentage value. For example, a 1kΩ ±20% tolerance resistor may have a maximum and minimum resistive value of:</p>
+<section id="e12-series">
+<h3>E12 Series<a class="headerlink" href="#e12-series" title="Link to this heading">#</a></h3>
+<p>The first thing to know is that in each decade of resistance (i.e., from 10 - 100W, 100 - 1kW, 1k - 10kW, etc) there are only a finite number of different nominal values allowed. Most common resistors have values in the <strong>E12</strong> series, which only has 12 allowed values per decade. Normalised these are 1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8 and 8.2. Multiples of these values are simply repeated in each decade , 10, 12, 15, 18 and so on. Note that the <strong>steps</strong> between these values are always very close to 20%, because the E12 series dates from the days of resistors with ±10% tolerance.</p>
+<p><img alt="title" src="../../_images/Image3.png" /></p>
+</section>
+<section id="e24-series">
+<h3>E24 Series<a class="headerlink" href="#e24-series" title="Link to this heading">#</a></h3>
+<p>E24 resistor values are part of the E-series standard for preferred resistor values, commonly used in electronic components. The E24 series includes 24 different logarithmically spaced resistance values per decade (e.g., between 10Ω and 100Ω), which allows for a broader range of available resistance options with a standard tolerance of ±5%. These values are chosen to ensure that for any given range, there’s sufficient coverage to meet design needs while maintaining reasonable manufacturing precision. E24 resistors are widely used in general-purpose electronics where high precision is not crucial but flexibility in choosing values is important.</p>
+<p><img alt="title" src="../../_images/Image4.jpg" /></p>
+</section>
+</section>
+<section id="resistor-color-code">
+<h2>Resistor Color Code<a class="headerlink" href="#resistor-color-code" title="Link to this heading">#</a></h2>
+<p>Generally, the resistance value, tolerance, and wattage rating are printed on the body of a resistor as numbers or letters when the resistors body is big enough to read the print, such as large power resistors. but many resistors are so small that it would be difficult to print their value and % tolerance on their body in digits. To overcome this, a coding system based on bands of distinctive colours was developed to assist in identification. Learning this <strong>colour code</strong> is not as necessary as it used to be (thanks to accurate, low cost digital multimeters!), but it’s not hard to learn and its quite useful knowledge anyway.</p>
+<p>The next thing to know is that there are two different resistor colour coding systems in use: one using a total of 4 colour bands, and the other 5.</p>
+<section id="band-resistor-color-code">
+<h3>5-band Resistor Color Code<a class="headerlink" href="#band-resistor-color-code" title="Link to this heading">#</a></h3>
+<p>5-band resistors are more precise and higher quality metal-film axial resistors with tolerance values of 2% or less compared to wire wound or carbon composition resistors.<br />
+<strong>the 5-band system is quite capable of handling any resistors with E12 or E24 values</strong></p>
+<p><img alt="title" src="../../_images/Image5.jpg" /></p>
+<section id="how-to-read-a-5-band-resistor-colour-code">
+<h4>How To Read a 5-band Resistor Colour Code<a class="headerlink" href="#how-to-read-a-5-band-resistor-colour-code" title="Link to this heading">#</a></h4>
+<p>Each coloured band of a fixed value resistor represents the nominal Ohmic value from the 1st to the 3rd coloured band. The decimal multiplier digit is located on the 4th band, and the 5th band indicates the tolerance of 5-band resistor.</p>
+<p>Resistor colour code markings are always read one band at a time starting from the left to the right, with the larger width tolerance band oriented to the right side indicating its tolerance value. Sometimes there is a slight gap between the multiplier and tolerance bands to help you distinguish between the resistors left and right sides.</p>
+<p><img alt="title" src="../../_images/Image6.PNG" /></p>
+</section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h4>
+<p>Determine the resistance value of the following resistor</p>
+<p><img alt="title" src="../../_images/Image7.PNG" /></p>
+<blockquote>
+<div><p>Resistance : 125.00 Mega ohms</p>
+</div></blockquote>
+<blockquote>
+<div><p>Tolerance : ± 5%</p>
+</div></blockquote>
+</section>
+</section>
+<section id="band-resistor-colour-code">
+<h3>4-band Resistor Colour Code<a class="headerlink" href="#band-resistor-colour-code" title="Link to this heading">#</a></h3>
+<p>4-band resistors will almost always have values in the E12 series, while 5-band resistors can have any value in the E24 series.This is worth remembering, because depending on the resistor’s body colour, some of the band colours may not be easy to distinguish. Blue (6) and grey (8) sometimes look very similar, as do red (2), brown (1) and orange (3).</p>
+<p><img alt="title" src="../../_images/Image8.PNG" /></p>
+<section id="how-to-read-a-4-band-resistor-colour-code">
+<h4>How To Read a 4-band Resistor Colour Code<a class="headerlink" href="#how-to-read-a-4-band-resistor-colour-code" title="Link to this heading">#</a></h4>
+<p>The easiest way to identify a resistor colour code is to know which colours represent the most significant digits. Resistor colour code markings are always read one band at a time starting from the left to the right, with the larger width tolerance band oriented to the right side indicating its tolerance.</p>
+<p>By matching the colour of the first band with its associated number in the digit column of the colour chart below the first digit is identified and this represents the first digit of the resistance value.</p>
+<p><img alt="title" src="../../_images/Image9.PNG" /></p>
+</section>
+<section id="id1">
+<h4>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Determine the resistance value of the following resistor</p>
+<p><img alt="title" src="../../_images/Image10.PNG" /></p>
+<blockquote>
+<div><p>Resistance : 47.00k ohms</p>
+</div></blockquote>
+<blockquote>
+<div><p>Tolerance : ± 0.25%</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="capacitors">
+<h2>Capacitors<a class="headerlink" href="#capacitors" title="Link to this heading">#</a></h2>
+</section>
+<section id="what-is-capacitor">
+<h2>What is Capacitor<a class="headerlink" href="#what-is-capacitor" title="Link to this heading">#</a></h2>
+<p>Capacitors are passive electronic components consisting of two or more pieces of conducting material separated by an insulating material. The capacitor is a component which has the ability or “capacity” to store energy in the form of an electrical charge producing a potential difference (Static Voltage) across its plates, much like a small rechargeable battery.</p>
+<p>By applying a voltage to a capacitor and measuring the charge on the plates, the ratio of the charge Q to the voltage V will give the capacitance value of the capacitor and is therefore given as: <span class="math notranslate nohighlight">\(C = \frac{Q}{V}\)</span> this equation can also be re-arranged to give the familiar formula for the quantity of charge on the plates as: <span class="math notranslate nohighlight">\(Q = C \times V\)</span></p>
+</section>
+<section id="the-capacitance-of-a-capacitor">
+<h2>The Capacitance of a Capacitor<a class="headerlink" href="#the-capacitance-of-a-capacitor" title="Link to this heading">#</a></h2>
+<p>Capacitance is the electrical property of a capacitor and is the measure of a capacitors ability to store an electrical charge onto its two plates with the unit of capacitance being the Farad (abbreviated to F) named after the British physicist Michael Faraday.</p>
+<p>Capacitance is defined as being that a capacitor has the capacitance of One Farad when a charge of One Coulomb is stored on the plates by a voltage of One volt. Note that capacitance, C is always positive in value and has no negative units. However, the Farad is a very large unit of measurement to use on its own so sub-multiples of the Farad are generally used such as micro-farads, nano-farads and pico-farads, for example.</p>
+</section>
+<section id="types-of-capacitors">
+<h2>Types of Capacitors<a class="headerlink" href="#types-of-capacitors" title="Link to this heading">#</a></h2>
+<p>The types of capacitor available range from very small delicate trimming capacitors using in oscillator or radio circuits, up to large power metal-can type capacitors used in high voltage power correction and smoothing circuits.</p>
+<p>The comparisons between the the different types of capacitor is generally made with regards to the dielectric used between the plates. Like resistors, there are also variable types of capacitors which allow us to vary their capacitance value for use in radio or “frequency tuning” type circuits.</p>
+<section id="film-capacitors">
+<h3>Film Capacitors<a class="headerlink" href="#film-capacitors" title="Link to this heading">#</a></h3>
+<p>Film Capacitors are the most commonly available of all types of capacitor, consisting of a relatively large family of capacitors with the difference being in their dielectric properties. These include polyester (Mylar), polystyrene, polypropylene, polycarbonate, metalised paper, Teflon etc. Film types of capacitor are available in capacitance ranges from as small as 5pF to as large as 100uF depending upon the actual type of capacitor and its voltage rating. Film capacitors also come in an assortment of shapes and case styles which include:</p>
+<ul class="simple">
+<li><p>Wrap &amp; Fill (Oval &amp; Round)  :  where the capacitor is wrapped in a tight plastic tape and have the ends filled with epoxy to seal them.</p></li>
+<li><p>Epoxy Case (Rectangular &amp; Round)  –  where the capacitor is encased in a moulded plastic shell which is then filled with epoxy.</p></li>
+<li><p>Metal Hermetically Sealed (Rectangular &amp; Round)  –  where the capacitor is encased in a metal tube or can and again sealed with epoxy.</p></li>
+</ul>
+<p>Film Capacitors which use polystyrene, polycarbonate or Teflon as their dielectrics are sometimes called “Plastic capacitors”. The main advantage of plastic film types of capacitor compared to impregnated-paper types is that they operate well under conditions of high temperature, have smaller tolerances, a very long service life and high reliability.</p>
+<p><img alt="title" src="../../_images/Image11.png" /></p>
+</section>
+<section id="ceramic-capacitor">
+<h3>Ceramic Capacitor<a class="headerlink" href="#ceramic-capacitor" title="Link to this heading">#</a></h3>
+<p>Ceramic Capacitors or Disc Capacitors as they are generally called, are made by coating two sides of a small porcelain or ceramic disc with silver and are then stacked together to make a capacitor. For very low capacitance values a single ceramic disc of about 3-6mm is used. Ceramic capacitors have a high dielectric constant (High-K) and are available so that relatively high capacitance’s can be obtained in a small physical size.</p>
+<p><img alt="title" src="../../_images/Image12.jpg" /></p>
+<p>They exhibit large non-linear changes in capacitance against temperature and as a result are used as de-coupling or by-pass capacitors as they are also non-polarized devices. Ceramic capacitors have values ranging from a few pico farads to one or two micro farads, ( μF ) but their voltage ratings are generally quite low.</p>
+</section>
+<section id="electrolytic-capacitors">
+<h3>Electrolytic Capacitors<a class="headerlink" href="#electrolytic-capacitors" title="Link to this heading">#</a></h3>
+<p>Electrolytic Capacitors are generally used when very large capacitance values are required. Here instead of using a very thin metallic film layer for one of the electrodes, a semi-liquid electrolyte solution in the form of a jelly or paste is used which serves as the second electrode (usually the cathode).</p>
+<p><img alt="title" src="../../_images/Image13.jpg" /></p>
+<p>Electrolytic’s generally come in two basic forms; <strong>Aluminium Electrolytic Capacitors</strong> and <strong>Tantalum Electrolytic Capacitors</strong>.</p>
+</section>
+</section>
+<section id="capacitor-markings-and-their-importance">
+<h2>Capacitor Markings and Their Importance<a class="headerlink" href="#capacitor-markings-and-their-importance" title="Link to this heading">#</a></h2>
+<p>Capacitor markings are used for identifying their values and proper usage in electronic circuits. Here’s a detailed breakdown of the key aspects to consider:</p>
+<p>On smaller capacitors, you often find only the capacitance value. For larger capacitors, two main parameters are displayed: capacitance and breakdown voltage. Capacitance is usually indicated in microfarads (μF). For instance, “150μF” clearly denotes 150 microfarads. Alternatively, a three-digit code might be used, like “224,” which translates to 220,000 picofarads (pF). This is calculated from 22 x 10^4. In these codes: The last digit shows the power of ten (e.g., 1-6). Numbers 8 and 9 convert to multipliers of 0.01 and 0.1 respectively. This parameter indicates the maximum voltage the capacitor can handle before failing. It is usually marked directly with a value, such as “25V.”<br />
+Also, sometimes capacitors are marked with the capital letter K to signify a value of one thousand pico-Farads, so for example, a capacitor with the markings of 100K would be 100 x 1000pF or 100nF.</p>
+<p>Polarized capacitors have a clear marker to denote the negative side, often a color stripe (white or black). This ensures correct installation by highlighting the polarity. These markings help in selecting and applying capacitors correctly in circuits. It can also prevent common mistakes in electronic designs and installations. Proper capacitor placement and selection enhance the reliability of electronic devices and protect components from potential damage.</p>
+</section>
+<section id="capacitor-marking-codes">
+<h2>Capacitor Marking Codes<a class="headerlink" href="#capacitor-marking-codes" title="Link to this heading">#</a></h2>
+<p>Capacitors use various marking systems based on their type, size, and manufacturing specifications. The Electronic Industry Alliance (EIA) has standardized these markings to ensure uniform identification across different manufacturers and types. EIA standardization simplifies maintenance, repairs, and integration of capacitors into electronic designs. This consistency enhances efficiency and reliability.</p>
+<section id="non-coded-markings-on-capacitors">
+<h3>Non-Coded Markings on Capacitors<a class="headerlink" href="#non-coded-markings-on-capacitors" title="Link to this heading">#</a></h3>
+<p>For larger capacitors, specifications like capacitance and voltage ratings are printed directly on the casing. These markings are non-coded, clear, and unabbreviated, making the parameters immediately visible and understandable. This straightforward marking method allows users to quickly and accurately assess capacitor specifications during installation, maintenance, or troubleshooting tasks. The ease of identification ensures that key details are always in view.</p>
+<p>With clear visibility of capacitance and voltage ratings, decision-making becomes swift and precise. This reduces the risk of errors and enhances operational efficiency in electronic setups. Accurate component handling can maintain the reliability and performance of electronic systems.</p>
+</section>
+<section id="abbreviated-capacitor-marking-codes">
+<h3>Abbreviated Capacitor Marking Codes<a class="headerlink" href="#abbreviated-capacitor-marking-codes" title="Link to this heading">#</a></h3>
+<p>In smaller capacitors, where space is limited, manufacturers use abbreviated marking codes. These codes use significant figures and multipliers to accurately identify capacitance values. This system is ideal for miniaturized electronics, such as surface-mount devices, where space optimization is required. These compact codes help ensure that the correct capacitors are selected and installed, preserving the integrity and performance of the electronic device. Despite their concise nature, these markings require a strong familiarity with standard coding conventions to avoid errors in component selection and application.</p>
+</section>
+<section id="capacitor-color-codes">
+<h3>Capacitor Color Codes<a class="headerlink" href="#capacitor-color-codes" title="Link to this heading">#</a></h3>
+<p>To reduce the confusion regarding letters, numbers and decimal points, an International colour coding scheme was developed many years ago as a simple way of identifying capacitor values and tolerances. It consists of coloured bands (in spectral order) known commonly as a Capacitor Colour Codes system.</p>
+<p><img alt="title" src="../../_images/Image14.jpg" /></p>
+<section id="capacitor-colour-code-table">
+<h4>Capacitor Colour Code Table<a class="headerlink" href="#capacitor-colour-code-table" title="Link to this heading">#</a></h4>
+<p>Generally the code consists of 2 or 3 numbers and an optional tolerance letter code to identify the tolerance. Where a two number code is used the value of the capacitor only is given in picofarads, for example, 47 = 47 pF and 100 = 100pF etc. A three-letter code consists of the two value digits and a multiplier much like the resistor colour codes in the resistors section.</p>
+<p><img alt="title" src="../../_images/Image15.png" /></p>
+</section>
+<section id="capacitor-voltage-colour-code-table">
+<h4>Capacitor Voltage Colour Code Table<a class="headerlink" href="#capacitor-voltage-colour-code-table" title="Link to this heading">#</a></h4>
+<p>It is also possible to determine the voltage rating in this way</p>
+<p><img alt="title" src="../../_images/Image16.png" /></p>
+</section>
+<section id="capacitor-voltage-reference">
+<h4>Capacitor Voltage Reference<a class="headerlink" href="#capacitor-voltage-reference" title="Link to this heading">#</a></h4>
+<p>Type J  –  Dipped Tantalum Capacitors.
+Type K  –  Mica Capacitors.
+Type L  –  Polyester/Polystyrene Capacitors.
+Type M  –  Electrolytic 4 Band Capacitors.
+Type N  –  Electrolytic 3 Band Capacitors.</p>
+</section>
+<section id="id2">
+<h4>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Specify the value of capacitance, voltage rating and tolerance in the capacitor below</p>
+<p><img alt="title" src="../../_images/Image17.jpg" /></p>
+<blockquote>
+<div><p>Capacitance : 10 nF</p>
+</div></blockquote>
+<blockquote>
+<div><p>Tolerance : 20%</p>
+</div></blockquote>
+<blockquote>
+<div><p>Voltage Rating : 100V</p>
+</div></blockquote>
+</section>
+</section>
+<section id="capacitor-tolerance-codes">
+<h3>Capacitor Tolerance Codes<a class="headerlink" href="#capacitor-tolerance-codes" title="Link to this heading">#</a></h3>
+<p>Capacitors use tolerance codes, much like resistors, standardized by the Electronic Industry Alliance (EIA). These codes indicate how much the actual capacitance may deviate from the marked value. This precision is ideal for designing and maintaining high-accuracy circuits.</p>
+<p><img alt="title" src="../../_images/Image18.png" /></p>
+<p>for example consider the capacitor below:</p>
+<p><img alt="title" src="../../_images/Image19.png" /></p>
+<p>The capacitor on the left is of a ceramic disc type capacitor that has the code 473J printed onto its body. Then the 4 = 1st digit, the 7 = 2nd digit, the 3 is the multiplier in pico-Farads, pF and the letter J is the tolerance and this translates to:  <span class="math notranslate nohighlight">\(47pF \times 1,000\)</span> (3 zero’s) = 47,000 pF, 47nF or 0.047uF the J indicates a tolerance of +/- 5%</p>
+</section>
+<section id="capacitor-working-voltage-codes">
+<h3>Capacitor Working Voltage Codes<a class="headerlink" href="#capacitor-working-voltage-codes" title="Link to this heading">#</a></h3>
+<p>The voltage rating on a capacitor indicates the maximum voltage it can safely handle. This parameter is ensuring safety and performance, as it prevents over-voltage failures that can damage both the capacitor and the surrounding circuitry.</p>
+<p><img alt="title" src="../../_images/Image20.png" /></p>
+</section>
+<section id="temperature-coefficient-codes-on-capacitors">
+<h3>Temperature Coefficient Codes on Capacitors<a class="headerlink" href="#temperature-coefficient-codes-on-capacitors" title="Link to this heading">#</a></h3>
+<p>Capacitors often have markings indicating their temperature coefficients, which show how capacitance changes with temperature. These codes are used for applications requiring consistent performance despite temperature fluctuations, such as precision electronic circuits.</p>
+<p>Temperature coefficient codes help ensure that electronic devices function reliably under varying environmental conditions. Knowing how to select capacitors based on these codes can maintain stability and functionality in temperature-sensitive applications.</p>
+<p><img alt="title" src="../../_images/Image21.png" /></p>
+</section>
+<section id="capacitor-polarity-markings">
+<h3>Capacitor Polarity Markings<a class="headerlink" href="#capacitor-polarity-markings" title="Link to this heading">#</a></h3>
+<p>Polarity is used when using polarized capacitors, such as electrolytic and tantalum types. These capacitors have clear polarity indicators, like plus (+) and minus (-) signs or a distinctive stripe, to guide proper installation in circuits.<br />
+Aligning these polarity markings with the circuit’s polarity can prevent damage caused by reverse insertion. Quick and accurate identification and alignment of these markings during installation ensure the capacitors function correctly.</p>
+</section>
+</section>
+<section id="markings-for-different-types-of-capacitors">
+<h2>Markings for Different Types of Capacitors<a class="headerlink" href="#markings-for-different-types-of-capacitors" title="Link to this heading">#</a></h2>
+<section id="material-codes-for-plastic-film-capacitors">
+<h3>Material Codes for Plastic Film Capacitors<a class="headerlink" href="#material-codes-for-plastic-film-capacitors" title="Link to this heading">#</a></h3>
+<p>Capacitors which use a plastic film dielectric are identified using the following codes:</p>
+<p>MKT        Metallised Polyester (PETP)<br />
+KS           Polystyrene film/foil<br />
+MKC        Metallised Polycarbonate<br />
+KP           Polypropylene film/foil<br />
+KT           Polyester film/foil<br />
+MKP        Metallised polypropylene</p>
+</section>
+<section id="ceramic-capacitor-colour-coding-for-temperature-coefficient">
+<h3>Ceramic Capacitor Colour coding for Temperature Coefficient<a class="headerlink" href="#ceramic-capacitor-colour-coding-for-temperature-coefficient" title="Link to this heading">#</a></h3>
+<p>Capacitors which use a plastic dielectric have a very low temperature coefficient (tempco), their capacitance scarcely varies with temperature, and can generally be regarded as ‘stable’. However this isn’t true with many ceramic-dielectric types. Many of the ceramic materials produce a negative tempco, where capacitance decreases with temperature, while a few give a positive tempco where capacitance increases with temperature.</p>
+<p>By careful mixing of materials, manufacturers can produce a ceramic which gives a tempco very close to zero, but the resulting dielectric constant is also quite low. That is why such ‘NP0’ capacitors are normally only available in relatively low values , less than about 200pF, typically.</p>
+<section id="color-code">
+<h4>Color Code<a class="headerlink" href="#color-code" title="Link to this heading">#</a></h4>
+<p>The following colour bands are used on ceramic capacitors to indicate their tempco. Note that ‘P’ indicates a positive tempco and ‘N’ a negative one, with the number indicating parts per million per degree C.</p>
+<p><img alt="title" src="../../_images/Image22.png" /></p>
+</section>
+</section>
+<section id="id3">
+<h3>Electrolytic Capacitors<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Electrolytic capacitors take advantage of the ability of some metal oxides to act as an excellent insulator (at low voltages) and also form a dielectric material with a very high dielectric constant ‘K’. Most common electrolytic capacitors use aluminium oxide as the dielectric, but special-purpose and low leakage types generally use tantalum oxide.</p>
+<p>The main shortcoming of electrolytic capacitors is that the insulating and dielectric properties of the metallic oxides are polarity sensitive  so most electrolytic capacitors must be connected into circuit so that voltage is always applied to them with the correct polarity (which is marked on their body). The only exception is ‘non polarised’ or bipolar (BP) electrolytics, which are effectively two electrolytics in series back-to-back.</p>
+<p>Because the oxide dielectric layer in electrolytic capacitors is extremely thin, these capacitors are more prone to breakdown at higher voltages. So all electrolytics are clearly marked in terms of their safe maximum operating voltage.</p>
+<p><strong>In most cases electrolytics also have their capacitance value shown directly on the case as well.</strong></p>
+<section id="aluminium-electrolytic-capacitors">
+<h4>Aluminium Electrolytic Capacitors<a class="headerlink" href="#aluminium-electrolytic-capacitors" title="Link to this heading">#</a></h4>
+<p>The three most common types of aluminium electrolytic in current use are the axial-lead or RT type, the radial-lead or RB type (for vertical mounting on PC boards) and the chassis-mounting or RG type. There’s also a variation on the RB type called the RP, with a third lead for orientation and added support.</p>
+</section>
+<section id="tantalum-electrolytic-capacitors">
+<h4>Tantalum Electrolytic Capacitors<a class="headerlink" href="#tantalum-electrolytic-capacitors" title="Link to this heading">#</a></h4>
+<p>The most common type of tantalum electrolytic in current use is the solid or TAG tantalum type, where the tantalum oxide dielectric is formed on the surface of a solid block of sintered tantalum granules. These capacitors provide low leakage and very high capacitance in a very small volume, but are limited to quite low voltages  typically less than 33V.</p>
+</section>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this mini-project, we first introduced resistors and their types based on resistance values. Then, we discussed standard resistor values, the E-series, and resistor color codes, which typically consist of four or five colored bands. Next, we moved on to capacitors. After introducing the different types of capacitors, we examined capacitor marking codes, including color codes, tolerance codes, and temperature codes , etc. Additionally, we provided a more detailed explanation of the labeling for each capacitor type.<br />
+Ultimately, by understanding these topics, one can easily obtain practical and useful information when dealing with resistors or capacitors.</p>
+</section>
+<section id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.electronics-tutorials.ws/resources/standard-resistor-values.html">https://www.electronics-tutorials.ws/resources/standard-resistor-values.html</a></p></li>
+<li><p><a class="reference external" href="https://www.electronics-tutorials.ws/resources/4-band-resistor-colour-code-calculator.html">https://www.electronics-tutorials.ws/resources/4-band-resistor-colour-code-calculator.html</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Resistor">https://en.wikipedia.org/wiki/Resistor</a></p></li>
+<li><p><a class="reference external" href="https://eepower.com/resistor-guide/resistor-standards-and-codes/resistor-values/#">https://eepower.com/resistor-guide/resistor-standards-and-codes/resistor-values/#</a></p></li>
+<li><p><a class="reference external" href="https://www.electronics-tutorials.ws/capacitor/cap_1.html">https://www.electronics-tutorials.ws/capacitor/cap_1.html</a></p></li>
+<li><p><a class="reference external" href="https://www.electronics-tutorials.ws/capacitor/cap_2.html">https://www.electronics-tutorials.ws/capacitor/cap_2.html</a></p></li>
+<li><p><a class="reference external" href="https://www.electronics-tutorials.ws/capacitor/cap_5.html">https://www.electronics-tutorials.ws/capacitor/cap_5.html</a></p></li>
+<li><p><a class="reference external" href="https://www.ic-components.com/blog/capacitor-codes-capacitor-markings-and-tolerance-code-chart.jsp#3.%20Capacitor%20Marking%20Codes">https://www.ic-components.com/blog/capacitor-codes-capacitor-markings-and-tolerance-code-chart.jsp#3. Capacitor Marking Codes</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\resistor_and_capacitor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../biasInAI/bias.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bias in Artificial Intelligence</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistors">Resistors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-resistor">What is Resistor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-resistors-by-resistance-value">Types of Resistors by resistance value</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-resistor">Fixed Resistor</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#carbon-composition-resistors">Carbon-Composition Resistors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wire-wound-resistors">Wire Wound Resistors</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-resistors">Variable Resistors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tolerance">Tolerance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-resistor-values">Standard Resistor Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e12-series">E12 Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e24-series">E24 Series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistor-color-code">Resistor Color Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#band-resistor-color-code">5-band Resistor Color Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-a-5-band-resistor-colour-code">How To Read a 5-band Resistor Colour Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#band-resistor-colour-code">4-band Resistor Colour Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-a-4-band-resistor-colour-code">How To Read a 4-band Resistor Colour Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors">Capacitors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-capacitor">What is Capacitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-capacitance-of-a-capacitor">The Capacitance of a Capacitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-capacitors">Types of Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#film-capacitors">Film Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ceramic-capacitor">Ceramic Capacitor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electrolytic-capacitors">Electrolytic Capacitors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-markings-and-their-importance">Capacitor Markings and Their Importance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-marking-codes">Capacitor Marking Codes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-coded-markings-on-capacitors">Non-Coded Markings on Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abbreviated-capacitor-marking-codes">Abbreviated Capacitor Marking Codes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-color-codes">Capacitor Color Codes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-colour-code-table">Capacitor Colour Code Table</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-voltage-colour-code-table">Capacitor Voltage Colour Code Table</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-voltage-reference">Capacitor Voltage Reference</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-tolerance-codes">Capacitor Tolerance Codes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-working-voltage-codes">Capacitor Working Voltage Codes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-coefficient-codes-on-capacitors">Temperature Coefficient Codes on Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-polarity-markings">Capacitor Polarity Markings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markings-for-different-types-of-capacitors">Markings for Different Types of Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-codes-for-plastic-film-capacitors">Material Codes for Plastic Film Capacitors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ceramic-capacitor-colour-coding-for-temperature-coefficient">Ceramic Capacitor Colour coding for Temperature Coefficient</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#color-code">Color Code</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Electrolytic Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aluminium-electrolytic-capacitors">Aluminium Electrolytic Capacitors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tantalum-electrolytic-capacitors">Tantalum Electrolytic Capacitors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
