@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Zener Diode &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/ZenerDiode/ZenerDiode';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Switches-AliAkhavan/Switches.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/ZenerDiode/ZenerDiode.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/ZenerDiode/ZenerDiode.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Zener Diode</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-zener-diode">What is a Zener Diode?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-zener-diode-work">How does a Zener diode work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-symbol-of-zener-diode">Circuit Symbol of Zener Diode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v-i-characteristics-of-zener-diode">V-I Characteristics of Zener Diode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zener-diode-application">Zener diode application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zener-diode-problems">Zener diode problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="zener-diode">
+<h1>Zener Diode<a class="headerlink" href="#zener-diode" title="Link to this heading">#</a></h1>
+<p>Author : Saman Hooshvar</p>
+<p>Contact : <a class="reference external" href="mailto:saman&#46;hooshvarfeyzabadi&#37;&#52;&#48;mail&#46;um&#46;ac&#46;ir">saman<span>&#46;</span>hooshvarfeyzabadi<span>&#64;</span>mail<span>&#46;</span>um<span>&#46;</span>ac<span>&#46;</span>ir</a></p>
+<section id="what-is-a-zener-diode">
+<h2>What is a Zener Diode?<a class="headerlink" href="#what-is-a-zener-diode" title="Link to this heading">#</a></h2>
+<p>Zener diodes are semiconductor devices that <strong>allow current to flow in both directions</strong> but specialize in current flowing in reverse. Also known as breakdown diodes, Zener diodes are the most common electronic components used as stable voltage references for electronic circuits.</p>
+<p>American physicist, Dr. Clarence Melvin Zener, first described the electronic properties of Zener diodes while researching the breakdown mechanisms of semiconductor materials. As a theoretical physicist at Bell Labs in New Jersey, he wrote a research paper later published in 1934, identifying a type of electrical breakdown later known as the Zener effect. These specific processes were named after him in the years afterward in his honor.</p>
+<p><img alt="zenerdiode" src="../../_images/zener-diodes-blog-infographic-update-2024.png" /></p>
+</section>
+<section id="how-does-a-zener-diode-work">
+<h2>How does a Zener diode work?<a class="headerlink" href="#how-does-a-zener-diode-work" title="Link to this heading">#</a></h2>
+<p>Current going across the terminals in reverse bias (backward) is called the <strong>Zener effect</strong>. When voltage potential is met, this causes the Zener voltage (<span class="math notranslate nohighlight">\( V_z\)</span>)/breakdown voltage. <strong>Zener diodes uniquely consist of a heavily doped P-N junction that allows current to flow in reverse when reaching Vz.</strong> A well-defined <span class="math notranslate nohighlight">\(V_z \)</span> can conduct current continuously in reverse bias without getting damaged. Current then increases to a maximum level determined by a series resistor and stabilizes, remaining constant over a range of applied voltages. Therefore, <strong>Zener diodes are applicable for use as voltage regulators</strong>.</p>
+<p>A Zener diode operates within the normal range of forward bias, with a turn-on voltage between 0.3V and 0.7V. When connected in reverse bias, the current flows backward, thus causing a small leakage of current to flow. As the reverse voltage increases to the arranged Vz, current flows throughout the diode. Current increases to a maximum decided by the series resistor and then stabilizes to remain constant over a range of applied voltages.</p>
+<p>Zener diodes have <strong>two breakdown effects</strong>. Knowing these two effects help with understanding their functionality. <strong>First is the Zener effect, prevalent in voltages below 5.5V</strong> and involves a tunneling effect to cause the breakdown. <strong>The second is the avalanche breakdown or impact ionization which occurs in voltages above 5.5V</strong>. These breakdowns both result in the same behavior, and they do not require different circuitry, but each does have a different temperature coefficient. The Zener effect has an anode (negative) terminal temperature coefficient, while the avalanche has a cathode (positive) terminal temperature coefficient. Both temperature effects are almost equal to 5.5V. They cancel each other out, making Zener diodes rated at around 5.5V and stable over a wide range of temperature requirements.</p>
+<p>Think of a Zener diode like two diodes in parallel, facing opposite directions. The voltage that’s forward bias in a Zener diode has a voltage drop of 1V needed for the diode to turn on for the current to flow. The forward voltage is forward biased. The current flowing backward is considered the Zener voltage or reversed biased due to its properties. An example of the Zener voltage is 3.3V. For the current to flow across the diode, the current must maintain at least a minimum of this voltage. Having a predictable voltage drop makes Zener diodes not only useful as voltage regulators, but a correctly set Zener diode may limit the voltage of other devices.</p>
+</section>
+<section id="circuit-symbol-of-zener-diode">
+<h2>Circuit Symbol of Zener Diode<a class="headerlink" href="#circuit-symbol-of-zener-diode" title="Link to this heading">#</a></h2>
+<p>Zener diodes come in various packaging options, depending on their power dissipation requirements. Some are designed for high-power applications, while others are available in surface mount formats. The most commonly used Zener diode is packaged in a small glass enclosure, with a distinctive band indicating the cathode side of the diode.</p>
+<p><img alt="zenerdiode2" src="../../_images/Zener-diode-2.png" /></p>
+</section>
+<section id="v-i-characteristics-of-zener-diode">
+<h2>V-I Characteristics of Zener Diode<a class="headerlink" href="#v-i-characteristics-of-zener-diode" title="Link to this heading">#</a></h2>
+<p>The diagram given below shows the V-I characteristics of the Zener diode.</p>
+<p><img alt="zenercurve" src="../../_images/zener-diode-diagram.png" /></p>
+<ul class="simple">
+<li><p><strong>Current <span class="math notranslate nohighlight">\(I_z\)</span> (max):</strong> Maximum current at the rated Zener Voltage (Vz – 200μA to 200A).</p></li>
+<li><p><strong>Current <span class="math notranslate nohighlight">\(I_z\)</span> (min):</strong> Minimum current value required for a diode to break down.</p></li>
+<li><p><strong>Forward Bias:</strong> Voltage going across a diode that allows the current to flow easily in one direction.</p></li>
+<li><p><strong>Power Rating:</strong> Denotes the maximum power the Zener diode can dissipate and is a product of the diode voltage/current flowing through it.</p></li>
+<li><p><strong>Reverse Bias/Zener Effect:</strong> Voltage going across a diode in the opposite direction of forward bias, this particular voltage doesn’t cause any detectable current to flow, changes AC to DC current, and manipulates other electronic signals.</p></li>
+<li><p><strong>Temperature Stability:</strong> Diodes around 5V have the best stability.</p></li>
+<li><p><strong>Voltage Tolerance:</strong> Typically ±5%</p></li>
+<li><p><strong>Zener/Breakdown Voltage (<span class="math notranslate nohighlight">\(V_z\)</span>):</strong> This is the minimum voltage that causes a portion of an insulator to experience a breakdown and become electrically conductive. Voltage ranges from 2.4V to 200V and can go up to 1kV, while the maximum for the surface-mounted device is 47V.</p></li>
+<li><p><strong>Zener Resistance (<span class="math notranslate nohighlight">\( R_z\)</span>):</strong> The resistance exhibited to the Zener diode.</p></li>
+</ul>
+</section>
+<section id="zener-diode-application">
+<h2>Zener diode application<a class="headerlink" href="#zener-diode-application" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Surge Suppressor:</strong> An electrical device, also known as a surge protector, that is used to protect equipment against power surges and voltage spikes while blocking voltage over a safe threshold of approximately 120V.</p></li>
+<li><p><strong>Switching Signals</strong>: An output signal switching device (or OSSD) is an electronic device in a machine’s safety system that provides a coded signal that, when interrupted due to a safety event, signals the machine to shut down. This helps avoid a stray signal operating a machine during unsafe conditions.</p></li>
+<li><p><strong>Voltage Regulator:</strong> When the load voltage equals the Zener voltage of the diode, the series-connected resistors limit the current through the diode. This serves to regulate voltage when there is an excess amount of voltage while the diode is conducting. The diode generates noise which can be suppressed by adding a large value decoupling capacitor across the diode.</p></li>
+<li><p><strong>Voltage Shifter:</strong> When applied to a circuit with a resistor, Zener diodes act as voltage shifters. The circuit lowers the output voltage equal to the diodes’ Zener voltage.</p></li>
+<li><p><strong>Waveform Clipper:</strong> Reshapes a signal and prevents voltage spikes from affecting circuits connected to a power supply.</p></li>
+</ul>
+</section>
+<section id="zener-diode-problems">
+<h2>Zener diode problems<a class="headerlink" href="#zener-diode-problems" title="Link to this heading">#</a></h2>
+<section id="problem-1">
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Link to this heading">#</a></h3>
+<p>For the circuit shown in Fig.1 (i), find : (i) the output voltage (ii) the voltage drop across series resistance (iii) the current through zener diode.</p>
+<p><img alt="ex1" src="../../_images/ex1.png" /></p>
+<section id="solution">
+<h4>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h4>
+<p>If you remove the zener diode in Fig. 1, the voltage V across the open-circuit is given by :</p>
+<p><span class="math notranslate nohighlight">\(V = \frac{R_L E_i}{R+R_L} = \frac{10*120}{5+10} = 80V \)</span></p>
+<p>Since voltage across zener diode is greater than VZ (= 50 V), the zener is in the “on” state. It can, therefore, be represented by a battery of <span class="math notranslate nohighlight">\(50V\)</span> as shown in.</p>
+<p><img alt="ex1" src="../../_images/ex1-2.png" /></p>
+<p>So the answer to (i) is:</p>
+<p><span class="math notranslate nohighlight">\(V_out = V_Z = 50V\)</span></p>
+<p>Answer to (ii) is:</p>
+<p>Voltage drop across <span class="math notranslate nohighlight">\(R = V_{in} - V_z = 120 - 50 = 70V\)</span></p>
+<p>Answer to (iii) is:</p>
+<p><span class="math notranslate nohighlight">\(I_L = \frac{V_Z}{R_L} = \frac{50}{10} = 5mA\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_R = \frac{70}{5} = 14mA\)</span></p>
+<p>By apllying KCL we have:</p>
+<p><span class="math notranslate nohighlight">\(I = I_L + I_Z\)</span>
+<span class="math notranslate nohighlight">\(I_z = I-I_L = 14-5 = 9mA\)</span></p>
+</section>
+</section>
+<section id="problem-2">
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Link to this heading">#</a></h3>
+<p>A 7.2 V zener is used in the circuit shown in Fig. 3 and the load current is to vary from 12 to 100 mA. Find the value of series resistance R to maintain a voltage of 7.2 V across the load. The input voltage is constant at 12V and the minimum zener current is 10 mA.</p>
+<p><img alt="zener2" src="../../_images/ex2.png" /></p>
+<section id="id1">
+<h4>Solution<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\(E_i = 12V\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_z = 7.2V\)</span></p>
+<p><span class="math notranslate nohighlight">\(R = \frac{E_i - E_0}{I_Z + I_L} \)</span></p>
+<p>The voltage across R is to remain constant at 12 − 7.2 = 4.8 V as the load current changes from 12 to 100 mA. <strong>The minimum zener current will occur when the load current is maximum.</strong></p>
+<p><span class="math notranslate nohighlight">\(R = \frac{E_i - E_0}{(I_Z)_{min} + (I_L)_{max}} = \frac {12-7.2}{(10+100)mA} = \frac{4.8}{110} = 43.5 Ω\)</span></p>
+<p>If R = 43.5 Ω is inserted in the circuit, the output voltage will remain constant over the regulating range. As the load current <span class="math notranslate nohighlight">\(I_L\)</span> decreases, the zener current <span class="math notranslate nohighlight">\(I_Z\)</span> will increase to such a value that <span class="math notranslate nohighlight">\(IZ + IL = 110 mA.\)</span></p>
+<p>Note that if load resistance is open-circuited, then <span class="math notranslate nohighlight">\(I_L = 0\)</span> and zener current becomes 110 mA.</p>
+</section>
+</section>
+<section id="problem-3">
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Link to this heading">#</a></h3>
+<p>The zener diode shown in Fig. 4 has <span class="math notranslate nohighlight">\(V_Z = 18 V\)</span>. The voltage across the load stays at 18 V as long as <span class="math notranslate nohighlight">\(I_Z\)</span> is maintained between 200 mA and 2 A. Find the value of series  resistance R so that <span class="math notranslate nohighlight">\(E_0\)</span> remains 18 V while input voltage <span class="math notranslate nohighlight">\(E_i\)</span> is free to vary between 22 V to 28V.</p>
+<p><img alt="ex3" src="../../_images/ex3.png" /></p>
+<section id="id2">
+<h4>Solution<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>The zener current will be minimum (i.e. 200 mA) when the input voltage is minimum (i.e. 22 V). The load current stays at constant value <span class="math notranslate nohighlight">\(I_L = \frac{V_Z}{R_L} = 1 A = 1000 mA.\)</span></p>
+<p><span class="math notranslate nohighlight">\(R = \frac{E_i - E_0}{(I_Z)_{min} + (I_L){max}} = \frac{22-18}{200+100} = 3.33Ω \)</span></p>
+</section>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Some notable manufacturers of Zener diodes include Nexperia, Vishay, ROHM, and Toshiba. These manufacturers produce Zener diodes for use in a variety of electronic components specializing in industries like consumer electronics, automotive, telecommunications, computing, industrial, and more. Zener diodes are small components that play a big role in the devices that serve industry professionals and everyday consumers and they will continue to do so for years to come.</p>
+</section>
+<section id="refrences">
+<h2>Refrences<a class="headerlink" href="#refrences" title="Link to this heading">#</a></h2>
+<p>1 - <a class="reference external" href="https://www.tti.com/content/ttiinc/en/resources/blog/what-is-a-zener-diode.html">https://www.tti.com/content/ttiinc/en/resources/blog/what-is-a-zener-diode.html</a></p>
+<p>2 - <a class="reference external" href="https://en.wikipedia.org/wiki/Zener_diode">https://en.wikipedia.org/wiki/Zener_diode</a></p>
+<p>3 - <a class="reference external" href="https://byjus.com/physics/zener-diode/">https://byjus.com/physics/zener-diode/</a></p>
+<p>4 - <a class="reference external" href="https://electronicspost.com/solved-problems-on-zener-diode/">https://electronicspost.com/solved-problems-on-zener-diode/</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\ZenerDiode"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-zener-diode">What is a Zener Diode?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-zener-diode-work">How does a Zener diode work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-symbol-of-zener-diode">Circuit Symbol of Zener Diode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v-i-characteristics-of-zener-diode">V-I Characteristics of Zener Diode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zener-diode-application">Zener diode application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zener-diode-problems">Zener diode problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
