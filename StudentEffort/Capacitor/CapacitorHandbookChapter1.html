@@ -1,0 +1,1818 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Capacitor Handbook Chapter(1) &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Capacitor/CapacitorHandbookChapter1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Wheatstone bridge for strain gauges" href="../Wheatstone/miniproject.html" />
+    <link rel="prev" title="What is a Varactor Diode?" href="../VaractorDiode.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Switches-AliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Capacitor/CapacitorHandbookChapter1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Capacitor/CapacitorHandbookChapter1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Capacitor Handbook Chapter(1)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline"><strong>Outline:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundamentals-for-all-capacitors"><strong>1- Foundamentals for all capacitors :</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-capacitor"><strong>1-1 What is  a Capacitor?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors-passive-or-active"><strong>1-2 Capacitors:Passive or Active?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-applications"><strong>1-3 Capacitor Applications:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitance-derivation-in-flat-capacitor"><strong>1-4 Capacitance derivation in flat capacitor:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-behavior-in-a-circuit"><strong>2- Capacitor behavior in a circuit:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#charge-curve"><strong>2-1 Charge curve:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-time"><strong>2-2 Characteristic time :</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resistor-voltage-during-capacitor-charging"><strong>2-3 Resistor voltage during capacitor charging:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-an-rc-circuit-work"><strong>2-4 How does an RC circuit work?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-as-storage-battery"><strong>2-5 Capacitor as storage battery:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-as-filter"><strong>3 Capacitor as filter:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-analysis"><strong>3-1 DC Analysis:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis"><strong>3-2 AC Analysis</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-for-different-capacitances"><strong>3-2-1 Analysis for different capacitances</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-for-different-frequencies"><strong>3-2-2 Analysis for different frequencies</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactance"><strong>4- Reactance</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impedance"><strong>5- Impedance</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-of-practical-capacitors"><strong>6- Concepts of Practical Capacitors:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impedance-without-resistance"><strong>6-1 Impedance without resistance:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impedance-with-resistance"><strong>6-2 Impedance with resistance:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-vs-practical-capacitors"><strong>6-3 Ideal vs. Practical Capacitors:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-factors"><strong>7- Practical Factors</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-dissipation-factor"><strong>7-1 DF  (Dissipation Factor):</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pf-power-factor"><strong>7-2 PF  (Power Factor):</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corona-starting-voltage"><strong>7-3 Corona Starting Voltage:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-voltage"><strong>7-4 Bias Voltage:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trimmer-capacitor"><strong>8- Trimmer Capacitor:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-temperature-on-capacitor"><strong>9- Effect of temperature on capacitor:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reducing-inductance-by-parallel-connection"><strong>10- Reducing inductance by parallel connection:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-calculation"><strong>11- Power Calculation:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-ripple"><strong>12- AC Ripple:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>13- Conclusion:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources"><strong>14- Sources:</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="capacitor-handbook-chapter-1">
+<h1>Capacitor Handbook Chapter(1)<a class="headerlink" href="#capacitor-handbook-chapter-1" title="Link to this heading">#</a></h1>
+<p><strong>Author :</strong> <strong>Mitra Peivandi</strong></p>
+<p><strong>Gmail :</strong> <a class="reference external" href="mailto:miti1383&#37;&#52;&#48;gmail&#46;com">miti1383<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p><strong>Fall 2024</strong></p>
+<section id="outline">
+<h2><strong>Outline:</strong><a class="headerlink" href="#outline" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>foundamnetals for all capacitors</p>
+<ol class="arabic simple">
+<li><p>What is  a Capacitor?</p></li>
+<li><p>Capacitors: Passive or Active?</p></li>
+<li><p>Capacitor Applications</p></li>
+<li><p>Capacitance derivation in flat capacitor</p></li>
+</ol>
+</li>
+<li><p>Capacitor behavior in circuit</p>
+<ol class="arabic simple">
+<li><p>Charge curve</p></li>
+<li><p>Characteristic time</p></li>
+<li><p>Resistor voltage during capacitor charging</p></li>
+<li><p>How does an RC circuit work?</p></li>
+<li><p>Capacitor as a storage battery</p></li>
+</ol>
+</li>
+<li><p>Capacitor as a filter</p>
+<ol class="arabic simple">
+<li><p>DC Analysis</p>
+<ol class="arabic simple">
+<li><p>Circuit without capacitor</p></li>
+<li><p>Circuit with capacitor</p></li>
+</ol>
+</li>
+<li><p>AC Analysis</p>
+<ol class="arabic simple">
+<li><p>Analysis for different capacitances</p></li>
+<li><p>Analysis for different frequencies</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Reactance</p></li>
+<li><p>Impedance</p></li>
+<li><p>Concepts of Practical Capacitors</p>
+<ol class="arabic simple">
+<li><p>Impedance without resistance</p></li>
+<li><p>Impedance with resistance</p></li>
+<li><p>Ideal vs. Practical Capacitor</p></li>
+</ol>
+</li>
+<li><p>Practical factors</p>
+<ol class="arabic simple">
+<li><p>DF(Dissipation Factor)</p></li>
+<li><p>PF(Power Factor)</p></li>
+<li><p>Corona starting voltage</p></li>
+<li><p>Bias Voltage</p></li>
+</ol>
+</li>
+<li><p>Trimmer capacitor</p></li>
+<li><p>Effect of temperature on capacitor</p></li>
+<li><p>Reducing inductance by parallel connection</p></li>
+<li><p>Power calculation</p></li>
+<li><p>AC ripple</p></li>
+<li><p>Conclusion</p></li>
+<li><p>Sources</p></li>
+</ol>
+</section>
+<section id="foundamentals-for-all-capacitors">
+<h2><strong>1- Foundamentals for all capacitors :</strong><a class="headerlink" href="#foundamentals-for-all-capacitors" title="Link to this heading">#</a></h2>
+<section id="what-is-a-capacitor">
+<h3><strong>1-1 What is  a Capacitor?</strong><a class="headerlink" href="#what-is-a-capacitor" title="Link to this heading">#</a></h3>
+<p><strong>Capacitor</strong> is a device for <strong>storing electrical energy</strong>, consisting of two conductors in close proximity and insulated from each other. A simple example of such a storage device is the parallel-plate capacitor. If positive charges with total charge +Q are deposited on one of the conductors and an equal amount of negative charge −Q is deposited on the second conductor, the capacitor is said to have a charge Q.<br />
+The <strong>capacitance</strong> is the <strong>ability of a capacitor to store charge</strong> in its metal plates (Electrodes). Its unit is <strong>Farad</strong> (F).
+One Farad is the amount of capacitance when a charge of one-coulomb causes the potential difference of one volt across its terminals. The capacitance is always positive, it cannot be negative.</p>
+<p>Capacitors are in different shapes and sizes. The picture below is showing the <strong>different types of capacitors</strong> and their symbol in circuit.<br />
+<img alt="Capacitor" src="../../_images/types.PNG" /><br />
+Now let’s consider a <strong>parallel-plate capacitor</strong> like a picture below:<br />
+<img alt="Capacitor" src="../../_images/CapacitorComponents.PNG" /><br />
+As you see, two conductors or electrodes separated by a <strong>dielectric material</strong> of uniform thickness. The conductors can be any material that will conduct electricity easily. The dielectric must be a poor conductor-an <strong>insulator</strong>.</p>
+</section>
+<section id="capacitors-passive-or-active">
+<h3><strong>1-2 Capacitors:Passive or Active?</strong><a class="headerlink" href="#capacitors-passive-or-active" title="Link to this heading">#</a></h3>
+<p><strong>Capacitors</strong> are classified as <strong>passive</strong> elements in electrical circuits.
+<strong>Passive elements</strong> do not provide power gain; they can store or dissipate energy but cannot generate it but <strong>active elements</strong> can provide power gain and can generate <a class="reference external" href="http://energy.In">energy.In</a> the picture below you can see examples of passive and active components:<br />
+<img alt="Capacitor" src="../../_images/PassiveAndActive.PNG" /></p>
+</section>
+<section id="capacitor-applications">
+<h3><strong>1-3 Capacitor Applications:</strong><a class="headerlink" href="#capacitor-applications" title="Link to this heading">#</a></h3>
+<p><strong>Energy Storage:</strong></p>
+<ul class="simple">
+<li><p>Capacitors are used to accumulate and discharge energy over varying periods.</p></li>
+<li><p>They help smooth out pulsating direct current in filter circuits.</p></li>
+</ul>
+<p><strong>Bypass Capacitors:</strong></p>
+<p>A <strong>bypass capacitor</strong>, also known as a <strong>decoupling capacitor</strong>, is a capacitor used in electronic circuits to <strong>filter out unwanted noise</strong> from the power supply. It is typically placed between the power supply (VCC) and ground (GND) pins of an integrated circuit (IC). The bypass capacitor helps to <strong>smooth out voltage spikes</strong> and <strong>reduce power supply noise</strong>, ensuring that the circuit receives a clean and stable DC voltage.</p>
+<ul class="simple">
+<li><p>These capacitors prevent the flow of direct current while allowing alternating current to pass.</p></li>
+<li><p>They attenuate low-frequency currents while permitting higher frequencies to pass.</p></li>
+</ul>
+<p><img alt="Capacitor" src="../../_images/bypass.PNG" /></p>
+<p><img alt="Capacitor" src="../../_images/bypassCapacitor.png" /></p>
+<p>For further information you can visit these websites:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://www.learningaboutelectronics.com/Articles/What-is-a-bypass-capacitor.html</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://www.electronicshub.org/bypass-capacitor-tutorial/</span></a></p></li>
+</ul>
+<p><strong>Reducing Radio Interference:</strong></p>
+<ul class="simple">
+<li><p>In combination with resistors, capacitors reduce radio interference caused by arcing contacts.</p></li>
+<li><p>They also increase the operational life of the contacts.</p></li>
+</ul>
+<p>For further information you can visit this website :</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://www.vishay.com/docs/26529/gentecin.pdf</span></a></p></li>
+</ul>
+</section>
+<section id="capacitance-derivation-in-flat-capacitor">
+<h3><strong>1-4 Capacitance derivation in flat capacitor:</strong><a class="headerlink" href="#capacitance-derivation-in-flat-capacitor" title="Link to this heading">#</a></h3>
+<p><img alt="Capacitor" src="../../_images/CapacityCalculation.PNG" /></p>
+<p>The capacitance ( C ) of a capacitor is defined as the charge ( Q ) stored per unit voltage ( V ) across its plates:</p>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{Q}{V}
+\]</div>
+<p>For a parallel plate capacitor, the electric field ( E ) between the plates is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+E = \frac{V}{d}
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p>( V ) is the voltage across the plates,</p></li>
+<li><p>( d ) is the separation between the plates.</p></li>
+</ul>
+<p>The electric field ( E ) is also related to the surface charge density ( <span class="math notranslate nohighlight">\(\sigma\)</span> ) on the plates(according to Gauss’s law.visit: <a class="reference internal" href="#URL"><span class="xref myst">https://phys.libretexts.org/Bookshelves/University_Physics/University_Physics_(OpenStax)/University_Physics_II_-<em>Thermodynamics_Electricity_and_Magnetism</em>(OpenStax)/06%3A_Gauss’s_Law/6.04%3A_Applying_Gausss_Law#:~:text=According%20to%20Gauss’s%20law%2C%20the,spherical%20surface%20of%20radius%20r.</span></a>)</p>
+<div class="math notranslate nohighlight">
+\[
+E = \frac{\sigma}{\epsilon_0}
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( \epsilon_0 )\)</span> is the permittivity of free space.</p></li>
+</ul>
+<p>The surface charge density ( <span class="math notranslate nohighlight">\(\sigma\)</span> ) can be expressed as the charge ( Q ) per unit area ( A ):</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma = \frac{Q}{A}
+\]</div>
+<p>Now we can substitute the expression for ( <span class="math notranslate nohighlight">\(\sigma\)</span> ) into the equation for ( E ):</p>
+<ol class="arabic">
+<li><p>From ( <span class="math notranslate nohighlight">\(E = \frac{V}{d} \)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+   E = \frac{Q}{\epsilon_0 A}
+   \]</div>
+</li>
+<li><p>Setting these equal gives:</p>
+<div class="math notranslate nohighlight">
+\[
+   \frac{V}{d} = \frac{Q}{\epsilon_0 A}
+   \]</div>
+</li>
+<li><p>Rearranging this equation to find ( Q ):
+$<span class="math notranslate nohighlight">\(
+Q = \frac{\epsilon_0 A V}{d}
+\)</span>$</p></li>
+</ol>
+<p>Now, substitute ( Q ) back into the capacitance formula:</p>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{Q}{V} = \frac{\frac{\epsilon_0 A V}{d}}{V} = \frac{\epsilon_0 A}{d}
+\]</div>
+<p>Thus, we arrive at the formula for the <strong>capacitance of a parallel plate capacitor</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{\epsilon_0 A}{d}
+\]</div>
+<p>If a <strong>dielectric material</strong> is present between the plates, the formula becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{\kappa \epsilon_0 A}{d}
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p>(C) is the <strong>capacity</strong> of parallel-plat capacitor</p></li>
+<li><p>( <span class="math notranslate nohighlight">\(\kappa\)</span> ) is the <strong>relative permittivity of the dielectric material</strong>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(( \epsilon_0 )\)</span> is the <strong>permittivity of free space</strong>.</p></li>
+<li><p>(A) is the <strong>area</strong> of the plat.</p></li>
+<li><p>(d) is the <strong>distance</strong> between two electrodes.</p></li>
+</ul>
+<p>Now to get an idea of what <strong>a farad</strong> is, calculate the area which would be necessary in a capacitor built to have one farad, to operate in a vacum, and to have a spacing between electrodes of one millimeter.</p>
+<div class="math notranslate nohighlight">
+\[
+A = \frac{Cd}{\kappa \epsilon_0} = 113,000,000 sq. meters
+\]</div>
+<p>That is why one farad capacitors <strong>aren’t made very often</strong> and when they are, they are never made with a vacuum dielectric and a one millimeter spacing.Note a <strong>tendency toward the higher values of <span class="math notranslate nohighlight">\(\kappa\)</span></strong> for reasons that are now obvious. (With a <span class="math notranslate nohighlight">\(\kappa\)</span> of 10,that one farad capacitor area can be reduced to a 11.3 million square meters!)</p>
+<p>The table below is showing the <span class="math notranslate nohighlight">\(\kappa\)</span> value for various materials :</p>
+<p><img alt="Capacitor" src="../../_images/TableOfDielectric.PNG" /></p>
+<p>Capacitors used for commercial purposes are made from <strong>metallic foil interweaved with thin sheets of either Mylar or paraffin-impregnated paper</strong>. Small capacitors are typically made from ceramic materials and then sealed with epoxy resin.A typical question is why industry makes commercial capacitors with any-of the materials having low values of <span class="math notranslate nohighlight">\(\kappa\)</span>. The answer generally lies with other capacitor characteristics such as stability with respect to temperature, voltage ratings, etc.</p>
+</section>
+</section>
+<section id="capacitor-behavior-in-a-circuit">
+<h2><strong>2- Capacitor behavior in a circuit:</strong><a class="headerlink" href="#capacitor-behavior-in-a-circuit" title="Link to this heading">#</a></h2>
+<p>Consider the below circuit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span> <span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Switch</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Switch&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;battery&#39;</span><span class="p">,</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/81f9b468a3870f7650fbd872a8358292258b58308ea5a7b83f1c59fd85958ac4.svg" src="../../_images/81f9b468a3870f7650fbd872a8358292258b58308ea5a7b83f1c59fd85958ac4.svg" />
+</div>
+</div>
+<section id="charge-curve">
+<h3><strong>2-1 Charge curve:</strong><a class="headerlink" href="#charge-curve" title="Link to this heading">#</a></h3>
+<p>When the switch is closed, current from the battery flows through the circuit, charging the capacitor. When the capacitor is completely
+charged, no further current flows. At that time, the voltage across the capacitor would be equal to the supply voltage of the battery. Voltage across the capacitor advances from zero (fully discharged) to the supply voltage along some predetermined path with respect to time. If the resistor is small, current flows easily and the capacitor is charged more quickly. If the resistor is very large, the charging process follows a different path and will take longer to complete.The behavior of voltage versus time is also influenced by the size of the capacitor. If the capacitor’s capacitance is very large, it will require more total energy to fill, and current flowing through the resistor will require a longer time to charge it.</p>
+<p>If we call the potential applied by the function generator during the positive half cycle V, then <strong><span class="math notranslate nohighlight">\( V = V_R + V_C = iR + \frac{q}{C} \)</span></strong>. The current, i, is <span class="math notranslate nohighlight">\( \frac {dq}{dt} \)</span>, and we have <span class="math notranslate nohighlight">\( V = \frac {dq}{dt}\times R + \frac{q}{C} \)</span>. The solution to this differential equation is <span class="math notranslate nohighlight">\( q = C\times V\times (1 - e^{-\frac{t}{RC})} \)</span>. Since the voltage across the capacitor is <span class="math notranslate nohighlight">\(\frac{q}{C}\)</span>, we can also write this as <span class="math notranslate nohighlight">\( V_C = V\times (1 - e^{-\frac{t}{RC}})\)</span>, which gives us the voltage across the capacitor as a function of time.Diagram below illustrates three charging curves, each approaching the same end point but along different paths.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the constants</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># ohms</span>
+<span class="n">C1</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># Farads</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># volts</span>
+
+<span class="n">R2</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># ohms</span>
+<span class="n">C2</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># Farads</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># volts</span>
+
+<span class="n">R3</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># ohms</span>
+<span class="n">C3</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># Farads</span>
+<span class="n">V3</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># volts</span>
+
+<span class="c1"># Define the time range</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># Time from 0 to 45 seconds with 100 points</span>
+
+<span class="c1"># Calculate V_C for each set of parameters</span>
+<span class="n">V_C1</span> <span class="o">=</span> <span class="n">V1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="n">R1</span> <span class="o">*</span> <span class="n">C1</span><span class="p">)))</span>
+<span class="n">V_C2</span> <span class="o">=</span> <span class="n">V2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="n">R2</span> <span class="o">*</span> <span class="n">C2</span><span class="p">)))</span>
+<span class="n">V_C3</span> <span class="o">=</span> <span class="n">V3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="p">(</span><span class="n">R3</span> <span class="o">*</span> <span class="n">C3</span><span class="p">)))</span>
+
+
+<span class="c1"># Plot the graphs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V_C1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;R=</span><span class="si">{</span><span class="n">R1</span><span class="si">}</span><span class="s1">Ω, C=</span><span class="si">{</span><span class="n">C1</span><span class="si">}</span><span class="s1">F, V=</span><span class="si">{</span><span class="n">V1</span><span class="si">}</span><span class="s1">V&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V_C2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;R=</span><span class="si">{</span><span class="n">R2</span><span class="si">}</span><span class="s1">Ω, C=</span><span class="si">{</span><span class="n">C2</span><span class="si">}</span><span class="s1">F, V=</span><span class="si">{</span><span class="n">V2</span><span class="si">}</span><span class="s1">V&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V_C3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;R=</span><span class="si">{</span><span class="n">R3</span><span class="si">}</span><span class="s1">Ω, C=</span><span class="si">{</span><span class="n">C3</span><span class="si">}</span><span class="s1">F, V=</span><span class="si">{</span><span class="n">V3</span><span class="si">}</span><span class="s1">V&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Voltage across capacitor in RC circuit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># Add the legend to differentiate the plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3e8bac2e3b3188990531232fa0806f207d9e74e7f5833e90fff05c604d300cfd.png" src="../../_images/3e8bac2e3b3188990531232fa0806f207d9e74e7f5833e90fff05c604d300cfd.png" />
+</div>
+</div>
+</section>
+<section id="characteristic-time">
+<h3><strong>2-2 Characteristic time :</strong><a class="headerlink" href="#characteristic-time" title="Link to this heading">#</a></h3>
+<p>The characteristic time of a capacitor in an RC (resistor-capacitor) circuit is known as the <strong>RC time constant</strong>, denoted by the Greek letter τ (tau). It is calculated as the product of the resistance (R) and the capacitance (C):</p>
+<div class="math notranslate nohighlight">
+\[
+\tau = R \times C
+\]</div>
+<p>This time constant represents the time required for the voltage across the capacitor to either charge up to approximately 63.2% of its final value or discharge to about 36.8% of its initial value when a voltage is applied or removed.</p>
+</section>
+<section id="resistor-voltage-during-capacitor-charging">
+<h3><strong>2-3 Resistor voltage during capacitor charging:</strong><a class="headerlink" href="#resistor-voltage-during-capacitor-charging" title="Link to this heading">#</a></h3>
+<p>We know that <strong><span class="math notranslate nohighlight">\( V = V_R + V_C = iR + \frac{q}{C} \)</span></strong> in this RC circuit. now that we find <span class="math notranslate nohighlight">\(V_C\)</span> we can easily obtain <span class="math notranslate nohighlight">\(V_R\)</span> which is voltage across resistor: <strong><span class="math notranslate nohighlight">\( V_R = V\times e^{-\frac{t}{RC}}\)</span></strong><br />
+In the plot below you can see the voltage across resistor while capacitor is charging for orange curve  (R = 2 Ohms and C = 4 F and V = 4 v) :</p>
+<p><strong>Note</strong> : The reason why the time axis is considered as 5 to the characteristic time is that the duration of charging the capacitor is approximately this value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># initial voltage in volts</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># resistance in ohms</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># capacitance in farads</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="n">R</span> <span class="o">*</span> <span class="n">C</span>  <span class="c1"># time constant</span>
+
+<span class="c1"># Time array</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># 5 times the time constant</span>
+
+<span class="c1"># Voltage across the resistor</span>
+<span class="n">Vr</span> <span class="o">=</span> <span class="n">V</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Vr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Voltage across Resistor (V_R)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Voltage Across Resistor vs. Time During Capacitor Charging&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a7a948202a797f21a0c87bc0125af53900b09baaa277add5d4351019ca3ba7a6.png" src="../../_images/a7a948202a797f21a0c87bc0125af53900b09baaa277add5d4351019ca3ba7a6.png" />
+</div>
+</div>
+</section>
+<section id="how-does-an-rc-circuit-work">
+<h3><strong>2-4 How does an RC circuit work?</strong><a class="headerlink" href="#how-does-an-rc-circuit-work" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Instantaneous Switch Closure:</strong> When the switch is first closed, the entire voltage of the battery appears across the resistor, and none across the capacitor. This is because initially, the capacitor acts like a short circuit for an instant.</p></li>
+<li><p><strong>Voltage Change Over Time:</strong> As time progresses, the voltage across the resistor decreases while the voltage across the capacitor increases. This change follows an exponential curve as the capacitor charges.</p></li>
+</ul>
+<p>The RC circuit can be tailored to automate tasks based on how the voltage changes over time, which is incredibly useful in many practical scenarios, including <strong>automatic lighting systems</strong>.The circuit can be designed to operate a <strong>switch</strong> when the voltage across the capacitor reaches a certain level.If your application requires the switch to operate based on decreasing voltage (instead of increasing), you could use the voltage across the resistor, as shown in the plot above.</p>
+<p>To find out more about automatic lighting system visit : <a class="reference internal" href="#URL"><span class="xref myst">https://en.wikipedia.org/wiki/Lighting_control_system</span></a></p>
+<p>Once the capacitor in an RC circuit is <strong>fully charged</strong>, the behavior of the circuit changes significantly:</p>
+<ul class="simple">
+<li><p><strong>Capacitor Voltage Stabilizes:</strong> The voltage across the capacitor reaches the supply voltage (V0). At this point, the capacitor behaves like an open circuit.</p></li>
+<li><p><strong>Current Drops to Zero:</strong> As the capacitor charges, the current in the circuit decreases exponentially. Once fully charged, the current through the circuit becomes practically zero because the capacitor no longer allows any additional charge to flow.</p></li>
+<li><p><strong>Voltage Across Resistor is Zero:</strong> Since the current is zero, the voltage drop across the resistor also becomes zero (Ohm’s law: V = IR, where I is zero).</p></li>
+</ul>
+<p><strong>What Happens Next?</strong></p>
+<p>In a real-world application, what happens next depends on the circuit’s design:</p>
+<ul class="simple">
+<li><p><strong>Steady State:</strong> If the circuit is left as is, it will remain in a steady state with the capacitor holding the charge and no current flowing through the resistor.</p></li>
+<li><p><strong>Discharge Path:</strong> If the circuit includes a path for discharging the capacitor (like a switch), opening that path will allow the capacitor to discharge, causing the voltage across it to drop and current to flow again through the resistor.You can see the example of this situation in the section below :</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Switch</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;switch1&#39;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Switch</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;switch2&#39;</span><span class="p">,</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;battery&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a6fd2cd525469f983e74765031af3bef8d72b36b882f7dcd461e5bb977df9899.svg" src="../../_images/a6fd2cd525469f983e74765031af3bef8d72b36b882f7dcd461e5bb977df9899.svg" />
+</div>
+</div>
+</section>
+<section id="capacitor-as-storage-battery">
+<h3><strong>2-5 Capacitor as storage battery:</strong><a class="headerlink" href="#capacitor-as-storage-battery" title="Link to this heading">#</a></h3>
+<p>In the circuit above, When the switch 1 is closed, all the voltage of the battery is initially across the resistor. Over time, this voltage decreases as the capacitor charges up. This timing circuit is a typical DC application, emphasizing that once the capacitor is fully charged, it blocks the flow of DC current.</p>
+<p>If switch 2 is closed to discharge the capacitor, the stored energy would flow through the resistor until the voltage across the capacitor drops to zero. The capacitor here acts similarly to a <strong>storage battery</strong>, holding charge and releasing it as needed, although the underlying principles are different.</p>
+</section>
+</section>
+<section id="capacitor-as-filter">
+<h2><strong>3 Capacitor as filter:</strong><a class="headerlink" href="#capacitor-as-filter" title="Link to this heading">#</a></h2>
+<p>The storage capability of the capacitor is used to good effect in <strong>filters</strong>.</p>
+<section id="dc-analysis">
+<h3><strong>3-1 DC Analysis:</strong><a class="headerlink" href="#dc-analysis" title="Link to this heading">#</a></h3>
+<p>A typical DC power supply offers a good case for an example. Basic DC power supplies provide an output (that is, the voltage across a load, shown in the circuit below as a resistor) which is <strong>fluctuating</strong>.</p>
+<p><strong>3-1-1 Circuit without capacitor:</strong></p>
+<p>The plot below  is showing a situation where the voltage is <strong>flactuating</strong>.What is really wanted is a straight line(shown with red line in above figure) across this graph representing a <strong>steady DC voltage</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Source</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;power supply&#39;</span><span class="p">,</span><span class="n">rotate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Load&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">*</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">MeterV</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">*</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6b7faab0574744f746fd2e2b75f973a000f0d6a7d7d0602924b102f4eef612ec.svg" src="../../_images/6b7faab0574744f746fd2e2b75f973a000f0d6a7d7d0602924b102f4eef612ec.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Create a circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Fluctuating DC Voltage&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the power supply with a fluctuating DC voltage</span>
+<span class="c1"># Using a DC source with an AC component (sine wave)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">SinusoidalVoltageSource</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_V</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="nd">@u_Hz</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="nd">@u_V</span><span class="p">)</span>
+
+<span class="c1"># Define a load resistor</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+<span class="c1"># Simulate the circuit</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">transient</span><span class="p">(</span><span class="n">step_time</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_us</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">100</span><span class="nd">@u_ms</span><span class="p">)</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;n1&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fluctuating DC Voltage from Power Supply&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [micro s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Add a horizontal line for average power</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;DC voltage from power supply&#39;</span><span class="p">,</span> <span class="s1">&#39;Desired Steady DC&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dc1035a00ca456e725819b03c65652f91cc1eef71b8a305a0577e880f60e4d5d.png" src="../../_images/dc1035a00ca456e725819b03c65652f91cc1eef71b8a305a0577e880f60e4d5d.png" />
+</div>
+</div>
+<p><strong>3-1-2 Circuit with capacitor:</strong></p>
+<p>To approach the desired straight line, add a capacitor to the circuit to smooth these fluctuations.</p>
+<p>As you see in the plot below, capacitor is helping us to approach the desired straight <a class="reference external" href="http://line.In">line.In</a> this plot, input voltage is the power supply voltage which is defined by the sinusoidal voltage source with the following properties:</p>
+<ul class="simple">
+<li><p>DC offset: 10V</p></li>
+<li><p>AC amplitude: 1V</p></li>
+<li><p>Frequency: 50 Hz</p></li>
+</ul>
+<p>So, the input voltage fluctuates around 10V, varying between 9V and <a class="reference external" href="http://11V.So">11V.So</a> that we have a flactuating voltage source with this formula : <span class="math notranslate nohighlight">\(V(t) = 10 + 1\times sin(2\pi \times 50t)\)</span></p>
+<p>With the voltage at zero and the capacitor discharged, turn the supply on. As the voltage begins to rise, some current will flow to charge the capacitor while the rest passes through the resistor. Some time before the capacitor is completely charged, the voltage from the supply will begin to decline. As soon as the supply voltage is below the capacitor voltage, the capacitor will begin to discharge, and current will flow from the capacitor, tending to maintain the voltage across the resistor. If the value of capacitance is chosen correctly, the capacitor cannot be totally discharged during the time available, and the capacitor will be charged once more as the supply voltage exceeds the capacitor voltage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Source</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;power supply&#39;</span><span class="p">,</span><span class="n">rotate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Load&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e79b1c98b3d06fe1b4094010bc205603e0a32578693a765ba83cbf45c5390954.svg" src="../../_images/e79b1c98b3d06fe1b4094010bc205603e0a32578693a765ba83cbf45c5390954.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Create a circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Fluctuating DC Voltage&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the power supply with a fluctuating DC voltage</span>
+<span class="c1"># Using a DC source with an AC component (sine wave)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">SinusoidalVoltageSource</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_V</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="nd">@u_Hz</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="nd">@u_V</span><span class="p">)</span>
+
+<span class="c1"># Define a load resistor</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+<span class="c1"># Define a capacitor to smooth out the fluctuations (optional)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">80</span><span class="nd">@u_uF</span><span class="p">)</span>
+
+<span class="c1"># Simulate the circuit</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">transient</span><span class="p">(</span><span class="n">step_time</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_us</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">100</span><span class="nd">@u_ms</span><span class="p">)</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;n1&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;n2&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fluctuating DC Voltage from Power Supply&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [micro s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Input Voltage&#39;</span><span class="p">,</span> <span class="s1">&#39;Output Voltage&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4cb46ad16f139f20188d750e6d0ee3f52446b002a3ddefdc6a01422974703101.png" src="../../_images/4cb46ad16f139f20188d750e6d0ee3f52446b002a3ddefdc6a01422974703101.png" />
+</div>
+</div>
+</section>
+<section id="ac-analysis">
+<h3><strong>3-2 AC Analysis</strong><a class="headerlink" href="#ac-analysis" title="Link to this heading">#</a></h3>
+<p>When a capacitor is subjected to alternating current, to the capacitor, it looks just like DC which is flowing in and flowing out again. The capacitor is alternately being charged, discharged, and then recharged in the opposite direction before being discharged again. One important fact to note is that the capacitor can never block the flow of AC but instead permits a steady flow of current.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;AC generator&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8c59ca4d8572b07c54930524e5e90b229f5c883ca60d3413566d995634932cac.svg" src="../../_images/8c59ca4d8572b07c54930524e5e90b229f5c883ca60d3413566d995634932cac.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define different capacitance values</span>
+<span class="n">capacitance_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="nd">@u_uF</span><span class="p">,</span> <span class="mi">10</span><span class="nd">@u_uF</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_uF</span><span class="p">]</span>  <span class="c1"># 1µF, 10µF, 100µF</span>
+
+<span class="c1"># Define colors for the lines</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#1f77b4&#39;</span><span class="p">,</span> <span class="s1">&#39;#ff7f0e&#39;</span><span class="p">,</span> <span class="s1">&#39;#2ca02c&#39;</span><span class="p">,</span> <span class="s1">&#39;#d62728&#39;</span><span class="p">]</span>  <span class="c1"># Blue, Orange, Green, Red</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Initialize a flag to control input voltage labeling</span>
+<span class="n">first_iteration</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">C_value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">capacitance_values</span><span class="p">):</span>
+    <span class="c1"># Define the circuit</span>
+    <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;RC Circuit&#39;</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">SinusoidalVoltageSource</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_V</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">50</span><span class="nd">@u_Hz</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">C_value</span><span class="p">)</span>
+
+    <span class="c1"># Create a simulator</span>
+    <span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+    <span class="c1"># Run the transient simulation</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">transient</span><span class="p">(</span><span class="n">step_time</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_us</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">100</span><span class="nd">@u_ms</span><span class="p">)</span>
+
+    <span class="c1"># Extract the time, input voltage, and voltage across the capacitor</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">analysis</span><span class="o">.</span><span class="n">time</span><span class="p">])</span>
+    <span class="n">v_input</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">time</span><span class="p">))])</span>
+    <span class="n">v_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">time</span><span class="p">))])</span>
+
+    <span class="c1"># Plot the input voltage only once</span>
+    <span class="k">if</span> <span class="n">first_iteration</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">v_input</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Input Voltage&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">first_iteration</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">v_input</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+    <span class="c1"># Plot the voltage across the capacitor</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">v_c</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;C = </span><span class="si">{</span><span class="n">C_value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Voltage Across Capacitor vs. Time for Different Capacitors&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9d693dfa4e92c997dd94bcaa392c18a880af56adb4acde2603afa67949e6a1c4.png" src="../../_images/9d693dfa4e92c997dd94bcaa392c18a880af56adb4acde2603afa67949e6a1c4.png" />
+</div>
+</div>
+</section>
+<section id="analysis-for-different-capacitances">
+<h3><strong>3-2-1 Analysis for different capacitances</strong><a class="headerlink" href="#analysis-for-different-capacitances" title="Link to this heading">#</a></h3>
+<p>In the code above, we consider a sinusoidal voltage source which is : <span class="math notranslate nohighlight">\(V(t) = V_a sin(2\pi f)\)</span> . <span class="math notranslate nohighlight">\(V_a\)</span> is the amplitude of voltage which is 1V and f is considered 50 Hz and a resistor of 1kΩ and a capacitor are connected in <a class="reference external" href="http://series.An">series.An</a> analysis is performed with a step time of 1 microsecond and an end time of 100 milliseconds.
+As you see, the voltage across the capacitor also has a sinusoidal curve.</p>
+<ol class="arabic simple">
+<li><p>Small Capacitance (1 µF):</p>
+<ul class="simple">
+<li><p>The capacitor charges and discharges quickly.</p></li>
+<li><p>The voltage waveform closely follows the input sinusoidal voltage.</p></li>
+</ul>
+</li>
+<li><p>Medium Capacitance (10 µF):</p>
+<ul class="simple">
+<li><p>The charging and discharging rates are moderate.</p></li>
+<li><p>The capacitor smooths out some of the fluctuations, but the voltage waveform still shows significant variations.</p></li>
+</ul>
+</li>
+<li><p>Large Capacitance (100 µF):</p>
+<ul class="simple">
+<li><p>The capacitor charges and discharges slowly.</p></li>
+<li><p>The voltage across the capacitor is much smoother and less responsive to rapid changes in the input voltage.</p></li>
+</ul>
+</li>
+</ol>
+<p>This behavior is consistent with the fact that <strong>larger capacitance values provide better filtering and energy storage but respond more slowly to changes in the input voltage</strong>.</p>
+<p><strong>Note:</strong>  As you see, these plots are not completely sinusoidal but in bigger capacitace, it is more obvious.The reason is that a capacitor in an RC circuit will not pass high-frequency components well, and depending on the time constant (𝜏=𝑅⋅𝐶), it may smooth out the sinusoidal input voltage. This is especially true for larger capacitance values like 100 µF. The output voltage across the capacitor might be a smoother version of the input signal rather than a perfect sine wave.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the frequencies to simulate</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="nd">@u_Hz</span><span class="p">,</span> <span class="mi">50</span><span class="nd">@u_Hz</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_Hz</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">frequencies</span><span class="p">:</span>
+    <span class="c1"># Define the circuit</span>
+    <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;RC Circuit&#39;</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">SinusoidalVoltageSource</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_V</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="n">freq</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+    <span class="n">circuit</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">10</span><span class="nd">@u_uF</span><span class="p">)</span>
+
+    <span class="c1"># Create a simulator</span>
+    <span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+    <span class="c1"># Run the transient simulation</span>
+    <span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">transient</span><span class="p">(</span><span class="n">step_time</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_us</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">100</span><span class="nd">@u_ms</span><span class="p">)</span>
+
+    <span class="c1"># Extract the time, input voltage, and voltage across the capacitor</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">analysis</span><span class="o">.</span><span class="n">time</span><span class="p">])</span>
+    <span class="n">v_input</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">time</span><span class="p">))])</span>
+    <span class="n">v_output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">analysis</span><span class="o">.</span><span class="n">time</span><span class="p">))])</span>
+
+    <span class="c1"># Plot the input and output voltage in one chart for each frequency</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">v_input</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Input Voltage @ </span><span class="si">{</span><span class="n">freq</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">v_output</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Capacitor Voltage @ </span><span class="si">{</span><span class="n">freq</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Input and Capacitor Voltage vs. Time @ </span><span class="si">{</span><span class="n">freq</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3d6c4ff0b7a3aa6afa115d2669d7e12aadfabcc23f8bdfb24b8b27d575119925.png" src="../../_images/3d6c4ff0b7a3aa6afa115d2669d7e12aadfabcc23f8bdfb24b8b27d575119925.png" />
+<img alt="../../_images/8cbbdaa3768baa318fc0c07568d9c7684eb5de86bc7a075890b19e251bcd0674.png" src="../../_images/8cbbdaa3768baa318fc0c07568d9c7684eb5de86bc7a075890b19e251bcd0674.png" />
+<img alt="../../_images/db9ee5e8186fff655229b314a44a1d609383d434d1e4caa0ce6f840f1a082378.png" src="../../_images/db9ee5e8186fff655229b314a44a1d609383d434d1e4caa0ce6f840f1a082378.png" />
+</div>
+</div>
+</section>
+<section id="analysis-for-different-frequencies">
+<h3><strong>3-2-2 Analysis for different frequencies</strong><a class="headerlink" href="#analysis-for-different-frequencies" title="Link to this heading">#</a></h3>
+<p>In this part, we use a sinusoidal voltage source, 1 k ohm resistor and 1 micro Farad capacitr. The plot above is showing the voltage across the capacitor for different frequencies.</p>
+<ol class="arabic simple">
+<li><p>Low Frequency (e.g., 10 Hz):</p>
+<ul class="simple">
+<li><p>The capacitor has more time to charge and discharge within each cycle.</p></li>
+<li><p>The voltage across the capacitor closely follows the input sinusoidal voltage.</p></li>
+</ul>
+</li>
+<li><p>Medium Frequency (e.g., 50 Hz):</p>
+<ul class="simple">
+<li><p>The capacitor has less time to charge and discharge within each cycle compared to the low frequency.</p></li>
+<li><p>The voltage across the capacitor still shows a sinusoidal pattern but with some delay and attenuation.</p></li>
+</ul>
+</li>
+<li><p>High Frequency (e.g., 100 Hz):</p>
+<ul class="simple">
+<li><p>The capacitor has even less time to charge and discharge within each cycle.</p></li>
+<li><p>The voltage across the capacitor is more attenuated and smooth compared to the input voltage. The capacitor acts as a low-pass filter, reducing the amplitude of the high-frequency components.</p></li>
+</ul>
+</li>
+</ol>
+<p>As the frequency increases, the capacitor’s voltage response becomes more attenuated and less responsive to rapid changes in the input voltage. This behavior is expected, as capacitors tend to filter out higher frequencies and smooth the voltage variations.</p>
+</section>
+</section>
+<section id="reactance">
+<h2><strong>4- Reactance</strong><a class="headerlink" href="#reactance" title="Link to this heading">#</a></h2>
+<p>The capacitor, in an AC circuit, is acting something like a resistor in a DC circuit with the additional dimension of frequency to take into consideration.The two effects of frequency and capacitance are combined in an expression known as capacitive reactance and is expressed as <strong><span class="math notranslate nohighlight">\(X_C\)</span></strong>.</p>
+<p>Reactance is a concept in electrical engineering that describes how a circuit element opposes the flow of alternating current (AC) due to its inductance or capacitance. Unlike resistance, which affects both AC and DC, reactance specifically deals with AC and varies with the frequency of the signal.</p>
+<p>Note that <strong><span class="math notranslate nohighlight">\(X_C\)</span></strong> is express in ohms, which is the unit of resistance.Reactance acts something like resistance, and uses the same unit in order to combine the two later.<br />
+The formula for determining <strong><span class="math notranslate nohighlight">\(X_C\)</span></strong> can be expressed as follows:<br />
+$<span class="math notranslate nohighlight">\(
+X_C = \frac{1}{2\pi f C}
+\)</span>$
+Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X_C\)</span> = <strong>capacitive reactance</strong>, ohm</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi\)</span> = 3.14</p></li>
+<li><p>f = frequency, Hertz (cycles per second)</p></li>
+<li><p>C = capacitance, Farads</p></li>
+</ul>
+<p>There is a comparable expression for inductance which yields inductive reactive reactance. The unit of inductance is the Henry. It follows that inductance in an AC circuit impedes the flow of the current just as a capacitor does. The difference is that <span class="math notranslate nohighlight">\(X_L\)</span> is directly proportional to both frequency and inductance. The larger the inductor and the higher the frequency, the greater is the reactance to current flow: just the opposite of the behavior of a capacitor’s Xc.<br />
+The formula for determining <span class="math notranslate nohighlight">\(X_L\)</span> can be expressed as follows:
+$<span class="math notranslate nohighlight">\(
+X_L = 2\pi f L
+\)</span>$
+Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X_L\)</span> = <strong>inductive reactance</strong>, ohm</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi\)</span> = 3.14</p></li>
+<li><p>f = frequency, Hertz (cycles per second)</p></li>
+<li><p>L = inductance, Henries</p></li>
+</ul>
+<p>In the picture below you can see all of them :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;AC generator&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d5a0cfd4c552f374d3fd0ac6ac471ff4ea05adf36d3d3015f367843cf3b8eff7.svg" src="../../_images/d5a0cfd4c552f374d3fd0ac6ac471ff4ea05adf36d3d3015f367843cf3b8eff7.svg" />
+</div>
+</div>
+</section>
+<section id="impedance">
+<h2><strong>5- Impedance</strong><a class="headerlink" href="#impedance" title="Link to this heading">#</a></h2>
+<p>In practical applications, capacitors inherently possess some amount of resistance and inductance. This is because it is not feasible to manufacture capacitors that are entirely free of these properties. Therefore, when using capacitors in circuits, one must consider the effects of both resistance and inductance along with <a class="reference external" href="http://capacitance.In">capacitance.In</a> other words, a real capacitor is not a perfect capacitor as idealized in theory. It has additional characteristics that can influence its behavior in a circuit:</p>
+<ul class="simple">
+<li><p>Resistance (R): Known as Equivalent Series Resistance (ESR), it represents the resistive losses in the capacitor.</p></li>
+<li><p>Inductance (L): Known as Equivalent Series Inductance (ESL), it represents the inductive effects due to the leads and internal structure.</p></li>
+</ul>
+<p>These factors must be taken into account when designing circuits, especially at <strong>higher frequencies</strong> where inductive effects become more significant.</p>
+<p>Practical capacitor is with all three passive component properties: resistance, inductance and capacitance, and all capacitors actually look something like this. Of course, if the capacitor is a good one, the amount of resistance and inductance is very small compared to the amount of capacitance. <strong>In an AC circuit, all three components act to decrease the flow of current. The sum effect of all three is termed “impedance”</strong>. Unlike resistance, which only pertains to direct current (DC) circuits, impedance comprises both resistance (R) and reactance (X), therefore defining a complicated number expressed in ohms (Ω).<br />
+In electrical engineering, impedance, shown by the symbol “Z”, is a complicated number that defines the resistance a circuit offers to alternating current (AC). The convention for computing impedance is:
+$<span class="math notranslate nohighlight">\(
+Z = R + jX
+\)</span>$
+Where:</p>
+<ul class="simple">
+<li><p><strong>Z</strong>  is impedance (in ohms),</p></li>
+<li><p><strong>R</strong>  is resistance (in ohms),</p></li>
+<li><p><strong>jX</strong>  is the reactance (in ohms),</p></li>
+<li><p><strong>j</strong>  is the imaginary unit ( <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span>). It indicates the phase difference between voltage and current, due to inductive or capacitive components,</p></li>
+<li><p><strong>X</strong>  can be positive for inductive reactance or negative for capacitive reactance.</p></li>
+</ul>
+<p>Inductive reactance is considered positive because the voltage across an inductor leads the current by 90 degrees. In mathematical terms, this phase lead is represented with a positive imaginary unit (j).Capacitive reactance is negative because the voltage across a capacitor lags behind the current by 90 degrees. This phase lag is represented with a negative imaginary unit (-j).</p>
+<p>To <strong>calculate impedance</strong>, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Determine Resistance (R): Measure the resistance of the circuit</p></li>
+<li><p>Calculate Inductive Reactance (XL)</p></li>
+<li><p>Calculate Capacitive Reactance (XC):</p></li>
+<li><p>Combine the Components: Plug the values of <strong>R</strong> and <strong>X</strong> (where <span class="math notranslate nohighlight">\(X = X_L - X_C\)</span>) into the impedance formula: <strong>Z = R + jX</strong></p></li>
+</ol>
+<p>The output will provide you both impedance’s magnitude and phase angle.Finally we have :
+$<span class="math notranslate nohighlight">\(
+Z = R + j(X_L - X_C)
+\)</span><span class="math notranslate nohighlight">\(
+Therefore, the value of ampedance is obtained from this formula :
+\)</span><span class="math notranslate nohighlight">\(
+Z = \sqrt{R^2 +(X_L - X_C)^2}
+\)</span>$</p>
+<p>In the picture below you can see the different types of impedance :</p>
+<p><img alt="Impedance" src="../../_images/TypesOfImpedance.PNG" /></p>
+<p>Capacitive Reactance(<span class="math notranslate nohighlight">\(X_C\)</span>)decreases as frequency increases but inductive Reactance(<span class="math notranslate nohighlight">\(X_L\)</span>)increases as frequency increases. Thus, in higher frequencies, capacitors act like inductors.</p>
+<p><strong>Self-Resonant Point:</strong>
+This is the frequency at which the capacitive reactance equals the inductive reactance.If there were no resistance in the circuit, the impedance would drop to zero at this point.</p>
+</section>
+<section id="concepts-of-practical-capacitors">
+<h2><strong>6- Concepts of Practical Capacitors:</strong><a class="headerlink" href="#concepts-of-practical-capacitors" title="Link to this heading">#</a></h2>
+<section id="impedance-without-resistance">
+<h3><strong>6-1 Impedance without resistance:</strong><a class="headerlink" href="#impedance-without-resistance" title="Link to this heading">#</a></h3>
+<p>In the plot below, you can see the impedance vs. frequency in logarithmic scales when there is no <a class="reference external" href="http://resistance.In">resistance.In</a> the left side of self-resonant point, reactance is capacitive  and in the right side of self-resonant point, reactance is inductive .</p>
+<p>note that the capacitance is considered as 1 nF and inductance is 1 µH and chart is for 10 Hz to 100 GHz frequency.The formula of impedance in this situation is :
+$<span class="math notranslate nohighlight">\(
+Z = X_L - X_C = 2\pi f L - \frac{1}{2\pi f C}
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the frequency range (logarithmic scale)</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># from 1 Hz to 100 GHz</span>
+
+<span class="c1"># Define constants for capacitance and inductance</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mf">1e-9</span>  <span class="c1"># 1 nF</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">1e-6</span>  <span class="c1"># 1 µH</span>
+
+<span class="c1"># Calculate capacitive and inductive reactance</span>
+<span class="n">X_C</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">frequencies</span> <span class="o">*</span> <span class="n">C</span><span class="p">)</span>
+<span class="n">X_L</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">frequencies</span> <span class="o">*</span> <span class="n">L</span>
+
+<span class="c1"># Calculate impedance</span>
+<span class="n">impedance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_C</span> <span class="o">-</span> <span class="n">X_L</span><span class="p">)</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">impedance</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Impedance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span> <span class="o">*</span> <span class="n">C</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Self-Resonant Point&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Impedance [Ω]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Impedance vs. Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4e0c2736b6ef664734e2bf2b68ae6913055e5abfc4553129e353c35e80a0ae94.png" src="../../_images/4e0c2736b6ef664734e2bf2b68ae6913055e5abfc4553129e353c35e80a0ae94.png" />
+</div>
+</div>
+</section>
+<section id="impedance-with-resistance">
+<h3><strong>6-2 Impedance with resistance:</strong><a class="headerlink" href="#impedance-with-resistance" title="Link to this heading">#</a></h3>
+<p>Practical capacitors frequently look like plot below because they do include resistance. Exactly at the self-resonant point, in fact, they act entirely like a resistor.<br />
+note that the capacitance is considered as 1 nF and inductance is 1 µH and resistance is 500 ohms and chart is for 10 Hz to 100 GHz frequency.The formula of impedance in this situation is :
+$<span class="math notranslate nohighlight">\(
+Z = \sqrt{R^2 +(X_L - X_C)^2} =\sqrt{R^2+(2\pi f L - \frac{1}{2\pi f C})^2}
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the frequency range (logarithmic scale)</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>  <span class="c1"># from 10 Hz to 100 GHz</span>
+
+<span class="c1"># Define constants for capacitance and inductance</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mf">1e-9</span>  <span class="c1"># 1 nF</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">1e-6</span>  <span class="c1"># 1 µH</span>
+
+<span class="c1"># Calculate capacitive and inductive reactance</span>
+<span class="n">X_C</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">frequencies</span> <span class="o">*</span> <span class="n">C</span><span class="p">)</span>
+<span class="n">X_L</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">frequencies</span> <span class="o">*</span> <span class="n">L</span>
+
+<span class="c1"># Calculate impedance</span>
+<span class="n">impedance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">500</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">X_L</span> <span class="o">-</span> <span class="n">X_C</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">impedance</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Impedance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span> <span class="o">*</span> <span class="n">C</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Self-Resonant Point&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Impedance [Ω]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Impedance vs. Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/327c7f1c448ddb2515021cf29f03e84fc80443474b7e6dd28f0f2e962b3443f5.png" src="../../_images/327c7f1c448ddb2515021cf29f03e84fc80443474b7e6dd28f0f2e962b3443f5.png" />
+</div>
+</div>
+</section>
+<section id="ideal-vs-practical-capacitors">
+<h3><strong>6-3 Ideal vs. Practical Capacitors:</strong><a class="headerlink" href="#ideal-vs-practical-capacitors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Ideal Capacitors:</strong> Would generate no heat when current flows.</p></li>
+<li><p><strong>Practical Capacitors:</strong> All practical capacitors have some resistance, known as Equivalent Series Resistance (ESR), and inductance. This resistance cannot be completely eliminated during manufacturing.When AC flows through a capacitor, the inherent resistance causes heat to build up. This limitation must be considered when designing circuits.</p></li>
+</ul>
+</section>
+</section>
+<section id="practical-factors">
+<h2><strong>7- Practical Factors</strong><a class="headerlink" href="#practical-factors" title="Link to this heading">#</a></h2>
+<section id="df-dissipation-factor">
+<h3><strong>7-1 DF  (Dissipation Factor):</strong><a class="headerlink" href="#df-dissipation-factor" title="Link to this heading">#</a></h3>
+<p>DF is a measure of the <strong>capacitor’s quality</strong>. It is the ratio of the capacitor’s resistance to its capacitive reactance.
+$<span class="math notranslate nohighlight">\(
+DF = \frac {R}{X_C} = 2\pi fCR
+\)</span>$
+A <strong>higher DF indicates poorer performance</strong>. DF is often expressed as a percentage and is a preferred measurement over ESR (Equivalent Series Resistance) because it applies across a range of capacitance values without needing to specify capacitance.</p>
+<p><strong>ESR:</strong></p>
+<p>Pure resistance does not change with frequency. In practical capacitors, however, the simple series circuit does not exist, but rather there is a fairly complex mixture of resistance, capacitance and inductance. The result is that, as measured at the terminals of the capacitor, a resistance which declines with frequency. Because it really is not a pure resistance, it is called <strong>ESR</strong> or <strong>“Equivalent Series Resistance”</strong>. Manufacturers’ capacitor catalogs give graphs of ESR for many capacitors.</p>
+</section>
+<section id="pf-power-factor">
+<h3><strong>7-2 PF  (Power Factor):</strong><a class="headerlink" href="#pf-power-factor" title="Link to this heading">#</a></h3>
+<p>The power factor is the ratio of the equivalent series resis­tance to the impedance of the device.The derivation of this factor is as follow :
+$<span class="math notranslate nohighlight">\(
+PF = \frac {Power Losses}{Power In}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+PF = \frac{R\times I^2}{Z\times I^2}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+PF = \frac{R}{Z}
+\)</span>$
+Note:</p>
+<ol class="arabic simple">
+<li><p>“Power Factor” is used for capacitors when the PF is 10% or greater.</p></li>
+<li><p>“Dissipation Factor” is used when the PF is less than 10%.</p></li>
+</ol>
+</section>
+<section id="corona-starting-voltage">
+<h3><strong>7-3 Corona Starting Voltage:</strong><a class="headerlink" href="#corona-starting-voltage" title="Link to this heading">#</a></h3>
+<p>When capacitors operate above a certain voltage threshold, called the corona starting voltage, they can produce electrical noise and their lifespan may be reduced. Liquid-impregnated dielectrics generally have higher corona starting voltages compared to dry solid dielectrics.A corona discharge is an electrical discharge caused by the ionization of a fluid such as air surrounding a conductor carrying a high voltage.</p>
+<p>In the picture below, you can see the corona discharge around a high-voltage coil:</p>
+<p><img alt="Corona" src="../../_images/CoronaDischarge.PNG" /></p>
+</section>
+<section id="bias-voltage">
+<h3><strong>7-4 Bias Voltage:</strong><a class="headerlink" href="#bias-voltage" title="Link to this heading">#</a></h3>
+<p>All capacitors have a rated voltage that should not be exceeded by either DC voltage or peak AC voltage.</p>
+<p><strong>Film Capacitors and Ceramic Capacitors:</strong> These are non-polar devices, meaning they can operate with either positive or negative polarity.</p>
+<p><strong>Electrolytic Capacitors:</strong> These are polar devices and cannot tolerate much reverse voltage. Applying pure AC would result in the voltage being reversed half the time, which is not suitable for these capacitors.</p>
+<p>To address the issue with electrolytic capacitors, <strong>bias voltage</strong> is used. This involves <strong>applying both AC and DC voltage</strong> to the capacitor. The DC voltage is chosen to keep the AC voltage sufficiently above zero to prevent reversal, while also ensuring that the combined voltage does not exceed the rated voltage of the capacitor.</p>
+<p>In the plot below, you can see the effect of bias voltage on a AC voltage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Time array</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># AC voltage parameters</span>
+<span class="n">ac_peak</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">ac_rms</span> <span class="o">=</span> <span class="n">ac_peak</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">dc_bias</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># AC voltage waveform</span>
+<span class="n">ac_voltage</span> <span class="o">=</span> <span class="n">ac_peak</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Total voltage with DC bias</span>
+<span class="n">total_voltage</span> <span class="o">=</span> <span class="n">ac_voltage</span> <span class="o">+</span> <span class="n">dc_bias</span>
+
+<span class="c1"># Plotting the waveform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">total_voltage</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;AC Voltage + DC Bias&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">ac_peak</span> <span class="o">+</span> <span class="n">dc_bias</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;AC Peak&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">ac_rms</span> <span class="o">+</span> <span class="n">dc_bias</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;AC RMS&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">dc_bias</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DC Bias&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Adding labels and title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;AC Voltage Plus DC Bias Voltage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/76ccf21fee7e33c9f9db35dae623e92ee7e8409978ab1bb366b5e477cba235f9.png" src="../../_images/76ccf21fee7e33c9f9db35dae623e92ee7e8409978ab1bb366b5e477cba235f9.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="trimmer-capacitor">
+<h2><strong>8- Trimmer Capacitor:</strong><a class="headerlink" href="#trimmer-capacitor" title="Link to this heading">#</a></h2>
+<p>A trimmer capacitor is a type of variable capacitor whose capacitance can be adjusted by manually changing the positioning of its conductive plates.Trimmer capacitors typically have two main applications: initial alignment and later restoration recalibration. When all fixed components are placed in a circuit, the resulting capacitance is often not precisely what was expected.Trimmer capacitors come in all shapes and sizes.</p>
+<p>The image that follows is a PCB vertically mounted glass trimmer.</p>
+<p><img alt="PCB" src="../../_images/PCB.png" /></p>
+</section>
+<section id="effect-of-temperature-on-capacitor">
+<h2><strong>9- Effect of temperature on capacitor:</strong><a class="headerlink" href="#effect-of-temperature-on-capacitor" title="Link to this heading">#</a></h2>
+<p>Temperature can significantly impact the performance and characteristics of capacitors in several ways. Here are the key effects:</p>
+<ol class="arabic simple">
+<li><p><strong>Capacitance Variation:</strong></p>
+<ul class="simple">
+<li><p><strong>Polarized Dielectrics</strong>: The capacitance of capacitors with polarized dielectrics (like electrolytic capacitors) can change significantly with temperature. Generally, as the temperature increases, the capacitance increases.</p></li>
+<li><p><strong>Non-Polarized Dielectrics</strong>: Capacitors with non-polarized dielectrics (such as ceramic or film capacitors) tend to have more stable capacitance over a range of temperatures, but there can still be some variation.</p></li>
+</ul>
+</li>
+<li><p><strong>Insulation Resistance:</strong></p>
+<ul class="simple">
+<li><p>As the temperature increases, the insulation resistance of a capacitor typically decreases. This is because higher temperatures can increase the conductivity of the dielectric material, leading to more leakage current.</p></li>
+</ul>
+</li>
+<li><p><strong>Power Factor and Dissipation Factor:</strong></p>
+<ul class="simple">
+<li><p>Both the power factor and dissipation factor are affected by temperature. As the temperature rises, the dielectric losses increase, leading to a higher dissipation factor. This means more energy is lost as heat, reducing the efficiency of the capacitor.</p></li>
+<li><p>For polarized dielectrics, higher temperatures can lead to significant increases in the power factor due to internal heating.</p></li>
+</ul>
+</li>
+<li><p><strong>Voltage Handling Capability:</strong></p>
+<ul class="simple">
+<li><p>High temperatures can reduce a capacitor’s voltage handling capability. Exceeding the rated temperature can lead to breakdown of the dielectric material, potentially causing failure.</p></li>
+</ul>
+</li>
+<li><p><strong>Life Span:</strong></p>
+<ul class="simple">
+<li><p>Terminal Seals and Joints: Changes in temperature can affect the mechanical structure of capacitors. Expansion and contraction of materials with different thermal coefficients can cause leaks at joints.</p></li>
+</ul>
+</li>
+<li><p><strong>Frequency Response:</strong></p>
+<ul class="simple">
+<li><p>Temperature can also affect the frequency response of capacitors. At higher temperatures, the dielectric losses increase, which can affect the capacitor’s performance at higher frequencies.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Note :</strong> The term <strong>“dielectric losses”</strong> refers to energy lost in the form of heat within the dielectric material when an alternating current (AC) voltage is applied. This loss is mainly due to the internal friction within the dielectric as it polarizes and depolarizes with the changing AC voltage.</p>
+</section>
+<section id="reducing-inductance-by-parallel-connection">
+<h2><strong>10- Reducing inductance by parallel connection:</strong><a class="headerlink" href="#reducing-inductance-by-parallel-connection" title="Link to this heading">#</a></h2>
+<p>All capacitors have a small amount of inherent inductance due to their physical construction. This inductance can affect the performance of the capacitor, especially in high-frequency <a class="reference external" href="http://applications.By">applications.By</a> connecting a capacitor in parallel with a smaller capacitor (one with lower inductance), the overall inductance of the combination can be reduced. This is because the total inductance of two capacitors in parallel is less than the inductance of the smallest individual capacitor.Here is why :
+$<span class="math notranslate nohighlight">\(
+\frac{1}{L_\text{total}} = \frac{1}{L_1}+\frac{1}{L_2}
+\)</span><span class="math notranslate nohighlight">\(
+Therefore:
+\)</span><span class="math notranslate nohighlight">\(
+L_\text{total} = L_1 \times \frac{L_2}{L_1+L_2}
+\)</span><span class="math notranslate nohighlight">\(
+This means that the total inductance \)</span>L_\text{total}<span class="math notranslate nohighlight">\( will always be less than either of the individual inductances,\)</span>L_1<span class="math notranslate nohighlight">\( or \)</span>L_2$.</p>
+</section>
+<section id="power-calculation">
+<h2><strong>11- Power Calculation:</strong><a class="headerlink" href="#power-calculation" title="Link to this heading">#</a></h2>
+<p>To calculate the power dissipated in a capacitor, you need to know the AC voltage across the capacitor and the AC current flowing through it.Although a DC (direct current) voltage can be present, a steady DC current cannot flow through a capacitor. This is because capacitors block steady DC after they are fully charged.However, if there’s a pulsating DC (a DC signal with an AC component), it must be treated as AC for the purpose of power calculation.
+The formula for power is :
+$<span class="math notranslate nohighlight">\(
+𝑃 = E I
+\)</span>$
+where :</p>
+<ul class="simple">
+<li><p>𝑃 = Power in watts -</p></li>
+<li><p>𝐸 = Potential (voltage) in volts</p></li>
+<li><p>𝐼 = Current in amperes
+By using ohm’s law, (E=IR) :
+$<span class="math notranslate nohighlight">\(
+P = R I^2
+\)</span><span class="math notranslate nohighlight">\(
+Ohm's Law for AC circuits may then be expressed as:
+\)</span><span class="math notranslate nohighlight">\(
+E = I Z
+\)</span><span class="math notranslate nohighlight">\(
+According to this form, power is calculated from the formula below :
+\)</span><span class="math notranslate nohighlight">\(
+P = R \frac {E^2}{Z^2}
+\)</span>$</p></li>
+</ul>
+</section>
+<section id="ac-ripple">
+<h2><strong>12- AC Ripple:</strong><a class="headerlink" href="#ac-ripple" title="Link to this heading">#</a></h2>
+<p>It refers to small, fluctuating AC components that can be superimposed on a DC signal, often seen in power supplies. These ripples are like minor waves on a pond, and capacitors help filter them out to produce a cleaner DC output.
+The expression for Ripple Voltage is as follows:
+$<span class="math notranslate nohighlight">\(
+E = Z \sqrt{\frac{P}{R}}
+\)</span><span class="math notranslate nohighlight">\(
+This AC voltage is known as the **&quot;rms&quot; voltage**.It is equal to the square root of two divided by
+two, or about 0.7 times the peak AC voltage.  
+RMS stands for Root Mean Square, which is a way of expressing the effective or equivalent value of an alternating current (AC) voltage or current. It provides a measure of the AC signal that represents the same power dissipation as a corresponding direct current (DC) value.In AC circuits, the voltage and current are constantly changing, making it difficult to measure their true effect using simple averages. The RMS value helps quantify the power delivered by an AC signal as if it were a steady DC signal.  
+For a sinusoidal voltage, the RMS value is calculated using the following formula:
+\)</span><span class="math notranslate nohighlight">\(
+V_{\text{RMS}} = V_{\text{peak}} \times \frac{1}{\sqrt{2}}
+\)</span>$
+where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V_{\text{RMS}}\)</span>: is the RMS voltage.</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_{\text{peak}}\)</span>: is the peak voltage of the AC signal.</p></li>
+</ul>
+<p>Here is why :</p>
+<div class="math notranslate nohighlight">
+\[ 
+V_{\text{RMS}} = \sqrt{\frac{1}{T} \int_{0}^{T} V_{\text{peak}}^2 \sin^2(\omega t) \, dt} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{RMS}} = \sqrt{\frac{1}{T} \int_{0}^{T} V_{\text{peak}}^2 \frac{1 - \cos(2\omega t)}{2} \, dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{RMS}} = \sqrt{\frac{V_{\text{peak}}^2}{2}} = \frac{V_{\text{peak}}}{\sqrt{2}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{\text{RMS}} = \frac{V_{\text{peak}}}{\sqrt{2}}
+\]</div>
+<p>In the plot below you can see the relation between rms voltage and AC voltage :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the time range</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Sinusoidal waveform</span>
+<span class="n">voltage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Calculate RMS value for a sinusoidal wave (peak value / sqrt(2))</span>
+<span class="n">rms_value</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Plotting the waveform</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;AC Voltage&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">rms_value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;RMS Voltage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=-</span><span class="n">rms_value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Peak Voltage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adding labels and title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relationship between Peak and RMS Voltage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Show plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a50ffd2852a4045119e8b109d57655416aff6c9c0e5cc057ff89d80f1ffcf27f.png" src="../../_images/a50ffd2852a4045119e8b109d57655416aff6c9c0e5cc057ff89d80f1ffcf27f.png" />
+</div>
+</div>
+</section>
+<section id="conclusion">
+<h2><strong>13- Conclusion:</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this project, foundamentals of capacitors and its behavior are discussed. In section 1, types of capacitors and general applications of capacitors were presented along with theoretical relationships for their capacitance. In the second section, capacitor behavior in an RC circuit examined with PySpice. In section 3, the filtering capability of capacitors was discussed and examined in two modes: AC and <a class="reference external" href="http://DC.In">DC.In</a> the next two sections, impedance and reactance were explained.After that, these two parameters were explained with their practical application.Then, DF(Dissipation Factor), PF(Power Factor), Corona starting voltage, Bias Voltage, trimmer capacitors, effect of temperature on capacitor and Reducing inductance by parallel connection were <a class="reference external" href="http://explained.In">explained.In</a> the end, power calculation for capacitor and AC ripple were explained carefully and in the last section, all the sources except capacitor handbook, which is the main source, were cited.</p>
+</section>
+<section id="sources">
+<h2><strong>14- Sources:</strong><a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://www.britannica.com/technology/capacitor</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://www.electricaltechnology.org/2018/12/capacitor-types-capacitors-fixed-variable-polar-non-polar.html</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://barghnews.com/fa/news/37060/%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%D8%B9%D9%86%D8%A7%D8%B5%D8%B1-%D8%A7%DA%A9%D8%AA%DB%8C%D9%88-%D9%88-%D9%BE%D8%B3%DB%8C%D9%88-%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://vitrek.com/mti-instruments/knowledge-center/types-of-capacitors/#:~:text=Then%20there%20are%20capacitors%20used,then%20sealed%20with%20epoxy%20resin.</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://resource.download.wjec.co.uk/vtc/2016-17/16-17_1-9/gce-electronics-book-chapter-2.pdf</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://www.lioncircuits.com/blog/posts/how-to-calculate-impedance#:~:text=Reactance%20incorporates%20both%20inductive%20(XL,XL%20%2D%20XC)%C2%B2).</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://www.electrocube.com/pages/capacitors-pf-df-q-technical-bulletin#:~:text=1.,PF%20is%20less%20than%2010%25.</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://www.britannica.com/science/dielectric-loss</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://en.wikipedia.org/wiki/Corona_discharge</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://www.engineering.com/the-engineers-guide-to-trimmer-capacitors/</span></a></p></li>
+<li><p><a class="reference internal" href="#URL"><span class="xref myst">https://en.wikipedia.org/wiki/RC_time_constant</span></a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Capacitor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../VaractorDiode.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">What is a Varactor Diode?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Wheatstone/miniproject.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Wheatstone bridge for strain gauges</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline"><strong>Outline:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundamentals-for-all-capacitors"><strong>1- Foundamentals for all capacitors :</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-capacitor"><strong>1-1 What is  a Capacitor?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors-passive-or-active"><strong>1-2 Capacitors:Passive or Active?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-applications"><strong>1-3 Capacitor Applications:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitance-derivation-in-flat-capacitor"><strong>1-4 Capacitance derivation in flat capacitor:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-behavior-in-a-circuit"><strong>2- Capacitor behavior in a circuit:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#charge-curve"><strong>2-1 Charge curve:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-time"><strong>2-2 Characteristic time :</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resistor-voltage-during-capacitor-charging"><strong>2-3 Resistor voltage during capacitor charging:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-an-rc-circuit-work"><strong>2-4 How does an RC circuit work?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-as-storage-battery"><strong>2-5 Capacitor as storage battery:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-as-filter"><strong>3 Capacitor as filter:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-analysis"><strong>3-1 DC Analysis:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-analysis"><strong>3-2 AC Analysis</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-for-different-capacitances"><strong>3-2-1 Analysis for different capacitances</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-for-different-frequencies"><strong>3-2-2 Analysis for different frequencies</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactance"><strong>4- Reactance</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impedance"><strong>5- Impedance</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-of-practical-capacitors"><strong>6- Concepts of Practical Capacitors:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impedance-without-resistance"><strong>6-1 Impedance without resistance:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impedance-with-resistance"><strong>6-2 Impedance with resistance:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-vs-practical-capacitors"><strong>6-3 Ideal vs. Practical Capacitors:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-factors"><strong>7- Practical Factors</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-dissipation-factor"><strong>7-1 DF  (Dissipation Factor):</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pf-power-factor"><strong>7-2 PF  (Power Factor):</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corona-starting-voltage"><strong>7-3 Corona Starting Voltage:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-voltage"><strong>7-4 Bias Voltage:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trimmer-capacitor"><strong>8- Trimmer Capacitor:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-temperature-on-capacitor"><strong>9- Effect of temperature on capacitor:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reducing-inductance-by-parallel-connection"><strong>10- Reducing inductance by parallel connection:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-calculation"><strong>11- Power Calculation:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-ripple"><strong>12- AC Ripple:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>13- Conclusion:</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources"><strong>14- Sources:</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,918 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Wheatstone bridge for strain gauges &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Wheatstone/miniproject';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Superposition theorem" href="../SuperpositionF/Superposition.html" />
+    <link rel="prev" title="Capacitor Handbook Chapter(1)" href="../Capacitor/CapacitorHandbookChapter1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Switches-AliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Wheatstone/miniproject.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Wheatstone/miniproject.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Wheatstone bridge for strain gauges</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wheatstone bridge for strain gauges</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#layout">Layout :</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1- Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wheatstone-bridge-circuit">2- Wheatstone Bridge Circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-circuits-for-strain">3- Measuring circuits for strain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-chevron-bridge-circuit">4- The Chevron Bridge circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-wire-ohm-circuit">5- Four-Wire Ohm Circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-current-circuit">6- Constant Current Circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-installation">7- Application &amp; Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shielding">8- Shielding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guarding">9- Guarding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-and-the-gauge-factor">10- Temperature and the Gauge Factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">11- Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">12- References</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-converter">Power Converter</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Wheatstone Bridge Circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Measuring circuits for strain</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-impact-of-strain-sensor-arrangement-on-wheatstone-bridge-output-and-temperature-compensation">The Impact of Strain Sensor Arrangement on Wheatstone Bridge Output and Temperature Compensation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">The Chevron Bridge circuit</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efficient-strain-measurement-in-rotating-machines-using-a-chevron-bridge-configuration">Efficient Strain Measurement in Rotating Machines Using a Chevron Bridge Configuration</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Four-Wire Ohm Circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Constant Current Circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Application &amp; Installation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Shielding</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Guarding</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Temperature and the Gauge Factor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">References</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="wheatstone-bridge-for-strain-gauges">
+<h1>Wheatstone bridge for strain gauges<a class="headerlink" href="#wheatstone-bridge-for-strain-gauges" title="Link to this heading">#</a></h1>
+<p>Author : Mahdy Albaji</p>
+<p>contact : <a class="reference external" href="mailto:mahdyalbajieng&#37;&#52;&#48;gmail&#46;com">mahdyalbajieng<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="layout">
+<h1>Layout :<a class="headerlink" href="#layout" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>1- Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+</section>
+<section id="wheatstone-bridge-circuit">
+<h2>2- Wheatstone Bridge Circuit<a class="headerlink" href="#wheatstone-bridge-circuit" title="Link to this heading">#</a></h2>
+</section>
+<section id="measuring-circuits-for-strain">
+<h2>3- Measuring circuits for strain<a class="headerlink" href="#measuring-circuits-for-strain" title="Link to this heading">#</a></h2>
+</section>
+<section id="the-chevron-bridge-circuit">
+<h2>4- The Chevron Bridge circuit<a class="headerlink" href="#the-chevron-bridge-circuit" title="Link to this heading">#</a></h2>
+</section>
+<section id="four-wire-ohm-circuit">
+<h2>5- Four-Wire Ohm Circuit<a class="headerlink" href="#four-wire-ohm-circuit" title="Link to this heading">#</a></h2>
+</section>
+<section id="constant-current-circuit">
+<h2>6- Constant Current Circuit<a class="headerlink" href="#constant-current-circuit" title="Link to this heading">#</a></h2>
+</section>
+<section id="application-installation">
+<h2>7- Application &amp; Installation<a class="headerlink" href="#application-installation" title="Link to this heading">#</a></h2>
+</section>
+<section id="shielding">
+<h2>8- Shielding<a class="headerlink" href="#shielding" title="Link to this heading">#</a></h2>
+</section>
+<section id="guarding">
+<h2>9- Guarding<a class="headerlink" href="#guarding" title="Link to this heading">#</a></h2>
+</section>
+<section id="temperature-and-the-gauge-factor">
+<h2>10- Temperature and the Gauge Factor<a class="headerlink" href="#temperature-and-the-gauge-factor" title="Link to this heading">#</a></h2>
+</section>
+<section id="conclusion">
+<h2>11- Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+</section>
+<section id="references">
+<h2>12- References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Before anything, it is necessary to review the concept of strain and how it is measured by a strain gauge.
+<strong>Strain</strong> is the relative deformation of a material that occurs when loading and applying stress. Strain is defined and measured according to the initial shape of the material. For example, consider a cache. This cache normally has a specific length.</p></li>
+</ul>
+<p>If we hold two ends of the elastic in our hands and pull it, its length will increase compared to the initial length. This change in length caused by applying force and creating tension in the elastic is called strain. Strain and stress are very important concepts in engineering and material science. The design of mechanical parts and engineering structures is done considering these concepts.</p>
+<p><img alt="title" src="../../_images/Figure_1.gif" /></p>
+<ul class="simple">
+<li><p>Figure(1):An example of strain</p></li>
+</ul>
+<p>As mentioned earlier, strain is measured by a strain gauge, so here it is necessary to explain what a strain gauge is :</p>
+<p><strong>Strain gauge</strong> is an electronic sensor that is used to measure strain or relative changes in the length of an object. These devices convert the strain into a change in voltage or current by changing the amount of electrical resistance created in them. These electrical changes can then be measured and analyzed by the electronic system.
+<img alt="title" src="../../_images/Figure_2.gif" /></p>
+<ul class="simple">
+<li><p>Figure(2):An example of strain gauges</p></li>
+</ul>
+<p>T<strong>he Wheatstone bridge</strong> is a fundamental electrical circuit used to measure unknown resistances by balancing two legs of a bridge circuit. Originally developed by <strong>Samuel Hunter Christie</strong> in <strong>1833</strong> and later popularized by <strong>Samuel Wheatstone</strong>, this configuration has found extensive applications in various fields of engineering and metrology. One of its most impactful applications is in the realm of strain measurement, where it plays a critical role in the functioning of strain gauges. When a material deforms under stress, its electrical resistance changes, which can be precisely detected using a Wheatstone bridge setup. By employing strain gauges within the bridge circuit, engineers can accurately monitor and quantify mechanical strain in structures and components, advancing safety, reliability, and performance in design and manufacturing processes. This introduction to the Wheatstone bridge for strain gauge applications highlights its significance and versatility in modern engineering practices.</p>
+<ul class="simple">
+<li><p>Due to its <strong>high sensitivity</strong>, the Wheatstone bridge also measures <strong>very small</strong> changes in resistance, so the <strong>strain gauge</strong> can be used as a variable resistance in the Wheatstone bridge.</p></li>
+</ul>
+<section id="power-converter">
+<h2>Power Converter<a class="headerlink" href="#power-converter" title="Link to this heading">#</a></h2>
+<p><strong>A power transducer</strong> is a device that converts <strong>mechanical forces</strong> into measurable electrical signals. These electrical signals can be used to
+<strong>display</strong>, <strong>record</strong>, <strong>control</strong> or <strong>analyze</strong> force. And power converters are used in a wide range of applications including <strong>industry</strong>, <strong>medicine</strong>, <strong>aerospace</strong> and <strong>research</strong>. Power converters include <em>four</em> important parts:</p>
+<ol class="arabic simple">
+<li><p>Stress and strain</p></li>
+<li><p>Strain gauges</p></li>
+<li><p>Wheatstone bridge circuit</p></li>
+<li><p>Load cell</p></li>
+</ol>
+<ul class="simple">
+<li><p>In this article, we are going to talk about <strong>the strain gauge</strong> in the Wheatstone bridge circuit, which is the third part of power converters.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>Wheatstone Bridge Circuit<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<p><strong>Wheatstone Bridge Circuit</strong> is an <strong>electric circuit</strong> that consists of <strong>four resistors</strong> and is used to accurately <strong>measure</strong> <strong>the unknown resistance</strong>. Due to its very high and <strong>correct sensitivity</strong>, it is one of the most common circuits for using <strong>strain gauges</strong>. An example of a simple Wheatstone bridge circuit is shown in the figure below:
+If there is no voltage in the circuit, ΔR = 0, all four resistances are equal (R2 = R3R4/R1) and as a result, the output voltage is zero (the bridge is in equilibrium).
+$<span class="math notranslate nohighlight">\(+out = -out \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(Vout = 0\)</span>$
+When stress is applied to the strain gauge, its resistance changes by ΔR.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the schemdraw lib</span>
+<span class="kn">import</span> <span class="nn">schemdraw</span> 
+<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="c1"># add elements</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;+Excitation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="nb">open</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="nb">open</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">R1</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;R+ΔR&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="nb">open</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;-out&quot;</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span> <span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">R2</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">R3</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="nb">open</span><span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;+out&quot;</span><span class="p">,</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">R4</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="nb">open</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="nb">open</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bf7bcd6d8fbd89326d543947f5fdf12fe1233ba9fee13e46b924d26b9b896b84.svg" src="../../_images/bf7bcd6d8fbd89326d543947f5fdf12fe1233ba9fee13e46b924d26b9b896b84.svg" />
+</div>
+</div>
+<ul class="simple">
+<li><p>The above circuit is a simple example of Wheatstone bridge.
+$<span class="math notranslate nohighlight">\(Vout =  \frac{R}{R+R}E - \frac{R}{R+ΔR}E\)</span>$</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[Vout = 0.5E - \frac{RE}{(2R+ΔR)}\]</div>
+<div class="math notranslate nohighlight">
+\[Vout = \frac{(2R+ΔR)E-2RE}{2(2R+ΔR)}\]</div>
+<div class="math notranslate nohighlight">
+\[Vout = E\frac{ΔR}{4R+2ΔR}\]</div>
+<p>Due to the fact that there is ΔR in both the numerator and the denominator of the above relation, the output of the bridge changes non-linearly with the input force. The value of R is about several hundreds of ohms, while ΔR is usually 0.01 ohm, that is, about 10,000 times smaller.
+$<span class="math notranslate nohighlight">\(4R &gt;&gt; 2ΔR\)</span>$</p>
+<p>The output voltage calculation can be summarized as follows:</p>
+<div class="math notranslate nohighlight">
+\[Vout = \frac{ΔRE}{4R}\]</div>
+<p>It should be remembered that the output voltage <strong>(Vout)</strong> is differential and is not considered with respect to the ground, also this voltage is usually very small and is taken from a source with an output impedance of <strong>R/2</strong> which is possible It should be around a few hundred ohms or even more.</p>
+<p>As a result, this signal must be amplified by a differential circuit and amplified with a very high input impedance.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>Measuring circuits for strain<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<p>As said <strong>A Wheatstone bridge</strong> is a divided bridge circuit used for the measurement of <strong>static</strong> or <strong>dynamic</strong> electrical resistance. The output voltage of the Wheatstone bridge circuit is expressed in <em>millivolts</em> output per volt input.</p>
+<ul class="simple">
+<li><p>The Wheatstone circuit is also well suited for temperature compensation.</p></li>
+</ul>
+<p>The equation of the Wheatstone bridge, if R1, R2, R3, and R4 are equal, and a voltage, VIN, is applied between points A and C, then the output between points B and D will show no potential difference. However, if R4 is changed to some value which does not equal R1, R2, and R3, the bridge will become unbalanced and a voltage will exist at the output terminals. In a so-called G-bridge configuration, the variable strain sensor has resistance Rg, while the other arms are fixed value resistors.</p>
+<p><strong>The sensor</strong>, however, can occupy one, two, or four arms of the Wheatstone bridge, depending on the application. The total strain, or output voltage of the circuit (VOUT) is equivalent to the difference between the voltage drop across R1 and R4, or Rg. This can also be written as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import schemdraw lib</span>
+<span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="c1"># add elements</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;Vin&quot;</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;right&#39;</span><span class="p">)</span>
+    <span class="n">R1</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;R1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">theta</span><span class="p">(</span><span class="o">-</span><span class="mi">140</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">R2</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;R2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">theta</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="n">loc</span> <span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+    <span class="n">R3</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;R3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">theta</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span> <span class="s1">&#39;right&#39;</span><span class="p">)</span>
+    <span class="n">R4</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">ResistorIEC</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;R4 or Rg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R3</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">R1</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">R2</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">toy</span><span class="p">(</span><span class="n">R2</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2952eaac4dde6e680b035d01cb8df1e2fb23c4d2bcdf8dfb50f9d2cf76d2f699.svg" src="../../_images/2952eaac4dde6e680b035d01cb8df1e2fb23c4d2bcdf8dfb50f9d2cf76d2f699.svg" />
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[Vout = Vin [(\frac{R3}{R3 + Rg}) - (\frac{R2}{R1 + R2})] \]</div>
+<div class="math notranslate nohighlight">
+\[Vout = Vcd - Vcb \]</div>
+<p>The bridge is considered balanced when <strong>R1/R2 = Rg/R3</strong> and, therefore, <strong>VOUT equals zero</strong>.
+Any <em>small</em> change in the resistance of the sensing strain gauge will throw the bridge out of balance, making it suitable for the detection of strain. When the bridge is set up so that Rg is the only active strain gauge, a small change in Rg will result in an output voltage from the bridge. If the gauge factor is GF, the strain measurement is related to the change in Rg as follows:</p>
+<div class="math notranslate nohighlight">
+\[Strain = \frac{(\frac{ΔRg}{Rg})}{GF}\]</div>
+<p>that in this regard:</p>
+<ol class="arabic simple">
+<li><p>strain = The amount of relative deformation of a material</p></li>
+<li><p>A change in the value of a Resistor .</p></li>
+<li><p>The initial value of resistance.</p></li>
+<li><p>Gauge Factor
+GF stands for Gauge Factor. It is a measure used in strain gauges and other sensors to indicate the sensitivity of the device. The Gauge Factor is defined as the ratio of relative change in electrical resistance to the mechanical strain experienced by the material.
+Mathematically, it is expressed as:
+$<span class="math notranslate nohighlight">\(GF = \frac{(\frac{ΔR}{R})}{ϵ}\)</span>$
+where:</p></li>
+</ol>
+<p><strong>ΔR</strong> is the change in resistance,<strong>R</strong> is the original resistance, and <strong>ϵ</strong> is the mechanical strain.
+The Gauge Factor is crucial for determining how effectively a sensor can convert mechanical deformation into an electrical signal.</p>
+<section id="the-impact-of-strain-sensor-arrangement-on-wheatstone-bridge-output-and-temperature-compensation">
+<h2>The Impact of Strain Sensor Arrangement on Wheatstone Bridge Output and Temperature Compensation<a class="headerlink" href="#the-impact-of-strain-sensor-arrangement-on-wheatstone-bridge-output-and-temperature-compensation" title="Link to this heading">#</a></h2>
+<p>The number of active strain gauges that should be connected to the bridge depends on the application. For example, it may be useful to connect gauges that are on opposite sides of a beam, one in compression and the other in tension. In this arrangement, one can effectively double the bridge output for the same strain. In installations where all of the arms are connected to strain sensors, strain gauges temperature compensation is automatic, as resistance change due to temperature variations will be the same for all arms of the Wheatstone bridge.
+In a four-element Wheatstone bridge, usually two gauges are wired in compression and two in tension. For example, if R1 and R3 are in tension (positive) and R2 and R4 are in compression (negative), then the output will be proportional to the sum of all the strains measured separately. For gauges located on adjacent legs, the bridge becomes unbalanced in proportion to the difference in strain. For gauges on opposite legs, the bridge balances in proportion to the sum of the strains. Whether bending strain, axial strain, shear strain, or torsional strain is being measured, the strain gauge arrangement will determine the relationship between the output and the type of strain being measured. As shown in Figure 2-6, if a positive tensile strain occurs on gauges R2 and R3, and a negative strain is experienced by gauges R1 and R4, the total output, VOUT, would be four times the resistance of a single gauge. In this configuration the stain gauge tempeature changes are compensated.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1>The Chevron Bridge circuit<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<p><strong>Chevron bridge circuit</strong> is also used in strain control. This circuit is commonly used in strain gauges or strain gauges whose purpose is to detect small changes in the length or shape of an object under load. Here are some key applications in strain control:</p>
+<p>Applications in Strain Control:</p>
+<ol class="arabic simple">
+<li><p><strong>Amplifying Weak Signals:</strong> Strain sensors produce very weak signals. The Chevron Bridge circuit can serve as an amplifier to boost these signals, making them easier to measure.</p></li>
+<li><p><strong>Detecting Strain Changes:</strong> Using the Chevron Bridge circuit allows for the identification of small changes in the resistance of strain sensors caused by the deformation of materials.</p></li>
+<li><p><strong>Reducing Noise:</strong> This circuit can effectively reduce electrical noise, which is crucial for precise strain measurements.</p></li>
+<li><p><strong>Signal Conversion:</strong> The circuit often acts as a converter, helping to turn the analog signals from sensors into stronger signals that can be processed and analyzed.</p></li>
+</ol>
+<section id="efficient-strain-measurement-in-rotating-machines-using-a-chevron-bridge-configuration">
+<h2>Efficient Strain Measurement in Rotating Machines Using a Chevron Bridge Configuration<a class="headerlink" href="#efficient-strain-measurement-in-rotating-machines-using-a-chevron-bridge-configuration" title="Link to this heading">#</a></h2>
+<p><strong>The Chevron bridge</strong> is illustrated in Figure 3. It is a multiple channel arrangement that serves to compensate for the changes in bridge-arm resistances by periodically switching them. Here, the four channel positions are used to switch the digital voltmeter (DVM) between G-bridge (one active gauge) and H-bridge (two active gauges) configurations. The DVM measurement device always shares the power supply and an internal H-bridge. This arrangement is most popular for strain measurements on rotating machines, where it can reduce the number of slip rings required.</p>
+<p><img alt="title" src="../../_images/Figure_3.avif" /></p>
+<ul class="simple">
+<li><p>Figure(3): The Chevron bridge</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>Four-Wire Ohm Circuit<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<p>Although the Wheatstone bridge circuit is one of the most popular methods of measuring electrical resistance, other methods can also be used. The main advantage of a four-wire ohm circuit is that the lead wires do not affect the measurement because the voltage is detected <strong>directly</strong> across the strain gauge element.</p>
+<p>A four-wire ohm circuit installation might consist of a voltmeter, a current source, and four lead resistors, R1, in series with a gauge resistor, Rg (Figure 4). The voltmeter is connected to the ohms sense terminals of the DVM, and the current source is connected to the ohms source terminals of the DVM. To measure the value of strain, a low current flow (typically one milliampere) is supplied to the circuit. While the voltmeter measures the voltage drop across Rg, the absolute resistance value is computed by the multimeter from the values of current and voltage.</p>
+<p><img alt="title" src="../../_images/Figure_4.avif" /></p>
+<ul class="simple">
+<li><p>Figure(4): The Four-Wire Ohm Circuit</p></li>
+</ul>
+<p>The measurement is usually done by first measuring the value of gauge resistance in an unstrained condition and then making a second measurement with strain applied. The difference in the measured gauge resistances divided by the unstrained resistance gives a fractional value of the strain. This value is used with the gauge factor <strong>(GF)</strong> to calculate strain.
+The four-wire circuit is also suitable for automatic voltage offset compensation. The voltage is first measured when there is no current flow. This measured value is then subtracted from the voltage reading when current is flowing. The resulting voltage difference is then used to compute the gauge resistance. Because of their sensitivity, four-wire strain gauges are typically used to measure low frequency dynamic strains. When measuring higher frequency strains, the bridge output needs to be amplified. The same circuit also can be used with a semiconductor strain-gauge sensor and high speed digital voltmeter. If the DVM sensitivity is 100 microvolts, the current source is 0.44 milliamperes, the strain-gauge element resistance is 350 ohms and its gauge factor is 100, the resolution of the measurement will be 6 microstrains.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>Constant Current Circuit<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<p>Resistance can be measured by exciting the bridge with either a constant voltage or a constant current source. Because
+$<span class="math notranslate nohighlight">\( R = \frac{V}{I}\)</span>$
+if either <strong>V</strong> or <strong>I</strong> is held constant, the other will vary with the resistance. Both methods can be used.
+While there is no theoretical advantage to using a constant current source (Figure 5) as compared to a constant voltage, in some cases the bridge output will be more linear in a constant current system. Also, if a constant current source is used, it eliminates the need to sense the voltage at the bridge; therefore, only two wires need to be connected to the strain gauge element.</p>
+<p><img alt="title" src="../../_images/Figure_5.avif" /></p>
+<ul class="simple">
+<li><p>Figure(5): Constant Current Circuit</p></li>
+</ul>
+<p><strong>The constant current circuit</strong> is most effective when <strong>dynamic strain</strong> is being measured. This is because, if a dynamic force is causing a change in the resistance of the <strong>strain gauge</strong> (Rg), one would measure the time varying component of the output <strong>(VOUT)</strong>, whereas slowly changing effects such as changes in lead resistance due to temperature variations would be rejected. Using this configuration, temperature drifts become nearly negligible.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1>Application &amp; Installation<a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
+<p>The output of a strain gauge circuit is a very <strong>low-level</strong> voltage signal requiring a sensitivity of <em>100 microvolts or better</em>. <strong>The low level</strong> of the signal makes it particularly susceptible to unwanted noise from other electrical devices.
+<strong>Capacitive coupling</strong> caused by the lead wires’ running too close to AC power cables or ground currents are potential error sources in strain measurement. Other error sources may include magnetically induced voltages when the lead wires pass through variable magnetic fields, parasitic (unwanted) contact resistances of lead wires, insulation failure, and thermocouple effects at the junction of dissimilar metals. The sum of such interferences can result in significant signal degradation.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>Shielding<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<p>Most electric interference and noise problems can be solved by <strong>shielding</strong> and <strong>guarding</strong>. A shield around the measurement lead wires will intercept interferences and may also reduce any errors caused by insulation degradation. Shielding also will guard the measurement from capacitive coupling. If the measurement leads are routed near electromagnetic interference sources such as transformers, twisting the leads will minimize signal degradation due to magnetic induction. By twisting the wire, the flux-induced current is inverted and the areas that the flux crosses cancel out. For industrial process applications, twisted and shielded lead wires are used almost without exception.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id9">
+<h1>Guarding<a class="headerlink" href="#id9" title="Link to this heading">#</a></h1>
+<p><strong>Guarding</strong> the instrumentation itself is just as important as shielding the wires. A guard is a sheet-metal box surrounding the analog circuitry and is connected to the shield. If ground currents flow through the strain-gauge element or its lead wires, a Wheatstone bridge circuit cannot distinguish them from the flow generated by the current source. Guarding guarantees that terminals of electrical components are at the same potential, which thereby prevents extraneous current flows.
+Connecting a guard lead between the test specimen and the negative terminal of the power supply provides an additional current path around the measuring circuit. By placing a guard lead path in the path of an error-producing current, all of the elements involved (i.e., floating power supply, strain gauge, all other measuring equipment) will be at the same potential as the test specimen. By using twisted and shielded lead wires and integrating DVMs with guarding, common mode noise error can virtually be eliminated.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id10">
+<h1>Temperature and the Gauge Factor<a class="headerlink" href="#id10" title="Link to this heading">#</a></h1>
+<p><strong>Strain-sensing</strong> materials, such as <strong>copper</strong>, change their internal structure at high temperatures. <strong>Temperature</strong> can alter not only the properties of a <strong>strain gauge element</strong>, but also can alter the properties of <em>the base material</em> to which the strain gauge is attached. Differences in expansion coefficients between the gauge and base materials may cause dimensional changes in the sensor element. Therefore, a emperature compensation circuit would be needed.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id11">
+<h1>Conclusion<a class="headerlink" href="#id11" title="Link to this heading">#</a></h1>
+<p><strong>The Whetstone bridge</strong> circuit is formed by using four resistors, three resistors including fixed resistor and one resistance resistor (strain gauge). By changing the shape of the object and changing the resistance of the strain gauge, there is no change in the bridge and an output voltage appears at the ends of the bridge. By measuring the decision of the output voltage and knowing the specifications of the documents and the strain gauge, the amount of strain can be calculated using the related formulas.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id12">
+<h1>References<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.omega.com/en-us/resources/wheatstone-bridge">https://www.omega.com/en-us/resources/wheatstone-bridge</a></p>
+<p><a class="reference external" href="https://blog.faradars.org/%DA%A9%D8%B1%D9%86%D8%B4-%DA%86%DB%8C%D8%B3%D8%AA/">https://blog.faradars.org/کرنش-چیست/</a></p>
+<p><a class="reference external" href="https://nicsaco.com/strain-gauge-wheatstone-bridge-circuit/">https://nicsaco.com/strain-gauge-wheatstone-bridge-circuit/</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Wheatstone"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Capacitor/CapacitorHandbookChapter1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Capacitor Handbook Chapter(1)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../SuperpositionF/Superposition.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Superposition theorem</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wheatstone bridge for strain gauges</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#layout">Layout :</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1- Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wheatstone-bridge-circuit">2- Wheatstone Bridge Circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-circuits-for-strain">3- Measuring circuits for strain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-chevron-bridge-circuit">4- The Chevron Bridge circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-wire-ohm-circuit">5- Four-Wire Ohm Circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-current-circuit">6- Constant Current Circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-installation">7- Application &amp; Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shielding">8- Shielding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guarding">9- Guarding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-and-the-gauge-factor">10- Temperature and the Gauge Factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">11- Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">12- References</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-converter">Power Converter</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Wheatstone Bridge Circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Measuring circuits for strain</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-impact-of-strain-sensor-arrangement-on-wheatstone-bridge-output-and-temperature-compensation">The Impact of Strain Sensor Arrangement on Wheatstone Bridge Output and Temperature Compensation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">The Chevron Bridge circuit</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efficient-strain-measurement-in-rotating-machines-using-a-chevron-bridge-configuration">Efficient Strain Measurement in Rotating Machines Using a Chevron Bridge Configuration</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Four-Wire Ohm Circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Constant Current Circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Application &amp; Installation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Shielding</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Guarding</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Temperature and the Gauge Factor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">References</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1289 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Superposition theorem &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/SuperpositionF/Superposition';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="Wheatstone bridge for strain gauges" href="../Wheatstone/miniproject.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Switches-AliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Superposition theorem</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/SuperpositionF/Superposition.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/SuperpositionF/Superposition.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Superposition theorem</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><span style="font-size: 0.8em">1. Introduction</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-superposition-theorem"><span style="font-size: 0.8em">2. What is superposition theorem?</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide"><span style="font-size: 0.8em">3. Step by step guide:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-circuits-and-superposition"><span style="font-size: 0.8em">4. DC circuits and superposition:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-and-pyspice"><span style="font-size: 0.8em">5. Superposition and pyspice:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitation-s-of-superposition"><span style="font-size: 0.8em">6. Limitation’s of superposition:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-suerposition"><span style="font-size: 0.8em">7. Advantages of suerposition:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><span style="font-size: 0.8em">8. Conclusion</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources"><span style="font-size: 0.8em">9. Resources</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Introduction:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. What is superposition theorem?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Step by step guide:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1"><span style="font-size: 0.8em">Step 1:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2"><span style="font-size: 0.8em">Step 2:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3"><span style="font-size: 0.8em">Step 3:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4"><span style="font-size: 0.8em">Step 4:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5"><span style="font-size: 0.8em">Step 5:</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4. DC circuits and superposition:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Step 1:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Step 2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Step 3:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Step 4:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Step 5:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5. Superposition and pyspice:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Step 1:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step2">Step2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step3">Step3:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Step 4:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Step 5:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-in-pyspice">Example 2 in pyspice:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3">Example 3:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Step 1:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Step 2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Step 3:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Step 4:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Step 5:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-in-pyspice">Example 3 in pyspice:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-circuits-and-superposition">AC circuits and superposition:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Step 1:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Step 2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Step 3:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Step 4:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Step 5:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">6. Limitation’s of superposition:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#it-can-be-only-applied-to-linear-circuits"><span style="font-size: 0.8em">1. It can be only applied to linear circuits.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-cannot-be-calculated-using-this-theorem"><span style="font-size: 0.8em">2. Power cannot be calculated using this theorem.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-components-must-be-bilateral"><span style="font-size: 0.8em">3. all components must be bilateral.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuits-with-imbalanced-bridges-cannot-use-this-theorem"><span style="font-size: 0.8em">5. Circuits with imbalanced bridges cannot use this theorem.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-be-time-consuming"><span style="font-size: 0.8em">6. Can be time-consuming:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#may-not-capture-all-effects"><span style="font-size: 0.8em">7. May Not Capture All Effects:</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">7. Advantages of suerposition:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">8. Conclusion:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">9. Sources:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="superposition-theorem">
+<h1><strong>Superposition theorem</strong><a class="headerlink" href="#superposition-theorem" title="Link to this heading">#</a></h1>
+<p>Author :Hanieh Malekjafarian</p>
+<p>Gmail: <a class="reference external" href="mailto:haniehmalekjf&#37;&#52;&#48;gmail&#46;com">haniehmalekjf<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
+</section>
+<section id="introduction">
+<h2><span style = "font-size: 0.8em">1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+</section>
+<section id="what-is-superposition-theorem">
+<h2><span style = "font-size: 0.8em">2. What is superposition theorem?<a class="headerlink" href="#what-is-superposition-theorem" title="Link to this heading">#</a></h2>
+</section>
+<section id="step-by-step-guide">
+<h2><span style = "font-size: 0.8em">3. Step by step guide:<a class="headerlink" href="#step-by-step-guide" title="Link to this heading">#</a></h2>
+</section>
+<section id="dc-circuits-and-superposition">
+<h2><span style = "font-size: 0.8em">4. DC circuits and superposition:<a class="headerlink" href="#dc-circuits-and-superposition" title="Link to this heading">#</a></h2>
+</section>
+<section id="superposition-and-pyspice">
+<h2><span style = "font-size: 0.8em">5. Superposition and pyspice:<a class="headerlink" href="#superposition-and-pyspice" title="Link to this heading">#</a></h2>
+</section>
+<section id="limitation-s-of-superposition">
+<h2><span style = "font-size: 0.8em">6. Limitation’s of superposition:<a class="headerlink" href="#limitation-s-of-superposition" title="Link to this heading">#</a></h2>
+</section>
+<section id="advantages-of-suerposition">
+<h2><span style = "font-size: 0.8em">7. Advantages of suerposition:<a class="headerlink" href="#advantages-of-suerposition" title="Link to this heading">#</a></h2>
+</section>
+<section id="conclusion">
+<h2><span style = "font-size: 0.8em">8. Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+</section>
+<section id="resources">
+<h2><span style = "font-size: 0.8em">9. Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
+</section>
+<section id="id1">
+<h2>1. Introduction:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Analyzing circuits with multiple sources can be tricky, especially for complex designs. While methods like Nodal Analysis and Mesh Analysis are effective, they can become difficult to apply when dealing with several independent sources. The superposition theorem simplifies this process by breaking the circuit down, making it easier to analyze each source independently before combining the results.</p>
+</section>
+<section id="id2">
+<h2>2. What is superposition theorem?<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>The superposition theorem states that in any <strong>linear network</strong> that has more than one sourse, you treat each independent source as an individual and then calculate the voltage or current that it has on the circuit and combine the results together.</p>
+<div class="math notranslate nohighlight">
+\[ F\left(\sum_{i=1}^{n} x_i\right) = \sum_{i=1}^{n} F(x_i) \]</div>
+<p><span class="math notranslate nohighlight">\( F\left(\sum_{i=1}^{n} x_i\right) \)</span>:  Represents the total current or voltage in the circuit. The purpose of using this theorem is to calculate this value.</p>
+<p><span class="math notranslate nohighlight">\( \sum_{i=1}^{n} F(x_i) \)</span>: Represents the individual effects (currents or voltages) from each source. To find the total, we consider one source at a time, keeping others deactivated, and gradually combine their effects.</p>
+<ul class="simple">
+<li><p>Reminder: Linear circuits are circuits where the output is directly proportional to the input. Their behavior doesn’t change with the amount of voltage or current applied, and their I-V characteristics form a straight line.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>3. Step by step guide:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>To make it easier let’s have an algorithmic view on how to apply superposition theorem in a circuit:</p>
+<section id="step-1">
+<h3><span style = "font-size: 0.8em">Step 1:<a class="headerlink" href="#step-1" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Identify all the voltage and current sources in the network. 
+</pre></div>
+</div>
+</section>
+<section id="step-2">
+<h3><span style = "font-size: 0.8em">Step 2:<a class="headerlink" href="#step-2" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  For each independent source in the original circuit, create a new sub-circuit. The sub-circuits will be identical to the original except that all independent sources other than the one under consideration will be replaced by their ideal internal impedance. This means that all remaining independent voltage sources will be shorted(wire) and all remaining independent current sources will be opened(break).
+  
++ Note: Dependent sources are left intact because they are controlled by circuit variables.
+</pre></div>
+</div>
+</section>
+<section id="step-3">
+<h3><span style = "font-size: 0.8em">Step 3:<a class="headerlink" href="#step-3" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Solve each sub-circuit for the desired voltages and/or currents using standard series-parallel analysis techniques.  
+</pre></div>
+</div>
+</section>
+<section id="step-4">
+<h3><span style = "font-size: 0.8em">Step 4:<a class="headerlink" href="#step-4" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Repeat steps 2 and 3 for the rest of the sources. 
+</pre></div>
+</div>
+</section>
+<section id="step-5">
+<h3><span style = "font-size: 0.8em">Step 5:<a class="headerlink" href="#step-5" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Combine all the contributions from each sub-circuit to determine the final values. Make sure to consider the current directions and voltage polarities throughout the process to ensure accuracy.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>4. DC circuits and superposition:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>First let’s take a look at applying superposition to circuits with only DC sources.</p>
+<section id="example-1">
+<h3>Example 1:<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h3>
+<p><span style = "font-size: 1.2em">- Use supperposition to find <span class="math notranslate nohighlight">\(V_{0}\)</span> .</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span> 
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span> 
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span> 
+
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;3Ω&#39;</span><span class="p">)</span>     
+    <span class="n">C1</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;5Ω&#39;</span><span class="p">)</span>         
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;10V&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>   
+    <span class="n">C2</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span> 
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span> 
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;$v_o$&#39;</span><span class="p">,</span><span class="s1">&#39;+&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>  
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">C2</span><span class="o">.</span><span class="n">end</span> <span class="p">,</span> <span class="n">C1</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;4A&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/42aaf4fa875ed6a72f253d90f971bf24c45f10de65026ff78bf45b82b0ce3573.svg" src="../../_images/42aaf4fa875ed6a72f253d90f971bf24c45f10de65026ff78bf45b82b0ce3573.svg" />
+</div>
+</div>
+<section id="id5">
+<h4>Step 1:<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>In this example we have one current source and one voltage source.</p>
+</section>
+<section id="id6">
+<h4>Step 2:<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Let’s start with the voltage source, so what we want to do is to ignore the current source and eliminate it, as was mentioned before, eliminating current souse means replacing it with its ideal impedance, which effectively acts as an open circuit (break).</p>
+<p><img alt="1.png" src="../../_images/1.PNG" /></p>
+</section>
+<section id="id7">
+<h4>Step 3:<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>Now we will find <span class="math notranslate nohighlight">\( V_{0} \)</span> in the sub-circuit we created, which by using voltage division is:
+$<span class="math notranslate nohighlight">\( V_{01} = \frac{10 \, \text{v} \times 2 \, \Omega}{2 \, \Omega + 5 \, \Omega + 3 \, \Omega} = 2 \, \text{v} \)</span>$</p>
+</section>
+<section id="id8">
+<h4>Step 4:<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p>So this time we keep the current source and eliminate the voltage souse, as was mentioned eliminating voltage source acts as a wire.</p>
+<p><img alt="2.png" src="../../_images/2.PNG" /></p>
+<p>Now we have 5Ω resistor parallel to a 4A current source tht we can replace by  a voltage source with value of (V=RI) 5Ω×4A=20V .</p>
+<p><img alt="3.png" src="../../_images/3.PNG" /></p>
+<p>And again by using voltage division we have :
+$<span class="math notranslate nohighlight">\( V_{02} = \frac{20 \, \text{v} \times 2 \, \Omega}{2 \, \Omega + 5 \, \Omega + 3 \, \Omega} = 4 \, \text{v} \)</span>$</p>
+</section>
+<section id="id9">
+<h4>Step 5:<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<p>now all we have to do is to add them all together:
+$<span class="math notranslate nohighlight">\( V_{0} = V_{01} + V_{02} \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{0} = 2v + 4v = 6v \)</span>$</p>
+</section>
+</section>
+<section id="id10">
+<h3>5. Superposition and pyspice:<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Let’s find <span class="math notranslate nohighlight">\(V_{0}\)</span> in the previous example using pyspice analysis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Create the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Superposition Circuit&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the voltage and current sources</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span> <span class="p">,</span> <span class="s1">&#39;node2&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="nd">@u_V</span><span class="p">)</span>  
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">4</span><span class="nd">@u_A</span><span class="p">)</span>      
+
+<span class="c1"># Resistors</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Vo&#39;</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="nd">@u_Ohm</span><span class="p">)</span>       
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Vo&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_Ohm</span><span class="p">)</span>    
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;node2&#39;</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_Ohm</span><span class="p">)</span>    
+
+<span class="c1"># Set up the simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Total Vo </span>
+<span class="n">analysis_vo_total</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+<span class="n">vo_total</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis_vo_total</span><span class="p">[</span><span class="s1">&#39;Vo&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total Vo : </span><span class="si">{</span><span class="n">vo_total</span><span class="si">}</span><span class="s1"> V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total Vo : 6.0 V
+</pre></div>
+</div>
+</div>
+</div>
+<p>wich is the same value we came to using superpposition, now even if we apply superposition in the pyspice code manualy we have:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Create the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Superposition Circuit&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the voltage and current sources</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span> <span class="p">,</span> <span class="s1">&#39;node2&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="nd">@u_V</span><span class="p">)</span>  
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">4</span><span class="nd">@u_A</span><span class="p">)</span>       
+
+<span class="c1"># Resistors</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Vo&#39;</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="nd">@u_Ohm</span><span class="p">)</span>        
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Vo&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_Ohm</span><span class="p">)</span>      
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;node2&#39;</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_Ohm</span><span class="p">)</span>    
+
+<span class="c1"># Set up the simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Only the voltage source active</span>
+<span class="n">circuit</span><span class="p">[</span><span class="s1">&#39;I1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dc_value</span> <span class="o">=</span> <span class="mi">0</span><span class="nd">@u_A</span>               <span class="c1"># Deactivate the current source</span>
+<span class="n">analysis_v_source</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+<span class="n">vo_voltage_v_source</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis_v_source</span><span class="p">[</span><span class="s1">&#39;Vo&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Vo with only voltage source active: </span><span class="si">{</span><span class="n">vo_voltage_v_source</span><span class="si">}</span><span class="s1"> V&#39;</span><span class="p">)</span> 
+
+<span class="c1"># Only the current source active</span>
+<span class="n">circuit</span><span class="p">[</span><span class="s1">&#39;V1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dc_value</span> <span class="o">=</span> <span class="mi">0</span><span class="nd">@u_V</span>               <span class="c1"># Deactivate the voltage source</span>
+<span class="n">circuit</span><span class="p">[</span><span class="s1">&#39;I1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dc_value</span> <span class="o">=</span> <span class="mi">4</span><span class="nd">@u_A</span>               <span class="c1"># Reactivate the current source</span>
+<span class="n">analysis_i_source</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+<span class="n">vo_voltage_i_source</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis_i_source</span><span class="p">[</span><span class="s1">&#39;Vo&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Vo with only current source active: </span><span class="si">{</span><span class="n">vo_voltage_i_source</span><span class="si">}</span><span class="s1"> V&#39;</span><span class="p">)</span>
+
+<span class="c1"># Total Vo using superposition</span>
+<span class="n">vo_total</span> <span class="o">=</span> <span class="n">vo_voltage_v_source</span> <span class="o">+</span> <span class="n">vo_voltage_i_source</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total Vo using superposition: </span><span class="si">{</span><span class="n">vo_total</span><span class="si">}</span><span class="s1"> V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vo with only voltage source active: 2.0 V
+Vo with only current source active: 4.0 V
+Total Vo using superposition: 6.0 V
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-2">
+<h3>Example 2:<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h3>
+<p><span style = "font-size: 1.2em">- Use supperposition to find <span class="math notranslate nohighlight">\(V_{0}\)</span> .</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
+    <span class="n">C1</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;6A&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;4Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">C2</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;18V&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">((</span><span class="mf">2.27</span><span class="p">,</span><span class="mf">5.97</span><span class="p">))</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2Ω&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">((</span><span class="mf">3.7</span><span class="p">,</span><span class="mf">5.97</span><span class="p">))</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">((</span><span class="mf">2.25</span><span class="p">,</span> <span class="mf">2.99</span><span class="p">))</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mf">1.44</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">((</span><span class="mf">3.01</span><span class="p">,</span><span class="mf">2.99</span><span class="p">))</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="s1">&#39;$v_o$&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;1Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">C1</span><span class="o">.</span><span class="n">start</span><span class="p">,</span><span class="n">C2</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dcfcb1049536fcc53a53df6d8d1b94420f3f7d8bdde6564dd4425a56554d82fe.svg" src="../../_images/dcfcb1049536fcc53a53df6d8d1b94420f3f7d8bdde6564dd4425a56554d82fe.svg" />
+</div>
+</div>
+<section id="id11">
+<h4>Step 1:<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<p>In this example we have one current source and one voltage source.</p>
+</section>
+<section id="step2">
+<h4>Step2:<a class="headerlink" href="#step2" title="Link to this heading">#</a></h4>
+<p>Let’s pick one source and eliminate the other. We can start with the voltage source. If we keep the voltage source and replace the current source with a break, the circuit simplifies to:</p>
+<p><img alt="4.png" src="../../_images/4.PNG" /></p>
+</section>
+<section id="step3">
+<h4>Step3:<a class="headerlink" href="#step3" title="Link to this heading">#</a></h4>
+<p>we have two <span class="math notranslate nohighlight">\(2 \, \Omega \)</span> resistors that are parallel to each other so the Equivalent resistance is:</p>
+<div class="math notranslate nohighlight">
+\[ 2 \, \Omega \parallel 2 \, \Omega = {\frac{1}{2} + \frac{1}{2}} = 1 \, \Omega \]</div>
+<p><img alt="5.png" src="../../_images/5.PNG" /></p>
+<p>using kvl to calculate <span class="math notranslate nohighlight">\(V_{01}\)</span>:
+$<span class="math notranslate nohighlight">\( +18V - 1i - 1i - 4i = 0 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( 6i = 18 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( i = 3A \)</span>$</p>
+<p>and then by using ohm’s law:
+$<span class="math notranslate nohighlight">\( V_{01} = 3A \times 1 \, \Omega = 3 \, V \)</span>$</p>
+</section>
+<section id="id12">
+<h4>Step 4:<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<p>So this time we keep the current source and eliminate the voltage source; as was mentioned, eliminating the voltage source acts as a wire.</p>
+<p><img alt="6.png" src="../../_images/6.PNG" /></p>
+<p>With using current division in two branches, since the total resistance in branch one is 2 and the other is 4, the current through branch one is:
+$<span class="math notranslate nohighlight">\( i = \frac{(6A)(4 \, \Omega)}{(4 \, \Omega + 2 \, \Omega)}= 4A \)</span>$</p>
+<p>and then using ohm’s law <span class="math notranslate nohighlight">\(V_{02}\)</span> is :
+$<span class="math notranslate nohighlight">\( V_{02} = 4A \times 1 \, \Omega = 4 \, V \)</span>$</p>
+</section>
+<section id="id13">
+<h4>Step 5:<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<p>now all we have to do is to add them together:
+$<span class="math notranslate nohighlight">\( V_{0} = V_{01} + V_{02} \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{0} = 3v + 4v = 7v \)</span>$</p>
+</section>
+<section id="example-2-in-pyspice">
+<h4>Example 2 in pyspice:<a class="headerlink" href="#example-2-in-pyspice" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Create the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Superposition Circuit&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the voltage and current sources</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">6</span><span class="nd">@u_A</span><span class="p">)</span> 
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span> <span class="p">,</span> <span class="s1">&#39;node2&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="nd">@u_V</span><span class="p">)</span>
+<span class="c1"># Resistors</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span><span class="s1">&#39;Vo&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_Ohm</span><span class="p">)</span>  
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span><span class="s1">&#39;Vo&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_Ohm</span><span class="p">)</span> 
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Vo&#39;</span> <span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_Ohm</span><span class="p">)</span> 
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="s1">&#39;node2&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="nd">@u_Ohm</span><span class="p">)</span> 
+
+<span class="c1"># Set up the simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Total Vo </span>
+<span class="n">analysis_vo_total</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+<span class="n">vo_total</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis_vo_total</span><span class="p">[</span><span class="s1">&#39;Vo&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total Vo : </span><span class="si">{</span><span class="n">vo_total</span><span class="si">}</span><span class="s1"> V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total Vo : 7.0 V
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="example-3">
+<h3>Example 3:<a class="headerlink" href="#example-3" title="Link to this heading">#</a></h3>
+<p><span style = "font-size: 1.2em">- Use supperposition to find <span class="math notranslate nohighlight">\(V_{0}\)</span> .</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
+    <span class="n">C1</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;6A&#39;</span><span class="p">)</span>
+    <span class="n">C2</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">C3</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="s1">&#39;$v_o$&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;10Ω&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;20Ω&#39;</span><span class="p">)</span>
+    <span class="n">C4</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;30V&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">C1</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">C4</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">C2</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;40Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceControlledI</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">C3</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;4io&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Arrow</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">((</span><span class="n">C3</span><span class="o">.</span><span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">C3</span><span class="o">.</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">))</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$io$&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/77c30ca977eec744295d5860f47db36feb5d093402a09b750f4fd5f77245b26d.svg" src="../../_images/77c30ca977eec744295d5860f47db36feb5d093402a09b750f4fd5f77245b26d.svg" />
+</div>
+</div>
+<section id="id14">
+<h4>Step 1:<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<p>In this example we have one independent current source, one dependent current source and one voltage source .</p>
+</section>
+<section id="id15">
+<h4>Step 2:<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
+<p>Let’s keep the current source this time and eliminate the voltage source. (When working with superposition, the dependent sources remain intact. )
+<img alt="7.png" src="../../_images/7.PNG" /></p>
+</section>
+<section id="id16">
+<h4>Step 3:<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
+<p>using nodal voltage analysis we have 3 equations:
+$<span class="math notranslate nohighlight">\( (1)\quad \frac{V_a}{40} + \frac{V_a - V_b}{10} - 6 = 0  \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( (2)\quad -4i + \frac{V_b}{20} + \frac{V_b - V_a}{10} = 0\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( (3)\quad i = \frac{V_a - V_b}{10} \)</span>$</p>
+<p>solving this equations we have:</p>
+<div class="math notranslate nohighlight">
+\[ 5 V_a - 4 V_b = 240 \]</div>
+<div class="math notranslate nohighlight">
+\[ 10 V_a = 11 V_b \]</div>
+<p>that simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[ V_a = 176 v \]</div>
+<div class="math notranslate nohighlight">
+\[ V_b = 160 v \]</div>
+<div class="math notranslate nohighlight">
+\[ i = \frac{176 - 160}{10} = 1.6 A \]</div>
+<p>So <span class="math notranslate nohighlight">\(V_1\)</span> using ohm’s low is:
+$<span class="math notranslate nohighlight">\( V_1 = Ri = (10 \Omega)(1.6 A) =  16 v\)</span>$</p>
+</section>
+<section id="id17">
+<h4>Step 4:<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
+<p>So this time, we keep the voltage source and eliminate the current source, while the dependent source remains intact.
+<img alt="8.png" src="../../_images/8.PNG" /></p>
+<p>again with using nodal voltage analysis we have two equations:
+$<span class="math notranslate nohighlight">\( (1)\quad \frac{V_c}{50} - 4i + \frac{V_c + 30}{20} = 0  \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( (2)\quad i = \frac{0-V_c}{50}\)</span>$</p>
+<p>which simplifies to:
+$<span class="math notranslate nohighlight">\( V_c = -10 v \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( i = \frac{0-(-10)}{50} = 0.2 A \)</span>$</p>
+<p>so <span class="math notranslate nohighlight">\( V_2 \)</span> using ohm’s low is:
+$<span class="math notranslate nohighlight">\( V_2 = Ri = (10 \Omega)(0.2 A) =  2 v\)</span>$</p>
+</section>
+<section id="id18">
+<h4>Step 5:<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
+<p>now all we have to do is to add them together:
+$<span class="math notranslate nohighlight">\( V_{0} = V_{1} + V_{2} \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{0} = 16v + 2v = 18v \)</span>$</p>
+</section>
+<section id="example-3-in-pyspice">
+<h4>Example 3 in pyspice:<a class="headerlink" href="#example-3-in-pyspice" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Create the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Superposition Circuit&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the voltage and current sources </span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;dummy&#39;</span><span class="p">,</span> <span class="s1">&#39;node3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span> <span class="p">,</span> <span class="mi">0</span><span class="nd">@u_V</span><span class="p">)</span> <span class="c1">#because CCCS is dependent on the current trough 10ohm resistore</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span> <span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="s1">&#39;Vdummy&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">#dependent current source</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;node2&#39;</span> <span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="nd">@u_V</span><span class="p">)</span> <span class="c1"># Voltage source (30V)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Vo&#39;</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="nd">@u_A</span><span class="p">)</span>  <span class="c1"># Current source (6A)</span>
+  
+
+<span class="c1"># Define resistors</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Vo&#39;</span> <span class="p">,</span> <span class="s1">&#39;node3&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="nd">@u_Ohm</span><span class="p">)</span>  <span class="c1"># Resistor between gnd and Vo (10Ω)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;node2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">20</span><span class="nd">@u_Ohm</span><span class="p">)</span>  <span class="c1"># Resistor between node2 and gnd (20Ω)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Vo&#39;</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="nd">@u_Ohm</span><span class="p">)</span>  <span class="c1"># Resistor between Vo and ground (40Ω)</span>
+
+
+<span class="c1"># Set up the simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Total Vo using superposition</span>
+<span class="n">analysis_vo_total</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+<span class="n">vo_total</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">analysis_vo_total</span><span class="p">[</span><span class="s1">&#39;Vo&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total Vo : </span><span class="si">{</span><span class="n">vo_total</span><span class="si">}</span><span class="s1"> V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total Vo : 18.0 V
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="ac-circuits-and-superposition">
+<h2>AC circuits and superposition:<a class="headerlink" href="#ac-circuits-and-superposition" title="Link to this heading">#</a></h2>
+<p>When solving a circuit with multiple AC sources, an important condition is that the sources must have the same frequency. This is because the angular frequency (<span class="math notranslate nohighlight">\( \omega \)</span>) is used in phasor analysis to describe circuit elements in the frequency domain.
+However, with the superposition theorem, we can handle circuits with sources of <u>different frequencies</u> because this method involves analyzing one source at a time while turning off all other sources. For each sub-circuit that is created, only one source’s frequency is considered, allowing us to use a single (<span class="math notranslate nohighlight">\( \omega \)</span>) for that analysis.</p>
+<section id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p><span style = "font-size: 1.2em">-find the voltage across R (<span class="math notranslate nohighlight">\(V_{0}\)</span>) .</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
+    <span class="n">A</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$5sin(2t)$&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">L1</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">L2</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;8Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="s1">&#39;$v_o$&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">L1</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\frac</span><span class="si">{1}{8}</span><span class="s1">$F&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">L2</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$40cos(8t)$&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">L2</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;1H&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5e1cf8a75164ab3c8b1b0c6d964fb241822c0f17301e85a3af1ede21b706fb75.svg" src="../../_images/5e1cf8a75164ab3c8b1b0c6d964fb241822c0f17301e85a3af1ede21b706fb75.svg" />
+</div>
+</div>
+<section id="id19">
+<h4>Step 1:<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
+<p>In this example, we have one AC current source with <span class="math notranslate nohighlight">\( \omega = 2\)</span>and one AC voltage source with <span class="math notranslate nohighlight">\( \omega = 8\)</span>.Altough the sources are AC, the steps for applying the superposition theorem remain the same.</p>
+</section>
+<section id="id20">
+<h4>Step 2:<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
+<p>Let’s start with the current source and replace the voltage source with wire,  and then convert the circuit to phasor form.</p>
+<p><img alt="9.png" src="../../_images/9.PNG" /></p>
+</section>
+<section id="id21">
+<h4>Step 3:<a class="headerlink" href="#id21" title="Link to this heading">#</a></h4>
+<p>using nodal voltage analysis we have:
+$<span class="math notranslate nohighlight">\( \frac{V_{01}}{-4j} + \frac {V_{01}}{2j} + \frac {V_{01}}{8} = 5\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{01} = \frac {(5)(4j)(8)}{8 + 4j} \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{01} = 8 + 16j \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{01} = 8\sqrt{5} sin (2t+ \tan^{-1}(2))\)</span>$</p>
+</section>
+<section id="id22">
+<h4>Step 4:<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
+<p>So this time, we keep the voltage source and eliminate the current source.</p>
+<p><img alt="10.png" src="../../_images/10.PNG" /></p>
+<p>again with using nodal voltage analysis we have :
+$<span class="math notranslate nohighlight">\( \frac {V_{02}}{-j} + \frac {V_{02}-40}{8j} + \frac{V_{02}}{8} = 0\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{02} (\frac {-1}{j} + \frac {1}{8j} + \frac {1}{8}) = \frac {40}{8j}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{02} = \frac {40}{-7+j} \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{02} = 4\sqrt{2}cos(8t + \tan^{-1}(\frac{1}{7})) \)</span>$</p>
+</section>
+<section id="id23">
+<h4>Step 5:<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
+<p>now all we have to do is to add them together:
+$<span class="math notranslate nohighlight">\( V_{0} = V_{01} + V_{02} \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{0} = 8\sqrt{5} sin (2t+ \tan^{-1}(2)) + 4\sqrt{2}cos(8t + \tan^{-1}(\frac{1}{7})) \)</span>$</p>
+</section>
+</section>
+</section>
+<section id="id24">
+<h2>6. Limitation’s of superposition:<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
+<section id="it-can-be-only-applied-to-linear-circuits">
+<h3><span style = "font-size: 0.8em">1. It can be only applied to linear circuits.<a class="headerlink" href="#it-can-be-only-applied-to-linear-circuits" title="Link to this heading">#</a></h3>
+<p>The Superposition Theorem only applies to linear circuits when voltage and current have a constant relationship. It cannot be used in circuits         including nonlinear components such as diodes and transistors.</p>
+</section>
+<section id="power-cannot-be-calculated-using-this-theorem">
+<h3><span style = "font-size: 0.8em">2. Power cannot be calculated using this theorem.<a class="headerlink" href="#power-cannot-be-calculated-using-this-theorem" title="Link to this heading">#</a></h3>
+<p>Superposition theorem cannot be applied for power calculations because power of any electronic device is not linear in current or voltage.If power is needed, it can be computed from these currents or voltages.</p>
+</section>
+<section id="all-components-must-be-bilateral">
+<h3><span style = "font-size: 0.8em">3. all components must be bilateral.<a class="headerlink" href="#all-components-must-be-bilateral" title="Link to this heading">#</a></h3>
+<p>meaning that they behave the same, with current flowing in either direction through them. Resistors have no polarity-specific behavior, thus, the circuits we’ve been studying so far all meet this criterion.</p>
+</section>
+<section id="circuits-with-imbalanced-bridges-cannot-use-this-theorem">
+<h3><span style = "font-size: 0.8em">5. Circuits with imbalanced bridges cannot use this theorem.<a class="headerlink" href="#circuits-with-imbalanced-bridges-cannot-use-this-theorem" title="Link to this heading">#</a></h3>
+<p>the superposition theorem works only for circuits that are reducible to series and/or parallel combinations for each power source evaluated individually. Therefore, it is useless for analyzing an unbalanced bridge circuit.</p>
+</section>
+<section id="can-be-time-consuming">
+<h3><span style = "font-size: 0.8em">6. Can be time-consuming:<a class="headerlink" href="#can-be-time-consuming" title="Link to this heading">#</a></h3>
+<p>for circuits with a large number of independent sources, you need to perform separate calculations for each source. In such cases, other circuit analysis techniques like nodal analysis or mesh analysis might be more efficient.</p>
+</section>
+<section id="may-not-capture-all-effects">
+<h3><span style = "font-size: 0.8em">7. May Not Capture All Effects:<a class="headerlink" href="#may-not-capture-all-effects" title="Link to this heading">#</a></h3>
+<p>In some cases, interactions between sources can lead to effects that the Superposition Theorem doesn’t fully capture. It assumes that the interaction between sources is negligible, which might not always be the case.</p>
+</section>
+</section>
+<section id="id25">
+<h2>7. Advantages of suerposition:<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>superposition makes it passible to calculate the voltages and the currents in a circuit that uses sources with different frequencies.</p></li>
+<li><p>Superposition theorem is not limited to circuit analysis but is applicable in many fields where cause and effect bear a linear relationship to one another.</p></li>
+<li><p>It makes the analysis of the circuit easy by breaking down the circuits into smaller parts for easy understanding.</p></li>
+<li><p>It makes the analysis of an individual source easy by making it easy to study one component of an electronic circuit without impacting the other components.</p></li>
+<li><p>By studying the effect of each source independently, we can gain insight into how different sources interact with each other and the resulting circuit behavior.</p></li>
+</ol>
+</section>
+<section id="id26">
+<h2>8. Conclusion:<a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
+<p>In Conclusion, Superposition Theorem always allows you to evaluate complex circuits with multiple voltage or current sources by evaluating each source individually and setting all other sources to their ideal internal impedance (Voltage source is replaced by short circuit, Current source is replaced by open circuit). This allows you to break down a difficult circuit into simpler sub-circuits and more quickly solve for voltage, current, etc.</p>
+</section>
+<section id="sources">
+<h2>9. Sources:<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.emcourse.com/news-blog/superposition-theorem-solve-linear-dc-network">https://www.emcourse.com/news-blog/superposition-theorem-solve-linear-dc-network</a></p></li>
+<li><p><a class="reference external" href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-10/superposition-theorem/">https://www.allaboutcircuits.com/textbook/direct-current/chpt-10/superposition-theorem/</a></p></li>
+<li><p><a class="reference external" href="https://circuitideas311.weebly.com/lesson-eight-superposition/lesson-eight-superposition">https://circuitideas311.weebly.com/lesson-eight-superposition/lesson-eight-superposition</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/superposition-theorem/">https://www.geeksforgeeks.org/superposition-theorem/</a></p></li>
+<li><p><a class="reference external" href="https://testbook.com/electrical-engineering/superposition-theorem-principle-statement-and-problems#:~:text=The%20Superposition%20Theorem%20is%20a,of%20each%20independent%20source%20separately">https://testbook.com/electrical-engineering/superposition-theorem-principle-statement-and-problems#:~:text=The Superposition Theorem is a,of each independent source separately</a>.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Superposition_principle">https://en.wikipedia.org/wiki/Superposition_principle</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\SuperpositionF"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Wheatstone/miniproject.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Wheatstone bridge for strain gauges</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><span style="font-size: 0.8em">1. Introduction</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-superposition-theorem"><span style="font-size: 0.8em">2. What is superposition theorem?</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide"><span style="font-size: 0.8em">3. Step by step guide:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-circuits-and-superposition"><span style="font-size: 0.8em">4. DC circuits and superposition:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-and-pyspice"><span style="font-size: 0.8em">5. Superposition and pyspice:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitation-s-of-superposition"><span style="font-size: 0.8em">6. Limitation’s of superposition:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-suerposition"><span style="font-size: 0.8em">7. Advantages of suerposition:</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><span style="font-size: 0.8em">8. Conclusion</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources"><span style="font-size: 0.8em">9. Resources</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Introduction:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. What is superposition theorem?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Step by step guide:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1"><span style="font-size: 0.8em">Step 1:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2"><span style="font-size: 0.8em">Step 2:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3"><span style="font-size: 0.8em">Step 3:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4"><span style="font-size: 0.8em">Step 4:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5"><span style="font-size: 0.8em">Step 5:</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4. DC circuits and superposition:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Step 1:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Step 2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Step 3:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Step 4:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Step 5:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5. Superposition and pyspice:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Step 1:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step2">Step2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step3">Step3:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Step 4:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Step 5:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-in-pyspice">Example 2 in pyspice:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3">Example 3:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Step 1:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Step 2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Step 3:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Step 4:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Step 5:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-in-pyspice">Example 3 in pyspice:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-circuits-and-superposition">AC circuits and superposition:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Step 1:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Step 2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Step 3:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Step 4:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Step 5:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">6. Limitation’s of superposition:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#it-can-be-only-applied-to-linear-circuits"><span style="font-size: 0.8em">1. It can be only applied to linear circuits.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-cannot-be-calculated-using-this-theorem"><span style="font-size: 0.8em">2. Power cannot be calculated using this theorem.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-components-must-be-bilateral"><span style="font-size: 0.8em">3. all components must be bilateral.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuits-with-imbalanced-bridges-cannot-use-this-theorem"><span style="font-size: 0.8em">5. Circuits with imbalanced bridges cannot use this theorem.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-be-time-consuming"><span style="font-size: 0.8em">6. Can be time-consuming:</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#may-not-capture-all-effects"><span style="font-size: 0.8em">7. May Not Capture All Effects:</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">7. Advantages of suerposition:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">8. Conclusion:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">9. Sources:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
