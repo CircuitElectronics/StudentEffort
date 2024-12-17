@@ -1,0 +1,1260 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>RMS VOLTAGE &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/RMS/RMSVOLTAGE ';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Voltage Dividers Transistor" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html" />
+    <link rel="prev" title="Nonlinear Resistor" href="../nonlinearresistor/nonlinearresistor.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/RMS/RMSVOLTAGE .html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/RMS/RMSVOLTAGE .ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>RMS VOLTAGE</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>RMS VOLTAGE</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-for-calculating-rms-voltage">2. Methods for Calculating RMS Voltage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rms-peak-peak-to-peak-and-average-voltages">3. RMS, Peak, Peak-to-Peak, and Average Voltages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffrent-waveform">4.Diffrent waveform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">5. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">6. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">7. Sources</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-rms-voltage">1.1 Overview of RMS Voltage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-rms-voltage">1.3 Applications of RMS Voltage</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Methods for Calculating RMS Voltage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">RMS, Peak, Peak-to-Peak, and Average Voltages</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Diffrent waveform</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Sources</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="rms-voltage">
+<h1><strong>RMS VOLTAGE</strong><a class="headerlink" href="#rms-voltage" title="Link to this heading">#</a></h1>
+<p>Author : Seyedeh Saba Ebrahimi Mousavi</p>
+<p>contact : <a class="reference external" href="mailto:sa7590325&#37;&#52;&#48;gmsil&#46;com">sa7590325<span>&#64;</span>gmsil<span>&#46;</span>com</a></p>
+</section>
+<section id="table-of-contents">
+<h1>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+</section>
+<section id="methods-for-calculating-rms-voltage">
+<h2>2. Methods for Calculating RMS Voltage<a class="headerlink" href="#methods-for-calculating-rms-voltage" title="Link to this heading">#</a></h2>
+</section>
+<section id="rms-peak-peak-to-peak-and-average-voltages">
+<h2>3. RMS, Peak, Peak-to-Peak, and Average Voltages<a class="headerlink" href="#rms-peak-peak-to-peak-and-average-voltages" title="Link to this heading">#</a></h2>
+</section>
+<section id="diffrent-waveform">
+<h2>4.Diffrent waveform<a class="headerlink" href="#diffrent-waveform" title="Link to this heading">#</a></h2>
+</section>
+<section id="example">
+<h2>5. Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+</section>
+<section id="conclusion">
+<h2>6. Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+</section>
+<section id="sources">
+<h2>7. Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section id="id1">
+<h1>Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="overview-of-rms-voltage">
+<h2>1.1 Overview of RMS Voltage<a class="headerlink" href="#overview-of-rms-voltage" title="Link to this heading">#</a></h2>
+<p>The word RMS stands for Root Mean Square. An RMS voltage is defined as the square root of the mean square of instantaneous values of the voltage signal. The RMS is also known as the quadratic mean. RMS voltage can also be defined for a continuously varying voltage in terms of an integral of the squares of the instantaneous values during a cycle.The symbols used for defining an RMS value are <span class="math notranslate nohighlight">\(V_{RMS}\)</span> or <span class="math notranslate nohighlight">\(I_{RMS}\)</span>.</p>
+<p>Most books define this as the “amount of AC power that produces the same heating effect as an equivalent DC power”, or something similar along these lines, but an RMS value is more than just that.</p>
+<p>The term RMS, ONLY refers to time-varying sinusoidal voltages, currents or complex waveforms where the magnitude of the waveform changes over time and is not used in DC circuit analysis or calculations where the magnitude is always constant.</p>
+<p>Therefore, the instantaneous value of voltage cannot directly be used for the calculation.</p>
+<p>When used to compare the equivalent RMS voltage value of an alternating sinusoidal waveform that supplies the same electrical power to a given load as an equivalent DC circuit, the RMS value is called the “effective value” and is generally presented as: <span class="math notranslate nohighlight">\(V_{eff}\)</span> or <span class="math notranslate nohighlight">\(I_{eff}\)</span>.</p>
+<p>In other words, the effective value is an equivalent DC value which tells you how many volts or amps of DC that a time-varying sinusoidal waveform is equal to in terms of its ability to produce the same power.</p>
+<p>The RMS voltage is known as the equivalent DC voltage because the RMS value gives the amount of AC power drawn by a resistor similar to the power drawn by a DC source.</p>
+<p>Consider a 5Ω load connected to a 10V DC source; here, the voltage remains constant, simplifying power calculation to 20W.</p>
+<p>But instead of a DC source, say we use an AC source. In this condition, the value of voltage is varying with respect to time, as shown in the figure below.</p>
+<p><img alt="Sinusoidal-Waveform.png" src="StudentEffort/RMS/attachment:360e585a-7419-4bfc-9cb8-8b88627ae0d3.png" /></p>
+</section>
+<section id="applications-of-rms-voltage">
+<h2>1.3 Applications of RMS Voltage<a class="headerlink" href="#applications-of-rms-voltage" title="Link to this heading">#</a></h2>
+<p>Electronic engineers use RMS values to design and analyze electronic circuits. Ensuring that devices like oscillators and amplifiers etc.</p>
+<p>RMS voltage is used in finding the heating effect of an AC current in resistive elements such as in stovetops or electric heaters.</p>
+<p>In electric motors, the RMS voltage is plays a major role for finding the RMS voltage that contributes to the motors mechanical power output.</p>
+<p>RMS voltage is used for finding the luminosity or brightness of the light produced.</p>
+<p>RMS values are also used for audio engineers for designing and analyzing components such as speakers, microphones and amplifiers to provide optimal sound quality.</p>
+<p>In Telecommunication, RMS values are used to design and study the systems like telephone networks and data networks.</p>
+</section>
+</section>
+<section id="id2">
+<h1>Methods for Calculating RMS Voltage<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<p><strong>RMS Voltage Equivalent</strong></p>
+<p><img alt="articles-rms1.png" src="StudentEffort/RMS/attachment:baebf65e-a3f6-4bba-a3a2-d08e397c796c.png" /></p>
+<p>RMS values are calculated for waveforms that vary over time.</p>
+<p>We cannot find the RMS value for the DC waveform as the DC waveform has a constant value for every instant of time.</p>
+<p>RMS value can be calculated using two methods.</p>
+<p><em>Graphical Method</em> – which can be used to find the RMS value of any nonsinusoidal time-varying waveform by drawing a number of mid-ordinates onto the waveform.</p>
+<p><em>Analytical Method</em> – is a mathematical procedure for finding the effective or RMS value of any periodic voltage or current using calculus.</p>
+<p><strong>2.1 Graphical Method</strong></p>
+<p>In this method, we use a waveform to find the RMS value. The graphical method is more useful when the signal is not symmetrical or sinusoidal.</p>
+<p>The accuracy of this method hinges on the number of points sampled from the waveform—more points yield higher accuracy.</p>
+<p>The RMS value is a square root of the average value of the squared function. For example, let’s take a sinusoidal waveform of voltage as shown below figure.</p>
+<p>Follow these steps to calculate the RMS voltage by graphical method.</p>
+<p>Step-1: Divide waveform into equal parts. Here, we consider the half cycle of the waveform. You can consider full-cycle also.</p>
+<p>The first half cycle divides into ten equal parts; V1, V2, …, V10.</p>
+<p><img alt="Graphical-Method.png" src="StudentEffort/RMS/attachment:4f64f98a-e9da-4ee1-b5be-69037cf03874.png" /></p>
+<p>Step-2: Find square of each value.
+$<span class="math notranslate nohighlight">\(V_1^2, V_2^2, V_3^2, …, V_{10}^2\)</span>$</p>
+<p>Step-3: Take the average of these squared values. Find the total of these values and divide by the total number of points.</p>
+<div class="math notranslate nohighlight">
+\[\frac{V_1^2+V_2^2+V_3^2+V_4^2+V_5^2+V_6^2+V_7^2+V_8^2+V_9^2+V_{10}^2}{10} \]</div>
+<p>Step-4 Now, take square root of this value.</p>
+<div class="math notranslate nohighlight">
+\[V_{RMS} = \sqrt{\frac{V_1^2+V_2^2+V_3^2+V_4^2+V_5^2+V_6^2+V_7^2+V_8^2+V_9^2+V_{10}^2}{10}}\]</div>
+<p>These steps are same for all type of continuous waveforms.</p>
+<p>For different types of time-varying signals like triangular, square; these steps follow to find the RMS voltage.</p>
+<p>Let’s solve these steps with an example.</p>
+<p>Find the RMS value of the waveform shown in the figure below. Consider a pure sinusoidal wave of voltage.</p>
+<p><img alt="Example-RMS-Voltage.png" src="StudentEffort/RMS/attachment:a72f42dd-3e43-498a-89e8-eaf900fbcf50.png" /></p>
+<p>Step-1: First half-cycle divides into ten equal parts. And the values of these parts are as shown in the figure.</p>
+<p>Step-2: Find a Square of each point.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(Angle\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(18^\circ\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(36^\circ\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(54^\circ\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(72^\circ\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(90^\circ\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(108^\circ\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(126^\circ\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(144^\circ\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(162^\circ\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(180^\circ\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(Voltage\)</span></p></td>
+<td><p>6.2</p></td>
+<td><p>11.8</p></td>
+<td><p>16.2</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+<td><p>19</p></td>
+<td><p>16.2</p></td>
+<td><p>11.8</p></td>
+<td><p>6.2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(Voltage^2\)</span></p></td>
+<td><p>38.44</p></td>
+<td><p>139.24</p></td>
+<td><p>262.44</p></td>
+<td><p>361</p></td>
+<td><p>400</p></td>
+<td><p>361</p></td>
+<td><p>262.44</p></td>
+<td><p>139.24</p></td>
+<td><p>38.44</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Step-3: Take average of squared values.</p>
+<div class="math notranslate nohighlight">
+\[\frac{38.44+139.24+262.44+361+400+361+262.44+139.24+38.44+0}{10} = 200.22\]</div>
+<p>Step-4: Find square root.</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{200.22} = 14.15\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} = 14.15 V \]</div>
+<p><strong>2.2 Analytical Method</strong></p>
+<p>The graphical method above is a very good way of finding the effective or RMS voltage, (or current) of an alternating waveform that is not symmetrical or sinusoidal in nature. In other words the waveform shape resembles that of a complex waveform.</p>
+<p>However, when dealing with pure sinusoidal waveforms we can make life a little bit easier for ourselves by using an analytical or mathematical way of finding the RMS value.</p>
+<p>A periodic sinusoidal voltage is constant and can be defined as <span class="math notranslate nohighlight">\(V(t) = V_{m}cos(ωt)\)</span> with a period of <span class="math notranslate nohighlight">\(T\)</span>.where, <span class="math notranslate nohighlight">\(V_{m}\)</span> is the maximum amplitude and <span class="math notranslate nohighlight">\(ω\)</span> is the angular frequency(<span class="math notranslate nohighlight">\(ω=2Лf\)</span>).Then we can calculate the root-mean-square (rms) value of a sinusoidal voltage (V(t)) as:</p>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{1}{T} \int_{0}^{T}  V^2_{m} cos^2(ωt) dt }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{T} \int_{0}^{T} \frac{1+cos(2ωt)}{2} dt }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} \int_{0}^{T} 1+cos(2ωt) dt }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [t+\frac{sin(2ωt)}{2ω}]_0^T }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [(T-0)+(\frac{sin(2ωT)}{2ω}-\frac{sin(0)}{2ω}))]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [T+\frac{sin(2ωT)}{2ω}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [T+\frac{sin(2\frac{2Л}{T}T)}{2\frac{2Л}{T}}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [T+\frac{sin(4Л)}{2\frac{2Л}{T}}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [T+0]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V^2_{m}}{2} }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} = \frac{V_{m}}{\sqrt{2}} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS}  \simeq  0.7071 V_{m} \]</div>
+</section>
+<section id="id3">
+<h1>RMS, Peak, Peak-to-Peak, and Average Voltages<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<p><img alt="main-qimg-66637b0946fd7e84344d47c50122f920.png" src="StudentEffort/RMS/attachment:21c31621-f7a3-45d5-a869-a06bf59f745c.png" /></p>
+<p><strong>Peak Voltage</strong></p>
+<p>Peak voltage is defined as the maximum value of voltage for any voltage waveform. The peak value measures from the reference axis (0) to the highest point of the waveform.</p>
+<p>If we consider a sinusoidal waveform, the value of voltage increases from the reference axis and reaches the peak point of the waveform on the positive side. The difference between these two points gives us the positive peak voltage.</p>
+<p>From the peak point, the voltage starts decreasing and reaches to reference axis. After that, it starts increasing on the negative side and reaches the peak point. This point is a negative peak point.</p>
+<p><img alt="Peak-Voltage.png" src="StudentEffort/RMS/attachment:b919d9f6-97a4-4f32-87c7-c9b4259d9c94.png" /></p>
+<p>We can calculate peak voltage from the RMS voltage, peak-to-peak voltage, and average voltage.</p>
+<p>Peak Voltage From RMS Voltage:</p>
+<p>To calculate the peak voltage from RMS voltage, we need to multiply RMS voltage by an approximate factor of 1.414.</p>
+<div class="math notranslate nohighlight">
+\[^V_{PEAK} = V_{RMS} \times \sqrt{2} = V_{RMS} \times 1.414 \]</div>
+<p>Peak Voltage From Peak-to-Peak Voltage:</p>
+<p>The peak voltage is half of the peak-to-peak voltage.</p>
+<div class="math notranslate nohighlight">
+\[V_{PEAK} = V_{PP} \times 0.5 \]</div>
+<p>Peak Voltage From Average Voltage:</p>
+<p>To calculate the peak voltage from average voltage, we need to multiply the average voltage by an approximate factor of 1.57.</p>
+<div class="math notranslate nohighlight">
+\[V_{PEAK} = V_{AVG} \times \frac{\pi}{2} = V_{RMS} \times 1.57\]</div>
+<p><strong>Peak-to-Peak Voltage</strong></p>
+<p>Peak-to-peak voltage is a difference between positive peak voltage and negative peak voltage.</p>
+<p>For a sinusoidal waveform, peak-to-peak voltage is shown below figure.</p>
+<p><img alt="Peak-to-peak-Voltage.png" src="StudentEffort/RMS/attachment:635e5bd3-b5ec-4af0-97e5-b4a02f92e305.png" /></p>
+<p>We can calculate Peak-to-peak voltage from the RMS voltage, peak voltage, and average voltage.</p>
+<p>Peak-to-Peak Voltage From RMS Voltage:</p>
+<p>To calculate peak-to-peak voltage from RMS voltage, 2.8284 is the approximate multiplier factor.</p>
+<div class="math notranslate nohighlight">
+\[V_{PP} = V_{RMS} \times 2\sqrt{2} = V_{RMS} \times 2.8284\]</div>
+<p>Peak-to-Peak Voltage From Peak Voltage:</p>
+<p>Peak-to-peak voltage is twice of the peak voltage.</p>
+<div class="math notranslate nohighlight">
+\[V_{PP} = V_{PEAK} \times 2 \]</div>
+<p>Peak-to-Peak Voltage From Average Voltage:</p>
+<p>To calculate peak-to-peak voltage from RMS voltage, 3.14 (π) is the approximate multiplier factor.</p>
+<div class="math notranslate nohighlight">
+\[V_{PP} = V_{AVG} \times \pi = V_{AVG} \times 3.14 \]</div>
+<p><strong>Average Voltage</strong></p>
+<p>The method to find the average voltage is similar to the RMS voltage. The only difference is that the instantaneous values are not squared function and do not make square root.</p>
+<p>The average value gives us the horizontal line. And the area above the horizontal line is the same as the area below the horizontal line. It is also known as means voltage.</p>
+<p><img alt="Average-Voltage.png" src="StudentEffort/RMS/attachment:84b454de-ef2e-4ca6-9592-e650c6b81bcc.png" /></p>
+<p>We can calculate the average voltage from the RMS voltage, peak voltage, and peak-to-peak voltage.</p>
+<p>Average Voltage From RMS Voltage:</p>
+<p>To calculate the average voltage from RMS voltage, 0.9 is the approximate multiplier factor.</p>
+<div class="math notranslate nohighlight">
+\[V_{AVG} = 0.9 V_{RMS} \]</div>
+<p>Average Voltage From Peak Voltage:</p>
+<p>To calculate the average voltage from peak voltage, 0.637 is the approximate multiplier factor.</p>
+<div class="math notranslate nohighlight">
+\[V_{AVG} = V_{PEAK} \frac{2}{\pi} = 0.637 V_{PEAK} \]</div>
+<p>Average Voltage From Peak-to-Peak Voltage:</p>
+<p>To calculate the average voltage from peak-to-peak voltage, 0.318 is the approximate multiplier factor.</p>
+<div class="math notranslate nohighlight">
+\[V_{AVG} = 0.318 V_{PP} \]</div>
+</section>
+<section id="id4">
+<h1>Diffrent waveform<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<p><img alt="main-qimg-44fc9d3f3ae22f842b1968874e8751ab.png" src="StudentEffort/RMS/attachment:a2b93829-9e5f-4d99-87e8-7a5a45ba409c.png" /></p>
+<p><strong>Triangular wave</strong></p>
+<p>When plotted as voltage (V) as a function of phase (θ), a triangle wave looks similar to the figure below. One full cycle is shown here. The basic equation for a triangle wave is as follows:</p>
+<div class="math notranslate nohighlight">
+\[V = \frac{2}{π}.V_{pk}.θ\]</div>
+<div class="math notranslate nohighlight">
+\[0 \leθ&lt;\frac{π}{2}\]</div>
+<p><img alt="triangle_wave_rms_avg.gif" src="StudentEffort/RMS/attachment:bd96b0ab-e1e5-4607-ac29-b3595fffc882.gif" /></p>
+<p>RMS voltage for triangular wave :</p>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{1}{\frac{π}{2}} \int_{0}^{\frac{π}{2}}  (\frac{2}{π}.V_{pk}.θ)^2 dθ }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{2}{π} \frac{4}{π^2} .V^2_{pk} \int_{0}^{\frac{π}{2}}θ^2 dθ }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{\frac{8}{π^3} .V^2_{pk} \frac{1}{3} [θ^3]_0^\frac{π}{2}}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{\frac{8}{3π^3} .V^2_{pk} [(\frac{π}{2})^3-0]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{\frac{8}{3π^3} .V^2_{pk} \frac{π^3}{8}}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{\frac{1}{3} .V^2_{pk}}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\frac{V_{pk}}{\sqrt{3}}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS}  \simeq 0.577 V_{pk}\]</div>
+<p>average voltage for triangular wave :</p>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{1}{\frac{π}{2}} \int_{0}^{\frac{π}{2}} \frac{2}{π}.V_{pk}.θ dθ \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{2}{π} \frac{2}{π} .V_{pk} \int_{0}^{\frac{π}{2}} θ dθ \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{4}{π^2} .V_{pk} [\frac{1}{2}θ^2]_0^\frac{π}{2} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{4}{π^2} .V_{pk} \frac{1}{2}[\frac{π^2}{4}-0] \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{pk}}{2} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =0.5 V_{pk} \]</div>
+<p>The results obtained for triangular wave are also valid for saw tooth wave.</p>
+<p><img alt="triangle-waveform-2.png" src="StudentEffort/RMS/attachment:4941c943-dcc4-44cb-aa8c-eddce3e26e41.png" /></p>
+<p>Even though both waveforms have the same formula for average voltage and rms voltage when considering their full period, their actual waveform shapes and applications can differ significantly. The triangle wave rises and falls symmetrically, while the sawtooth wave rises linearly and then drops sharply.</p>
+<p><strong>Square wave</strong></p>
+<p>When plotted as voltage (V) as a function of phase (θ), a square wave looks similar to the figure below. One full cycle is shown here. The basic equation for a square wave is as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} V = 
+     \begin{cases}
+       V_{pk}, &amp;\quad for \,\,0 \le \Theta&lt;\pi\\
+       -V_{pk}, &amp;\quad for \,\,\pi \le \Theta&lt;2\pi\\
+     \end{cases}\end{split}\]</div>
+<p><img alt="square_wave_rms_avg.gif" src="StudentEffort/RMS/attachment:04bde697-0fef-47f0-b730-f9b24a14a161.gif" /></p>
+<p>RMS voltage for square wave :</p>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{1}{2Л} (\int_{0}^{π}V_{pk}^2 dθ + \int_{π}^{2π}-V_{pk}^2 dθ)}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{1}{2Л} (2\int_{0}^{π}V_{pk}^2 dθ)}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{1}{π} \int_{0}^{π}V_{pk}^2 dθ }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{1}{π}.V^2_{pk} [θ]_0^\pi}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{1}{π}.V^2_{pk} [π-0]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} = V_{pk}\]</div>
+<p>average voltage for square wave :</p>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{1}{\frac{π}{2}} \int_{0}^{\frac{π}{2}} V_{pk} dθ \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{2}{π} V_{pk} [θ]_0^\frac{π}{2} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{2}{π} V_{pk} [\frac{π}{2}-0] \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} = V_{pk}\]</div>
+<p>In section 2(Methods for Calculating RMS Voltage), we examined the RMS voltage for the <strong>sine wave/cosine wave</strong> And the result is as follows:</p>
+<div class="math notranslate nohighlight">
+\[V_{RMS} = \frac{V_{m}}{\sqrt{2}} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS}  \simeq  0.7071 V_{m} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{AVG} = V_{PEAK} \frac{2}{\pi} = 0.637 V_{PEAK} \]</div>
+<p><em><strong>Half Wave rectifier theory</strong></em>
+A half wave rectifier clips the negative half cycles and allows only the positive half cycles to flow through the load. Thus it utilizes only the one-half cycle of the input signal.</p>
+<p><strong>halfwave rectifier, rectifier circuit</strong></p>
+<p><img alt="half-wave-rectifier-circuit.png" src="StudentEffort/RMS/attachment:8733a19c-3d2d-4780-b3bb-64b2e75877b9.png" /></p>
+<p>During the positive half cycle (A- Positive &amp; B- Negative) of the signal, the diode will be forward biased and conducts the current through the load resistance. And on negative half cycle (A- Negative &amp; B- Positive), the diode will be reverse biased and prevents the current to flow in the opposite direction. So the polarity of the output terminals keeps unchanged and obtains a unidirectional current through the load.</p>
+<p><img alt="rms-value-half-wave-rectifier.png" src="StudentEffort/RMS/attachment:5cd6363f-edeb-435c-bf33-f5a6db36f8e9.png" /></p>
+<p>In a half wave rectifier, the negative half cycle will be removed from the output. So, the total base length(2π) should be taken from the interval 0 to 2π.</p>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{1}{T} (\int_{0}^{\frac{T}{2}}  V^2_{m} sin^2(ωt) dt + \int_{\frac{T}{2}}^{T}  0 dt)}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{T} \int_{0}^{\frac{T}{2}} \frac{1-cos(2ωt)}{2} dt }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} \int_{0}^{\frac{T}{2}} 1-cos(2ωt) dt }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [t-\frac{sin(2ωt)}{2ω}]_0^\frac{T}{2} }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [(\frac{T}{2}-0)-(\frac{sin(2ω\frac{T}{2})}{2ω}-\frac{sin(0)}{2ω}))]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [\frac{T}{2}-\frac{sin(ωT)}{2ω}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [\frac{T}{2}-\frac{sin(\frac{2Л}{T}T)}{2\frac{2Л}{T}}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [\frac{T}{2}+\frac{sin(2Л)}{2\frac{2Л}{T}}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [\frac{T}{2}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V^2_{m}}{4} }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} = \frac{V_{m}}{2} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} = \frac{V_{PEAK}}{2} = \frac{V_{PEAK to PEAK}}{4} = \frac{Л V_{avg}}{2}\]</div>
+<p>average voltage of half-wave rectified sin wave :</p>
+<div class="math notranslate nohighlight">
+\[V_{avg} \frac{1}{T} (\int_{0}^{\frac{T}{2}}  V_{m} sin(ωt) dt + \int_{\frac{T}{2}}^{T}  0 dt)\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{m}}{T} [\frac{-cos(ωt)}{ω}]_0^\frac{T}{2} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{m}}{T} (\frac{-cos(\frac{2πT}{T2})}{/frac{2π}{T}}+\frac{cos(0)}{/frac{2π}{T}}))\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{m}}{2π} (\frac{-cos(π)}{/frac{2π}{2π}}+\frac{cos(0)}{/frac{2π}{2π}}))\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{m}}{2π} (-(-1)+1)\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{m}}{π}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{PEAK}}{π}\]</div>
+<p><em><strong>Full Wave rectifier theory</strong></em>
+It converts the complete cycles of the AC signal to DC. Both positive and negative half cycles of the AC  signal is converted to a unidirectional flow of current.</p>
+<p><strong>Full wave center tap rectifier circuit</strong></p>
+<p><img alt="fullwave-center-tap-rectifier-circuit.png" src="StudentEffort/RMS/attachment:e2d13d28-b215-4582-b072-5168bcf33fc4.png" /></p>
+<p>center tap rectifier circuit, full wave center tap rectifier circuit diagram</p>
+<p>A center tapped full wave rectifier works only with a center tap transformer or with a similar common potential point across the terminals. The center tap act as a common zero potential terminal in both half cycles.</p>
+<p>On the positive half cycle (A- Positive &amp; B- Negative), the diode D1 is forward biased and diode D2 is in reverse biased. Hence the current flow through D1 and the load resistance, from terminal A to center tap.</p>
+<p>On the negative half cycle (A- Negative &amp; B- Positive), the diode D2 is forward biased and diode D1 is reverse biased. Current flows through D2 and load resistance, from the B terminal to the center tap of the transformer.</p>
+<p>The biasing of diodes changes alternately with respect to change in the polarity of terminals.</p>
+<p>In the center tap rectifier, the output DC voltage will be half of the total output voltage of the secondary winding. Because the load is always on half of the secondary winding.</p>
+<p><strong>Full Wave Bridge Rectifier circuit</strong></p>
+<p><img alt="bridge-rectifier.png" src="StudentEffort/RMS/attachment:77c6733c-c84a-45be-afbb-956222f6ba6c.png" /></p>
+<p>bridge rectifier circuit, full wave rectifier circuit diagram</p>
+<p>The bridge rectifier consists of 4 diodes in a bridge circuit configuration. From a center tap rectifier, the bridge rectifier has a difference only in the circuit arrangement. The efficiency, ripple factor, average value, RMS value all are same except the transformer utilisation factor(TUF). Because in a center tap rectifier the transformer winding should consider separately.</p>
+<p>The bridge rectifier has an advantage over the center tap, that is it works without a center tapped transformer or a common ground.</p>
+<p>On the positive half cycle, (A- Positive &amp; B- Negative) diode D2 &amp; D3 are in forward biased. D1 &amp; D4 are in reverse biased, thus the conduction path forms through diode D2, load resistance, and diode D3.</p>
+<p>Similarly, on the negative half cycle (A- Negative &amp; B- Positive) diode D4 &amp; D1 is in forward biased. Diode D3 &amp; D2 are in reverse biased. Current flows through D4, load resistance and D1.</p>
+<p>The biasing of the diodes alternates in each half cycle and creates a same polarity across the load. Hence, in both half cycles the load resistance has the same direction of the current.</p>
+<p><img alt="rms-value-full-wave-rectifier.png" src="StudentEffort/RMS/attachment:5bfd774d-c1b2-4537-9b6e-12e355c53a44.png" /></p>
+<p><span class="math notranslate nohighlight">\(T\)</span> for Full-wave rectified sine wave is equal to <span class="math notranslate nohighlight">\(Л\)</span> .</p>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{1}{T} \int_{0}^{T}  V^2_{m} sin^2(ωt) dt }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{T} \int_{0}^{T} \frac{1-cos(2ωt)}{2} dt }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} \int_{0}^{T} 1-cos(2ωt) dt }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [t-\frac{sin(2ωt)}{2ω}]_0^T }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [(T-0)-(\frac{sin(2ωT)}{2ω}-\frac{sin(0)}{2ω}))]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [T-\frac{sin(2ωT)}{2ω}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [T-\frac{sin(2\frac{2Л}{T}T)}{2\frac{2Л}{T}}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [T-\frac{sin(4Л)}{2\frac{2Л}{T}}]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V_{m}^2}{2T} [T-0]}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} =\sqrt{ \frac{V^2_{m}}{2} }\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} = \frac{V_{m}}{\sqrt{2}} \]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS} = \frac{V_{PEAK}}{\sqrt{2}} = \frac{V_{PEAK to PEAK}}{2\sqrt{2}} = \frac{Л V_{avg}}{2\sqrt{2}}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{RMS}  \simeq  0.7071 V_{m} \]</div>
+<p>average voltage of full-wave rectified sin wave :</p>
+<div class="math notranslate nohighlight">
+\[V_{avg} \frac{1}{T} (\int_{0}^{T}  V_{m} sin(ωt) dt)\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{m}}{T} [\frac{-cos(ωt)}{ω}]_0^T \]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{m}}{T} (\frac{-cos(π)}{\frac{2π}{T}}+\frac{cos(0)}{\frac{2π}{T}}))\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{m}}{π} (\frac{-cos(π)}{\frac{2π}{π}}+\frac{cos(0)}{\frac{2π}{π}}))\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{V_{m}}{π} (-(-1)+1)\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{2V_{m}}{π}\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg} =\frac{2V_{PEAK}}{π}\]</div>
+<p>In short, we have :</p>
+<p><img alt="Screenshot 2024-12-16 211213.png" src="StudentEffort/RMS/attachment:ce552588-f653-4c62-82ca-a3c2d94ca722.png" /></p>
+</section>
+<section id="id5">
+<h1>Example<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<p>Calculating AC Waveform:
+Calculate the average and peak voltage of a sinusoidal AC with 5 amps flowing through a 50Ω resistance.</p>
+<p>The RMS voltage is determined by the formula:</p>
+<div class="math notranslate nohighlight">
+\[V_{rms} = I \times R = 5 \times 50 = 250 V\]</div>
+<div class="math notranslate nohighlight">
+\[V_{rms} = \frac{V_{PEAK}}{\sqrt{2}} = 250 V\]</div>
+<div class="math notranslate nohighlight">
+\[V_{PEAK} = \sqrt{2}V_{rms} = 250 V \times 1.414 = 353V\]</div>
+<div class="math notranslate nohighlight">
+\[V_{avg}= \frac{2V_{PEAK}}{\pi}=\frac{2\times353}{3.14}=224.84 \simeq  225\]</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Voltage (V)</p></th>
+<th class="head"><p>Current (A)</p></th>
+<th class="head"><p>Power Loss (W)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DC</p></td>
+<td><p>250</p></td>
+<td><p>5</p></td>
+<td><p>1250</p></td>
+</tr>
+<tr class="row-odd"><td><p>AC</p></td>
+<td><p>353 (peak)</p></td>
+<td><p>5(RMS)</p></td>
+<td><p>~1250 (RMS)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="c1"># AC voltage source</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;AC Source (V)&#39;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="c1"># Resistor</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;50 Ω&#39;</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="c1"># Current label</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;I = 5 A (RMS)&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">dc</span><span class="p">:</span>
+    <span class="c1"># voltage source</span>
+    <span class="n">dc</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Source (V_rms = 250V)&#39;</span><span class="p">)</span>
+    <span class="n">dc</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="c1"># Resistor</span>
+    <span class="n">dc</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;50 Ω&#39;</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="c1"># Current label</span>
+    <span class="n">dc</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;I = 5 A (RMS)&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">dc</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4345238812ea0596517fec5aa564e3047d90067a18407e9a366fbff15c279bea.svg" src="../../_images/4345238812ea0596517fec5aa564e3047d90067a18407e9a366fbff15c279bea.svg" />
+<img alt="../../_images/762bbf8491dee6eb60ca282bd9f61033fa97d3c796d1a717b938e8e63c54d5d1.svg" src="../../_images/762bbf8491dee6eb60ca282bd9f61033fa97d3c796d1a717b938e8e63c54d5d1.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simpson</span> <span class="k">as</span> <span class="n">simps</span>  <span class="c1"># Simpson&#39;s rule for integration</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">dc_voltage</span> <span class="o">=</span> <span class="mi">250</span>       <span class="c1"># DC source voltage (V)</span>
+<span class="n">ac_peak_voltage</span> <span class="o">=</span> <span class="mi">353</span>  <span class="c1"># AC peak voltage (V)</span>
+<span class="n">resistor_value</span> <span class="o">=</span> <span class="mi">50</span>    <span class="c1"># Resistor value (ohms)</span>
+<span class="n">frequency</span> <span class="o">=</span> <span class="mi">50</span>         <span class="c1"># Frequency of AC source (Hz)</span>
+<span class="n">simulation_time</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Duration of simulation (s)</span>
+<span class="n">time_step</span> <span class="o">=</span> <span class="mf">1e-3</span>       <span class="c1"># Time step for simulation</span>
+
+<span class="c1"># ----------------- Define DC Circuit ----------------- #</span>
+<span class="n">circuit_dc</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;DC Circuit&#39;</span><span class="p">)</span>
+<span class="n">circuit_dc</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit_dc</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">dc_voltage</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># DC voltage source</span>
+<span class="n">circuit_dc</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit_dc</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">resistor_value</span><span class="nd">@u_Ω</span><span class="p">)</span>  <span class="c1"># Resistor</span>
+
+<span class="c1"># Simulate DC circuit</span>
+<span class="n">simulator_dc</span> <span class="o">=</span> <span class="n">circuit_dc</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis_dc</span> <span class="o">=</span> <span class="n">simulator_dc</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+
+<span class="c1"># Extract DC values</span>
+<span class="n">voltage_dc</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">analysis_dc</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">])</span>  <span class="c1"># Voltage across resistor</span>
+<span class="n">current_dc</span> <span class="o">=</span> <span class="n">voltage_dc</span> <span class="o">/</span> <span class="n">resistor_value</span>  <span class="c1"># Current through resistor</span>
+<span class="n">power_dc</span> <span class="o">=</span> <span class="n">voltage_dc</span> <span class="o">*</span> <span class="n">current_dc</span>  <span class="c1"># Power loss in resistor</span>
+
+<span class="c1"># ----------------- Define AC Circuit ----------------- #</span>
+<span class="n">circuit_ac</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;AC Circuit&#39;</span><span class="p">)</span>
+<span class="n">circuit_ac</span><span class="o">.</span><span class="n">SinusoidalVoltageSource</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit_ac</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="n">ac_peak_voltage</span><span class="nd">@u_V</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="n">frequency</span><span class="nd">@u_Hz</span><span class="p">)</span>
+<span class="n">circuit_ac</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit_ac</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">resistor_value</span><span class="nd">@u_Ω</span><span class="p">)</span>
+
+<span class="c1"># Simulate AC circuit</span>
+<span class="n">simulator_ac</span> <span class="o">=</span> <span class="n">circuit_ac</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis_ac</span> <span class="o">=</span> <span class="n">simulator_ac</span><span class="o">.</span><span class="n">transient</span><span class="p">(</span><span class="n">step_time</span><span class="o">=</span><span class="n">time_step</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="n">simulation_time</span><span class="p">)</span>
+
+<span class="c1"># Extract AC values</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">analysis_ac</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+<span class="n">voltage_ac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">analysis_ac</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">])</span>
+<span class="n">current_ac</span> <span class="o">=</span> <span class="n">voltage_ac</span> <span class="o">/</span> <span class="n">resistor_value</span>  <span class="c1"># Current through resistor</span>
+<span class="n">power_ac</span> <span class="o">=</span> <span class="n">voltage_ac</span> <span class="o">*</span> <span class="n">current_ac</span>  <span class="c1"># Instantaneous power loss</span>
+
+<span class="c1"># Calculate the average power of the AC graph using Simpson&#39;s rule</span>
+<span class="n">average_power_ac</span> <span class="o">=</span> <span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">power_ac</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">time</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Integrate and divide by total time</span>
+
+<span class="c1"># ----------------- Plot Results ----------------- #</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Plot Instantaneous Power Loss for AC</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">power_ac</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;AC Power Loss (W)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot Power Loss for DC as a Constant Line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">power_dc</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;DC Power Loss: </span><span class="si">{</span><span class="n">power_dc</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> W&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot Average AC Power Loss</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">average_power_ac</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;AC Average Power: </span><span class="si">{</span><span class="n">average_power_ac</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> W&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add Titles and Labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Power Loss in Resistor: DC vs AC Source&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Power Loss (W)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ----------------- Print Results ----------------- #</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DC Power Loss: </span><span class="si">{</span><span class="n">power_dc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> W&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AC Average Power Loss (Integral Method): </span><span class="si">{</span><span class="n">average_power_ac</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> W&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_17532\1527654434.py:25: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  voltage_dc = float(analysis_dc[&#39;1&#39;])  # Voltage across resistor
+</pre></div>
+</div>
+<img alt="../../_images/b5313aee0e1c435e5ae11033593158a65ced768e593bc0a0f7a9b382b0691f03.png" src="../../_images/b5313aee0e1c435e5ae11033593158a65ced768e593bc0a0f7a9b382b0691f03.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DC Power Loss: 1250.00 W
+AC Average Power Loss (Integral Method): 1246.12 W
+</pre></div>
+</div>
+</div>
+</div>
+<p>This PySpice analysis pertains to the circuits illustrated above. The AC power analysis is represented by the red curve, showing the instantaneous power loss over time. The DC power analysis, on the other hand, is depicted as a blue dashed line, indicating a constant power loss. To verify the equivalence, the average power for the AC analysis was calculated using numerical integration and is also included in the plot.(<span class="math notranslate nohighlight">\(P_{avg}=\frac{1}{T}\int_{0}^{T} P(t) dt\)</span>) As anticipated, the average power of the AC source closely aligns with the DC power, highlighting the consistency of power calculations between the two modes.
+As we mention earlier RMS voltage is known as the equivalent DC voltage because the RMS value gives the amount of AC power drawn by a resistor similar to the power drawn by a DC source.</p>
+</section>
+<section id="id6">
+<h1>Conclusion<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<p>The RMS value is important in analyzing AC circuits because it represents the effective or equivalent DC value of an AC signal. This allows us to apply DC analysis techniques to AC circuits, simplifying calculations and analysis. It also enables us to compare AC and DC circuits directly, facilitating a better understanding of their behavior.</p>
+</section>
+<section id="id7">
+<h1>Sources<a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
+<p>1.<a class="reference external" href="https://www.electronics-tutorials.ws/accircuits/rms-voltage.html">https://www.electronics-tutorials.ws/accircuits/rms-voltage.html</a></p>
+<p>2.<a class="reference external" href="https://en.wikipedia.org/wiki/Root_mean_square">https://en.wikipedia.org/wiki/Root_mean_square</a></p>
+<p>3.<a class="reference external" href="https://www.electrical4u.com/rms-or-root-mean-square-value-of-ac-signal/#What-is-RMS-Voltage">https://www.electrical4u.com/rms-or-root-mean-square-value-of-ac-signal/#What-is-RMS-Voltage</a></p>
+<p>4.<a class="reference external" href="https://warreninstitute.org/rms-value-of-ac-circuits/#_Why_is_the_RMS_value_important_in_analyzing_AC_circuits">https://warreninstitute.org/rms-value-of-ac-circuits/#_Why_is_the_RMS_value_important_in_analyzing_AC_circuits</a>?</p>
+<p>5.<a class="reference external" href="https://www.geeksforgeeks.org/rms-voltage/#applications-of-rms-voltage">https://www.geeksforgeeks.org/rms-voltage/#applications-of-rms-voltage</a></p>
+<p>6.<a class="reference external" href="https://www.quora.com/How-do-you-calculate-peak-and-RMS-voltage-current-and-power-from-a-given-data-of-a-sinusoidal-waveform">https://www.quora.com/How-do-you-calculate-peak-and-RMS-voltage-current-and-power-from-a-given-data-of-a-sinusoidal-waveform</a></p>
+<p>7.<a class="reference external" href="https://www.omnicalculator.com/physics/rms-voltage#how-to-use-the-rms-voltage-calculator">https://www.omnicalculator.com/physics/rms-voltage#how-to-use-the-rms-voltage-calculator</a></p>
+<p>8.<a class="reference external" href="https://electronics-formulas.com/how-to-calculate-ac-waveform/">https://electronics-formulas.com/how-to-calculate-ac-waveform/</a></p>
+<p>9.<a class="reference external" href="https://mechatrofice.com/circuits/rectifier-half-wave-full-wave">https://mechatrofice.com/circuits/rectifier-half-wave-full-wave</a></p>
+<p>10.<a class="reference external" href="https://www.rfcafe.com/references/electrical/triangle-wave-voltage-conversion.htm">https://www.rfcafe.com/references/electrical/triangle-wave-voltage-conversion.htm</a></p>
+<p>11.<a class="reference external" href="https://www.rfcafe.com/references/electrical/square-wave-voltage-conversion.htm">https://www.rfcafe.com/references/electrical/square-wave-voltage-conversion.htm</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\RMS"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../nonlinearresistor/nonlinearresistor.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Nonlinear Resistor</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Voltage Dividers Transistor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>RMS VOLTAGE</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-for-calculating-rms-voltage">2. Methods for Calculating RMS Voltage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rms-peak-peak-to-peak-and-average-voltages">3. RMS, Peak, Peak-to-Peak, and Average Voltages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffrent-waveform">4.Diffrent waveform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">5. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">6. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">7. Sources</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-rms-voltage">1.1 Overview of RMS Voltage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-rms-voltage">1.3 Applications of RMS Voltage</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Methods for Calculating RMS Voltage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">RMS, Peak, Peak-to-Peak, and Average Voltages</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Diffrent waveform</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Sources</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

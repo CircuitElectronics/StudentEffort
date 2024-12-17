@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Nonlinear Resistor &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/nonlinearresistor/nonlinearresistor';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="RMS VOLTAGE" href="../RMS/RMSVOLTAGE%20.html" />
+    <link rel="prev" title="Switches" href="../SwitchesAliAkhavan/Switches1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../RMS/RMSVOLTAGE%20.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/nonlinearresistor/nonlinearresistor.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/nonlinearresistor/nonlinearresistor.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Nonlinear Resistor</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Nonlinear Resistor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-resistor">What Is a Resistor?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-a-resistor">Definition of a Resistor:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resistive-materials">Resistive Materials:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-of-resistance">Unit of Resistance:</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-resistors-in-electronic-circuits">Applications of Resistors in Electronic Circuits:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-in-circuit-design">Importance in Circuit Design:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-non-linear-resistor">What is Non-linear resistor?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#varistor">Varistor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-summary">code summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thermistor">Thermistor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#photo-resistor">Photo Resistor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-mount">Surface mount</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consolution">consolution</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">sources</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="nonlinear-resistor">
+<h1>Nonlinear Resistor<a class="headerlink" href="#nonlinear-resistor" title="Link to this heading">#</a></h1>
+<p>Author: Reza Mohammadi</p>
+<p>email: <a class="reference external" href="mailto:mohamadi&#46;reza&#37;&#52;&#48;mail&#46;um&#46;ac&#46;ir">mohamadi<span>&#46;</span>reza<span>&#64;</span>mail<span>&#46;</span>um<span>&#46;</span>ac<span>&#46;</span>ir</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="what-is-a-resistor">
+<h1>What Is a Resistor?<a class="headerlink" href="#what-is-a-resistor" title="Link to this heading">#</a></h1>
+<section id="definition-of-a-resistor">
+<h2>Definition of a Resistor:<a class="headerlink" href="#definition-of-a-resistor" title="Link to this heading">#</a></h2>
+<p>A resistor is an electrical component designed to limit the flow of current in a circuit. It is a passive two-terminal device, meaning it consumes energy but does not produce or store it.</p>
+<section id="resistive-materials">
+<h3>Resistive Materials:<a class="headerlink" href="#resistive-materials" title="Link to this heading">#</a></h3>
+<p>Resistors are made from materials that resist the flow of electric current. These materials include:</p>
+<p>Glass: A good insulator with high resistance.
+Mica: Known for its high resistance and thermal stability, making it useful in specific applications.
+Wood and Rubber: Typically considered insulating materials but can exhibit resistive properties in certain conditions.</p>
+<section id="unit-of-resistance">
+<h4>Unit of Resistance:<a class="headerlink" href="#unit-of-resistance" title="Link to this heading">#</a></h4>
+<p>Resistance is measured in ohms (Ω). One ohm is the resistance between two points of a conductor when a current of 1 ampere flows through it under a potential difference of 1 volt.</p>
+<section id="applications-of-resistors-in-electronic-circuits">
+<h5>Applications of Resistors in Electronic Circuits:<a class="headerlink" href="#applications-of-resistors-in-electronic-circuits" title="Link to this heading">#</a></h5>
+<p>Signal Level Adjustment: Used to control or reduce the current or voltage in a circuit.
+Current Limiting: Preventing excessive current that could damage components.
+Biasing Active Elements: Setting the operating conditions for active components such as transistors.
+Termination of Transmission Lines: Avoiding signal reflection in transmission lines.
+Voltage Division: Creating different voltage levels from a single fixed voltage source.</p>
+</section>
+<section id="importance-in-circuit-design">
+<h5>Importance in Circuit Design:<a class="headerlink" href="#importance-in-circuit-design" title="Link to this heading">#</a></h5>
+<p>Resistors play a crucial role in the design of electronic circuits. They not only help in precise control of current and voltage but also protect components from damage caused by overcurrent or overvoltage. Furthermore, carefully designed resistor configurations can enhance the stability and performance of circuits.</p>
+<p><img alt="type of resistor" src="../../_images/Different-Types-of-Resistors-Updated-2.png" /></p>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="what-is-non-linear-resistor">
+<h1>What is Non-linear resistor?<a class="headerlink" href="#what-is-non-linear-resistor" title="Link to this heading">#</a></h1>
+<p>Non-linear resistors are resistors that exhibit a change in electric current based on variations in applied voltage or temperature,
+rather than following Ohm’s law. Unlike linear resistors,
+where the current remains proportional to the voltage,
+non-linear resistors have a more complex relationship between voltage and current.
+This means that their resistance can vary significantly under different conditions.
+There are various types of non-linear resistors, each serving specific applications in electronic circuits.
+Some of the most commonly used non-linear resistors include thermistors,
+which change resistance with temperature, and varistors, which adjust their resistance based on voltage changes.
+These components are essential in protecting circuits, sensing temperature changes,
+and in various other applications where variable resistance is required.</p>
+<p><img alt="type of resistor" src="../../_images/types_of_resistors.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="varistor">
+<h1>Varistor<a class="headerlink" href="#varistor" title="Link to this heading">#</a></h1>
+<p>A varistor, also known as a Voltage Dependent Resistor (VDR),
+is a type of resistor whose resistance changes with the applied voltage.
+When the voltage across the varistor increases, its resistance decreases,
+allowing more current to pass through. Conversely, as the voltage decreases,
+the resistance increases, limiting the current flow.
+This property makes varistors particularly useful for protecting circuits from voltage spikes and surges.
+They are commonly employed in applications such as surge protection devices and transient voltage suppression.
+By dynamically adjusting their resistance in response to voltage changes,
+varistors help maintain circuit integrity and prevent damage from excessive voltage.
+Overall, they play a crucial role in enhancing the reliability of electronic systems.</p>
+<p><img alt="varistor" src="../../_images/varistors.jpg" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">)</span>
+    
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">ResistorVar</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R_non-linear&#39;</span><span class="p">)</span>
+    
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
+
+    <span class="n">d</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0b61184ae45126d8d2262010d05daa6fb4b11448c3e9bcc3e43c50f165cd8172.svg" src="../../_images/0b61184ae45126d8d2262010d05daa6fb4b11448c3e9bcc3e43c50f165cd8172.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">circuit</span><span class="p">:</span>
+    <span class="n">circuit</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>  
+    <span class="n">circuit</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">ResistorVar</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Nonlinear Resistor&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>  
+    <span class="n">circuit</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>  
+    <span class="n">circuit</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
+
+
+<span class="n">V</span> <span class="o">=</span> <span class="mi">12</span>  
+<span class="k">def</span> <span class="nf">resistance</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">I</span><span class="o">**</span><span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">equation</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">V</span> <span class="o">-</span> <span class="n">I</span> <span class="o">*</span> <span class="n">resistance</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+
+
+<span class="n">I_initial</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+
+<span class="n">I_solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">I_initial</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The current through the nonlinear resistor is approximately </span><span class="si">{</span><span class="n">I_solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> A.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/137d7cbb47c2be27d917aad57a90636ca66dfcf5cc7c78952b3d3473a82c8830.svg" src="../../_images/137d7cbb47c2be27d917aad57a90636ca66dfcf5cc7c78952b3d3473a82c8830.svg" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The current through the nonlinear resistor is approximately 1.08 A.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="code-summary">
+<h1>code summary<a class="headerlink" href="#code-summary" title="Link to this heading">#</a></h1>
+<p>1.A circuit consisting of a voltage source and a nonlinear resistor is drawn.</p>
+<p>2.The resistor’s value is determined using the function 𝑅=10+I^2</p>
+<p>3.The circuit’s current is calculated by solving the equation V - I.R(I) = 0</p>
+<p>4.The calculated current value is displayed to the user.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="thermistor">
+<h1>Thermistor<a class="headerlink" href="#thermistor" title="Link to this heading">#</a></h1>
+<p>Thermal resistors, also known as thermistors, are components whose resistance changes with temperature.
+As the temperature rises, the resistance of a thermal resistor typically decreases,
+and when the temperature falls, the resistance increases.
+This property makes thermistors useful for measuring and controlling temperature in various applications.
+They are commonly employed in temperature sensors and control systems,
+where precise temperature monitoring is essential.
+Their sensitivity to temperature changes allows them to provide accurate feedback for regulating heating or cooling processes.</p>
+<p>The main types of thermistors are NTC and PTC.
+NTC is Negative Temperature Coefficient and in such devices, the resistance decreases as the temperature increases.
+These are used to protect the devices from over-voltage conditions.
+PTC is Positive Temperature Coefficient and in such devices, the resistance increases as the temperature increases.
+These are used to protect the devices from over current conditions.
+The following figure shows an NTC thermistor, along with its symbol.</p>
+<p><img alt="thermistor" src="../../_images/thermistor.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="photo-resistor">
+<h1>Photo Resistor<a class="headerlink" href="#photo-resistor" title="Link to this heading">#</a></h1>
+<p>Photoresistors, commonly known as Light Dependent Resistors (LDRs),
+are components whose resistance changes in response to light intensity. As the amount of light increases,
+the resistance of the LDR decreases, allowing more current to flow through. Conversely, when light intensity decreases,
+the resistance increases, restricting current flow.
+This unique property enables LDRs to be effectively used for measurement and control applications,
+such as in light sensors and automatic lighting systems.
+They play a crucial role in various electronic circuits, including those that require light detection and regulation.
+Overall, LDRs are essential for creating responsive systems that adjust based on ambient light conditions.</p>
+<p><img alt="photo resistor" src="../../_images/photo_resistor.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="surface-mount">
+<h1>Surface mount<a class="headerlink" href="#surface-mount" title="Link to this heading">#</a></h1>
+<p>These are being highly used since the introduction of surface mount technology.
+These can be termed as chip resistors, which means a resistive layer integrated on a ceramic chip.</p>
+<p>These surface mount resistors are very small when compared to the normal resistors and hence occupy less space.
+They are effective and dissipate less heat. The invention of these resistors has changed the look of a PCB PrintedCircuitBoard
+and reduced its size greatly.</p>
+<p>The advantages of surface mount resistors are −</p>
+<p>These are compact in size.</p>
+<p>These are very stable.</p>
+<p>They have good tolerance.</p>
+<p>They are effective in reducing heat dissipation.</p>
+<p>The following figure shows the images of surface mount resistors.</p>
+<p><img alt="surface mount" src="../../_images/surface_mount.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="consolution">
+<h1>consolution<a class="headerlink" href="#consolution" title="Link to this heading">#</a></h1>
+<p>Non-linear resistors do not follow Ohm’s law and exhibit varying behavior with changes in voltage or temperature.
+Types include thermistors, whose resistance changes with temperature, and varistors, which adjust resistance based on voltage. Thermistors are used for temperature measurement and control, while varistors protect circuits from voltage surges.
+Photoresistors (LDRs) change resistance with light intensity and are used in light sensors and automatic lighting systems. The advent of surface-mount technology (SMT) introduced compact chip resistors that save space and reduce heat dissipation, transforming PCB design. Thermistors are classified into NTC (resistance decreases with temperature) and PTC (resistance increases with temperature), used for over-voltage and over-current protection, respectively.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sources">
+<h1>sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.tutorialspoint.com/basic_electronics/basic_electronics_nonlinear_resistors.htm">https://www.tutorialspoint.com/basic_electronics/basic_electronics_nonlinear_resistors.htm</a></p>
+<p><a class="reference external" href="https://byjus.com/physics/types-of-resistors/#:~:text=Non%2Dlinear%20resistors%20are%20those,commonly%20used%20are%20mentioned%20below">https://byjus.com/physics/types-of-resistors/#:~:text=Non-linear resistors are those,commonly used are mentioned below</a>.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\nonlinearresistor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../SwitchesAliAkhavan/Switches1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Switches</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../RMS/RMSVOLTAGE%20.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>RMS VOLTAGE</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Nonlinear Resistor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-resistor">What Is a Resistor?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-a-resistor">Definition of a Resistor:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resistive-materials">Resistive Materials:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-of-resistance">Unit of Resistance:</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-resistors-in-electronic-circuits">Applications of Resistors in Electronic Circuits:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-in-circuit-design">Importance in Circuit Design:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-non-linear-resistor">What is Non-linear resistor?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#varistor">Varistor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-summary">code summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thermistor">Thermistor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#photo-resistor">Photo Resistor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-mount">Surface mount</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consolution">consolution</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">sources</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

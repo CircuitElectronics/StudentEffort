@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Transformer &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Transformator/transformer';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Phasor Analysis" href="../PhasorAnalysis/PhasorAnalysis.html" />
+    <link rel="prev" title="Voltage Dividers Transistor" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../RMS/RMSVOLTAGE%20.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Transformator/transformer.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Transformator/transformer.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transformer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-transformer">What is transformer ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-transformers">Types of Transformers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-transformers-work">How do transformers work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-phase-transformers">Three Phase Transformers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-differences-between-single-phase-and-three-phase-transformers">Main Differences Between Single Phase and Three Phase Transformers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faraday-s-law">Faraday’s law</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenz-s-law">Lenz’s Law</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lenz-s-law-equation">Lenz’s Law Equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-transformer-with-pyspice">Analyse transformer with Pyspice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-transformers">Applications of Transformers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-circuit">Magnetic circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analogy-to-electric-circuits">Analogy to electric circuits</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-circuit">Electric Circuit</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Magnetic Circuit</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-calculations">Examples of Calculations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reluctance-and-permeance">Reluctance and permeance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="transformer">
+<h1>Transformer<a class="headerlink" href="#transformer" title="Link to this heading">#</a></h1>
+<p><strong>Author: Amirhossein Abolfazli Esfahani</strong></p>
+<section id="what-is-transformer">
+<h2>What is transformer ?<a class="headerlink" href="#what-is-transformer" title="Link to this heading">#</a></h2>
+<p>A transformer is an electrical device that uses the principle of electromagnetic induction to transfer energy from one electric circuit to another. It is designed to either increase or decrease AC voltage between the circuits while maintaining the frequency of the current. Transformers do this with no conductive connection between the two circuits. This is possible through the application of <strong>Faraday’s Law of Induction</strong> which describes how a magnetic field will interact with an electric circuit to produce electromotive force</p>
+</section>
+<section id="types-of-transformers">
+<h2>Types of Transformers<a class="headerlink" href="#types-of-transformers" title="Link to this heading">#</a></h2>
+<p>There are two main types of transformers: step-up transformers and step-down transformers. Step-up transformers increase the voltage in a circuit, while step-down transformers decrease the voltage. Step-up transformers are used in applications where a higher voltage is required, such as in power generation and transmission. Step-down transformers are used in applications where a lower voltage is required, such as in lighting and electronic equipment.</p>
+</section>
+<section id="how-do-transformers-work">
+<h2>How do transformers work?<a class="headerlink" href="#how-do-transformers-work" title="Link to this heading">#</a></h2>
+<p>The basic transformer comprises three parts: the magnetic core, the primary winding, and the secondary winding. The primary winding is connected to a live source of AC power. This produces an alternating magnetic field that surrounds the winding. This induces an EMF in the secondary winding. If the circuit of the secondary winding is closed, then AC current will flow through it. These windings share the magnetic core, which is usually made out of laminated steel sheets and provides a low reluctance path for the magnetic field. The ratio between the output voltage and input voltage is the same as the ratio of the number of turns between the two windings. In a step-down transformer, the secondary winding will have fewer turns than the primary, and in a step-up transformer, it will have more.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{V_p}{V_s} = \frac{N_p}{N_s}
+\]</div>
+</section>
+<section id="three-phase-transformers">
+<h2>Three Phase Transformers<a class="headerlink" href="#three-phase-transformers" title="Link to this heading">#</a></h2>
+<p>Most of the applications above describe single-phase transformers. This type of transformer has one primary winding and one secondary winding. However, transformers also come in the three-phase variety. Three-phase transformers have three sets of windings. These transformers are used to power industrial loads and generate three-phase power.</p>
+<section id="main-differences-between-single-phase-and-three-phase-transformers">
+<h3>Main Differences Between Single Phase and Three Phase Transformers<a class="headerlink" href="#main-differences-between-single-phase-and-three-phase-transformers" title="Link to this heading">#</a></h3>
+<p>With a single phase power system, power lines are used as an input source, but there is only one primary and one secondary winding that’s required to achieve the voltage transformation. The single phase transformer, therefore, uses these two windings to transform the voltage. Single phase transformers come in various models, which differ based on horsepower range, taps, mounting type (such as wall mount), dimensions, KVA and shipping weight. You might see these labeled as “240/480 VAC Primary and 120/240 VAC Secondary, 1 PH, 60 Hz” when ordering, and a listing of models available for this type of transformer.</p>
+<p>Three phase power works differently in that power is generated by rotating three windings or coils through a magnetic field within the generator. The three windings are spaced apart by 120 degrees, and generate power as they rotate through the magnetic field. The generated power is then sent out on three different lines, which is why it’s called “three phase” power.</p>
+<p>For a three phase transformer to work, it must have three windings or coils connected in the proper order to match the incoming voltage. It then transforms the incoming voltage to the voltage level needed while maintaining proper polarity and phasing.</p>
+</section>
+</section>
+<section id="faraday-s-law">
+<h2>Faraday’s law<a class="headerlink" href="#faraday-s-law" title="Link to this heading">#</a></h2>
+<p>Faraday’s Law of Electromagnetic Induction describes how a change in magnetic flux through a closed loop induces an electromotive force (EMF) in that loop. This principle is fundamental in understanding how electric generators snd transformers devices work.</p>
+<p>Mathematically, Faraday’s Law is expressed as:
+$<span class="math notranslate nohighlight">\(
+\mathcal{E} = - N \frac{d\Phi_B}{dt}
+\)</span>$
+Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{E}\)</span>  is the induced EMF (in volts).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi_B\)</span> is the magnetic flux , which is the product of the magnetic field <span class="math notranslate nohighlight">\({B}\)</span> and the area <span class="math notranslate nohighlight">\({A}\)</span> through which the magnetic filed lines pass.
+$<span class="math notranslate nohighlight">\(
+\Phi_B = {B}.{A}.\cos(\theta)
+\)</span>$</p></li>
+<li><p>The negative sign (−) comes from Lenz’s Law, which states that the induced EMF generates a current whose magnetic field opposes the change in the magnetic flux.</p></li>
+</ul>
+</section>
+<section id="lenz-s-law">
+<h2>Lenz’s Law<a class="headerlink" href="#lenz-s-law" title="Link to this heading">#</a></h2>
+<p>Lenz’s law of electromagnetic induction states that the direction of the current induced in a conductor by a changing magnetic field (as per Faraday’s law of electromagnetic induction) is such that the magnetic field created by the induced current opposes the initial changing magnetic field which produced it. The direction of this current flow is given by Fleming’s right hand rule.</p>
+<p>let’s consider two casese:</p>
+<p><strong>Case 1</strong> : When a magnet is moving towards the coil.</p>
+<p><img alt="RC1_charging" src="../../_images/image2.png" /></p>
+<p>When the north pole of the magnet is approaching the coil, the magnetic flux linking to the coil increases. According to Faraday’s law of electromagnetic induction, when there is a change in flux, an EMF, and hence current is induced in the coil and this current will create its own magnetic field.</p>
+<p>Now according to Lenz’s law, this magnetic field created will oppose its own or we can say opposes the increase in flux through the coil and this is possible only if the approaching coil side attains north polarity, as we know similar poles repel each other.</p>
+<p>Once we know the magnetic polarity of the coil side, we can easily determine the direction of the induced current by applying right-hand rule. In this case, the current flows in the anticlockwise direction.</p>
+<p><strong>Case 2</strong>: When a magnet is moving away from the coil</p>
+<p><img alt="RC1_charging" src="../../_images/image.png" /></p>
+<p>When the north pole of the magnet is moving away from the coil, the magnetic flux linking to the coil decreases. According to Faraday’s law of electromagnetic induction, an EMF and hence current is induced in the coil and this current will create its own magnetic field.</p>
+<p>Now according to Lenz’s law, this magnetic field created will oppose its own or we can say opposes the decrease in flux through the coil and this is possible only if the approaching coil side attains south polarity, as we know dissimilar poles attract each other.</p>
+<p>Once we know the magnetic polarity of the coil side, we can easily determine the direction of the induced current by applying right-hand rule. In this case, the current flows in a clockwise direction.</p>
+<p>Note that for finding the directions of magnetic field or current, use the right-hand thumb rule i.e if the fingers of the right hand are placed around the wire so that the thumb points in the direction of current flow, then the curling of fingers will show the direction of the magnetic field produced by the wire.</p>
+<p><img alt="RC1_charging" src="../../_images/image3.jpg" /></p>
+<section id="lenz-s-law-equation">
+<h3>Lenz’s Law Equation<a class="headerlink" href="#lenz-s-law-equation" title="Link to this heading">#</a></h3>
+<p>Lenz’s Law is mathematically represented in Faraday’s Law of Induction:
+$<span class="math notranslate nohighlight">\(
+\mathcal{E} = - \frac{d\Phi_B}{dt}
+\)</span>$
+where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{E}\)</span>  is the induced EMF (in volts).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi_B\)</span> is the magnetic flux , which is the product of the magnetic field <span class="math notranslate nohighlight">\({B}\)</span> and the area <span class="math notranslate nohighlight">\({A}\)</span> through which the magnetic filed lines pass.</p></li>
+</ul>
+<p>The negative sign in the equation reflects Lenz’s Law and indicates that the induced EMF works in such a direction that it opposes the change in magnetic flux.</p>
+</section>
+</section>
+<section id="analyse-transformer-with-pyspice">
+<h2>Analyse transformer with Pyspice<a class="headerlink" href="#analyse-transformer-with-pyspice" title="Link to this heading">#</a></h2>
+<p>The difference in amplitude between the input and output voltages suggests that this is a step-down transformer. Based on the peak values (input: 300V, output: 100V), the turns ratio can be estimated as:
+$<span class="math notranslate nohighlight">\(
+\frac{V_i}{V_o} = \frac{300}{100}
+\)</span>$
+This means the primary coil has three times more turns than the secondary coil.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Define time parameters</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Time from 0 to 60 ms</span>
+
+<span class="c1"># Define input and output voltages based on sine wave characteristics</span>
+<span class="n">Vin</span> <span class="o">=</span> <span class="mi">300</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>  <span class="c1"># Input voltage: Amplitude = 300V, Frequency = 60Hz</span>
+<span class="n">Vout</span> <span class="o">=</span> <span class="p">(</span><span class="n">Vin</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Assuming a turns ratio of 10:1 for the transformer output voltage</span>
+
+<span class="c1"># Create the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Vin</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Vin [V]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>  <span class="c1"># Plot input voltage</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Vout</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Vout [V]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>  <span class="c1"># Plot output voltage</span>
+
+<span class="c1"># Formatting the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Transformer Input and Output Voltage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">)</span>  <span class="c1"># Set x-axis limit</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">350</span><span class="p">,</span> <span class="mi">350</span><span class="p">)</span>  <span class="c1"># Set y-axis limit</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>  <span class="c1"># Add a horizontal line at y=0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ccf07edc44fe12af7f5e09c3ea009928ddfbaf0d3ba34f5e89bc5362da2b9ee4.png" src="../../_images/ccf07edc44fe12af7f5e09c3ea009928ddfbaf0d3ba34f5e89bc5362da2b9ee4.png" />
+</div>
+</div>
+</section>
+<section id="applications-of-transformers">
+<h2>Applications of Transformers<a class="headerlink" href="#applications-of-transformers" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Power generation :</strong> Transformers are used in power plants to increase the voltage of the electricity generated by the plant before it is sent to the grid.</p></li>
+<li><p><strong>Transmission and distribution :</strong> Transformers are used in the transmission and distribution of electricity to increase or decrease the voltage of electricity as it is sent from power plants to homes and businesses.</p></li>
+<li><p><strong>Lighting :</strong> Transformers are used in lighting systems to decrease the voltage of electricity before it is sent to light bulbs.</p></li>
+<li><p><strong>Audio systems :</strong> Transformers are used in audio systems to increase or decrease the voltage of electricity before it is sent to speakers.</p></li>
+<li><p><strong>Electronic equipment :</strong> Transformers are used in a variety of electronic devices, including computers, TVs, radios, and cell phones.</p></li>
+</ul>
+</section>
+<section id="magnetic-circuit">
+<h2>Magnetic circuit<a class="headerlink" href="#magnetic-circuit" title="Link to this heading">#</a></h2>
+<p>Magnetic circuit is an assembly of components used as the means of manipulating magnetic field, or forming a path along which the magnetic field or magnetic flux is directed. In most magnetic circuits the magnetic field is not fully contained and also exist in the surrounding volume, thus forming a parasitic magnetic circuit, contributing to such effects as stray flux and flux fringing.</p>
+<section id="analogy-to-electric-circuits">
+<h3>Analogy to electric circuits<a class="headerlink" href="#analogy-to-electric-circuits" title="Link to this heading">#</a></h3>
+<p>In some aspects, a magnetic circuit can be analysed as an analogy to an electric circuit supplied with a DC source.
+In an electric circuit, the total voltage drop on the resistances <strong>R</strong> will be the same as supplied by the voltage source <strong>V</strong>.
+The current <strong>I</strong> in the circuit is directly proportional to the applied voltage and inversely proportional to the total resistance, according to the Ohm’s law.</p>
+<p><img alt="image.png" src="StudentEffort/Transformator/attachment:image.png" /></p>
+<p>In an analogous magnetic circuit, the source is represented by the magnetomotive force MMF, also denoted with a stylised letter <span class="math notranslate nohighlight">\({F}\)</span> . If the excitation is applied from a magnetising coil, then its value is a product of the current in the coil and its number of turns (ampere-turns), so the resulting unit is amperes (<strong>A</strong>). If the source of magnetic field is a permanent magnet then the amount of excitation is quantified by the energy stored in the magnetic field of the magnet and its volume (and can also be expressed in ampere-turns if necessary).</p>
+<p>The analogue of electrical resistance is the magnetic reluctance, denoted typically with a stylised letter <strong>R</strong> , with the units of (A/Wb) or (1/H).
+The analogue of electric current is the magnetic flux, denoted as <span class="math notranslate nohighlight">\({\phi}\)</span>
+, with the units of (Wb) or (<span class="math notranslate nohighlight">\(T·m^2\)</span>). The value of magnetic flux is directly proportional to the applied magnetomotive force and inversely proportional to the total reluctance present in the circuit.</p>
+<p>If there are multiple sources, their effects are added in a similar way as in an electric circuit. Similarly, multiple reluctances are analysed similarly to electrical resistances.</p>
+<section id="electric-circuit">
+<h4>Electric Circuit<a class="headerlink" href="#electric-circuit" title="Link to this heading">#</a></h4>
+<p>[
+\begin{array}{|c|c|c|}
+\hline
+\textbf{Quantity} &amp; \textbf{Symbol} &amp; \textbf{Unit} \
+\hline
+\text{Voltage} &amp; V &amp; (\text{V}) \
+\hline
+\text{Resistance} &amp; R &amp; (\Omega) \
+\hline
+\text{Conductance} &amp; G = \frac{1}{R} &amp; (\text{S}) \
+\hline
+\text{Current} &amp; I &amp; (\text{A}) \
+\hline
+\end{array}
+]</p>
+</section>
+<section id="id1">
+<h4>Magnetic Circuit<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>[
+\begin{array}{|c|c|c|}
+\hline
+\textbf{Quantity} &amp; \textbf{Symbol} &amp; \textbf{Unit} \
+\hline
+\text{Magnetomotive force} &amp; \mathcal{F} &amp; (\text{A}) \equiv (\text{A-turns}) \
+\hline
+\text{Magnetic reluctance} &amp; \mathcal{R} &amp; (\text{A/Wb}) \equiv (1/\text{H}) \
+\hline
+\text{Permeance} &amp; \mathcal{P} = \frac{1}{\mathcal{R}} &amp; (\text{H}) \
+\hline
+\text{Magnetic flux} &amp; \Phi &amp; (\text{Wb}) \equiv (\text{T} \cdot \text{m}^2) \
+\hline
+\end{array}
+]</p>
+</section>
+<section id="examples-of-calculations">
+<h4>Examples of Calculations<a class="headerlink" href="#examples-of-calculations" title="Link to this heading">#</a></h4>
+<p><strong>Electric Circuit</strong><br />
+$<span class="math notranslate nohighlight">\(
+V = I \cdot (R_1 + R_2)
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+I = \frac{V}{R_1 + R_2}
+\)</span>$</p>
+<p><strong>Magnetic Circuit</strong><br />
+$<span class="math notranslate nohighlight">\(
+\mathcal{F} = \Phi \cdot (\mathcal{R}_1 + \mathcal{R}_2)
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\Phi = \frac{\mathcal{F}}{\mathcal{R}_1 + \mathcal{R}_2}
+\)</span>$</p>
+<p>In this way, for many magnetic circuits, it is possible to simplify a three-dimensional problem effectively to a much simpler one-dimensional analysis, which can still provide sufficient engineering approximation.</p>
+<p>However, the extent of this analogy is limited, because in the electric circuit the energy is dissipated in the resistance, but the the magnetic circuit the energy is not dissipated in the reluctance.</p>
+</section>
+</section>
+</section>
+<section id="reluctance-and-permeance">
+<h2>Reluctance and permeance<a class="headerlink" href="#reluctance-and-permeance" title="Link to this heading">#</a></h2>
+<p>The concept of magnetic reluctance <span class="math notranslate nohighlight">\(R\)</span> is analogous to that of electric resistance <span class="math notranslate nohighlight">\(R\)</span> (although the analogy is limited). For simple magnetic circuits the value can be calculated from its dimensions (area and length).</p>
+<p>The calculations can be based on magnetic permeability <span class="math notranslate nohighlight">\(\mu\)</span> , analogous to electric conductivity <span class="math notranslate nohighlight">\(\sigma\)</span>. It is also possible to use the concept of magnetic reluctivity <span class="math notranslate nohighlight">\(V\)</span>, analogous to electric resistivity <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Reluctance</strong> (<span class="math notranslate nohighlight">\(\mathcal{R} = 1/\mathcal{P}\)</span>)</p></th>
+<th class="head"><p><strong>Resistance</strong> (<span class="math notranslate nohighlight">\(R = 1/G\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>From <strong>absolute permeability</strong> <span class="math notranslate nohighlight">\(\mu\)</span> (H/m)</p></td>
+<td><p>From <strong>conductivity</strong> <span class="math notranslate nohighlight">\(\sigma\)</span> (S/m)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathcal{R} = \frac{1}{\mu} \cdot \frac{l}{A}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(R = \frac{1}{\sigma} \cdot \frac{l}{A}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>From <strong>reluctivity</strong> <span class="math notranslate nohighlight">\(\nu = 1/\mu\)</span> (m/H)</p></td>
+<td><p>From <strong>resistivity</strong> <span class="math notranslate nohighlight">\(\rho\)</span> (<span class="math notranslate nohighlight">\(\Omega \cdot \text{m}\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathcal{R} = \nu \cdot \frac{l}{A}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(R = \rho \cdot \frac{l}{A}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Permeance</strong> (<span class="math notranslate nohighlight">\(\mathcal{P}\)</span>)</p></th>
+<th class="head"><p><strong>Conductance</strong> (<span class="math notranslate nohighlight">\(G\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathcal{P} = \mu \cdot \frac{A}{l}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(G = \sigma \cdot \frac{A}{l}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathcal{P} = \frac{1}{\nu} \cdot \frac{A}{l}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(G = \frac{1}{\rho} \cdot \frac{A}{l}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(l\)</span> = length (m)</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = cross-sectional area (<span class="math notranslate nohighlight">\(\text{m}^2\)</span>)</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Transformers are essential components in modern electrical systems, utilizing the principles of electromagnetic induction to efficiently transfer electrical energy between circuits. By increasing or decreasing AC voltage while maintaining the same frequency, they play a crucial role in power generation, transmission, distribution, and a wide array of electronic applications.</p>
+<p>The analysis of transformer operation shows that its functionality relies on Faraday’s Law of Induction and Lenz’s Law, where a changing magnetic flux in the primary coil induces an electromotive force (EMF) in the secondary coil. The voltage transformation is determined by the ratio of the number of turns in the primary and secondary windings, as reflected by the turns ratio equation. This research examined a typical step-down transformer, showing how the primary voltage of 300V is stepped down to 100V with a turns ratio of 3:1, ensuring energy is efficiently transferred.</p>
+</section>
+<section id="resources">
+<h2>Resources:<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.fierceelectronics.com/electronics/what-a-transformer">https://www.fierceelectronics.com/electronics/what-a-transformer</a></p></li>
+<li><p><a class="reference external" href="https://www.sciencedirect.com/topics/physics-and-astronomy/faradays-law">https://www.sciencedirect.com/topics/physics-and-astronomy/faradays-law</a></p></li>
+<li><p><a class="reference external" href="https://www.electrical4u.com/lenz-law-of-electromagnetic-induction/">https://www.electrical4u.com/lenz-law-of-electromagnetic-induction/</a></p></li>
+<li><p><a class="reference external" href="https://unacademy.com/content/upsc/study-material/physics/applications-of-transformers/#:~:text=Transformers%20can%20be%20used%20to,audio%20systems%2C%20and%20electronic%20equipment">https://unacademy.com/content/upsc/study-material/physics/applications-of-transformers/#:~:text=Transformers can be used to,audio systems%2C and electronic equipment</a>.</p></li>
+<li><p><a class="reference external" href="https://www.e-magnetica.pl/doku.php/magnetic_circuit">https://www.e-magnetica.pl/doku.php/magnetic_circuit</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Transformator"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Voltage Dividers Transistor</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../PhasorAnalysis/PhasorAnalysis.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Phasor Analysis</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-transformer">What is transformer ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-transformers">Types of Transformers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-transformers-work">How do transformers work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-phase-transformers">Three Phase Transformers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-differences-between-single-phase-and-three-phase-transformers">Main Differences Between Single Phase and Three Phase Transformers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faraday-s-law">Faraday’s law</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenz-s-law">Lenz’s Law</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lenz-s-law-equation">Lenz’s Law Equation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-transformer-with-pyspice">Analyse transformer with Pyspice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-transformers">Applications of Transformers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-circuit">Magnetic circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analogy-to-electric-circuits">Analogy to electric circuits</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-circuit">Electric Circuit</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Magnetic Circuit</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-calculations">Examples of Calculations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reluctance-and-permeance">Reluctance and permeance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
