@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Junction Field Effect Transistor (JFET) &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/JFET_TRansistor/JFETTrans';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="Darlington Transistor" href="../Darlington/Darlington_transiator.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../RMS/RMSVOLTAGE%20.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/Darlington_transiator.html">Darlington Transistor</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Junction Field Effect Transistor (JFET)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/JFET_TRansistor/JFETTrans.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/JFET_TRansistor/JFETTrans.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Junction Field Effect Transistor (JFET)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-input-impedance-amplifier">High Input Impedance Amplifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-noise-amplifier">Low-Noise Amplifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-amplifier">Differential Amplifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-current-source">Constant Current Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analog-switch-or-gate">Analog Switch or Gate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-controlled-resistor">Voltage Controlled Resistor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-jfet-amplifier-configuration">Basic JFET Amplifier Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Low-Noise Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jfet-differential-amplifier">JFET Differential Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jfet-constant-current-source">JFET Constant Current Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jfet-analog-switch">JFET Analog Switch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jfet-voltage-controlled-resistor">JFET Voltage Controlled Resistor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-bjt-and-jfet">Difference between BJT and JFET</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">Conclusions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="junction-field-effect-transistor-jfet">
+<h1>Junction Field Effect Transistor (JFET)<a class="headerlink" href="#junction-field-effect-transistor-jfet" title="Link to this heading">#</a></h1>
+<p>Amin Hassanzadeh email: <a class="reference external" href="mailto:aminhassanzadeh&#37;&#52;&#48;mail&#46;um&#46;ac&#46;ir">aminhassanzadeh<span>&#64;</span>mail<span>&#46;</span>um<span>&#46;</span>ac<span>&#46;</span>ir</a></p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The Junction Field Effect Transistor (JFET) exhibits characteristics which often make it more suited to an application than the bipolar transistor. A few potential applications are:</p>
+<section id="high-input-impedance-amplifier">
+<h3>High Input Impedance Amplifier<a class="headerlink" href="#high-input-impedance-amplifier" title="Link to this heading">#</a></h3>
+</section>
+<section id="low-noise-amplifier">
+<h3>Low-Noise Amplifier<a class="headerlink" href="#low-noise-amplifier" title="Link to this heading">#</a></h3>
+</section>
+<section id="differential-amplifier">
+<h3>Differential Amplifier<a class="headerlink" href="#differential-amplifier" title="Link to this heading">#</a></h3>
+</section>
+<section id="constant-current-source">
+<h3>Constant Current Source<a class="headerlink" href="#constant-current-source" title="Link to this heading">#</a></h3>
+</section>
+<section id="analog-switch-or-gate">
+<h3>Analog Switch or Gate<a class="headerlink" href="#analog-switch-or-gate" title="Link to this heading">#</a></h3>
+</section>
+<section id="voltage-controlled-resistor">
+<h3>Voltage Controlled Resistor<a class="headerlink" href="#voltage-controlled-resistor" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="basic-jfet-amplifier-configuration">
+<h2>Basic JFET Amplifier Configuration<a class="headerlink" href="#basic-jfet-amplifier-configuration" title="Link to this heading">#</a></h2>
+<p>There are three basic JFET circuits: the common source, the common gate, and the common drain(as shown in Figure 1).</p>
+<p><img alt="Fig1" src="../../_images/Fig1.png" />
+figure 1</p>
+<p>Each circuit configuration describes a two-port network having an input and an output. The transfer function of each is also determined by the input and output voltages or currents of the circuit. The most common configuration for the JFET as an amplifier is the common source circuit. For an N-channel device the circuit would be biased as shown in Figure 2.</p>
+<p><img alt="Fig2" src="../../_images/Fig2.png" />
+figure 2</p>
+<p>Since the N-channel JFET is a depletion mode device and is normally on, a gate voltage which has a negative polarity with respect to the source is required to modulate or control the drain current. This negative voltage can be provided by a single positive power supply using the self-biasing method shown in Figure 3. This is accomplished by the voltage, which is dropped across the source resistor, <span class="math notranslate nohighlight">\(R_S\)</span>, according to the current flowing through it. The gate-to-source voltage <span class="math notranslate nohighlight">\(V_{GS}\)</span> is then defined as:</p>
+<p><span class="math notranslate nohighlight">\(V_{GS} = I_D ∗ R_S\)</span> 		(1)</p>
+<p><img alt="Fig3" src="../../_images/Fig3.png" />
+Figure 3</p>
+<p>The circuit of Figure 3 also defines a basic single stage JFET amplifier. The source resistor value is determined by selecting the bias point for the circuit from the characteristic curves of the JFET being used. The value of the drain resistor is then chosen from the required gain of the amplifier and the value of the drain current which was previously selected in determining the gate voltage. The value of this resistor must also allow the circuit to have sufficient dynamic range, or voltage swing, required by the following stage. The following stage could be anything from another identical circuit to a loudspeaker for an audio system. The voltage gain of this circuit is then defined as:</p>
+<p><span class="math notranslate nohighlight">\(A_V = (g_m ∗ Z_L) / (1 + g_m ∗ R_S)\)</span>		(2)</p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(A_V\)</span> = the voltage gain</p>
+<p><span class="math notranslate nohighlight">\(g_m\)</span> = the forward transconductance or gain of the JFET</p>
+<p><span class="math notranslate nohighlight">\(Z_L\)</span> = the equivalent load impedance</p>
+<p><span class="math notranslate nohighlight">\(R_S\)</span> = the value of the source resistor</p>
+<p>The effect of the source resistor on the gain of the circuit can be removed at higher frequencies by connecting a capacitor across the source resistor. This results in an amplifier which has a gain of:</p>
+<p><span class="math notranslate nohighlight">\(A_V = g_m ∗ Z_L\)</span> 		(3)</p>
+<p>The source resistor can only be removed at frequencies above that defined by the resistor-capacitor network in the source circuit. This frequency is defined as:</p>
+<p><span class="math notranslate nohighlight">\(f_{lo} = 1/(2π ∗ R_S ∗ C_S)\)</span> 		(4)</p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(f_{lo}\)</span> = the low frequency corner</p>
+<p><span class="math notranslate nohighlight">\(π\)</span> = the constant 3.1418</p>
+<p><span class="math notranslate nohighlight">\(R_S\)</span> = the value of the source resistor</p>
+<p><span class="math notranslate nohighlight">\(C_S\)</span> = the value of the source capacitor</p>
+<p>The circuit also has a high input impedance, generally equal to the value of the input impedance of the JFET.</p>
+</section>
+<section id="id1">
+<h2>Low-Noise Amplifier<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>A minor change to the circuit of Figure 3 describes a basic single stage low-noise JFET amplifier. Figure 4 shows that this change only incorporates a resistor from the gate to
+<span class="math notranslate nohighlight">\(V_{SS}\)</span>. This resistor supplies a path for the gate leakage current in an AC coupled circuit.
+Its value is chosen by the required input impedance of the amplifier and its desired low-noise characteristics. The noise components of this amplifier are the thermal noise of the drain and gate resistors plus the noise components of the JFET. The noise contribution of the JFET is from the shot noise of the gate leakage current, the thermal noise of the channel resistance and the frequency noise of the channel.</p>
+<p><img alt="Fig4" src="../../_images/Fig4.png" />
+Figure 4</p>
+</section>
+<section id="jfet-differential-amplifier">
+<h2>JFET Differential Amplifier<a class="headerlink" href="#jfet-differential-amplifier" title="Link to this heading">#</a></h2>
+<p>Another application of the JFET is the differential amplifier. This configuration is shown in Figure 5. The differential amplifier requires that the two transistors be closely matched electrically and physically located near each other for thermal stability. Either input and either output can be used or both inputs and only one output can be used. For the configuration shown, the source resistor is chosen to determine the gate to source bias voltage, remembering that the current will be twice that of each of the JFET drain currents. The value of the drain resistor is chosen to provide a suitable dynamic range at the output. The gain of the circuit is defined by:</p>
+<p><span class="math notranslate nohighlight">\(A_V = 2 ∗ \large\frac{G_m ∗ R_D}{1 + G_m ∗ R_S}\)</span> 		(5)</p>
+<p><img alt="Fig5.png" src="../../_images/Fig5.png" />
+Figure 5</p>
+<p>This circuit configuration is very useful as a high input impedance stage to be connected to the input of a low-cost operational amplifier.</p>
+</section>
+<section id="jfet-constant-current-source">
+<h2>JFET Constant Current Source<a class="headerlink" href="#jfet-constant-current-source" title="Link to this heading">#</a></h2>
+<p>A constant current source using a JFET is shown in Figure 6. This circuit configuration has many useful applications that range from sourcing and/or sinking current for a sensor to replacing the source resistor in the differential amplifier shown in Figure 5. The current provided by the constant current source of Figure 6 is defined by:</p>
+<p><span class="math notranslate nohighlight">\(I_D = I_{DSS}[1 − (V_{GS}/V_P)]^2\)</span>    (6)</p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(I_D\)</span> = the drain current or magnitude of current sourced</p>
+<p><span class="math notranslate nohighlight">\(I_{DSS}\)</span> = the drain saturation current of the JFET</p>
+<p><span class="math notranslate nohighlight">\(V_{GS} = I_D * R_S\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_P\)</span> = the JFET pinch-off voltage</p>
+<p><img alt="Fig6.png" src="../../_images/Fig6.png" />
+Figure 6</p>
+<p>It can be readily seen that the use of this circuit in the source circuit of the differential amplifier in Figure 5 would improve the circuit voltage gain as well as reduce the amplifier noise and enhance the common-mode rejection ratio (CMRR) of the amplifier.</p>
+</section>
+<section id="jfet-analog-switch">
+<h2>JFET Analog Switch<a class="headerlink" href="#jfet-analog-switch" title="Link to this heading">#</a></h2>
+<p>Figure 7, Figure 8, and Figure 9, show three different applications for the JFET to be used as an analog switch or gate. Figure 7 and Figure 8 both demonstrate methods for realizing programmable gain amplifiers, while Figure 9 shows an analog multiplexer circuit using JFETs and a common op-amp integrated circuit.</p>
+<p>It can be seen from Figure 7 that the gain of the stage can be changed by switching in any combination of feedback resistors <span class="math notranslate nohighlight">\(R_1\)</span> through <span class="math notranslate nohighlight">\(R_n\)</span>. The JFET in series with the input resistor should be of the same type as those in the feedback paths and is used for thermal stability of the circuit gain. The transfer function of the circuit of Figure 7 is approximated by:</p>
+<p><span class="math notranslate nohighlight">\(V_o/V_i = \large\frac{1/R_1 + 1/R_2 + ... + 1/R_n}{R_i}\)</span> 		(7)</p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(R_1...R_n\)</span> = the feedback resistors</p>
+<p><span class="math notranslate nohighlight">\(R_i\)</span> = the input resistor</p>
+<p><span class="math notranslate nohighlight">\(V_o\)</span> = the output voltage</p>
+<p><span class="math notranslate nohighlight">\(V_i\)</span> = the input voltage</p>
+<p>Note, only those feedback resistors which are switched into the circuit are to be included in the transfer function equation.</p>
+<p><img alt="Fig7.png" src="../../_images/Fig7.png" />
+Figure 7</p>
+<p>The circuit of Figure 8 shows another method to realize a programmable gain amplifier using a common op-amp, four resistors, and only two JFETs. The gain of this circuit can also be changed by switching in the desired resistors by turning off the appropriate JFET, thus switching in the parallel resistor. The transfer function of this circuit is approximated by:</p>
+<p><span class="math notranslate nohighlight">\(V_o/V_i = \large\frac{R_3 + R_4}{R_1 + R_2}\)</span> 		(8)</p>
+<p>It should be noted that only those resistors which are switched into the circuit are to be included in the transfer function equation.</p>
+<p><img alt="Fig8.png" src="../../_images/Fig8.png" />
+Figure 8</p>
+<p>Figure 9 shows a circuit in which the JFETs are acting as analog switches to multiplex several input signal sources to a single output source. The transfer function of this circuit is then approximated by:</p>
+<p><span class="math notranslate nohighlight">\(\large\frac{V_o}{V_i} = \large\frac{R_f}{R_n}\)</span> 		(9)</p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(R_f\)</span> = the feedback resistor</p>
+<p><span class="math notranslate nohighlight">\(R_n\)</span> = any one of the input resistors</p>
+<p><img alt="Fig9.png" src="../../_images/Fig9.png" />
+Figure 9</p>
+<p>Further examination of this circuit shows that it can also be used as a programmable summing amplifier by switching in any combination of input signals. The transfer function is then approximated by:</p>
+<p><span class="math notranslate nohighlight">\(\large\frac{V_o}{V_i} = \large\frac{R_f}{R_1} + \large\frac{R_f}{R_2} + ... + \large\frac{R_f}{R_n}\)</span> 		(10)</p>
+<p>Again, in this application, only those resistors which are switched into the circuit are to be included in the transfer function equation.</p>
+</section>
+<section id="jfet-voltage-controlled-resistor">
+<h2>JFET Voltage Controlled Resistor<a class="headerlink" href="#jfet-voltage-controlled-resistor" title="Link to this heading">#</a></h2>
+<p>Another common application for the JFET is as a voltage-controlled resistor. The JFET action in normal operation simply changes the cross-sectional dimensions of the channel. When the JFET is biased in the resistive or linear region as shown in Figure 10, a change in channel dimensions simply changes the drain to source resistance of the device.</p>
+<p><img alt="Fig10.png" src="../../_images/Fig10.png" />
+Figure 10</p>
+<p>Figure 11 depicts a JFET being used as a voltage-controlled resistor (VCR). The resistance is determined from the bias point conditions selected from the curves of Figure 10. The resistance is then defined as:</p>
+<p><span class="math notranslate nohighlight">\(R_{DS} = \large\frac{V_{DS}}{I_{DS}}\)</span> 		(11)</p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(R_{DS}\)</span> = the drain to source resistance</p>
+<p><span class="math notranslate nohighlight">\(V_{DS} = V_o\)</span> or the output voltage</p>
+<p><span class="math notranslate nohighlight">\(I_DS\)</span> = the drain current</p>
+<p>It can readily be seen from the curves of Figure 10 that any change in the input voltage
+(<span class="math notranslate nohighlight">\(V_i\)</span>) or the gate to source voltage will cause a corresponding change in the drain current. Equation 11 indicates that there is a corresponding change in the drain to source resistance (<span class="math notranslate nohighlight">\(R_{DS}\)</span>). Therefore, the resistance is controlled by the voltage applied to the gate, resulting in a voltage-controlled resistor.</p>
+<p><img alt="Fig11.png" src="../../_images/Fig11.png" />
+Figure 11</p>
+</section>
+<section id="difference-between-bjt-and-jfet">
+<h2>Difference between BJT and JFET<a class="headerlink" href="#difference-between-bjt-and-jfet" title="Link to this heading">#</a></h2>
+<p>The crucial difference between BJT and JFET is that BJT is a bipolar device while JFET is a unipolar device. It is so because the operation of BJT is dependent on injection and collection of minority charge carriers that includes both electrons and holes. As against JFET is majority carrier device, thus termed as unipolar.</p>
+<p>Another major difference between BJT and JFET is that BJT falls under current controlled device category whereas JFET falls under voltage controlled device category.</p>
+<p><img alt="Screenshot2024-12-18021958.png" src="StudentEffort/JFET_TRansistor/Screenshot2024-12-18021958.png" />
+comparison chart</p>
+<p>The points given below describes the difference between BJT and JFET:</p>
+<p><span class="math notranslate nohighlight">\(\cdot\)</span> The key difference between BJT and JFET is that BJT is a device in which output current is controlled by the base current. On the contrary, JFET is a device whose output current is controlled by the input voltage applied to it.</p>
+<p><span class="math notranslate nohighlight">\(\cdot\)</span> BJT possess low to medium input impedance whereas when we talk about JFET, it possesses high input impedance.</p>
+<p><span class="math notranslate nohighlight">\(\cdot\)</span> Whenever there is a need for high gain and fast response then BJT’s are preferred while JFET’s are low gain devices.</p>
+<p><span class="math notranslate nohighlight">\(\cdot\)</span> A BJT is a device that possesses low thermal stability whereas JFET possesses high thermal stability.</p>
+<p><span class="math notranslate nohighlight">\(\cdot\)</span> Another key difference that exists between BJT and JFET is that BJT is preferred in low current applications while JFET is preferred in low voltage applications.</p>
+</section>
+<section id="example-1">
+<h2>Example 1<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h2>
+<p>For the circuit of Figure 12, determine <span class="math notranslate nohighlight">\(I_D\)</span> , <span class="math notranslate nohighlight">\(V_{DS}\)</span>. Assume <span class="math notranslate nohighlight">\(I_{DSS}\)</span> = 10 mA and <span class="math notranslate nohighlight">\(V_{GS(off)}\)</span> = −5 V.</p>
+<p><img alt="Ex1" src="../../_images/Ex1.png" />
+Figure 12</p>
+<p>First, because <span class="math notranslate nohighlight">\(I_G \approx 0\)</span>, the drop across <span class="math notranslate nohighlight">\(R_G is \approx 0\)</span> and <span class="math notranslate nohighlight">\(V_{GS} = V_{GG}\)</span>. Using equation 6:</p>
+<p><span class="math notranslate nohighlight">\(I_D = I_{DSS}(1−\frac{V_{GS}}{V_{GS(off)}})^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_D = I_{DSS}(1−\frac{-2V}{-5V})^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_D = 3.6mA\)</span></p>
+<p>Looking at the drain-source loop, KVL shows::</p>
+<p><span class="math notranslate nohighlight">\(V_{DS} = V_{DD} − I_DR_D\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{DS} = 25V − 3.6mA × 3.3kΩ\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{DS} = 13.1V\)</span></p>
+</section>
+<section id="example-2">
+<h2>Example 2<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h2>
+<p>Detemine  <span class="math notranslate nohighlight">\(I_D\)</span> , <span class="math notranslate nohighlight">\(V_{DS}\)</span> and <span class="math notranslate nohighlight">\(V_{GS}\)</span> in the circuit of Figure 13. <span class="math notranslate nohighlight">\(I_{DSS}\)</span> = 15 mA and <span class="math notranslate nohighlight">\(V_{GS(off)}\)</span> = −3 V.</p>
+<p><img alt="Ex2" src="../../_images/Ex2.png" />
+Figure 13</p>
+<p>We begin by finding <span class="math notranslate nohighlight">\(I_E\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_E = \large\frac{∣VEE∣ − 0.7V}{RE}\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_E = \large\frac{10V − 0.7V}{3.6kΩ}\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_E = 2.58mA\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_E\)</span> is the same as <span class="math notranslate nohighlight">\(I_S\)</span> and <span class="math notranslate nohighlight">\(I_D\)</span>, therefore</p>
+<p><span class="math notranslate nohighlight">\(V_D = V_{DD} − I_DR_D\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_D = 20V − 2.58mA × 4.7kΩ\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_D = 7.87V\)</span></p>
+<p>To find <span class="math notranslate nohighlight">\(V_S\)</span> we note that <span class="math notranslate nohighlight">\(V_S = −V_{GS}\)</span> and rearrange Equation 6</p>
+<p><span class="math notranslate nohighlight">\(I_D = I_{DSS}(1−\frac{V_{GS}}{V_{GS(off)}})^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{GS} = V_{GS(off)}(1−\sqrt{\frac{I_D}{I_{DSS}}})\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{GS} = −3V(1−\sqrt{\frac{2.58mA}{15mA}})\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{GS}\)</span> = −1.24V</p>
+<p>Therefore <span class="math notranslate nohighlight">\(V_S\)</span> = 1.24V and</p>
+<p><span class="math notranslate nohighlight">\(V_{DS} = V_D − V_S\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{DS} = 7.87V − 1.24V\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_DS = 6.63V\)</span></p>
+</section>
+<section id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading">#</a></h2>
+<p>This application note describes several useful junction field effect transistor circuit configurations. The high input impedance and low-noise circuits are often used as input stages to voltage measurement instruments such as oscilloscopes and digital volt meters.</p>
+<p>The differential amplifier is a very widely used circuit in applications where the difference between two voltages is to be measured, such as the input stage of an operational amplifier. The use of JFETs in this application provides high input impedance and low input leakage current. Constant current sources have many uses such as setting bias conditions for many other circuits in a system, sourcing and/or sinking current for a sensor and replacing the source resistor in a differential amplifier circuit. Voltage controlled resistors are normally found in automatic gain control circuits and voltage controlled tuning circuits.</p>
+<p>Therefore, it is clearly seen that many applications for JFETs exist. Those discussed in this application note have many variations, refinements, and other uses. It should be noted that these applications were described in the simplest detail and additional study of the application should be considered before using any of the circuits presented.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.interfet.com/jfet-application-notes/junction-field-effect-transistor-jfet-fundamentals/#2-basic-jfet-amplifier-configuration">https://www.interfet.com/jfet-application-notes/junction-field-effect-transistor-jfet-fundamentals/#2-basic-jfet-amplifier-configuration</a></p>
+<p><a class="reference external" href="https://electronicscoach.com/difference-between-bjt-and-jfet.html">https://electronicscoach.com/difference-between-bjt-and-jfet.html</a></p>
+<p><a class="reference external" href="https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Semiconductor_Devices_-_Theory_and_Application_(Fiore)/10:_Junction_Field_Effect_Transistors_(JFETs)/10.4:_JFET_Biasing">https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Semiconductor_Devices_-_Theory_and_Application_(Fiore)/10:_Junction_Field_Effect_Transistors_(JFETs)/10.4:_JFET_Biasing</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\JFET_TRansistor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Darlington/Darlington_transiator.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Darlington Transistor</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-input-impedance-amplifier">High Input Impedance Amplifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-noise-amplifier">Low-Noise Amplifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-amplifier">Differential Amplifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constant-current-source">Constant Current Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analog-switch-or-gate">Analog Switch or Gate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voltage-controlled-resistor">Voltage Controlled Resistor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-jfet-amplifier-configuration">Basic JFET Amplifier Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Low-Noise Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jfet-differential-amplifier">JFET Differential Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jfet-constant-current-source">JFET Constant Current Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jfet-analog-switch">JFET Analog Switch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jfet-voltage-controlled-resistor">JFET Voltage Controlled Resistor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-bjt-and-jfet">Difference between BJT and JFET</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">Conclusions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

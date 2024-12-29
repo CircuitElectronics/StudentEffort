@@ -1,0 +1,814 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MOSFETs &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/parsahosseiniMOSFETsminiproject/main';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../RMS/RMSVOLTAGE%20.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/Darlington_transiator.html">Darlington Transistor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/parsahosseiniMOSFETsminiproject/main.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/parsahosseiniMOSFETsminiproject/main.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MOSFETs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mosfets-types">MOSFETs types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#depletion-mode">Depletion Mode:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-channel-d-mosfet">N-Channel D-MOSFET</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-regions-of-n-channel-d-mosfet">Operating Regions of N-Channel D-MOSFET</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-channel-d-mosfet">P-Channel D-MOSFET</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-regions-of-p-channel-d-mosfet">Operating Regions of P-Channel D-MOSFET</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancement-mode">Enhancement Mode:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-channel-e-mosfet">N-Channel E-MOSFET</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-regions-of-n-channel-e-mosfet">Operating Regions of N-Channel E-MOSFET</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-channel-e-mosfet">P-Channel E-MOSFET</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Operating Regions of N-Channel E-MOSFET</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-symbols-and-basic-construction-for-both-configurations-of-mosfets">The symbols and basic construction for both configurations of MOSFETs:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>conclusion</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mosfets">
+<h1>MOSFETs<a class="headerlink" href="#mosfets" title="Link to this heading">#</a></h1>
+<p>This paper has been created through collaboration with:</p>
+<p>Amir Parsa Hosseini Kakhk</p>
+<p>Contact address: <a class="reference external" href="mailto:seyedamirparsa&#46;hosseinikakhk&#37;&#52;&#48;mail&#46;um&#46;ac&#46;ir">seyedamirparsa<span>&#46;</span>hosseinikakhk<span>&#64;</span>mail<span>&#46;</span>um<span>&#46;</span>ac<span>&#46;</span>ir</a></p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Metal-Oxide-Semiconductor Field-Effect Transistors, or MOSFETs, are integral components in modern electronics, widely recognized for their efficiency and versatility. As voltage-controlled devices, MOSFETs differ significantly from traditional bipolar junction transistors (BJTs). They utilize an insulated gate structure, enabling extremely high input impedance and low power requirements, which makes them ideal for a variety of applications such as amplification, switching, and digital logic circuits.</p>
+<p>A MOSFET is a four-terminal device having source(S), gate (G), drain (D) and body (B) terminals. In general, The body of the MOSFET is in connection with the source terminal thus forming a three-terminal device such as a field-effect transistor.</p>
+<p><img alt="MOSFET1-300x146.png" src="../../_images/MOSFET1-300x146.png" /></p>
+</section>
+<section id="mosfets-types">
+<h2>MOSFETs types<a class="headerlink" href="#mosfets-types" title="Link to this heading">#</a></h2>
+<p>MOSFETs operate in two main configurations: Enhancement Mode and Depletion Mode, with N-channel and P-channel variations. N-channel MOSFETs are particularly popular due to their superior electron mobility, which translates to faster operation and higher efficiency. These transistors work by applying a voltage to the gate terminal, which modulates the conductivity of a channel between the drain and source terminals, allowing or blocking current flow. This principle enables MOSFETs to function as switches or amplifiers with remarkable precision and speed.</p>
+<p><img alt="classificationoftransistors.png" src="../../_images/classificationoftransistors.png" /></p>
+<section id="depletion-mode">
+<h3>Depletion Mode:<a class="headerlink" href="#depletion-mode" title="Link to this heading">#</a></h3>
+<p>The Depletion type MOSFET or D-MOSFET is a type of MOSFET that has a channel constructed during the process of fabrication. In other words, it has a channel even when there is no voltage applied to it. Therefore, it can conduct current between source and drain when the gate-source voltage V­­GS = 0 volts. Due to this reason, it is also known as “Normally ON” MOSFET.</p>
+<p>Connecting the gate-source terminal in reverse bias will deplete the channel of the charge carrier thus the name depletion MOSFET. It reduces the width of the channel until it completely vanishes. At this point, the D-MOSFET stops conduction and this V­GS voltage is known as VTH threshold voltage.</p>
+<p>If Gate and source is connected in forward bias and the VGS is increased, more majority carriers will get induced in the channel and its width will increase. It will result in increasing the current flow between drain and source. This is why the D-MOSFET can work in both depletion and enhancement mode.</p>
+<p>The D-MOSFET can be ‘N-channel D-MOSFET’ or ‘P-channel D-MOSFET’ depending on the channel being used. The type of channel also affects its biasing as well as its speed and current capacities.</p>
+</section>
+<section id="n-channel-d-mosfet">
+<h3>N-Channel D-MOSFET<a class="headerlink" href="#n-channel-d-mosfet" title="Link to this heading">#</a></h3>
+<p>In N-channel D-MOSFET, the source and drains electrode is placed on small N-type layers. While the gate electrode is placed on top of an insulating metal oxide layer that electrically insulates it from the channel beneath it. The channel made for N-type material is fabricated on top of a P-type substrate.</p>
+<p><img alt="N-Channel-Depletion-Type-MOSFET.webp" src="../../_images/N-Channel-Depletion-Type-MOSFET.webp" /></p>
+<p>The channel as it is made of N-type material consists of electrons as charge carriers. The voltage at the gate produces an electric field that affects the flow of these charge carriers.</p>
+<p><img alt="N-Channel-D-MOSFET-Reverse-Biased.webp" src="../../_images/N-Channel-D-MOSFET-Reverse-Biased.webp" /></p>
+<p>When the gate is connected in reverse bias i.e. negative voltage VGS &lt; 0 volt is applied, the holes from the P-substrate will attract towards the gate, depleting it of the electrons and reduce the channel size. At certain negative VGS the MOSFET will stop conduction as there will be no channel. This V­GS is threshold voltage Vth. N-channel MOSFET has –Vth.</p>
+<p>While increasing VGS ­will enhance (increase) its conductivity i.e. the drain current ID will increase with the drain-source voltage VDS. However, this works in the ohmic region. When the VDS reaches the pinch-off voltage Vp, the IDS become saturated IDSS and the current stops increasing. This mode is used for switching applications.</p>
+<section id="operating-regions-of-n-channel-d-mosfet">
+<h4>Operating Regions of N-Channel D-MOSFET<a class="headerlink" href="#operating-regions-of-n-channel-d-mosfet" title="Link to this heading">#</a></h4>
+<p><strong>Cutoff Region:</strong> In this region, the gate-source voltage V­GS ≤ -Vth. There is no drain current ID = 0 regardless of the value of VDS. The MOSFET is switched off.</p>
+<p><strong>Saturation Region:</strong> In this region, the VGS &gt; -Vth and the VDS &gt; V­p . The MOSFET allows maximum drains current IDSS  which depends on the VGS.</p>
+<p><strong>Linear or Ohmic Region:</strong> In this region, VGS &gt; -Vth and the VDS &lt; V­p. the MOSFET acts as an amplifier. In this region, the current ID increases with the VDS while its amplification depends on the VGS as shown in the VI characteristics.</p>
+</section>
+</section>
+<section id="p-channel-d-mosfet">
+<h3>P-Channel D-MOSFET<a class="headerlink" href="#p-channel-d-mosfet" title="Link to this heading">#</a></h3>
+<p>The P-channel D-MOSFET has the same construction as an N-channel except for the drain, source electrodes lie on P-type layers. and the channel is made of P-layer over an N-type substrate. The charge carriers used are holes. The holes have one disadvantage over electrons. They are quite heavier than electrons and therefore can cause it to lose some speed in operation.</p>
+<p><img alt="P-Channel-Depletion-Type-MOSFET.webp" src="../../_images/P-Channel-Depletion-Type-MOSFET.webp" /></p>
+<p>Under normal conditions, it can conduct current between its source and drain as long as there is a voltage between them. the gate voltage can affect the channel width to increase or decrease it.</p>
+<p><img alt="P-Channel-D-MOSFET-Reverse-Biased.webp" src="../../_images/P-Channel-D-MOSFET-Reverse-Biased.webp" /></p>
+<p>When a positive VGS is applied at its gate, the electric field will cause to attract the electrons from the N-type substrate that combines with the holes thus depleting the channel of charge carriers. It reduces the width of the channel and the amount of current. at a certain point, the VGS  completely eliminates the channel and stops the flow of current.</p>
+<p>Therefore, P-channel D-MOSFET has a positive threshold voltage i.e. it switches off when positive VGS is applied and switches on when there is no VGS. Applying negative voltage will induce more holes into the channel causing it to increase or enhance its current conduction.</p>
+<section id="operating-regions-of-p-channel-d-mosfet">
+<h4>Operating Regions of P-Channel D-MOSFET<a class="headerlink" href="#operating-regions-of-p-channel-d-mosfet" title="Link to this heading">#</a></h4>
+<p><strong>Cutoff Region:</strong> In this region, the gate-source voltage V­GS = +Vth. There is no drain current ID = 0 regardless of the value of VDS. The MOSFET is switched off.</p>
+<p><strong>Saturation Region:</strong> In this region, the VGS &lt; +Vth and the VDS &gt; V­p. The MOSFET allows maximum drains current IDSS  which depends on the level of VGS.</p>
+<p><strong>Linear or Ohmic Region:</strong> In this region, VGS &lt; +Vth and the VDS &lt; V­p. the MOSFET acts as an amplifier. In this region, the current ID increases with the VDS while its amplification depends on the VGS as shown in the VI characteristics.</p>
+</section>
+</section>
+<section id="enhancement-mode">
+<h3>Enhancement Mode:<a class="headerlink" href="#enhancement-mode" title="Link to this heading">#</a></h3>
+<p>Enhancement MOSFET or E-MOSFET is a type of MOSFET that does not have a channel during its fabrication. Instead, the channel is induced in the substrate by applying the voltage through its gate electrode. The voltage enhances its conduction ability hence the name.</p>
+<p>The E-MOSFET does not conduct and remains switched OFF when there is no voltage at its gate. It is why it is also known as “Normally OFF” MOSFET. By applying a forward voltage between the gate and source, charge carriers are induced in the substrate that produces a channel for the conduction of current between the source and drain.</p>
+<p>Applying voltage above threshold voltage enhances the width of the channel and increases the current flow therefore it is named enhancement MOSFET.</p>
+<p>The E-MOSFET is also divided into N-Channel and P-Channel E-MOSFET.</p>
+</section>
+<section id="n-channel-e-mosfet">
+<h3>N-Channel E-MOSFET<a class="headerlink" href="#n-channel-e-mosfet" title="Link to this heading">#</a></h3>
+<p>The N-Channel E-MOSFET has the same structure as D-MOSFET except there is no channel during manufacturing. The channel is induced by the application of a voltage across its gate.</p>
+<p><img alt="N-Channel-Enhancement-Type-MOSFET.webp" src="../../_images/N-Channel-Enhancement-Type-MOSFET.webp" /></p>
+<p>N-channel E-MOSFET will not conduct current between its source and drain terminal when the VGS = 0 volts. Because there is no channel to allow current flow. Applying a positive voltage +VGS  to the gate produces an electric field beneath the gate layer. It results in attracting the electrons from the P-substrate and pushing back holes away from the insulating layer. A channel in induced which allows the current between the source and drain.</p>
+<p><img alt="N-Channel-E-MOSFET-Biasing.webp" src="../../_images/N-Channel-E-MOSFET-Biasing.webp" /></p>
+<p>The VGS  at which the channel is induced is called Vth threshold voltage and increasing the voltage above Vth causes to enhance the channel width.</p>
+<section id="operating-regions-of-n-channel-e-mosfet">
+<h4>Operating Regions of N-Channel E-MOSFET<a class="headerlink" href="#operating-regions-of-n-channel-e-mosfet" title="Link to this heading">#</a></h4>
+<p><strong>Cutoff Region:</strong> In this region, the gate-source voltage V­GS ≤ 0v. There is no drain current ID = 0 regardless of the value of VDS. It operates as a switch.</p>
+<p><strong>Saturation Region:</strong> In this region, the VGS &gt; 0v and the VDS &gt; V­GS. The MOSFET allows maximum drains current IDSS  which depends on the level of VGS.</p>
+<p><strong>Linear or Ohmic Region:</strong> In this region, VGS &gt; 0 and the VDS &lt; V­GS. the MOSFET acts as an amplifier. In this region, the current ID increases with the VDS while its amplification depends on the VGS as shown in the VI characteristics.</p>
+</section>
+</section>
+<section id="p-channel-e-mosfet">
+<h3>P-Channel E-MOSFET<a class="headerlink" href="#p-channel-e-mosfet" title="Link to this heading">#</a></h3>
+<p>P-channel E-MOSFET has the same structure as P-channel D-MOSFET except for the absence of channel. There is no channel during its construction. It is induced by applying VGS­.</p>
+<p><img alt="P-Channel-Enhancement-Type-MOSFET.webp" src="../../_images/P-Channel-Enhancement-Type-MOSFET.webp" /></p>
+<p>When –VGS is applied to the gate, positive charges (holes) gather beneath the insulating layer and the electrons are pushed back. The holes accumulate together to form a channel between the source and drain. Now, if the voltage between source and drain is applied, it will start to conduct current.</p>
+<p><img alt="P-Channel-E-MOSFET-Biasing.webp" src="../../_images/P-Channel-E-MOSFET-Biasing.webp" /></p>
+<p>Same as N-channel, it does not conduct when the VGS = 0 V. reducing the voltage below V­th, the channel width increases, allowing more current to flow through it.</p>
+<section id="id1">
+<h4>Operating Regions of N-Channel E-MOSFET<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Cutoff Region: In this region, the gate-source voltage V­GS ≥ 0v. There is no drain current ID = 0 regardless of the value of VDS. It operates as a switch.</p>
+<p>Saturation Region: In this region, the VGS &lt; 0v and the VDS &gt; V­GS. The MOSFET allows maximum drains current IDSS which depends on the level of VGS.</p>
+<p>Linear or Ohmic Region: In this region, VGS &lt; 0 and the VDS &lt; V­GS. The MOSFET acts as an amplifier. In this region, the current ID increases with the VDS while its amplification depends on the VGS as shown in the VI characteristics.</p>
+<p><strong>The following table shows the status of all four types of MOSFET at different levels of Gate-Source voltage VGS</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>MOSFET Type</p></th>
+<th class="head text-center"><p>VGS = +ve</p></th>
+<th class="head text-center"><p>VGS = 0</p></th>
+<th class="head text-center"><p>VGS = -ve</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>N-Channel D-MOSFET</p></td>
+<td class="text-center"><p>ON</p></td>
+<td class="text-center"><p>ON</p></td>
+<td class="text-center"><p>OFF</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>P-Channel D-MOSFET</p></td>
+<td class="text-center"><p>OFF</p></td>
+<td class="text-center"><p>ON</p></td>
+<td class="text-center"><p>ON</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>N-Channel E-MOSFET</p></td>
+<td class="text-center"><p>ON</p></td>
+<td class="text-center"><p>OFF</p></td>
+<td class="text-center"><p>OFF</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>P-Channel E-MOSFET</p></td>
+<td class="text-center"><p>OFF</p></td>
+<td class="text-center"><p>OFF</p></td>
+<td class="text-center"><p>ON</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="the-symbols-and-basic-construction-for-both-configurations-of-mosfets">
+<h3>The symbols and basic construction for both configurations of MOSFETs:<a class="headerlink" href="#the-symbols-and-basic-construction-for-both-configurations-of-mosfets" title="Link to this heading">#</a></h3>
+<p><img alt="MOSFET symbols.png" src="StudentEffort/parsahosseiniMOSFETsminiproject/images/MOSFET%20symbols.png" /></p>
+<p>The four MOSFET symbols above show an additional terminal called the Substrate and is not normally used as either an input or an output connection but instead it is used for grounding the substrate.</p>
+<p>Usually in discrete type MOSFETs, this substrate lead is connected internally to the source terminal. When this is the case, as in enhancement types it is omitted from the symbol for clarification.</p>
+<p>The line in the MOSFET symbol between the drain (D) and source (S) connections represents the transistors semiconductive channel. If this channel line is a solid unbroken line then it represents a “Depletion” (normally-ON) type MOSFET as drain current can flow with zero gate biasing potential.</p>
+<p>If the channel line is shown as a dotted or broken line, then it represents an “Enhancement” (normally-OFF) type MOSFET as zero drain current flows with zero gate potential. The direction of the arrow pointing to this channel line indicates whether the conductive channel is a P-type or an N-type semiconductor device.</p>
+</section>
+<section id="conclusion">
+<h3><strong>conclusion</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<p>In summary, MOSFETs are versatile semiconductor devices crucial to modern electronics, available in various configurations to suit different applications. Enhancement-mode and depletion-mode MOSFETs operate on opposite principles of gate voltage to control conduction, providing flexibility in circuit design. Similarly, n-channel and p-channel MOSFETs cater to different current flow directions and voltage requirements, expanding their usability across diverse systems. Understanding these distinctions and their operational principles allows engineers to select the optimal MOSFET type for specific needs, enabling efficient and reliable electronic designs.</p>
+</section>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.electronics-tutorials.ws/transistor/tran_6.html">https://www.electronics-tutorials.ws/transistor/tran_6.html</a></p>
+<p><a class="reference external" href="https://www.electronics-lab.com/article/mosfet-amplifier/">https://www.electronics-lab.com/article/mosfet-amplifier/</a></p>
+<p><a class="reference external" href="https://www.electronics-tutorials.ws/amplifier/mosfet-amplifier.html">https://www.electronics-tutorials.ws/amplifier/mosfet-amplifier.html</a></p>
+<p><a class="reference external" href="https://www.elepcb.com/blog/mosfet-transistors/">https://www.elepcb.com/blog/mosfet-transistors/</a></p>
+<p><a class="reference external" href="https://www.electricaltechnology.org/2021/06/mosfet.html">https://www.electricaltechnology.org/2021/06/mosfet.html</a></p>
+<p><a class="reference external" href="https://www.electronicsforu.com/technology-trends/learn-electronics/mosfet-basics-working-applications">https://www.electronicsforu.com/technology-trends/learn-electronics/mosfet-basics-working-applications</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\parsahosseiniMOSFETsminiproject"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mosfets-types">MOSFETs types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#depletion-mode">Depletion Mode:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-channel-d-mosfet">N-Channel D-MOSFET</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-regions-of-n-channel-d-mosfet">Operating Regions of N-Channel D-MOSFET</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-channel-d-mosfet">P-Channel D-MOSFET</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-regions-of-p-channel-d-mosfet">Operating Regions of P-Channel D-MOSFET</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enhancement-mode">Enhancement Mode:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-channel-e-mosfet">N-Channel E-MOSFET</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-regions-of-n-channel-e-mosfet">Operating Regions of N-Channel E-MOSFET</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-channel-e-mosfet">P-Channel E-MOSFET</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Operating Regions of N-Channel E-MOSFET</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-symbols-and-basic-construction-for-both-configurations-of-mosfets">The symbols and basic construction for both configurations of MOSFETs:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>conclusion</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

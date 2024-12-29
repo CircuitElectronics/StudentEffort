@@ -1,0 +1,894 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Buck Converters &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/BuckConverter/BuckConverter';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Example: currect and charge relation" href="../example1-2/example.html" />
+    <link rel="prev" title="Phasor Analysis" href="../PhasorAnalysis/PhasorAnalysis.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../RMS/RMSVOLTAGE%20.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/Darlington_transiator.html">Darlington Transistor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/BuckConverter/BuckConverter.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/BuckConverter/BuckConverter.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Buck Converters</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Buck Converters</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-of-operation"><strong>Principle of operation</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-buck-converter-schematic-switch-closed"><strong>Simple buck converter schematic (switch closed)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-the-switch"><strong>Closing the switch</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-buck-converter-schematic-switch-opened"><strong>Simple buck converter schematic (switch opened)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-switch"><strong>Opening the switch</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple-in-current"><strong>Ripple in current</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-output-voltage"><strong>Average output voltage</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-load-current"><strong>Average load current</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-selection"><strong>Capacitor selection</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-and-examples"><strong>Applications and Examples</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-supplies">Power supplies:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#telecommunications">Telecommunications:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#automotive-electronics">Automotive electronics:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#renewable-energy-systems">Renewable energy systems:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#portable-and-battery-powered-devices">Portable and battery-powered devices:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusion</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources"><strong>Sources</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="buck-converters">
+<h1><strong>Buck Converters</strong><a class="headerlink" href="#buck-converters" title="Link to this heading">#</a></h1>
+<p><strong>Author: Melika Dehestani</strong></p>
+<p><strong>Gmail:</strong> <a class="reference external" href="mailto:dehestanimelika2004&#37;&#52;&#48;gmail&#46;com">dehestanimelika2004<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p><strong>Fall 2024</strong></p>
+<section id="introduction">
+<h2><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>A buck converter or step-down converter is a DC-to-DC converter. In other words it is a type of switching regulator,which is a power supply that converts input DC voltage to a desired DC voltage with high efficiency. It achieves this by turning a switching element ON and OFF, supplying electricity only as needed, unlike less efficient linear regulators which dissipate excess energy as heat (linear regulators have a constant output while switching output changes in its time priod). The primary advantages of a switching power supply are efficiency, size, and weight. It also has a more complex design, cannot meet some of the performance capabilities of linear supplies, and generates a considerable amount of electrical noise. However, switchers are being accepted in industry, particularly where size and efficiency are of prime importance. Performance continues to improve, and for most applications, they are usually cost competitive down to the 20-W power level.</p>
+<p>A buck converter decreases voltage, while increasing current, from its input (supply) to its output (load). The primary advantage of the buck converter is its simplicity, which enables efficient voltage conversion using a relatively small number of components. The forward converter family, which includes the push-pull and half-bridge circuits, evolved from the buck regulator.</p>
+</section>
+<section id="principle-of-operation">
+<h2><strong>Principle of operation</strong><a class="headerlink" href="#principle-of-operation" title="Link to this heading">#</a></h2>
+<p>The operating principle of the buck converter involves controlled energy transfer from the input to the output through switches, an inductor, and a capacitor. A high-side switch (usually a MOSFET) and a low-side switch (typically a diode) are employed in the buck converter to control the current flow through the inductor. By adjusting the duty cycle of the high-side switch, which we will go further into in the future parts, the average output voltage can be regulated proportionally to the input voltage.</p>
+<p>When the high-side switch of a buck converter is switched on, it allows current to flow through the inductor this means that our current increases, which stores energy in its magnetic field. The inductore gains a polarity in which the left side is positive and the right side negative thus reduces the voltage seen by the load resistor. This stored energy is then transferred to the output, charging the output capacitor and powering the load. D is also in reversed biased so current does not flow through it.</p>
+<p>When the high-side switch is turned off and the low-side switch is turned on (we open the switch), the inductor’s magnetic field collapses because the current decreases, releasing the stored energy. This causes the polarity of the inductor to change. The inductor will act like a current source. If the voltage across the inductor is greater than the capacitor, it will charge the capasitor, otherwise they will both dischrage themselves through the load. current will also flow through the diode since it is in forward bias.</p>
+<p>The buck converter is designed to operate within a closed-loop control system, where a feedback mechanism continuously compares the output voltage to a reference voltage to ensure that the output voltage remains stable and regulated, regardless of changes in input voltage or load conditions.</p>
+</section>
+<section id="simple-buck-converter-schematic-switch-closed">
+<h2><strong>Simple buck converter schematic (switch closed)</strong><a class="headerlink" href="#simple-buck-converter-schematic-switch-closed" title="Link to this heading">#</a></h2>
+<p>The code below shows the schematic of a simple buck booster using schemdraw, which consists of a source of DC power supply E, a switch S (typically a MOSFET or IGBT), a diode D, low frequency bandpass LC filter and load R:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">battery</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">BatteryCell</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Switch</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;close&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Diode</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;RL&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">battery</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/653e7d4e2123d5b6f65f585c9469a7129aa95b0fdecde3a9bbe60ed105177db2.svg" src="../../_images/653e7d4e2123d5b6f65f585c9469a7129aa95b0fdecde3a9bbe60ed105177db2.svg" />
+</div>
+</div>
+</section>
+<section id="closing-the-switch">
+<h2><strong>Closing the switch</strong><a class="headerlink" href="#closing-the-switch" title="Link to this heading">#</a></h2>
+<p>Now according to the principles of its opperation we will see how we will derive the relation between the input and output voltage:</p>
+<p>When we close the switch, the voltage of the inductor is shown as below:
+$<span class="math notranslate nohighlight">\( V_L = E - V_{RL} \)</span>$
+The current flowing through the inductor will increase linearly from the minimum to the maximum value. The diagramm below shows the Inductor Voltage and Current Versus Time:</p>
+<p><img alt="title" src="../../_images/diagram.png" /></p>
+</section>
+<section id="simple-buck-converter-schematic-switch-opened">
+<h2><strong>Simple buck converter schematic (switch opened)</strong><a class="headerlink" href="#simple-buck-converter-schematic-switch-opened" title="Link to this heading">#</a></h2>
+<p>The schematic below shows how the buck converter will be if the switch is opened:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">battery</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">BatteryCell</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Switch</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;open&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Diode</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">inductor</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;RL&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">battery</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">inductor</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;Cp&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b2d536be43391eddf11595dfffaa63db646f45c056e7bb19a8530b116f7f49e9.svg" src="../../_images/b2d536be43391eddf11595dfffaa63db646f45c056e7bb19a8530b116f7f49e9.svg" />
+</div>
+</div>
+</section>
+<section id="opening-the-switch">
+<h2><strong>Opening the switch</strong><a class="headerlink" href="#opening-the-switch" title="Link to this heading">#</a></h2>
+<p>When the switch (S) is turned off, the commutation process occurs in which the inductor’s current from the source E passes into the diode D. Commutation refers to the reversal of voltage polarity or current direction. Thus, the purpose of a commutating diode is to act whenever voltage reverses polarity, for example, on an inductor coil when current through it is interrupted.This process is shown in the figure above. For better understanding the commutation process, it is necessary to take into account that the inductor’s winding consists of a series of coils located next to each other, so that there is not only magnetic coupling between them but also capacitive coupling, which is represented by the capacitor CP. The moment before switching off (the switch S), the voltage across the inductor was:</p>
+<div class="math notranslate nohighlight">
+\[ V_L = V_{Cp} = E - V_{RL} \]</div>
+<p>After the switch S is turned off, the current through the inductor remains the same in direction and intensity and closes through the capacitor CP . In the next period, the capacitor discharges and charges to the other side. The reverse voltage of the diode is:</p>
+<div class="math notranslate nohighlight">
+\[ V_D = V_{RL} + V_L =  V_{RL} + V_{Cp} \]</div>
+<p>and becomes zero when the voltage across the capacitor CP becomes equal to the load voltage in the opposite direction. At that moment, the diode takes over the inductor’s current , so the voltage across the inductor is equal to the load voltage:</p>
+<div class="math notranslate nohighlight">
+\[ V_L = -V_{RL} \]</div>
+<p>and the current through the inductor linearly decreases and reaches a minimum value at the end of the period like seen in the diagram above.</p>
+</section>
+<section id="ripple-in-current">
+<h2><strong>Ripple in current</strong><a class="headerlink" href="#ripple-in-current" title="Link to this heading">#</a></h2>
+<p>When the switch is on we have the equations below using KVL:
+$<span class="math notranslate nohighlight">\( V_{L} = E - V_{RL} \)</span>$</p>
+<div class="math notranslate nohighlight">
+\[ L\frac{dI_L}{dt} = E - V_{RL} \]</div>
+<div class="math notranslate nohighlight">
+\[ L\int_{I_{min}}^{I_{max}} dI_L = E - V_{RL} \int_0^{t_{ON}} dt \]</div>
+<div class="math notranslate nohighlight">
+\[ L ΔI_L = (E - V_{RL}) t_{ON} \]</div>
+<p>Using the duty cycle(The duty cycle (D) is the percentage of the whole switching period when the high-side switch is ON.) we rewrite the final equation:</p>
+<div class="math notranslate nohighlight">
+\[ ΔI_L = \frac {(E - V_{RL}).DT} {L} \]</div>
+<p>The diagram below shows the relation between our inputs and outputs if our switch and diode were not ideal:</p>
+<p><img alt="title" src="../../_images/picture3.png" /></p>
+<p>So in the picture above the diffrence between our maximum i and minimum i is the ΔI_L we calculated so in conclusion we can say that the average of the inductors current is:</p>
+<div class="math notranslate nohighlight">
+\[ I_{avg} = \frac {ΔI_L}{2} \]</div>
+</section>
+<section id="average-output-voltage">
+<h2><strong>Average output voltage</strong><a class="headerlink" href="#average-output-voltage" title="Link to this heading">#</a></h2>
+<p>We now want to derive the relation between out loads voltage and the duty cycle:</p>
+<ul class="simple">
+<li><p>During t on:
+$<span class="math notranslate nohighlight">\( V_{L on} = E - V_{RL} \)</span>$</p></li>
+<li><p>During t off:
+$<span class="math notranslate nohighlight">\( V_{L off} = - V_{RL} \)</span>$</p></li>
+</ul>
+<p>So our inductors average voltage will be:
+$<span class="math notranslate nohighlight">\( V_{L avg} = V_{L on} + V_{L off} \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( V_{L avg} = (E - V_{RL}).t_{ON} - V_{RL}.t_{OFF} \)</span>$</p>
+<p>We saw in the first diagram that the surface under both t on and t off were equal, thus our inductors average voltage is 0 so:
+$<span class="math notranslate nohighlight">\( (E - V_{RL}).t_{ON} - V_{RL}.t_{OFF} = 0 \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( E.t_{ON} = V_{RL}.(t_{ON}+t_{OFF}) \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( \frac{t_{ON}}{T} = \frac{V_{RL}}{E} \)</span>$</p>
+<p>And using the duty cycle we have the relation between our output voltage and duty cycle:</p>
+<div class="math notranslate nohighlight">
+\[ V_{RL} = D.E \]</div>
+<p>This means that this circuit is stepping down the volatge.</p>
+</section>
+<section id="average-load-current">
+<h2><strong>Average load current</strong><a class="headerlink" href="#average-load-current" title="Link to this heading">#</a></h2>
+<p>For lossless conversion:
+$<span class="math notranslate nohighlight">\( E.I_i = V_{RL}.I_O \)</span>$</p>
+<p>Using the equation for loads voltage we can now derive the relation between our input and output current:</p>
+<div class="math notranslate nohighlight">
+\[ E.I_i = D.E.I_O \]</div>
+<div class="math notranslate nohighlight">
+\[ I_O = \frac {I_i}{D} \]</div>
+<p>We see that the current in buck converter is boosting and stepping up.</p>
+</section>
+<section id="capacitor-selection">
+<h2><strong>Capacitor selection</strong><a class="headerlink" href="#capacitor-selection" title="Link to this heading">#</a></h2>
+<p>The output capacitor (Cout) plays a vital role in filtering the output voltage ripple and maintaining stability in the converter. The value of Cout depends on the desired output voltage ripple (ΔVout), the load current, and the switching frequency. The required output capacitor value can be estimated using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[ I_C = C \frac {dv}{dt} \]</div>
+<p>we calculated the average voltage and using that we can now esstimate Ic:</p>
+<div class="math notranslate nohighlight">
+\[ \frac {ΔI_L}{2} = C \frac {Δv}{T}  \]</div>
+<p>Where ‘T’ is the switching period, and ‘ΔV’ is the desired output voltage ripple.</p>
+<p>Now, we can rearrange the equation to solve for Cout:
+$<span class="math notranslate nohighlight">\( C = \frac {ΔI_L.T}{2.Δv}  \)</span>$</p>
+</section>
+<section id="applications-and-examples">
+<h2><strong>Applications and Examples</strong><a class="headerlink" href="#applications-and-examples" title="Link to this heading">#</a></h2>
+<p>Buck converters play a vital role in numerous applications across various industries thanks to their efficient voltage conversion, compact size, and adaptability. In this section, we will discuss some common applications of buck converters and provide examples that demonstrate their functionality and significance.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="power-supplies">
+<h1>Power supplies:<a class="headerlink" href="#power-supplies" title="Link to this heading">#</a></h1>
+<p>Regulated power supplies are one of the most common applications for buck converters. In standalone and integrated power supply designs, including AC-DC adapters, battery chargers, and DC power distribution systems, they are used. To step down the input voltage from the mains to a lower voltage adequate for charging the laptop’s battery, for instance, a laptop power adapter often uses a buck converter.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="telecommunications">
+<h1>Telecommunications:<a class="headerlink" href="#telecommunications" title="Link to this heading">#</a></h1>
+<p>Buck converters are employed in telecommunications systems to produce steady, low-noise voltage rails for delicate components including radio frequency (RF) circuits, microcontrollers, and digital signal processors (DSPs). They are capable of converting a higher voltage input—like a 48V telecom bus—to the individual subsystems’ required lower voltages with efficiency.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="automotive-electronics">
+<h1>Automotive electronics:<a class="headerlink" href="#automotive-electronics" title="Link to this heading">#</a></h1>
+<p>Modern automobiles feature a variety of electrical components that need accurate voltage management. Applications for buck converters include power management for infotainment systems, engine control modules (ECMs), and LED headlamp drivers. To provide continuous brightness and long life, an automotive LED headlight driver, for instance, may utilize a buck converter to keep a steady current across the LEDs.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="renewable-energy-systems">
+<h1>Renewable energy systems:<a class="headerlink" href="#renewable-energy-systems" title="Link to this heading">#</a></h1>
+<p>Buck converters are used in solar and wind energy systems to control the output voltage of energy-harvesting equipment. The power conversion efficiency of solar panels or wind turbines can be optimized using maximum power point tracking (MPPT) algorithms, which can considerably enhance the overall performance of the renewable energy system.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="portable-and-battery-powered-devices">
+<h1>Portable and battery-powered devices:<a class="headerlink" href="#portable-and-battery-powered-devices" title="Link to this heading">#</a></h1>
+<p>Buck converters are frequently used in mobile devices, including smartphones, tablets, and wearable electronics, to effectively manage the power consumption of numerous components. By lowering the battery voltage to the levels needed for various subsystems, they can increase battery life and enhance device performance.</p>
+<section id="conclusion">
+<h2><strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In conclusion, this project delves into the design, implementation, and performance analysis of buck converters, which are crucial components in modern power electronics. Through a detailed examination of the principles governing buck converters, including their efficiency, stability, and control mechanisms, we have underscored their importance in regulating voltage and ensuring energy efficiency in various applications.</p>
+</section>
+<section id="sources">
+<h2><strong>Sources</strong><a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://laboratorypatternrecognition.github.io/CircuitElectronics/Circuit_Electronics/DiodeApplication.html">https://laboratorypatternrecognition.github.io/CircuitElectronics/Circuit_Electronics/DiodeApplication.html</a></p></li>
+<li><p><a class="reference external" href="https://www.monolithicpower.com/en/learning/mpscholar/power-electronics/dc-dc-converters/buck-converters?srsltid=AfmBOor2LTq32ddhkma2r76Gux3cvflnIc1UvyRHKj4DytUJuYyRLQvj">https://www.monolithicpower.com/en/learning/mpscholar/power-electronics/dc-dc-converters/buck-converters?srsltid=AfmBOor2LTq32ddhkma2r76Gux3cvflnIc1UvyRHKj4DytUJuYyRLQvj</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Buck_converter">https://en.wikipedia.org/wiki/Buck_converter</a></p></li>
+<li><p>Voltage Regulator Circuit Manual, By Robert J. Traister</p></li>
+<li><p><a class="reference external" href="https://youtu.be/rfChSvb8FX0?si=cW3Ui_8QXVil8cf3">https://youtu.be/rfChSvb8FX0?si=cW3Ui_8QXVil8cf3</a></p></li>
+<li><p><a class="reference external" href="https://www.allaboutcircuits.com/textbook/semiconductors/chpt-3/inductor-commutating-circuits/#:~:text=In%20electronics%20parlance%2C%20commutation%20refers,current%20through%20it%20is%20interrupted">https://www.allaboutcircuits.com/textbook/semiconductors/chpt-3/inductor-commutating-circuits/#:~:text=In electronics parlance%2C commutation refers,current through it is interrupted</a>.</p></li>
+<li><p><a class="reference external" href="https://electronicsbeliever.com/buck-converter-duty-cycle-derivation/">https://electronicsbeliever.com/buck-converter-duty-cycle-derivation/</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=3cz7zQvrNA4">https://www.youtube.com/watch?v=3cz7zQvrNA4</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\BuckConverter"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../PhasorAnalysis/PhasorAnalysis.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Phasor Analysis</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../example1-2/example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Example: currect and charge relation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Buck Converters</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-of-operation"><strong>Principle of operation</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-buck-converter-schematic-switch-closed"><strong>Simple buck converter schematic (switch closed)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-the-switch"><strong>Closing the switch</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-buck-converter-schematic-switch-opened"><strong>Simple buck converter schematic (switch opened)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-switch"><strong>Opening the switch</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple-in-current"><strong>Ripple in current</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-output-voltage"><strong>Average output voltage</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#average-load-current"><strong>Average load current</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor-selection"><strong>Capacitor selection</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-and-examples"><strong>Applications and Examples</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-supplies">Power supplies:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#telecommunications">Telecommunications:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#automotive-electronics">Automotive electronics:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#renewable-energy-systems">Renewable energy systems:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#portable-and-battery-powered-devices">Portable and battery-powered devices:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusion</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources"><strong>Sources</strong></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
