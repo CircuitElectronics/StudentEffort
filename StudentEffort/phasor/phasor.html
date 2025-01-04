@@ -1,0 +1,970 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exploring Euler’s Formula and Phasors in Electronics &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/phasor/phasor';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AC Model of BJT" href="../BJTACModel/BJTACModel.html" />
+    <link rel="prev" title="MOSFETs" href="../parsahosseiniMOSFETsminiproject/main.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/phasor/phasor.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/phasor/phasor.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exploring Euler’s Formula and Phasors in Electronics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors-and-phase-shifts">Capacitors and Phase Shifts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-formula-and-phasors">Euler’s Formula and Phasors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-formula">Euler’s Formula:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phasors">Phasors:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-euler-s-formula-helps">Why Euler’s Formula Helps:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-insights-in-circuit-analysis">Practical Insights in Circuit Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exploring-euler-s-formula-and-phasors-in-electronics">
+<h1>Exploring Euler’s Formula and Phasors in Electronics<a class="headerlink" href="#exploring-euler-s-formula-and-phasors-in-electronics" title="Link to this heading">#</a></h1>
+<p><strong>Authors: ilia Khosravi Khorashad</strong>
+<strong>contact address: <a class="reference external" href="mailto:ilia&#46;khosravikhorashad&#37;&#52;&#48;mail&#46;um&#46;ac&#46;ir">ilia<span>&#46;</span>khosravikhorashad<span>&#64;</span>mail<span>&#46;</span>um<span>&#46;</span>ac<span>&#46;</span>ir</a></strong></p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In electrical engineering, phasors and Euler’s formula are indispensable tools for simplifying the analysis of circuits involving sinusoidal signals. This article delves into the concepts discussed in the video: the role of imaginary numbers, Euler’s formula, and phasors in electronic circuits.</p>
+<p>We’ll explore how these mathematical tools simplify the analysis of circuits with capacitors and resistors. Then, we’ll model and simulate a simple RC circuit using Python libraries like PySpice and Schemdraw. Finally, we visualize the results with Matplotlib.</p>
+<p><img alt="eulers formula" src="../../_images/eulers-formula-in-relation-to-phasors.png" /></p>
+<p>Resistors and Sinusoids
+Resistors are simple circuit elements that follow Ohm’s Law:
+V = IR where voltage (V) is directly proportional to current (I), and R is the resistance.
+When a sinusoidal voltage is applied across a resistor, the current through it also varies sinusoidally. Importantly, voltage and current are “in phase”, meaning they reach their maximum and minimum values at the same time.
+For example, If the voltage is:
+$<span class="math notranslate nohighlight">\( V(t) = V_0 \cos(\omega t), \)</span><span class="math notranslate nohighlight">\(
+then the current is:
+\)</span><span class="math notranslate nohighlight">\( I(t) = \frac{V_0}{R} \cos(\omega t). \)</span>$
+There is no delay (phase shift) between voltage and current in a resistor.</p>
+<section id="capacitors-and-phase-shifts">
+<h3>Capacitors and Phase Shifts<a class="headerlink" href="#capacitors-and-phase-shifts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A <strong>capacitor</strong> stores energy in an electric field and responds differently to sinusoidal inputs. The current through a capacitor is proportional to the rate of change (derivative) of the voltage:
+$<span class="math notranslate nohighlight">\( I(t) = C \frac{dV(t)}{dt} \)</span>$</p></li>
+<li><p>For sinusoidal voltage:
+$<span class="math notranslate nohighlight">\( V(t) = V_0 \cos(\omega t) \)</span><span class="math notranslate nohighlight">\(
+the derivative introduces a phase shift:
+\)</span><span class="math notranslate nohighlight">\( \frac{d}{dt}\left[V_0 \cos(\omega t)\right] = -\omega V_0 \sin(\omega t) \)</span><span class="math notranslate nohighlight">\(
+which can also be rewritten as:
+\)</span><span class="math notranslate nohighlight">\( -\omega V_0 \cos\left(\omega t + \frac{\pi}{2}\right) \)</span>$</p></li>
+<li><p>This shows that the <strong>current leads the voltage by 90°</strong> in a capacitor.</p></li>
+<li><p>The phase shift adds complexity to circuit analysis when combining capacitors with resistors, as they don’t operate “in sync” like resistors alone.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="euler-s-formula-and-phasors">
+<h3>Euler’s Formula and Phasors<a class="headerlink" href="#euler-s-formula-and-phasors" title="Link to this heading">#</a></h3>
+<section id="euler-s-formula">
+<h4>Euler’s Formula:<a class="headerlink" href="#euler-s-formula" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[ e^{j\theta} = \cos\theta + j\sin\theta \]</div>
+<ul class="simple">
+<li><p>This equation bridges exponential and trigonometric representations of sinusoidal functions.</p></li>
+<li><p>A sinusoidal signal (e.g.,  ( $<span class="math notranslate nohighlight">\( V(t) = V_0 \cos(\omega t) \)</span><span class="math notranslate nohighlight">\( \)) can be expressed in exponential form:
+\)</span><span class="math notranslate nohighlight">\( V(t) = \text{Re}\left[V_0 e^{j\omega t}\right] \)</span><span class="math notranslate nohighlight">\(
+where \( \)</span><span class="math notranslate nohighlight">\(\text{Re}\)</span>$ ) represents the real part of the complex exponential.</p></li>
+</ul>
+</section>
+<section id="phasors">
+<h4>Phasors:<a class="headerlink" href="#phasors" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Phasors</strong> use Euler’s formula to represent sinusoidal signals as rotating vectors in the complex plane. For instance:
+$<span class="math notranslate nohighlight">\(  V(t) = V_0 e^{j\omega t} \quad \text{(phasor form)}. \)</span>$</p>
+<ul>
+<li><p>The amplitude is ( V_0 ), and the angle represents the phase of the signal.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="why-euler-s-formula-helps">
+<h4>Why Euler’s Formula Helps:<a class="headerlink" href="#why-euler-s-formula-helps" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>It simplifies <strong>differential equations</strong> in AC circuits into <strong>algebraic equations</strong>.</p></li>
+<li><p>For example, the derivative (current in a capacitor) can be replaced by multiplication in the exponential domain:
+$<span class="math notranslate nohighlight">\( I(t) = C \frac{dV(t)}{dt} \quad \Rightarrow \quad I = j\omega C V \)</span><span class="math notranslate nohighlight">\(
+where \(\)</span><span class="math notranslate nohighlight">\( j\omega C \)</span>$) is the <strong>impedance</strong> of the capacitor in the frequency domain.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="practical-insights-in-circuit-analysis">
+<h3>Practical Insights in Circuit Analysis<a class="headerlink" href="#practical-insights-in-circuit-analysis" title="Link to this heading">#</a></h3>
+<p>Euler’s formula enables us to:</p>
+<ol class="arabic simple">
+<li><p>Represent sinusoidal inputs as phasors.</p></li>
+<li><p>Convert time-domain differential equations into simpler frequency-domain algebraic equations.</p></li>
+<li><p>Solve for voltage, current, and impedance algebraically.</p></li>
+<li><p>Convert back to the time domain using the real part of the complex solution.</p></li>
+</ol>
+<p>For example:</p>
+<ul class="simple">
+<li><p>In an RC circuit with a sinusoidal input ( V_{\text{in}}(t) = V_0 \cos(\omega t) ), the output voltage across the capacitor can be determined without solving a differential equation. Instead, we:</p>
+<ol class="arabic simple">
+<li><p>Replace ( V_{\text{in}} ) with ( V_0 e^{j\omega t} ) (phasor form).</p></li>
+<li><p>Use algebra to calculate the phasor output voltage.</p></li>
+<li><p>Extract the real part of the result to return to the time domain.</p></li>
+</ol>
+</li>
+</ul>
+<p>This process reduces computational complexity and allows engineers to focus on understanding the behavior of circuits under sinusoidal inputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;V_in&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> 
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R = 1 Ω&#39;</span><span class="p">)</span>  
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;C = 1 F&#39;</span><span class="p">)</span> 
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> 
+    <span class="n">d</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;rc_circuit_diagram.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cfc0a068443a2817371f19d7500e45e5f05a2340bcafbd0612701c67d2cd30e1.svg" src="../../_images/cfc0a068443a2817371f19d7500e45e5f05a2340bcafbd0612701c67d2cd30e1.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="n">u_V</span><span class="p">,</span> <span class="n">u_Ohm</span><span class="p">,</span> <span class="n">u_F</span><span class="p">,</span> <span class="n">u_A</span><span class="p">,</span> <span class="n">u_kHz</span>
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s2">&quot;RC Circuit&quot;</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">SinusoidalVoltageSource</span><span class="p">(</span><span class="s2">&quot;Vin&quot;</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">10</span><span class="nd">@u_V</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_kHz</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_Ohm</span><span class="p">)</span>  
+<span class="n">circuit</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_F</span><span class="p">)</span>
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">transient</span><span class="p">(</span><span class="n">step_time</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mf">10e-3</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">time</span>
+<span class="n">input_voltage</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">]</span>
+<span class="n">output_voltage</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span>
+
+<span class="c1"># Plot input and output voltages</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">input_voltage</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Input Voltage (V_in)&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">output_voltage</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Output Voltage (V_out)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;RC Circuit Simulation&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Voltage [V]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node name &#39;in&#39; is a Python keyword
+</pre></div>
+</div>
+<img alt="../../_images/1403c7c0c6365c971982b88e5b56180bb683f7f3cad45afc816d3b231f2936c3.png" src="../../_images/1403c7c0c6365c971982b88e5b56180bb683f7f3cad45afc816d3b231f2936c3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="c1"># Circuit parameters</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">1e3</span>  <span class="c1"># Resistance in ohms</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mf">1e-6</span>  <span class="c1"># Capacitance in farads</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mf">1e3</span>  <span class="c1"># Frequency in Hz</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">f</span>  <span class="c1"># Angular frequency</span>
+<span class="n">V_in_amplitude</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Amplitude of input voltage</span>
+
+<span class="c1"># Time vector</span>
+<span class="n">t_end</span> <span class="o">=</span> <span class="mf">10e-3</span>  <span class="c1"># Simulation duration</span>
+<span class="n">num_points</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Number of time steps</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
+
+<span class="c1"># Input voltage</span>
+<span class="n">V_in</span> <span class="o">=</span> <span class="n">V_in_amplitude</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># --------------------------------------------------------------------------------------</span>
+<span class="c1"># Method 1: Differential Equation Solution</span>
+<span class="c1"># --------------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">rc_circuit_diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V_c</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">V_in_func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Differential equation for the RC circuit.&quot;&quot;&quot;</span>
+    <span class="n">V_in_t</span> <span class="o">=</span> <span class="n">V_in_func</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">dV_c_dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">V_in_t</span> <span class="o">-</span> <span class="n">V_c</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">C</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dV_c_dt</span>
+
+<span class="n">start_time_diff</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+<span class="c1"># Solve the differential equation</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span>
+    <span class="n">rc_circuit_diff</span><span class="p">,</span> 
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_end</span><span class="p">],</span> 
+    <span class="p">[</span><span class="mi">0</span><span class="p">],</span>  <span class="c1"># Initial condition: V_c(0) = 0</span>
+    <span class="n">t_eval</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> 
+    <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">V_in_amplitude</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span><span class="p">))</span>
+<span class="p">)</span>
+
+<span class="n">V_out_diff</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">time_diff</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time_diff</span>
+
+<span class="c1"># --------------------------------------------------------------------------------------</span>
+<span class="c1"># Method 2: Euler&#39;s Phasor Solution</span>
+<span class="c1"># --------------------------------------------------------------------------------------</span>
+<span class="n">start_time_euler</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+<span class="c1"># Impedance of the capacitor</span>
+<span class="n">Z_C</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">C</span><span class="p">)</span>
+
+<span class="c1"># Voltage divider in phasor form</span>
+<span class="n">V_out_phasor</span> <span class="o">=</span> <span class="n">V_in_amplitude</span> <span class="o">*</span> <span class="n">Z_C</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">+</span> <span class="n">Z_C</span><span class="p">)</span>
+
+<span class="c1"># Convert phasor to time-domain signal</span>
+<span class="n">V_out_amplitude</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">V_out_phasor</span><span class="p">)</span>
+<span class="n">V_out_phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">V_out_phasor</span><span class="p">)</span>
+<span class="n">V_out_euler</span> <span class="o">=</span> <span class="n">V_out_amplitude</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">V_out_phase</span><span class="p">)</span>
+
+<span class="n">time_euler</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time_euler</span>
+
+<span class="c1"># --------------------------------------------------------------------------------------</span>
+<span class="c1"># Plot Results</span>
+<span class="c1"># --------------------------------------------------------------------------------------</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V_in</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Input Voltage (V_in)&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V_out_diff</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Output Voltage (Differential Method)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">V_out_euler</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Output Voltage (Euler Method)&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;RC Circuit: Output Voltage Comparison&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Voltage [V]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># --------------------------------------------------------------------------------------</span>
+<span class="c1"># Print Time Comparison</span>
+<span class="c1"># --------------------------------------------------------------------------------------</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calculation Time (Differential Equation Method): </span><span class="si">{</span><span class="n">time_diff</span><span class="si">:</span><span class="s2">.10f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calculation Time (Euler&#39;s Phasor Method): </span><span class="si">{</span><span class="n">time_euler</span><span class="si">:</span><span class="s2">.10f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e88dfbbd7b59d5a5c85472d109fd33f4fcd1df7a284b2a3c30eaf0ed5c9fc3f8.png" src="../../_images/e88dfbbd7b59d5a5c85472d109fd33f4fcd1df7a284b2a3c30eaf0ed5c9fc3f8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculation Time (Differential Equation Method): 0.0052731037 seconds
+Calculation Time (Euler&#39;s Phasor Method): 0.0002167225 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculation Time (Differential Equation Method): 0.0069754124 seconds
+Calculation Time (Euler’s Phasor Method): 0.0005283356 seconds
+in this example, the eulers method is 10 times faster than the differential method.</p>
+<p>Analysis
+The simulation reveals:</p>
+<p>The input voltage is a sinusoidal signal.
+The output voltage across the capacitor lags the input voltage due to the capacitor’s impedance.
+The phase shift and amplitude reduction are consistent with theoretical expectations.
+Conclusion
+Euler’s formula and phasors streamline the analysis of circuits involving sinusoidal inputs. By representing sinusoids as complex exponentials, we convert differential equations into algebraic ones. Python libraries like PySpice and Schemdraw further simplify the process, allowing us to model and simulate circuits with ease.</p>
+<p>Whether analyzing simple RC circuits or more complex systems, these tools provide a robust framework for understanding and designing electronic circuits.</p>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<p>The idea behind phasor transformation is that the calculus becomes simpler if you encode the cosine function as the real part of a complex exponential.</p>
+<p>Let</p>
+<p>f(t) = exp[ j(ωt + ϕ) ] = cos(ωt + ϕ) + jsin(ωt + ϕ)</p>
+<p>Taking the derivative of the LHS, you have</p>
+<p>f’(t) = jωexp[ j(ωt + ϕ) ] = jωf(t)</p>
+<p>If you take the derivative of the RHS instead, you get</p>
+<p>f’(t) = -ωsin(ωt + ϕ) + jωcos(ωt + ϕ)</p>
+<p>f’(t) = jω [ jsin(ωt + ϕ) + cos(ωt + ϕ) ] = jωf(t)</p>
+<p>Observe that:</p>
+<p>cos(ωt + ϕ) = Re[ f(t) ]</p>
+<p>d/dt cos(ωt + ϕ) = Re[ f’(t) ] = Re[ jωf(t) ]</p>
+<p>You find that differentiating the complex exponential function captures the essence of diffentiating the real-valued cosine function, only that calculus on exponential functions is easier since differentiation simplifies to multiplication by jω. You get the higher-order derivatives of the original cosine function by multiplying the complex exponential function with powers of jω and then getting the real part.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\phasor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../parsahosseiniMOSFETsminiproject/main.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">MOSFETs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../BJTACModel/BJTACModel.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AC Model of BJT</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors-and-phase-shifts">Capacitors and Phase Shifts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-formula-and-phasors">Euler’s Formula and Phasors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-formula">Euler’s Formula:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phasors">Phasors:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-euler-s-formula-helps">Why Euler’s Formula Helps:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-insights-in-circuit-analysis">Practical Insights in Circuit Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

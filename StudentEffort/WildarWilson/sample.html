@@ -1,0 +1,1025 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Widlar Current Source and Wilson Current Mirror &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/WildarWilson/sample';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LDR sensor" href="../LDRpresentation/LDR.html" />
+    <link rel="prev" title="AC Model of BJT" href="../BJTACModel/BJTACModel.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/WildarWilson/sample.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/WildarWilson/sample.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Widlar Current Source and Wilson Current Mirror</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-current-source">What is a Current Source?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#widlar-current-source">2. Widlar Current Source</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-widlar-current-source">Features of Widlar Current Source</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-expression">Exact Expression:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-widlar-current-source-works">How the Widlar Current Source Works</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wilson-current-mirror">3. Wilson Current Mirror</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-wilson-current-mirror">Features of Wilson Current Mirror</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-wilson-current-mirrors">Types of Wilson Current Mirrors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-wilson-current-mirror">Basic Wilson Current Mirror</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-configuration">Circuit Configuration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-wilson-current-mirror">Full Wilson Current Mirror</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-basic-wilson-mirror-vs-full-wilson-mirror">Comparison: Basic Wilson Mirror vs Full Wilson Mirror</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">4. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="widlar-current-source-and-wilson-current-mirror">
+<h1>Widlar Current Source and Wilson Current Mirror<a class="headerlink" href="#widlar-current-source-and-wilson-current-mirror" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<section id="what-is-a-current-source">
+<h3>What is a Current Source?<a class="headerlink" href="#what-is-a-current-source" title="Link to this heading">#</a></h3>
+<p>A <strong>current source</strong> is a circuit that provides a constant current, regardless of changes in load resistance or voltage across it. It is a fundamental component in analog circuits for tasks like biasing, signal regulation, and voltage references.</p>
+<p>Two significant current sources include:</p>
+<ol class="arabic simple">
+<li><p><strong>Widlar Current Source</strong> (developed by Bob Widlar)</p></li>
+<li><p><strong>Wilson Current Mirror</strong> (developed by George Wilson)</p></li>
+</ol>
+<p>In this project
+, we will explain the concepts, circuit design, advantages, and detailed working principles of these two circuits.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="widlar-current-source">
+<h2>2. Widlar Current Source<a class="headerlink" href="#widlar-current-source" title="Link to this heading">#</a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<p>The <strong>Widlar current source</strong> is an improvement on the basic current source. It was designed by Bob Widlar in the 1960s to address limitations in op-amp biasing circuits. Widlar’s design adds simplicity and efficiency for producing low output currents with higher precision and stability.</p>
+</section>
+<section id="features-of-widlar-current-source">
+<h3>Features of Widlar Current Source<a class="headerlink" href="#features-of-widlar-current-source" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Emitter Degeneration</strong>: Addition of resistor <span class="math notranslate nohighlight">\(R_2\)</span> reduces the output current.</p></li>
+<li><p><strong>Output Resistance</strong>: Higher than simple current sources, ranging from <strong>10 kΩ to 100 kΩ</strong>.</p></li>
+<li><p><strong>Small Output Currents</strong>: Ideal for producing small currents, typically between <strong>10 μA to 500 μA</strong>.</p></li>
+<li><p><strong>Temperature Proportional Behavior</strong>: Current output depends on absolute temperature (IPTAT).</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(V_{BE}\)</span> Compensation</strong>: Helps compensate for transistor mismatches.</p></li>
+</ol>
+<hr class="docutils" />
+<p>The Widlar current source circuit adds resistor <strong><span class="math notranslate nohighlight">\(R_2\)</span></strong> at the emitter of Q2, which creates a voltage drop that limits the output current <span class="math notranslate nohighlight">\(I_{C2}\)</span> below the reference current <span class="math notranslate nohighlight">\(I_{REF}\)</span>.</p>
+<p><img alt="" src="../../_images/wildar.png" /></p>
+<section id="calculations">
+<h4>Calculations:<a class="headerlink" href="#calculations" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Kirchhoff’s Current Law (KCL):</strong>
+$<span class="math notranslate nohighlight">\(
+I_{\text{ref}} = I_{C1} + I_{B1} + I_{B2} \tag{1}
+\)</span>$</p></li>
+<li><p><strong>Kirchhoff’s Voltage Law (KVL):</strong>
+$<span class="math notranslate nohighlight">\(
+V_{BE1} = V_{BE2} + R_E I_{E2} \tag{2}
+\)</span>$</p></li>
+</ul>
+<p>From the exponential relation:
+$<span class="math notranslate nohighlight">\(
+I_{C1} = I_{S1} e^{\frac{V_{BE1}}{V_T}} \implies V_{BE1} = V_T \ln{\left( \frac{I_{C1}}{I_{S1}} \right)} \tag{3}
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+I_{C2} = I_{S2} e^{\frac{V_{BE2}}{V_T}} \implies V_{BE2} = V_T \ln{\left( \frac{I_{C2}}{I_{S2}} \right)} \tag{4}
+\]</div>
+<p>Substitute (3) and (4) into (2):
+$<span class="math notranslate nohighlight">\(
+V_T \ln{\left( \frac{I_{C1}}{I_{S1}} \right)} = V_T \ln{\left( \frac{I_{C2}}{I_{S2}} \right)} + R_E I_{E2}
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+\implies V_T \ln{\left( \frac{I_{C1}}{I_{C2}} \right)} = R_E I_{E2} \tag{5}
+\]</div>
+<p>Since $<span class="math notranslate nohighlight">\( I_{S1} = I_{S2} \)</span><span class="math notranslate nohighlight">\(, we have:
+\)</span><span class="math notranslate nohighlight">\(
+V_T \ln{\left( \frac{I_{C1}}{I_{C2}} \right)} = R_E I_{E2}
+\)</span>$</p>
+<p>Rewriting $<span class="math notranslate nohighlight">\( I_{\text{ref}} :\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+I_{\text{ref}} = I_{C1} + \frac{I_{C1}}{\beta} + \frac{I_{C2}}{\beta} \implies I_{\text{ref}} - \frac{I_{C2}}{\beta} = \left( 1 + \frac{1}{\beta} \right) I_{C1}
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+\beta I_{\text{ref}} - I_{C2} = (\beta + 1) I_{C1} \implies I_{C1} = \frac{\beta I_{\text{ref}} - I_{C2}}{\beta + 1} \tag{6}
+\]</div>
+<p>Substitute (6) into (5):
+$<span class="math notranslate nohighlight">\(
+V_T \ln{\left( \frac{\beta I_{\text{ref}} - I_{C2}}{(\beta + 1) I_{C2}} \right)} = R_E I_{E2}
+\)</span>$</p>
+</section>
+<section id="exact-expression">
+<h4>Exact Expression:<a class="headerlink" href="#exact-expression" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+V_T \ln{\left( \frac{\beta I_{\text{ref}} - I_{C2}}{(\beta + 1) I_{C2}} \right)} = R_E \left( \frac{\beta + 1}{\beta} I_{C2} \right)
+\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="how-the-widlar-current-source-works">
+<h3>How the Widlar Current Source Works<a class="headerlink" href="#how-the-widlar-current-source-works" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Emitter Degeneration</strong>:</p>
+<ul class="simple">
+<li><p>Resistor <span class="math notranslate nohighlight">\(R_2\)</span> introduces a voltage drop across the emitter of Q2. This voltage drop reduces the collector current <span class="math notranslate nohighlight">\(I_{C2}\)</span>, which becomes smaller than <span class="math notranslate nohighlight">\(I_{REF}\)</span>.</p></li>
+</ul>
+</li>
+<li><p><strong>Current Division</strong>:</p>
+<ul class="simple">
+<li><p>The relationship between <span class="math notranslate nohighlight">\(I_{REF}\)</span>, <span class="math notranslate nohighlight">\(I_{C2}\)</span>, and <span class="math notranslate nohighlight">\(R_2\)</span> is defined using the thermal voltage <span class="math notranslate nohighlight">\(V_T\)</span>:
+$<span class="math notranslate nohighlight">\(
+I_{C2} = I_{REF} \cdot \exp\left(-\frac{V_{R2}}{V_T}\right)
+\)</span>$
+Where:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(V_{R2}\)</span> is the voltage drop across <span class="math notranslate nohighlight">\(R_2\)</span>, calculated as <span class="math notranslate nohighlight">\(I_{C2} \cdot R_2\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_T \approx 26 \ \text{mV}\)</span> at room temperature.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Output Resistance</strong>:</p>
+<ul class="simple">
+<li><p>Adding <span class="math notranslate nohighlight">\(R_2\)</span> increases the <strong>output resistance</strong> of the circuit, making it more stable compared to a basic current source. The output resistance typically ranges between <strong>10 kΩ to 100 kΩ</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Temperature Compensation</strong>:</p>
+<ul class="simple">
+<li><p>Since the current depends on <span class="math notranslate nohighlight">\(V_T\)</span> (which is temperature proportional), the circuit behaves proportionally with temperature (IPTAT).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="wilson-current-mirror">
+<h2>3. Wilson Current Mirror<a class="headerlink" href="#wilson-current-mirror" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Overview<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The <strong>Wilson current mirror</strong> improves upon the simple current mirror by providing:</p>
+<ul class="simple">
+<li><p><strong>Higher accuracy</strong></p></li>
+<li><p><strong>Higher output resistance</strong></p></li>
+<li><p><strong>Low sensitivity to transistor gain mismatches</strong> (beta compensation).</p></li>
+</ul>
+<p>Developed by <strong>George Wilson</strong>, this design is widely used in precision analog circuits.</p>
+</section>
+<hr class="docutils" />
+<section id="features-of-wilson-current-mirror">
+<h3>Features of Wilson Current Mirror<a class="headerlink" href="#features-of-wilson-current-mirror" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Beta Compensation</strong>: Reduces the sensitivity to variations in transistor gain.</p></li>
+<li><p><strong>High Output Resistance</strong>: Increases stability, with resistance ranging from <strong>100 kΩ to several MΩ</strong>.</p></li>
+<li><p><strong>Improved Accuracy</strong>: Mirrors the reference current with excellent precision.</p></li>
+<li><p><strong>Feedback Regulation</strong>: Uses negative feedback to stabilize the current.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="types-of-wilson-current-mirrors">
+<h3>Types of Wilson Current Mirrors<a class="headerlink" href="#types-of-wilson-current-mirrors" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Basic Wilson Current Mirror</strong>: Uses <strong>3 transistors</strong> (<span class="math notranslate nohighlight">\(Q_1\)</span>, <span class="math notranslate nohighlight">\(Q_2\)</span>, <span class="math notranslate nohighlight">\(Q_3\)</span>).</p></li>
+<li><p><strong>Full Wilson Current Mirror</strong>: Uses <strong>4 transistors</strong> for enhanced output resistance and performance.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="basic-wilson-current-mirror">
+<h3>Basic Wilson Current Mirror<a class="headerlink" href="#basic-wilson-current-mirror" title="Link to this heading">#</a></h3>
+<section id="circuit-configuration">
+<h4>Circuit Configuration<a class="headerlink" href="#circuit-configuration" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(Q_1\)</span></strong>: Forms the input reference branch.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(Q_2\)</span></strong>: Provides negative feedback to stabilize current.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(Q_3\)</span></strong>: Mirrors the current to the output branch.</p></li>
+</ul>
+<p><img alt="" src="../../_images/wilsonBasic.png" /></p>
+</section>
+<section id="how-it-works">
+<h4>How It Works<a class="headerlink" href="#how-it-works" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The reference current <span class="math notranslate nohighlight">\(I_{REF}\)</span> flows through <span class="math notranslate nohighlight">\(Q_1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q_2\)</span> ensures that <span class="math notranslate nohighlight">\(Q_3\)</span>’s output current matches the reference current, thanks to negative feedback.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ 
+I_{\text{ref}} = I_{C_1} + I_{B_2}  
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+I_{E_2} = I_{C_3} + 2I_B 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+I_{E_2} = I_{C_3} + 2 \frac{I_{C_3}}{\beta} = I_{C_3} \left( 1 + \frac{2}{\beta} \right) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+I_{C_3} = \frac{\beta}{\beta + 2} \cdot I_{E_2} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+I_{C_3} = I_{C_1}, \quad \text{and also} \quad I_{E_2} \approx I_o
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+I_{C_1} = \frac{\beta}{\beta + 2} \cdot I_{E_2} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+I_{ref} = \frac{\beta}{\beta + 2} \cdot I_{o} + \frac{1}{\beta} \cdot I_{0} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+I_{ref} = \frac{\beta^2 + \beta + 2}{\beta(\beta + 2)} \cdot I_{o}
+\]</div>
+<p>​</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="full-wilson-current-mirror">
+<h3>Full Wilson Current Mirror<a class="headerlink" href="#full-wilson-current-mirror" title="Link to this heading">#</a></h3>
+<p>The <strong>Full Wilson Current Mirror</strong> uses <strong>4 transistors</strong> (<span class="math notranslate nohighlight">\(Q_1\)</span>, <span class="math notranslate nohighlight">\(Q_2\)</span>, <span class="math notranslate nohighlight">\(Q_3\)</span>, and <span class="math notranslate nohighlight">\(Q_4\)</span>). It adds additional feedback to further increase the output resistance and accuracy.</p>
+<section id="key-features">
+<h4>Key Features:<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Emitter Degeneration</strong>: Small resistors are added to compensate for <span class="math notranslate nohighlight">\(V_{BE}\)</span> mismatches.</p></li>
+<li><p><strong>Very High Output Resistance</strong>: Ranges from hundreds of kilo-ohms to mega-ohms.</p></li>
+</ul>
+<p><img alt="" src="../../_images/wilsonFull.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="comparison-basic-wilson-mirror-vs-full-wilson-mirror">
+<h3>Comparison: Basic Wilson Mirror vs Full Wilson Mirror<a class="headerlink" href="#comparison-basic-wilson-mirror-vs-full-wilson-mirror" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Basic Wilson Mirror</p></th>
+<th class="head"><p>Full Wilson Mirror</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Transistors Used</strong></p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Output Resistance</strong></p></td>
+<td><p>High (kΩ range)</p></td>
+<td><p>Very High (MΩ range)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Accuracy</strong></p></td>
+<td><p>Good</p></td>
+<td><p>Excellent</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Beta Compensation</strong></p></td>
+<td><p>Present</p></td>
+<td><p>Enhanced</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Complexity</strong></p></td>
+<td><p>Low</p></td>
+<td><p>Moderate</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conclusion">
+<h2>4. Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>The <strong>Widlar Current Source</strong> and <strong>Wilson Current Mirror</strong> are two significant advancements in current source design, addressing limitations of basic current sources and mirrors:</p>
+<ol class="arabic simple">
+<li><p><strong>Widlar Current Source</strong>:</p>
+<ul class="simple">
+<li><p>Provides small, stable output currents with high output resistance.</p></li>
+<li><p>Introduces emitter degeneration for precision control.</p></li>
+</ul>
+</li>
+<li><p><strong>Wilson Current Mirror</strong>:</p>
+<ul class="simple">
+<li><p>Offers excellent accuracy and stability with high output resistance.</p></li>
+<li><p>Incorporates feedback regulation and beta compensation to minimize gain mismatches.</p></li>
+</ul>
+</li>
+</ol>
+<p>The <strong>Full Wilson Mirror</strong> further improves performance with enhanced output resistance and compensation features.</p>
+<p>These innovations laid the foundation for modern analog circuit designs, enabling reliable and efficient biasing in integrated circuits.</p>
+</section>
+<hr class="docutils" />
+<section id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<p>Current Sources and Voltage References: A Design Reference for Electronics Engineers 1st Edition
+by Linden T. Harrison
+ALL ABOUT ELECTRONICS YouTube Channel (<a class="reference external" href="https://www.youtube.com/&#64;ALLABOUTELECTRONICS">https://www.youtube.com/&#64;ALLABOUTELECTRONICS</a>)</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\WildarWilson"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../BJTACModel/BJTACModel.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AC Model of BJT</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../LDRpresentation/LDR.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LDR sensor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-current-source">What is a Current Source?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#widlar-current-source">2. Widlar Current Source</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-widlar-current-source">Features of Widlar Current Source</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-expression">Exact Expression:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-widlar-current-source-works">How the Widlar Current Source Works</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wilson-current-mirror">3. Wilson Current Mirror</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-wilson-current-mirror">Features of Wilson Current Mirror</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-wilson-current-mirrors">Types of Wilson Current Mirrors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-wilson-current-mirror">Basic Wilson Current Mirror</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-configuration">Circuit Configuration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-works">How It Works</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-wilson-current-mirror">Full Wilson Current Mirror</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-basic-wilson-mirror-vs-full-wilson-mirror">Comparison: Basic Wilson Mirror vs Full Wilson Mirror</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">4. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

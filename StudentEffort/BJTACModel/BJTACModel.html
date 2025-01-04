@@ -1,0 +1,930 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AC Model of BJT &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/BJTACModel/BJTACModel';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Widlar Current Source and Wilson Current Mirror" href="../WildarWilson/sample.html" />
+    <link rel="prev" title="Exploring Euler’s Formula and Phasors in Electronics" href="../phasor/phasor.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/BJTACModel/BJTACModel.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/BJTACModel/BJTACModel.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AC Model of BJT</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AC Model of BJT</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#find-ac-model-of-the-cercuit-below">find AC model of the cercuit below:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#large-signal-bjt-model">Large Signal BJT Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bjt-with-small-ac-input-signal">BJT with small ac input signal</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-analysis">small Signal Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-transconductance">Small-signal Transconductance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-analysis-current-and-input-resistance">Small-signal Analysis: Current and Input Resistance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-pi-small-signal-model-of-bjt">Hybrid-<span class="math notranslate nohighlight">\(\pi\)</span> small signal model of BJT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-t-model-of-bjt">Small signal T model of BJT</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bjt-circuit-analysis-using-small-signal-model">BJT Circuit Analysis using Small Signal Model:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References:</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ac-model-of-bjt">
+<h1>AC Model of BJT<a class="headerlink" href="#ac-model-of-bjt" title="Link to this heading">#</a></h1>
+<p>Author: Reza Farasati</p>
+<p>Contact: <a class="reference external" href="mailto:rezafarasati2004&#37;&#52;&#48;gmail&#46;com">rezafarasati2004<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>In electronic circuit analysis, modeling components for specific operating conditions is critical. For Bipolar Junction Transistors (BJTs), AC analysis requires a model that incorporates the transistor’s behavior under small signal variations. Just as DC models simplify the analysis of biasing circuits, AC models ease the study of signal amplification.</p>
+<p>The AC BJT model is based on its DC counterpart, with some adjustments to account for the dynamic resistance of the base-emitter junction. This resistance plays a crucial role in determining the performance and stability of small-signal amplifiers.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="find-ac-model-of-the-cercuit-below">
+<h1>find AC model of the cercuit below:<a class="headerlink" href="#find-ac-model-of-the-cercuit-below" title="Link to this heading">#</a></h1>
+<p><img alt="BJTACModel1.png" src="StudentEffort/BJTACModel/attachment:b4b710c1-bc17-45c4-8616-d4724c47f84c.png" /></p>
+<p>as shown in the cercuit, we have:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+i_{B}=I_{B}+i_{b} \\
+i_{E}=I_{E}+i_{e} \\
+i_{C}=I_{C}+i_{C} \\
+\end{aligned}
+\)</span>$</p>
+<p>which</p>
+<div class="math notranslate nohighlight">
+\[
+I_{B}, I_{C}, I_{E}
+\text{ are DC Currents.}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_{b}, i_{c}, i_{e} 
+\text{ are AC Currents.}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_{B}, i_{C}, i_{E} 
+\text{ are DC + AC Currents.}
+\]</div>
+<p>Similarly,
+$<span class="math notranslate nohighlight">\(
+V_{B E}, V_{C E} \text{ are DC Voltages}.
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\mathrm{V}_{\mathrm{be}}, \mathrm{V}_{\mathrm{ce}} \text{ are AC Voltages.}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\mathrm{V}_{\mathrm{BE}}, \mathrm{V}_{\mathrm{CE}} \text{ are DC + AC Voltages.}
+\)</span>$</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="large-signal-bjt-model">
+<h1>Large Signal BJT Model<a class="headerlink" href="#large-signal-bjt-model" title="Link to this heading">#</a></h1>
+<p>from the Shockley equation, we know that:</p>
+<div class="math notranslate nohighlight">
+\[
+i_C \simeq I_S e^{\frac{V_{BE}}{V_T}}
+\]</div>
+<p>Obviously, if we apply <span class="math notranslate nohighlight">\( sin \)</span> input voltage <span class="math notranslate nohighlight">\( V_{BE} \)</span>, we will have <span class="math notranslate nohighlight">\( exponential \)</span> output current <span class="math notranslate nohighlight">\( i_C \)</span>. so the circuit is not linear.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bjt-with-small-ac-input-signal">
+<h1>BJT with small ac input signal<a class="headerlink" href="#bjt-with-small-ac-input-signal" title="Link to this heading">#</a></h1>
+<p>Small ac signal refers to the input signal ( <span class="math notranslate nohighlight">\(\mathrm{v}_{\mathrm{be}}\)</span> ) whose magnitude is much small than thermal voltage <span class="math notranslate nohighlight">\(\left(\mathrm{V}_{\mathrm{T}}\right)\)</span> i.e. <span class="math notranslate nohighlight">\(\mathrm{v}_{\mathrm{be}} \ll \mathrm{V}_{\mathrm{T}}\)</span></p>
+<p>Magnitude of the ac signal applied for amplification must be small so that</p>
+<ul class="simple">
+<li><p>the transistor operates in the linear region for the whole cycle of input (called as a linear amplifier)</p></li>
+<li><p>the transistor is never driven into saturation or cut-off region</p></li>
+</ul>
+<p>On the other hand, if the input signal is too large. The fluctuations along the load line will drive the transistor into either saturation or cut off. This clips the peaks of the input and the amplifier is no longer linear.</p>
+<p><img alt="BJTACModel2.png" src="StudentEffort/BJTACModel/attachment:d813b15b-312b-4d3e-abf5-da0ba13258f5.png" /></p>
+<section id="small-signal-analysis">
+<h2>small Signal Analysis<a class="headerlink" href="#small-signal-analysis" title="Link to this heading">#</a></h2>
+<p><img alt="BJTACModel3.png" src="StudentEffort/BJTACModel/attachment:6082dc25-a293-4d03-83b6-77cfe0dc2eb5.png" /></p>
+<p>If we have an <span class="math notranslate nohighlight">\(ac+dc\)</span> input signal, the total <span class="math notranslate nohighlight">\(\mathrm{v}_{\mathrm{BE}}\)</span> becomes
+$<span class="math notranslate nohighlight">\(
+v_{B E}=v_{b e}+V_{B E}
+\)</span>$</p>
+<p>And the collector current becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+i_C = I_S e^{\frac{V_{BE} + v_{be}}{V_T}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+i_C = I_S \left( e^{\frac{V_{BE}}{V_T}} \right) \left( e^{\frac{v_{be}}{V_T}} \right)
+\]</div>
+<p>Using the Taylor series expansion:
+$<span class="math notranslate nohighlight">\(
+e^x \simeq 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \quad
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\text{for } (x \ll 1) \quad \Rightarrow \quad e^x \simeq 1 + x
+\)</span>$</p>
+<p>If <span class="math notranslate nohighlight">\( (v_{be} \ll 1) \)</span> (small signal approximation):</p>
+<div class="math notranslate nohighlight">
+\[
+i_C = I_S \left( e^{\frac{V_{BE}}{V_T}} \right) \left( 1 + \frac{v_{be}}{V_T} \right)
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\( ( I_{C} = I_S e^{\frac{V_{BE}}{V_T}} ) \)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[
+i_C = I_{C} \left( 1 + \frac{v_{be}}{V_T} \right)
+\]</div>
+<p>Now this is a linear expression, because for <span class="math notranslate nohighlight">\(sin\)</span> input voltage <span class="math notranslate nohighlight">\( v_{be} \)</span> we will get <span class="math notranslate nohighlight">\(sin\)</span> output current <span class="math notranslate nohighlight">\( i_C \)</span>.</p>
+<p><span class="math notranslate nohighlight">\( g_m \)</span> is called the small signal <strong>transconductance</strong>:
+$<span class="math notranslate nohighlight">\(
+g_{m}=\frac{i_{c}}{v_{b e}}=\frac{I_{C}}{V_{T}}
+\)</span><span class="math notranslate nohighlight">\(
+It represents the slope of \)</span>\mathrm{i}<em>{\mathrm{C}}-\mathrm{v}</em>{\mathrm{BE}}$ curve at the Q point.</p>
+</section>
+<section id="small-signal-transconductance">
+<h2>Small-signal Transconductance<a class="headerlink" href="#small-signal-transconductance" title="Link to this heading">#</a></h2>
+<p><img alt="BJTACModel4.png" src="StudentEffort/BJTACModel/attachment:445bd0d1-95ce-4bb2-85f2-00c3c3c38bbf.png" /></p>
+<p>The small signal approximation implies that signal is so small that operation is restricted to an almost linear segment of the <span class="math notranslate nohighlight">\(\mathrm{i}_{\mathrm{C}}-\mathrm{v}_{\mathrm{BE}}\)</span> exponential curve.
+$<span class="math notranslate nohighlight">\(
+g_{m}=\left(\frac{i_{c}}{v_{b e}}\right)_{v_{b e}=0}=\left(\frac{\partial i_{C}}{\partial v_{B E}}\right)_{i_{C}=I_{C}}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+g_{m}=\frac{i_{c}}{v_{b e}}=\frac{I_{C}}{V_{T}}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+i_{c}=g_{m} v_{b e}
+\)</span>$</p>
+<p>The small signal analysis suggests that for a small signal, transistor behaves as
+a voltage controlled current source. The input port of the controlled current
+source is between base and emitter and output port is in between collector and
+emitter.</p>
+</section>
+<section id="small-signal-analysis-current-and-input-resistance">
+<h2>Small-signal Analysis: Current and Input Resistance<a class="headerlink" href="#small-signal-analysis-current-and-input-resistance" title="Link to this heading">#</a></h2>
+<p>The total base current:<br />
+$<span class="math notranslate nohighlight">\(
+\mathbf{i}_{\mathbf{B}} = \mathbf{I}_{\mathbf{B}} + \mathbf{i}_{\mathbf{b}}
+\)</span>$</p>
+<p>So:<br />
+$<span class="math notranslate nohighlight">\(
+\quad i_{B} = \frac{i_{c}}{\beta} = \frac{I_{C}}{\beta} + \frac{1}{\beta} \frac{I_{C}}{V_{T}} v_{b c}
+\)</span>$</p>
+<p>Signal component of base current:<br />
+$<span class="math notranslate nohighlight">\(
+\quad i_{b} = \frac{1}{\beta} \frac{I_{C}}{V_{T}} v_{b e} = \frac{g_{m}}{\beta} v_{b e}
+\)</span>$</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{r}_{\pi}\)</span> is the small-signal input resistance between base and emitter, looking into the base:<br />
+$<span class="math notranslate nohighlight">\(
+\mathrm{r}_{\pi} = \frac{v_{b e}}{i_{b}} = \frac{\beta}{g_{m}} = \frac{V_{T}}{I_{B}}
+\)</span>$</p>
+<p>Knowing that the total emitter current:<br />
+$<span class="math notranslate nohighlight">\(
+\mathbf{i}_{\mathrm{E}} = \mathrm{I}_{\mathrm{E}} + \mathbf{i}_{\mathrm{e}}
+\)</span>$</p>
+<p>So:<br />
+$<span class="math notranslate nohighlight">\(
+\quad i_{E} = \frac{i_{C}}{\alpha} = \frac{I_{C}}{\alpha} + \frac{i_{c}}{\alpha}
+\)</span>$</p>
+<p>And:<br />
+$<span class="math notranslate nohighlight">\(
+i_{e} = \frac{i_{c}}{\alpha} = \frac{I_{C}}{\alpha V_{T}} v_{b e} = \frac{I_{E}}{V_{T}} v_{b e}
+\)</span>$</p>
+<p><span class="math notranslate nohighlight">\(r_{e}\)</span> is the small-signal input resistance between base and emitter, looking into the emitter:<br />
+$<span class="math notranslate nohighlight">\(
+\quad \mathrm{r}_{e} = \frac{v_{b e}}{i_{e}} = \frac{\alpha}{g_{m}} = \frac{V_{T}}{I_{E}}
+\)</span>$</p>
+<p>Therefore:<br />
+$<span class="math notranslate nohighlight">\(
+v_{b e} = i_{b} r_{\pi} = i_{e} r_{e}
+\)</span>$</p>
+<p>And:<br />
+$<span class="math notranslate nohighlight">\(
+\quad r_{\pi} = (\beta + 1) r_{e}
+\)</span>$</p>
+</section>
+<section id="hybrid-pi-small-signal-model-of-bjt">
+<h2>Hybrid-<span class="math notranslate nohighlight">\(\pi\)</span> small signal model of BJT<a class="headerlink" href="#hybrid-pi-small-signal-model-of-bjt" title="Link to this heading">#</a></h2>
+<p>This model represents that transistor as a voltage controlled current source with control voltage <span class="math notranslate nohighlight">\(\mathrm{v}_{\mathrm{be}}\)</span> and include the input resistance looking into the base.
+$<span class="math notranslate nohighlight">\(
+\mathrm{r}_{\pi}=\frac{v_{b e}}{i_{b}}=\frac{\beta}{g_{m}}=\frac{V_{T}}{I_{B}}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\mathrm{r}_{e}=\frac{v_{b e}}{i_{e}}=\frac{\alpha}{g_{m}}=\frac{V_{T}}{I_{E}}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+g_{m}=\frac{i_{c}}{v_{b e}}=\frac{I_{C}}{V_{T}}
+\)</span>$</p>
+<p><img alt="BJTACModel5.png" src="StudentEffort/BJTACModel/attachment:80f45c33-a3aa-47b2-a97c-c7f2505dc2d4.png" /></p>
+</section>
+<section id="small-signal-t-model-of-bjt">
+<h2>Small signal T model of BJT<a class="headerlink" href="#small-signal-t-model-of-bjt" title="Link to this heading">#</a></h2>
+<p>This model represents that transistor as a voltage controlled current source with control voltage <span class="math notranslate nohighlight">\(\mathrm{v}_{\mathrm{be}}\)</span> and include the input resistance looking into the emitter.</p>
+<p><img alt="BJTACModel6.png" src="StudentEffort/BJTACModel/attachment:dddf7d46-52a7-4270-b869-fd69fa2e8dc4.png" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
+<h1>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
+<p>In coclusion, the algorithm of BJT circuit analysis using small signal model is:</p>
+<section id="bjt-circuit-analysis-using-small-signal-model">
+<h2>BJT Circuit Analysis using Small Signal Model:<a class="headerlink" href="#bjt-circuit-analysis-using-small-signal-model" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Determine the DC operating point of the BJT and in particular, the collector current <span class="math notranslate nohighlight">\(\mathrm{I}_{\mathrm{C}}\)</span></p></li>
+<li><p>Calculate small-signal model parameters <span class="math notranslate nohighlight">\(g_{m}, r_{π},\)</span> and <span class="math notranslate nohighlight">\(r_{e}\)</span> for this DC operating point</p></li>
+<li><p>Eliminate DC sources:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Replace DC voltage sources with short circuits</p></li>
+<li><p>Replace DC current sources with open circuits</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Replacing all capacitors by a short circuit equivalent and remove all elements bypassed by the short circuit equivalents.</p></li>
+<li><p>Replace BJT with an equivalent small-signal model</p></li>
+<li><p>Analyze the resulting circuit to determine the required quantities e.g. voltage gain, input resistance…etc.</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References:<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.google.com/url?sa=t&amp;amp;source=web&amp;amp;rct=j&amp;amp;opi=89978449&amp;amp;url=https://www.iitg.ac.in/apvajpeyi/ph218/Lec-8.pdf&amp;amp;ved=2ahUKEwimrunXl72KAxW47LsIHQeQAfoQFnoECCIQAQ&amp;amp;usg=AOvVaw0DBT67OKuVFkz6ois2xwGQ">https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://www.iitg.ac.in/apvajpeyi/ph218/Lec-8.pdf&amp;ved=2ahUKEwimrunXl72KAxW47LsIHQeQAfoQFnoECCIQAQ&amp;usg=AOvVaw0DBT67OKuVFkz6ois2xwGQ</a></p></li>
+<li><p><a class="reference external" href="https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Semiconductor_Devices_-_Theory_and_Application_(Fiore)/07%3A_BJT_Small_Signal_Amplifiers/7.2%3A_Simplified_AC_Model_of_the_BJT">https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Semiconductor_Devices_-_Theory_and_Application_(Fiore)/07%3A_BJT_Small_Signal_Amplifiers/7.2%3A_Simplified_AC_Model_of_the_BJT</a></p></li>
+<li><p><a class="reference external" href="https://www.google.com/url?sa=t&amp;amp;source=web&amp;amp;rct=j&amp;amp;opi=89978449&amp;amp;url=https://bu.edu.eg/portal/uploads/Engineering,%2520Shoubra/Electrical%2520Engineering/2461/crs-12002/Files/J-601-1448_lec04.pdf&amp;amp;ved=2ahUKEwjfreLCl72KAxV3h_0HHQsLGS4QFnoECBgQAQ&amp;amp;usg=AOvVaw18yGejxqX6ZbUs5ea8JOou">https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://bu.edu.eg/portal/uploads/Engineering,%2520Shoubra/Electrical%2520Engineering/2461/crs-12002/Files/J-601-1448_lec04.pdf&amp;ved=2ahUKEwjfreLCl72KAxV3h_0HHQsLGS4QFnoECBgQAQ&amp;usg=AOvVaw18yGejxqX6ZbUs5ea8JOou</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=4o9tTe0ikaU&amp;amp;list=PLbRMhDVUMngehqNF2w_UbAi94qIycZOTG&amp;amp;index=19">https://www.youtube.com/watch?v=4o9tTe0ikaU&amp;list=PLbRMhDVUMngehqNF2w_UbAi94qIycZOTG&amp;index=19</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=slJ19hk8YaA&amp;amp;list=PLbRMhDVUMngehqNF2w_UbAi94qIycZOTG&amp;amp;index=20">https://www.youtube.com/watch?v=slJ19hk8YaA&amp;list=PLbRMhDVUMngehqNF2w_UbAi94qIycZOTG&amp;index=20</a></p></li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\BJTACModel"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../phasor/phasor.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exploring Euler’s Formula and Phasors in Electronics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../WildarWilson/sample.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Widlar Current Source and Wilson Current Mirror</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AC Model of BJT</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#find-ac-model-of-the-cercuit-below">find AC model of the cercuit below:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#large-signal-bjt-model">Large Signal BJT Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bjt-with-small-ac-input-signal">BJT with small ac input signal</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-analysis">small Signal Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-transconductance">Small-signal Transconductance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-analysis-current-and-input-resistance">Small-signal Analysis: Current and Input Resistance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-pi-small-signal-model-of-bjt">Hybrid-<span class="math notranslate nohighlight">\(\pi\)</span> small signal model of BJT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-signal-t-model-of-bjt">Small signal T model of BJT</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bjt-circuit-analysis-using-small-signal-model">BJT Circuit Analysis using Small Signal Model:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References:</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

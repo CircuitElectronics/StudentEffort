@@ -1,0 +1,1065 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Darlington/darlingtontransistor2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Junction Field Effect Transistor (JFET)" href="../JFET_TRansistor/JFETTrans.html" />
+    <link rel="prev" title="Example: currect and charge relation" href="../example1-2/example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Darlington/darlingtontransistor2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Darlington/darlingtontransistor2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features-of-the-structure">Key Features of the Structure</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bipolar-transistor-as-a-switch">Bipolar Transistor as a Switch</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-darilgton-transistor-configuration">Basic Darilgton Transistor Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington-transistor-example-no-1">Darlington Transistor Example No. 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identical-darlington-transistors">Identical Darlington Transistors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington-transistor-applications">Darlington Transistor Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sziklai-transistor-pair">Sziklai Transistor Pair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sziklai-darlington-transistor-configuration">Sziklai Darlington Transistor Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington-transistor-ics">Darlington Transistor IC’s</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uln2003a-darlington-transistor-array">The ULN2003A Darlington Transistor Array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uln2003a-darlington-transistor-array">ULN2003A Darlington Transistor Array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-applications">Summary of Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington-transistor-vs-mosfet-selection-guidelines">Darlington Transistor vs. MOSFET: Selection Guidelines</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-simulation">Code Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>A <strong>Darlington transistor</strong> is a composite electronic component that integrates two bipolar junction transistors (BJTs) in a cascading configuration. It is widely used for applications requiring high current amplification and sensitivity. This document provides an in-depth look at the structure, advantages, disadvantages, and applications of the Darlington transistor.</p>
+</section>
+<section id="structure">
+<h1>Structure<a class="headerlink" href="#structure" title="Link to this heading">#</a></h1>
+<p>The Darlington transistor consists of two transistors connected in a manner where the emitter of the first transistor is connected to the base of the second. This arrangement results in a significant amplification of current, as the output current of the first transistor serves as the input current for the second. Consequently, the overall current gain (( \beta )) is the product of the individual gains of the two transistors:</p>
+<p>[
+\beta_{total} = \beta_1 \times \beta_2
+]</p>
+<p>The configuration also includes a base resistor to limit the input current and sometimes additional resistors to stabilize operation.</p>
+<section id="key-features-of-the-structure">
+<h2>Key Features of the Structure<a class="headerlink" href="#key-features-of-the-structure" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Base-Emitter Junctions</strong>: Two base-emitter junctions in series lead to a higher voltage drop (~1.4V for silicon transistors).</p></li>
+<li><p><strong>Compactness</strong>: Many Darlington pairs are integrated into a single package to simplify circuit design.</p></li>
+<li><p><strong>Additional Protection</strong>: Some designs include protection diodes to handle inductive loads.</p></li>
+</ol>
+<p>The following schematic represents the structure of a Darlington pair:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drawing the schematic of a Darlington pair</span>
+<span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    
+    <span class="n">q1</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">BjtNpn</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;T1&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">))</span>
+    
+   
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">q1</span><span class="o">.</span><span class="n">emitter</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    
+   
+    <span class="n">q2</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">BjtNpn</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;T2&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">))</span>
+    
+  
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">q2</span><span class="o">.</span><span class="n">emitter</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
+    
+ 
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">q1</span><span class="o">.</span><span class="n">collector</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">q2</span><span class="o">.</span><span class="n">collector</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;Collector&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+    
+
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">q1</span><span class="o">.</span><span class="n">base</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;Base&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+    
+  
+    <span class="n">d</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2279abdeae165c75b6514be59b174a1bf4463f7d6de8d353717a063c8309a4b7.svg" src="../../_images/2279abdeae165c75b6514be59b174a1bf4463f7d6de8d353717a063c8309a4b7.svg" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bipolar-transistor-as-a-switch">
+<h1>Bipolar Transistor as a Switch<a class="headerlink" href="#bipolar-transistor-as-a-switch" title="Link to this heading">#</a></h1>
+<p><img alt="Bipolar Transistor as  Switch" src="../../_images/transistor-tran62.webp" /></p>
+<p>When the base terminal of the NPN transistor is grounded (0 volts), zero current flows into the base, therefore (I_B = 0). As the base terminal is grounded, no current flows from the collector to the emitter terminals; therefore, the non-conducting NPN transistor is switched <strong>OFF</strong> (cut-off).
+If we forward bias the base terminal with respect to the emitter using a voltage source greater than 0.7 volts, transistor action occurs, causing a much larger current to flow through the transistor between its collector and emitter terminals. The transistor is now said to be switched <strong>ON</strong> (conducting). If we operate the transistor between these two modes of cut-off and conduction, the transistor can function as an electronic switch.</p>
+<p>The transistors’ base terminal must switch between zero and some positive value (much greater than 0.7 volts) for the transistor to fully conduct. A higher voltage increases base current ((I_B)), resulting in larger collector current ((I_C)) and a smaller voltage drop across the collector and emitter terminals ((V_{CE})). Then, a smaller current flowing into the base terminal can cause a much larger current to flow between the collector and the emitter.</p>
+<p>The ratio of collector current to base current ((\beta)) is the current gain of the transistor. A typical value of (\beta) for a standard bipolar transistor ranges from 50 to 200 and varies even between transistors of the same part <a class="reference external" href="http://number.In">number.In</a> some cases where the current gain of a single transistor is too low to directly drive a load, one way to increase the gain is to use a Darlington pair.</p>
+<p>A <strong>Darlington Transistor</strong> configuration, also known as a <strong>Darlington pair</strong> or <strong>super-alpha circuit</strong>, consists of two NPN or PNP transistors connected so that the emitter current of the first transistor ((TR_1)) becomes the base current of the second transistor ((TR_2)). Then (TR_1) is connected as an emitter follower and (TR_2) as a common emitter amplifier as shown below.</p>
+<p>Also note that in this Darlington pair configuration, the collector current of the slave or control transistor, TR1 is “in-phase” with that of the master switching transistor TR2.</p>
+<section id="basic-darilgton-transistor-configuration">
+<h2>Basic Darilgton Transistor Configuration<a class="headerlink" href="#basic-darilgton-transistor-configuration" title="Link to this heading">#</a></h2>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran63.webp" /></p>
+<p>Using the NPN Darlington pair as the example, the collectors of two transistors are connected together, and the emitter of TR1 drives the base of TR2. This configuration achieves β multiplication because for a Base current ib, the collector current is β*ib where the current gain is greater than one, or unity and this is defined as:</p>
+<p>This behavior is defined mathematically as:</p>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran64.webp" /></p>
+<p>But the base current, IB2 is equal to transistor TR1 emitter current, IE1 as the emitter of TR1 is connected to the base of TR2. Therefore:</p>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran64a.webp" /></p>
+<p>Then substituting in the first equation:</p>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran64b.webp" /></p>
+<p>Where β1 and β2 are the gains of the individual transistors.</p>
+<p>This means that the overall current gain, β is given by the gain of the first transistor multiplied by the gain of the second transistor as the current gains of the two transistors multiply. In other words, a pair of bipolar transistors combined together to make a single Darlington transistor pair can be regarded as a single transistor with a very high value of β and consequently a high input resistance.</p>
+</section>
+<section id="darlington-transistor-example-no-1">
+<h2>Darlington Transistor Example No. 1<a class="headerlink" href="#darlington-transistor-example-no-1" title="Link to this heading">#</a></h2>
+<p>Two NPN transistors are connected together in the form of a Darlington Pair to switch a 12V 75W halogen lamp. If the forward current gain of the first transistor is 25 and the forward current gain (( \beta )) of the second transistor is 80, ignoring any voltage drops across the two transistors, calculate the maximum base current required to switch the lamp fully ON.</p>
+<p>Firstly, the current drawn by the lamp will be equal to the Collector current of the second transistor, then:</p>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran65.gif" /></p>
+<p>Using the equation above, the base current is given as:</p>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran66.webp" /></p>
+<p>Then we can see that a very small base current of only 3.0mA, such as that supplied by a digital logic gate or the output port of a micro-controller, can be used to switch the 75 Watt lamp “ON” and “OFF”.</p>
+<p>If two identical bipolar transistors are used to make a single Darlington device then β1 is equal to β2 and the overall current gain will be given as:</p>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran67.webp" /></p>
+<p>Generally the value of β2 is much greater than that of 2β, in which case it can be ignored to simplify the maths a little. Then the final equation for two identical transistors configured as a Darlington pair can be written as:</p>
+</section>
+<section id="identical-darlington-transistors">
+<h2>Identical Darlington Transistors<a class="headerlink" href="#identical-darlington-transistors" title="Link to this heading">#</a></h2>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran68.webp" /></p>
+<p>Then we can see that for two identical transistors, β2 is used instead of β acting like one big transistor with a huge amount of gain. Darlington transistor pairs with current gains of more than a thousand with maximum collector currents of several amperes are easily available. For example: the NPN TIP120 and its PNP equivalent the TIP125.</p>
+<p>The advantage of using an arrangement such as this, is that the switching transistor is much more sensitive as only a tiny base current is required to switch a much larger load current as the typical gain of a Darlington configuration can be over 1,000 whereas normally a single transistor stage produces a gain of about 50 to 200.</p>
+<p>Then we can see that a darlington pair with a gain of 1,000:1, could switch an output current of 1 ampere in the collector-emitter circuit with an input base current of just 1mA. This then makes darlington transistors ideal for interfacing with relays, lamps and motors to low power microcontroller, computer or logic controllers as shown.</p>
+</section>
+<section id="advantages">
+<h2>Advantages<a class="headerlink" href="#advantages" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>High Current Gain</strong>: The combined configuration achieves gains exceeding 10,000, making it highly efficient for amplification purposes.</p></li>
+<li><p><strong>High Input Impedance</strong>: Minimal loading effect on preceding circuits.</p></li>
+<li><p><strong>Compact Design</strong>: Often available in integrated packages, simplifying circuit design.</p></li>
+<li><p><strong>Ease of Use</strong>: Can amplify very small currents effectively.</p></li>
+</ol>
+</section>
+<section id="disadvantages">
+<h2>Disadvantages<a class="headerlink" href="#disadvantages" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>High Saturation Voltage</strong>: Requires a higher base-emitter voltage (1.4V for silicon transistors).</p></li>
+<li><p><strong>Thermal Concerns</strong>: Generates more heat due to increased voltage drops.</p></li>
+<li><p><strong>Slower Switching</strong>: Takes longer to turn ON or OFF compared to single transistors.</p></li>
+<li><p><strong>Leakage Current</strong>: Amplifies the leakage current of the first transistor.</p></li>
+</ol>
+</section>
+<section id="darlington-transistor-applications">
+<h2>Darlington Transistor Applications<a class="headerlink" href="#darlington-transistor-applications" title="Link to this heading">#</a></h2>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran69.webp" /></p>
+<p>The base of the Darlington transistor is sufficiently sensitive to respond to any small input current from a switch or directly from a TTL or 5V CMOS logic gate. The maximum collector current Ic(max) for any Darlington pair is the same as that for the main switching transistor, TR2 so can be used to operate relays, DC motors, solenoids and lamps, etc.</p>
+<p>One of the main disadvantage of a Darlington transistor pair is the minimum voltage drop between the base and emitter when fully saturated. Unlike a single transistor which has a saturated voltage drop of between 0.3v and 0.7v when fully-ON, a Darlington device has twice the base-emitter voltage drop (1.2 V instead of 0.6 V) as the base-emitter voltage drop is the sum of the base-emitter diode drops of the two individual transistors which can be between 0.6v to 1.5v depending on the current through the transistor.</p>
+<p>This high base-emitter voltage drop means that the Darlington transistor can get hotter than a normal bipolar transistor for a given load current and therefore requires good heat sinking. Also, Darlington transistors have slower ON-OFF response times as it takes longer for the slave transistor TR1 to turn the master transistor TR2 either fully-ON or fully-OFF.</p>
+<p>To overcome the slow response, increased voltage drop and thermal disadvantages of a standard Darlington Transistor device, complementary NPN and PNP transistors can be used in the same cascaded arrangement to produce another type of Darlington transistor called a Sziklai Configuration.</p>
+</section>
+<section id="sziklai-transistor-pair">
+<h2>Sziklai Transistor Pair<a class="headerlink" href="#sziklai-transistor-pair" title="Link to this heading">#</a></h2>
+<p>The Sziklai Darlington Pair, named after its Hungarian inventor George Sziklai, is a complementary or compound Darlington device that consists of separate NPN and PNP complementary transistors connected together as shown below.</p>
+<p>This cascaded combination of NPN and PNP transistors has the advantage that the Sziklai pair performs the same basic function of a Darlington pair except that it only requires 0.6v for it to turn-ON and like the standard Darlington configuration, the current gain is equal to β2 for equally matched transistors or is given by the product of the two current gains for unmatched individual transistors.</p>
+</section>
+<section id="sziklai-darlington-transistor-configuration">
+<h2>Sziklai Darlington Transistor Configuration<a class="headerlink" href="#sziklai-darlington-transistor-configuration" title="Link to this heading">#</a></h2>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran70.webp" /></p>
+<p>We can see that the base-emitter voltage drop of the Sziklai device is equal to the diode drop of a single transistor in the signal path. However, the Sziklai configuration can not saturate to less than one whole diode drop, i.e. 0.7v instead of the usual 0.2v.</p>
+<p>Also, as with the Darlington pair, the Sziklai pair have slower response times than a single transistor. Sziklai pair complementary transistors are commonly used in push-pull and class AB audio amplifier output stages allowing for one polarity of output transistor only. Both the Darlington and Sziklai transistor pairs are available in both NPN and PNP configurations.</p>
+</section>
+<section id="darlington-transistor-ics">
+<h2>Darlington Transistor IC’s<a class="headerlink" href="#darlington-transistor-ics" title="Link to this heading">#</a></h2>
+<p>In most electronics applications it is sufficient for the controlling circuit to switch a DC output voltage or current “ON” or “OFF” directly as some output devices such as LED’s or displays only require a few milliamps to operate at low DC voltages and can therefore be driven directly by the output of a standard logic gate.</p>
+<p>However as we have seen above, sometimes more power is required to operate the output device such as a DC motor than can be supplied by an ordinary logic gate or micro-controller. If the digital logic device cannot supply sufficient current then additional circuitry will be required to drive the device.</p>
+<p>One such commonly used Darlington transistor chip is the ULN2003 array. The family of darlington arrays consist of the ULN2002A, ULN2003A and the ULN2004A which are all high voltage, high current darlington arrays each containing seven open collector darlington pairs within a single IC package.</p>
+<p>Each channel of the array is rated at 500mA and can withstand peak currents of up to 600mA making it ideal for controlling small motors or lamps or the gates and bases of high power semiconductors. Additional suppression diodes are included for inductive load driving and the inputs are pinned opposite the outputs to simplify the connections and board layout.</p>
+</section>
+<section id="the-uln2003a-darlington-transistor-array">
+<h2>The ULN2003A Darlington Transistor Array<a class="headerlink" href="#the-uln2003a-darlington-transistor-array" title="Link to this heading">#</a></h2>
+<p>The <strong>ULN2003A</strong> is a inexpensive unipolar darlington transistor array with high efficiency and low power consumption making it useful for driving a wide range of loads including solenoids, relays DC Motor’s and LED displays or filament lamps. The ULN2003A contains seven darlington transistor pairs each with an input pin on the left and an output pin opposite it on the right as shown.</p>
+</section>
+<section id="uln2003a-darlington-transistor-array">
+<h2>ULN2003A Darlington Transistor Array<a class="headerlink" href="#uln2003a-darlington-transistor-array" title="Link to this heading">#</a></h2>
+<p><img alt="darligton Transistors" src="../../_images/transistor-tran71.webp" /></p>
+<p>The ULN2003A Darlington driver has an extremely high input impedance and current gain which can be driven directly from either a TTL or +5V CMOS logic gate. For +15V CMOS logic use the ULN2004A and for higher switching voltages up to 100V it is better to use the SN75468 Darlington array.</p>
+<p>When an input (pins 1 to 7) is driven “HIGH” the corresponding output will switch “LOW” sinking current. Likewise, when the input is driven “LOW” the corresponding output switches to a high impedance state. This high impedance “OFF” state blocks load current and reduces leakage current through the device improving efficiency.</p>
+<p>Pin 8, (GND) is connected to the loads ground or 0 volts, while pin 9 (Vcc) connects to the loads supply. Then any load needs to be connected between +Vcc and an output pin, pins 10 to 16. For inductive loads such as motors, relays and solenoids, etc, pin 9 should always be connected to Vcc.</p>
+<p>The ULN2003A is capable of switching 500mA (0.5A) per channel but if more switching current capability is required then both the Darlington pairs inputs and outputs can be paralleled together for higher current capability. For example, input pins 1 and 2 connected together and output pins 16 and 15 connected together to switch the load.</p>
+</section>
+<section id="summary-of-applications">
+<h2>Summary of Applications<a class="headerlink" href="#summary-of-applications" title="Link to this heading">#</a></h2>
+<p>Darlington transistors are highly versatile and widely used in various electronic systems. Below are expanded applications:</p>
+<ol class="arabic simple">
+<li><p><strong>Switching Applications</strong>:</p>
+<ul class="simple">
+<li><p><strong>Relay Drivers</strong>: Darlington pairs can control relays that activate high-power circuits with minimal control current.</p></li>
+<li><p><strong>Motors and Actuators</strong>: Used in DC motor controllers for robotics and industrial machines.</p></li>
+<li><p><strong>Inductive Loads</strong>: Ideal for handling loads such as solenoids due to their high current capacity.</p></li>
+<li><p><strong>Touch-Sensitive Circuits</strong>: Utilized in devices requiring high sensitivity to small input currents, such as touch sensors and water-level indicators.</p></li>
+</ul>
+</li>
+<li><p><strong>Amplification Applications</strong>:</p>
+<ul class="simple">
+<li><p><strong>Audio Systems</strong>: Frequently employed in audio amplifiers due to their high current gain and capability to drive speakers.</p></li>
+<li><p><strong>Signal Conditioning</strong>: Used in sensor circuits to amplify weak signals for further processing.</p></li>
+</ul>
+</li>
+<li><p><strong>Integrated Circuit Solutions</strong>:</p>
+<ul class="simple">
+<li><p><strong>ULN2003A and Similar ICs</strong>: These ICs incorporate multiple Darlington pairs, making them ideal for driving stepper motors, LEDs, and other loads in automation systems.</p></li>
+<li><p><strong>Lighting Control</strong>: Used in applications requiring precise control of light sources, such as dimmers.</p></li>
+</ul>
+</li>
+<li><p><strong>High-Power Applications</strong>:</p>
+<ul class="simple">
+<li><p><strong>Power Supplies</strong>: Darlington pairs help regulate high current in switching power supplies.</p></li>
+<li><p><strong>Industrial Automation</strong>: Widely used in controllers for industrial machinery and production systems.</p></li>
+</ul>
+</li>
+<li><p><strong>Energy Management</strong>:</p>
+<ul class="simple">
+<li><p><strong>Solar Inverters</strong>: Enhance efficiency by amplifying signals in renewable energy systems.</p></li>
+<li><p><strong>Battery Chargers</strong>: Regulate currents in smart battery charging systems.</p></li>
+</ul>
+</li>
+</ol>
+<section id="darlington-transistor-vs-mosfet-selection-guidelines">
+<h3>Darlington Transistor vs. MOSFET: Selection Guidelines<a class="headerlink" href="#darlington-transistor-vs-mosfet-selection-guidelines" title="Link to this heading">#</a></h3>
+<p><strong>Key Takeaways:</strong></p>
+<ul class="simple">
+<li><p><strong>Darlington Transistor:</strong></p>
+<ul>
+<li><p>Combines two or more bipolar junction transistors (BJTs) to achieve a higher current gain.</p></li>
+<li><p>Suitable for applications requiring high input impedance and substantial current amplification.</p></li>
+<li><p>Exhibits slower switching speeds and higher saturation voltages, leading to increased power dissipation.</p></li>
+<li><p>Commonly used in low-frequency applications like audio amplifiers and signal processing.</p></li>
+</ul>
+</li>
+<li><p><strong>MOSFET (Metal-Oxide-Semiconductor Field-Effect Transistor):</strong></p>
+<ul>
+<li><p>Voltage-controlled devices with high input impedance and fast switching capabilities.</p></li>
+<li><p>Ideal for high-speed and high-efficiency applications, such as switching power supplies and digital circuits.</p></li>
+<li><p>Lower on-resistance and faster response times compared to Darlington transistors.</p></li>
+<li><p>Generally more efficient with lower power losses, especially in high-frequency operations.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Selection Guidelines:</strong></p>
+<ul class="simple">
+<li><p><strong>Use Darlington Transistors when:</strong></p>
+<ul>
+<li><p>High current gain is essential, and switching speed is not critical.</p></li>
+<li><p>The application involves low to medium frequency operations.</p></li>
+<li><p>Simplicity and ease of implementation are priorities.</p></li>
+</ul>
+</li>
+<li><p><strong>Use MOSFETs when:</strong></p>
+<ul>
+<li><p>Fast switching and high efficiency are required.</p></li>
+<li><p>Operating at high frequencies or in digital circuits.</p></li>
+<li><p>Lower power dissipation is crucial for the application.</p></li>
+</ul>
+</li>
+</ul>
+<p>For a more detailed comparison, refer to the original article: <a class="reference external" href="https://resources.pcb.cadence.com/blog/2023-pdarlington-transistor-vs-mosfet-selection-guidelines">Darlington Transistor vs. MOSFET: Selection Guidelines</a></p>
+</section>
+</section>
+<section id="code-simulation">
+<h2>Code Simulation<a class="headerlink" href="#code-simulation" title="Link to this heading">#</a></h2>
+<p>To better understand the behavior of a Darlington transistor, we can simulate its response using <code class="docutils literal notranslate"><span class="pre">PySpice</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="n">beta1</span> <span class="o">=</span> <span class="mi">100</span>  
+<span class="n">beta2</span> <span class="o">=</span> <span class="mi">150</span>  
+<span class="n">Iin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  
+
+
+<span class="n">Iout</span> <span class="o">=</span> <span class="n">beta1</span> <span class="o">*</span> <span class="n">beta2</span> <span class="o">*</span> <span class="n">Iin</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Iin</span><span class="p">,</span> <span class="n">Iout</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Darlington Transistor Output&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Input Current (A)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Output Current (A)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Darlington Transistor Input vs Output Current&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">Vbe_on</span> <span class="o">=</span> <span class="mf">0.7</span>  
+<span class="n">Vbe_total</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Vbe_on</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Base-Emitter Voltage Drop: </span><span class="si">{</span><span class="n">Vbe_total</span><span class="si">}</span><span class="s2"> V&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5ad2f8f8a804278c03635f4558185ebb992d030bd4b69c2394a8e600ebb7296e.png" src="../../_images/5ad2f8f8a804278c03635f4558185ebb992d030bd4b69c2394a8e600ebb7296e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total Base-Emitter Voltage Drop: 1.4 V
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Probe.Plot</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Create a new circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s2">&quot;Darlington Pair&quot;</span><span class="p">)</span>
+
+<span class="c1"># Define the SPICE model directly in the script</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;2N2222&#39;</span><span class="p">,</span> <span class="s1">&#39;NPN&#39;</span><span class="p">,</span> 
+    <span class="n">IS</span><span class="o">=</span><span class="mf">1e-14</span><span class="p">,</span> <span class="n">BF</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">NF</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">VAF</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">IKF</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> 
+    <span class="n">ISE</span><span class="o">=</span><span class="mf">2e-14</span><span class="p">,</span> <span class="n">NE</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">BR</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">NR</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">VAR</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">IKR</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> 
+    <span class="n">ISC</span><span class="o">=</span><span class="mf">1e-13</span><span class="p">,</span> <span class="n">NC</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+    <span class="n">RB</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">RC</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">RE</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> 
+    <span class="n">CJE</span><span class="o">=</span><span class="mf">2e-12</span><span class="p">,</span> <span class="n">VJE</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">MJE</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">TF</span><span class="o">=</span><span class="mf">400e-12</span><span class="p">,</span> 
+    <span class="n">CJC</span><span class="o">=</span><span class="mf">2e-12</span><span class="p">,</span> <span class="n">VJC</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">MJC</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">TR</span><span class="o">=</span><span class="mf">50e-9</span>
+<span class="p">)</span>
+
+<span class="c1"># Define the Darlington pair</span>
+<span class="c1"># First transistor</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">BJT</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NODE1&#39;</span><span class="p">,</span> <span class="s1">&#39;BASE&#39;</span><span class="p">,</span> <span class="s1">&#39;EMITTER&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;2N2222&#39;</span><span class="p">)</span>  
+<span class="c1"># Second transistor</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">BJT</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;OUT&#39;</span><span class="p">,</span> <span class="s1">&#39;NODE1&#39;</span><span class="p">,</span> <span class="s1">&#39;EMITTER&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;2N2222&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add resistors and voltage source</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;BASE&#39;</span><span class="p">,</span> <span class="s1">&#39;V_IN&#39;</span><span class="p">,</span> <span class="mf">1e3</span><span class="p">)</span>      <span class="c1"># Base resistor</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;OUT&#39;</span><span class="p">,</span> <span class="s1">&#39;GND&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>         <span class="c1"># Load resistor</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;V_IN&#39;</span><span class="p">,</span> <span class="s1">&#39;GND&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>         <span class="c1"># Input voltage source (start at 2V to bias properly)</span>
+
+<span class="c1"># Simulate the circuit</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">V1</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>  <span class="c1"># Sweep the input voltage from 2V to 5V</span>
+
+<span class="c1"># Plot the output</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;V_IN&#39;</span><span class="p">],</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;OUT&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Vout vs Vin&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Darlington Pair Output&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Input Voltage (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Output Voltage (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/58b2d17179e394b7470d7b1d19b1d1b0144ecc74a7f12fa6fa7eae20681dcd84.png" src="../../_images/58b2d17179e394b7470d7b1d19b1d1b0144ecc74a7f12fa6fa7eae20681dcd84.png" />
+</div>
+</div>
+<section id="conclusion">
+<h3>Conclusion:<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<p>While both Darlington transistors and MOSFETs have their respective advantages, MOSFETs are generally preferred in modern electronic designs for switching and amplification tasks due to their higher efficiency, faster switching speeds, and better thermal performance. However, the choice between the two should be guided by the specific requirements of the application, including factors like load characteristics, switching frequency, and drive circuitry.</p>
+<p><strong>References</strong>:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://resources.pcb.cadence.com/blog/2023-pdarlington-transistor-vs-mosfet-selection-guidelines">Darlington Transistor vs. MOSFET: Selection Guidelines</a></p></li>
+<li><p><a class="reference external" href="https://electronics.stackexchange.com/questions/235668/is-there-any-reason-to-use-junction-or-darlington-transistors-for-power-applicat">Is there any reason to use junction or Darlington transistors for power applications?</a></p></li>
+<li><p><a class="reference external" href="https://www.electronics-tutorials.ws/transistor/darlington-transistor.html">Electronics Tutorials</a>.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Darlington"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../example1-2/example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Example: currect and charge relation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../JFET_TRansistor/JFETTrans.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Junction Field Effect Transistor (JFET)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features-of-the-structure">Key Features of the Structure</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bipolar-transistor-as-a-switch">Bipolar Transistor as a Switch</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-darilgton-transistor-configuration">Basic Darilgton Transistor Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington-transistor-example-no-1">Darlington Transistor Example No. 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identical-darlington-transistors">Identical Darlington Transistors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington-transistor-applications">Darlington Transistor Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sziklai-transistor-pair">Sziklai Transistor Pair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sziklai-darlington-transistor-configuration">Sziklai Darlington Transistor Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington-transistor-ics">Darlington Transistor IC’s</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uln2003a-darlington-transistor-array">The ULN2003A Darlington Transistor Array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uln2003a-darlington-transistor-array">ULN2003A Darlington Transistor Array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-applications">Summary of Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#darlington-transistor-vs-mosfet-selection-guidelines">Darlington Transistor vs. MOSFET: Selection Guidelines</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-simulation">Code Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
