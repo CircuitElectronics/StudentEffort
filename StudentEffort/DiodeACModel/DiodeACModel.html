@@ -1,0 +1,939 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AC Model of Diode &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/DiodeACModel/DiodeACModel';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multivibrator: Astable, Monostable, and Bistable" href="../Multivibrator/Multivibrator.html" />
+    <link rel="prev" title="power in AC circuit" href="../powerinaccircuit/AC_Power.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/DiodeACModel/DiodeACModel.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/DiodeACModel/DiodeACModel.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AC Model of Diode</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AC Model of Diode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-small-signal-model">Diode Small Signal Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-small-signal-model">Finding the Small Signal Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-find-the-ac-model-of-the-circuit-below">Example: Find the AC model of the circuit below.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-find-the-ac-model-of-a-diode">Steps to Find the AC Model of a Diode</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ac-model-of-diode">
+<h1>AC Model of Diode<a class="headerlink" href="#ac-model-of-diode" title="Link to this heading">#</a></h1>
+<p>Author: Reza Farasati</p>
+<p>Contact: <a class="reference external" href="mailto:rezafarasati2004&#37;&#52;&#48;gmail&#46;com">rezafarasati2004<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>Diodes are critical components in modern electronic circuits, renowned for their non-linear I-V characteristics. While these properties enable functionalities like rectification and switching, analyzing a diode’s behavior for small variations around a fixed operating point requires a different perspective. This brings us to the <strong>small-signal model</strong>—a powerful tool that simplifies the diode’s non-linear dynamics into an intuitive, linear framework.</p>
+<p>This presentation delves into the process of deriving the small-signal model, grounded in the principles of DC biasing and linearization. Using visualizations and equations inspired by Sedra and Smith’s analysis, we’ll explore how the bias point (Q-point) allows us to approximate the diode’s behavior as a linear system. The model is vital in applications like amplifiers and other analog circuits, where small deviations in input signals must be analyzed with precision.</p>
+<p>By comprehending this methodology, we gain a profound understanding of the diode’s significance in circuit design and acquire the analytical tools necessary to accurately predict its behavior under small-signal conditions. This presentation aims to bridge the conceptual gap between the diode’s inherently non-linear characteristics and its linearized applications in practical circuit analysis.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="diode-small-signal-model">
+<h1>Diode Small Signal Model<a class="headerlink" href="#diode-small-signal-model" title="Link to this heading">#</a></h1>
+<p>The figure below (Figure 1.13 from Sedra and Smith 7 ed.) shows the transfer characteristics of a linear amplifier with power supplies <span class="math notranslate nohighlight">\(\mathrm{L}_{+}\)</span>and <span class="math notranslate nohighlight">\(\mathrm{L}_{\text {- }}\)</span>. It also shows two sinusoidal inputs to the amplifier plotted vertically, and the corresponding outputs plotted horizontally.
+<img alt="diodeACmodel1.png" src="StudentEffort/DiodeACModel/attachment:cb0cb179-fb5d-4360-951d-907a8e1f63cf.png" /></p>
+<p>This figure makes that point that if the input signal amplitude is too large, the output will exceed the power supplies. In that case, we are not operating in the linear region, and the output “clips”. This is happening for the input labeled 2 , so the output is a function that is more complex than a single sinusoid. That means it has many Fourier components, and from our definition of linearity, the circuit is not linear under those circumstances.</p>
+<p>Figure 1.14 below shows the transfer characteristics of an amplifier that is more typical, and more complex. There is a region of the transfer characteristics where the amplifier response is approximately linear, but it is offset from 0 Volts. Therefore, to amplify a signal <span class="math notranslate nohighlight">\(v_{i}\)</span> with this amplifier, we must add a DC bias voltage <span class="math notranslate nohighlight">\(\mathrm{V}_{1}\)</span> to the signal, to move the signal into a linear region of the transfer characteristics.
+<img alt="diodeACmodel2.png" src="StudentEffort/DiodeACModel/attachment:e9ce6c5e-5bfc-4d0d-8540-9cc28c43c330.png" /></p>
+<p>Even then, the transfer characteristics may not be precisely linear. If they are not, our output signal will be a distorted version of the input. In real amplifiers, the transfer characteristic is very nearly linear, provided we do not move too far away from the region labeled <span class="math notranslate nohighlight">\(Q\)</span> in the figure above. In other words, if the input signal is small in amplitude, then the transfer characteristics will be approximately linear over the range of the signal amplitude, and the output will be a good reproduction of the input.</p>
+<p>To summarize: in real amplifiers, we must apply a bias voltage to our signal to get the signal into a region of the transfer characteristics that is approximately linear. Furthermore, the signal must be small, that is, of a small amplitude, so that it does not vary from the linear region of the transfer characteristics.</p>
+<p>The figure below shows the transfer characteristics <span class="math notranslate nohighlight">\(i_{D}-v_{D}\)</span> of a typical diode. We don’t usually think of a diode as an amplifier, but the notion of bias and application of a small signal still applies. In the figure, the bias voltage is <span class="math notranslate nohighlight">\(\mathrm{V}_{\mathrm{D}}\)</span>, which is generated by the biasing source <span class="math notranslate nohighlight">\(\mathrm{V}_{\mathrm{DD}}\)</span>. The small signal input is <span class="math notranslate nohighlight">\(v_{d}\)</span>. The ac component of the output is <span class="math notranslate nohighlight">\(i_{d}\)</span>, and the DC component is <span class="math notranslate nohighlight">\(\mathrm{I}_{\mathrm{D}}\)</span>. The quiescent point or bias point <span class="math notranslate nohighlight">\(Q\)</span> is the point on the current-voltage curve that is not varying, that is, it’s the DC voltage and current <span class="math notranslate nohighlight">\(\mathrm{V}_{\mathrm{D}}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{I}_{\mathrm{D}}\)</span>.
+<img alt="diodeACmodel3.png" src="StudentEffort/DiodeACModel/attachment:1255113f-c867-442d-a415-648dd22ecf43.png" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; i_{D}(t)=I_{D}+i_{d}(t) \\
+&amp; v_{D}(t)=V_{D}+v_{d}(t)
+\end{aligned}
+\end{split}\]</div>
+<p><img alt="diodeACmodel4.png" src="StudentEffort/DiodeACModel/attachment:00e72407-6187-46b6-bce2-efa3a829ff4a.png" /></p>
+<p>We will use this figure to develop the small signal model for the diode, that is, to develop a circuit model that is appropriate for a small AC signal applied to the linear region of the transfer characteristics.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="finding-the-small-signal-model">
+<h1>Finding the Small Signal Model<a class="headerlink" href="#finding-the-small-signal-model" title="Link to this heading">#</a></h1>
+<p>Figure 4.14 shows a tangent drawn at the bias point <span class="math notranslate nohighlight">\(Q\)</span>. This line approximates the transfer characteristics in the case that the signal amplitude is small. The slope of that line is an inverse resistance, and the resistance is <span class="math notranslate nohighlight">\(r_{d}\)</span>, which we will call the small signal resistance of the diode. The resistance is the inverse slope of the tangent to the curve evaluated at the bias point:
+$<span class="math notranslate nohighlight">\(
+r_{d}=\left(\frac{\partial \mathrm{i}_{D}}{\partial v_{D}}\right)_{v_{D}=V_{D}}^{-1}
+\)</span>$</p>
+<p>If we extrapolate the line to <span class="math notranslate nohighlight">\(i_{D}=0\)</span>, it intercepts the axis at a value we are calling <span class="math notranslate nohighlight">\(\mathrm{V}_{\mathrm{DO}}\)</span>. Note that and <span class="math notranslate nohighlight">\(r_{d}\)</span> are the parameters of a model for the forward bias diode of the type that we discussed in diode modeling - a voltage source in series with a resistance. But depending upon
+the <span class="math notranslate nohighlight">\(D C\)</span> bias <span class="math notranslate nohighlight">\(V_{D}\)</span> and therefore on the <span class="math notranslate nohighlight">\(Q\)</span> point, <span class="math notranslate nohighlight">\(r_{d}\)</span> and <span class="math notranslate nohighlight">\(V_{D O}\)</span> will change. For example, if <span class="math notranslate nohighlight">\(V_{D}\)</span> increases, the slope of the line will increase, or <span class="math notranslate nohighlight">\(r_{d}\)</span> will decrease, and <span class="math notranslate nohighlight">\(V_{D O}\)</span> will increase.</p>
+<p>We develop the small signal model of the diode beginning with the ideal diode equation:
+$<span class="math notranslate nohighlight">\(
+i_{D}=I_{S}\left(e^{v_{D} / n V_{t}}-1\right)
+\)</span>$</p>
+<p>Recall that <span class="math notranslate nohighlight">\(\mathrm{I}_{s}\)</span> is the reverse bias saturation current, n is the ideality factor, and <span class="math notranslate nohighlight">\(\mathrm{V}_{\mathrm{t}}\)</span> is the thermal voltage, which at room temperature is 25 mV . We will consider forward bias where <span class="math notranslate nohighlight">\(v_{D} \gg \mathrm{nV}_{\mathrm{t}}\)</span>, in which case we can approximate to
+$<span class="math notranslate nohighlight">\(
+i_{D}=I_{S} e^{v_{D} / n v_{t}}
+\)</span>$</p>
+<p>Now <span class="math notranslate nohighlight">\(v_{D}\)</span> has an AC and a DC component: <span class="math notranslate nohighlight">\(v_{D}=V_{D}+v_{d}\)</span>. Putting that in our equation above gives
+$<span class="math notranslate nohighlight">\(
+i_{D}=I_{S} e^{V_{D} / n V_{t}} e^{V_{d} / n V_{t}}
+\)</span>$</p>
+<p>The first term on the left is the DC current generated by application of <span class="math notranslate nohighlight">\(\mathrm{V}_{\mathrm{D}}\)</span> :
+$<span class="math notranslate nohighlight">\(
+I_{D}=I_{S} e^{V_{D} / n V_{t}}
+\)</span>$</p>
+<p>If the signal is small, specifically <span class="math notranslate nohighlight">\(v_{d}&lt;&lt;n V_{t}\)</span>, we can expand the exponent <span class="math notranslate nohighlight">\(e^{V_{d} / n v_{t}}\)</span> using Taylor series expansion:</p>
+<div class="math notranslate nohighlight">
+\[
+e^x \simeq 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \quad
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{for } (x \ll 1) \quad \Rightarrow \quad e^x \simeq 1 + x
+\]</div>
+<p>So:</p>
+<div class="math notranslate nohighlight">
+\[
+i_{D} \approx I_{D}\left(1+\frac{V_{d}}{n V_{t}}\right)=I_{D}+V_{d} \frac{I_{D}}{n V_{t}}
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(\mathrm{I}_{\mathrm{D}}\)</span> is the DC component of the current, and the AC component is <span class="math notranslate nohighlight">\(\frac{V_{d}}{r_{d}}\)</span>, where
+$<span class="math notranslate nohighlight">\(
+r_{d}=\frac{n V_{t}}{I_{D}}
+\)</span>$</p>
+<p>Now we have our diode small signal model. It is a voltage source <span class="math notranslate nohighlight">\(\mathrm{V}_{\mathrm{DO}}\)</span> in series with a resistance <span class="math notranslate nohighlight">\(r_{d}\)</span>, where <span class="math notranslate nohighlight">\(r_{d}\)</span> is determined by the biasing conditions, specifically <span class="math notranslate nohighlight">\(I_{D}\)</span>. So we don’t have to evaluate
+the derivative of the curve; we can simply use the formula above. But we do have to know the bias point.</p>
+<p>Let’s look at a simple circuit, and split it into its DC and AC components. To do this, we first replace the diode with the small signal model. This is done for the circuit below. (There are lots of symbols here…make sure you understand what they mean!)
+<img alt="diodeACmodel5.png" src="StudentEffort/DiodeACModel/attachment:bafc2e7c-a79a-4cd2-8d87-0cb539738dfc.png" /></p>
+<p>A KVL for the circuit on the right gives
+$<span class="math notranslate nohighlight">\(
+V_{D D}+v_{d}=\left(I_{D}+i_{d}\right)\left(R+r_{d}\right)+V_{D 0}
+\)</span>$</p>
+<p>We can separate the DC components and the AC components:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+&amp; \mathrm{DC}: V_{D D}=I_{D}\left(R+r_{d}\right)+V_{D 0}=I_{D} R+V_{D} \\
+&amp; \mathrm{AC}: v_{d}=i_{d}\left(R+r_{d}\right)
+\end{aligned}
+\)</span>$</p>
+<p>The second of the DC equations comes from recognizing that <span class="math notranslate nohighlight">\(I_{D} r_{d}+V_{D 0}=V_{D}\)</span>. The DC and AC circuits are shown below.
+<img alt="diodeACmodel6.png" src="StudentEffort/DiodeACModel/attachment:d7a9f3fd-73ee-415e-9871-0f744f5ed7eb.png" /></p>
+<p>We have found that the <span class="math notranslate nohighlight">\(\boldsymbol{A C}\)</span> model for a diode is a resistor whose value depends on the diode biasing value <span class="math notranslate nohighlight">\(\mathrm{I}_{\mathrm{D}}\)</span>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-find-the-ac-model-of-the-circuit-below">
+<h1>Example: Find the AC model of the circuit below.<a class="headerlink" href="#example-find-the-ac-model-of-the-circuit-below" title="Link to this heading">#</a></h1>
+<p><img alt="diodeACmodel7.png" src="StudentEffort/DiodeACModel/attachment:9bdc324e-eb75-4daf-a09a-303d3f485596.png" /></p>
+<p><span class="math notranslate nohighlight">\(I_B\)</span> is a dc bias current: <span class="math notranslate nohighlight">\(\quad I_B=1.4 \mathrm{~A}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(i_s\)</span> is a small signal input = 0.05.</p>
+<p><span class="math notranslate nohighlight">\(D\)</span> is a diode:
+$<span class="math notranslate nohighlight">\(
+n V_T=0.15
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+i_D = 0.05\left(e^{v_D / 0.15}-1\right) \mathrm{A}
+\)</span>$</p>
+<p>We want to find the small signal gain <span class="math notranslate nohighlight">\(i_{o} /{ i}_s\)</span>.
+First we find the dc bias point for D:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+i_D=I_D= &amp; 0.05\left(e^{V_D / 0.15}-1\right) = 1.4 \\
+&amp; e^{V_D / 0.15}=\frac{1.4}{0.05}+1=29 \\
+&amp; V_D=0.15 \operatorname{ln}(29)=0.50516
+\end{aligned}
+\)</span>$</p>
+<p>So the dc bias point is <span class="math notranslate nohighlight">\(I_D, V_D=1.4 \mathrm{~A}, 0.5051 \mathrm{~V}\)</span>.</p>
+<p><img alt="diodeACmodel8.png" src="StudentEffort/DiodeACModel/attachment:ca496ab1-c0df-4316-bb7f-ae425a5b6ee1.png" /></p>
+<p>Now we need the <span class="math notranslate nohighlight">\(a c\)</span> resistance rd:
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+&amp; 1 / r_d=\left.\frac{\partial i_D}{\partial v_D}\right|_{v_D}=\frac{1}{0.15}(0.05) e^\frac{0.5051} {0.15}
+=9.667 \\
+&amp; \Longrightarrow r_d = 0.103 \Omega
+\end{aligned}
+\)</span>$</p>
+<p>We could also have used:
+$<span class="math notranslate nohighlight">\(
+r_d=\frac{n v_T}{i_D}=\frac{0.15}{104}=0.107 \Omega
+\)</span>$</p>
+<p>Then the ac circuit is:</p>
+<p><img alt="image.png" src="StudentEffort/DiodeACModel/attachment:9712fea1-7398-44d9-b0b8-6f81cc13bdbf.png" /></p>
+<p>\begin{aligned}
+&amp; i_o=-250 v_d \cdot \frac{1}{1+3} \xrightarrow{v_d=i_s r_d}\frac{i_o}{i_s}=-250 \cdot r_d \cdot \frac{1}{4} \
+&amp; \xrightarrow{r_d=0.103} \frac{i_o}{i_s}=-250 \cdot 0.103 \cdot \frac{1}{4}=-6.69
+\end{aligned}</p>
+<p>so the small signal gain <span class="math notranslate nohighlight">\(i_{o} /{ i}_s\)</span> of this circuit is -6.69.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
+<h1>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
+<section id="steps-to-find-the-ac-model-of-a-diode">
+<h2>Steps to Find the AC Model of a Diode<a class="headerlink" href="#steps-to-find-the-ac-model-of-a-diode" title="Link to this heading">#</a></h2>
+<p>Finding the <strong>AC model of a diode</strong> involves linearizing the diode’s behavior around a specific operating point to analyze small-signal behavior. This method is commonly used in small-signal analysis of circuits like amplifiers. Here are the detailed steps:</p>
+<hr class="docutils" />
+<p><strong>1. Identify the DC Operating Point</strong></p>
+<p>Before analyzing the AC model, determine the diode’s operating point using the DC circuit conditions:</p>
+<ul class="simple">
+<li><p>Voltage <span class="math notranslate nohighlight">\( ( V_D ) \)</span> : The DC voltage across the diode.</p></li>
+<li><p>Current <span class="math notranslate nohighlight">\( ( I_D ) \)</span> : The DC current through the diode.</p></li>
+</ul>
+<p>The diode’s I-V characteristic follows the Shockley equation:</p>
+<div class="math notranslate nohighlight">
+\[
+I_D = I_S \left( e^{\frac{V_D}{nV_T}} - 1 \right)
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( I_S \)</span>: Saturation current.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V_T \)</span>: Thermal voltage <span class="math notranslate nohighlight">\( ( V_T \approx 26 \, \text{mV} ) \)</span> at room temperature).</p></li>
+<li><p><span class="math notranslate nohighlight">\( n \)</span>: Ideality factor (typically 1–2).</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>2. Linearize the I-V Curve Around the Operating Point</strong></p>
+<p>The AC model is derived by approximating the diode’s nonlinear behavior with a straight line near the operating point. Use a <strong>Taylor expansion</strong> for small deviations <span class="math notranslate nohighlight">\( v_d \)</span> around <span class="math notranslate nohighlight">\( V_D \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+i_d \approx I_D + \frac{\partial I_D}{\partial V_D} \cdot v_d
+\]</div>
+<p>The term <span class="math notranslate nohighlight">\( \frac{\partial I_D}{\partial V_D} \)</span> is the slope of the I-V curve, also known as the <strong>small-signal conductance</strong>.</p>
+<hr class="docutils" />
+<p><strong>3. Calculate the Small-Signal Resistance</strong></p>
+<p>The <strong>small-signal resistance</strong> <span class="math notranslate nohighlight">\( r_d \)</span> is the reciprocal of the small-signal conductance:</p>
+<div class="math notranslate nohighlight">
+\[
+r_d = \frac{1}{\frac{\partial I_D}{\partial V_D}}
+\]</div>
+<p>From the Shockley equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial I_D}{\partial V_D} = \frac{I_D}{n V_T}
+\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+r_d = \frac{n V_T}{I_D}
+\]</div>
+<hr class="docutils" />
+<p><strong>4. Replace the Diode with its AC Equivalent</strong></p>
+<p>In the small-signal model:</p>
+<ul class="simple">
+<li><p>Replace the diode with a <strong>resistor</strong> <span class="math notranslate nohighlight">\( r_d \)</span>, which represents the diode’s dynamic resistance at the operating point.</p></li>
+<li><p>For AC analysis, the DC voltage source is shorted, and the AC current/voltage deviations are analyzed.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>5. Incorporate AC Signal Conditions</strong></p>
+<p>Combine <span class="math notranslate nohighlight">\( r_d \)</span> with the surrounding circuit components. Analyze the circuit using standard small-signal analysis techniques like:</p>
+<ul class="simple">
+<li><p>Nodal analysis.</p></li>
+<li><p>Mesh analysis.</p></li>
+<li><p>Thevenin/Norton equivalent circuits.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>6. Validate the Model</strong></p>
+<ul class="simple">
+<li><p>Ensure the small-signal approximation is valid by keeping the AC signal <span class="math notranslate nohighlight">\( v_d \)</span> small (e.g., <span class="math notranslate nohighlight">\( v_d \ll V_T \)</span>).</p></li>
+<li><p>Check if the circuit behavior matches the expected linear behavior under small-signal conditions.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.google.com/url?sa=t&amp;amp;source=web&amp;amp;rct=j&amp;amp;opi=89978449&amp;amp;url=https://courses.egr.uh.edu/ECE/ECE3355/Trombetta%2520Lecture%2520Notes/Notes.Diode%2520Small%2520Signal%2520Model.docx&amp;amp;ved=2ahUKEwjs7q248c2KAxVK_7sIHT4VA3YQFnoECBgQAw&amp;amp;usg=AOvVaw1dCgv4HGO2_OrYZkNxdJrD">https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://courses.egr.uh.edu/ECE/ECE3355/Trombetta%2520Lecture%2520Notes/Notes.Diode%2520Small%2520Signal%2520Model.docx&amp;ved=2ahUKEwjs7q248c2KAxVK_7sIHT4VA3YQFnoECBgQAw&amp;usg=AOvVaw1dCgv4HGO2_OrYZkNxdJrD</a></p></li>
+<li><p><a class="reference external" href="https://resources.pcb.cadence.com/blog/2020-small-signal-model-for-a-diode-in-dc-and-ac-circuits">https://resources.pcb.cadence.com/blog/2020-small-signal-model-for-a-diode-in-dc-and-ac-circuits</a></p></li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\DiodeACModel"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../powerinaccircuit/AC_Power.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">power in AC circuit</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Multivibrator/Multivibrator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Multivibrator: Astable, Monostable, and Bistable</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AC Model of Diode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-small-signal-model">Diode Small Signal Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-small-signal-model">Finding the Small Signal Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-find-the-ac-model-of-the-circuit-below">Example: Find the AC model of the circuit below.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-find-the-ac-model-of-a-diode">Steps to Find the AC Model of a Diode</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

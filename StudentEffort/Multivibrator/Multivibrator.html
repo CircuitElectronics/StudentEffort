@@ -1,0 +1,946 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multivibrator: Astable, Monostable, and Bistable &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Multivibrator/Multivibrator';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="AC Model of Diode" href="../DiodeACModel/DiodeACModel.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Multivibrator: Astable, Monostable, and Bistable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Multivibrator/Multivibrator.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Multivibrator/Multivibrator.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Multivibrator: Astable, Monostable, and Bistable</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astable-multivibrator">2. Astable Multivibrator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-astable-multivibrator">2.1. Introduction to the Astable Multivibrator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-description">2.2. Circuit Description</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astable-multivibrators-periodic-time">2.3. Astable Multivibrators Periodic Time</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-oscillation">2.4. Frequency of Oscillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation">2.5. Example Calculation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astable-multivibrator-frequency-table">2.6. Astable Multivibrator Frequency Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astable-multivibrators-driving-circuit">2.7. Astable Multivibrators Driving Circuit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-and-practical-use">2.8. Applications and Practical Use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monostable-multivibrator">3. Monostable Multivibrator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-monostable-multivibrator">3.1. Introduction to the Monostable Multivibrator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2. Circuit Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monostable-multivibrator-waveforms">3.3. Monostable Multivibrator Waveforms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.4. Applications and Practical Use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bistable-multivibrator">4. Bistable Multivibrator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-bistable-multivibrator">4.1. Introduction to the Bistable Multivibrator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2. Circuit Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bistable-multivibrator-waveform">4.3. Bistable Multivibrator Waveform</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-switching">4.4. Sequential Switching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.5. Applications and Practical Use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">5. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">6. Sources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="multivibrator-astable-monostable-and-bistable">
+<h1>Multivibrator: Astable, Monostable, and Bistable<a class="headerlink" href="#multivibrator-astable-monostable-and-bistable" title="Link to this heading">#</a></h1>
+<p>Author : Negar Bahrampour<br />
+Contact : <a class="reference external" href="mailto:negarbahram03&#37;&#52;&#48;gmail&#46;com">negarbahram03<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<section id="introduction">
+<h2>1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Multivibrators are essential electronic circuits used to generate different types of waveforms, such as square waves or pulses, which are crucial for various applications including timing, oscillation, and logic signal generation. These circuits are classified into three primary types: Astable, Monostable, and Bistable Multivibrators. Each type serves different purposes based on its operation, stable and unstable states, and requirements for triggering. This paper delves into the operation of each multivibrator, analyzes their characteristics, and provides practical examples of their usage in electronic systems.</p>
+</section>
+<hr class="docutils" />
+<section id="astable-multivibrator">
+<h2>2. Astable Multivibrator<a class="headerlink" href="#astable-multivibrator" title="Link to this heading">#</a></h2>
+<section id="introduction-to-the-astable-multivibrator">
+<h3>2.1. Introduction to the Astable Multivibrator<a class="headerlink" href="#introduction-to-the-astable-multivibrator" title="Link to this heading">#</a></h3>
+<p>The Astable Multivibrator is one of the most commonly used relaxation oscillators in electronics. Unlike other multivibrators, such as the Monostable or Bistable, the Astable Multivibrator does not require an external trigger pulse to function. Instead, it automatically oscillates between two unstable states, producing a continuous square wave output. This feature makes the Astable Multivibrator particularly valuable for applications such as clock signal generation and pulse-width modulation (PWM).</p>
+</section>
+<section id="circuit-description">
+<h3>2.2. Circuit Description<a class="headerlink" href="#circuit-description" title="Link to this heading">#</a></h3>
+<p>The Astable Multivibrator is typically built with two cross-coupled transistors, a feedback network, and timing capacitors. The two transistors alternate between “on” and “off” states due to the charging and discharging of the capacitors. When one transistor switches off, the other switches on, resulting in a square wave at the output.</p>
+<p>The basic transistor circuit for an Astable Multivibrator produces a square wave output from a pair of grounded emitter cross-coupled transistors. Both transistors either NPN or PNP, in the multivibrator are biased for linear operation and are operated as Common Emitter Amplifiers with 100% positive feedback.</p>
+<p><img alt="" src="../../_images/fig1.png" /></p>
+<p>Assume a 6 volt supply and that transistor, TR1 has just switched “OFF” (cut-off) and its collector voltage is rising towards Vcc, meanwhile transistor TR2 has just turned “ON”. Plate “A” of capacitor C1 is also rising towards the +6 volts supply rail of Vcc as it is connected to the collector of TR1 which is now cut-off. Since TR1 is in cut-off, it conducts no current so there is no volt drop across load resistor R1.</p>
+<p>The other side of capacitor, C1, plate “B”, is connected to the base terminal of transistor TR2 and at 0.6v because transistor TR2 is conducting (saturation). Therefore, capacitor C1 has a potential difference of +5.4 volts across its plates, (6.0 – 0.6v) from point A to point B.</p>
+<p>Since TR2 is fully-on, capacitor C2 starts to charge up through resistor R2 towards Vcc. When the voltage across capacitor C2 rises to more than 0.6v, it biases transistor TR1 into conduction and into saturation.</p>
+<p>The instant that transistor, TR1 switches “ON”, plate “A” of the capacitor which was originally at Vcc potential, immediately falls to 0.6 volts. This rapid fall of voltage on plate “A” causes an equal and instantaneous fall in voltage on plate “B” therefore plate “B” of C1 is pulled down to -5.4v (a reverse charge) and this negative voltage swing is applied the base of TR2 turning it hard “OFF”. One unstable state.</p>
+<p>Transistor TR2 is driven into cut-off so capacitor C1 now begins to charge in the opposite direction via resistor R3 which is also connected to the +6 volts supply rail, Vcc. Thus the base of transistor TR2 is now moving upwards in a positive direction towards Vcc with a time constant equal to the C1 x R3 combination.</p>
+<p>However, it never reaches the value of Vcc because as soon as it gets to 0.6 volts positive, transistor TR2 turns fully “ON” into saturation. This action starts the whole process over again but now with capacitor C2 taking the base of transistor TR1 to -5.4v while charging up via resistor R2 and entering the second unstable state.</p>
+<p>Then we can see that the circuit alternates between one unstable state in which transistor TR1 is “OFF” and transistor TR2 is “ON”, and a second unstable in which TR1 is “ON” and TR2 is “OFF” at a rate determined by the RC values. This process will repeat itself over and over again as long as the supply voltage is present.</p>
+<p>The amplitude of the output waveform is approximately the same as the supply voltage, Vcc with the time period of each switching state determined by the time constant of the RC networks connected across the base terminals of the transistors. As the transistors are switching both “ON” and “OFF”, the output at either collector will be a square wave with slightly rounded corners because of the current which charges the capacitors. This could be corrected by using more components as we will discuss later.</p>
+</section>
+</section>
+<section id="astable-multivibrators-periodic-time">
+<h2>2.3. Astable Multivibrators Periodic Time<a class="headerlink" href="#astable-multivibrators-periodic-time" title="Link to this heading">#</a></h2>
+<p>If the two time constants produced by C2 x R2 and C1 x R3 in the base circuits are the same, the mark-to-space ratio ( t1/t2 ) will be equal to one-to-one making the output waveform symmetrical in shape. By varying the capacitors, C1, C2 or the resistors, R2, R3 the mark-to-space ratio and therefore the frequency can be altered.</p>
+<p>the time taken for the voltage across a capacitor to fall to half the supply voltage, 0.5Vcc is equal to 0.69 time constants of the capacitor and resistor combination. Then taking one side of the astable multivibrator, the length of time that transistor TR2 is “OFF” will be equal to 0.69T or 0.69 times the time constant of C1 x R3. Likewise, the length of time that transistor TR1 is “OFF” will be equal to 0.69T or 0.69 times the time constant of C2 x R2 and this is defined as.</p>
+<div class="math notranslate nohighlight">
+\[
+T={t_{1}}+{t_{2}} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+t_{1}=0.69{C_{1}}{R_{3}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+t_{1}=0.69{C_{2}}{R_{2}}
+\]</div>
+<p>Where, R is in Ω’s and C in Farads.</p>
+<p>By altering the time constant of just one RC network the mark-to-space ratio and frequency of the output waveform can be changed but normally by changing both RC time constants together at the same time, the output frequency will be altered keeping the mark-to-space ratios the same at one-to-one.</p>
+<p>If the value of the capacitor C1 equals the value of the capacitor, C2, C1 = C2 and also the value of the base resistor R2 equals the value of the base resistor, R3, R2 = R3 then the total length of time of the Multivibrators cycle is given below for a symmetrical output waveform.</p>
+<section id="frequency-of-oscillation">
+<h3>2.4. Frequency of Oscillation<a class="headerlink" href="#frequency-of-oscillation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+f=\frac{1}{T}=\frac{1}{1.38RC}
+\]</div>
+<p>Where, R is in Ω’s, C is in Farads, T is in seconds and ƒ is in Hertz.</p>
+<p>and this is known as the “Pulse Repetition Frequency”. So Astable Multivibrators can produce TWO very short square wave output waveforms from each transistor or a much longer rectangular shaped output either symmetrical or non-symmetrical depending upon the time constant of the RC network as shown below.</p>
+<p><img alt="" src="../../_images/fig2.png" /></p>
+</section>
+<section id="example-calculation">
+<h3>2.5. Example Calculation<a class="headerlink" href="#example-calculation" title="Link to this heading">#</a></h3>
+<p>An Astable Multivibrators circuit is required to produce a series of pulses at a frequency of 500Hz with a mark-to-space ratio of 1:5. If  <span class="math notranslate nohighlight">\( R_2 = R_3 = 100k\Omega \)</span>, calculate the values of the capacitors, C1 and C2 required.</p>
+<div class="math notranslate nohighlight">
+\[
+T=\frac{1}{f}=\frac{1}{500Hz}={2}\times{10^{-3}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+T=t_{1}+t_{2} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+t_{1}={3.33}\times{10^{-4}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+t_{1}={1.66}\times{10^{-3}}
+\]</div>
+<p>and by rearranging the formula above for the periodic time, the values of the capacitors required to give a mark-to-space ratio of 1:5 are given as:</p>
+<div class="math notranslate nohighlight">
+\[
+C_{1}=\frac{{3.33}\times{10^{-4}}}{{0.69}\times{100k\Omega}}={4.83}\times{10^{-9}} F
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C_{2}=\frac{{1.66}\times{10^{-3}}}{{0.69}\times{100k\Omega}}={2.41}\times{10^{-8}} F
+\]</div>
+</section>
+<section id="astable-multivibrator-frequency-table">
+<h3>2.6. Astable Multivibrator Frequency Table<a class="headerlink" href="#astable-multivibrator-frequency-table" title="Link to this heading">#</a></h3>
+<p>If we require the output astable waveform to be non-symmetrical for use in timing or gating type circuits, etc, we could manually calculate the values of R and C for the individual components required as we did in the example above.</p>
+<p>However, when the two timing resistors and capacitors are both of equal value, we can make our life a little bit easier for ourselves by using timing tables. Timing tables show the astable multivibrators calculated frequencies for different combinations or values of both R and C relevant to our circuit. For example:</p>
+<p><img alt="" src="../../_images/fig3.png" /></p>
+<p>Pre-calculated frequency tables can be very useful in determining the required values of both R and C for a particular symmetrical output frequency without the need to keep recalculating them every time a different frequency is required.</p>
+</section>
+<section id="astable-multivibrators-driving-circuit">
+<h3>2.7. Astable Multivibrators Driving Circuit<a class="headerlink" href="#astable-multivibrators-driving-circuit" title="Link to this heading">#</a></h3>
+<p>An output signal can be obtained from the collector terminal of either transistor in the Astable Multivibrators circuit with each output waveform being a mirror image of itself. We saw above that the leading edge of the output waveform is slightly rounded and not square due to the charging characteristics of the capacitor in the cross-coupled circuit.</p>
+<p>But we can introduce another transistor into the circuit that will produce an almost perfectly square output pulse and which can also be used to switch higher current loads or low impedance loads such as LED’s or loudspeakers, etc without affecting the operation of the actual astable multivibrator.</p>
+<p>However, the down side to this is that the output waveform is not perfectly symmetrical as the additional transistor produces a very small delay. Consider the two circuits below.</p>
+<p><img alt="" src="../../_images/fig4.png" /></p>
+<p>An output with a square leading edge is now produced from the third transistor, TR3 connected to the emitter of transistor, TR2. This third transistor switches “ON” and “OFF” in unison with transistor TR2. We can use this additional transistor to switch Light Emitting Diodes, Relays or to produce a sound from a Sound Transducer such as a speaker or piezo sounder as shown above.</p>
+<p>The load resistor, Rx needs to be suitably chosen to take into account the forward volt drops and to limit the maximum current to about 20mA for the LED circuit or to give a total load impedance of about 100Ω for the speaker circuit. The speaker can have any impedance less than 100Ω.</p>
+</section>
+<section id="applications-and-practical-use">
+<h3>2.8. Applications and Practical Use<a class="headerlink" href="#applications-and-practical-use" title="Link to this heading">#</a></h3>
+<p>Astable Multivibrators are widely used in generating square wave signals for various applications, including clock generation, PWM for controlling motors, flashing lights, and generating tones in sound-producing circuits.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="monostable-multivibrator">
+<h2>3. Monostable Multivibrator<a class="headerlink" href="#monostable-multivibrator" title="Link to this heading">#</a></h2>
+<section id="introduction-to-the-monostable-multivibrator">
+<h3>3.1. Introduction to the Monostable Multivibrator<a class="headerlink" href="#introduction-to-the-monostable-multivibrator" title="Link to this heading">#</a></h3>
+<p>In contrast to the Astable Multivibrator, the Monostable Multivibrator has one stable state and one unstable state. This circuit requires an external trigger pulse to initiate the oscillation. Upon receiving the trigger pulse, the Monostable Multivibrator switches to its unstable state for a fixed period, after which it automatically returns to the stable state. The duration of the unstable state is determined by the RC time constant.</p>
+</section>
+<section id="id1">
+<h3>3.2. Circuit Description<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/fig5.png" /></p>
+<p>The basic collector-coupled transistor Monostable Multivibrator circuit and its associated waveforms are shown above. When power is firstly applied, the base of transistor TR2 is connected to Vcc via the biasing resistor, RT thereby turning the transistor “fully-ON” and into saturation and at the same time turning TR1 “OFF” in the process. This then represents the circuits “Stable State” with zero output. The current flowing into the saturated base terminal of TR2 will therefore be equal to Ib = (Vcc – 0.7)/RT.</p>
+<p>If a negative trigger pulse is now applied at the input, the fast decaying edge of the pulse will pass straight through capacitor, C1 to the base of transistor, TR1 via the blocking diode turning it “ON”. The collector of TR1 which was previously at Vcc drops quickly to below zero volts effectively giving capacitor CT a reverse charge of -0.7v across its plates. This action results in transistor TR2 now having a minus base voltage at point X holding the transistor fully “OFF”. This then represents the circuits second state, the “Unstable State” with an output voltage equal to Vcc.</p>
+<p>Timing capacitor, CT begins to discharge this -0.7v through the timing resistor RT, attempting to charge up to the supply voltage Vcc. This negative voltage at the base of transistor TR2 begins to decrease gradually at a rate determined by the time constant of the RT CT combination.</p>
+<p>As the base voltage of TR2 increases back up to Vcc, the transistor begins to conduct and doing so turns “OFF” again transistor TR1 which results in the monostable multivibrator automatically returning back to its original stable state awaiting a second negative trigger pulse to restart the process once again.</p>
+</section>
+<section id="monostable-multivibrator-waveforms">
+<h3>3.3. Monostable Multivibrator Waveforms<a class="headerlink" href="#monostable-multivibrator-waveforms" title="Link to this heading">#</a></h3>
+<p>Monostable Multivibrators can produce a very short pulse or a much longer rectangular shaped waveform whose leading edge rises in time with the externally applied trigger pulse and whose trailing edge is dependent upon the RC time constant of the feedback components used. This RC time constant may be varied with time to produce a series of pulses which have a controlled fixed time delay in relation to the original trigger pulse as shown below.</p>
+<p><img alt="" src="../../_images/fig6.png" /></p>
+<p>The time constant of Monostable Multivibrators can be changed by varying the values of the capacitor, CT the resistor, RT or both. Monostable multivibrators are generally used to increase the width of a pulse or to produce a time delay within a circuit as the frequency of the output signal is always the same as that for the trigger pulse input, the only difference is the pulse width.</p>
+</section>
+<section id="id2">
+<h3>3.4. Applications and Practical Use<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Monostable Multivibrators are commonly used in applications requiring precise timing, such as generating pulses for one-shot operations, timing sequences, and pulse width modulation. They are ideal for use in systems that require a single pulse to trigger subsequent events.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bistable-multivibrator">
+<h2>4. Bistable Multivibrator<a class="headerlink" href="#bistable-multivibrator" title="Link to this heading">#</a></h2>
+<section id="introduction-to-the-bistable-multivibrator">
+<h3>4.1. Introduction to the Bistable Multivibrator<a class="headerlink" href="#introduction-to-the-bistable-multivibrator" title="Link to this heading">#</a></h3>
+<p>The Bistable Multivibrator, also known as a flip-flop, is a circuit with two stable states. It can be toggled between these states by applying an appropriate trigger pulse. The Bistable Multivibrator is used to store binary data and is the fundamental building block for memory elements in digital electronics, such as registers and latches.</p>
+</section>
+<section id="id3">
+<h3>4.2. Circuit Description<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/fig7.png" /></p>
+<p>The Bistable Multivibrator circuit above is stable in both states, either with one transistor “OFF” and the other “ON” or with the first transistor “ON” and the second “OFF”. Lets suppose that the switch is in the left position, position “A”. The base of transistor TR1 will be grounded and in its cut-off region producing an output at Q. That would mean that transistor TR2 is “ON” as its base is connected to Vcc through the series combination of resistors R1 and R2. As transistor TR2 is “ON” there will be zero output at Q, the opposite or inverse of Q.</p>
+<p>If the switch is now move to the right, position “B”, transistor TR2 will switch “OFF” and transistor TR1 will switch “ON” through the combination of resistors R3 and R4 resulting in an output at Q and zero output at Q the reverse of above. Then we can say that one stable state exists when transistor TR1 is “ON” and TR2 is “OFF”, switch position “A”, and another stable state exists when transistor TR1 is “OFF” and TR2 is “ON”, switch position “B”.</p>
+<p>Then unlike the monostable multivibrator whose output is dependent upon the RC time constant of the feedback components used, the bistable multivibrators output is dependent upon the application of two individual trigger pulses, switch position “A” or position “B”.</p>
+</section>
+<section id="bistable-multivibrator-waveform">
+<h3>4.3. Bistable Multivibrator Waveform<a class="headerlink" href="#bistable-multivibrator-waveform" title="Link to this heading">#</a></h3>
+<p>Bistable Multivibrators can produce a very short output pulse or a much longer rectangular shaped output whose leading edge rises in time with the externally applied trigger pulse and whose trailing edge is dependent upon a second trigger pulse as shown below.</p>
+<p><img alt="" src="../../_images/fig8.png" /></p>
+</section>
+<section id="sequential-switching">
+<h3>4.4. Sequential Switching<a class="headerlink" href="#sequential-switching" title="Link to this heading">#</a></h3>
+<p>Manually switching between the two stable states may produce a bistable multivibrator circuit but is not very practical. One way of toggling between the two states using just one single trigger pulse is shown below.</p>
+<p><img alt="" src="../../_images/fig9.png" /></p>
+<p>Switching between the two states is achieved by applying a single trigger pulse which in turn will cause the “ON” transistor to turn “OFF” and the “OFF” transistor to turn “ON” on the negative half of the trigger pulse. The circuit will switch sequentially by applying a pulse to each base in turn and this is achieved from a single input trigger pulse using a biased diodes as a steering circuit.</p>
+<p>Then on the application of a first negative pulse switches the state of each transistor and the application of a second pulse negative pulse resets the transistors back to their original state acting as a divide-by-two counter. Equally, we could remove the diodes, capacitors and feedback resistors and apply individual negative trigger pulses directly to the transistor bases.</p>
+</section>
+<section id="id4">
+<h3>4.5. Applications and Practical Use<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Bistable Multivibrators have many applications producing a set-reset, SR flip-flop circuit for use in counting circuits, or as a one-bit memory storage device in a computer. Other applications of bistable flip-flops include frequency dividers because the output pulses have a frequency that are exactly one half ( ƒ/2 ) that of the trigger input pulse frequency due to them changing state from a single input pulse. In other words the circuit produces Frequency Division as it now divides the input frequency by a factor of two (an octave).</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conclusion">
+<h2>5. Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Multivibrators are versatile circuits essential to the design and operation of many electronic systems. The Astable, Monostable, and Bistable Multivibrators each serve distinct functions based on their oscillation characteristics. The Astable Multivibrator is commonly used for continuous square wave generation, ideal for timing and clock signals. The Monostable Multivibrator is perfect for generating single pulse events triggered by an external input. Finally, the Bistable Multivibrator plays a crucial role in data storage and binary logic operations, forming the backbone of digital memory systems. By understanding the operation and applications of these circuits, engineers can design efficient and reliable electronic systems for a wide range of applications.</p>
+</section>
+<section id="sources">
+<h2>6. Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.homemade-circuits.com/">Homemade Circuit Projects</a></p></li>
+<li><p><a class="reference external" href="https://www.electrical4u.com/">Electrical4U</a></p></li>
+<li><p><a class="reference external" href="https://electrosome.com/">ElectroSome</a></p></li>
+<li><p><a class="reference external" href="https://www.electronics-tutorials.ws/">Electronics Tutorials</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/&#64;ALLABOUTELECTRONICS">ALL ABOUT ELECTRONICS</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Multivibrator"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../DiodeACModel/DiodeACModel.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AC Model of Diode</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astable-multivibrator">2. Astable Multivibrator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-astable-multivibrator">2.1. Introduction to the Astable Multivibrator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-description">2.2. Circuit Description</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astable-multivibrators-periodic-time">2.3. Astable Multivibrators Periodic Time</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-oscillation">2.4. Frequency of Oscillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-calculation">2.5. Example Calculation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astable-multivibrator-frequency-table">2.6. Astable Multivibrator Frequency Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astable-multivibrators-driving-circuit">2.7. Astable Multivibrators Driving Circuit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-and-practical-use">2.8. Applications and Practical Use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monostable-multivibrator">3. Monostable Multivibrator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-monostable-multivibrator">3.1. Introduction to the Monostable Multivibrator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2. Circuit Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monostable-multivibrator-waveforms">3.3. Monostable Multivibrator Waveforms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.4. Applications and Practical Use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bistable-multivibrator">4. Bistable Multivibrator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-bistable-multivibrator">4.1. Introduction to the Bistable Multivibrator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2. Circuit Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bistable-multivibrator-waveform">4.3. Bistable Multivibrator Waveform</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-switching">4.4. Sequential Switching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.5. Applications and Practical Use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">5. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">6. Sources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

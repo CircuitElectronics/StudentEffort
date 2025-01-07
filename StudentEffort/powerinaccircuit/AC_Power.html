@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>power in AC circuit &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/powerinaccircuit/AC_Power';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AC Model of Diode" href="../DiodeACModel/DiodeACModel.html" />
+    <link rel="prev" title="Boost Converters" href="../Boost/BoostConverter.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/powerinaccircuit/AC_Power.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/powerinaccircuit/AC_Power.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>power in AC circuit</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-electrical-power-in-dc-and-ac-circuits">Understanding Electrical Power in DC and AC Circuits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-resistive-circuit">DC Resistive Circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-power-in-an-ac-circuit">Electrical Power in an AC Circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-in-ac-power-circuit">Equations in AC power circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instantaneous-equations">Instantaneous Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-purely-resistive-circuit">A Purely Resistive Circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-power-in-a-pure-resistor">Electrical Power in a Pure Resistor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-purely-inductive-circuit">AC Purely Inductive Circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-explanation">Chart Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-power-in-a-pure-inductor">Real Power in a Pure Inductor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-in-a-pure-inductor">Reactive Power in a Pure Inductor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-purely-capacitive-circuit">A Purely Capacitive Circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Chart Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-in-a-pure-capacitor">Reactive Power in a Pure Capacitor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="power-in-ac-circuit">
+<h1>power in AC circuit<a class="headerlink" href="#power-in-ac-circuit" title="Link to this heading">#</a></h1>
+<p><strong>Author: Amirhossein Abolfazli Esfahani</strong></p>
+<section id="understanding-electrical-power-in-dc-and-ac-circuits">
+<h2>Understanding Electrical Power in DC and AC Circuits<a class="headerlink" href="#understanding-electrical-power-in-dc-and-ac-circuits" title="Link to this heading">#</a></h2>
+<p>In a DC circuit, the power consumed is simply the product of the DC voltage times the DC current, given in watts. However, for AC circuits with reactive components we have to calculate the consumed power differently.</p>
+<p>Electrical power is the “rate” at which energy is being consumed in a circuit and as such all electrical and electronic components and devices have a limit to the amount of electrical power that they can safely handle. For example, a 1/4 watt resistor or a 20 watt amplifier.</p>
+<p>Electrical power can be time-varying either as a DC quantity or as an AC quantity. The amount of power in a circuit at any instant of time is called the instantaneous power and is given by the well-known relationship of power equals volts times amps (P = V*I). So one watt (which is the rate of expending energy at one joule per second) will be equal to the volt-ampere product of one volt times one ampere.</p>
+<p>Then the power absorbed or supplied by a circuit element is the product of the voltage, V across the element, and the current, I flowing through it. So if we had a DC circuit with a resistance of “R” ohms, the power dissipated by the resistor in watts is given by any of the following generalised formulas:</p>
+<p><span class="math notranslate nohighlight">\(P = V \times I = \frac{V^2}{R} = I^2 \times R \; \text{(watts)}\)</span></p>
+<p>Where: V is the dc voltage, I is the dc current and R is the value of the resistance.</p>
+<p>So power within an electrical circuit is only present when both the voltage and current are present, that is no open-circuit or closed-circuit conditions. Consider the following simple example of a standard resistive dc circuit:</p>
+<section id="dc-resistive-circuit">
+<h3>DC Resistive Circuit<a class="headerlink" href="#dc-resistive-circuit" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(P = V \times I = 12 \times 2 = 24W\)</span></p>
+<p><span class="math notranslate nohighlight">\(P = \frac{V^2}{R} = \frac{12^2}{6} = 24W\)</span></p>
+<p><span class="math notranslate nohighlight">\(P = I^2 \times R = 2^2 \times 6 = 24W\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">BatteryCell</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;12V&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;6Ω&quot;</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;bot&quot;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b998e5c92483e0d6fa840b81df0e8aecd46f3c58060d8a3386f1834792d0698d.svg" src="../../_images/b998e5c92483e0d6fa840b81df0e8aecd46f3c58060d8a3386f1834792d0698d.svg" />
+</div>
+</div>
+</section>
+</section>
+<section id="electrical-power-in-an-ac-circuit">
+<h2>Electrical Power in an AC Circuit<a class="headerlink" href="#electrical-power-in-an-ac-circuit" title="Link to this heading">#</a></h2>
+<p>In a DC circuit, the voltages and currents are generally constant, that is not varying with time as there is no sinusoidal waveform associated with the supply. However for power in AC circuits, the instantaneous values of the voltage, current and therefore power are constantly changing being influenced by the supply. So we can not calculate the power in AC circuits in the same manner as we can in DC circuits, but we can still say that power (p) is equal to the voltage (v) times the amperes (i).</p>
+<p>Another important point is that AC circuits contain reactance, so there is a power component as a result of the magnetic and/or electric fields created by the components. The result is that unlike a purely resistive component, this power is stored and then returned back to the supply as the sinusoidal waveform goes through one complete periodic cycle.</p>
+<p>Thus, the average power absorbed by a circuit is the sum of the power stored and the power returned over one complete cycle. So a circuits average power consumption will be the average of the instantaneous power over one full cycle with the instantaneous power, p defined as the multiplication of the instantaneous voltage, v by the instantaneous current, i. Note that as the sine function is periodic and continuous, the average power given over all time will be exactly the same as the average power given over a single cycle.</p>
+<p>Let us assume that the waveforms of the voltage and current are both sinusoidal, so we recall that:</p>
+<p><span class="math notranslate nohighlight">\(e_1 = V_m \sin(0^\circ) = V_m \times 0 = 0v\)</span></p>
+<p><span class="math notranslate nohighlight">\(e_1 = V_m \sin(0^\circ) = V_m \times 0 = 0v\)</span></p>
+<p><span class="math notranslate nohighlight">\(e_1 = V_m \sin(180^\circ) = V_m \times 0 = 0v\)</span></p>
+<p><span class="math notranslate nohighlight">\(e_1 = V_m \sin(360^\circ) = V_m \times 0 = 0v\)</span></p>
+<p><span class="math notranslate nohighlight">\(e_2 = V_m \sin(90^\circ) = V_m \times +1 = +V_m = 1\)</span></p>
+<p><span class="math notranslate nohighlight">\(e_3 = V_m \sin(270^\circ) = V_m \times -1 = -V_m = -1\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Doc.ExampleTools</span> <span class="kn">import</span> <span class="n">find_libraries</span>
+<span class="kn">from</span> <span class="nn">PySpice.Probe.Plot</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Library</span> <span class="kn">import</span> <span class="n">SpiceLibrary</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Sinusoidal Waveform&#39;</span><span class="p">)</span>
+
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">SinusoidalVoltageSource</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_V</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_Hz</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="nd">@u_V</span><span class="p">)</span>
+
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">transient</span><span class="p">(</span><span class="n">step_time</span><span class="o">=</span><span class="mf">0.1</span><span class="nd">@u_ms</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_s</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;n1&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;V(t) = Vmax * sin(θ)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;e2&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;e1&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sinusoidal Waveform&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4f2da588a31df6faec651ff26ba969720f4cf5c00ddeaff584781d2f9d747ff8.png" src="../../_images/4f2da588a31df6faec651ff26ba969720f4cf5c00ddeaff584781d2f9d747ff8.png" />
+</div>
+</div>
+</section>
+<section id="equations-in-ac-power-circuit">
+<h2>Equations in AC power circuit<a class="headerlink" href="#equations-in-ac-power-circuit" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ P = V * I \]</div>
+<p>where:</p>
+<div class="math notranslate nohighlight">
+\[V = V_m sin(\omega t + \theta_v)\]</div>
+<div class="math notranslate nohighlight">
+\[I = I_m sin(\omega t + \theta_i)\]</div>
+<div class="math notranslate nohighlight">
+\[P = [V_m sin(\omega t + \theta_v)] * [I_m sin(\omega t + \theta_i)]\]</div>
+<div class="math notranslate nohighlight">
+\[P = V_m  I_m[sin(\omega t + \theta_v) * sin(\omega t + \theta_i)]\]</div>
+<p>Applying the trigonometric product-to-sum identity of:</p>
+<div class="math notranslate nohighlight">
+\[sinA sinB = \frac{1}{2}[cos(A - B) - cos(A + B)]\]</div>
+<p>and <span class="math notranslate nohighlight">\(θ = θ_v – θ_i\)</span> (the phase difference between the voltage and the current waveforms) into the above equation gives:
+$<span class="math notranslate nohighlight">\(P = \frac{V_m I_m}{2}[cos(\theta) - cos(2\omega t + \theta)]\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\frac{V_m I_m}{2} = \frac{V_m}{\sqrt{2}} * \frac{I_m}{\sqrt{2}} = V_{rms} * I_{rms}\)</span>$</p>
+<p>Where V and I are the root-mean-squared (rms) values of the sinusoidal waveforms, v  and i respectively, and θ is the phase difference between the two waveforms. Therefore we can express the instantaneous power in AC circuits as being:</p>
+<section id="instantaneous-equations">
+<h3>Instantaneous Equations<a class="headerlink" href="#instantaneous-equations" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[P = VIcos(\theta) - VIcos(2\omega t + \theta)\]</div>
+<p>This equation shows us that the instantaneous power in AC circuits has two different parts and is therefore the sum of these two terms. The second term is a time varying sinusoid whose frequency is equal to twice the angular frequency of the supply due to the 2ω part of the term. The first term however is a constant whose value depends only on the phase difference, θ between the voltage, (V) and the current, (I).</p>
+<p>As the instantaneous power in AC cicruits is constantly changing with the profile of the sinusoid over time, this makes it difficult to measure. It is therefore more convenient, and easier on the maths to use the average or mean value of the power. So over a fixed number of cycles, the average value of the instantaneous power of the sinusoid is given simply as:</p>
+<div class="math notranslate nohighlight">
+\[P = VIcos(\theta)\]</div>
+<p>Where V and I are the sinusoids rms values, and θ (Theta) is the phase angle between the voltage and the current. The units of power are in watts (W).</p>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>The voltage and current values of a 50Hz sinusoidal supply are given as:
+<span class="math notranslate nohighlight">\(V_t = 240sin(\omega t + 60)\)</span> volts and <span class="math notranslate nohighlight">\(I_t = 5sin(\omega t - 10)\)</span> Amps respectively. Find the values of the instantaneous power and the average power absorbed by the circuit.
+From above, the instantaneous power absorbed by the circuit is given as:
+$<span class="math notranslate nohighlight">\( P = V * I = 240sin(\omega t + 60) * 5sin(\omega t - 10)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( P = 240 * 5 [sin(314.2t + 60) * sin(314.2t - 10)]\)</span>$</p>
+<p>Applying the trigonometric identity rule from above gives:
+$<span class="math notranslate nohighlight">\( sinA sinB = \frac{1}{2}[cos(A - B) - cos(A + B)]\)</span>$</p>
+<p>then:
+$<span class="math notranslate nohighlight">\(P = \frac{V_m I_m}{2}[cos(\theta) - cos(2\omega t + \theta)] \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(P = \frac{240 * 5}{2}[cos(60 - (-10)) - cos(2 * 314.2 + 60 + (-10))] \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( P_t = 205.2 - 600[cos(628.4t + 50)]Watts \)</span><span class="math notranslate nohighlight">\(
+The average power is then calculated as:
+\)</span><span class="math notranslate nohighlight">\( P_{avg} = \frac{V_m I_m}{2}cos(\theta_v - \theta_i) \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( P_{avg} = \frac{240 * 5}{2}cos(60 - (-10)) = 205.2Watts \)</span>$</p>
+</section>
+</section>
+<section id="a-purely-resistive-circuit">
+<h2>A Purely Resistive Circuit<a class="headerlink" href="#a-purely-resistive-circuit" title="Link to this heading">#</a></h2>
+<p><img alt="RC1_charging" src="../../_images/image21.png" /></p>
+<p>We have seen thus far, that in a dc circuit, power is equal to the product of voltage and current and this relationship is also true for a purely resistive AC circuit. Resistors are electrical devices that consume energy and the power in a resistor is given by <span class="math notranslate nohighlight">\( P = VI = I ^ 2 R = \frac{V ^ 2}{R}\)</span>. This power is always positive.</p>
+<p>When a pure resistor is connected to a sinusoidal voltage supply, the current flowing through the resistor will vary in proportion to the supply voltage, that is the voltage and current waveforms are “in-phase” with each other. Since the phase difference between the voltage waveform and the current waveform is 0o, the phase angle resulting in cos 0o will be equal to 1.</p>
+<p>Then the electrical power consumed by the resistor is given by:</p>
+<section id="electrical-power-in-a-pure-resistor">
+<h3>Electrical Power in a Pure Resistor<a class="headerlink" href="#electrical-power-in-a-pure-resistor" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[ P = V * Icos(\theta)\]</div>
+<div class="math notranslate nohighlight">
+\[cos(\theta) = 1\]</div>
+<div class="math notranslate nohighlight">
+\[P = V * I * 1 = V * I Watts\]</div>
+<p>As the voltage and current waveforms are in-phase, that is both waveforms reach their peak values at the same time, and also pass through zero at the same time, the power equation above reduces down to just: V*I. Therefore the the power at any instant can be found by multiplying together the two waveforms to give the volt-ampere product. This is called the “Real Power”, (P) measured in watts, (W), Kilowatt (kW), Megawatt (MW), etc.</p>
+</section>
+</section>
+<section id="ac-purely-inductive-circuit">
+<h2>AC Purely Inductive Circuit<a class="headerlink" href="#ac-purely-inductive-circuit" title="Link to this heading">#</a></h2>
+<p>In a purely inductive (that is infinite capacitance, C = ∞ and zero resistance, R = 0) circuit of L Henries, the voltage and current waveforms are not in-phase. Whenever a changing voltage is applied to a purely inductive coil, a “back” emf is produced by the coil due to its self-inductance. This self-inductance opposes and limits any changes to the current flowing in the coil.</p>
+<p>The effects of this back emf is that the current cannot increase immediately through the coil in-phase with the applied voltage causing the current waveform to reach its peak or maximum value some time after that of the voltage. The result is that in a purely inductive circuit, the current always “lags” (ELI) behind the voltage by 90o (π/2) as shown.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">Vm</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">Im</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="n">f</span> <span class="o">=</span> <span class="mi">50</span> 
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">f</span> 
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span> 
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+
+<span class="n">voltage</span> <span class="o">=</span> <span class="n">Vm</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span>
+<span class="n">current</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">Im</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">time</span> <span class="p">))</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Voltage (V)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="n">current</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Current (A)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Voltage and Current Waveforms with Phase Difference&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5bef9d6532152aaaaf83467a852338ac68e5d22b2feb8d5713aa504432835271.png" src="../../_images/5bef9d6532152aaaaf83467a852338ac68e5d22b2feb8d5713aa504432835271.png" />
+</div>
+</div>
+<section id="chart-explanation">
+<h3>Chart Explanation<a class="headerlink" href="#chart-explanation" title="Link to this heading">#</a></h3>
+<p>The waveforms above shows us the instantaneous voltage and instantaneous current across a purely inductive coil as a function of time. Maximum current, Imax occurs at one full quarter of a cycle <span class="math notranslate nohighlight">\((90\degree)\)</span> after the maximum (peak) value of the voltage. Here the current is shown with its negative maximum value at the start of the voltage cycle and passes through zero increasing to its positive maximum value when the voltage waveform is at its maximum value at <span class="math notranslate nohighlight">\(90\degree\)</span>.</p>
+<p>Thus as the voltage and current waveforms are no longer rising and falling together, but instead a phase shift of <span class="math notranslate nohighlight">\(90\degree\)</span> (π/2) is introduced in the coil, then the voltage and current waveforms are “out-of-phase” with each other as the voltage leads the current by <span class="math notranslate nohighlight">\(90\degree\)</span>. Since the phase difference between the voltage waveform and the current waveform is 90o, then the phase angle resulting in <span class="math notranslate nohighlight">\(cos(90\degree) = 0\)</span>.</p>
+<p>Therefore the electrical power stored by a pure inductor, <span class="math notranslate nohighlight">\(Q_L\)</span> is given by:</p>
+</section>
+<section id="real-power-in-a-pure-inductor">
+<h3>Real Power in a Pure Inductor<a class="headerlink" href="#real-power-in-a-pure-inductor" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[ P = V * I \]</div>
+<div class="math notranslate nohighlight">
+\[ cos(90\degree)\]</div>
+<div class="math notranslate nohighlight">
+\[ P = V * I * cos(0\degree) = 0\]</div>
+<p>Clearly then, a pure inductor does not consume or dissipate any real or true power, but as we have both voltage and current the use of cos(θ) in the expression: P = V<em>I</em>cos(θ) for a pure inductor is no longer valid. The product of the current and the voltage in this case is imaginary power, commonly called “Reactive Power”, (Q) measured in volt-amperes reactive, (VAr), Kilo-voltamperes reactive (KVAr), etc.</p>
+<p>Voltamperes reactive, VAr should not be confused with watts, (W) which is used for real power. VAr represents the product of the volts and amperes that are 90o out-of-phase with each other. To identify the reactive average power mathematically, the sine function is used. Then the equation for the average reactive power in an inductor becomes:</p>
+</section>
+<section id="reactive-power-in-a-pure-inductor">
+<h3>Reactive Power in a Pure Inductor<a class="headerlink" href="#reactive-power-in-a-pure-inductor" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[Q_L = V * Isin(\theta)\]</div>
+<div class="math notranslate nohighlight">
+\[sin(90\degree)\]</div>
+<div class="math notranslate nohighlight">
+\[Q_L = V * I * sin(90\degree) = V * I\]</div>
+</section>
+</section>
+<section id="a-purely-capacitive-circuit">
+<h2>A Purely Capacitive Circuit<a class="headerlink" href="#a-purely-capacitive-circuit" title="Link to this heading">#</a></h2>
+<p>A purely capacitive (that is zero inductance, L = 0 and infinite resistance, R = ∞) circuit of C Farads, has the property of delaying changes in the voltage across it. Capacitors store electrical energy in the form of an electric field within the dielectric so a pure capacitor does not dissipate any energy but instead stores it.</p>
+<p>In a purely capacitive circuit the voltage cannot increase in-phase with the current as it needs to “charge-up” the capacitors plates first. This causes the voltage waveform to reach its peak or maximum value some time after that of the current. The result is that in a purely capacitive circuit, the current always “leads” (ICE) the voltage by 90o (ω/2) as shown.</p>
+<p><img alt="RC1_charging" src="../../_images/image1.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">Vm</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">Im</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="n">f</span> <span class="o">=</span> <span class="mi">50</span> 
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">f</span> 
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span> 
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+
+<span class="n">voltage</span> <span class="o">=</span> <span class="n">Vm</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span>
+<span class="n">current</span> <span class="o">=</span> <span class="n">Im</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">time</span> <span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Voltage (V)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="n">current</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Current (A)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Voltage and Current Waveforms with Phase Difference&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9f84c0506e97086a6ab43514c2107ad830b6e8ff490ef2bfa39519878ca2a9e4.png" src="../../_images/9f84c0506e97086a6ab43514c2107ad830b6e8ff490ef2bfa39519878ca2a9e4.png" />
+</div>
+</div>
+<section id="id1">
+<h3>Chart Explanation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The waveform shows us the voltage and current across a pure capacitor as a function of time. Maximum current, Im occurs a one full quarter of a cycle (90o) before the maximum (peak) value of the voltage. Here the current is shown with its positive maximum value at the start of the voltage cycle and passes through zero, decreasing to its negative maximum value when the voltage waveform is at its maximum value at <span class="math notranslate nohighlight">\(90\degree\)</span>. The opposite phase shift to the purely inductive circuit.</p>
+<p>Thus for a purely capacitive circuit, the phase angle <span class="math notranslate nohighlight">\(\theta = -90\degree\)</span> and the equation for the average reactive power in a capacitor becomes:</p>
+</section>
+<section id="reactive-power-in-a-pure-capacitor">
+<h3>Reactive Power in a Pure Capacitor<a class="headerlink" href="#reactive-power-in-a-pure-capacitor" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[Q_C = V * Isin(\theta)\]</div>
+<div class="math notranslate nohighlight">
+\[sin(-90\degree) = -1\]</div>
+<div class="math notranslate nohighlight">
+\[Q_C = V * I * -1 = -V * I\]</div>
+<p>Where <span class="math notranslate nohighlight">\(–V*I*sin(θ)\)</span> is a negative sine wave. Also the symbol for capacitive reactive power is QC with the same unit of measure, the volt-ampere reactive (VAR) as that of the inductor. Then we can see that just like a purely inductive circuit above, a pure capacitor does not consume or dissipate any real or true power, P.</p>
+</section>
+</section>
+<section id="id2">
+<h2>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><img alt="RC1_charging" src="../../_images/image3.png" /></p>
+<p>A solenoid coil with a resistance of 30 ohms and an inductance of 200mH is connected to a 230VAC, 50Hz supply. Calculate: (a) the solenoids impedance, (b) the current consumed by the solenoid, (c) the phase angle between the current and the applied voltage, and (d) the average power consumed by the solenoid.</p>
+<p>Data given: R = 30Ω, L = 200mH, V = 230V and ƒ = 50Hz.</p>
+<p>Impedance (Z) of the solenoid coil:
+$<span class="math notranslate nohighlight">\(R = 30\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(X_L = 2\pi fL = 2\pi * 50 * 200 * 10 ^ -3 = 62.8\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(Z = \sqrt{R ^ 2 + X_L ^ 2} = \sqrt{30 ^ 2 + 62.8 ^ 2} = 69.6\)</span>$</p>
+<p>Current (I) consumed by the solenoid coil:
+$<span class="math notranslate nohighlight">\(V = I * Z\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(I = \frac{V}{Z} = \frac{230}{69.6} = 3.3\)</span>$</p>
+<p>The phase angle, θ:
+$<span class="math notranslate nohighlight">\(cos(\theta) = \frac{R}{Z} = \frac{30}{69.6} = 0.431\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(cos ^ {-1} (0.431) ^ = 64.5\degree\)</span>$</p>
+<p>Average AC power consumed by the solenoid coil:
+$<span class="math notranslate nohighlight">\(P = V * Icos(\theta)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(P = 230 * 3.3 * cos(64.5\degree)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(P = 327 Watts\)</span>$</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>We have seen here that in AC circuits, the voltage and current flowing in a purely passive circuit are normally out-of-phase and, as a result, they can not be used to accomplish any real work. We have also seen that in a direct current (DC) circuit, electrical power is equal to the voltage times the current, or P = V*I, but we can not calculate it in the same manner as for AC circuits as we need to take into account any phase difference.</p>
+<p>In a purely resistive circuit, the current and voltage are both in-phase and all the electrical power is consumed by the resistance, usually as heat. As a result, none of the electrical power is returned back to the source supply or circuit.</p>
+<p>However, in a purely inductive or a purely capacitive circuit that contains reactance, (X) the current will lead or lag the voltage by exactly 90o (the phase angle) so power is both stored and returned back to the source. Thus the average power calculated over one full periodic cycle will be equal to zero.</p>
+<p>The electrical power consumed by a resistance, (R) is called the true or real power and is simply obtained by multiplying the rms voltage with the rms current. The power stored by a reactance, (X) is called the reactive power and is obtained by multiplying the voltage, current, and the sine of the phase angle between them.</p>
+</section>
+<section id="refrences">
+<h2>Refrences<a class="headerlink" href="#refrences" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.electronics-tutorials.ws/accircuits/power-in-ac-circuits.html">https://www.electronics-tutorials.ws/accircuits/power-in-ac-circuits.html</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\powerinaccircuit"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Boost/BoostConverter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Boost Converters</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../DiodeACModel/DiodeACModel.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AC Model of Diode</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-electrical-power-in-dc-and-ac-circuits">Understanding Electrical Power in DC and AC Circuits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-resistive-circuit">DC Resistive Circuit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-power-in-an-ac-circuit">Electrical Power in an AC Circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-in-ac-power-circuit">Equations in AC power circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instantaneous-equations">Instantaneous Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-purely-resistive-circuit">A Purely Resistive Circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electrical-power-in-a-pure-resistor">Electrical Power in a Pure Resistor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-purely-inductive-circuit">AC Purely Inductive Circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chart-explanation">Chart Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-power-in-a-pure-inductor">Real Power in a Pure Inductor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-in-a-pure-inductor">Reactive Power in a Pure Inductor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-purely-capacitive-circuit">A Purely Capacitive Circuit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Chart Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-in-a-pure-capacitor">Reactive Power in a Pure Capacitor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

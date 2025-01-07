@@ -1,0 +1,951 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Boost Converters &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Boost/BoostConverter';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="power in AC circuit" href="../powerinaccircuit/AC_Power.html" />
+    <link rel="prev" title="Crystal oscillator" href="../miniProject_Crystal/project_Crystal.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Boost/BoostConverter.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Boost/BoostConverter.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Boost Converters</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Boost Converters</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-of-operation"><strong>Principle of operation</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-boost-converter-schematic-switch-closed"><strong>Simple boost converter schematic (switch closed)</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-the-switch"><strong>Closing the switch</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-boost-converter-schematic-switch-opened"><strong>Simple boost converter schematic (switch opened)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-switch"><strong>Opening the switch</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-purpose-of-the-diode"><strong>What is the purpose of the diode?</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-current-decreases-in-a-boost-converter"><strong>How current decreases in a boost converter</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple-in-current"><strong>Ripple in current</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#average-output-voltage"><strong>Average output voltage</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#average-load-current"><strong>Average load current</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-increase-output-voltage-and-efficiency"><strong>How to increase output voltage and efficiency</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-and-examples"><strong>Applications and Examples</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusion</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources"><strong>Sources</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="boost-converters">
+<h1><strong>Boost Converters</strong><a class="headerlink" href="#boost-converters" title="Link to this heading">#</a></h1>
+<p><strong>Author: Melika Dehestani</strong></p>
+<p><strong>Gmail:</strong> <a class="reference external" href="mailto:dehestanimelika2004&#37;&#52;&#48;gmail&#46;com">dehestanimelika2004<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p><strong>Fall 2024</strong></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>Boost converters are a type of DC-DC switching converter that efficiently increase (step-up) the input voltage to a higher output voltage. It is a class of switched-mode power supply (SMPS) containing at least two semiconductors, a diode and a transistor, and at least one energy storage element; a capacitor, inductor, or the two in combination.  By storing energy in an inductor during the switch-on phase and releasing it to the load during the switch-off phase, this voltage conversion is made possible. Power electronics applications requiring a greater output voltage than the input source, in particular, depend on boost converters.</p>
+<p>The newest switcher, the flyback converter, actually evolved from the boost regulator. Because it delivers a fixed amount of power to the load regardless of load impedance (except for short circuits), the boost regulator is the designer’s first choice in photoflash and capacitive-discharge (CD) automotive ignition circuits to recharge the capacitive load. It also makes a good battery charger.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="principle-of-operation">
+<h1><strong>Principle of operation</strong><a class="headerlink" href="#principle-of-operation" title="Link to this heading">#</a></h1>
+<p>The principle of operation of a boost converter is to store energy in an inductor and then release it to the load at a higher voltage than the input voltage. This is achieved by:</p>
+<ul class="simple">
+<li><p>Storing energy:
+When the switch is on, current flows through the inductor and creates a magnetic field, storing energy.</p></li>
+<li><p>Releasing energy:
+When the switch is off, the magnetic field collapses, inducing current through the circuit. This current is redirected through the diode and stored in the output capacitor.</p></li>
+<li><p>Smoothing the output voltage:
+The output capacitor smooths the output voltage to deliver a stable supply to the load.</p></li>
+</ul>
+<p>The key principle behind a boost converter is that an inductor resists changes in current by storing or releasing energy in its magnetic field.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="simple-boost-converter-schematic-switch-closed">
+<h1><strong>Simple boost converter schematic (switch closed)</strong><a class="headerlink" href="#simple-boost-converter-schematic-switch-closed" title="Link to this heading">#</a></h1>
+<p>The code below shows the schematic of a simple boost converter using schemdraw, which consists of a source of DC power supply E, a switch S (typically a MOSFET or IGBT), a diode D, low frequency bandpass LC filter and load R:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">battery</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">BatteryCell</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Switch</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;close&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Diode</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;RL&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">battery</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0e48a099fbaadc6f20099ff8e965503d056ec8b31549bec848bacc94ef030297.svg" src="../../_images/0e48a099fbaadc6f20099ff8e965503d056ec8b31549bec848bacc94ef030297.svg" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="closing-the-switch">
+<h1><strong>Closing the switch</strong><a class="headerlink" href="#closing-the-switch" title="Link to this heading">#</a></h1>
+<p>During this stage, the input voltage (Vin) which is E in the drawing above is applied across the inductor (L), so if we are comparing this state with the state that the switch is open our current has increased therefore the inductor is storing energy and the polarity of the inductor shall be positive on the left side and negative on the right side also we see that the current through the inductor increases linearily.</p>
+<p>The energy stored in the inductor builds up, and the diode (D) is reverse-biased, preventing current flow to the load. The inductor current can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[ ΔI_L = \frac{V_{in}}{L}.t_{on} \]</div>
+<p>where ΔIL is the change in inductor current, L is the inductance, and ton is the duration of the switch-on period.</p>
+<p>Under the influence of voltage E, the inductor current linearly increases from its minimum to maximum value ,like the diagram below:</p>
+<p><img alt="title" src="../../_images/diagram1.png" /></p>
+<section id="simple-boost-converter-schematic-switch-opened">
+<h2><strong>Simple boost converter schematic (switch opened)</strong><a class="headerlink" href="#simple-boost-converter-schematic-switch-opened" title="Link to this heading">#</a></h2>
+<p>The schematic below shows how the boost converter will be if the switch is opened:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">battery</span><span class="o">=</span><span class="n">elm</span><span class="o">.</span><span class="n">BatteryCell</span><span class="p">()</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Switch</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;open&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Diode</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;RL&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">battery</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/996d4283fa5cdc98bfee0a4fb202caebf66ec88506fc16262b23a807566ab8f8.svg" src="../../_images/996d4283fa5cdc98bfee0a4fb202caebf66ec88506fc16262b23a807566ab8f8.svg" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="opening-the-switch">
+<h1><strong>Opening the switch</strong><a class="headerlink" href="#opening-the-switch" title="Link to this heading">#</a></h1>
+<p>When the switch S1 opens, the current flow decreases; this is due to the fact that current can only go through the diode and then the load. When the current decreases the magnetic field of the inductor collapses hence energy is realsed. This causes the polarity of the inductor to change and get reversed, so now the inductor is in series with the battery. The voltage across the load is now greater than the battery because the inductors voltage and the battery are added together. This added voltage now charges the capacitor.</p>
+<p>During this period, the voltage across the inductor (VL) is equal to the difference between the output voltage (Vout) and the input voltage (Vin). The inductor current decreases linearly as the energy is transferred to the load, and the equation for the inductor current becomes:</p>
+<div class="math notranslate nohighlight">
+\[ ΔI_L = \frac{V_{out}-V_{in}}{L}.t_{off} \]</div>
+<p>where toff is the duration of the switch-off period.</p>
+<p>By equating the inductor current equations for both stages and rearranging the terms, we can derive the voltage conversion relationship for the boost converter using the duty cycle:</p>
+<div class="math notranslate nohighlight">
+\[ V_{out} = \frac{V_{in}}{1-D} \]</div>
+<p>This equation shows that the output voltage can be controlled by adjusting the duty cycle of the switching waveform, allowing for a higher output voltage than the input voltage.</p>
+<p>As the switch is constantly turned on and off the capacitors voltage also increases, this voltage continues to increase until it reaches an equilibrium state; This is when the rate the inductor charges the capacitor equals the rate the capacitor discharge itself through the load. In this moment we have our maximum voltage.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="what-is-the-purpose-of-the-diode">
+<h1><strong>What is the purpose of the diode?</strong><a class="headerlink" href="#what-is-the-purpose-of-the-diode" title="Link to this heading">#</a></h1>
+<p>In the previous section we said how the capacitors voltage exceeds the batterys, if the diode was not there the capacitor would have discharged through the battery until it reached a state of equilibrium (the voltages become the same). Since the diode is reversed biased in this view it prevents current from flowing through the battery so the capacitors current must flow through the load. In conclusion the diodes purpose is to increase the output volatge across the load.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="how-current-decreases-in-a-boost-converter">
+<h1><strong>How current decreases in a boost converter</strong><a class="headerlink" href="#how-current-decreases-in-a-boost-converter" title="Link to this heading">#</a></h1>
+<p>We learned how the voltage increases in a boost converter, overall power should remain the same thus the current should decrease. We are now going to analyse how current decrases.</p>
+<p>When the switch is closed some of the current flows through inductor through the diode and lastly through the load, but a good portion of the current flows through the switch. Ultimatly the net current decreases as some of the current flows back to the battery and so this is why we say boost converters step up the voltage and step down the current.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ripple-in-current">
+<h1><strong>Ripple in current</strong><a class="headerlink" href="#ripple-in-current" title="Link to this heading">#</a></h1>
+<p>During ton using KVL we have:</p>
+<div class="math notranslate nohighlight">
+\[ V_L = E \]</div>
+<div class="math notranslate nohighlight">
+\[ L\frac{dI_L}{dt} = E \]</div>
+<div class="math notranslate nohighlight">
+\[ L\int_{I_{min}}^{I_{max}} di_L = E \int_{0}^{t_{on}} \]</div>
+<p>So this gives the value of ΔI is:</p>
+<div class="math notranslate nohighlight">
+\[ ΔI_L = \frac{E.D}{f.L} \]</div>
+<p>This is the ripple in current relation with duty cycle and input voltage.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="average-output-voltage">
+<h1><strong>Average output voltage</strong><a class="headerlink" href="#average-output-voltage" title="Link to this heading">#</a></h1>
+<p>The diagram below shows the waveform of diffrent components of a boost circuit:</p>
+<p><img alt="title" src="../../_images/pic.jpg" /></p>
+<p>During toff using KVL and the diagram above we have:</p>
+<div class="math notranslate nohighlight">
+\[ V_L = E - V_{out} \]</div>
+<div class="math notranslate nohighlight">
+\[ L\frac{dI_L}{dt} = E - V_{out} \]</div>
+<div class="math notranslate nohighlight">
+\[ L\int_{I_{max}}^{I_{min}} di_L = (E- V_{out}) \int_{t_{on}}^{T} \]</div>
+<div class="math notranslate nohighlight">
+\[ -L ΔI_L = (E- V_{out})(T-t_{on}) \]</div>
+<p>By using the relation we calculated for the ripple current and duty cycle we rewrite the equation above:</p>
+<div class="math notranslate nohighlight">
+\[ -L \frac{E.D}{f.L} = (E- V_{out})(1-D)T \]</div>
+<div class="math notranslate nohighlight">
+\[ V_{out} = \frac{V_{in}}{1-D} \]</div>
+<p>In cocnlusion we see our output has been stepped up.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="average-load-current">
+<h1><strong>Average load current</strong><a class="headerlink" href="#average-load-current" title="Link to this heading">#</a></h1>
+<p>For lossless conversion:</p>
+<div class="math notranslate nohighlight">
+\[ P_i = P_out \]</div>
+<div class="math notranslate nohighlight">
+\[ E.I_i = V_{out}.I_{out} \]</div>
+<p>Replacing Vout with the equation in the part before we derive the relation between input and output current:</p>
+<div class="math notranslate nohighlight">
+\[ I_{out} = (1-D) I_i \]</div>
+<p>We see in our result that current is bucked or stepped down.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="how-to-increase-output-voltage-and-efficiency">
+<h1><strong>How to increase output voltage and efficiency</strong><a class="headerlink" href="#how-to-increase-output-voltage-and-efficiency" title="Link to this heading">#</a></h1>
+<p>According to the calculations we have made, there are two options for increasing our output voltage:</p>
+<ul class="simple">
+<li><p>We can increase the inductors value(L)</p></li>
+<li><p>We can increase the current rate(dIl/dt), this means instead of using a mechanical switch we can use a MOSFET or transistor to act as a fast acting switch and we can control the rate of its on and off by using an AC signal; as we change the frequency we can increase the rate.</p></li>
+</ul>
+<p>In a boost converter, efficiency is a crucial parameter determining how effectively it transfers power from input to output. The efficiency (η) of a boost converter can be expressed as the ratio of output power (Pout) to input power (Pin):</p>
+<div class="math notranslate nohighlight">
+\[ η = \frac{P_{out}}{P_{in}} \]</div>
+<p>The losses in a boost converter can be attributed to several factors, which will be discussed in this section.</p>
+<ul class="simple">
+<li><p>Conduction Losses: The resistance of circuit elements like the inductor, switch (MOSFET), and diode causes conduction losses. These losses are directly related to the resistance of the components and the current that flows through them. By choosing parts with lower resistances and improving the converter’s design for low current flow, conduction losses can be reduced.</p></li>
+<li><p>Switching Losses: When a MOSFET switches between its on and off states, switching losses occur. During these transitions, the switch is experiencing both voltage and current, which results in power loss. The MOSFET’s on-state resistance, drain-to-source voltage, and switching frequency all influence the overall switching loss. A MOSFET with low on-state resistance and quick switching periods should be used to reduce switching losses.</p></li>
+<li><p>Diode Reverse Recovery Losses: A diode experiences reverse recovery as it transitions from the conducting state to the blocking state. Power loss occurs as a result of the diode briefly conducting current in the opposite direction during this process. A Schottky diode or other diode with a short reverse recovery time should be chosen to reduce these losses.</p></li>
+<li><p>Magnetic Core Losses: The alternating magnetic field inside the inductor core results in energy dissipation in the form of heat and causes inductor core losses. The core material, operation frequency, and magnetic flux density all affect these losses. To reduce core losses, an appropriate core material should be selected, and the inductor design should be optimized to minimize the magnetic flux density.</p></li>
+<li><p>Capacitor Losses: Equivalent series resistance (ESR) of the output capacitor is the principal cause of capacitor losses. These losses lead to the production of heat and a decline in general efficiency. These losses can be reduced by using capacitors with a low ESR.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="applications-and-examples">
+<h1><strong>Applications and Examples</strong><a class="headerlink" href="#applications-and-examples" title="Link to this heading">#</a></h1>
+<p>Boost converters are widely used in various applications due to their ability to step up the input voltage. This section will discuss some common applications and examples of boost converters in real-world scenarios.</p>
+<ul class="simple">
+<li><p>Power Supplies: Boost converters are utilized in power supplies to produce a stable, higher output voltage from a lower input voltage source, making them useful for portable devices and battery-operated systems where input voltage may vary due to battery discharge or other factors. Examples include laptop chargers, USB power adapters, and portable power banks.</p></li>
+<li><p>LED Lighting: In LED lighting systems, boost converters are used to maintain a constant current to the LED string, ensuring consistent brightness even when the input voltage fluctuates. This is particularly relevant in automotive applications, where the vehicle’s electrical system voltage can vary, and the boost converter ensures stable LED illumination.</p></li>
+<li><p>Solar Power Systems: Boost converters play a critical role in solar power systems,, particularly in maximum power point tracking (MPPT) controllers. The converter adjusts its output voltage to extract the maximum power from the solar panels, stepping up the panel voltage to charge batteries or supply power to the electrical grid.</p></li>
+<li><p>Electric Vehicles: Boost converters are used in electric vehicles to increase the voltage from the battery pack to a higher voltage level required for various electrical components such as the traction motor, air conditioning system, or power steering. This enables efficient power delivery and optimal vehicle performance.</p></li>
+<li><p>Telecommunications: Boost converters are employed in telecommunications applications to produce stable, higher output voltages from lower input voltages, ensuring the reliable operation of radio frequency (RF) transmitters, base stations, and other communication equipment.</p></li>
+<li><p>Sensor Systems: Boost converters are commonly used in sensor systems to provide a stable voltage supply for analog-to-digital converters (ADCs) and other sensitive electronic components. This is especially important in sensor systems operating in environments with variable input voltage conditions, such as remote monitoring systems powered by batteries or energy harvesting devices.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
+<h1><strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
+<p>In conclusion, boost converters play a critical role in modern electrical engineering by providing efficient solutions for stepping up voltage levels in a wide range of applications. Through the analysis of their principles, components, and performance metrics, we have demonstrated their importance in fields such as renewable energy, consumer electronics, and automotive systems. By understanding the design and operational parameters, we can optimize boost converters to achieve higher efficiency, reliability, and cost-effectiveness, which are crucial for advancing technology and meeting the growing energy demands of the future.</p>
+<section id="sources">
+<h2><strong>Sources</strong><a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://laboratorypatternrecognition.github.io/CircuitElectronics/Circuit_Electronics/DiodeApplication.html">https://laboratorypatternrecognition.github.io/CircuitElectronics/Circuit_Electronics/DiodeApplication.html</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=9QM55r5fnUk">https://www.youtube.com/watch?v=9QM55r5fnUk</a></p></li>
+<li><p><a class="reference external" href="https://www.monolithicpower.com/en/learning/mpscholar/power-electronics/dc-dc-converters/boost-converters?srsltid=AfmBOooo0TzxD694M7xoQe3DOAd1AnD9CHNNRxqL5aKus5Vyk8ymB7aI">https://www.monolithicpower.com/en/learning/mpscholar/power-electronics/dc-dc-converters/boost-converters?srsltid=AfmBOooo0TzxD694M7xoQe3DOAd1AnD9CHNNRxqL5aKus5Vyk8ymB7aI</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Boost_converter">https://en.wikipedia.org/wiki/Boost_converter</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Find0OQYQtE">https://www.youtube.com/watch?v=Find0OQYQtE</a></p></li>
+<li><p>Voltage Regulator Circuit Manual, By Robert J. Traister</p></li>
+<li><p><a class="reference external" href="https://www.ti.com/lit/an/snva731/snva731.pdf?ts=1735902409283&amp;amp;ref_url=https%253A%252F%252Fwww.google.com%252F#:~:text=The%20boost%20converter%20is%20used,the%20boost%20and%20buck%20converters">https://www.ti.com/lit/an/snva731/snva731.pdf?ts=1735902409283&amp;ref_url=https%253A%252F%252Fwww.google.com%252F#:~:text=The boost converter is used,the boost and buck converters</a>.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Boost"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../miniProject_Crystal/project_Crystal.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crystal oscillator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../powerinaccircuit/AC_Power.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">power in AC circuit</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Boost Converters</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-of-operation"><strong>Principle of operation</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-boost-converter-schematic-switch-closed"><strong>Simple boost converter schematic (switch closed)</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-the-switch"><strong>Closing the switch</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-boost-converter-schematic-switch-opened"><strong>Simple boost converter schematic (switch opened)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-switch"><strong>Opening the switch</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-purpose-of-the-diode"><strong>What is the purpose of the diode?</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-current-decreases-in-a-boost-converter"><strong>How current decreases in a boost converter</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple-in-current"><strong>Ripple in current</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#average-output-voltage"><strong>Average output voltage</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#average-load-current"><strong>Average load current</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-increase-output-voltage-and-efficiency"><strong>How to increase output voltage and efficiency</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-and-examples"><strong>Applications and Examples</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusion</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources"><strong>Sources</strong></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,963 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Capacitor Handbook Chapter(2) &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/CapacitorHandbookChapter(2)/CapacitorHandbookChapter_2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="Multivibrator: Astable, Monostable, and Bistable" href="../Multivibrator/Multivibrator.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capacitor Handbook Chapter(2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/CapacitorHandbookChapter(2)/CapacitorHandbookChapter_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/CapacitorHandbookChapter(2)/CapacitorHandbookChapter_2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Capacitor Handbook Chapter(2)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-ceramic-capacitors">Introduction to Ceramic Capacitors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-ceramic-capacitors">Types of Ceramic Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-plate-ceramic-capacitors">Single-Plate Ceramic Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitance">Capacitance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manufacturing">Manufacturing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-point">Negative Point</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multilayer-ceramic-capacitors-mlcc">Multilayer Ceramic Capacitors (MLCC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Capacitance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Manufacturing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dielectric-classes">Dielectric Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-1">Class 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#class-1-capacitor-codes">Class 1 capacitor codes</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-2">Class 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-temperature">Effects of Temperature</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curie-temperature">The Curie temperature</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-voltage">Effects of Voltage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-frequency">Effects of Frequency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-time">Effects of Time</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-mechanical-stress">Effects of Mechanical Stress</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application">Application</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-compensating-capacitors">Temperature compensating capacitors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="capacitor-handbook-chapter-2">
+<h1>Capacitor Handbook Chapter(2)<a class="headerlink" href="#capacitor-handbook-chapter-2" title="Link to this heading">#</a></h1>
+<p>Author : kourosh arfae shahidi</p>
+<p>gmail : <a class="reference external" href="mailto:kourosh&#46;a&#46;shahidi&#37;&#52;&#48;gmail&#46;com">kourosh<span>&#46;</span>a<span>&#46;</span>shahidi<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<section id="introduction-to-ceramic-capacitors">
+<h2>Introduction to Ceramic Capacitors<a class="headerlink" href="#introduction-to-ceramic-capacitors" title="Link to this heading">#</a></h2>
+<p>Ceramic capacitors are essential components in modern electronic systems, widely recognized for their versatility and efficiency. They rely on ceramic materials as the dielectric, which determines their ability to store and regulate electric charge. The dielectric properties significantly influence factors such as capacitance, stability, and frequency response, making these capacitors suitable for a range of applications, from simple circuits to advanced high-frequency systems. By combining compact design with reliable performance, ceramic capacitors play a pivotal role in shaping contemporary electronics.</p>
+</section>
+<section id="types-of-ceramic-capacitors">
+<h2>Types of Ceramic Capacitors<a class="headerlink" href="#types-of-ceramic-capacitors" title="Link to this heading">#</a></h2>
+<p>The value for K comes from the selection of materials and from the geometric arrangement of individual component parts.</p>
+<section id="single-plate-ceramic-capacitors">
+<h3>Single-Plate Ceramic Capacitors<a class="headerlink" href="#single-plate-ceramic-capacitors" title="Link to this heading">#</a></h3>
+<p>There is one form of ceramic which looks almost exactly like the classical model of a parallel plate capacitor. A square or circular shaped ceramic  dielectric is prepared and coated with conductors on each flat face as shown in figure below.</p>
+<p><img alt="title" src="../../_images/image11.png" /></p>
+<section id="capacitance">
+<h4>Capacitance<a class="headerlink" href="#capacitance" title="Link to this heading">#</a></h4>
+<p>If the value of K is known for the dielectric, measure the area of the conductors, the thickness of the dielectric, and directly calculate the capacitance.</p>
+<p><img alt="title" src="../../_images/image31.jpg" /></p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(C = \frac{k\epsilon A}{d}\)</span></p>
+</div></blockquote>
+</section>
+<section id="manufacturing">
+<h4>Manufacturing<a class="headerlink" href="#manufacturing" title="Link to this heading">#</a></h4>
+<p>In commercial practice, the dielectric is made from finely powered materials, chief of which is barium titanate (K = 1000 to 3000). Disc elements are pressed in dies and then fired at high temperature to produce a very dense structure. Electrodes for both discs and single-plates are formed from a compound containing powered silver, powered glass, and an organic binder. This material is screen printed onto the discs or onto the sheets from which the single plates will be cut. Another firing step removes the binder and melts the glass, binding the silver glass matrix to the ceramic surfaces.</p>
+<p>The outer surface is easily solderable, and wires are usually attached in a radial configuration. The hairpin-shaped wires shown in figure below are springy enough to hold the ceramic elements while the assembly is dipped in solder. The lower end of the hairpin is cut off later. This process can be mechanized readily, and dipped discs are among the cheapest capacitors available.</p>
+<p><img alt="title" src="../../_images/image2.jpg" /></p>
+</section>
+<section id="negative-point">
+<h4>Negative Point<a class="headerlink" href="#negative-point" title="Link to this heading">#</a></h4>
+<p>Hazard of Bridging in ceramic capacitors refers to the risk where the conductive material of the electrodes may extend to the edges of the dielectric, creating a short circuit between the positive and negative electrodes. This issue primarily occurs in Single-plate capacitors, where electrodes are applied as conductive layers on the dielectric surface. If the conductive material is not precisely confined or extends close to the edges, the likelihood of bridging increases. Other contributing factors include manufacturing errors, mechanical stress, and moisture accumulation, which can facilitate ion migration. This hazard is typically mitigated by removing conductive material from the edges or using advanced designs like multilayer ceramic capacitors (MLCC).</p>
+</section>
+</section>
+<section id="multilayer-ceramic-capacitors-mlcc">
+<h3>Multilayer Ceramic Capacitors (MLCC)<a class="headerlink" href="#multilayer-ceramic-capacitors-mlcc" title="Link to this heading">#</a></h3>
+<section id="structure">
+<h4>Structure<a class="headerlink" href="#structure" title="Link to this heading">#</a></h4>
+<p>A much more sophisticated design is called the “monolithic” ceramic capacitor, and it offers much higher capacitance per unit volume. these capacitors  have a multilayer structure where thin layers of ceramic dielectric are alternated with conductive electrodes, typically made of silver or metal alloys. These layers are precisely stacked and undergo a compression and sintering process to form a single, unified structure known as a monolithic design.<br />
+The ceramic material acts both as dielectric and as encapsulant of the basic element Electrodes
+are buried within the ceramic and exit only on the ends. The ends are surrounded with a type of powdered silver-glass compound  .
+Figure below shows only two electrodes, but 20 or 30 electrodes are very common in commercial practice and 60 or 80 might be used to obtain larger values of capacitance.</p>
+<p><img alt="title" src="../../_images/image4.png" /></p>
+</section>
+<section id="id1">
+<h4>Capacitance<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Figure below illustrates the use of three electrodes. The addition of the third electrode has doubled the value of capacitance because of the two layers of the dielectric. The equation for capacitance may be modified by the addition of the term, N, to indicate the number of layers of dielectric in use. The thickness of the layer represents the plate separation, D, in the equation, while the area, A, is the area of dielectric which appears between opposing electrodes. The dimension, L, shown in Fig below is representative of this area; the remainder of the electrode length does not face electrodes of opposing polarity, and these portions of the electrodes act only as conductors to the outside world.</p>
+<p><img alt="title" src="../../_images/image5.jpg" /></p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(C = \epsilon \times K \times \frac{A}{D} \times N\)</span></p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h4>Manufacturing<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>The manufacturing process for monolithic ceramic capacitors is much more complicated and sophisticated than that needed for discs or single plates. The powered ceramic material are mixed with a binder and cast on moving belts into thin flexible sheets which are wound onto reels and stored. The sheets are then printed with electrode patterns. The “ink” used in this printing is pigmented with finely divided precious metals, usually chosen from among platinum, palladium, and gold. Precious metals are necessary because the electrodes must pass through the firing kiln (above + lOOO°C) along with the ceramic, and an oxidizing atmosphere must be maintained in the kiln to develop the desired ceramic properties. The use of precious metal electrodes represent a major cost element in making monolithic ceramic capacitors.</p>
+<p>After the ink is dried, pieces of the sheet are stacked above one another, each piece representing one dielectric layer. Figure below shows the electrode patterns are printed so that alternating electrodes exit from opposite ends. Finally, cover layers which do not bear electrodes are placed on top and bottom. The whole assembly is compressed and then fired. During firing, the ceramic sinters together into one homogeneous structure from which we get the name “monolithic”.</p>
+<p><img alt="title" src="../../_images/image6.png" /></p>
+<p>The volumetric efficiency of ceramics from the high values of K which are possible. This result is in contrast with tantalum dielectrics and other electrolytics which gain efficiency primarily from very close spacing of electrodes. A 50 Volt ceramic dielectric, for example, would be about 60 times as thick as a 50 Volt tantalum oxide dielectric.</p>
+</section>
+</section>
+</section>
+<section id="dielectric-classes">
+<h2>Dielectric Classes<a class="headerlink" href="#dielectric-classes" title="Link to this heading">#</a></h2>
+<p>Basic to the ceramic capacitor are the properties of the dielectric materials. There are many dielectric formulations in use to obtain special characteristics of the finished capacitors. In general, stability of capacitance with respect to temperature and voltage are sacrificed when large values of K are sought. While many special formulations are sold, the industry is concentrating on three temperature compensating areas: stable (NPO or COG), semi stable (X7R), and general purpose (Z5U).</p>
+<p>NPO/COG capacitors are highly stable, exhibiting minimal changes in capacitance across temperature, voltage, and frequency variations, making them ideal for precision and high-reliability applications. X7R capacitors are semi-stable, offering a good balance between capacitance and moderate stability, with small deviations in capacitance under varying temperatures, making them suitable for general electronics. Z5U capacitors, on the other hand, are general-purpose components with high capacitance but significant variations in capacitance due to changes in temperature and voltage, making them better suited for non-critical, stable environments.</p>
+<p>Multilayer ceramic capacitors are available in a wide range of operating characteristics. Electronic Industries Association (EIA) and the military have established categories to help divide the basic characteristics into easily specified classes. The basic industry specification for ceramic capacitors is EIA specification RS-198 and as noted in the general section it specifies temperature compensating capacitors as Class 1 capacitors. These are specified by the military under specification MIL-C-20. General purpose capacitors with non-linear temperature coefficients are called Class 2 capacitors by EIA and are specified by the military under MIL-C-l1015 and MIL-C-39014. The high reliability military specification, MIL-C-123 covers both Class 1 and Class 2 dielectrics.</p>
+<section id="class-1">
+<h3>Class 1<a class="headerlink" href="#class-1" title="Link to this heading">#</a></h3>
+<p>Temperature compensating capacitors are called Class 1 capacitors.They offer the highest performance in terms of stability and loss. They can provide accurate high tolerance capacitors with stable voltage and temperature coefficients. They also offer low losses and are therefore suitable for use in oscillators, filters and the like.</p>
+<p>They are usually made from mixtures of titanates where barium titanate is normally not a major part of the mix. They have a predictable temperature coefficient (TC), and in general, do not have an aging characteristic. Thus, they are the most temperature stable capacitor available. The TC’s of Class 1 temperature compensating capacitors are usually NPO (negative-positive 0 ppmfC). Other Class 1 extended temperature compensating capacitors are also manufactured in TC’s from PlOO through N2200.</p>
+<p><img alt="title" src="../../_images/image7.png" /></p>
+<section id="class-1-capacitor-codes">
+<h4>Class 1 capacitor codes<a class="headerlink" href="#class-1-capacitor-codes" title="Link to this heading">#</a></h4>
+<p>To define the performance of a ceramic capacitor dielectric a three character code is used which is specific to ceramic capacitor class 1 dielectrics.</p>
+<ul class="simple">
+<li><p>The first character is a letter which gives the significant figure of the change in capacitance over temperature in ppm/°C</p></li>
+<li><p>The second character is numeric and gives the multiplier</p></li>
+<li><p>The third character is a letter and gives the maximum error in ppm/C</p></li>
+</ul>
+<p><img alt="title" src="../../_images/image8.png" /></p>
+</section>
+</section>
+<section id="class-2">
+<h3>Class 2<a class="headerlink" href="#class-2" title="Link to this heading">#</a></h3>
+<p>General purpose ceramic capacitors are known as Class 2 capacitors and have become extremely popular because of the high capacitance values available in very small size. Class 2 capacitors are
+“ferro-electric” and vary in capacitance value under the influence of the environmental and electrical operating conditions. Class 2 capacitors are affected by temperature, voltage (both AC and DC), frequency and time.</p>
+<section id="effects-of-temperature">
+<h4>Effects of Temperature<a class="headerlink" href="#effects-of-temperature" title="Link to this heading">#</a></h4>
+<p>Temperature effects for Class 2 ceramic capacitors are exhibited as non-linear capacitance changes with temperature. In specifying capacitance change with temperature for Class 2 materials, EIA expresses the capacitance change over an operating temperature range by a 3 symbol code.</p>
+<ul class="simple">
+<li><p>The first symbol represents the cold end of the temperature range.</p></li>
+<li><p>The second represents the upper limit of the operating temperature range.</p></li>
+<li><p>The third symbol represents the capacitance change allowed over the operating temperature range.</p></li>
+</ul>
+<p>detailed explanation of the EIA system is provided in figure below :</p>
+<p><img alt="title" src="../../_images/image9.png" /></p>
+</section>
+<section id="the-curie-temperature">
+<h4>The Curie temperature<a class="headerlink" href="#the-curie-temperature" title="Link to this heading">#</a></h4>
+<p>Ceramic capacitors have a crystalline structure and dipoles that give the materials their unique dielectric constants εr. But above a certain brittle transition temperature, the so-called Curie temperature, the ceramic loses its dielectric properties. The Curie temperature for Class 2 ceramics usually is situated between 125⋅⋅⋅150 °C. The influences don’t occur at any exact switch temperature but make themselves gradually discernible in the vicinity of the Curie temperature. Thus, we should rather talk of the Curie range.</p>
+</section>
+<section id="effects-of-voltage">
+<h4>Effects of Voltage<a class="headerlink" href="#effects-of-voltage" title="Link to this heading">#</a></h4>
+<p>Barium titanate is a widely used material in Class 2 ceramic capacitors. It possesses high dielectric properties and responds effectively to various voltage levels.The crystalline structure of barium titanate consists of electric dipoles. These dipoles polarize under the influence of an external electric field, determining the dielectric behavior of the capacitor.</p>
+<p><img alt="title" src="../../_images/image10.png" /></p>
+<ul class="simple">
+<li><p>When the voltage increases from zero to a limit value and then decreases, the charging curve follows another branch that at the voltage V = 0 leaves a residual charge + ΔQ. An alternating voltage of the same magnitude will force the charging curve along the outlines of the large hysteresis loop in the figure.</p></li>
+<li><p>If the alternating voltage is small and the DC voltage = 0, the hysteresis loop will follow the small oval in the center of the figure. Small voltage changes correspond to large charge changes, i.e. to a high capacitance. But if we superimpose a small alternating voltage on a considerable DC voltage we see how ΔV1 corresponds to fainter charge changes ΔQ1. The capacitance has dropped.</p></li>
+</ul>
+<p>Dielectric Hysteresis Phenomenon: Dielectric hysteresis is similar to magnetic hysteresis. When an electric field is applied and then removed, the dipoles do not immediately return to their original state, leaving a residual charge (ΔQ). this behavior, known as dielectric hysteresis, reflects the stability or locking of charges in ferroelectric materials.</p>
+</section>
+<section id="effects-of-frequency">
+<h4>Effects of Frequency<a class="headerlink" href="#effects-of-frequency" title="Link to this heading">#</a></h4>
+<p>Frequency affects capacitances and dissipation factor. Variation of impedance with frequency is a very important consideration for decoupling capacitor applications. Lead length, lead configuration and body size all affect the impedance level over more than ceramic formulation variations.</p>
+<p><img alt="title" src="../../_images/image111.png" /></p>
+<p>Capacitance (ΔC/C) :</p>
+<ul class="simple">
+<li><p><strong>At low frequencies:</strong> The capacitance remains relatively stable and is slightly below its nominal value. This means the capacitor performs well in this range and effectively stores energy.</p></li>
+<li><p><strong>As frequency increases (above 10 kHz):</strong> The capacitance decreases. At very high frequencies (1 MHz and beyond), it drops to a minimum. This happens because the dielectric material inside the capacitor cannot respond efficiently to the rapid changes in the electric field.</p></li>
+</ul>
+<p>Energy Losses (tanδ) :</p>
+<ul class="simple">
+<li><p><strong>At low frequencies (10 Hz to a few kHz):</strong> Energy losses are very low, meaning the capacitor dissipates minimal energy as heat and operates with high efficiency.</p></li>
+<li><p><strong>As frequency increases (beyond a few kHz):</strong> Energy losses rise significantly. At very high frequencies, the capacitor dissipates a large amount of energy as heat, reducing its efficiency.</p></li>
+</ul>
+</section>
+<section id="effects-of-time">
+<h4>Effects of Time<a class="headerlink" href="#effects-of-time" title="Link to this heading">#</a></h4>
+<p>Class 2 ceramic capacitors change capacitance and dissipation factor with time as well as temperature, frequency, and voltage. This change with time is known as aging.<br />
+<strong>Aging</strong> : This term refers to the exponential decrease in capacitance and dissipation factor over time, caused by the gradual re-alignment of the crystalline structure of the ceramic material.</p>
+<p><img alt="title" src="../../_images/image12.png" /></p>
+<p>In the diagram the capacitance of the Z5U ceramic decreases with approximately 6% per time decade and of the X7R ceramic with approximately 1.3%.
+Typical aging constants usually are :</p>
+<ul class="simple">
+<li><p>BX/X7R/2C1 1⋅⋅⋅2%</p></li>
+<li><p>Z5U/2F4 3⋅⋅⋅6%.</p></li>
+</ul>
+<p><strong>De-aging:</strong> refers to the process of reversing the natural aging of a Class 2 ceramic capacitor. de-aging occurs when the capacitor is heated above its Curie Point, which is the temperature at which the crystalline structure of the ceramic material temporarily resets.</p>
+<p>If a ceramic capacitor remains unused for a period of time, its capacitance and dissipation factor naturally decrease due to the process known as aging. However, if the capacitor is heated above its Curie Point (e.g., 125°C for 4 hours or 150°C for half an hour), this aging process is reversed, a phenomenon referred to as De-aging. After undergoing De-aging, the capacitor returns to its initial capacitance and dissipation factor values.</p>
+<p>Immediately following De-aging, the capacitance changes rapidly. For accurate measurements, manufacturers typically wait for a stabilization period, commonly 24 hours, after the “last heat” treatment. Various factors, such as the application of high voltages or environmental stresses, can influence the capacitor’s performance and alter its aging curve. These effects are anticipated in military specifications (MIL standards), which allow for changes in capacitance after tests like temperature cycling or moisture resistance. Re-measurements are conducted after a defined time interval to account for these changes.</p>
+<p><img alt="title" src="../../_images/image13.png" /></p>
+</section>
+<section id="effects-of-mechanical-stress">
+<h4>Effects of Mechanical Stress<a class="headerlink" href="#effects-of-mechanical-stress" title="Link to this heading">#</a></h4>
+<p>High K dielectric ceramic capacitors exhibit some low level piezoelectric reactions under mechanical stress. As a general statement, the piezoelectric output is higher, the higher the dielectric constant of the ceramic. It is desirable to investigate this effect before using high K dielectrics as coupling capacitors in extremely low level application.</p>
+</section>
+</section>
+</section>
+<section id="application">
+<h2>Application<a class="headerlink" href="#application" title="Link to this heading">#</a></h2>
+<p>Ceramic capacitors are primarily designed for us.e where a small physical size with comparatively large electrical capacitance and high insulation resistance is required. Ceramic capacitors are substantially smaller than paper of mica units of the same capacitance and voltage rating.</p>
+<p>General purpose ceramic capacitors are not intended for precision applications but are suitable for use as bypass, filter, and noncritical coupling elements in high frequency circuits where appreciable changes in capacitance, caused by temperature variations, can be tolerated.</p>
+<section id="temperature-compensating-capacitors">
+<h3>Temperature compensating capacitors<a class="headerlink" href="#temperature-compensating-capacitors" title="Link to this heading">#</a></h3>
+<p>Temperature compensating ceramic capacitors are ideally suited for applications that demand controlled capacitance change with temperature variation, such as resonant circuit applications. The high capacitance in smaller packages with high reliability provides volumetric efficiency and is well-suited for automatic assembly (tape and reel).</p>
+<p><strong>These capacitors are suitable solutions for applications requiring:</strong></p>
+<ul class="simple">
+<li><p>High Q and frequency stability with excellent retrace characteristics</p></li>
+<li><p>Very predictable temperature coefficients</p></li>
+<li><p>Capacitors unaffected by voltage, frequency, or time</p></li>
+<li><p>A dielectric material that is not ferro-electric</p></li>
+<li><p>The most stable capacitor type available</p></li>
+</ul>
+<p>Temperature compensating capacitors are recommended for use in frequency determining circuits. Typical applications include oscillator, radio frequency (RF), and intermediate frequency (IF) circuits. Frequency drift due to temperature effects can be compensated individually in each circuit.</p>
+<ul class="simple">
+<li><p>In IF stages where the frequency variation is uniform, satisfactory operation can be obtained by designing the temperature-compensating capacitor into the oscillator circuit.</p></li>
+<li><p>In RF circuits tuned by a variable capacitor, a shunt compensating capacitor of low value and high compensating characteristics may be used.</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Ceramic capacitors, due to their unique features such as high capacitance in compact sizes, thermal and frequency stability, and low production cost, have become essential components in electronic circuit design. Their structure, whether single-plate or multilayer, plays a significant role in enhancing performance and increasing capacitance. The study of Class 1 and Class 2 capacitors reveals that the dielectrics used, particularly high-K materials, have a direct impact on their behavior. Environmental factors such as temperature, frequency, and voltage significantly influence their capacitance and dissipation factor. Additionally, specific phenomena like aging and piezoelectric properties in certain dielectrics affect their performance in sensitive applications. This research emphasizes that a deep understanding of the structure, dielectrics, and external factors is vital for the proper selection and design of ceramic capacitors in various circuits.</p>
+</section>
+<section id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.doeeet.com/content/eee-components/passives/abc-of-clr/ceramic-capacitors-class-2/">https://www.doeeet.com/content/eee-components/passives/abc-of-clr/ceramic-capacitors-class-2/</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Ceramic_capacitor#Application_classes,_definitions">https://en.wikipedia.org/wiki/Ceramic_capacitor#Application_classes,_definitions</a></p></li>
+<li><p><a class="reference external" href="https://www.capaxtechnologies.com/pdffiles/TemperatureCompCaps.pdf">https://www.capaxtechnologies.com/pdffiles/TemperatureCompCaps.pdf</a></p></li>
+<li><p><a class="reference external" href="https://epci-academy.com/courses/capacitor-basics-ii/lessons/ceramic-capacitors/topic/class-ii-ceramic-capacitors/">https://epci-academy.com/courses/capacitor-basics-ii/lessons/ceramic-capacitors/topic/class-ii-ceramic-capacitors/</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\CapacitorHandbookChapter(2)"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Multivibrator/Multivibrator.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Multivibrator: Astable, Monostable, and Bistable</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-ceramic-capacitors">Introduction to Ceramic Capacitors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-ceramic-capacitors">Types of Ceramic Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-plate-ceramic-capacitors">Single-Plate Ceramic Capacitors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitance">Capacitance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manufacturing">Manufacturing</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-point">Negative Point</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multilayer-ceramic-capacitors-mlcc">Multilayer Ceramic Capacitors (MLCC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Capacitance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Manufacturing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dielectric-classes">Dielectric Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-1">Class 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#class-1-capacitor-codes">Class 1 capacitor codes</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-2">Class 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-temperature">Effects of Temperature</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curie-temperature">The Curie temperature</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-voltage">Effects of Voltage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-frequency">Effects of Frequency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-time">Effects of Time</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-of-mechanical-stress">Effects of Mechanical Stress</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application">Application</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-compensating-capacitors">Temperature compensating capacitors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
