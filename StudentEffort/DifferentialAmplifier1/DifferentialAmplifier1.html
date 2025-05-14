@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="AC Model of BJT" href="../BJTACModel/BJTACModel.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -188,6 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
@@ -255,16 +267,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
 
 
@@ -329,14 +332,92 @@
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Differential Amplifier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Electronic Crystal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
 
 
 
@@ -349,6 +430,9 @@
 
 
 
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
@@ -509,16 +593,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -573,7 +665,7 @@
 <section id="differential-amplifier-analysis">
 <h2>Differential Amplifier Analysis<a class="headerlink" href="#differential-amplifier-analysis" title="Link to this heading">#</a></h2>
 <p>By connecting each input in turn to 0v ground we can use superposition to solve for the output voltage Vout. Then the transfer function for a Differential Amplifier circuit is given as:</p>
-<p><img alt="Alt text" src="../../_images/img5.png" /></p>
+<p><img alt="Alt text" src="../../_images/img.png" /></p>
 <div class="math notranslate nohighlight">
 \[  
 I_1 = \frac{V_1 - V_a}{R_1}, \quad I_2 = \frac{V_2 - V_b}{R_2}, \quad I_f = \frac{V_a - V_{out}}{R_3}  
@@ -610,7 +702,7 @@ Noise consists of typical noise (differential noise) and common-mode noise. Sinc
 1.Noise is generated in the wires and cables, due to electromagnetic induction, etc., and it causes a difference in potential (i.e., noise) between the signal source ground and the circuit ground.
 2.Current flowing into the ground of a circuit from another circuit causes a ground potential rise (noise).
 In both 1 and 2 above, the ground potential, a reference for a circuit, fluctuates because of noise. It is difficult to remove common-mode noise with typical filters. Differential amplifiers are used as a means of suppressing common-mode noise.</p>
-<p><img alt="Alt text" src="../../_images/img_42.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_4.png" /></p>
 <div class="math notranslate nohighlight">
 \[  
 V_{\text{OUT}} = A_V \times \left[ \{ V_{\text{IN}(+)} + V_{\text{noise}} \} - \{ V_{\text{IN}(-)} + V_{\text{noise}} \} \right] = A_V \times \{ V_{\text{IN}(+)} - V_{\text{IN}(-)} \}  
@@ -618,12 +710,12 @@ V_{\text{OUT}} = A_V \times \left[ \{ V_{\text{IN}(+)} + V_{\text{noise}} \} - \
 </section>
 <section id="wheatstone-bridge-differential-amplifier">
 <h2>Wheatstone Bridge Differential Amplifier<a class="headerlink" href="#wheatstone-bridge-differential-amplifier" title="Link to this heading">#</a></h2>
-<p><img alt="Alt text" src="../../_images/img_19.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_1.png" /></p>
 <p>The standard Differential Amplifier circuit now becomes a differential voltage comparator by “Comparing” one input voltage to the other. For example, by connecting one input to a fixed voltage reference set up on one leg of the resistive bridge network and the other to either a “Thermistor” or a “Light Dependant Resistor” the amplifier circuit can be used to detect either low or high levels of temperature or light as the output voltage becomes a linear function of the changes in the active leg of the resistive bridge and this is demonstrated below.</p>
 </section>
 <section id="light-activated-differential-amplifier">
 <h2>Light Activated Differential Amplifier<a class="headerlink" href="#light-activated-differential-amplifier" title="Link to this heading">#</a></h2>
-<p><img alt="Alt text" src="../../_images/img_22.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_2.png" /></p>
 <p>Here the circuit above acts as a light-activated switch which turns the output relay either “ON” or “OFF” as the light level detected by the LDR resistor exceeds or falls below some pre-set value. A fixed voltage reference is applied to the non-inverting input terminal of the op-amp via the R1 – R2 voltage divider network.
 The voltage value at V1 sets the op-amps trip point with a feed back potentiometer, VR2 used to set the switching hysteresis. That is the difference between the light level for “ON” and the light level for “OFF”.</p>
 <p>The second leg of the differential amplifier consists of a standard light dependant resistor, also known as a LDR, photoresistive sensor that changes its resistive value (hence its name) with the amount of light on its cell as their resistive value is a function of illumination.</p>
@@ -644,7 +736,7 @@ The voltage value at V1 sets the op-amps trip point with a feed back potentiomet
 <section id="high-input-impedance-instrumentation-amplifier">
 <h2>High Input Impedance Instrumentation Amplifier<a class="headerlink" href="#high-input-impedance-instrumentation-amplifier" title="Link to this heading">#</a></h2>
 <p>A typical example of a three op-amp instrumentation amplifier with a high input impedance ( Zin ) is given below:</p>
-<p><img alt="Alt text" src="../../_images/img_32.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_3.png" /></p>
 <p>The two non-inverting amplifiers form a differential input stage acting as buffer amplifiers with a gain of 1 + 2R2/R1 for differential input signals and unity gain for common mode input signals. Since amplifiers A1 and A2 are closed loop negative feedback amplifiers, we can expect the voltage at Va to be equal to the input voltage V1. Likewise, the voltage at Vb to be equal to the value at V2.</p>
 <p>As the op-amps take no current at their input terminals (virtual earth), the same current must flow through the three resistor network of R2, R1 and R2 connected across the op-amp outputs. This means then that the voltage on the upper end of R1 will be equal to V1 and the voltage at the lower end of R1 to be equal to V2.</p>
 <p>This produces a voltage drop across resistor R1 which is equal to the voltage difference between inputs V1 and V2, the differential input voltage, because the voltage at the summing junction of each amplifier, Va and Vb is equal to the voltage applied to its positive inputs.</p>
@@ -720,8 +812,7 @@ V_{\text{OUT}} = (V_2 - V_1) \left[ 1 + \frac{2R_2}{R_1} \right] \left[ \frac{R_
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -788,8 +879,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

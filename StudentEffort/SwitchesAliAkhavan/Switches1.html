@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -65,11 +62,10 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/SwitchesAliAkhavan/Switches1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Nonlinear Resistor" href="../nonlinearresistor/nonlinearresistor.html" />
+    <link rel="next" title="Nonlinear Resistors: Analysis and Visualization" href="../nonlinearresistor/nonlinearresistor.html" />
     <link rel="prev" title="Zener Diode" href="../ZenerDiode2/ZenerDiode1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -188,6 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
@@ -209,7 +221,8 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
@@ -254,17 +267,8 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistor</a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../RMS/RMSVOLTAGE%20.html"><strong>RMS VOLTAGE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
 
 
 
@@ -299,8 +303,137 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
 <ul class="nav bd-sidenav">
@@ -460,16 +593,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -717,8 +858,8 @@ High Load Capacity: Surprisingly, SPST switches are capable of handling high cur
 <h2>Drawing a simple circuit with an SPST Switch with Schemdraw:<a class="headerlink" href="#drawing-a-simple-circuit-with-an-spst-switch-with-schemdraw" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">)</span>
@@ -733,7 +874,7 @@ High Load Capacity: Surprisingly, SPST switches are capable of handling high cur
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5806a46aa0be4760bf5d6754dd0fbab506f8b227bd4c33cfb19e94d1dedf5987.svg" src="../../_images/5806a46aa0be4760bf5d6754dd0fbab506f8b227bd4c33cfb19e94d1dedf5987.svg" />
+<img alt="../../_images/7d129c9270817d4977d0a3c18b82c05302b53ebba153303de4f6e2d902c2d6dd.svg" src="../../_images/7d129c9270817d4977d0a3c18b82c05302b53ebba153303de4f6e2d902c2d6dd.svg" />
 </div>
 </div>
 </section>
@@ -741,11 +882,11 @@ High Load Capacity: Surprisingly, SPST switches are capable of handling high cur
 <h2>When SPST switch is closed:<a class="headerlink" href="#when-spst-switch-is-closed" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Independent Voltage Sources&#39;</span><span class="p">)</span>
 
@@ -778,13 +919,14 @@ High Load Capacity: Surprisingly, SPST switches are capable of handling high cur
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current of the R: 2 A
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\458906458.py:26: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-  voltage_A = float(analysis[&#39;A&#39;])
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\458906458.py:27: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-  voltage_B = float(analysis[&#39;B&#39;])
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;PySpice&#39;
 </pre></div>
 </div>
 </div>
@@ -794,11 +936,11 @@ C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\458906458.py:27: DeprecationWar
 <h2>When SPST switch is opened:<a class="headerlink" href="#when-spst-switch-is-opened" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Independent Voltage Sources&#39;</span><span class="p">)</span>
 
@@ -837,9 +979,9 @@ C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\458906458.py:27: DeprecationWar
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current of the R: 0 A
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\145840188.py:29: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\145840188.py:29: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_A = float(analysis[&#39;A&#39;])
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\145840188.py:30: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\145840188.py:30: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_B = float(analysis[&#39;B&#39;])
 </pre></div>
 </div>
@@ -866,8 +1008,8 @@ Higher Switching Currents: SPDT switches can also handle higher currents, which 
 <h2>Drawing a simple circuit with an SPDT Switch with Schemdraw:<a class="headerlink" href="#drawing-a-simple-circuit-with-an-spdt-switch-with-schemdraw" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="c1"># Battery</span>
@@ -899,16 +1041,16 @@ Higher Switching Currents: SPDT switches can also handle higher currents, which 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/35f933377bc80b446de09d026627b5c9e5a1be64db12f7351c96ccb5707caa65.svg" src="../../_images/35f933377bc80b446de09d026627b5c9e5a1be64db12f7351c96ccb5707caa65.svg" />
+<img alt="../../_images/2676765f12a17f8edf44ff3fe4578a9df25272d3b9b411e01796e799d36cdc6a.svg" src="../../_images/2676765f12a17f8edf44ff3fe4578a9df25272d3b9b411e01796e799d36cdc6a.svg" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Define the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;SPDT Switch with Voltage Source&#39;</span><span class="p">)</span>
@@ -956,11 +1098,11 @@ Higher Switching Currents: SPDT switches can also handle higher currents, which 
 Current of Resistor R2: 0 A
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\187756662.py:34: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\187756662.py:34: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_A = float(analysis[&#39;A&#39;])
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\187756662.py:35: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\187756662.py:35: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_B = float(analysis[&#39;B&#39;])
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\187756662.py:36: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\187756662.py:36: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_C = float(analysis[&#39;C&#39;])
 </pre></div>
 </div>
@@ -993,8 +1135,8 @@ Functions with Two Independent Circuits: DPST switches can control two different
 <h2>Drawing a simple circuit with an DPST Switch with Schemdraw:<a class="headerlink" href="#drawing-a-simple-circuit-with-an-dpst-switch-with-schemdraw" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
 
 <span class="n">d</span> <span class="o">=</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span>
 
@@ -1030,16 +1172,16 @@ Functions with Two Independent Circuits: DPST switches can control two different
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4b4edf75cadea0e349586eb29270d610ec3c521993f08b6496c57e9429efbcb9.svg" src="../../_images/4b4edf75cadea0e349586eb29270d610ec3c521993f08b6496c57e9429efbcb9.svg" />
+<img alt="../../_images/4b11ed235bccfd34ea6f1d86e06c81bdd6de3bdbfce14feb2e77ebb1d75e281c.svg" src="../../_images/4b11ed235bccfd34ea6f1d86e06c81bdd6de3bdbfce14feb2e77ebb1d75e281c.svg" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Create the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Independent Voltage Sources&#39;</span><span class="p">)</span>
@@ -1091,13 +1233,13 @@ Functions with Two Independent Circuits: DPST switches can control two different
 Current of R2: 1.82 A
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\1334944327.py:37: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\1334944327.py:37: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_A = float(analysis[&#39;A&#39;])  # Voltage at node A
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\1334944327.py:38: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\1334944327.py:38: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_B = float(analysis[&#39;B&#39;])  # Voltage at node B
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\1334944327.py:39: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\1334944327.py:39: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_C = float(analysis[&#39;C&#39;])  # Voltage at node C
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\1334944327.py:40: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\1334944327.py:40: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_D = float(analysis[&#39;D&#39;])  # Voltage at node D
 </pre></div>
 </div>
@@ -1125,8 +1267,8 @@ Failover Capabilities: DPDT switches offer failover capabilities by providing in
 <h2>Drawing a simple circuit with an DPDT Switch with Schemdraw:<a class="headerlink" href="#drawing-a-simple-circuit-with-an-dpdt-switch-with-schemdraw" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
 
 <span class="n">d</span> <span class="o">=</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span>
 
@@ -1170,7 +1312,7 @@ Failover Capabilities: DPDT switches offer failover capabilities by providing in
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/61a0b8786a657d9cde08b3dc29584df63d773e70b2a2387010642078bf279311.svg" src="../../_images/61a0b8786a657d9cde08b3dc29584df63d773e70b2a2387010642078bf279311.svg" />
+<img alt="../../_images/73376baec592553fa34b75db6910adfa34d8cceff81ef2d53b89e28a09ddf833.svg" src="../../_images/73376baec592553fa34b75db6910adfa34d8cceff81ef2d53b89e28a09ddf833.svg" />
 </div>
 </div>
 </section>
@@ -1178,11 +1320,11 @@ Failover Capabilities: DPDT switches offer failover capabilities by providing in
 <h2>Calculation of the branch currents in the above circuit using PySpice, where the resistors R1, R2, R3, and R4 are arranged from left to right, and the DPDT switch is connected to resistors R2 and R4, while resistors R1 and R3 are disconnected:<a class="headerlink" href="#calculation-of-the-branch-currents-in-the-above-circuit-using-pyspice-where-the-resistors-r1-r2-r3-and-r4-are-arranged-from-left-to-right-and-the-dpdt-switch-is-connected-to-resistors-r2-and-r4-while-resistors-r1-and-r3-are-disconnected" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Create the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Selective Current Flow with Switch and Resistors&#39;</span><span class="p">)</span>
@@ -1240,15 +1382,15 @@ Current of R3: 0.00 A
 Current of R4: 2.17 A
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\4040343140.py:36: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\4040343140.py:36: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_node_v1 = float(analysis[&#39;node_v1&#39;])
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\4040343140.py:37: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\4040343140.py:37: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_node_switch = float(analysis[&#39;node_switch&#39;])
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\4040343140.py:38: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\4040343140.py:38: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_node_v2 = float(analysis[&#39;node_v2&#39;])
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\4040343140.py:39: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\4040343140.py:39: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_node_r1 = float(analysis[&#39;node_r1&#39;])  # Voltage at node connected to R1
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\4040343140.py:40: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\4040343140.py:40: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_node_r3 = float(analysis[&#39;node_r3&#39;])  # Voltage at node connected to R3
 </pre></div>
 </div>
@@ -1371,8 +1513,8 @@ With the popularization of surface-mount technology, these switches are now comm
 <h1>In the circuit below, the two buttons on the left and the middle of the switch are off, and the button on the right is on, the resistor on the left and the middle are off, and the current inside them is zero, and the resistor on the right (R) is on, and current flows through it:<a class="headerlink" href="#in-the-circuit-below-the-two-buttons-on-the-left-and-the-middle-of-the-switch-are-off-and-the-button-on-the-right-is-on-the-resistor-on-the-left-and-the-middle-are-off-and-the-current-inside-them-is-zero-and-the-resistor-on-the-right-r-is-on-and-current-flows-through-it" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     
@@ -1412,7 +1554,7 @@ With the popularization of surface-mount technology, these switches are now comm
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c990e460ef41ac131069609de600a37c4b829bd3f29a8378c41b02ef7bce2bed.svg" src="../../_images/c990e460ef41ac131069609de600a37c4b829bd3f29a8378c41b02ef7bce2bed.svg" />
+<img alt="../../_images/b4a0988c0dec01e149ed980449372e2f3ea701a989fff082d7cd61749c7f0a68.svg" src="../../_images/b4a0988c0dec01e149ed980449372e2f3ea701a989fff082d7cd61749c7f0a68.svg" />
 </div>
 </div>
 <section id="electrical-electronic-switches">
@@ -1439,8 +1581,8 @@ Electrical switches are a preferred choice over mechanical switches due to the f
 <h2>The following circuit explains the diode acting as a switch.<a class="headerlink" href="#the-following-circuit-explains-the-diode-acting-as-a-switch" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="c1"># Left voltage source</span>
@@ -1471,7 +1613,7 @@ Electrical switches are a preferred choice over mechanical switches due to the f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/88d1109205a11dcb7d50345e677002dde15eca22758cd916b626e155cc671bd4.svg" src="../../_images/88d1109205a11dcb7d50345e677002dde15eca22758cd916b626e155cc671bd4.svg" />
+<img alt="../../_images/97505e2385a14006efb32e4c9c441ac7954a62abd5c4a2cd7940c7396ebcb1d7.svg" src="../../_images/97505e2385a14006efb32e4c9c441ac7954a62abd5c4a2cd7940c7396ebcb1d7.svg" />
 </div>
 </div>
 <p>Forward Bias: If positive signal applied to the Anode terminal and cathode is negative, the diode is forward biased, hence it acts as a closed switch and current is crossed of that.
@@ -1485,11 +1627,11 @@ The sudden change from forward to reverse and from reverse to forward bias, affe
 <h2>Now we have the PySpice code for the above circuit here, where the voltage  V1  is greater than the voltage  V2 , the voltage at the anode of the diode is higher, and the diode becomes active, acting like a closed switch, allowing current to flow through  R_3 , which we will calculate:<a class="headerlink" href="#now-we-have-the-pyspice-code-for-the-above-circuit-here-where-the-voltage-v1-is-greater-than-the-voltage-v2-the-voltage-at-the-anode-of-the-diode-is-higher-and-the-diode-becomes-active-acting-like-a-closed-switch-allowing-current-to-flow-through-r-3-which-we-will-calculate" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Define the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Diode Switch Circuit&#39;</span><span class="p">)</span>
@@ -1527,9 +1669,9 @@ The sudden change from forward to reverse and from reverse to forward bias, affe
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current of Resistor R3: 8.037220 A
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\2510366580.py:28: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\2510366580.py:28: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_D_cathode = float(analysis[&#39;D_cathode&#39;])
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\2510366580.py:29: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\2510366580.py:29: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_node_bottom = float(analysis[&#39;node_bottom&#39;])
 </pre></div>
 </div>
@@ -1541,11 +1683,11 @@ C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\2510366580.py:29: DeprecationWa
 <h1>Now where the voltage  V1  is less than the voltage  V2 , the voltage at the anode of the diode is less, and the diode becomes not active, acting like a opened switch, allowing current to flow through  R_3 , which we will calculate:<a class="headerlink" href="#now-where-the-voltage-v1-is-less-than-the-voltage-v2-the-voltage-at-the-anode-of-the-diode-is-less-and-the-diode-becomes-not-active-acting-like-a-opened-switch-allowing-current-to-flow-through-r-3-which-we-will-calculate" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Define the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Diode Switch Circuit&#39;</span><span class="p">)</span>
@@ -1583,9 +1725,9 @@ C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\2510366580.py:29: DeprecationWa
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current of Resistor R3: -0.000000 A
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\1803516277.py:28: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\1803516277.py:28: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_D_cathode = float(analysis[&#39;D_cathode&#39;])
-C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\1803516277.py:29: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\1803516277.py:29: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_node_bottom = float(analysis[&#39;node_bottom&#39;])
 </pre></div>
 </div>
@@ -1614,8 +1756,8 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 <p>5- The collector current IC = 0 A and output voltage Vout = VCC.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="c1"># Vcc and RL connected to the collector</span>
@@ -1643,7 +1785,7 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7a376a3e9e6a3df6b1dc5d90bbf41ee291dfcf025415d8eae108a845f2f0b277.svg" src="../../_images/7a376a3e9e6a3df6b1dc5d90bbf41ee291dfcf025415d8eae108a845f2f0b277.svg" />
+<img alt="../../_images/b4f11a692f94517e4b207b3fb601f0493d7cd03079dae2a83efcd74f9eb013a7.svg" src="../../_images/b4f11a692f94517e4b207b3fb601f0493d7cd03079dae2a83efcd74f9eb013a7.svg" />
 </div>
 </div>
 </section>
@@ -1651,8 +1793,8 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 <h2>This circuit works almost as follows:<a class="headerlink" href="#this-circuit-works-almost-as-follows" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     
@@ -1672,7 +1814,7 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2a26a098df62243f534defcc8963a655f537acf05c58ecd03243e3092bc934d5.svg" src="../../_images/2a26a098df62243f534defcc8963a655f537acf05c58ecd03243e3092bc934d5.svg" />
+<img alt="../../_images/6628e1244520c91fccb5d74a2cb38167dc228dbe6b13bef1eaeda382b9454f0d.svg" src="../../_images/6628e1244520c91fccb5d74a2cb38167dc228dbe6b13bef1eaeda382b9454f0d.svg" />
 </div>
 </div>
 </section>
@@ -1680,8 +1822,8 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 <h2>Calculating the current flowing through the circuit in PySpice when the bjt transistor acts like an open switch:<a class="headerlink" href="#calculating-the-current-flowing-through-the-circuit-in-pyspice-when-the-bjt-transistor-acts-like-an-open-switch" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Define the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;NPN Transistor as Switch&#39;</span><span class="p">)</span>
@@ -1717,7 +1859,7 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The current of Rc is 0.00 A.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\3963174077.py:24: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\3963174077.py:24: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_rc = float(analysis[&#39;Vcc&#39;]) - float(analysis[&#39;BJT_collector&#39;])  # Voltage drop across Rc
 </pre></div>
 </div>
@@ -1735,8 +1877,8 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 <p><span class="math notranslate nohighlight">\(I_{c} = \frac{Vcc}{R_{L}}\ \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="c1"># Vcc and RL connected to the collector</span>
@@ -1764,7 +1906,7 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9d72f7f377fd8d9d492a96fc9332e842d09d1e5d0a316d71d177b7fb47a3f222.svg" src="../../_images/9d72f7f377fd8d9d492a96fc9332e842d09d1e5d0a316d71d177b7fb47a3f222.svg" />
+<img alt="../../_images/8bb14c1140042970f5638aacd278616dfaef26afacd170af32a3d87fa67e23dd.svg" src="../../_images/8bb14c1140042970f5638aacd278616dfaef26afacd170af32a3d87fa67e23dd.svg" />
 </div>
 </div>
 </section>
@@ -1772,8 +1914,8 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 <h2>This circuit works almost as follows:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     
@@ -1793,7 +1935,7 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1d893b08a668877dee6e09b6494815a90d9a4ba1a09f4f80ff343251b47fda8d.svg" src="../../_images/1d893b08a668877dee6e09b6494815a90d9a4ba1a09f4f80ff343251b47fda8d.svg" />
+<img alt="../../_images/f41681cba076e811bebb74db34bea550664463e7f66b7cfd13a4cd1abd058822.svg" src="../../_images/f41681cba076e811bebb74db34bea550664463e7f66b7cfd13a4cd1abd058822.svg" />
 </div>
 </div>
 </section>
@@ -1801,8 +1943,8 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 <h2>Calculating the current flowing through the circuit in PySpice when the bjt transistor acts like an closed switch:<a class="headerlink" href="#calculating-the-current-flowing-through-the-circuit-in-pyspice-when-the-bjt-transistor-acts-like-an-closed-switch" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Define the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;NPN Transistor as Closed Switch&#39;</span><span class="p">)</span>
@@ -1838,7 +1980,7 @@ In the cut-off region, it is “OFF” like an open switch.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The current of Rc is 4.57 A.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\2474010219.py:24: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\2474010219.py:24: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_rc = float(analysis[&#39;Vcc&#39;]) - float(analysis[&#39;BJT_collector&#39;])  # Voltage drop across Rc
 </pre></div>
 </div>
@@ -1891,8 +2033,8 @@ Next, consider the case where the input voltage Vi applied is greater than the t
 <p>From the discussion presented, it is evident that the output voltage alters between <span class="math notranslate nohighlight">\(V_{S}\)</span> and zero depending on whether the input provided is less than or greater than <span class="math notranslate nohighlight">\(V_{T}\)</span>, respectively. Thus, it can be concluded that MOSFETs can be made to function as electronic switches when made to operate between cut-off and saturation operating regions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="c1"># Vin and RD connected to the drain</span>
@@ -1918,7 +2060,7 @@ Next, consider the case where the input voltage Vi applied is greater than the t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e48915576d2925dd805575807bbba3984a95a259b8ba24cbb7fce729c6ebfc7d.svg" src="../../_images/e48915576d2925dd805575807bbba3984a95a259b8ba24cbb7fce729c6ebfc7d.svg" />
+<img alt="../../_images/347cf15e08799643cb8b284e98e78fed40393f519bc5d576a4448310e964eec1.svg" src="../../_images/347cf15e08799643cb8b284e98e78fed40393f519bc5d576a4448310e964eec1.svg" />
 </div>
 </div>
 </section>
@@ -1926,8 +2068,8 @@ Next, consider the case where the input voltage Vi applied is greater than the t
 <h2>Calculate current of <span class="math notranslate nohighlight">\(R_D\)</span> when N-MOSFET as a opened switch with PySpice:<a class="headerlink" href="#calculate-current-of-r-d-when-n-mosfet-as-a-opened-switch-with-pyspice" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Define the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;N-channel MOSFET as opened Switch&#39;</span><span class="p">)</span>
@@ -1962,7 +2104,7 @@ Next, consider the case where the input voltage Vi applied is greater than the t
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The current of Rd is 0.00 A.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\111817018.py:23: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\111817018.py:23: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_rd = float(analysis[&#39;Vdd&#39;]) - float(analysis[&#39;MOSFET_drain&#39;])  # Voltage drop across Rd
 </pre></div>
 </div>
@@ -1973,8 +2115,8 @@ Next, consider the case where the input voltage Vi applied is greater than the t
 <h2>Calculate current of <span class="math notranslate nohighlight">\(R_D\)</span> when N-MOSFET as a closed switch with PySpice:<a class="headerlink" href="#calculate-current-of-r-d-when-n-mosfet-as-a-closed-switch-with-pyspice" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Define the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;N-channel MOSFET as closed switch&#39;</span><span class="p">)</span>
@@ -2009,7 +2151,7 @@ Next, consider the case where the input voltage Vi applied is greater than the t
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The current of Rd is 13.69 A.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\2347735342.py:23: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\2347735342.py:23: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_rd = float(analysis[&#39;Vdd&#39;]) - float(analysis[&#39;MOSFET_drain&#39;])  # Voltage drop across Rd
 </pre></div>
 </div>
@@ -2023,8 +2165,8 @@ In the case of p-type devices the conduction current will be due to holes and wi
 <p>consider the case where Vi goes high i.e. when Vi will be greater than the threshold voltage of the device (VT will be negative for these devices). Under this condition, the MOSFET will be OFF and offers a high impedance path for the current flow. This results in almost zero current leading to almost zero voltage at the output terminal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="c1"># Vin and RD connected to the drain</span>
@@ -2050,7 +2192,7 @@ In the case of p-type devices the conduction current will be due to holes and wi
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cabffedcf3e9f01a575f8a8d09dd0c841c1fa4fdeb58464dad6ee62736248617.svg" src="../../_images/cabffedcf3e9f01a575f8a8d09dd0c841c1fa4fdeb58464dad6ee62736248617.svg" />
+<img alt="../../_images/3d4427f6984bd841ec22ab2c15875ab102090b98a113797f9189c4a9663c4a85.svg" src="../../_images/3d4427f6984bd841ec22ab2c15875ab102090b98a113797f9189c4a9663c4a85.svg" />
 </div>
 </div>
 </section>
@@ -2058,8 +2200,8 @@ In the case of p-type devices the conduction current will be due to holes and wi
 <h2>Calculate current of <span class="math notranslate nohighlight">\(R_D\)</span> when P-MOSFET as a opened switch with PySpice:<a class="headerlink" href="#calculate-current-of-r-d-when-p-mosfet-as-a-opened-switch-with-pyspice" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Define the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;P-channel MOSFET as Open Switch&#39;</span><span class="p">)</span>
@@ -2092,7 +2234,7 @@ In the case of p-type devices the conduction current will be due to holes and wi
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The current of Rd is 0.00 A.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\3547782667.py:23: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\3547782667.py:23: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   id_rd = abs(float(analysis[&#39;MOSFET_drain&#39;]) / 1e3)  # Should be zero if MOSFET is off
 </pre></div>
 </div>
@@ -2103,8 +2245,8 @@ In the case of p-type devices the conduction current will be due to holes and wi
 <h2>Calculate current of <span class="math notranslate nohighlight">\(R_D\)</span> when P-MOSFET as a closed switch with PySpice:<a class="headerlink" href="#calculate-current-of-r-d-when-p-mosfet-as-a-closed-switch-with-pyspice" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Define the circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;P-channel MOSFET as Closed Switch&#39;</span><span class="p">)</span>
@@ -2139,7 +2281,7 @@ In the case of p-type devices the conduction current will be due to holes and wi
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The current of Rd is 9.18 A.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_10616\3198190388.py:23: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Hadi\AppData\Local\Temp\ipykernel_19072\3198190388.py:23: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   voltage_rd = float(analysis[&#39;Vs&#39;]) - float(analysis[&#39;MOSFET_drain&#39;])  # Voltage drop across Rd
 </pre></div>
 </div>
@@ -2226,7 +2368,7 @@ In the case of p-type devices the conduction current will be due to holes and wi
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Nonlinear Resistor</p>
+        <p class="prev-next-title">Nonlinear Resistors: Analysis and Visualization</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2237,8 +2379,7 @@ In the case of p-type devices the conduction current will be due to holes and wi
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2361,8 +2502,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

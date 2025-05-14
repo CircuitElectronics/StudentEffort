@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="Passive Components" href="../PassiveComponents/Passive%20Components.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -188,13 +199,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
 
 
 
@@ -209,7 +221,219 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
 <ul class="nav bd-sidenav">
@@ -369,16 +593,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -510,15 +742,15 @@ L(x) = 0 + 1 \cdot (x - 0) \quad \Longleftrightarrow \quad L(x) = x
 <h3>Here is the code:<a class="headerlink" href="#here-is-the-code" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Define the original function f(x) = sin(x)</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># Define the linear approximation L(x) = x</span>
-<span class="k">def</span> <span class="nf">L</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">L</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span>
 
 <span class="c1"># Create an array of x values from -2 to 2 for plotting</span>
@@ -554,7 +786,7 @@ L(x) = 0 + 1 \cdot (x - 0) \quad \Longleftrightarrow \quad L(x) = x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5f5fc0fdfde2ce7cfa99245c5947b34954486446e5ffca8e0c2a185c4d7a77a1.png" src="../../_images/5f5fc0fdfde2ce7cfa99245c5947b34954486446e5ffca8e0c2a185c4d7a77a1.png" />
+<img alt="../../_images/b5dc2b0ee8ae8743fd55cc19499678ef664b3cdb9dd18d5f4a44126cca011d53.png" src="../../_images/b5dc2b0ee8ae8743fd55cc19499678ef664b3cdb9dd18d5f4a44126cca011d53.png" />
 </div>
 </div>
 <p><strong>Example 2:</strong></p>
@@ -583,18 +815,18 @@ L(x) = f(4) + f'(4)(x - 4) \quad \Longleftrightarrow \quad L(x) = 2 + \frac{1}{4
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Define the original function f(x) = sqrt(x)</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># Define the linear approximations near x = 1 and x = 4</span>
-<span class="k">def</span> <span class="nf">L1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">L1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">L4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">L4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="c1"># Create an array of x values for plotting</span>
@@ -634,7 +866,7 @@ L(x) = f(4) + f'(4)(x - 4) \quad \Longleftrightarrow \quad L(x) = 2 + \frac{1}{4
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c0d9da86a9607237533510cb89012ec6e7e421bf0f4d3ce7780f8b7b7f48bd6a.png" src="../../_images/c0d9da86a9607237533510cb89012ec6e7e421bf0f4d3ce7780f8b7b7f48bd6a.png" />
+<img alt="../../_images/61e9b960bfb8b6727a876c18f7d961a5d2112a37b697a81af044c13f017f0159.png" src="../../_images/61e9b960bfb8b6727a876c18f7d961a5d2112a37b697a81af044c13f017f0159.png" />
 </div>
 </div>
 </section>
@@ -715,15 +947,15 @@ f(x) \approx L(x) = f(0) + f'(0)(x - 0) = 1 + \frac{x}{5}
 <p>as required.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Define the original function f(x) = (1 + x)^(1/5)</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># Derivative of f(x) at x = 0 is f&#39;(0) = 1/5</span>
-<span class="k">def</span> <span class="nf">L</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">L</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># Create an array of x values for plotting</span>
@@ -759,7 +991,7 @@ f(x) \approx L(x) = f(0) + f'(0)(x - 0) = 1 + \frac{x}{5}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1af2b97442908d4def7d1842aa49e806ec2b3189ddca3f5012cb6b65870403e9.png" src="../../_images/1af2b97442908d4def7d1842aa49e806ec2b3189ddca3f5012cb6b65870403e9.png" />
+<img alt="../../_images/66fa3e1ca3305f7b11439201519606b35387be4e7bb3647c583b6aa95b07631e.png" src="../../_images/66fa3e1ca3305f7b11439201519606b35387be4e7bb3647c583b6aa95b07631e.png" />
 </div>
 </div>
 <section id="tangent-plane-approximation">
@@ -822,16 +1054,16 @@ L(x, y) = 3 - \frac{1}{3}x + 3y
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 
 <span class="c1"># Define the function f(x, y) = y * sqrt(x)</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">y</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># Define the linearization L(x, y)</span>
-<span class="k">def</span> <span class="nf">L</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">L</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">3</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">y</span>
 
 <span class="c1"># Generate values for x and y</span>
@@ -869,7 +1101,7 @@ L(x, y) = 3 - \frac{1}{3}x + 3y
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e0f3af41b6783de1681d99fc554f544843ac915befa4bc443fe8d81ac9353499.png" src="../../_images/e0f3af41b6783de1681d99fc554f544843ac915befa4bc443fe8d81ac9353499.png" />
+<img alt="../../_images/37ee8c27cd8dde98bd5df62f43849819dbc04fa5324521f3b371ee900a3fab0d.png" src="../../_images/37ee8c27cd8dde98bd5df62f43849819dbc04fa5324521f3b371ee900a3fab0d.png" />
 </div>
 </div>
 <section id="references">
@@ -937,8 +1169,7 @@ L(x, y) = 3 - \frac{1}{3}x + 3y
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1016,8 +1247,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -67,7 +64,6 @@
     <link rel="prev" title="Schemdraw Guide book" href="../SchemdrawGuide1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,8 +79,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -92,6 +99,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -99,8 +107,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -116,8 +124,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,17 +154,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -186,13 +197,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
 
 
 
@@ -207,7 +219,219 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
 <ul class="nav bd-sidenav">
@@ -367,16 +591,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -498,8 +730,8 @@
 <h3><strong>1. circuit with 2 independent voltage sources:</strong><a class="headerlink" href="#circuit-with-2-independent-voltage-sources" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
@@ -516,7 +748,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3c1f4432033a5fe7d43204c7a3cdc4d985751bfb4f56bd3bd793f545fb12005f.svg" src="../../_images/3c1f4432033a5fe7d43204c7a3cdc4d985751bfb4f56bd3bd793f545fb12005f.svg" />
+<img alt="../../_images/f61c0f0ca9dab32dbf6bc99bf1e8e982c6247f04e174e088d6b61932da34bca9.svg" src="../../_images/f61c0f0ca9dab32dbf6bc99bf1e8e982c6247f04e174e088d6b61932da34bca9.svg" />
 </div>
 </div>
 <section id="pyspice-analysis">
@@ -524,11 +756,11 @@
 <p>Now we analyze this circuit to show that the voltage through the circuit is independent of the elements of the circuit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Independent Voltage Sources&#39;</span><span class="p">)</span>
 
@@ -551,9 +783,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Voltage at Node A (V1 output): 15.00 V
-Voltage at Node B (between V1 and V2): 6.67 V
-Voltage at Node C (V2 output): 16.67 V
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;PySpice&#39;
 </pre></div>
 </div>
 </div>
@@ -564,8 +801,8 @@ Voltage at Node C (V2 output): 16.67 V
 <p>Now we change the values of the elements of the circuit:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
@@ -582,16 +819,16 @@ Voltage at Node C (V2 output): 16.67 V
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6a37e3d1859d7fa99d7a7ef65fb562992d8bb1c7a278595a6ec529514a8261ce.svg" src="../../_images/6a37e3d1859d7fa99d7a7ef65fb562992d8bb1c7a278595a6ec529514a8261ce.svg" />
+<img alt="../../_images/8cce202c4aca8388bbe62d69447d291057ecba68c6f4c112c2bead713f257997.svg" src="../../_images/8cce202c4aca8388bbe62d69447d291057ecba68c6f4c112c2bead713f257997.svg" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Independent Voltage Sources&#39;</span><span class="p">)</span>
 
@@ -631,8 +868,8 @@ Voltage at Node C (V2 output): 20.00 V
 <h3><strong>2. circuit with 2 independent current sources:</strong><a class="headerlink" href="#circuit-with-2-independent-current-sources" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">v</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;I1=10A&#39;</span><span class="p">)</span>
@@ -654,17 +891,17 @@ Voltage at Node C (V2 output): 20.00 V
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5cfeaa6be21d10daf5b2525de15399f32cf98556ad67709bd3afb7ce80ba8d5b.svg" src="../../_images/5cfeaa6be21d10daf5b2525de15399f32cf98556ad67709bd3afb7ce80ba8d5b.svg" />
+<img alt="../../_images/9a63d72bcc883a3269ac4d5120617eaf7592c26ccc71e420964ad5a952df5cc3.svg" src="../../_images/9a63d72bcc883a3269ac4d5120617eaf7592c26ccc71e420964ad5a952df5cc3.svg" />
 </div>
 </div>
 <section id="id1">
 <h4>pyspice analysis:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Circuit with Voltage and Current Source&#39;</span><span class="p">)</span>
 <span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="nd">@u_A</span><span class="p">)</span>  
@@ -698,8 +935,8 @@ Branch vi2_plus:  6.00 A
 <p>Now we change the values of the elements of the circuit:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">v</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;I1=10A&#39;</span><span class="p">)</span>
@@ -721,7 +958,7 @@ Branch vi2_plus:  6.00 A
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ab89e0423e0092ca775420a01de7be8a23c9f8fd5e966119559a13ad6912f807.svg" src="../../_images/ab89e0423e0092ca775420a01de7be8a23c9f8fd5e966119559a13ad6912f807.svg" />
+<img alt="../../_images/5a448e275574655633b9920f77a6ee55e70f3dfbb49b7b0954a0f7015dae4916.svg" src="../../_images/5a448e275574655633b9920f77a6ee55e70f3dfbb49b7b0954a0f7015dae4916.svg" />
 </div>
 </div>
 </section>
@@ -729,10 +966,10 @@ Branch vi2_plus:  6.00 A
 <h4>pyspice analysis:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Circuit with Voltage and Current Source&#39;</span><span class="p">)</span>
 <span class="n">circuit</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="nd">@u_A</span><span class="p">)</span>  
@@ -770,8 +1007,8 @@ Branch vi2_plus:  6.00 A
 <h3><strong>3. circuit with one independent voltage source and one independent current source:</strong><a class="headerlink" href="#circuit-with-one-independent-voltage-source-and-one-independent-current-source" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">v</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;12V&#39;</span><span class="p">)</span>
@@ -796,17 +1033,17 @@ Branch vi2_plus:  6.00 A
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ec4076c7218d6aefff1095cb0b2182daf53c4cb806539a4c2b8991fee8b51281.svg" src="../../_images/ec4076c7218d6aefff1095cb0b2182daf53c4cb806539a4c2b8991fee8b51281.svg" />
+<img alt="../../_images/47bc3b5b10b204a9fe3f49b8a6f1b367b2e81e4760937bf09bad6c4915792e74.svg" src="../../_images/47bc3b5b10b204a9fe3f49b8a6f1b367b2e81e4760937bf09bad6c4915792e74.svg" />
 </div>
 </div>
 <section id="id5">
 <h4>pyspice analysis:<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Circuit with Voltage and Current Source&#39;</span><span class="p">)</span>
 <span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">12</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># 12V voltage source</span>
@@ -841,8 +1078,8 @@ Branch vi1_plus:  5.00 A
 <p>Now we change the values of the elements of the circuit:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">v</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;9V&#39;</span><span class="p">)</span>
@@ -867,15 +1104,15 @@ Branch vi1_plus:  5.00 A
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/92f1ceb939e1b5716b0104e2dcb141f94b18e53916366af70ff4d38b6c37adf3.svg" src="../../_images/92f1ceb939e1b5716b0104e2dcb141f94b18e53916366af70ff4d38b6c37adf3.svg" />
+<img alt="../../_images/47502b7933838a7e5ca44fd1f18b0cf056636c20cdc2d6247bef7549bd5597e6.svg" src="../../_images/47502b7933838a7e5ca44fd1f18b0cf056636c20cdc2d6247bef7549bd5597e6.svg" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Circuit with Voltage and Current Source&#39;</span><span class="p">)</span>
 <span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">9</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># 9V voltage source</span>
@@ -975,8 +1212,7 @@ Branch vi1_plus:  5.00 A
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1067,8 +1303,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

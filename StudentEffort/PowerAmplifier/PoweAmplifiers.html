@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -65,11 +62,10 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/PowerAmplifier/PoweAmplifiers';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Electronic Crystal" href="../miniProject_Crystal/project_Crystal.html" />
-    <link rel="prev" title="linear-nonlinear" href="../LinearNonLinear/linearnonlinearlevel.html" />
+    <link rel="next" title="Crystal oscillator" href="../miniProject_Crystal/project_Crystal.html" />
+    <link rel="prev" title="linear-nonlinear" href="../LinearNonLinear/linearnonlinearlevel1_6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -188,6 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
@@ -255,16 +267,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
 
 
@@ -327,15 +330,94 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Powe Amplifier Handbook:</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Electronic Crystal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
 
 
 
@@ -348,6 +430,9 @@
 
 
 
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
@@ -508,16 +593,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -754,7 +847,7 @@ Voltage amplifiers are essential for audio equipment and communication systems, 
 <p>A power amplifier is an electronic amplifier designed to increase the magnitude of power of a given input signal with minimal aberration. The power of the input signal is boosted to a level high enough to drive output devices such as speakers, headphones, RF transmitters, and more. In contrast to small-signal amplifiers, which concentrate on boosting voltage or current, power amplifiers are engineered to deliver sufficient energy to directly drive these high-power loads. As such, they are typically used as the final block in an amplifier chain.</p>
 <p>Before reaching a power amplifier, the input signal often needs to be pre-amplified using voltage or current amplifiers to meet a certain threshold. These pre-amplifiers optimize the signal, ensuring it is properly prepared for amplification to the required power level. Once amplified, the signal is capable of driving devices like audio system speakers or transmitting wireless signals over extended distances, making power amplifiers indispensable in applications demanding a substantial augmentation of signal strength.</p>
 <p>You can observe the block diagram of an audio amplifier and the usage of a power amplifier below.
-<img alt="1.png" src="../../_images/11.PNG" /></p>
+<img alt="1.png" src="../../_images/1.PNG" /></p>
 <p>In this example, a microphone serves as the input source. The signal from the microphone, being too weak for direct use by the power amplifier, is first passed through a pre-amplifier that slightly increases its voltage and current. It then goes through a tone and volume control circuit, which adjusts the audio waveform for aesthetic purposes. Finally, the signal is processed by the power amplifier, which boosts it to a level sufficient to drive a speaker effectively.</p>
 <section id="characteristics-of-amplifiers">
 <h3>Characteristics of Amplifiers:<a class="headerlink" href="#characteristics-of-amplifiers" title="Link to this heading">#</a></h3>
@@ -867,8 +960,8 @@ They are broadly classified into two categories.</p>
 <p>Consider the Class A amplifier circuit below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="c1"># Input Voltage Source</span>
@@ -916,7 +1009,7 @@ They are broadly classified into two categories.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b85a634577ecd1d5c1d021ac3cf0c2f9507f3339f2bcaa4be91807a15c782f62.svg" src="../../_images/b85a634577ecd1d5c1d021ac3cf0c2f9507f3339f2bcaa4be91807a15c782f62.svg" />
+<img alt="../../_images/eb4291b52b7e07cdce7b79f704eb133c5b56744396b4a14c2962a885c197a295.svg" src="../../_images/eb4291b52b7e07cdce7b79f704eb133c5b56744396b4a14c2962a885c197a295.svg" />
 </div>
 </div>
 <section id="circuit-analysis">
@@ -1039,12 +1132,12 @@ So, during the negative half-cycle of the input signal, the transistor conducts 
 <p>Let’s take a look at an example Class A amplifier circuit. As it is shown in the figure, the output voltage is amplified and it has a <span class="math notranslate nohighlight">\(180 \degree\)</span> phase shift.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">PySpice.Probe.Plot</span> <span class="kn">import</span> <span class="n">plot</span>
-<span class="kn">from</span> <span class="nn">PySpice.Logging.Logging</span> <span class="kn">import</span> <span class="n">setup_logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Probe.Plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup_logging</span>
 
 <span class="c1"># Setup logging (optional)</span>
 <span class="n">setup_logging</span><span class="p">()</span>
@@ -1102,7 +1195,18 @@ So, during the negative half-cycle of the input signal, the transistor conducts 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/337ec2457b39557b7e5227f8df56e3c722fc0af8c4caa9b90513522e61ca349b.png" src="../../_images/337ec2457b39557b7e5227f8df56e3c722fc0af8c4caa9b90513522e61ca349b.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Probe.Plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;PySpice&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <section id="summery">
@@ -1140,8 +1244,8 @@ $<span class="math notranslate nohighlight">\( P = V_{CC}I_C =  I_C^{2}R_C \)</s
 <p>A push-pull class B power amplifier’s construction is illustrated in detail in the figure below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     
@@ -1206,7 +1310,7 @@ $<span class="math notranslate nohighlight">\( P = V_{CC}I_C =  I_C^{2}R_C \)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/38a5ae42be82ea31d1afec1c2b65f0c59f831fbb0815a1d55a128873cac6c3d9.svg" src="../../_images/38a5ae42be82ea31d1afec1c2b65f0c59f831fbb0815a1d55a128873cac6c3d9.svg" />
+<img alt="../../_images/89f3ebf46f853ee3bba65633f7ed1b89fcad382970f7fae8c7bfa2bc026ed7b8.svg" src="../../_images/89f3ebf46f853ee3bba65633f7ed1b89fcad382970f7fae8c7bfa2bc026ed7b8.svg" />
 </div>
 </div>
 <section id="id8">
@@ -1335,7 +1439,7 @@ $<span class="math notranslate nohighlight">\( I_B(T_2) \uparrow \quad  \Longrig
 <p>In the push-pull configuration, the two identical transistors get into conduction, one after the other and the output produced will be the combination of both.</p>
 <p>When the signal changes or crosses over from one transistor to the other at the zero voltage point, it produces an amount of distortion to the output wave shape. For a transistor in order to conduct, the base emitter junction should cross 0.7v, the cut off voltage. The time taken for a transistor to get ON from OFF or to get OFF from ON state is called the transition period.</p>
 <p>At the zero voltage point, the transition period of switching over the transistors from one to the other, has its effect which leads to the instances where both the transistors are OFF at a time. Such instances can be called as Flat spot or Dead band on the output wave shape.</p>
-<p><img alt="6.png" src="../../_images/61.PNG" /></p>
+<p><img alt="6.png" src="../../_images/6.PNG" /></p>
 <p>The above figure clearly shows the cross over distortion which is prominent in the output waveform. This is the main disadvantage. This cross over distortion effect also reduces the overall peak to peak value of the output waveform which in turn reduces the maximum power output. This can be more clearly understood through the non-linear characteristic of the waveform as shown below.</p>
 <p><img alt="6b.png" src="../../_images/6b.PNG" /></p>
 <p>It is understood that this cross-over distortion is less pronounced for large input signals, where as it causes severe disturbance for small input signals. This cross over distortion can be eliminated if the conduction of the amplifier is more than one half cycle, so that both the transistors won’t be OFF at the same time.</p>
@@ -1360,8 +1464,8 @@ Negative half-cycle of input → Negative half-cycle at output (T2 conducts, T1 
 <p>Class AB amplifiers are widely used in applications where both efficiency and linearity are important, such as in audio amplification and radio frequency transmitters. They are well-suited for medium to high-power applications due to their improved efficiency. Despite their complexity compared to Class A amplifiers, Class AB designs are preferred when both performance and power efficiency are required.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="c1"># Input voltage source</span>
@@ -1408,7 +1512,7 @@ Negative half-cycle of input → Negative half-cycle at output (T2 conducts, T1 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cd296304f2db85589986a1646a9d31a22314aaa7a24330d06d2b53041c7deb30.svg" src="../../_images/cd296304f2db85589986a1646a9d31a22314aaa7a24330d06d2b53041c7deb30.svg" />
+<img alt="../../_images/dc924942062fcad89de2ca360178c04dda5e0db62f0dd29b7b4a6ffc1a07fedb.svg" src="../../_images/dc924942062fcad89de2ca360178c04dda5e0db62f0dd29b7b4a6ffc1a07fedb.svg" />
 </div>
 </div>
 <section id="id13">
@@ -1580,8 +1684,8 @@ The maximum output power at the load is calculated as:</p>
 <p>Due to their high efficiency and frequency selectivity, Class C amplifiers are extensively used in high-frequency applications such as sine wave oscillators and RF amplifiers. However, their inherent distortion makes them unsuitable for audio amplification.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">A</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">idot</span><span class="p">(</span><span class="nb">open</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
@@ -1609,7 +1713,7 @@ The maximum output power at the load is calculated as:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/85910e37b63c77d7f39155ddfcee170f0cb2483b326b1a657dd92b63b3baa34e.svg" src="../../_images/85910e37b63c77d7f39155ddfcee170f0cb2483b326b1a657dd92b63b3baa34e.svg" />
+<img alt="../../_images/1613dc07375eb99f23cddd308c44208ab64114f5b8545650f233ff0298ae84f6.svg" src="../../_images/1613dc07375eb99f23cddd308c44208ab64114f5b8545650f233ff0298ae84f6.svg" />
 </div>
 </div>
 <section id="id19">
@@ -1932,7 +2036,7 @@ This “pulsed” operation minimizes power dissipation in the transistor, achie
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../LinearNonLinear/linearnonlinearlevel.html"
+       href="../LinearNonLinear/linearnonlinearlevel1_6.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -1945,7 +2049,7 @@ This “pulsed” operation minimizes power dissipation in the transistor, achie
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Electronic Crystal</p>
+        <p class="prev-next-title">Crystal oscillator</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1956,8 +2060,7 @@ This “pulsed” operation minimizes power dissipation in the transistor, achie
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2158,8 +2261,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

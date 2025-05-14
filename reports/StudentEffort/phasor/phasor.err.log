@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Hadi\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from PySpice.Spice.Netlist import Circuit
+from PySpice.Unit import u_V, u_Ohm, u_F, u_A, u_kHz
+
+circuit = Circuit("RC Circuit")
+
+circuit.SinusoidalVoltageSource("Vin", "in", circuit.gnd, amplitude=10@u_V, frequency=1@u_kHz)
+circuit.R(1, "in", "out", 1@u_Ohm)  
+circuit.C(1, "out", circuit.gnd, 1@u_F)
+
+simulator = circuit.simulator(temperature=25, nominal_temperature=25)
+analysis = simulator.transient(step_time=1e-5, end_time=10e-3)
+
+import matplotlib.pyplot as plt
+
+time = analysis.time
+input_voltage = analysis["in"]
+output_voltage = analysis["out"]
+
+# Plot input and output voltages
+plt.figure(figsize=(10, 6))
+plt.plot(time, input_voltage, label="Input Voltage (V_in)", linestyle='--')
+plt.plot(time, output_voltage, label="Output Voltage (V_out)")
+plt.title("RC Circuit Simulation")
+plt.xlabel("Time [s]")
+plt.ylabel("Voltage [V]")
+plt.legend()
+plt.grid()
+plt.show()
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mSpice[39;00m[34;01m.[39;00m[34;01mNetlist[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Circuit
+[32m      2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mUnit[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m u_V, u_Ohm, u_F, u_A, u_kHz
+[32m      4[39m circuit = Circuit([33m"[39m[33mRC Circuit[39m[33m"[39m)
+
+[31mModuleNotFoundError[39m: No module named 'PySpice'
+

@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -65,11 +62,10 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/ComplexNumberInPhasors/ComplexNumberInPhasors';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
-    <link rel="prev" title="Supernode" href="../Supernode/Supernode.html" />
+    <link rel="next" title="Linear and Non-Linear inductors" href="../Linear_Non_Inductor/Linear_Non_Inductor.html" />
+    <link rel="prev" title="Supernode" href="../Supernode/Supernode1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -188,13 +199,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
 
 
 
@@ -209,9 +221,219 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
 <ul class="nav bd-sidenav">
@@ -371,16 +593,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -623,9 +853,9 @@ r_I = \sqrt{20^2 + (20\sqrt 3)^2} = 40A \\
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mdates</span>
 
 <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span>  
 <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>     <span class="c1"># convert degree to radiant</span>
@@ -646,7 +876,7 @@ r_I = \sqrt{20^2 + (20\sqrt 3)^2} = 40A \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/111195be64b7d76d90fb88a05022f7af5983b5cf1cfb81c27dc358e17d0e1cc4.png" src="../../_images/111195be64b7d76d90fb88a05022f7af5983b5cf1cfb81c27dc358e17d0e1cc4.png" />
+<img alt="../../_images/5ae1f071e0a2bb47a4516a19e7d0a6c527d5066eb636105be8c33a37c9384335.png" src="../../_images/5ae1f071e0a2bb47a4516a19e7d0a6c527d5066eb636105be8c33a37c9384335.png" />
 </div>
 </div>
 </section>
@@ -659,10 +889,10 @@ I(t) = 40\cos(ωt + 60^\circ)
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt2</span>
-<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt2</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mdates</span>
 
 <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span>  
 <span class="n">omega2</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span> 
@@ -692,7 +922,7 @@ I(t) = 40\cos(ωt + 60^\circ)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dcf655dc9167c298fd247a9fd6fc3874d19e25528708c147ef6cbaad4971c6c9.png" src="../../_images/dcf655dc9167c298fd247a9fd6fc3874d19e25528708c147ef6cbaad4971c6c9.png" />
+<img alt="../../_images/453b16a9cd765370e2459450a1df3458089553ba839c46caa2e21d9e7276cd82.png" src="../../_images/453b16a9cd765370e2459450a1df3458089553ba839c46caa2e21d9e7276cd82.png" />
 </div>
 </div>
 </section>
@@ -744,8 +974,8 @@ I(t) = 40\cos(ωt + 60^\circ)
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
@@ -756,7 +986,7 @@ I(t) = 40\cos(ωt + 60^\circ)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/32aa79a54e43602731debc2f78a51738acac120292f84aa3b1797535eac204ad.svg" src="../../_images/32aa79a54e43602731debc2f78a51738acac120292f84aa3b1797535eac204ad.svg" />
+<img alt="../../_images/ab10f60c991f7ad64960de838d8dc00f7d27ae543bce336614f4cbe12a361e3e.svg" src="../../_images/ab10f60c991f7ad64960de838d8dc00f7d27ae543bce336614f4cbe12a361e3e.svg" />
 </div>
 </div>
 <p>First find <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(V_A\)</span><br />
@@ -767,8 +997,8 @@ V(t) = \cos t = 1 ∠ 0^\circ \\
 <p>Now, we draw the shape of the circuit in the <strong>phasor</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;1 ∠ 0°&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
@@ -779,7 +1009,7 @@ V(t) = \cos t = 1 ∠ 0^\circ \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/aa8ec75c0c3a0b8a082d84dee4f06110b3f81bb70c27345368a6ded90e6889f9.svg" src="../../_images/aa8ec75c0c3a0b8a082d84dee4f06110b3f81bb70c27345368a6ded90e6889f9.svg" />
+<img alt="../../_images/3385f867e8e48a03246a43c33984580817fee679904f4c0cd4dbca2558f3f0ae.svg" src="../../_images/3385f867e8e48a03246a43c33984580817fee679904f4c0cd4dbca2558f3f0ae.svg" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -801,10 +1031,10 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mdates</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span>  
 <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mf">26.5</span><span class="p">)</span>  
@@ -825,7 +1055,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1e21f776917e3d1daf899178a9a6b4475fc5a756b8639c82e3aab70a5238aa54.png" src="../../_images/1e21f776917e3d1daf899178a9a6b4475fc5a756b8639c82e3aab70a5238aa54.png" />
+<img alt="../../_images/9fe9cdaf7317383ba8dc2fce321c2f3e831772a14ba4785aba21c950a5cea765.png" src="../../_images/9fe9cdaf7317383ba8dc2fce321c2f3e831772a14ba4785aba21c950a5cea765.png" />
 </div>
 </div>
 </section>
@@ -837,8 +1067,8 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Vs&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
@@ -849,7 +1079,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07c062a6f111489b48449ca047bae07e473361da3a4552122832a4a775fc6b69.svg" src="../../_images/07c062a6f111489b48449ca047bae07e473361da3a4552122832a4a775fc6b69.svg" />
+<img alt="../../_images/7b6ff74a69e3b8562a2aab8f030f2d28f243bd654e5e921d275e644a44814e32.svg" src="../../_images/7b6ff74a69e3b8562a2aab8f030f2d28f243bd654e5e921d275e644a44814e32.svg" />
 </div>
 </div>
 <p>First find <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(V_A\)</span></p>
@@ -863,8 +1093,8 @@ V_s = 3\sin({2t+\frac{\pi}{2}}) = 3e^{j\frac{\pi}{2}} \\
 <p>Now, we draw the shape of the circuit in the <strong>phasor</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;3 ∠ 0°&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
@@ -875,7 +1105,7 @@ V_s = 3\sin({2t+\frac{\pi}{2}}) = 3e^{j\frac{\pi}{2}} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/58aef4a5bae35e9f71e27035fb239eb363643ecbc63b8e18e08ab14517117844.svg" src="../../_images/58aef4a5bae35e9f71e27035fb239eb363643ecbc63b8e18e08ab14517117844.svg" />
+<img alt="../../_images/c8e2c60202ba33ed2a8b3a6466eb6feb4c8161c34564f1d67782c043681c625e.svg" src="../../_images/c8e2c60202ba33ed2a8b3a6466eb6feb4c8161c34564f1d67782c043681c625e.svg" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -889,10 +1119,10 @@ I = \frac{V_A}{R + Lj\omega} \\
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mdates</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="n">omega</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">50</span>  
 <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="o">-</span><span class="mf">71.5</span><span class="p">)</span>    
@@ -913,7 +1143,7 @@ I = \frac{V_A}{R + Lj\omega} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e05e774c081f92b9cba527a4c8b4b3495695145a690379ec5f6186de06ae21c6.png" src="../../_images/e05e774c081f92b9cba527a4c8b4b3495695145a690379ec5f6186de06ae21c6.png" />
+<img alt="../../_images/3fd3bb0999463a5fb38584c39a038882a2a725f6555c70d794458d37cc6f714a.png" src="../../_images/3fd3bb0999463a5fb38584c39a038882a2a725f6555c70d794458d37cc6f714a.png" />
 </div>
 </div>
 </section>
@@ -971,7 +1201,7 @@ I = \frac{V_A}{R + Lj\omega} \\
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Supernode/Supernode.html"
+       href="../Supernode/Supernode1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -980,11 +1210,11 @@ I = \frac{V_A}{R + Lj\omega} \\
       </div>
     </a>
     <a class="right-next"
-       href="../../Contact_Me.html"
+       href="../Linear_Non_Inductor/Linear_Non_Inductor.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Contact Me</p>
+        <p class="prev-next-title">Linear and Non-Linear inductors</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -995,8 +1225,7 @@ I = \frac{V_A}{R + Lj\omega} \\
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1075,8 +1304,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

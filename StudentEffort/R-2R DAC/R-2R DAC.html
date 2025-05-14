@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="KVL &amp; KCL" href="../KVL_and_KCL/note%20book.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -188,13 +199,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">R-2R DAC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
 
 
 
@@ -209,7 +221,219 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
 <ul class="nav bd-sidenav">
@@ -369,16 +593,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -451,32 +683,32 @@ So for example, we could just use a standard 1kΩ resistor for the base resistor
 <p>As its name implies, the “ladder” description comes from the ladder-like configuration of the resistors used within the network. A R-2R resistive ladder network provides a simple means of converting digital voltage signals into an equivalent analogue output.
 Input voltages are applied to the ladder network at various points along its length and the more input points the better the resolution of the R-2R ladder. The output signal as a result of all these input voltage points is taken from the end of the ladder which is used to drive the inverting input of an operational amplifier.
 Then a R-2R resistive ladder network is nothing more than long strings of parallel and series connected resistors acting as interconnected voltage dividers along its length, and whose output voltage depends soley on the interaction of the input voltages with each other. Consider the basic 4-bit R-2R ladder network (4-bits because it has four input points) below.</p>
-<p><img alt="Alt text" src="../../_images/img2.png" /></p>
+<p><img alt="Alt text" src="../../_images/img4.png" /></p>
 </section>
 <section id="bit-r-2r-resistive-ladder-network">
 <h2>4-bit R-2R Resistive Ladder Network<a class="headerlink" href="#bit-r-2r-resistive-ladder-network" title="Link to this heading">#</a></h2>
-<p><img alt="Alt text" src="../../_images/img_1.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_15.png" /></p>
 <p>This 4-bit resistive ladder circuit may look complicated, but its all about connecting resistors together in parallel and series combinations and working back to the input source using simple circuit laws to find the proportional value of the output. Lets assume all the binary inputs are grounded at 0 volts, that is: VA = VB = VC = VD = 0V (LOW). The binary code corresponding to these four inputs will therefore be: 0000.
 Starting from the left hand side and using the simplified equation for two parallel resistors and series resistors, we can find the equivalent resistance of the ladder network as:</p>
-<p><img alt="Alt text" src="../../_images/img_2.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_22.png" /></p>
 <p>Resistors R1 and R2 are in “parallel” with each other but in “series” with resistor R3. Then we can find the equivalent resistance of these three resistors and call it RA for simplicity (or any other form of identification you want).</p>
 <p><span class="math notranslate nohighlight">\( R_A = R_3 + \frac{R_1 \times R_2}{R_1 + R_2} = R + \frac{2R \times 2R}{2R + 2R} = R + R = 2R \)</span></p>
 <p>Then RA is equivalent to “2R”. Now we can see that the equivalent resistance “RA” is in parallel with R4 with the parallel combination in series with R5.</p>
-<p><img alt="Alt text" src="../../_images/img_3.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_32.png" /></p>
 <p>Again we can find the equivalent resistance of this combination and call it RB.</p>
 <p><span class="math notranslate nohighlight">\( R_B = R_5 + \frac{R_A \times R_4}{R_A + R_4} = R + \frac{2R \times 2R}{2R + 2R} = R + R = 2R \)</span></p>
 <p>So RB combination is equivalent to “2R”. Hopefully we can see that this equivalent resistance RB is in parallel with R6 with the parallel combination in series with R7 as shown.</p>
-<p><img alt="Alt text" src="../../_images/img_4.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_42.png" /></p>
 <p>As before we find the equivalent resistance and call it RC.</p>
 <p><span class="math notranslate nohighlight">\( R_C = R_7 + \frac{R_B \times R_6}{R_B + R_6} = R + \frac{2R \times 2R}{2R + 2R} = R + R = 2R \)</span></p>
 <p>Again, resistor combination RC is equivalent to “2R” which is in parallel with R8 as shown.</p>
-<p><img alt="Alt text" src="../../_images/img_5.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_51.png" /></p>
 <p>As we have shown above, when two equal resistor values are paralled together, the resulting value is one-half, so 2R in parallel with 2R equals an equivalent resistance of R. So the whole 4-bit R-2R resistive ladder network comprising of individual resistors connected together in parallel and series combinations has an equivalent resistance (REQ) of “R” when a binary code of “0000” is applied to its four inputs.
 Therefore with a binary code of “0000” applied as inputs, our basic 4-bit R-2R digital-to-analogue converter circuit would look something like this</p>
 </section>
 <section id="r-2r-dac-circuit-with-four-zero-low-inputs">
 <h2>R-2R DAC Circuit with Four Zero (LOW) Inputs<a class="headerlink" href="#r-2r-dac-circuit-with-four-zero-low-inputs" title="Link to this heading">#</a></h2>
-<p><img alt="Alt text" src="../../_images/img_6.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_61.png" /></p>
 <p>The output voltage for an inverting operational amplifier is given as: (RF/RIN)*VIN. If we make RF equal to R, that is RF = R = 1, and as R is terminated to ground (0V), then there is no VIN voltage value, (VIN = 0) so the output voltage would be: (1/1)*0 = 0 volts. So for a 4-bit R-2R DAC with four grounded inputs (LOW), the output voltage will be “zero” volts, thus a 4-bit digital input of 0000 produces an analogue output of 0 volts.</p>
 </section>
 <section id="how-to-calculate-analog-voltage-output">
@@ -484,8 +716,8 @@ Therefore with a binary code of “0000” applied as inputs, our basic 4-bit R-
 <p>Next, we’ll look at how to calculate the analog voltage output for a given parallel digital input on the b0, b1, etc. inputs. We’ll use the same Thevenin equivalents technique shown above, as well as Superposition. Superposition tells us that if you individually compute the contribution of a given source to the output (with all others voltage sources shorted and current sources opened), you can then sum the results for each of the sources to obtain the final result for the output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;2R&quot;</span><span class="p">)</span>
@@ -502,14 +734,14 @@ Therefore with a binary code of “0000” applied as inputs, our basic 4-bit R-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7cc474c95d4cda32499dd2d715506efee77f45a1716a56888c4aa04a026a4ee8.svg" src="../../_images/7cc474c95d4cda32499dd2d715506efee77f45a1716a56888c4aa04a026a4ee8.svg" />
+<img alt="../../_images/4b7004a2f6e64dc888baa232ffdabb2c06e98ee4cd9c9c39f71a99cced887166.svg" src="../../_images/4b7004a2f6e64dc888baa232ffdabb2c06e98ee4cd9c9c39f71a99cced887166.svg" />
 </div>
 </div>
 <p>We start by replacing the circuit to the left of the left-most cut-line with its Thevenin equivalent. The Thevenin equivalent, which is the series resistor of value R (parallel combination of two 2R resistors), and the open circuit voltage from the resistor divider <span class="math notranslate nohighlight">\( \frac{V_{b0}}{2} \)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$ V_b0/2 $&#39;</span> <span class="p">,</span> <span class="s2">&quot;bot&quot;</span><span class="p">)</span>
@@ -525,14 +757,14 @@ Therefore with a binary code of “0000” applied as inputs, our basic 4-bit R-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/eb1e1c60cebb6e485150cbc6f3a3017be311183e79a85adb41ee43e69b1801a4.svg" src="../../_images/eb1e1c60cebb6e485150cbc6f3a3017be311183e79a85adb41ee43e69b1801a4.svg" />
+<img alt="../../_images/90a24982c4bf9eea431fcdf7b018adba4b45409de7f1157d7ab86775dd30fef3.svg" src="../../_images/90a24982c4bf9eea431fcdf7b018adba4b45409de7f1157d7ab86775dd30fef3.svg" />
 </div>
 </div>
 <p>The process continues methodically, step by step for each cut-line, substituting the equivalent circuit for each stage, as shown graphically below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$ V_b0/4 $&#39;</span> <span class="p">,</span> <span class="s2">&quot;bot&quot;</span><span class="p">)</span>
@@ -546,13 +778,13 @@ Therefore with a binary code of “0000” applied as inputs, our basic 4-bit R-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f12bc39c4f8fda20e59b88528e00365c158c6158c500ed4c8d75dc2bfcd1650c.svg" src="../../_images/f12bc39c4f8fda20e59b88528e00365c158c6158c500ed4c8d75dc2bfcd1650c.svg" />
+<img alt="../../_images/2deb2153deb8e7a353e3f2e17f5e4bb262e16b3476a62da75467e7979290b376.svg" src="../../_images/2deb2153deb8e7a353e3f2e17f5e4bb262e16b3476a62da75467e7979290b376.svg" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$ V_b0/8 $&#39;</span> <span class="p">,</span> <span class="s2">&quot;bot&quot;</span><span class="p">)</span>
@@ -564,13 +796,13 @@ Therefore with a binary code of “0000” applied as inputs, our basic 4-bit R-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6ba8c3239fc01ac3389037a94b469471c0cab2d5160d426c8aafedf7947088e8.svg" src="../../_images/6ba8c3239fc01ac3389037a94b469471c0cab2d5160d426c8aafedf7947088e8.svg" />
+<img alt="../../_images/9f4a2951ecd7824e8d7f75a5db8e3ef26d99e3ca2a3a2b0554085e7a57673e75.svg" src="../../_images/9f4a2951ecd7824e8d7f75a5db8e3ef26d99e3ca2a3a2b0554085e7a57673e75.svg" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$ V_b0/16 $&#39;</span> <span class="p">,</span> <span class="s2">&quot;bot&quot;</span><span class="p">)</span>
@@ -579,21 +811,21 @@ Therefore with a binary code of “0000” applied as inputs, our basic 4-bit R-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d2e778ac5c25fde70b916a1045ecb138dbb58703f315ceadf651bef3d23693ad.svg" src="../../_images/d2e778ac5c25fde70b916a1045ecb138dbb58703f315ceadf651bef3d23693ad.svg" />
+<img alt="../../_images/8146ad5c2cea914f9650b2853c76ba5ee3574e3734bbf760e39153d85969a750.svg" src="../../_images/8146ad5c2cea914f9650b2853c76ba5ee3574e3734bbf760e39153d85969a750.svg" />
 </div>
 </div>
 <p>We can see that the voltage contribution from bit b0 is 1/16th of the logic high voltage level. Each bit stage that this voltage passes through cuts the contribution by a factor of 2.</p>
 </section>
 <section id="r-2r-dac-with-input-va">
 <h2>R-2R DAC with Input VA<a class="headerlink" href="#r-2r-dac-with-input-va" title="Link to this heading">#</a></h2>
-<p><img alt="Alt text" src="../../_images/img_10.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_101.png" /></p>
 <p>Input VA is HIGH and logic level “1” and all the other inputs grounded at logic level “0”. As the R/2R ladder network is a linear circuit we can find Thevenin’s equivalent resistance using the same parallel and series resistance calculations as above to calculate the expected output voltage. The output voltage, VOUT is therefore calculated at 312.5 milli-volts (312.5 mV).
 As we have a 4-bit R-2R resistive ladder network, this 312.5 mV voltage change is one-sixteenth the value of the +5V input (5/0.3125 = 16) voltage so is classed as the Least Significant Bit, (LSB). Being the least significant bit, input VA will therefore determine the “resolution” of our simple 4-bit digital-to-analogue converter, as the smallest voltage change in the analogue output corresponds to a single step change of the digital inputs. Thus for our 4-bit DAC this will be 312.5mV (1/16th) for a +5V input.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Voltage Divider Circuit&#39;</span><span class="p">)</span> <span class="c1"># Create a new circuit</span>
 <span class="c1"># Add components to the circuit</span>
 <span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;V1&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># Voltage source VA = 5V  </span>
@@ -615,15 +847,13 @@ As we have a 4-bit R-2R resistive ladder network, this 312.5 mV voltage change i
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Voltage Divider Circuit&#39;</span><span class="p">)</span> <span class="c1"># Create a new circuit</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Add components to the circuit</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;V1&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># Voltage source VA = 5V  </span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="s1">&#39;R1&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span><span class="nd">@u_kOhm</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="s1">&#39;R2&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_kOhm</span><span class="p">)</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
 
-<span class="ne">NameError</span>: name &#39;u_V&#39; is not defined
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;PySpice&#39;
 </pre></div>
 </div>
 </div>
@@ -631,13 +861,13 @@ As we have a 4-bit R-2R resistive ladder network, this 312.5 mV voltage change i
 </section>
 <section id="r-2r-dac-with-input-vb">
 <h2>R-2R DAC with Input VB<a class="headerlink" href="#r-2r-dac-with-input-vb" title="Link to this heading">#</a></h2>
-<p><img alt="Alt text" src="../../_images/img_11.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_112.png" /></p>
 <p>With input VB HIGH and logic level “1” and all the other inputs grounded at logic level “0”, the output voltage, VOUT is calculated at 625mV, and which is one-eighth (1/8th) the value of the +5V input (5/0.625 = 8) voltage. We can also see that it is double the output voltage when only input bit VA was applied, and we would expect this as its the 2nd bit (input) so has double the weighting of the 1st bit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Voltage Divider Circuit&#39;</span><span class="p">)</span> <span class="c1"># Create a new circuit</span>
 <span class="c1"># Add components to the circuit</span>
 <span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;V1&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># Voltage source VB = 5V  </span>
@@ -674,13 +904,13 @@ Node b: 5.0000 V
 </section>
 <section id="r-2r-dac-with-input-vc">
 <h2>R-2R DAC with Input VC<a class="headerlink" href="#r-2r-dac-with-input-vc" title="Link to this heading">#</a></h2>
-<p><img alt="Alt text" src="../../_images/img_12.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_121.png" /></p>
 <p>With input VC HIGH and logic level “1” and the other input bits at logic level “0”, the output voltage, VOUT is calculated at 1.25 volts, and which is one-quarter (1/4) the value of the +5V input (5/1.25 = 4) voltage. Again we can see that this voltage is double the output of input bit VB but also 4 times the value of bit VA. This is because input VC is the 3rd bit so has double the weighting of the 2nd bit and four times the weighting of the 1st bit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Voltage Divider Circuit&#39;</span><span class="p">)</span> <span class="c1"># Create a new circuit</span>
 <span class="c1"># Add components to the circuit</span>
 <span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;V1&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># Voltage source VC = 5V  </span>
@@ -717,13 +947,13 @@ Node c: 5.0000 V
 </section>
 <section id="r-2r-dac-with-input-vd">
 <h2>R-2R DAC with Input VD<a class="headerlink" href="#r-2r-dac-with-input-vd" title="Link to this heading">#</a></h2>
-<p><img alt="Alt text" src="../../_images/img_13.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_131.png" /></p>
 <p>With only input VD HIGH and logic level “1” and the other inputs at logic level “0”, the output voltage, VOUT is calculated at 2.5 volts. This is on-half (1/2) the value of the +5V input (5/2.5 = 2) voltage. Again we can see that this voltage is double the output of input bit VC, 4 times the value of bit VB and 8 times the value of input bit VA as it is the 4th bit and therefore classed as the Most Significant Bit, (MSB).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">PySpice.Logging.Logging</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Voltage Divider Circuit&#39;</span><span class="p">)</span> <span class="c1"># Create a new circuit</span>
 <span class="c1"># Add components to the circuit</span>
 <span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;V1&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="nd">@u_V</span><span class="p">)</span>  <span class="c1"># Voltage source VD = 5V  </span>
@@ -778,7 +1008,7 @@ However, the higher the number of digital input bits (resolution) the nearer the
 <section id="r-2r-digital-to-analogue-converter">
 <h2>R-2R Digital-to-Analogue Converter<a class="headerlink" href="#r-2r-digital-to-analogue-converter" title="Link to this heading">#</a></h2>
 <p>Now that we understand what a R-2R resistive ladder network is and how it works, we can use it to produce a R-2R Digital-to-Analogue Converter. Again using our 4-bit R-2R resistive ladder network from above and adding it to an inverting operational amplifier circuit, we can create a simple R-2R digital-to-analogue converter of:</p>
-<p><img alt="Alt text" src="../../_images/img_15.png" /></p>
+<p><img alt="Alt text" src="../../_images/img_151.png" /></p>
 <p>The digital logic circuit used to drive the D/A converter can be generated by combinational or sequential logic circuits, data registers, counters or simply switches. The interfacing of a R-2R D/A converter of “n”-bits will depend upon its application. All-in-one boards such as the Arduino or Raspberry Pi have digital-to-analogue converters built-in so make interfacing and programming much easier. There are many popular DAC’s available such as the 8-bit DAC0808.</p>
 </section>
 <section id="r-2r-d-a-converter-example">
@@ -885,8 +1115,7 @@ Here the ripple counter and R-2R DAC are configured for 4-bit operation but usin
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -961,8 +1190,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

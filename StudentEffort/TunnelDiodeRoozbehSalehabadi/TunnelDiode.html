@@ -1,0 +1,908 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>What is a Tunnel Diode? &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/TunnelDiodeRoozbehSalehabadi/TunnelDiode';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="inductor" href="../Inductor/Inductor11.html" />
+    <link rel="prev" title="Log and Anti-Log Amplifiers" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/TunnelDiodeRoozbehSalehabadi/TunnelDiode.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/TunnelDiodeRoozbehSalehabadi/TunnelDiode.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>What is a Tunnel Diode?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">What is a Tunnel Diode?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#doping-in-a-tunnel-diode">Doping in a Tunnel Diode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-tunneling">What is Tunneling?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-tunnel-diode-work">How does a Tunnel Diode work?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-one-unbiased-tunnel-diode">Step One: Unbiased Tunnel Diode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-two-small-voltage-is-applied">Step Two: Small voltage is applied</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-three-voltage-is-sligthly-increased">Step Three: Voltage is sligthly increased</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-four-voltage-is-further-increased">Step Four: Voltage is further increased</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-five-voltage-is-largely-increased">Step Five: Voltage is largely increased</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-i-characteristics-of-tunnel-diode">V-I Characteristics of Tunnel Diode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-negative-resistance-in-tunnel-diode">What is Negative Resistance in Tunnel Diode?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-and-disadvantages-of-tunnel-diodes">Advantages and Disadvantages of Tunnel Diodes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tunnel-diode-usage">Tunnel diode usage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="what-is-a-tunnel-diode">
+<h1>What is a Tunnel Diode?<a class="headerlink" href="#what-is-a-tunnel-diode" title="Link to this heading">#</a></h1>
+<p>Author: Roozbeh Salehabadi</p>
+<p>The tunnel diode is also known as the “Esaki Diode”. It was invented by “Leo Esaki” in 1957, and for this invention, he received Nobel in 1973. Leo Esaki observed that if a semiconductor diode is heavily doped with impurities, it will exhibit negative resistance. Negative resistance means the current across the tunnel diode decreases when the voltage increases.
+A tunnel diode is also known as Esaki diode which is named after Leo Esaki for his work on the tunneling effect. The operation of tunnel diode depends on the quantum mechanics principle known as “Tunneling”. In electronics, tunneling means a direct flow of electrons across the small depletion region from n-side conduction band into the p-side valence band.
+The circuit symbol of tunnel diode is shown in the below figure. In tunnel diode, the p-type semiconductor act as an anode and the n-type semiconductor act as a cathode.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">DiodeTunnel</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9b9bc463568e5789fb9777665d1d8292554e72a42d336a8151d1df235b18c90d.svg" src="../../_images/9b9bc463568e5789fb9777665d1d8292554e72a42d336a8151d1df235b18c90d.svg" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="doping-in-a-tunnel-diode">
+<h1>Doping in a Tunnel Diode<a class="headerlink" href="#doping-in-a-tunnel-diode" title="Link to this heading">#</a></h1>
+<p>Doping in diodes involves adding impurities to a semiconductor material, such as silicon or gallium arsenide, to create regions with excess electrons (n-type) or holes (p-type), forming a p-n junction. The level of doping controls the diode’s electrical characteristics, including its forward and reverse current behavior. In tunnel diodes, doping is extremely high—about 1000 times greater than a normal diode—resulting in a very narrow depletion region. The depletion region is a region in a p-n junction diode where mobile charge carriers (free electrons and holes) are absent. Depletion region acts like a barrier that opposes the flow of electrons from the n-type semiconductor and holes from the p-type semiconductor.</p>
+<p><img alt="WorkingOfTunnelDiode" src="../../_images/WorkingOfTunnelDiode.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="what-is-tunneling">
+<h1>What is Tunneling?<a class="headerlink" href="#what-is-tunneling" title="Link to this heading">#</a></h1>
+<p>In tunnel diode, the valence band and conduction band energy levels in the n-type semiconductor are lower than the valence band and conduction band energy levels in the p-type semiconductor. Unlike the ordinary p-n junction diode, the difference in energy levels is very high in tunnel diode. Because of this high difference in energy levels, the conduction band of the n-type material overlaps with the valence band of the p-type material.
+Quantum mechanics says that the electrons will directly penetrate through the depletion layer or barrier if the depletion width is very small.
+The depletion layer of tunnel diode is very small. It is in nanometers. So the electrons can directly tunnel across the small depletion region from n-side conduction band into the p-side valence band.</p>
+<p><img alt="Barrier" src="../../_images/tunneldiodebarrier.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="how-does-a-tunnel-diode-work">
+<h1>How does a Tunnel Diode work?<a class="headerlink" href="#how-does-a-tunnel-diode-work" title="Link to this heading">#</a></h1>
+<p>In ordinary diodes, current is produced when the applied voltage is greater than the built-in voltage of the depletion region. But in tunnel diodes, a small voltage which is less than the built-in voltage of depletion region is enough to produce electric current.
+In tunnel diodes, the electrons need not overcome the opposing force from the depletion layer to produce electric current. The electrons can directly tunnel from the conduction band of n-region into the valence band of p-region. Thus, electric current is produced in tunnel diode.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-one-unbiased-tunnel-diode">
+<h1>Step One: Unbiased Tunnel Diode<a class="headerlink" href="#step-one-unbiased-tunnel-diode" title="Link to this heading">#</a></h1>
+<p>When no voltage is applied to the tunnel diode, it is said to be an unbiased tunnel diode. In tunnel diode, the conduction band of the n-type material overlaps with the valence band of the p-type material because of the heavy doping.
+Because of this overlapping, the conduction band electrons at n-side and valence band holes at p-side are nearly at the same energy level. So when the temperature increases, some electrons tunnel from the conduction band of n-region to the valence band of p-region. In a similar way, holes tunnel from the valence band of p-region to the conduction band of n-region.
+However, the net current flow will be zero because an equal number of charge carriers (free electrons and holes) flow in opposite directions.</p>
+<p><img alt="StepOne" src="../../_images/StepOne.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-two-small-voltage-is-applied">
+<h1>Step Two: Small voltage is applied<a class="headerlink" href="#step-two-small-voltage-is-applied" title="Link to this heading">#</a></h1>
+<p>When a small voltage is applied to the tunnel diode which is less than the built-in voltage of the depletion layer, no forward current flows through the junction.
+However, a small number of electrons in the conduction band of the n-region will tunnel to the empty states of the valence band in p-region. This will create a small forward bias tunnel current. Thus, tunnel current starts flowing with a small application of voltage.</p>
+<p><img alt="StepTwo" src="../../_images/StepTwo.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-three-voltage-is-sligthly-increased">
+<h1>Step Three: Voltage is sligthly increased<a class="headerlink" href="#step-three-voltage-is-sligthly-increased" title="Link to this heading">#</a></h1>
+<p>When the voltage applied to the tunnel diode is slightly increased, a large number of free electrons at n-side and holes at p-side are generated. Because of the increase in voltage, the overlapping of the conduction band and valence band is increased.
+In simple words, the energy level of an n-side conduction band becomes exactly equal to the energy level of a p-side valence band. As a result, maximum tunnel current flows.</p>
+<p><img alt="StepThree" src="../../_images/StepThree.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-four-voltage-is-further-increased">
+<h1>Step Four: Voltage is further increased<a class="headerlink" href="#step-four-voltage-is-further-increased" title="Link to this heading">#</a></h1>
+<p>If the applied voltage is further increased, a slight misalign of the conduction band and valence band takes place. Since the conduction band of the n-type material and the valence band of the p-type material sill overlap. The electrons tunnel from the conduction band of n-region to the valence band of p-region and cause a small current flow. Thus, the tunneling current starts decreasing.</p>
+<p><img alt="StepFour" src="../../_images/StepFour.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="step-five-voltage-is-largely-increased">
+<h1>Step Five: Voltage is largely increased<a class="headerlink" href="#step-five-voltage-is-largely-increased" title="Link to this heading">#</a></h1>
+<p>If the applied voltage is largely increased, the tunneling current drops to zero. At this point, the conduction band and valence band no longer overlap and the tunnel diode operates in the same manner as a normal p-n junction diode. If this applied voltage is greater than the built-in potential of the depletion layer, the regular forward current starts flowing through the tunnel diode.
+The portion of the curve in which current decreases as the voltage increases is the negative resistance region of the tunnel diode.
+The negative resistance region is the most important and most widely used characteristic of the tunnel diode.
+A tunnel diode operating in the negative resistance region can be used as an amplifier or an oscillator.</p>
+<p><img alt="StepFive" src="../../_images/StepFive.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="v-i-characteristics-of-tunnel-diode">
+<h1>V-I Characteristics of Tunnel Diode<a class="headerlink" href="#v-i-characteristics-of-tunnel-diode" title="Link to this heading">#</a></h1>
+<p>The maximum current that a diode reaches is Ip and voltage applied is Vp. The current value decreases, when more amount of voltage is applied. Current keeps decreasing until it reaches a minimal value.
+The small minimal value of current is Iv. From the above graph, it is seen that from point A to B current reduces when voltage increases. That is the negative resistance region of diode. In this region, tunnel diode produces power instead of absorbing it.</p>
+<p><img alt="VICC" src="../../_images/VICharacteristics.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="what-is-negative-resistance-in-tunnel-diode">
+<h1>What is Negative Resistance in Tunnel Diode?<a class="headerlink" href="#what-is-negative-resistance-in-tunnel-diode" title="Link to this heading">#</a></h1>
+<p>It is shown above in the graph that between the point Iv and Ip the current starts decreasing when the voltage is applied to it. This region of the graph is known as the negative resistance region. It is the most important characteristic of the tunnel diode. In this region, the tunnel diode generates the power instead of absorbing it.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="advantages-and-disadvantages-of-tunnel-diodes">
+<h1>Advantages and Disadvantages of Tunnel Diodes<a class="headerlink" href="#advantages-and-disadvantages-of-tunnel-diodes" title="Link to this heading">#</a></h1>
+<p>Advantages</p>
+<ul class="simple">
+<li><p>Long life</p></li>
+<li><p>High-speed operation</p></li>
+<li><p>Low noise</p></li>
+<li><p>Low power consumption</p></li>
+</ul>
+<p>Disadvantages</p>
+<ul class="simple">
+<li><p>Tunnel diodes cannot be fabricated in large numbers</p></li>
+<li><p>Being a two terminal device, the input and output are not isolated from one another</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tunnel-diode-usage">
+<h1>Tunnel diode usage<a class="headerlink" href="#tunnel-diode-usage" title="Link to this heading">#</a></h1>
+<p>Tunnel diodes are widely used in high-speed switching and oscillation applications due to their ability to operate at extremely fast speeds. Their negative resistance characteristic allows them to function efficiently in microwave and millimeter-wave frequencies, making them ideal for use in oscillators, amplifiers, and mixers in communication systems. Tunnel diodes are also used in certain types of pulse circuits and in frequency modulators for radar and satellite systems. In addition, they can be applied in high-frequency signal detection and low-noise amplifiers, where their fast response and low power consumption provide significant advantages over other semiconductor devices. Their unique properties make them valuable in a variety of applications that require rapid switching and high-frequency performance.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
+<h1>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
+<p>In this article, we explored the concept of tunnel diodes, their unique properties, structure, and applications in electronic circuits. Tunnel diodes are a type of diode that exhibit quantum tunneling, allowing them to function in ways that differ from traditional diodes. This project focused on understanding their I-V characteristics, the effect of heavy doping on their behavior, and their potential in high-speed switching and oscillatory applications. Tunnel diodes are vital in various advanced electronic systems, contributing to faster and more efficient circuits. The study of tunnel diodes highlights their significance in modern electronics and provides a foundation for future research and development in this area.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sources">
+<h1>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor-diodes/tunneldiode-howitworks.html">https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor-diodes/tunneldiode-howitworks.html</a>
+<a class="reference external" href="https://circuitglobe.com/tunnel-diode.html">https://circuitglobe.com/tunnel-diode.html</a>
+<a class="reference external" href="https://www.geeksforgeeks.org/tunnel-diode/">https://www.geeksforgeeks.org/tunnel-diode/</a>
+<a class="reference external" href="https://www.electronicshub.org/tunnel-diode-working-characteristics-applications/">https://www.electronicshub.org/tunnel-diode-working-characteristics-applications/</a>
+<a class="reference external" href="https://www.electrical4u.com/tunnel-diode/#What-is-a-Tunnel-Diode">https://www.electrical4u.com/tunnel-diode/#What-is-a-Tunnel-Diode</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\TunnelDiodeRoozbehSalehabadi"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Log and Anti-Log Amplifiers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Inductor/Inductor11.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">inductor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">What is a Tunnel Diode?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#doping-in-a-tunnel-diode">Doping in a Tunnel Diode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-tunneling">What is Tunneling?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-tunnel-diode-work">How does a Tunnel Diode work?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-one-unbiased-tunnel-diode">Step One: Unbiased Tunnel Diode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-two-small-voltage-is-applied">Step Two: Small voltage is applied</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-three-voltage-is-sligthly-increased">Step Three: Voltage is sligthly increased</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-four-voltage-is-further-increased">Step Four: Voltage is further increased</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-five-voltage-is-largely-increased">Step Five: Voltage is largely increased</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#v-i-characteristics-of-tunnel-diode">V-I Characteristics of Tunnel Diode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-negative-resistance-in-tunnel-diode">What is Negative Resistance in Tunnel Diode?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-and-disadvantages-of-tunnel-diodes">Advantages and Disadvantages of Tunnel Diodes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tunnel-diode-usage">Tunnel diode usage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,960 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Log and Anti-Log Amplifiers &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="What is a Tunnel Diode?" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html" />
+    <link rel="prev" title="Capacitor Handbook Chapter(2)" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Log and Anti-Log Amplifiers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-design-and-operation">Circuit Design and Operation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-amplifiers">Logarithmic Amplifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trans-diode-configurtion">Trans-diode Configurtion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anti-logarithmic-amplifiers">Anti-Logarithmic Amplifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Trans-diode Configurtion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-vs-transistor">Diode VS Transistor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-compensated-log-amplifier">Temperature Compensated Log Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="log-and-anti-log-amplifiers">
+<h1>Log and Anti-Log Amplifiers<a class="headerlink" href="#log-and-anti-log-amplifiers" title="Link to this heading">#</a></h1>
+<p>Author : Negar Bahrampour<br />
+Contact : <a class="reference external" href="mailto:negarbahram03&#37;&#52;&#48;gmail&#46;com">negarbahram03<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Logarithmic (log) and anti-logarithmic (anti-log) amplifiers are essential components in analog electronics. These circuits exploit the exponential relationship between voltage and current in semiconductor devices, specifically in diodes and transistors. They are widely used in applications such as signal processing, computation, and instrumentation. This paper delves into the principles, design, and applications of log and anti-log amplifiers, highlighting their operational intricacies and practical significance.</p>
+</section>
+<section id="circuit-design-and-operation">
+<h2>Circuit Design and Operation<a class="headerlink" href="#circuit-design-and-operation" title="Link to this heading">#</a></h2>
+<section id="logarithmic-amplifiers">
+<h3>Logarithmic Amplifiers<a class="headerlink" href="#logarithmic-amplifiers" title="Link to this heading">#</a></h3>
+<p>An op-amp based logarithmic amplifier produces a voltage at the output, which is proportional to the logarithm of the voltage applied to the resistor connected to its inverting terminal. The circuit diagram of an op-amp based logarithmic amplifier is shown in the following figure :</p>
+<p><img alt="" src="../../_images/logarthmic_amplifier.jpg" /></p>
+<p>In the above circuit, the non-inverting input terminal of the op-amp is connected to ground. That means zero volts is applied at the non-inverting input terminal of the op-amp.</p>
+<p>According to the virtual short concept, the voltage at the inverting input terminal of an op-amp will be equal to the voltage at its non-inverting input terminal. So, the voltage at the inverting input terminal will be zero volts.</p>
+<p>The nodal equation at the inverting input terminal’s node is :</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{0 − V_{i}}{R_1} + I_{f} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+I_{f} = \frac{V_{i}}{R_{1}}  (1)
+\]</div>
+<p>The following is the equation for current flowing through a diode, when it is in forward bias :</p>
+<div class="math notranslate nohighlight">
+\[
+I_{f} = I_{s}e^{\frac{V_{f}}{nV_{T}}} (2)
+\]</div>
+<p>where,</p>
+<p><span class="math notranslate nohighlight">\( I_{s} \)</span> is the saturation current of the diode,</p>
+<p><span class="math notranslate nohighlight">\( V_{f} \)</span> is the voltage drop across diode, when it is in forward bias,</p>
+<p><span class="math notranslate nohighlight">\( V_{T} \)</span> is the diode’s thermal equivalent voltage.</p>
+<p>The KVL equation around the feedback loop of the op amp will be :</p>
+<div class="math notranslate nohighlight">
+\[
+0 − V_{f} − V_{o} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{f} = − V_{o}
+\]</div>
+<p>Substituting the value of Vf in Equation 2, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+I_{f} = I_{s}e^{\frac{V_{o}}{nV_{T}}} (3)
+\]</div>
+<p>Observe that the left hand side terms of both equation 1 and equation 3 are same. Hence, equate the right hand side term of those two equations as shown below :</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{V_{i}}{R_{1}} = I_{s}e^{\frac{V_{o}}{nV_{T}}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{V_{i}}{R_{1}I_{s}} = e^{\frac{V_{o}}{nV_{T}}}
+\]</div>
+<p>Applying natural logarithm on both sides, we get :</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(\frac{V_{i}}{R_{1}I_{s}}) = \frac{V_{o}}{nV_{T}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{o} = -nV_{T}\ln(\frac{V_{i}}{R_{1}I_{s}})
+\]</div>
+<p>Note that in the above equation, the parameters <span class="math notranslate nohighlight">\( n \)</span>, <span class="math notranslate nohighlight">\( V_{T} \)</span> and <span class="math notranslate nohighlight">\( I_{s} \)</span> are constants. So, the output voltage <span class="math notranslate nohighlight">\( V_{o} \)</span> will be proportional to the natural logarithm of the input voltage <span class="math notranslate nohighlight">\( V_{i} \)</span> for a fixed value of resistance <span class="math notranslate nohighlight">\( R_1 \)</span>.</p>
+<p>Therefore, the op-amp based logarithmic amplifier circuit discussed above will produce an output, which is proportional to the natural logarithm of the input voltage <span class="math notranslate nohighlight">\( V_{T} \)</span>, when <span class="math notranslate nohighlight">\( R_1I_{s} = 1V \)</span>.</p>
+<p>Observe that the output voltage <span class="math notranslate nohighlight">\( V_{o} \)</span> has a negative sign, which indicates that there exists a <span class="math notranslate nohighlight">\( 180 \degree \)</span> phase difference between the input and the output.</p>
+</section>
+<section id="trans-diode-configurtion">
+<h3>Trans-diode Configurtion<a class="headerlink" href="#trans-diode-configurtion" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/log-trans.png" /></p>
+</section>
+<section id="anti-logarithmic-amplifiers">
+<h3>Anti-Logarithmic Amplifiers<a class="headerlink" href="#anti-logarithmic-amplifiers" title="Link to this heading">#</a></h3>
+<p>An op-amp based anti-logarithmic amplifier produces a voltage at the output, which is proportional to the anti-logarithm of the voltage that is applied to the diode connected to its inverting terminal.</p>
+<p>The circuit diagram of an op-amp based anti-logarithmic amplifier is shown in the following figure :</p>
+<p><img alt="" src="../../_images/anti_logarthmic_amplifier.jpg" /></p>
+<p>In the circuit shown above, the non-inverting input terminal of the op-amp is connected to ground. It means zero volts is applied to its non-inverting input terminal.</p>
+<p>According to the virtual short concept, the voltage at the inverting input terminal of op-amp will be equal to the voltage present at its non-inverting input terminal. So, the voltage at its inverting input terminal will be zero volts.</p>
+<p>The nodal equation at the inverting input terminal’s node is :</p>
+<div class="math notranslate nohighlight">
+\[
+- I_{f} + \frac{0 − V_{o}}{R_{f}} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+I_{f} = - \frac{V_{o}}{R_{f}}  
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+V_{o} =  - I_{f}R_{f} (4)
+\]</div>
+<p>We know that the equation for the current flowing through a diode, when it is in forward bias, is as given below :</p>
+<div class="math notranslate nohighlight">
+\[
+I_{f} = I_{s}e^{\frac{V_{f}}{nV_{T}}} 
+\]</div>
+<p>Substituting the value of If in Equation 4, we get :</p>
+<div class="math notranslate nohighlight">
+\[
+V_{o} = - R_{f} (I_{s}e^{\frac{V_{f}}{nV_{T}}})  (5)
+\]</div>
+<p>The KVL equation at the input side of the inverting terminal of the op amp will be :</p>
+<div class="math notranslate nohighlight">
+\[
+V_{i} − V_{f} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{i} = V_{f}
+\]</div>
+<p>Substituting, the value of <span class="math notranslate nohighlight">\( V_{f} \)</span> in the Equation 5, we get :</p>
+<div class="math notranslate nohighlight">
+\[
+V_{o} = -R_{f}I_{s}e^{\frac{V_{i}}{nV_{T}}}
+\]</div>
+<p>Note that, in the above equation the parameters <span class="math notranslate nohighlight">\( n \)</span>, <span class="math notranslate nohighlight">\( V_{T} \)</span> and <span class="math notranslate nohighlight">\( I_{s} \)</span> are constants. So, the output voltage <span class="math notranslate nohighlight">\( V_{o} \)</span> will be proportional to the anti-natural logarithm (exponential) of the input voltage <span class="math notranslate nohighlight">\( V_{i} \)</span>, for a fixed value of feedback resistance <span class="math notranslate nohighlight">\( R_{f} \)</span>.</p>
+<p>Therefore, the op-amp based anti-logarithmic amplifier circuit discussed above will produce an output, which is proportional to the anti-natural logarithm (exponential) of the input voltage <span class="math notranslate nohighlight">\( V_{i} \)</span> when, <span class="math notranslate nohighlight">\( R_{f}I_{s} = 1V \)</span>.</p>
+<p>Observe that the output voltage <span class="math notranslate nohighlight">\( V_{o} \)</span> is having a negative sign, which indicates that there exists a <span class="math notranslate nohighlight">\( 180\degree \)</span> phase difference between the input and the output.</p>
+</section>
+<section id="id1">
+<h3>Trans-diode Configurtion<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/antilog-trans.png" /></p>
+</section>
+</section>
+<section id="diode-vs-transistor">
+<h2>Diode VS Transistor<a class="headerlink" href="#diode-vs-transistor" title="Link to this heading">#</a></h2>
+<p>BJTs offer several advantages when used in a log amplifier. They can handle larger currents compared to diodes, making them suitable for a broader range of applications. Transistor circuits also provide greater flexibility, allowing for additional design modifications such as the use of differential pairs to enhance accuracy. Furthermore, the gain of the amplifier can be fine-tuned by adjusting the collector resistance or incorporating external circuitry, enabling more precise control over the amplifier’s performance.</p>
+</section>
+<section id="temperature-compensated-log-amplifier">
+<h2>Temperature Compensated Log Amplifier<a class="headerlink" href="#temperature-compensated-log-amplifier" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/Temperature.png" /></p>
+<p>How this circuit works and using this circuit how we can compensate the effect of temperature on the output voltage? In this circuit, instead of single log amplifier, the two log amplifiers have been used. In the first log amplifier, the input voltage is given, while in the second log amplifier some reference voltage has been given and also in this two log amplifiers, the matched pair of transistors are used. It means that both transistors have same thermal voltage and the same reverse saturation current.</p>
+<div class="math notranslate nohighlight">
+\[
+V_{A} = -V_{T}\ln(\frac{V_{i}}{RI_{s}})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{B} = -V_{T}\ln(\frac{V_{R}}{RI_{s}})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{C} = V_{A} - V_{B} = V_{T}\ln(\frac{V_{i}}{RI_{s}}) - V_{T}\ln(\frac{V_{R}}{RI_{s}})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{C} = V_{T}\ln(\frac{V_{i}}{V_{R}})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V_{o} = (1 + \frac{R_6}{R_5})V_{T}\ln(\frac{V_{i}}{V_{R}})
+\]</div>
+<p>But still, this output voltage depends upon this thermal voltage. Using the third block we can eliminate the effect of this thermal voltage. Resistor R5 is the temperature dependent resistor. So, with temperature, the value of this resistor <span class="math notranslate nohighlight">\( R_{5} \)</span> will change.
+Now if we select the temperature coefficient of resistance for this <span class="math notranslate nohighlight">\( R_{5} \)</span> in a such a way that it can nullify the effect if this Vt. And in a way, we can nullify the effect of temperature from this log amplifier circuit.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Log and anti-log amplifiers are pivotal in modern analog electronics, offering unique functionalities for signal manipulation and computation. By leveraging the exponential properties of semiconductor devices, these circuits enable diverse applications, from audio processing to scientific instrumentation. Despite challenges like temperature sensitivity, advancements in circuit design continue to enhance their reliability and performance.</p>
+</section>
+<section id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<p>The Art of Electronics by Horowitz and Hill.<br />
+<a class="reference external" href="https://www.tutorialspoint.com/index.htm">Tutorials Point Website</a><br />
+<a class="reference external" href="https://www.youtube.com/&#64;ALLABOUTELECTRONICS">ALL ABOUT ELECTRONICS YouTube Channel</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\LogandAntiLogAmplifiers"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Capacitor Handbook Chapter(2)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">What is a Tunnel Diode?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-design-and-operation">Circuit Design and Operation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-amplifiers">Logarithmic Amplifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trans-diode-configurtion">Trans-diode Configurtion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anti-logarithmic-amplifiers">Anti-Logarithmic Amplifiers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Trans-diode Configurtion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-vs-transistor">Diode VS Transistor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-compensated-log-amplifier">Temperature Compensated Log Amplifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

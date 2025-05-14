@@ -1,0 +1,1047 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Impedimetric Sensors &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Impedimetric_Sensors/impedimetric_Sensors';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="Convert AC to DC" href="../ACToDc/ACTODC.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Convert AC to DC</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Impedimetric Sensors</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Impedimetric_Sensors/impedimetric_Sensors.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Impedimetric_Sensors/impedimetric_Sensors.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Impedimetric Sensors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Impedimetric Sensors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-information">Author Information</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-content">Table of Content:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1- Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrochemical-sensors">2- Electrochemical Sensors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundementals-of-electrochemical-impedance-spectroscopy">3- Fundementals of Electrochemical Impedance Spectroscopy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-of-impedance-spectroscopy-in-biosensing">4- Implementation of Impedance Spectroscopy in Biosensing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impedance-analysis-using-ide">5- Impedance Analysis Using IDE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recent-developments-in-eis">6- Recent developments in EIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">7- Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">8- Refrences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Electrochemical Sensors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fundementals of Electrochemical Impedance Spectroscopy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Implementation of Impedance Spectroscopy in Biosensing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Impedance Analysis Using IDE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recent-developments-in-eis-ad5933-impedance-analyzer">Recent developments in EIS: AD5933 Impedance Analyzer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Refrences:</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="impedimetric-sensors">
+<h1>Impedimetric Sensors<a class="headerlink" href="#impedimetric-sensors" title="Link to this heading">#</a></h1>
+<section id="author-information">
+<h2>Author Information<a class="headerlink" href="#author-information" title="Link to this heading">#</a></h2>
+<p><strong>Name:</strong></p>
+<p>Kimia Borumand</p>
+<p><strong>Affiliation:</strong></p>
+<p>Department of Computer Engineering, Ferdowsi University of Mashhad</p>
+<p><strong>Contact:</strong></p>
+<p><a class="reference external" href="mailto:kbrwmnd15&#37;&#52;&#48;gmail&#46;com">kbrwmnd15<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="table-of-content">
+<h1>Table of Content:<a class="headerlink" href="#table-of-content" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>1- Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+</section>
+<section id="electrochemical-sensors">
+<h2>2- Electrochemical Sensors<a class="headerlink" href="#electrochemical-sensors" title="Link to this heading">#</a></h2>
+</section>
+<section id="fundementals-of-electrochemical-impedance-spectroscopy">
+<h2>3- Fundementals of Electrochemical Impedance Spectroscopy<a class="headerlink" href="#fundementals-of-electrochemical-impedance-spectroscopy" title="Link to this heading">#</a></h2>
+</section>
+<section id="implementation-of-impedance-spectroscopy-in-biosensing">
+<h2>4- Implementation of Impedance Spectroscopy in Biosensing<a class="headerlink" href="#implementation-of-impedance-spectroscopy-in-biosensing" title="Link to this heading">#</a></h2>
+</section>
+<section id="impedance-analysis-using-ide">
+<h2>5- Impedance Analysis Using IDE<a class="headerlink" href="#impedance-analysis-using-ide" title="Link to this heading">#</a></h2>
+</section>
+<section id="recent-developments-in-eis">
+<h2>6- Recent developments in EIS<a class="headerlink" href="#recent-developments-in-eis" title="Link to this heading">#</a></h2>
+</section>
+<section id="conclusion">
+<h2>7- Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+</section>
+<section id="refrences">
+<h2>8- Refrences<a class="headerlink" href="#refrences" title="Link to this heading">#</a></h2>
+<p>This study explores the method of impedance measurement (electrical resistance at different frequencies) for analyzing biological and chemical materials. Key applications such as the detection of foodborne microorganisms, measurement of heavy metals, and environmental pollution monitoring are discussed. Devices like the CHI660D and AD5933 are used for these measurements. Electrochemical sensors play a vital role in converting biological signals into electrical information. Finally, this study highlights recent advancements in developing accurate and portable devices for impedance analysis.</p>
+</section>
+<section id="id1">
+<h2>Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Biosensors, itself is an interdisciplinary branch of study. A device that takes information from chemical reaction and them alter that signal by electronic means. In this section, biosensor methodology, their characteristics and scope is discussed.</p>
+<p><strong>They have four main parts:</strong></p>
+<p>Analyte – The target substance you want to detect (like glucose in a glucose sensor).</p>
+<p>Bioreceptor – A molecule that specifically reacts with the analyte and starts a signal.</p>
+<p>Transducer – It changes the signal from the bioreceptor into a form we can measure (like an electrical or light signal).</p>
+<p>Electronic System – Processes and displays the signal so we can understand it.</p>
+<p><strong>Uses:</strong></p>
+<p>Biosensors are widely used in disease detection, pollution monitoring, and drug development. They can detect disease markers in fluids like blood, urine, or saliva.</p>
+<p><strong>Types of Biosensors:</strong></p>
+<p>Biosensors can be grouped based on what kind of bioreceptor or transducer they use.</p>
+<p>Based on bioreceptors: antibody-antigen, cells, DNA, enzymes.</p>
+<p>Based on transducers: electrochemical (most common), optical, piezoelectric, and heat-based (calorimetric).</p>
+<p>Electrochemical biosensors are very popular because they are cheap, simple, and quick to use without needing many chemicals. They’re widely used in medicine, farming, environmental studies, and industry.</p>
+<p><img alt="biosensors_representation" src="../../_images/fig11.png" /></p>
+<p>Fig 1. Biosensor representation using schematic diagram</p>
+</section>
+<section id="id2">
+<h2>Electrochemical Sensors<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><img alt="type" src="../../_images/fig17.png" /></p>
+<p>Fig 2. Electrochemical Sensors</p>
+<p>Electrochemical biosensors are useful tools that turn biological reactions directly into electronic signals. Since the 1950s, starting with the oxygen sensor by Clark, these sensors have grown rapidly. There are three main types:</p>
+<p><strong>1. Potentiometric Sensors</strong></p>
+<p>These measure voltage between two electrodes without any current flowing. They are used for detecting specific ions (like sodium or potassium) or gases (like CO₂). pH meters are a common example. The voltage difference depends on the ion or gas concentration, and this is calculated using a special equation called the Nernst equation.</p>
+<p><strong>2. Amperometric Sensors</strong></p>
+<p>These measure current created by chemical reactions like oxidation or reduction of substances. A constant voltage is applied, and the amount of current depends on how much of the substance is present. If voltage is changed during measurement, the method is called voltammetry.</p>
+<p><strong>3. Impedimetric Sensors</strong></p>
+<p>These measure how easily electricity flows through a solution. They use AC current to detect changes in resistance and capacitance (how electricity is stored). A special method called Electrochemical Impedance Spectroscopy (EIS) is used for this. It can even detect bacteria by noticing how they change the electrical properties of the solution.</p>
+<p>A common setup for Electrochemical Impedance Spectroscopy (EIS) includes three electrodes:</p>
+<p>Working Electrode(WE) – where the main reaction happens.</p>
+<p>Counter (Auxiliary) Electrode(CE) – balances the current.</p>
+<p>Reference Electrode(RE) – provides a stable voltage.</p>
+<p>In EIS, an alternating current (AC) is applied to the working electrode(WE), switching between positive and negative voltages. The counter electrode(CE) has an opposite voltage, while the reference electrode(RE) stays at a constant voltage to stabilize the system.</p>
+<p>Electrochemical Impedance Spectroscopy (EIS) can detect bacteria by measuring how the electrical resistance or impedance of a solution changes when bacteria grow and release substances. This method was first described by Bard and Faulkner (2001).</p>
+<p><img alt="EIS" src="../../_images/cellf.png" /></p>
+<p>Fig 3. Shematic diagram of EIS</p>
+</section>
+<section id="id3">
+<h2>Fundementals of Electrochemical Impedance Spectroscopy<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Electrochemical Impedance Spectroscopy (EIS) is a useful and non-destructive method used in many areas such as:</p>
+<p>Detecting bacteria and pathogens in food, monitoring corrosion in materials, studying the human body, detecting heavy metal ions, analyzing layers on electrode surfaces and monitoring food and dairy product quality.</p>
+<p>EIS allows label-free detection of interactions (such as between antibodies and antigens) without any special preparation. It causes less damage to the sample compared to other methods like Cyclic Voltammetry (CV) and Differential Pulse Voltammetry (DPV).</p>
+<p><img alt="EIS" src="../../_images/fig21.png" /></p>
+<p>Fig 4. A three electrode measurement set up configuration for EIS</p>
+<p>In order to further explain what is occurring in Figure 4, it should be noted that
+the word “spectroscopy” means studying something over a range of frequencies. In EIS, a small  alternating current  (AC) voltage signal(Vout) is applied to the system(as mentioned the working electrode(WE)) with changing frequencies—usually from 10 millihertz to 100 kilohertz.This is where the electrochemical reaction of interest occurs (e.g., interaction with bacteria) since this causes a small perturbation in the electrochemical system,
+this AC signal is key in EIS to probe the impedance of the system across different frequencies.
+The refrence electrode(RE) on the other hand maintains a stable and known voltage(Vref) and no current flows through it; it’s used to measure and control the potential of the working electrode accurately and monitors the exact voltage of the WE to keep it stable using a potentiostat setup (not shown here explicitly).
+Then the counter electrode(CE) completes the electrical circuit by allowing current to flow from the working electrode. it balances the current from the working electrode.
+Current flows between the WE and CE in response to the applied AC voltage. Then ammeter(A)  measures the current I(t) flowing through the circuit, particularly from WE to CE over time. The current response to the AC signal is recorded and used to compute impedance:</p>
+<p>When AC current passes through a circuit made of resistors and capacitors, it produces impedance, which is a kind of complex resistance. Impedance depends on the frequency of the signal and the parts in the system. In electrochemistry, we usually ignore inductors and only consider resistance and <a class="reference external" href="http://capacitance.By">capacitance.By</a> sweeping across different frequencies, you get impedance spectra that reflect the electrochemical behavior of the system.</p>
+<p>Impedance is calculated by applying a voltage signal:</p>
+<p>Voltage :
+$<span class="math notranslate nohighlight">\(
+V(t) = V_m . sin(\omega t)
+\)</span>$</p>
+<p>Current :
+$<span class="math notranslate nohighlight">\(
+I(t) = I_m . sin(\omega t + \theta)
+\)</span>$</p>
+<p>Then ampedance Z is :
+$<span class="math notranslate nohighlight">\(
+Z = \frac {V_m . sin(\omega t)}{I_m . sin(\omega t + \theta)}
+\)</span>$</p>
+<p>This can be written in complex form:
+$<span class="math notranslate nohighlight">\(
+Z = Re(Z) + j. Im(z)
+\)</span>$</p>
+<p><strong>Data Presentation</strong></p>
+<p>Experimental results are usually shown in two ways: Nyquist plots and Bode plots.</p>
+<p>In a Nyquist plot, the real part of impedance is on the x-axis, and the negative imaginary part is on the y-axis. Each point shows the impedance at a specific frequency.</p>
+<p>A Bode plot uses a logarithmic frequency scale on the x-axis. It separately shows the magnitude and phase of impedance on the y-axes.
+Unlike Nyquist plots, Bode plots provide better frequency information.</p>
+<p>To study the electrochemical behavior, an equivalent electrical circuit (like the Randles circuit witch you can see below) is used. This circuit includes components such as:</p>
+<p>solution resistance(Rs): It models resistance of the electrolyte solution (e.g., ions in the liquid) This is the basic resistance of the medium (electrolyte) between the working and counter electrodes. It affects high-frequency behavior (leftmost intercept in Nyquist plot).</p>
+<p>double-layer capacitance(Cdl): It models capacitance of the electrode/electrolyte interface. At the electrode surface, a “double layer” of charges forms (electrons on metal side, ions on solution side). It behaves like a capacitor.</p>
+<p>Warburg impedance(Zw): It models diffusion-controlled impedance (mass transport of reactants/products). At low frequencies, ions move slowly and create diffusion-related impedance.</p>
+<p>charge transfer resistance(Rct): It models resistance to electron transfer across the electrode/electrolyte interface. This measures how easily the redox reaction happens. Higher Rct = slower electron transfer. It controls the diameter of the semicircle in the Nyquist plot.</p>
+<p>Constant Phase Element (CPE): It models imperfect or distributed capacitance (surface roughness, non-uniformities). Instead of a pure capacitor, real surfaces behave more irregularly — CPE generalizes capacitance to match real-world behavior better, where impedance depends on frequency non-ideally.</p>
+<p>each representing parts of the electrochemical cell.</p>
+<p>As we have in the Fig 5
+Experiments were conducted using the CHI660D electrochemical workstation with a redox couple
+<span class="math notranslate nohighlight">\([Fe(CN)_6]^{-3/-4}\)</span>
+on a screen-printed electrode in a 3-electrode setup. Impedance data was collected using a 5 mV signal over frequencies ranging from 1 Hz to 100 kHz.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Electrical equivalent Randles circuit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Dot</span><span class="p">(</span><span class="nb">open</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span>
+    <span class="n">L1</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="c1"># d += e.Line().up(1)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Double layer</span><span class="se">\n</span><span class="s1">capacitence&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mf">6.1</span><span class="p">)</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">ResistorIEC</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Constant phase</span><span class="se">\n</span><span class="s1">element&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Dot</span><span class="p">(</span><span class="nb">open</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">ResistorIEC</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Warburg element&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Charge transfer</span><span class="se">\n</span><span class="s1">resistance&#39;</span><span class="p">,</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">L1</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5b5efc3ad6f3786c227394922941a4e2a90fceb4dc53a6b43cdede8e833c96bf.svg" src="../../_images/5b5efc3ad6f3786c227394922941a4e2a90fceb4dc53a6b43cdede8e833c96bf.svg" />
+</div>
+</div>
+<p>The results were shown using both Nyquist and Bode plots, along with the equivalent circuit diagrams to explain the system behavior as we have in Fig5.</p>
+<p><img alt="5.a" src="../../_images/fig3_a.png" />
+<img alt="5.b" src="../../_images/fig3_b.png" />
+<img alt="5.c" src="../../_images/fig3_c.png" /></p>
+<p>Figure 5. (a) and (b) Bode plot diagram for magnitude vs. freq. and phase vs. freq. respectively,and (c) corresponding Nyquist plot</p>
+<p><img alt="6.a" src="../../_images/fig4_a.png" />
+<img alt="6.b" src="../../_images/fig4_b.png" /></p>
+<p>Figure 6. (a) Electrochemical workstation CHI660D from CH Instrument, Inc. (b) screen printed carbon electrode with reference (white), working (green),counter (red) electrodes.</p>
+</section>
+<section id="id4">
+<h2>Implementation of Impedance Spectroscopy in Biosensing<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Impedance spectroscopy (EIS) is widely used in biosensors for detecting harmful microorganisms, especially in medical diagnostics. It provides a fast, efficient, and label-free method to monitor microbial growth, using changes in electrical impedance.</p>
+<p><strong>Microbial Detection</strong></p>
+<p>Detecting bacteria like E. coli and Salmonella Typhimurium is important for human health. EIS can identify and measure bacterial growth by monitoring impedance changes in a simple two-electrode circuit. As bacteria grow, the electrical properties of the system change, which can be measured and analyzed.</p>
+<p>Two main types of impedance measurements are used:</p>
+<p>Non-Faradaic (no redox probe): Detects whole bacterial cells bound to the sensor surface.</p>
+<p>Faradaic (with redox probe): Detects biological interactions (e.g. antigen-antibody binding) by observing changes in charge transfer resistance.</p>
+<p>Early EIS biosensors used Faradaic methods with redox probes like <span class="math notranslate nohighlight">\([Fe(CN)_6]^{-3/-4}\)</span>
+For example, E. coli detection was achieved using a modified Indium Tin Oxide(ITO) chip with antibodies, showing high sensitivity and a low detection limit (LOD of <span class="math notranslate nohighlight">\(6.0×10^3\)</span> cells/mL).</p>
+<p>Another example is Salmonella detection using a modified glassy carbon electrode (GCE), enhanced with gold nanoparticles, carbon nanotubes, and chitosan nanoclusters. This sensor showed a linear response for concentrations from <span class="math notranslate nohighlight">\(10^3\)</span> to <span class="math notranslate nohighlight">\(10^7\)</span> CFU/mL and a low LOD of <span class="math notranslate nohighlight">\(5.0×10^3\)</span> CFU/mL.</p>
+<p>In summary, EIS is a powerful tool for sensitive, specific, and fast bacterial detection, and continues to improve with advancements in nanomaterials and sensor design.</p>
+<p><img alt="5" src="../../_images/fig51.png" /></p>
+<p>Fig 7. A simplified equivalent circuit of two electrode system in liquid electrolyte for impedance measurement.</p>
+</section>
+<section id="id5">
+<h2>Impedance Analysis Using IDE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Interdigitated microelectrode arrays (IDE or IDA) offer low resistance, high signal-to-noise ratio, fast response time, and require a smaller sample volume compared to traditional electrodes. That’s why they are widely used in modern biosensing platforms.</p>
+<p>IDE structures typically consist of two sets of comb-like electrode fingers, each containing multiple microelectrodes (as shown in Figure 6). The spacing between the “fingers” can be at the micro or nano scale. These designs enhance sensing performance and sometimes eliminate the need for surface modification.</p>
+<p><strong>Applications and Benefits</strong>
+A novel impedance-based immunosensor was developed for rapid detection of typhoid-causing bacteria using only 10 µL of sample.
+Gold nanoparticles (AuNPs) were used to label bacteria, enhancing signal strength and sensor selectivity.
+This sensor achieved a very low limit of detection (LOD) of 10² CFU/mL(The ability to detect bacteria up to 100 colony forming units(CFU) per milliliter of the sample).</p>
+<p><strong>Capacitive Sensors and Working Principle</strong>
+Some IDEs use capacitance measurement alone to detect biomolecules like DNA, proteins, etc., through antibody-antigen (Ab-Ag) interactions. These are called affinity-based capacitive biosensors.</p>
+<p>When target molecules bind to the electrode surface, changes occur in dielectric properties, surface charge, and conductivity, which can be measured.</p>
+<p><img alt="8" src="../../_images/fig61.png" /></p>
+<p>Figure 8. Dimensional representation of the simplified interdigitated electrode.</p>
+<p>Basic capacitance formula:
+$<span class="math notranslate nohighlight">\(
+c = \frac{A}{d} . \epsilon _0 . \epsilon_r
+\)</span>$</p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(A\)</span> = area of electrode</p>
+<p><span class="math notranslate nohighlight">\(d\)</span> = distance between plates</p>
+<p><span class="math notranslate nohighlight">\(\epsilon _0\)</span> = vacuum permittivity</p>
+<p><span class="math notranslate nohighlight">\(\epsilon_r\)</span> = relative permittivity of the medium</p>
+<p>Capacitance of an IDE sensor:
+$<span class="math notranslate nohighlight">\(
+C_{sensor} = \eta . \frac{\epsilon . l . t}{d}
+\)</span>$</p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(\eta\)</span> = number of electrode fingers</p>
+<p><span class="math notranslate nohighlight">\(\epsilon\)</span> = permittivity of the sensing layer</p>
+<p><span class="math notranslate nohighlight">\(l\)</span> = finger length</p>
+<p><span class="math notranslate nohighlight">\(t\)</span> = thickness of electrode fingers</p>
+<p><span class="math notranslate nohighlight">\(d\)</span> = gap between fingers</p>
+</section>
+<section id="recent-developments-in-eis-ad5933-impedance-analyzer">
+<h2>Recent developments in EIS: AD5933 Impedance Analyzer<a class="headerlink" href="#recent-developments-in-eis-ad5933-impedance-analyzer" title="Link to this heading">#</a></h2>
+<p>Recent developments in Electrochemical Impedance Spectroscopy (EIS) have led to the creation of more affordable, portable impedance analyzers, such as the AD5933 from Analog Devices. Traditional impedance measurement equipment, like the CHI660D or HP4194, while highly accurate, are bulky and expensive, making them impractical for small-scale or low-cost applications. The AD5933 offers a compact, cost-effective alternative suitable for medical and analytic uses.</p>
+<p><img alt="9" src="../../_images/fig71.png" /></p>
+<p>Figure 9. AD5933- pin configuration</p>
+<p>Unlike traditional bench-top equipment that supports wide frequency ranges (40 Hz to 110 MHz), the AD5933 is designed for smaller frequency sweeps, from 10 kHz to 100 kHz. It is a 16-pin integrated circuit (IC) mounted on an evolution board, which includes a microcontroller, a frequency generator, and a 1 MSPS analog-to-digital converter (ADC). The IC operates with a 16 MHz crystal for its system clock, and it communicates with a USB microcontroller via I2C. It can analyze impedance in the range of 1 kΩ to 10 MΩ, with additional circuitry enabling measurement from 100 Ω to 1000 Ω. The AD5933 uses a 27-bit phase accumulator for precise impedance spectrum measurements, with a frequency resolution of less than 0.1 Hz. It operates on a supply voltage of 2.7 V to 5.5 V, with all ground connections linked together. This makes it an efficient and affordable solution for applications that don’t require the full capabilities of larger, more expensive impedance analyzers.</p>
+</section>
+<section id="id6">
+<h2>Conclusion<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>Research and development in sensing technology is a popular field that combines biology and engineering. Impedance measurement is a method used to detect different biological species, and it works by using an array of electrodes. This method is easy to use and allows for simultaneous detection without needing labels or damaging the samples.</p>
+<p>Electrochemical Impedance Spectroscopy (EIS) is a very sensitive technique that can detect molecules at very low levels. Advances in polymers and nanotechnology have made it possible to improve this method for better results. Impedance microbiology, which detects bacterial growth, is a fast and automated process that gives results in about 24 hours, much quicker than other methods. Today, impedance measurement is being applied in small, portable devices based on microchips. These devices are highly specific, sensitive, and require only small sample sizes. EIS-based portable devices could be used for low-cost, precise systems for tasks like monitoring corrosion or heavy metal ions in real time. Further work is needed to improve impedance detection and make it a successful, commercially available product.</p>
+</section>
+<section id="id7">
+<h2>Refrences:<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Impedimetric Sensors: Principles, Applications and Recent Trends by Nitin Kumar Sharma, Abhimanyu Nain, Kuldeep Singh, Nisha Rani, Anuj Singal</p></li>
+<li><p>Lee Y.H, Mutharasan R. (2005), Biosensors, Sensor Technology Handbook (pp. 161-180).</p></li>
+<li><p>Thévenot DR, Toth K, Durst RA, Wilson GS. Electrochemical biosensors: recommended definitions and classification. Analytical Letters. 2001 Mar 31;34(5):635-59.</p></li>
+<li><p>Goudar SK, Das BB, Arya SB. Combined Effect of Marine Environment and pH on the Impedance of Reinforced Concrete Studied by Electrochemical Impedance Spectroscopy. InSustainable Construction and Building Materials 2019(pp635-649). Springer, Singapore.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Impedimetric_Sensors"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../ACToDc/ACTODC.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Convert AC to DC</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Impedimetric Sensors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-information">Author Information</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-content">Table of Content:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1- Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrochemical-sensors">2- Electrochemical Sensors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundementals-of-electrochemical-impedance-spectroscopy">3- Fundementals of Electrochemical Impedance Spectroscopy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-of-impedance-spectroscopy-in-biosensing">4- Implementation of Impedance Spectroscopy in Biosensing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impedance-analysis-using-ide">5- Impedance Analysis Using IDE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recent-developments-in-eis">6- Recent developments in EIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">7- Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">8- Refrences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Electrochemical Sensors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fundementals of Electrochemical Impedance Spectroscopy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Implementation of Impedance Spectroscopy in Biosensing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Impedance Analysis Using IDE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recent-developments-in-eis-ad5933-impedance-analyzer">Recent developments in EIS: AD5933 Impedance Analyzer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Refrences:</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

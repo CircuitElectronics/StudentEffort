@@ -1,0 +1,84 @@
+Traceback (most recent call last):
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Hadi\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from PySpice.Spice.Netlist import Circuit
+from PySpice.Probe.Plot import plot
+import matplotlib.pyplot as plt
+
+# Create a new circuit
+circuit = Circuit("Darlington Pair")
+
+# Define the SPICE model directly in the script
+circuit.model('2N2222', 'NPN', 
+    IS=1e-14, BF=200, NF=1, VAF=100, IKF=0.3, 
+    ISE=2e-14, NE=1.5, BR=3, NR=1, VAR=50, IKR=0.05, 
+    ISC=1e-13, NC=2, 
+    RB=10, RC=0.3, RE=0.2, 
+    CJE=2e-12, VJE=0.75, MJE=0.33, TF=400e-12, 
+    CJC=2e-12, VJC=0.75, MJC=0.33, TR=50e-9
+)
+
+# Define the Darlington pair
+# First transistor
+circuit.BJT(1, 'NODE1', 'BASE', 'EMITTER', model='2N2222')  
+# Second transistor
+circuit.BJT(2, 'OUT', 'NODE1', 'EMITTER', model='2N2222')
+
+# Add resistors and voltage source
+circuit.R(1, 'BASE', 'V_IN', 1e3)      # Base resistor
+circuit.R(2, 'OUT', 'GND', 10)         # Load resistor
+circuit.V(1, 'V_IN', 'GND', 2)         # Input voltage source (start at 2V to bias properly)
+
+# Simulate the circuit
+simulator = circuit.simulator(temperature=25, nominal_temperature=25)
+analysis = simulator.dc(V1=slice(2, 5, 0.1))  # Sweep the input voltage from 2V to 5V
+
+# Plot the output
+plt.figure(figsize=(10, 6))
+plt.plot(analysis['V_IN'], analysis['OUT'], label='Vout vs Vin')
+plt.title('Darlington Pair Output')
+plt.xlabel('Input Voltage (V)')
+plt.ylabel('Output Voltage (V)')
+plt.grid()
+plt.legend()
+plt.show()
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mSpice[39;00m[34;01m.[39;00m[34;01mNetlist[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Circuit
+[32m      2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mProbe[39;00m[34;01m.[39;00m[34;01mPlot[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plot
+[32m      3[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[34;01m.[39;00m[34;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mplt[39;00m
+
+[31mModuleNotFoundError[39m: No module named 'PySpice'
+

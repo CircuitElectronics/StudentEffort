@@ -1,0 +1,102 @@
+Traceback (most recent call last):
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Hadi\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+from matplotlib import pyplot as plt
+from PySpice.Probe.Plot import plot
+from PySpice.Spice.Library import SpiceLibrary
+from PySpice.Spice.Netlist import Circuit
+from PySpice.Unit import *
+#from PySpice.Spice.Simulation import Transient
+from PySpice.Probe.Plot import plot
+
+# Define the circuit
+circuit = Circuit('RC Circuit with Custom Source')
+
+# Define a time-dependent voltage source
+def custom_waveform(t):
+    return 60 * np.exp(-2 * t) * np.cos(4 * t + np.radians(10))#10
+
+# Add the custom voltage source using a PWL approximation
+time_points = np.arange(0, 10, 1e-2)  # time from 0 to 10ms in 10us steps
+voltage_points = [custom_waveform(t) for t in time_points]
+
+circuit.V(1, 'input', circuit.gnd, 'PWL(' + ' '.join(f'{t} {v}' for t, v in zip(time_points, voltage_points)) + ')')
+
+# Add components
+circuit.R(1, 'input', 'a', 2 @ u_Ω)
+circuit.L(1, 'a', 'b', 3 @ u_H)
+circuit.C(1, 'b', circuit.gnd, 0.1 @ u_F)
+
+# Perform transient analysis
+simulator = circuit.simulator(temperature=25, nominal_temperature=25)
+#simulator.initial_condition(a = 0, b=0) #very important, causes to achive forced response
+analysis = simulator.transient(step_time=0.01 @ u_s, end_time= 10000 @ u_ms)
+
+# Plot the results
+figure, axe = plt.subplots(figsize=(20, 10))
+
+# Plot input voltage
+axe.plot(analysis.time, analysis['input'])
+axe.set_xlabel('Time [s]')
+axe.set_ylabel('Voltage [V]', color='blue')
+axe.legend(['Input Voltage'], loc='upper right')
+axe.grid()
+
+# Add a secondary y-axis for current
+axe_current = axe.twinx()
+
+# Calculate and plot current (I = V/R for a simple resistor, use voltage drop for more complex circuits)
+voltage_across_resistor = analysis['input'] - analysis['a']
+current_through_resistor = voltage_across_resistor / 2  # R = 2Ω`
+axe_current.plot(analysis.time, current_through_resistor, color='red')
+axe_current.set_ylabel('Current [A]', color='red')
+axe_current.legend(['Current'], loc='upper left')
+
+
+
+plt.title('RC Circuit with Custom Source')
+plt.show()
+
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 3[39m
+[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
+[32m      2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m pyplot [38;5;28;01mas[39;00m plt
+[32m----> [39m[32m3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mProbe[39;00m[34;01m.[39;00m[34;01mPlot[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plot
+[32m      4[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mSpice[39;00m[34;01m.[39;00m[34;01mLibrary[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m SpiceLibrary
+[32m      5[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mSpice[39;00m[34;01m.[39;00m[34;01mNetlist[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Circuit
+
+[31mModuleNotFoundError[39m: No module named 'PySpice'
+

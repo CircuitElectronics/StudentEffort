@@ -1,0 +1,76 @@
+Traceback (most recent call last):
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Hadi\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import PySpice.Logging.Logging as Logging
+logger = Logging.setup_logging()
+
+from PySpice.Spice.Netlist import Circuit
+from PySpice.Unit import *
+
+circuit = Circuit('Independent Voltage Sources')
+
+# Voltage source V1
+circuit.V(1, 'A', circuit.gnd, 10@u_V)  # V1 = 10V
+
+# Define SPST switch model and add it to the circuit
+circuit.model('MySwitch', 'sw', ron=1@u_Ω, roff=1@u_MΩ, vt=0.5@u_V, vh=0.1@u_V)
+
+# Adding control nodes for the switch (switch starts in the open state)
+circuit.S(1, 'A', 'B', 'A', circuit.gnd, model='MySwitch')
+
+# Resistor R1 = 5Ω connected between node B and ground
+resistor = circuit.R(1, 'B', circuit.gnd, 5@u_Ω)
+
+# Create a simulator object
+simulator = circuit.simulator(temperature=25, nominal_temperature=25)
+analysis = simulator.operating_point()
+
+# Extract node voltages
+voltage_A = float(analysis['A'])
+voltage_B = float(analysis['B'])
+
+# Calculate the current through the resistor branch
+resistor_current = (voltage_B - 0) / 5  # I = V / R (Ohm's law)
+
+# Print results
+print(f"Current of the R: {resistor_current:.0f} A")
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mLogging[39;00m[34;01m.[39;00m[34;01mLogging[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mLogging[39;00m
+[32m      2[39m logger = Logging.setup_logging()
+[32m      4[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mSpice[39;00m[34;01m.[39;00m[34;01mNetlist[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Circuit
+
+[31mModuleNotFoundError[39m: No module named 'PySpice'
+

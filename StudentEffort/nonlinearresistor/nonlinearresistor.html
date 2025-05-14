@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Explanation of a Nonlinear Resistor &#8212; Dr.Hadi Sadoghi Yazdi</title>
+    <title>Nonlinear Resistors: Analysis and Visualization &#8212; Dr.Hadi Sadoghi Yazdi</title>
   
   
   
@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -60,6 +57,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/nonlinearresistor/nonlinearresistor';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -67,7 +66,6 @@
     <link rel="prev" title="Switches" href="../SwitchesAliAkhavan/Switches1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -92,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -99,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -116,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,17 +156,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -186,6 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
@@ -253,16 +267,7 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Explanation of a Nonlinear Resistor</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Nonlinear Resistors: Analysis and Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
 
 
@@ -327,11 +332,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
@@ -375,6 +376,64 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
 <ul class="nav bd-sidenav">
@@ -534,16 +593,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -557,7 +624,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Explanation of a Nonlinear Resistor</h1>
+    <h1>Nonlinear Resistors: Analysis and Visualization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -567,31 +634,25 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Explanation of a Nonlinear Resistor</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-resistor">What Is a Resistor?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-a-resistor">Definition of a Resistor:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resistive-materials">Resistive Materials:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-of-resistance">Unit of Resistance:</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-resistors-in-electronic-circuits">Applications of Resistors in Electronic Circuits:</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-in-circuit-design">Importance in Circuit Design:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-nonlinear-resistors">Characteristics of Nonlinear Resistors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-nonlinear-resistors">Examples of Nonlinear Resistors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-modeling">Mathematical Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-diode">Example: Diode</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-thermistor">Example: Thermistor</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-with-schemdraw">Visualization with schemdraw</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-with-pyspice">Simulation with PySpice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-thermistor-equation">Example Using Thermistor Equation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-nonlinear-resistors">Applications of Nonlinear Resistors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-non-linear-resistor">What is Non-linear resistor?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#varistor">Varistor</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-summary">code summary</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thermistor">Thermistor</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#photo-resistor">Photo Resistor</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-mount">Surface mount</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consolution">consolution</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">sources</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -602,191 +663,255 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="explanation-of-a-nonlinear-resistor">
-<h1>Explanation of a Nonlinear Resistor<a class="headerlink" href="#explanation-of-a-nonlinear-resistor" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="nonlinear-resistors-analysis-and-visualization">
+<h1>Nonlinear Resistors: Analysis and Visualization<a class="headerlink" href="#nonlinear-resistors-analysis-and-visualization" title="Link to this heading">#</a></h1>
 <p>author: Reza Mohammadi</p>
 <p>email: <a class="reference external" href="mailto:mohamadi&#46;reza&#37;&#52;&#48;mail&#46;um&#46;ac&#46;ir">mohamadi<span>&#46;</span>reza<span>&#64;</span>mail<span>&#46;</span>um<span>&#46;</span>ac<span>&#46;</span>ir</a></p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Nonlinear resistors are components whose resistance changes with the voltage across them or the current passing through them. Unlike linear resistors, their voltage-current (V-I) relationship is not a straight line, making their behavior more complex and requiring advanced analysis techniques.</p>
+<p>This notebook provides an overview of nonlinear resistors, including their characteristics, mathematical modeling, applications, and circuit analysis. We’ll use Python libraries such as <code class="docutils literal notranslate"><span class="pre">schemdraw</span></code> for visualizing circuits and <code class="docutils literal notranslate"><span class="pre">PySpice</span></code> for simulating and analyzing their behavior.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="what-is-a-resistor">
-<h1>What Is a Resistor?<a class="headerlink" href="#what-is-a-resistor" title="Link to this heading">#</a></h1>
-<section id="definition-of-a-resistor">
-<h2>Definition of a Resistor:<a class="headerlink" href="#definition-of-a-resistor" title="Link to this heading">#</a></h2>
-<p>A resistor is an electrical component designed to limit the flow of current in a circuit. It is a passive two-terminal device, meaning it consumes energy but does not produce or store it.</p>
-<section id="resistive-materials">
-<h3>Resistive Materials:<a class="headerlink" href="#resistive-materials" title="Link to this heading">#</a></h3>
-<p>Resistors are made from materials that resist the flow of electric current. These materials include:</p>
-<p>Glass: A good insulator with high resistance.
-Mica: Known for its high resistance and thermal stability, making it useful in specific applications.
-Wood and Rubber: Typically considered insulating materials but can exhibit resistive properties in certain conditions.</p>
-<section id="unit-of-resistance">
-<h4>Unit of Resistance:<a class="headerlink" href="#unit-of-resistance" title="Link to this heading">#</a></h4>
-<p>Resistance is measured in ohms (Ω). One ohm is the resistance between two points of a conductor when a current of 1 ampere flows through it under a potential difference of 1 volt.</p>
-<section id="applications-of-resistors-in-electronic-circuits">
-<h5>Applications of Resistors in Electronic Circuits:<a class="headerlink" href="#applications-of-resistors-in-electronic-circuits" title="Link to this heading">#</a></h5>
-<p>Signal Level Adjustment: Used to control or reduce the current or voltage in a circuit.
-Current Limiting: Preventing excessive current that could damage components.
-Biasing Active Elements: Setting the operating conditions for active components such as transistors.
-Termination of Transmission Lines: Avoiding signal reflection in transmission lines.
-Voltage Division: Creating different voltage levels from a single fixed voltage source.</p>
+<section id="characteristics-of-nonlinear-resistors">
+<h2>Characteristics of Nonlinear Resistors<a class="headerlink" href="#characteristics-of-nonlinear-resistors" title="Link to this heading">#</a></h2>
+<section id="examples-of-nonlinear-resistors">
+<h3>Examples of Nonlinear Resistors<a class="headerlink" href="#examples-of-nonlinear-resistors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Diodes</strong>: Exhibit exponential V-I characteristics.</p></li>
+<li><p><strong>Zener Diodes</strong>: Show breakdown behavior at a specific reverse voltage.</p></li>
+<li><p><strong>Varistors</strong>: Used for voltage clamping with a highly nonlinear resistance.</p></li>
+<li><p><strong>Thermistors</strong>: Resistances vary with temperature (NTC/PTC types).</p></li>
+</ul>
 </section>
-<section id="importance-in-circuit-design">
-<h5>Importance in Circuit Design:<a class="headerlink" href="#importance-in-circuit-design" title="Link to this heading">#</a></h5>
-<p>Resistors play a crucial role in the design of electronic circuits. They not only help in precise control of current and voltage but also protect components from damage caused by overcurrent or overvoltage. Furthermore, carefully designed resistor configurations can enhance the stability and performance of circuits.</p>
-<p><img alt="type of resistor" src="StudentEffort/nonlinearresistor/pic%5CDifferent-Types-of-Resistors-Updated-2.png" /></p>
+<section id="mathematical-modeling">
+<h3>Mathematical Modeling<a class="headerlink" href="#mathematical-modeling" title="Link to this heading">#</a></h3>
+<p>Nonlinear resistors are often characterized by their voltage-current relationship, which can be described using equations:</p>
+<section id="example-diode">
+<h4>Example: Diode<a class="headerlink" href="#example-diode" title="Link to this heading">#</a></h4>
+<p>The Shockley diode equation is:
+[
+$<span class="math notranslate nohighlight">\(I = I_S \left( e^{\frac{V}{n V_T}} - 1 \right)\)</span>$
+]
+Where:</p>
+<ul class="simple">
+<li><p>( I ): Current through the diode</p></li>
+<li><p>( V ): Voltage across the diode</p></li>
+<li><p>( I_S ): Reverse saturation current</p></li>
+<li><p>( n ): Ideality factor (typically between 1 and 2)</p></li>
+<li><p>( V_T ): Thermal voltage, ( $<span class="math notranslate nohighlight">\(V_T = \frac{kT}{q} \)</span>$)</p></li>
+</ul>
+</section>
+<section id="example-thermistor">
+<h4>Example: Thermistor<a class="headerlink" href="#example-thermistor" title="Link to this heading">#</a></h4>
+<p>For an NTC thermistor, the resistance ( R ) as a function of temperature ( T ) is given by:
+[
+$<span class="math notranslate nohighlight">\(R(T) = R_0 e^{\beta \left( \frac{1}{T} - \frac{1}{T_0} \right)}\)</span>$
+]
+Where:</p>
+<ul class="simple">
+<li><p>( <span class="math notranslate nohighlight">\(R_0 \)</span>): Resistance at reference temperature ( <span class="math notranslate nohighlight">\(T_0 \)</span>)</p></li>
+<li><p>( <span class="math notranslate nohighlight">\(\beta \)</span>): Material constant</p></li>
+<li><p>( T ): Absolute temperature (in Kelvin)</p></li>
+</ul>
 </section>
 </section>
 </section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="what-is-non-linear-resistor">
-<h1>What is Non-linear resistor?<a class="headerlink" href="#what-is-non-linear-resistor" title="Link to this heading">#</a></h1>
-<p>Non-linear resistors are resistors that exhibit a change in electric current based on variations in applied voltage or temperature,
-rather than following Ohm’s law. Unlike linear resistors,
-where the current remains proportional to the voltage,
-non-linear resistors have a more complex relationship between voltage and current.
-This means that their resistance can vary significantly under different conditions.
-There are various types of non-linear resistors, each serving specific applications in electronic circuits.
-Some of the most commonly used non-linear resistors include thermistors,
-which change resistance with temperature, and varistors, which adjust their resistance based on voltage changes.
-These components are essential in protecting circuits, sensing temperature changes,
-and in various other applications where variable resistance is required.</p>
-<p><img alt="type of resistor" src="StudentEffort/nonlinearresistor/pic%5Ctypes_of_resistors.jpg" /></p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="varistor">
-<h1>Varistor<a class="headerlink" href="#varistor" title="Link to this heading">#</a></h1>
-<p>A varistor, also known as a Voltage Dependent Resistor (VDR),
-is a type of resistor whose resistance changes with the applied voltage.
-When the voltage across the varistor increases, its resistance decreases,
-allowing more current to pass through. Conversely, as the voltage decreases,
-the resistance increases, limiting the current flow.
-This property makes varistors particularly useful for protecting circuits from voltage spikes and surges.
-They are commonly employed in applications such as surge protection devices and transient voltage suppression.
-By dynamically adjusting their resistance in response to voltage changes,
-varistors help maintain circuit integrity and prevent damage from excessive voltage.
-Overall, they play a crucial role in enhancing the reliability of electronic systems.</p>
-<p><img alt="varistor" src="StudentEffort/nonlinearresistor/pic%5Cvaristors.jpg" /></p>
+<section id="visualization-with-schemdraw">
+<h2>Visualization with schemdraw<a class="headerlink" href="#visualization-with-schemdraw" title="Link to this heading">#</a></h2>
+<p>Let’s start by visualizing a simple circuit containing a nonlinear resistor (e.g., a diode):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
+<span class="c1"># Create a schematic drawing using schemdraw</span>
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
-    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">)</span>
-    
-    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">ResistorVar</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R_non-linear&#39;</span><span class="p">)</span>
-    
-    <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
+    <span class="c1"># Add a voltage source (Vcc)</span>
+    <span class="n">vcc</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Vcc&#39;</span><span class="p">))</span>  
 
+    <span class="c1"># Add a wire to the right of the voltage source</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  
+
+    <span class="c1"># Add the first resistor (R1) to the right of the wire</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R1&#39;</span><span class="p">))</span>  
+
+    <span class="c1"># Add another wire to the right of R1</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  
+
+    <span class="c1"># Add the second resistor (R2) to the right of the wire</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R2&#39;</span><span class="p">))</span>  
+
+    <span class="c1"># Add a wire going down from R2</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  
+
+    <span class="c1"># Add a diode (D1) below the wire</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Diode</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;D1&#39;</span><span class="p">))</span>  
+
+    <span class="c1"># Add a wire going left from D1</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  
+
+    <span class="c1"># Add the third resistor (R3) to the left of the wire</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R3&#39;</span><span class="p">))</span>  
+
+    <span class="c1"># Add another wire going left from R3</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>  
+
+    <span class="c1"># Add a wire connecting back to the starting point of Vcc</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">vcc</span><span class="o">.</span><span class="n">start</span><span class="p">))</span>  
+
+    <span class="c1"># Render the drawing</span>
     <span class="n">d</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/abee45a823d8f2b051f47996dc7d2bc2253063094c6e71f9d6c370d64f96be31.svg" src="../../_images/abee45a823d8f2b051f47996dc7d2bc2253063094c6e71f9d6c370d64f96be31.svg" />
+<img alt="../../_images/643e4b901cbefad482c675cf328ef12ed95e0b427b057bcaace9dcaca5b25d32.svg" src="../../_images/643e4b901cbefad482c675cf328ef12ed95e0b427b057bcaace9dcaca5b25d32.svg" />
 </div>
 </div>
+<p><strong>Explanation</strong>: The above code uses the <code class="docutils literal notranslate"><span class="pre">schemdraw</span></code> library to draw a closed circuit diagram with a voltage source, a resistor, and a diode connected in series. The <code class="docutils literal notranslate"><span class="pre">label</span></code> method annotates each element for clarity.</p>
+<p><img alt="Simple Circuit with Diode" src="https://tse2.mm.bing.net/th?id=OIP.3RmNFAIw74yVp7xPPZuspwHaEF&amp;pid=Api" /></p>
+<p><img alt="Diode V-I Characteristics" src="https://tse2.mm.bing.net/th?id=OIP.6aZ-X_SyqsMgci43eX3SYAHaEz&amp;pid=Api" /></p>
+</section>
+<section id="simulation-with-pyspice">
+<h2>Simulation with PySpice<a class="headerlink" href="#simulation-with-pyspice" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Probe.Plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Library</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpiceLibrary</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">circuit</span><span class="p">:</span>
-    <span class="n">circuit</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>  
-    <span class="n">circuit</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">ResistorVar</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Nonlinear Resistor&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>  
-    <span class="n">circuit</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>  
-    <span class="n">circuit</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
+<span class="c1"># Create a new circuit with the name &#39;Simple Circuit&#39;</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Simple Circuit&#39;</span><span class="p">)</span>
 
+<span class="c1"># Add a DC voltage source (V1) with 12V connected between &#39;Vcc&#39; and ground</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Vcc&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">12</span><span class="nd">@u_V</span><span class="p">)</span>
 
-<span class="n">V</span> <span class="o">=</span> <span class="mi">12</span>  
-<span class="k">def</span> <span class="nf">resistance</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
-    
-    <span class="k">return</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">I</span><span class="o">**</span><span class="mi">2</span>
+<span class="c1"># Add a resistor (R1) of 1 kOhm between &#39;Vcc&#39; and &#39;node1&#39;</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Vcc&#39;</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_kOhm</span><span class="p">)</span>
 
+<span class="c1"># Add another resistor (R2) of 2 kOhm between &#39;node1&#39; and &#39;node2&#39;</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;node1&#39;</span><span class="p">,</span> <span class="s1">&#39;node2&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_kOhm</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">equation</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">V</span> <span class="o">-</span> <span class="n">I</span> <span class="o">*</span> <span class="n">resistance</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="c1"># Add a diode (D1) between &#39;node2&#39; and &#39;node3&#39;</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;node2&#39;</span><span class="p">,</span> <span class="s1">&#39;node3&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 
+<span class="c1"># Add a resistor (R3) of 3 kOhm between &#39;node3&#39; and ground</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;node3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">3</span><span class="nd">@u_kOhm</span><span class="p">)</span>
 
-<span class="n">I_initial</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="c1"># Specify the path to the SPICE model library</span>
+<span class="n">spice_library</span> <span class="o">=</span> <span class="n">SpiceLibrary</span><span class="p">(</span><span class="s1">&#39;/usr/share/ngspice/models&#39;</span><span class="p">)</span>
 
+<span class="c1"># Define a diode model &#39;D&#39; with its characteristics</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">1e-14</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">BV</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">IBV</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
 
-<span class="n">I_solution</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">I_initial</span><span class="p">)</span>
+<span class="c1"># Create a simulator object for the circuit and set the simulation temperature</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The current through the nonlinear resistor is approximately </span><span class="si">{</span><span class="n">I_solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> A.&quot;</span><span class="p">)</span>
+<span class="c1"># Perform a DC sweep analysis for the voltage source V1 from -5V to 5V with a step of 0.01V</span>
+<span class="n">dc_analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">V1</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">))</span>
+
+<span class="c1"># Extract voltages at different nodes during the DC sweep</span>
+<span class="n">node1_voltages</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">dc_analysis</span><span class="p">[</span><span class="s1">&#39;node1&#39;</span><span class="p">][</span><span class="n">step</span><span class="p">])</span> <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dc_analysis</span><span class="o">.</span><span class="n">sweep</span><span class="p">))]</span>
+<span class="n">node2_voltages</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">dc_analysis</span><span class="p">[</span><span class="s1">&#39;node2&#39;</span><span class="p">][</span><span class="n">step</span><span class="p">])</span> <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dc_analysis</span><span class="o">.</span><span class="n">sweep</span><span class="p">))]</span>
+<span class="n">node3_voltages</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">dc_analysis</span><span class="p">[</span><span class="s1">&#39;node3&#39;</span><span class="p">][</span><span class="n">step</span><span class="p">])</span> <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dc_analysis</span><span class="o">.</span><span class="n">sweep</span><span class="p">))]</span>
+<span class="n">source_voltages</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">dc_analysis</span><span class="o">.</span><span class="n">sweep</span><span class="p">[</span><span class="n">step</span><span class="p">])</span> <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dc_analysis</span><span class="o">.</span><span class="n">sweep</span><span class="p">))]</span>
+
+<span class="c1"># Plot the voltage at each node as a function of the source voltage</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">source_voltages</span><span class="p">,</span> <span class="n">node1_voltages</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Voltage at node1 (R1-R2)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">source_voltages</span><span class="p">,</span> <span class="n">node2_voltages</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Voltage at node2 (R2-D1)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">source_voltages</span><span class="p">,</span> <span class="n">node3_voltages</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Voltage at node3 (D1-R3)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Analysis of the Circuit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Voltage Source (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>  <span class="c1"># Add a horizontal line at y=0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>  <span class="c1"># Add a vertical line at x=0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ff2851557a009323bc5cbd223ff3ef590b1a7cd29b650272331b1648ea5cf72f.svg" src="../../_images/ff2851557a009323bc5cbd223ff3ef590b1a7cd29b650272331b1648ea5cf72f.svg" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The current through the nonlinear resistor is approximately 1.08 A.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Probe.Plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Library</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpiceLibrary</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;PySpice&#39;
 </pre></div>
 </div>
 </div>
 </div>
+<section id="example-using-thermistor-equation">
+<h3>Example Using Thermistor Equation<a class="headerlink" href="#example-using-thermistor-equation" title="Link to this heading">#</a></h3>
+<p>We can also model the behavior of a thermistor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Define constants for the thermistor</span>
+<span class="n">R0</span> <span class="o">=</span> <span class="mf">10e3</span>  <span class="c1"># Resistance at reference temperature (10 kOhms)</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mf">298.15</span>  <span class="c1"># Reference temperature in Kelvin (25°C)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">3950</span>  <span class="c1"># Beta constant of the thermistor</span>
+
+<span class="c1"># Generate temperature values from 0°C to 100°C (in Kelvin)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">273.15</span><span class="p">,</span> <span class="mf">373.15</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Calculate resistance using the thermistor equation</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">R0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">T</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">T0</span><span class="p">))</span>
+
+<span class="c1"># Plot the resistance as a function of temperature</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>  <span class="c1"># Convert temperature to Celsius for the x-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Thermistor Resistance vs. Temperature&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature (°C)&#39;</span><span class="p">)</span>  <span class="c1"># Label for temperature in Celsius</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Resistance (Ohms)&#39;</span><span class="p">)</span>  <span class="c1"># Label for resistance in Ohms</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/49d1d999046175e78e5ce6f7ef0bb0834583741dff1fea8c3a751e0215e26677.png" src="../../_images/49d1d999046175e78e5ce6f7ef0bb0834583741dff1fea8c3a751e0215e26677.png" />
+</div>
+</div>
+<p><strong>Explanation</strong>: This code models the resistance-temperature relationship of an NTC thermistor using its characteristic equation. It calculates resistance values over a temperature range and visualizes the results in a plot.</p>
+<p><img alt="Thermistor Resistance vs. Temperature" src="https://tse3.mm.bing.net/th?id=OIP.1egyb447YjCx89cpAghuVgHaEo&amp;pid=Api" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="code-summary">
-<h1>code summary<a class="headerlink" href="#code-summary" title="Link to this heading">#</a></h1>
-<p>1.A circuit consisting of a voltage source and a nonlinear resistor is drawn.</p>
-<p>2.The resistor’s value is determined using the function 𝑅=10+I^2</p>
-<p>3.The circuit’s current is calculated by solving the equation V - I.R(I) = 0</p>
-<p>4.The calculated current value is displayed to the user.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="thermistor">
-<h1>Thermistor<a class="headerlink" href="#thermistor" title="Link to this heading">#</a></h1>
-<p>Thermal resistors, also known as thermistors, are components whose resistance changes with temperature.
-As the temperature rises, the resistance of a thermal resistor typically decreases,
-and when the temperature falls, the resistance increases.
-This property makes thermistors useful for measuring and controlling temperature in various applications.
-They are commonly employed in temperature sensors and control systems,
-where precise temperature monitoring is essential.
-Their sensitivity to temperature changes allows them to provide accurate feedback for regulating heating or cooling processes.</p>
-<p>The main types of thermistors are NTC and PTC.
-NTC is Negative Temperature Coefficient and in such devices, the resistance decreases as the temperature increases.
-These are used to protect the devices from over-voltage conditions.
-PTC is Positive Temperature Coefficient and in such devices, the resistance increases as the temperature increases.
-These are used to protect the devices from over current conditions.
-The following figure shows an NTC thermistor, along with its symbol.</p>
-<p><img alt="thermistor" src="StudentEffort/nonlinearresistor/pic%5Cthermistor.jpg" /></p>
+<section id="applications-of-nonlinear-resistors">
+<h2>Applications of Nonlinear Resistors<a class="headerlink" href="#applications-of-nonlinear-resistors" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Voltage Regulation</strong>: Zener diodes in power supplies.</p></li>
+<li><p><strong>Surge Protection</strong>: Varistors in electrical systems.</p></li>
+<li><p><strong>Temperature Sensing</strong>: Thermistors in HVAC systems.</p></li>
+<li><p><strong>Clamping Circuits</strong>: Protecting sensitive electronics from overvoltage.</p></li>
+<li><p><strong>Power Control</strong>: SCRs in AC and DC systems.</p></li>
+<li><p><strong>Lighting</strong>: Gas discharge and neon lamps in displays and indicators.</p></li>
+</ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="photo-resistor">
-<h1>Photo Resistor<a class="headerlink" href="#photo-resistor" title="Link to this heading">#</a></h1>
-<p>Photoresistors, commonly known as Light Dependent Resistors (LDRs),
-are components whose resistance changes in response to light intensity. As the amount of light increases,
-the resistance of the LDR decreases, allowing more current to flow through. Conversely, when light intensity decreases,
-the resistance increases, restricting current flow.
-This unique property enables LDRs to be effectively used for measurement and control applications,
-such as in light sensors and automatic lighting systems.
-They play a crucial role in various electronic circuits, including those that require light detection and regulation.
-Overall, LDRs are essential for creating responsive systems that adjust based on ambient light conditions.</p>
-<p><img alt="photo resistor" src="StudentEffort/nonlinearresistor/pic%5Cphoto_resistor.jpg" /></p>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Nonlinear resistors play a critical role in modern electronics. Their ability to respond dynamically to changing voltage and current conditions enables their use in various applications, from power regulation to sensing and protection. Understanding their behavior through mathematical modeling and simulation is crucial for designing effective and efficient circuits.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="surface-mount">
-<h1>Surface mount<a class="headerlink" href="#surface-mount" title="Link to this heading">#</a></h1>
-<p>These are being highly used since the introduction of surface mount technology.
-These can be termed as chip resistors, which means a resistive layer integrated on a ceramic chip.</p>
-<p>These surface mount resistors are very small when compared to the normal resistors and hence occupy less space.
-They are effective and dissipate less heat. The invention of these resistors has changed the look of a PCB PrintedCircuitBoard
-and reduced its size greatly.</p>
-<p>The advantages of surface mount resistors are −</p>
-<p>These are compact in size.</p>
-<p>These are very stable.</p>
-<p>They have good tolerance.</p>
-<p>They are effective in reducing heat dissipation.</p>
-<p>The following figure shows the images of surface mount resistors.</p>
-<p><img alt="surface mount" src="StudentEffort/nonlinearresistor/pic%5Csurface_mount.jpg" /></p>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Sedra, A. S., &amp; Smith, K. C. (2020). <em>Microelectronic Circuits</em>.</p></li>
+<li><p>Paul W. Tuinenga. (2019). <em>SPICE: A Guide to Circuit Simulation and Analysis.</em></p></li>
+<li><p><a class="reference external" href="https://pyspice.fabrice-salvaire.fr/">PySpice Documentation</a></p></li>
+<li><p><a class="reference external" href="https://schemdraw.readthedocs.io/">Schemdraw Documentation</a></p></li>
+<li><p><a class="reference external" href="https://tse3.mm.bing.net/th?id=OIP.smtNNsx69Cb50yXfkHASTgHaEK&amp;amp;pid=Api">Image: Diode Circuit</a></p></li>
+<li><p><a class="reference external" href="https://tse2.mm.bing.net/th?id=OIP.6aZ-X_SyqsMgci43eX3SYAHaEz&amp;amp;pid=Api">Image: Diode V-I Characteristics</a></p></li>
+<li><p><a class="reference external" href="https://tse3.mm.bing.net/th?id=OIP.1egyb447YjCx89cpAghuVgHaEo&amp;amp;pid=Api">Image: Thermistor Resistance vs. Temperature</a></p></li>
+</ol>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="consolution">
-<h1>consolution<a class="headerlink" href="#consolution" title="Link to this heading">#</a></h1>
-<p>Non-linear resistors do not follow Ohm’s law and exhibit varying behavior with changes in voltage or temperature.
-Types include thermistors, whose resistance changes with temperature, and varistors, which adjust resistance based on voltage. Thermistors are used for temperature measurement and control, while varistors protect circuits from voltage surges.
-Photoresistors (LDRs) change resistance with light intensity and are used in light sensors and automatic lighting systems. The advent of surface-mount technology (SMT) introduced compact chip resistors that save space and reduce heat dissipation, transforming PCB design. Thermistors are classified into NTC (resistance decreases with temperature) and PTC (resistance increases with temperature), used for over-voltage and over-current protection, respectively.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sources">
-<h1>sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://www.tutorialspoint.com/basic_electronics/basic_electronics_nonlinear_resistors.htm">https://www.tutorialspoint.com/basic_electronics/basic_electronics_nonlinear_resistors.htm</a></p>
-<p><a class="reference external" href="https://byjus.com/physics/types-of-resistors/#:~:text=Non%2Dlinear%20resistors%20are%20those,commonly%20used%20are%20mentioned%20below">https://byjus.com/physics/types-of-resistors/#:~:text=Non-linear resistors are those,commonly used are mentioned below</a>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -844,8 +969,7 @@ Photoresistors (LDRs) change resistance with light intensity and are used in lig
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -854,31 +978,25 @@ Photoresistors (LDRs) change resistance with light intensity and are used in lig
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Explanation of a Nonlinear Resistor</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-resistor">What Is a Resistor?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-a-resistor">Definition of a Resistor:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resistive-materials">Resistive Materials:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-of-resistance">Unit of Resistance:</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-resistors-in-electronic-circuits">Applications of Resistors in Electronic Circuits:</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-in-circuit-design">Importance in Circuit Design:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-nonlinear-resistors">Characteristics of Nonlinear Resistors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-nonlinear-resistors">Examples of Nonlinear Resistors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-modeling">Mathematical Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-diode">Example: Diode</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-thermistor">Example: Thermistor</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-with-schemdraw">Visualization with schemdraw</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-with-pyspice">Simulation with PySpice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-thermistor-equation">Example Using Thermistor Equation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-nonlinear-resistors">Applications of Nonlinear Resistors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-non-linear-resistor">What is Non-linear resistor?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#varistor">Varistor</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-summary">code summary</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thermistor">Thermistor</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#photo-resistor">Photo Resistor</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-mount">Surface mount</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consolution">consolution</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">sources</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
@@ -926,8 +1044,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

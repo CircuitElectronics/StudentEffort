@@ -1,0 +1,113 @@
+Traceback (most recent call last):
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Hadi\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from PySpice.Spice.Netlist import Circuit
+from PySpice.Unit import *
+from PySpice.Probe.Plot import plot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define the circuit
+circuit = Circuit('Common Source MOSFET Amplifier')
+
+circuit.V(1, 'Vdd', circuit.gnd, 15@u_V)  # Supply voltage = 15V
+circuit.R(1, 'Vdd', 'Gate', 50@u_kΩ)     # R_1 = 50 kΩ
+circuit.R(2, 'Gate', circuit.gnd, 20@u_kΩ)  # R_2 = 20 kΩ
+circuit.R(3, 'Vdd', 'Drain', 2@u_kΩ)      # R_D = 2 kΩ
+circuit.R(4, 'Source', circuit.gnd, 500@u_Ω)  # R_S = 500 Ω
+circuit.R(5, circuit.gnd, 'Output', 10@u_kΩ)  # R_L = 10 kΩ
+circuit.C(1, 'Vin', 'Gate', 10@u_uF)      # C_1 = 10 μF
+circuit.C(2, 'Drain', 'Output', 10@u_uF)  # C_2 = 10 μF
+circuit.SinusoidalVoltageSource(2, 'Vin', circuit.gnd, amplitude=1@u_V, frequency=1@u_kHz)
+circuit.M(1, 'Drain', 'Gate', 'Source', circuit.gnd, model='NMOS')
+circuit.model('NMOS', 'NMOS', kp=2e-3, vto=2, lambda_=0.01)
+
+# Perform simulation
+simulator = circuit.simulator(temperature=25, nominal_temperature=25)
+analysis = simulator.transient(step_time=1@u_us, end_time=5@u_ms)
+
+# Extract input and output voltages as arrays
+input_voltage = np.array([float(v) for v in analysis['Vin']])
+output_voltage = np.array([float(v) for v in analysis['Output']])
+
+# Calculate the peak-to-peak voltage for input and output
+v_in_peak_to_peak = np.max(input_voltage) - np.min(input_voltage)
+v_out_peak_to_peak = np.max(output_voltage) - np.min(output_voltage)
+
+# Calculate voltage gain (Av = Vout_peak_to_peak / Vin_peak_to_peak)
+voltage_gain = v_out_peak_to_peak / v_in_peak_to_peak
+
+# Calculate maximum and minimum voltages
+v_in_max = np.max(input_voltage)
+v_in_min = np.min(input_voltage)
+v_out_max = np.max(output_voltage)
+v_out_min = np.min(output_voltage)
+
+# Print results
+print(f"Input Voltage Peak-to-Peak: {v_in_peak_to_peak:.2f} V")
+print(f"Output Voltage Peak-to-Peak: {v_out_peak_to_peak:.2f} V")
+print(f"Voltage Gain (Av): {voltage_gain:.2f}")
+print(f"Input Voltage Max: {v_in_max:.2f} V, Min: {v_in_min:.2f} V")
+print(f"Output Voltage Max: {v_out_max:.2f} V, Min: {v_out_min:.2f} V")
+
+# Plot the waveforms
+plt.figure(figsize=(12, 8))
+plt.plot(analysis.time, analysis['Vin'], label='Input Voltage (Vin)')
+plt.plot(analysis.time, analysis['Output'], label='Output Voltage (Vout)')
+
+# Annotate maximum and minimum points on the graph
+plt.annotate(f'Max: {v_in_max:.2f} V', xy=(analysis.time[np.argmax(input_voltage)], v_in_max),
+             xytext=(-50, 10), textcoords='offset points', arrowprops=dict(arrowstyle='->'), fontsize=10, color='blue')
+plt.annotate(f'Min: {v_in_min:.2f} V', xy=(analysis.time[np.argmin(input_voltage)], v_in_min),
+             xytext=(-50, -30), textcoords='offset points', arrowprops=dict(arrowstyle='->'), fontsize=10, color='blue')
+plt.annotate(f'Max: {v_out_max:.2f} V', xy=(analysis.time[np.argmax(output_voltage)], v_out_max),
+             xytext=(50, 10), textcoords='offset points', arrowprops=dict(arrowstyle='->'), fontsize=10, color='orange')
+plt.annotate(f'Min: {v_out_min:.2f} V', xy=(analysis.time[np.argmin(output_voltage)], v_out_min),
+             xytext=(50, -30), textcoords='offset points', arrowprops=dict(arrowstyle='->'), fontsize=10, color='orange')
+
+plt.title('Common Source MOSFET Amplifier')
+plt.xlabel('Time (s)')
+plt.ylabel('Voltage (V)')
+plt.legend()
+plt.grid()
+plt.show()
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mSpice[39;00m[34;01m.[39;00m[34;01mNetlist[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Circuit
+[32m      2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mUnit[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m *
+[32m      3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mProbe[39;00m[34;01m.[39;00m[34;01mPlot[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plot
+
+[31mModuleNotFoundError[39m: No module named 'PySpice'
+

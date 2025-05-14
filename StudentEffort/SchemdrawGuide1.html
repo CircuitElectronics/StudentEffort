@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -67,7 +64,6 @@
     <link rel="prev" title="Diode Characteristic Curve" href="DiodeCharacteristicCurve.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,8 +79,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -92,6 +99,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -99,8 +107,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -116,8 +124,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,17 +154,21 @@
     
     
     <img src="../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -186,6 +197,7 @@
 <li class="toctree-l1"><a class="reference internal" href="PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Supermesh/Supermesh.html">Supermesh</a></li>
@@ -253,16 +265,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="nonlinearresistor/nonlinearresistor.html">Explanation of a Nonlinear Resistor</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
 
 
@@ -327,11 +330,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LDRpresentation/LDR.html">LDR sensor</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="LinearNonLinear/linearnonlinearlevel.html">linear-nonlinear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
@@ -375,6 +374,65 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ACToDc/ACTODC.html">Convert AC to DC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Impedimetric_Sensors/impedimetric_Sensors.html">Impedimetric Sensors</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
 <ul class="nav bd-sidenav">
@@ -534,16 +592,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -779,8 +845,8 @@ here are some features that schemdraw has:</p>
 <section id="id4">
 <h2>4. Basic Element Drawing<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>To start using schemdraw you should import the library:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span> 
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span> 
 </pre></div>
 </div>
 <p>schemdraw provides a variety of components to create circuit diagrams. Here are the most common elements(elm):
@@ -792,8 +858,8 @@ Grounds: <code class="docutils literal notranslate"><span class="pre">e.Ground()
 <p>Elements instantiated insde a with block are automatically added to the Drawing. The Drawing maintains a current position and direction, such that the default placement of the next element will start at the end of the previous element, going in the same direction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">e</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span>
@@ -803,7 +869,7 @@ Grounds: <code class="docutils literal notranslate"><span class="pre">e.Ground()
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ec0c9ce21fb89dd39c827eca7be5f39b0b9e88c3b5693a19573ba7f9fe0afd53.svg" src="../_images/ec0c9ce21fb89dd39c827eca7be5f39b0b9e88c3b5693a19573ba7f9fe0afd53.svg" />
+<img alt="../_images/c91f671e62c6091702cd63b3783575bb2b8a387a8fd42bbda208f5a86559ae2b.svg" src="../_images/c91f671e62c6091702cd63b3783575bb2b8a387a8fd42bbda208f5a86559ae2b.svg" />
 </div>
 </div>
 <section id="here-is-a-simple-line-of-a-circut-including-a-capacitor-a-resistor-and-a-diode">
@@ -812,8 +878,8 @@ Grounds: <code class="docutils literal notranslate"><span class="pre">e.Ground()
 the element is rotated in that direction, and future elements take the same direction:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">e</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span>
@@ -823,7 +889,7 @@ the element is rotated in that direction, and future elements take the same dire
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7e35b254e69f61cbad7526c26bcb40eec38cbbe310d3a41fbcb9a12981f72a7a.svg" src="../_images/7e35b254e69f61cbad7526c26bcb40eec38cbbe310d3a41fbcb9a12981f72a7a.svg" />
+<img alt="../_images/7546527ebdccd30dfcaf61126149b6995d208de61a3ea694c965a949c3dc7ea9.svg" src="../_images/7546527ebdccd30dfcaf61126149b6995d208de61a3ea694c965a949c3dc7ea9.svg" />
 </div>
 </div>
 </section>
@@ -831,8 +897,8 @@ the element is rotated in that direction, and future elements take the same dire
 <h3>here is the same line. but in this one we can see that the direction has changed after the Capacitors due the <code class="docutils literal notranslate"><span class="pre">.up()</span></code> command<a class="headerlink" href="#here-is-the-same-line-but-in-this-one-we-can-see-that-the-direction-has-changed-after-the-capacitors-due-the-up-command" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span>  <span class="c1"># Draws a resistor</span>
@@ -842,7 +908,7 @@ the element is rotated in that direction, and future elements take the same dire
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/525cf008909a9e203d8c59d7928b652c8541f43334a89cddeb82cf6dd811b67a.svg" src="../_images/525cf008909a9e203d8c59d7928b652c8541f43334a89cddeb82cf6dd811b67a.svg" />
+<img alt="../_images/3bc7c5404e4153924dd6f3dec71f24988af6d85c9f97a92fa8dde4fdfcfb50d6.svg" src="../_images/3bc7c5404e4153924dd6f3dec71f24988af6d85c9f97a92fa8dde4fdfcfb50d6.svg" />
 </div>
 </div>
 </section>
@@ -850,8 +916,8 @@ the element is rotated in that direction, and future elements take the same dire
 <h3>here is a simple line which connects to the ground because of the <code class="docutils literal notranslate"><span class="pre">elm.Ground()</span></code> command<a class="headerlink" href="#here-is-a-simple-line-which-connects-to-the-ground-because-of-the-elm-ground-command" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">e</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">d</span> <span class="o">+=</span> <span class="n">e</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
@@ -861,7 +927,7 @@ the element is rotated in that direction, and future elements take the same dire
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ef5b4a5c9e8e9a51216674974ef66213ded8d2bd7ba7127aa805d3c5f4a67a60.svg" src="../_images/ef5b4a5c9e8e9a51216674974ef66213ded8d2bd7ba7127aa805d3c5f4a67a60.svg" />
+<img alt="../_images/8100ca36b84d0095a1fea171ba8c63d4d161efb4ad9081ed24ddda5ca27f7106.svg" src="../_images/8100ca36b84d0095a1fea171ba8c63d4d161efb4ad9081ed24ddda5ca27f7106.svg" />
 </div>
 </div>
 </section>
@@ -884,7 +950,7 @@ The theta method can be used to specify any rotation angle in degrees.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/364eecff892e55f3b5300d136dc4fb68c90c65890e77ab24289133803dafff17.svg" src="../_images/364eecff892e55f3b5300d136dc4fb68c90c65890e77ab24289133803dafff17.svg" />
+<img alt="../_images/a2b36a675a1bc68de66f19a9a8dcc4c9f5ffdc35635c37cb530d483d4d31a439.svg" src="../_images/a2b36a675a1bc68de66f19a9a8dcc4c9f5ffdc35635c37cb530d483d4d31a439.svg" />
 </div>
 </div>
 <section id="in-this-example-you-can-see-that-it-is-possible-to-rotate-the-element-in-any-direction-we-want">
@@ -899,8 +965,8 @@ More complex line routing requires multiple Line elements. The <code class="docu
 The <code class="docutils literal notranslate"><span class="pre">k</span></code> parameter is used to set the distance before the wire first changes direction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">d</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span>  <span class="c1"># Add a battery</span>
@@ -912,7 +978,7 @@ The <code class="docutils literal notranslate"><span class="pre">k</span></code>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9f270c76da529b61803fbd2c017b3584552845aef9079b284dcbc216b35e357c.svg" src="../_images/9f270c76da529b61803fbd2c017b3584552845aef9079b284dcbc216b35e357c.svg" />
+<img alt="../_images/625054ea4dcb72f233101f3b7a2cb480de5119632661f28a8ff8a91138571140.svg" src="../_images/625054ea4dcb72f233101f3b7a2cb480de5119632661f28a8ff8a91138571140.svg" />
 </div>
 </div>
 <section id="as-expected-and-described-in-the-comments-of-the-code-the-circuit-has-been-created">
@@ -936,7 +1002,7 @@ For example, to draw an opamp and place a resistor on the output, store the Opam
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e2fb9741cc74b508b72be9bb16769046d7c13312418c2e47974260b9c9c62906.svg" src="../_images/e2fb9741cc74b508b72be9bb16769046d7c13312418c2e47974260b9c9c62906.svg" />
+<img alt="../_images/f8e58fb117a692e534d3269c5717e20875b65848e0d7e6078e426f32ed7d0782.svg" src="../_images/f8e58fb117a692e534d3269c5717e20875b65848e0d7e6078e426f32ed7d0782.svg" />
 </div>
 </div>
 </section>
@@ -958,7 +1024,7 @@ For example, to draw an opamp and place a resistor on the output, store the Opam
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/816365f75f3eb12500bb6c457a33dc7b31570b8cddf0a9a46cf03db4c8f154a6.svg" src="../_images/816365f75f3eb12500bb6c457a33dc7b31570b8cddf0a9a46cf03db4c8f154a6.svg" />
+<img alt="../_images/2ca5e57645c38929bdf9451f2b3486d8e8446453156f746c870e49bb540bd24a.svg" src="../_images/2ca5e57645c38929bdf9451f2b3486d8e8446453156f746c870e49bb540bd24a.svg" />
 </div>
 </div>
 </section>
@@ -978,7 +1044,7 @@ For example, to draw an opamp and place a resistor on the output, store the Opam
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6dc64fa2eb2775f8b7c701e94b569415a25409dd076c83331576878031f90640.svg" src="../_images/6dc64fa2eb2775f8b7c701e94b569415a25409dd076c83331576878031f90640.svg" />
+<img alt="../_images/2dcfb681afce2a1d2d1b9bbaa9929e060d05fb8e9fcb98f79449b537d2669316.svg" src="../_images/2dcfb681afce2a1d2d1b9bbaa9929e060d05fb8e9fcb98f79449b537d2669316.svg" />
 </div>
 </div>
 </section>
@@ -994,7 +1060,7 @@ For example, to draw an opamp and place a resistor on the output, store the Opam
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9a0cee45f7e5e15871485ca62aaf1cce90323a2e225c3a712d22eba452e570d2.svg" src="../_images/9a0cee45f7e5e15871485ca62aaf1cce90323a2e225c3a712d22eba452e570d2.svg" />
+<img alt="../_images/7feb379a943131ecf8c18289c85b746fe2f037829220cfe1a906bd73c558f2e7.svg" src="../_images/7feb379a943131ecf8c18289c85b746fe2f037829220cfe1a906bd73c558f2e7.svg" />
 </div>
 </div>
 </section>
@@ -1013,7 +1079,7 @@ Notice the Diode is stretched longer than the standard element length in order t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7ff7e4453a8432f2e70be36726b1529f17a54a119ea7cd72d15e2ceeb661eeaf.svg" src="../_images/7ff7e4453a8432f2e70be36726b1529f17a54a119ea7cd72d15e2ceeb661eeaf.svg" />
+<img alt="../_images/768ca9dc9c1a9fe14405be7ae0495866961331f8cee855400e7e9f357d2f3056.svg" src="../_images/768ca9dc9c1a9fe14405be7ae0495866961331f8cee855400e7e9f357d2f3056.svg" />
 </div>
 </div>
 </section>
@@ -1043,7 +1109,7 @@ These methods automatically change the drawing direction. Here, the Line element
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8f180ec88765e527ce640b89f0955b4d2047c38e157e84a5416100395271a89a.svg" src="../_images/8f180ec88765e527ce640b89f0955b4d2047c38e157e84a5416100395271a89a.svg" />
+<img alt="../_images/bb4c81e3adcf0b7ce35a97ef733488b6b4ae62d6c4abb2d3f9c62146c6cd3301.svg" src="../_images/bb4c81e3adcf0b7ce35a97ef733488b6b4ae62d6c4abb2d3f9c62146c6cd3301.svg" />
 </div>
 </div>
 </section>
@@ -1062,7 +1128,7 @@ These methods automatically change the drawing direction. Here, the Line element
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/baf82349b86a37200230ecf37a007d158c36bfc7a8e76b186eec5d56b1d16f02.svg" src="../_images/baf82349b86a37200230ecf37a007d158c36bfc7a8e76b186eec5d56b1d16f02.svg" />
+<img alt="../_images/62728b7a3568c8d78cf77afcb674f81dbe9bad1326f965e27a06c7ebe54c1b98.svg" src="../_images/62728b7a3568c8d78cf77afcb674f81dbe9bad1326f965e27a06c7ebe54c1b98.svg" />
 </div>
 </div>
 </section>
@@ -1079,7 +1145,7 @@ These methods automatically change the drawing direction. Here, the Line element
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c8f42d0a80aac74c5cfd93373d68ce5ccb1b870b65b6f3d583438af0f67baf0c.svg" src="../_images/c8f42d0a80aac74c5cfd93373d68ce5ccb1b870b65b6f3d583438af0f67baf0c.svg" />
+<img alt="../_images/d523c638dc713825f709c3e7cc4a8e2701920a9a7dc66d48c38dc371722bf7d0.svg" src="../_images/d523c638dc713825f709c3e7cc4a8e2701920a9a7dc66d48c38dc371722bf7d0.svg" />
 </div>
 </div>
 <section id="note">
@@ -1101,7 +1167,7 @@ These methods automatically change the drawing direction. Here, the Line element
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18d69d4900b9a0c45f0c8d568494b29d86bcae1b4ae28754500fef2d63e65750.svg" src="../_images/18d69d4900b9a0c45f0c8d568494b29d86bcae1b4ae28754500fef2d63e65750.svg" />
+<img alt="../_images/70063f0063b5354475e19c3f27d05533a58dc3451d7372d69de2b4536835caa6.svg" src="../_images/70063f0063b5354475e19c3f27d05533a58dc3451d7372d69de2b4536835caa6.svg" />
 </div>
 </div>
 <section id="in-the-second-with-a-second-drawing-was-added-and-the-first-drawing-was-added-to-it-3-times">
@@ -1122,7 +1188,7 @@ These methods automatically change the drawing direction. Here, the Line element
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aa335ed38bdd8066de667afff1337782b1a0d8af60a7488e0cce34fcd5ef42f3.svg" src="../_images/aa335ed38bdd8066de667afff1337782b1a0d8af60a7488e0cce34fcd5ef42f3.svg" />
+<img alt="../_images/7e0e0b2110c7de82114a4329e7f325dce2665e0a74121775a438aa12025cf827.svg" src="../_images/7e0e0b2110c7de82114a4329e7f325dce2665e0a74121775a438aa12025cf827.svg" />
 </div>
 </div>
 <section id="here-is-a-simple-one-we-will-see-more-complicated-labeled-circuits-in-the-following-section">
@@ -1148,7 +1214,7 @@ These methods automatically change the drawing direction. Here, the Line element
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ff46824251c28733420c39b647d3beaab0ade5595fbcf7824a13f3485352b61c.svg" src="../_images/ff46824251c28733420c39b647d3beaab0ade5595fbcf7824a13f3485352b61c.svg" />
+<img alt="../_images/5b7c9ed49c9e1a4be8cd190cdf96c3198a76d9e00d33f40f9131b641d4201c23.svg" src="../_images/5b7c9ed49c9e1a4be8cd190cdf96c3198a76d9e00d33f40f9131b641d4201c23.svg" />
 </div>
 </div>
 <section id="you-can-see-the-switch-and-the-t-0-part">
@@ -1174,7 +1240,7 @@ These methods automatically change the drawing direction. Here, the Line element
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b23871662223ec8b1c8f0980de7dbc758e7524f1e371b6917ece976ac7982d2c.svg" src="../_images/b23871662223ec8b1c8f0980de7dbc758e7524f1e371b6917ece976ac7982d2c.svg" />
+<img alt="../_images/5b9881a6791a622c71a419fde1aa68576f89473e41f01584bd3a14ef9ad002b0.svg" src="../_images/5b9881a6791a622c71a419fde1aa68576f89473e41f01584bd3a14ef9ad002b0.svg" />
 </div>
 </div>
 </section>
@@ -1206,7 +1272,7 @@ These methods automatically change the drawing direction. Here, the Line element
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ec8d956dee2d8470d4fafc3e0c0def82c23afc242545ff90c4830ab68252dd09.svg" src="../_images/ec8d956dee2d8470d4fafc3e0c0def82c23afc242545ff90c4830ab68252dd09.svg" />
+<img alt="../_images/7ce5a5d3c286f11a1d960f0e2ddfa0cba128df0ae6e5c5fe7eeebaba667ed289.svg" src="../_images/7ce5a5d3c286f11a1d960f0e2ddfa0cba128df0ae6e5c5fe7eeebaba667ed289.svg" />
 </div>
 </div>
 <section id="expected-circuit-was-made">
@@ -1243,7 +1309,7 @@ This also demonstrates the <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4a0d5facbf7157c25c627a855b16c64fe73f2614ff03ebc817e9f56b647dd63e.svg" src="../_images/4a0d5facbf7157c25c627a855b16c64fe73f2614ff03ebc817e9f56b647dd63e.svg" />
+<img alt="../_images/f41f9cdaeb923ce2deb1a3b8308c78c0ea0bdca1a2dfc0ecaa3fa7f6e616cf29.svg" src="../_images/f41f9cdaeb923ce2deb1a3b8308c78c0ea0bdca1a2dfc0ecaa3fa7f6e616cf29.svg" />
 </div>
 </div>
 <section id="here-is-a-infinite-looped-circuit">
@@ -1303,7 +1369,7 @@ Also note the use of newline characters inside resistor and capacitor labels.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/11672727ff6684859eedcd782467202948791bf4de2e78deaed2f5ca57aaf456.svg" src="../_images/11672727ff6684859eedcd782467202948791bf4de2e78deaed2f5ca57aaf456.svg" />
+<img alt="../_images/e517de01b20cf5d5b2f9dfd3b9ccfcbabfb94f54a8aa116b91b2f9d2706fc3f3.svg" src="../_images/e517de01b20cf5d5b2f9dfd3b9ccfcbabfb94f54a8aa116b91b2f9d2706fc3f3.svg" />
 </div>
 </div>
 <section id="here-is-an-example-including-everything-we-mentioned">
@@ -1379,8 +1445,7 @@ Also note the use of newline characters inside resistor and capacitor labels.</p
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1527,8 +1592,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

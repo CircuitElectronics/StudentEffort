@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="What is a Varactor Diode?" href="../VaractorDiode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -188,6 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
@@ -209,7 +221,8 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
@@ -217,12 +230,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Switches-AliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
 
 
@@ -253,6 +260,181 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Convert AC to DC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Impedimetric_Sensors/impedimetric_Sensors.html">Impedimetric Sensors</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
 <ul class="nav bd-sidenav">
@@ -412,16 +594,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -707,8 +897,8 @@ A = \frac{Cd}{\kappa \epsilon_0} = 113,000,000 sq. meters
 <p>Consider the below circuit:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span> <span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Switch</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Switch&#39;</span><span class="p">)</span>
@@ -720,7 +910,7 @@ A = \frac{Cd}{\kappa \epsilon_0} = 113,000,000 sq. meters
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/81f9b468a3870f7650fbd872a8358292258b58308ea5a7b83f1c59fd85958ac4.svg" src="../../_images/81f9b468a3870f7650fbd872a8358292258b58308ea5a7b83f1c59fd85958ac4.svg" />
+<img alt="../../_images/bb48181f1695470e267d81615232b8953fd46e9da44d9ee4913ab87ff3337c13.svg" src="../../_images/bb48181f1695470e267d81615232b8953fd46e9da44d9ee4913ab87ff3337c13.svg" />
 </div>
 </div>
 <section id="charge-curve">
@@ -730,8 +920,8 @@ charged, no further current flows. At that time, the voltage across the capacito
 <p>If we call the potential applied by the function generator during the positive half cycle V, then <strong><span class="math notranslate nohighlight">\( V = V_R + V_C = iR + \frac{q}{C} \)</span></strong>. The current, i, is <span class="math notranslate nohighlight">\( \frac {dq}{dt} \)</span>, and we have <span class="math notranslate nohighlight">\( V = \frac {dq}{dt}\times R + \frac{q}{C} \)</span>. The solution to this differential equation is <span class="math notranslate nohighlight">\( q = C\times V\times (1 - e^{-\frac{t}{RC})} \)</span>. Since the voltage across the capacitor is <span class="math notranslate nohighlight">\(\frac{q}{C}\)</span>, we can also write this as <span class="math notranslate nohighlight">\( V_C = V\times (1 - e^{-\frac{t}{RC}})\)</span>, which gives us the voltage across the capacitor as a function of time.Diagram below illustrates three charging curves, each approaching the same end point but along different paths.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define the constants</span>
 <span class="n">R1</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># ohms</span>
@@ -770,7 +960,7 @@ charged, no further current flows. At that time, the voltage across the capacito
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3e8bac2e3b3188990531232fa0806f207d9e74e7f5833e90fff05c604d300cfd.png" src="../../_images/3e8bac2e3b3188990531232fa0806f207d9e74e7f5833e90fff05c604d300cfd.png" />
+<img alt="../../_images/e66d4bb3b60b0eb9433722e6144185bf2788f2224d018ba2fa2ccf82a19db54e.png" src="../../_images/e66d4bb3b60b0eb9433722e6144185bf2788f2224d018ba2fa2ccf82a19db54e.png" />
 </div>
 </div>
 </section>
@@ -790,8 +980,8 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 <p><strong>Note</strong> : The reason why the time axis is considered as 5 to the characteristic time is that the duration of charging the capacitor is approximately this value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Parameters</span>
 <span class="n">V</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># initial voltage in volts</span>
@@ -818,7 +1008,7 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a7a948202a797f21a0c87bc0125af53900b09baaa277add5d4351019ca3ba7a6.png" src="../../_images/a7a948202a797f21a0c87bc0125af53900b09baaa277add5d4351019ca3ba7a6.png" />
+<img alt="../../_images/b0bd73ed87c99773115ba7329d5954bf365af9f1dcc0a4bd8c8a1a3ecaaf5f51.png" src="../../_images/b0bd73ed87c99773115ba7329d5954bf365af9f1dcc0a4bd8c8a1a3ecaaf5f51.png" />
 </div>
 </div>
 </section>
@@ -844,8 +1034,8 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Switch</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;switch1&#39;</span><span class="p">)</span>
@@ -861,7 +1051,7 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a6fd2cd525469f983e74765031af3bef8d72b36b882f7dcd461e5bb977df9899.svg" src="../../_images/a6fd2cd525469f983e74765031af3bef8d72b36b882f7dcd461e5bb977df9899.svg" />
+<img alt="../../_images/d9c5237bf7abcbffa16e9cf3c59d5d6d63024454e3f4b1e2ab7c473bfafea8a7.svg" src="../../_images/d9c5237bf7abcbffa16e9cf3c59d5d6d63024454e3f4b1e2ab7c473bfafea8a7.svg" />
 </div>
 </div>
 </section>
@@ -881,8 +1071,8 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 <p>The plot below  is showing a situation where the voltage is <strong>flactuating</strong>.What is really wanted is a straight line(shown with red line in above figure) across this graph representing a <strong>steady DC voltage</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Source</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;power supply&#39;</span><span class="p">,</span><span class="n">rotate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
@@ -900,14 +1090,14 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6b7faab0574744f746fd2e2b75f973a000f0d6a7d7d0602924b102f4eef612ec.svg" src="../../_images/6b7faab0574744f746fd2e2b75f973a000f0d6a7d7d0602924b102f4eef612ec.svg" />
+<img alt="../../_images/2b258c91310f739aee7ce5ce6741225188b1e9a03d4280b0853cdaeda3916cb2.svg" src="../../_images/2b258c91310f739aee7ce5ce6741225188b1e9a03d4280b0853cdaeda3916cb2.svg" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Create a circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Fluctuating DC Voltage&#39;</span><span class="p">)</span>
@@ -940,7 +1130,7 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dc1035a00ca456e725819b03c65652f91cc1eef71b8a305a0577e880f60e4d5d.png" src="../../_images/dc1035a00ca456e725819b03c65652f91cc1eef71b8a305a0577e880f60e4d5d.png" />
+<img alt="../../_images/d635a88e5822aed22494d6828220871993e487d8fc058008919dc1ee490a9493.png" src="../../_images/d635a88e5822aed22494d6828220871993e487d8fc058008919dc1ee490a9493.png" />
 </div>
 </div>
 <p><strong>3-1-2 Circuit with capacitor:</strong></p>
@@ -955,8 +1145,8 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 <p>With the voltage at zero and the capacitor discharged, turn the supply on. As the voltage begins to rise, some current will flow to charge the capacitor while the rest passes through the resistor. Some time before the capacitor is completely charged, the voltage from the supply will begin to decline. As soon as the supply voltage is below the capacitor voltage, the capacitor will begin to discharge, and current will flow from the capacitor, tending to maintain the voltage across the resistor. If the value of capacitance is chosen correctly, the capacitor cannot be totally discharged during the time available, and the capacitor will be charged once more as the supply voltage exceeds the capacitor voltage.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Source</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;power supply&#39;</span><span class="p">,</span><span class="n">rotate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
@@ -972,14 +1162,14 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e79b1c98b3d06fe1b4094010bc205603e0a32578693a765ba83cbf45c5390954.svg" src="../../_images/e79b1c98b3d06fe1b4094010bc205603e0a32578693a765ba83cbf45c5390954.svg" />
+<img alt="../../_images/d9cf0812ca811f23a32eec2ac227ddaa2a3f0c492efb03bd6535b3cce196566f.svg" src="../../_images/d9cf0812ca811f23a32eec2ac227ddaa2a3f0c492efb03bd6535b3cce196566f.svg" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Create a circuit</span>
 <span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Fluctuating DC Voltage&#39;</span><span class="p">)</span>
@@ -1012,7 +1202,7 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4cb46ad16f139f20188d750e6d0ee3f52446b002a3ddefdc6a01422974703101.png" src="../../_images/4cb46ad16f139f20188d750e6d0ee3f52446b002a3ddefdc6a01422974703101.png" />
+<img alt="../../_images/24797264cdcfc255686d7cdd70bc5ee714394fe7b4eca401f7f38786e09b2ee4.png" src="../../_images/24797264cdcfc255686d7cdd70bc5ee714394fe7b4eca401f7f38786e09b2ee4.png" />
 </div>
 </div>
 </section>
@@ -1021,8 +1211,8 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 <p>When a capacitor is subjected to alternating current, to the capacitor, it looks just like DC which is flowing in and flowing out again. The capacitor is alternately being charged, discharged, and then recharged in the opposite direction before being discharged again. One important fact to note is that the capacitor can never block the flow of AC but instead permits a steady flow of current.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;AC generator&#39;</span><span class="p">)</span>
@@ -1033,15 +1223,15 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8c59ca4d8572b07c54930524e5e90b229f5c883ca60d3413566d995634932cac.svg" src="../../_images/8c59ca4d8572b07c54930524e5e90b229f5c883ca60d3413566d995634932cac.svg" />
+<img alt="../../_images/d6ab8df5d5c951cc9e411b6f6a794600f925dd6a10cca7625ea1db3ff95afb52.svg" src="../../_images/d6ab8df5d5c951cc9e411b6f6a794600f925dd6a10cca7625ea1db3ff95afb52.svg" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define different capacitance values</span>
 <span class="n">capacitance_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="nd">@u_uF</span><span class="p">,</span> <span class="mi">10</span><span class="nd">@u_uF</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_uF</span><span class="p">]</span>  <span class="c1"># 1µF, 10µF, 100µF</span>
@@ -1092,7 +1282,7 @@ In the plot below you can see the voltage across resistor while capacitor is cha
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9d693dfa4e92c997dd94bcaa392c18a880af56adb4acde2603afa67949e6a1c4.png" src="../../_images/9d693dfa4e92c997dd94bcaa392c18a880af56adb4acde2603afa67949e6a1c4.png" />
+<img alt="../../_images/686a3020446724b1027f24e9e1ef783994cd10a7320a25ff0b6160e37d5b76bd.png" src="../../_images/686a3020446724b1027f24e9e1ef783994cd10a7320a25ff0b6160e37d5b76bd.png" />
 </div>
 </div>
 </section>
@@ -1124,10 +1314,10 @@ As you see, the voltage across the capacitor also has a sinusoidal curve.</p>
 <p><strong>Note:</strong>  As you see, these plots are not completely sinusoidal but in bigger capacitace, it is more obvious.The reason is that a capacitor in an RC circuit will not pass high-frequency components well, and depending on the time constant (𝜏=𝑅⋅𝐶), it may smooth out the sinusoidal input voltage. This is especially true for larger capacitance values like 100 µF. The output voltage across the capacitor might be a smoother version of the input signal rather than a perfect sine wave.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Spice.Netlist</span><span class="w"> </span><span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PySpice.Unit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define the frequencies to simulate</span>
 <span class="n">frequencies</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="nd">@u_Hz</span><span class="p">,</span> <span class="mi">50</span><span class="nd">@u_Hz</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_Hz</span><span class="p">]</span>
@@ -1164,9 +1354,9 @@ As you see, the voltage across the capacitor also has a sinusoidal curve.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3d6c4ff0b7a3aa6afa115d2669d7e12aadfabcc23f8bdfb24b8b27d575119925.png" src="../../_images/3d6c4ff0b7a3aa6afa115d2669d7e12aadfabcc23f8bdfb24b8b27d575119925.png" />
-<img alt="../../_images/8cbbdaa3768baa318fc0c07568d9c7684eb5de86bc7a075890b19e251bcd0674.png" src="../../_images/8cbbdaa3768baa318fc0c07568d9c7684eb5de86bc7a075890b19e251bcd0674.png" />
-<img alt="../../_images/db9ee5e8186fff655229b314a44a1d609383d434d1e4caa0ce6f840f1a082378.png" src="../../_images/db9ee5e8186fff655229b314a44a1d609383d434d1e4caa0ce6f840f1a082378.png" />
+<img alt="../../_images/c6737fefab2bef068bae0e6efc3fbf055c8440a87e83a98f0064bd1680713a82.png" src="../../_images/c6737fefab2bef068bae0e6efc3fbf055c8440a87e83a98f0064bd1680713a82.png" />
+<img alt="../../_images/f99177c77d4a05c1b103267d594c57ad0255f06a2307bf751d2a8490e1ac7dfa.png" src="../../_images/f99177c77d4a05c1b103267d594c57ad0255f06a2307bf751d2a8490e1ac7dfa.png" />
+<img alt="../../_images/6350bc5cf89bb77ec2564f997009c9b96d43b6df6b48ca08045e5b1f4adc4274.png" src="../../_images/6350bc5cf89bb77ec2564f997009c9b96d43b6df6b48ca08045e5b1f4adc4274.png" />
 </div>
 </div>
 </section>
@@ -1227,8 +1417,8 @@ Where:</p>
 <p>In the picture below you can see all of them :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">SourceSin</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;AC generator&#39;</span><span class="p">)</span>
@@ -1239,7 +1429,7 @@ Where:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d5a0cfd4c552f374d3fd0ac6ac471ff4ea05adf36d3d3015f367843cf3b8eff7.svg" src="../../_images/d5a0cfd4c552f374d3fd0ac6ac471ff4ea05adf36d3d3015f367843cf3b8eff7.svg" />
+<img alt="../../_images/06fa1367d73263439c9a12d3a8967d97e5ccbd24569cdd5b4c6047a4a729370b.svg" src="../../_images/06fa1367d73263439c9a12d3a8967d97e5ccbd24569cdd5b4c6047a4a729370b.svg" />
 </div>
 </div>
 </section>
@@ -1297,8 +1487,8 @@ Z = X_L - X_C = 2\pi f L - \frac{1}{2\pi f C}
 \)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define the frequency range (logarithmic scale)</span>
 <span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># from 1 Hz to 100 GHz</span>
@@ -1328,7 +1518,7 @@ Z = X_L - X_C = 2\pi f L - \frac{1}{2\pi f C}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4e0c2736b6ef664734e2bf2b68ae6913055e5abfc4553129e353c35e80a0ae94.png" src="../../_images/4e0c2736b6ef664734e2bf2b68ae6913055e5abfc4553129e353c35e80a0ae94.png" />
+<img alt="../../_images/11f2387260d93d5a7eacab98c3f207f9f1539940514063455fede9849d83da5b.png" src="../../_images/11f2387260d93d5a7eacab98c3f207f9f1539940514063455fede9849d83da5b.png" />
 </div>
 </div>
 </section>
@@ -1341,8 +1531,8 @@ Z = \sqrt{R^2 +(X_L - X_C)^2} =\sqrt{R^2+(2\pi f L - \frac{1}{2\pi f C})^2}
 \)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define the frequency range (logarithmic scale)</span>
 <span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>  <span class="c1"># from 10 Hz to 100 GHz</span>
@@ -1372,7 +1562,7 @@ Z = \sqrt{R^2 +(X_L - X_C)^2} =\sqrt{R^2+(2\pi f L - \frac{1}{2\pi f C})^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/327c7f1c448ddb2515021cf29f03e84fc80443474b7e6dd28f0f2e962b3443f5.png" src="../../_images/327c7f1c448ddb2515021cf29f03e84fc80443474b7e6dd28f0f2e962b3443f5.png" />
+<img alt="../../_images/e20daace350182980d2fa89906fd4a3b886b8ef9bea2c70f254e8b26b773fe8f.png" src="../../_images/e20daace350182980d2fa89906fd4a3b886b8ef9bea2c70f254e8b26b773fe8f.png" />
 </div>
 </div>
 </section>
@@ -1429,8 +1619,8 @@ Note:</p>
 <p>In the plot below, you can see the effect of bias voltage on a AC voltage.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Time array</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1465,7 +1655,7 @@ Note:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/76ccf21fee7e33c9f9db35dae623e92ee7e8409978ab1bb366b5e477cba235f9.png" src="../../_images/76ccf21fee7e33c9f9db35dae623e92ee7e8409978ab1bb366b5e477cba235f9.png" />
+<img alt="../../_images/890874067ea58e7f70d20210dbe05285ab5bcdd5ef1f801ff2473893952d9cb8.png" src="../../_images/890874067ea58e7f70d20210dbe05285ab5bcdd5ef1f801ff2473893952d9cb8.png" />
 </div>
 </div>
 </section>
@@ -1592,8 +1782,8 @@ V_{\text{RMS}} = \frac{V_{\text{peak}}}{\sqrt{2}}
 <p>In the plot below you can see the relation between rms voltage and AC voltage :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define the time range</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1625,7 +1815,7 @@ V_{\text{RMS}} = \frac{V_{\text{peak}}}{\sqrt{2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a50ffd2852a4045119e8b109d57655416aff6c9c0e5cc057ff89d80f1ffcf27f.png" src="../../_images/a50ffd2852a4045119e8b109d57655416aff6c9c0e5cc057ff89d80f1ffcf27f.png" />
+<img alt="../../_images/969a1aedc72bc6d00cc0d3368d913740bd3157a5867a15a4c8adc406d59df3fc.png" src="../../_images/969a1aedc72bc6d00cc0d3368d913740bd3157a5867a15a4c8adc406d59df3fc.png" />
 </div>
 </div>
 </section>
@@ -1706,8 +1896,7 @@ V_{\text{RMS}} = \frac{V_{\text{peak}}}{\sqrt{2}}
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1809,8 +1998,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

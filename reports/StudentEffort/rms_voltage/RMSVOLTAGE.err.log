@@ -1,0 +1,111 @@
+Traceback (most recent call last):
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Hadi\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "H:\HadiSadoghiYazdi\CircuitNew\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from PySpice.Spice.Netlist import Circuit
+from PySpice.Unit import *
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.integrate import simpson as simps  # Simpson's rule for integration
+
+# Parameters
+dc_voltage = 250       # DC source voltage (V)
+ac_peak_voltage = 353  # AC peak voltage (V)
+resistor_value = 50    # Resistor value (ohms)
+frequency = 50         # Frequency of AC source (Hz)
+simulation_time = 0.1  # Duration of simulation (s)
+time_step = 1e-3       # Time step for simulation
+
+# ----------------- Define DC Circuit ----------------- #
+circuit_dc = Circuit('DC Circuit')
+circuit_dc.V(1, '1', circuit_dc.gnd, dc_voltage@u_V)  # DC voltage source
+circuit_dc.R(1, '1', circuit_dc.gnd, resistor_value@u_Ω)  # Resistor
+
+# Simulate DC circuit
+simulator_dc = circuit_dc.simulator(temperature=25, nominal_temperature=25)
+analysis_dc = simulator_dc.operating_point()
+
+# Extract DC values
+voltage_dc = float(analysis_dc['1'])  # Voltage across resistor
+current_dc = voltage_dc / resistor_value  # Current through resistor
+power_dc = voltage_dc * current_dc  # Power loss in resistor
+
+# ----------------- Define AC Circuit ----------------- #
+circuit_ac = Circuit('AC Circuit')
+circuit_ac.SinusoidalVoltageSource(1, '1', circuit_ac.gnd, amplitude=ac_peak_voltage@u_V, frequency=frequency@u_Hz)
+circuit_ac.R(1, '1', circuit_ac.gnd, resistor_value@u_Ω)
+
+# Simulate AC circuit
+simulator_ac = circuit_ac.simulator(temperature=25, nominal_temperature=25)
+analysis_ac = simulator_ac.transient(step_time=time_step, end_time=simulation_time)
+
+# Extract AC values
+time = np.array(analysis_ac.time)
+voltage_ac = np.array(analysis_ac['1'])
+current_ac = voltage_ac / resistor_value  # Current through resistor
+power_ac = voltage_ac * current_ac  # Instantaneous power loss
+
+# Calculate the average power of the AC graph using Simpson's rule
+average_power_ac = simps(y=power_ac, x=time) / (time[-1] - time[0])  # Integrate and divide by total time
+
+# ----------------- Plot Results ----------------- #
+plt.figure(figsize=(10, 6))
+
+# Plot Instantaneous Power Loss for AC
+plt.plot(time, power_ac, label='AC Power Loss (W)', color='red')
+
+# Plot Power Loss for DC as a Constant Line
+plt.axhline(y=power_dc, color='blue', linestyle='--', label=f'DC Power Loss: {power_dc:.2f} W')
+
+# Plot Average AC Power Loss
+plt.axhline(y=average_power_ac, color='green', linestyle='-.', label=f'AC Average Power: {average_power_ac:.2f} W')
+
+# Add Titles and Labels
+plt.title('Power Loss in Resistor: DC vs AC Source')
+plt.xlabel('Time (s)')
+plt.ylabel('Power Loss (W)')
+plt.legend()
+plt.grid()
+plt.show()
+
+# ----------------- Print Results ----------------- #
+print(f"DC Power Loss: {power_dc:.2f} W")
+print(f"AC Average Power Loss (Integral Method): {average_power_ac:.2f} W")
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mSpice[39;00m[34;01m.[39;00m[34;01mNetlist[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Circuit
+[32m      2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mPySpice[39;00m[34;01m.[39;00m[34;01mUnit[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m *
+[32m      3[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[34;01m.[39;00m[34;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mplt[39;00m
+
+[31mModuleNotFoundError[39m: No module named 'PySpice'
+

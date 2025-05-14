@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>inductor &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/Inductor/Inductor11';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LDR sensor" href="../LDRpresentation/LDR.html" />
+    <link rel="prev" title="What is a Tunnel Diode?" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/Inductor/Inductor11.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/Inductor/Inductor11.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>inductor</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">inductor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#layout">Layout :</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1- Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">2- Applications</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-properties-in-free-space">3- Magnetic Properties in Free Space</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#right-hand-rule">4- Right-Hand Rule</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intensifying-the-magnetic-field">5- Intensifying the Magnetic Field</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-circuit-and-flux-behavior">6- Magnetic Circuit and Flux Behavior</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-transformer">7- Simple Transformer</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">8- Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">9- References</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1- Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2- Applications</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3- Magnetic Properties in Free Space</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-of-the-magnetic-field">Direction of the Magnetic Field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-observations">Key Observations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications">Practical Implications</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4- Right-Hand Rule</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5- Intensifying the Magnetic Field</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-field-in-a-coil">Magnetic Field in a Coil</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6- Magnetic Circuit and Flux Behavior</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7- Simple Transformer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-behavior-in-a-simple-transformer">Flux Behavior in a Simple Transformer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-leakage-flux">Significance of Leakage Flux</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8- Conclusion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-field-formation">1. Magnetic Field Formation:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#right-hand-rule-and-polarity">2. Right-Hand Rule and Polarity:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#air-core-coils">3. Air-Core Coils:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leakage-flux-in-transformers">4. Leakage Flux in Transformers:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">12- References</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="inductor">
+<h1>inductor<a class="headerlink" href="#inductor" title="Link to this heading">#</a></h1>
+<p>Author : Soroush Saberifar</p>
+<p>contact : <a class="reference external" href="mailto:s&#46;o&#46;r&#46;o&#46;u&#46;s&#46;h&#46;s&#46;a&#46;b&#46;e&#46;r&#46;i&#46;f&#46;a&#46;r&#37;&#52;&#48;gmail&#46;com">s<span>&#46;</span>o<span>&#46;</span>r<span>&#46;</span>o<span>&#46;</span>u<span>&#46;</span>s<span>&#46;</span>h<span>&#46;</span>s<span>&#46;</span>a<span>&#46;</span>b<span>&#46;</span>e<span>&#46;</span>r<span>&#46;</span>i<span>&#46;</span>f<span>&#46;</span>a<span>&#46;</span>r<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="layout">
+<h1>Layout :<a class="headerlink" href="#layout" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>1- Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="applications">
+<h1>2- Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="magnetic-properties-in-free-space">
+<h1>3- Magnetic Properties in Free Space<a class="headerlink" href="#magnetic-properties-in-free-space" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="right-hand-rule">
+<h1>4- Right-Hand Rule<a class="headerlink" href="#right-hand-rule" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="intensifying-the-magnetic-field">
+<h1>5- Intensifying the Magnetic Field<a class="headerlink" href="#intensifying-the-magnetic-field" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="magnetic-circuit-and-flux-behavior">
+<h1>6- Magnetic Circuit and Flux Behavior<a class="headerlink" href="#magnetic-circuit-and-flux-behavior" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="simple-transformer">
+<h1>7- Simple Transformer<a class="headerlink" href="#simple-transformer" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
+<h1>8- Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>9- References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>1- Introduction<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>An inductor is a passive electrical component that stores energy in a magnetic field and resists sudden changes in current.<br />
+It consists of a conductive wire coil, often wound around a core of air or magnetic material.<br />
+This behavior makes inductors essential in stabilizing circuits, filtering noise, and enabling energy transfer in applications like power supplies, radio frequency systems, and transformers.</p>
+<p>Inductors operate based on electromagnetic principles, where current flowing through the coil generates a magnetic field that opposes changes in current. This property is fundamental in smoothing out voltage fluctuations and protecting sensitive components in circuits.</p>
+<p>The core material impacts performance, with air cores suited for high frequencies and ferrite or iron cores for higher inductance at lower frequencies. By combining simplicity with versatility, inductors serve as indispensable elements in modern electrical and electronic systems.</p>
+<p><img alt="different types of inductors." src="../../_images/Inductors.png" /></p>
+<p>Figure 1</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>2- Applications<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Energy Storage
+Inductors store energy in their magnetic fields when current flows through them. This energy can be released as needed, making inductors essential in power electronics, such as DC-DC converters and uninterruptible power supplies (UPS). For example, in a buck converter, an inductor temporarily stores energy during the “on” phase of a switching cycle and releases it during the “off” phase to provide a steady output voltage. This ability to regulate energy flow is crucial in maintaining efficient and stable power delivery in electronic devices.</p></li>
+<li><p>Filtering and Noise Suppression
+Inductors are widely used in low-pass filters, where they block high-frequency signals while allowing low-frequency components to pass. This application is critical in power supplies to remove high-frequency noise from AC mains or switching circuits, ensuring clean and stable power for sensitive electronic components. For instance, in audio equipment, inductors prevent unwanted noise from interfering with sound quality, while in communication systems, they eliminate high-frequency interference.</p></li>
+</ol>
+<p><img alt="Filtering and Noise Suppression Using inducotrs." src="../../_images/Filter_Noise.jpg" /></p>
+<p>Figure 2</p>
+<ol class="arabic simple" start="3">
+<li><p>Tuning and Resonance Circuits
+In combination with capacitors, inductors are used to form LC circuits, which resonate at specific frequencies. This property is exploited in radio receivers and transmitters for frequency tuning, allowing devices to select or transmit signals at desired frequencies. For example, in a radio receiver, an LC circuit is used to isolate a particular station’s frequency from a broad spectrum of signals. This precise tuning capability makes inductors indispensable in communication and broadcasting technologies.</p></li>
+</ol>
+<p><img alt="Tuning and Resonance." src="../../_images/Tuning_and_Resonance.png" /></p>
+<p>Figure 3</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>3- Magnetic Properties in Free Space<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<p>When a direct current (DC) flows through a long straight wire, it generates a magnetic field around the conductor. This magnetic field is circular and forms concentric loops around the wire, with its intensity decreasing as the distance from the wire increases. The behavior of this field is defined by two primary properties:</p>
+<ol class="arabic">
+<li><h4 class="rubric" id="magnetizing-force">Magnetizing Force (𝐻)</h4>
+</li>
+</ol>
+<p>The magnetizing force represents the strength of the magnetic field created by the current. It is directly proportional to the current (I) and inversely proportional to the distance (𝑟) from the wire. The mathematical relation is:</p>
+<div class="math notranslate nohighlight">
+\[
+H = \frac{I}{2πr}
+\]</div>
+<p>Here,𝐻 is measured in oersteds in the CGS system or in amperes per meter in the SI system.</p>
+<ol class="arabic" start="2">
+<li><h4 class="rubric" id="magnetic-flux-density-b">Magnetic Flux Density (B)</h4>
+</li>
+</ol>
+<p>The magnetic flux density quantifies the strength and concentration of the magnetic field. It is related to the magnetizing force (𝐻) through the permeability of free space (𝜇0 ), which represents the ability of the vacuum to support a magnetic field:</p>
+<div class="math notranslate nohighlight">
+\[
+B = μ_{0}H
+\]</div>
+<p>In the CGS system,B is measured in gauss, while in the SI system, it is measured in tesla.</p>
+<section id="direction-of-the-magnetic-field">
+<h2>Direction of the Magnetic Field<a class="headerlink" href="#direction-of-the-magnetic-field" title="Link to this heading">#</a></h2>
+<p>The right-hand rule helps determine the direction of the magnetic field. If the thumb of the right hand points in the direction of the current, the curled fingers represent the direction of the magnetic field lines around the wire. Reversing the current reverses the polarity of the magnetic field.</p>
+</section>
+<section id="key-observations">
+<h2>Key Observations<a class="headerlink" href="#key-observations" title="Link to this heading">#</a></h2>
+<p>The magnetic field’s strength (𝐻) decreases as the distance from the wire increases. This is evident from the inverse proportionality to 𝑟 in the formula for 𝐻.The magnetic field is proportional to the current flowing through the conductor. A higher current produces a stronger magnetic field.
+The field is continuous and forms closed loops around the wire.</p>
+</section>
+<section id="practical-implications">
+<h2>Practical Implications<a class="headerlink" href="#practical-implications" title="Link to this heading">#</a></h2>
+<p>This phenomenon forms the foundation of electromagnetism and is the basis for the design and operation of many devices:</p>
+<p>Transformers:<br />
+Magnetic fields generated by current in a primary coil induce current in a secondary coil, enabling energy transfer between circuits.</p>
+<p><img alt="Transformer" src="../../_images/Transformer.jpg" /></p>
+<p>Figure 4. Transformer</p>
+<p>Electromagnets:<br />
+Wrapping a wire around a ferromagnetic core enhances the magnetic field, creating powerful electromagnets used in motors, generators, and lifting devices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span> 
+    <span class="n">V</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Battery</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$V_</span><span class="si">{in}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Inductor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9d588421a3d5ff12dc1f36ef671ddbe8f208dd7644714839e8aa9e32ea7243a4.svg" src="../../_images/9d588421a3d5ff12dc1f36ef671ddbe8f208dd7644714839e8aa9e32ea7243a4.svg" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1>4- Right-Hand Rule<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<p>The right-hand rule is a simple method to determine the direction of magnetic field lines around a current-carrying conductor.</p>
+<p>How it works:</p>
+<p>Grasp the conductor with your right hand such that your thumb points in the direction of the current (conventional current flow, from positive to negative). Your fingers will curl in the direction of the magnetic field lines around the conductor.</p>
+<p>Key points:</p>
+<p>The magnetic field forms concentric circles around the wire.
+Reversing the direction of the current reverses the direction of the magnetic field.
+This rule highlights the relationship between electric current and magnetic fields, forming the basis for understanding electromagnetic interactions.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>5- Intensifying the Magnetic Field<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<p>When current flows through a conductor, it creates a magnetic field around it.<br />
+If multiple conductors carrying current in the same direction are placed close together, their magnetic fields combine, resulting in an intensified total field. This principle is the foundation for the design of coils and solenoids, where a single conductor is wound into multiple turns to enhance the magnetic field strength.</p>
+<hr class="docutils" />
+<section id="magnetic-field-in-a-coil">
+<h2>Magnetic Field in a Coil<a class="headerlink" href="#magnetic-field-in-a-coil" title="Link to this heading">#</a></h2>
+<p>When a wire is wound into a coil, the magnetic fields produced by individual turns of the wire combine and intensify within the coil. The magnetic field generated resembles that of a bar magnet, with distinct north and south poles.</p>
+<p>The strength of the magnetic field (𝐵) in a coil is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+B = μ \frac{NI}{l}
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p>B: Magnetic flux density (tesla or gauss).</p></li>
+<li><p>μ: Permeability of the core material.</p></li>
+<li><p>N: Number of turns in the coil.</p></li>
+<li><p>I: Current through the coil (amps).</p></li>
+<li><p>l: Length of the coil (meters).</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>6- Magnetic Circuit and Flux Behavior<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><h4 class="rubric" id="magnetic-circuit">Magnetic Circuit:</h4>
+</li>
+</ol>
+<p>The magnetic circuit refers to the space through which magnetic flux (Φ) travels around the coil. The magnitude of the flux is determined by the product of the current (I) and the number of turns in the coil (𝑁).The force required to create this flux is called magnetomotive force (MMF) and is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[
+MMF = N. I
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Magnetic Flux Density and Magnetizing Force:
+The relationship between magnetic flux density (B) and magnetizing force (H) for an air-core coil is linear, as shown in Figure 5.The ratio of B to 𝐻 is known as permeability (𝜇):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+μ = \frac{B}{H}
+\]</div>
+<p><img alt="" src="../../_images/Magnetic.png" /></p>
+<p>Figure 5</p>
+<ul class="simple">
+<li><p>For an air-core coil in the CGS system, this ratio is unity, with units of gauss per oersted (gauss/oersted).</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>AC Current Behavior:
+If the direct current (DC) source in Figure 5 is replaced with an alternating current (AC) source (Figure 6), the relationship between 𝐵 and 𝐻 changes, as depicted in Figure 6. This highlights how 𝐵 and 𝐻 vary dynamically with an AC source.</p></li>
+</ol>
+<p><img alt="" src="../../_images/AC_Current_Behavior.png" />
+Figure 6</p>
+<ol class="arabic" start="4">
+<li><h4 class="rubric" id="advantages-of-air-core-coils">Advantages of Air-Core Coils:</h4>
+</li>
+</ol>
+<p>A significant advantage of air-core coils is the linear relationship between 𝐵 and H.</p>
+<ul class="simple">
+<li><p>This linearity ensures that increasing 𝐻 proportionally increases 𝐵, and thus the flux in the coil.</p></li>
+<li><p>Large magnetic fields can be generated by applying high currents, making air-core coils suitable for applications requiring strong, controlled magnetic fields.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1>7- Simple Transformer<a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
+<p>A transformer, in its simplest form, consists of two air-core coils that share a common magnetic flux, as shown in Figure 1-9. One coil, known as the primary coil, is connected to a power source and carries the current that generates the magnetic field. The other coil, referred to as the secondary coil, is open-circuited and does not initially carry current.</p>
+<section id="flux-behavior-in-a-simple-transformer">
+<h2>Flux Behavior in a Simple Transformer<a class="headerlink" href="#flux-behavior-in-a-simple-transformer" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Shared Magnetic Flux:<br />
+The magnetic field generated by the primary coil creates a flux that diverges from its ends in all directions. This flux is responsible for transferring energy from the primary coil to the secondary coil.</p></li>
+<li><p>Leakage Flux:<br />
+Not all of the magnetic flux generated by the primary coil links both coils. The flux that does not pass through the secondary coil is called leakage flux.</p></li>
+</ol>
+<p>Linked Flux: The portion of the flux that links both the primary and secondary coils is crucial for energy transfer.<br />
+Leakage Flux: This represents energy lost in the magnetic circuit as it does not contribute to energy transfer between the coils.</p>
+</section>
+<section id="significance-of-leakage-flux">
+<h2>Significance of Leakage Flux<a class="headerlink" href="#significance-of-leakage-flux" title="Link to this heading">#</a></h2>
+<p>Leakage flux reduces the efficiency of the transformer as it represents a loss in the system. In practical transformers, steps are taken to minimize leakage flux by using ferromagnetic cores, which confine and direct the magnetic field more effectively between the two coils.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>8- Conclusion<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<p>Inductors and their associated magnetic principles play a fundamental role in the design and operation of modern electrical and electronic systems. From the basic generation of magnetic fields around a conductor to the advanced concepts of coils, solenoids, and transformers, the interplay between electric current and magnetic flux is the cornerstone of electromagnetism.</p>
+<p>Key takeaways from the discussed concepts include:</p>
+<section id="magnetic-field-formation">
+<h2>1. Magnetic Field Formation:<a class="headerlink" href="#magnetic-field-formation" title="Link to this heading">#</a></h2>
+<p>Current flowing through a conductor generates a magnetic field, which can be intensified by shaping the conductor into coils or placing conductors close to each other.</p>
+</section>
+<section id="right-hand-rule-and-polarity">
+<h2>2. Right-Hand Rule and Polarity:<a class="headerlink" href="#right-hand-rule-and-polarity" title="Link to this heading">#</a></h2>
+<p>The direction of the magnetic field depends on the direction of current, as explained by the right-hand rule. Reversing the current reverses the field polarity.</p>
+</section>
+<section id="air-core-coils">
+<h2>3. Air-Core Coils:<a class="headerlink" href="#air-core-coils" title="Link to this heading">#</a></h2>
+<p>These coils demonstrate linear behavior between magnetizing force (𝐻) and flux density (B), offering advantages in controllability and high-field generation, though they have practical current limits.</p>
+</section>
+<section id="leakage-flux-in-transformers">
+<h2>4. Leakage Flux in Transformers:<a class="headerlink" href="#leakage-flux-in-transformers" title="Link to this heading">#</a></h2>
+<p>While transformers efficiently transfer energy between coils through shared magnetic flux, minimizing leakage flux is crucial for maintaining efficiency.</p>
+<p>These principles underline the versatility of magnetic circuits and components like inductors and transformers in energy transfer, signal filtering, and frequency tuning. Mastery of these fundamental concepts not only enhances the understanding of electromagnetic systems but also supports innovation in power electronics, communication devices, and many other fields.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id9">
+<h1>12- References<a class="headerlink" href="#id9" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.diyaudio.com/community/threads/air-inductor-orientation-near-a-transformer.369787/">https://www.diyaudio.com/community/threads/air-inductor-orientation-near-a-transformer.369787/</a></p></li>
+<li><p><a class="reference external" href="https://www.studyforfe.com/blog/how-to-solve-transformer-flux-and-magnetic-circuits/">https://www.studyforfe.com/blog/how-to-solve-transformer-flux-and-magnetic-circuits/</a></p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\Inductor"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">What is a Tunnel Diode?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../LDRpresentation/LDR.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LDR sensor</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">inductor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#layout">Layout :</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1- Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">2- Applications</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-properties-in-free-space">3- Magnetic Properties in Free Space</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#right-hand-rule">4- Right-Hand Rule</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intensifying-the-magnetic-field">5- Intensifying the Magnetic Field</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-circuit-and-flux-behavior">6- Magnetic Circuit and Flux Behavior</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-transformer">7- Simple Transformer</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">8- Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">9- References</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1- Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2- Applications</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3- Magnetic Properties in Free Space</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-of-the-magnetic-field">Direction of the Magnetic Field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-observations">Key Observations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications">Practical Implications</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4- Right-Hand Rule</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5- Intensifying the Magnetic Field</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-field-in-a-coil">Magnetic Field in a Coil</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6- Magnetic Circuit and Flux Behavior</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7- Simple Transformer</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-behavior-in-a-simple-transformer">Flux Behavior in a Simple Transformer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-leakage-flux">Significance of Leakage Flux</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8- Conclusion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-field-formation">1. Magnetic Field Formation:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#right-hand-rule-and-polarity">2. Right-Hand Rule and Polarity:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#air-core-coils">3. Air-Core Coils:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#leakage-flux-in-transformers">4. Leakage Flux in Transformers:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">12- References</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

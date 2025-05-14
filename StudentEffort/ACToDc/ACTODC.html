@@ -1,0 +1,1311 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Convert AC to DC &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/ACToDc/ACTODC';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact Me" href="../../Contact_Me.html" />
+    <link rel="prev" title="Enhancement-mode common source mosfet amplifier" href="../MOSFETamplifier_miniproject/MOSFET.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Convert AC to DC</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/ACToDc/ACTODC.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/StudentEffort/ACToDc/ACTODC.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Convert AC to DC</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-1-introduction">Chapter 1: Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-importance-of-ac-to-dc-converters">Definition and Importance of AC to DC Converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#various-applications-in-industry-and-daily-life">Various Applications in Industry and Daily Life</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-the-research">Structure of the Research</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-fundamental-concepts-of-ac-and-dc-power">Chapter 2: Fundamental Concepts of AC and DC Power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-3-discusses-the-main-components-used-in-rectifier-circuits">Chapter 3: discusses the main components used in rectifier circuits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-4-categorization-of-ac-to-dc-converters-and-comparison-of-their-characteristics">Chapter 4 : Categorization of AC to DC Converters and Comparison of Their Characteristics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-classification-of-ac-to-dc-converters">General Classification of AC to DC Converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-wave-rectifier">Half-Wave Rectifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-wave-rectifier">Full-Wave Rectifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncontrolled-rectifier">Uncontrolled Rectifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlled-rectifier">Controlled Rectifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-converter-characteristics">Comparison of Converter Characteristics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-5-explores-the-design-and-simulation-of-ac-to-dc-converters">Chapter 5: explores the design and simulation of AC to DC converters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-6-industrial-applications-and-technological-advancements-in-ac-to-dc-converters">Chapter 6: Industrial Applications and Technological Advancements in AC to DC Converters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-7-investigation-of-challenges-and-issues-in-ac-to-dc-conversion">Chapter 7: Investigation of Challenges and Issues in AC to DC Conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-8-conclusion">Chapter 8: Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="convert-ac-to-dc">
+<h1>Convert AC to DC<a class="headerlink" href="#convert-ac-to-dc" title="Link to this heading">#</a></h1>
+<p>Author Information
+Name:
+Fateme Arabkhani
+Affiliation:
+Department of Computer Engineering, Ferdowsi University of Mashhad
+Contact:
+<a class="reference external" href="mailto:fatemearabkhani2005&#37;&#52;&#48;gmail&#46;com">fatemearabkhani2005<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<section id="chapter-1-introduction">
+<h2>Chapter 1: Introduction<a class="headerlink" href="#chapter-1-introduction" title="Link to this heading">#</a></h2>
+<section id="definition-and-importance-of-ac-to-dc-converters">
+<h3>Definition and Importance of AC to DC Converters<a class="headerlink" href="#definition-and-importance-of-ac-to-dc-converters" title="Link to this heading">#</a></h3>
+<p>AC to DC converters, also known as rectifiers, are electronic devices that convert alternating current (AC) into direct current (DC).
+This conversion is crucial in many electrical and electronic systems since most modern devices, such as computers, smartphones, and industrial equipment, operate on DC power.
+The significance of AC to DC converters extends beyond small consumer electronics to large-scale applications, including renewable energy systems, power supplies, electric vehicles, and telecommunication infrastructures.</p>
+</section>
+<section id="various-applications-in-industry-and-daily-life">
+<h3>Various Applications in Industry and Daily Life<a class="headerlink" href="#various-applications-in-industry-and-daily-life" title="Link to this heading">#</a></h3>
+<p>The demand for AC to DC conversion spans across multiple fields:</p>
+<ul class="simple">
+<li><p>Consumer Electronics: Devices such as laptops, smartphones, and LED televisions require DC power from an AC power source.</p></li>
+<li><p>Industrial Automation: Machines and robotics in manufacturing plants use rectifiers to power motor drives and control circuits.</p></li>
+<li><p>Renewable Energy Systems: Photovoltaic (PV) systems and wind turbines often integrate AC to DC converters to store and regulate power efficiently.</p></li>
+<li><p>Electric Vehicles (EVs): Charging stations and onboard power conversion in EVs rely on AC to DC conversion.</p></li>
+<li><p>Telecommunications: Power supplies for network infrastructure depend on stable DC voltage.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/3825524.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="structure-of-the-research">
+<h3>Structure of the Research<a class="headerlink" href="#structure-of-the-research" title="Link to this heading">#</a></h3>
+<p>This research is structured as follows:</p>
+<ul class="simple">
+<li><p>Chapter 2 contains fundamental concepts of AC and DC power, including mathematical and physical principles</p></li>
+<li><p>Chapter  discusses the main components used in rectifier circuits</p></li>
+<li><p>Chapter  categorizes different types of AC to DC converters, comparing their characteristics</p></li>
+<li><p>Chapter 5 explores the design and simulation of AC to DC converters using software tools</p></li>
+<li><p>Chapter 6 highlights industrial applications and technological advancements</p></li>
+<li><p>Chapter 7 examines challenges such as harmonic distortion, heat dissipation, and design complexity</p></li>
+<li><p>Chapter 8 conclusion</p></li>
+</ul>
+</section>
+</section>
+<section id="chapter-2-fundamental-concepts-of-ac-and-dc-power">
+<h2>Chapter 2: Fundamental Concepts of AC and DC Power<a class="headerlink" href="#chapter-2-fundamental-concepts-of-ac-and-dc-power" title="Link to this heading">#</a></h2>
+<p>Understanding the fundamental concepts of alternating current (AC) and direct current (DC) power is essential for analyzing and designing electrical and electronic systems. This chapter explores the physical and mathematical principles behind AC and DC power, forming a scientific foundation for the study of AC to DC converters.</p>
+<p><strong>Definition of Electrical Power</strong></p>
+<p>Electrical power is the rate at which energy is transferred over time, and it is measured in watts (W). The general formula for power is:</p>
+<div class="math notranslate nohighlight">
+\[P=V×I\]</div>
+<p>thet :</p>
+<p><span class="math notranslate nohighlight">\(P\)</span> : Electrical power (watts)</p>
+<p><span class="math notranslate nohighlight">\(V\)</span> : Voltage (volts)</p>
+<p><span class="math notranslate nohighlight">\(I\)</span> : Current (amperes)</p>
+<p><strong>Direct Current (DC)</strong></p>
+<p>In DC systems, the voltage and current remain constant over time. DC power is typically supplied by sources such as batteries and DC power supplies. A key characteristic of DC is that it delivers energy in a continuous and unidirectional flow.</p>
+<p><strong>Alternating Current (AC)</strong></p>
+<p>In contrast to DC, AC systems feature voltage and current that vary periodically, usually in the form of a sinusoidal waveform. AC power is widely used in power systems, especially in utility grids. AC voltages are commonly generated at standard frequencies such as 50 Hz or 60 Hz.</p>
+<p>The mathematical form of AC voltage and current is:</p>
+<div class="math notranslate nohighlight">
+\[I(t)= 𝐼_{𝑚𝑎𝑥} sin(𝜔𝑡+𝜃)\]</div>
+<div class="math notranslate nohighlight">
+\[v(t)=V_{max} sin(ωt+ϕ)\]</div>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(𝐼_{𝑚𝑎𝑥}\)</span> and <span class="math notranslate nohighlight">\(V_{max}\)</span> : Peak voltage and current</p>
+<p><span class="math notranslate nohighlight">\(𝜔\)</span> : Angular frequency (radians per second)</p>
+<p><span class="math notranslate nohighlight">\( ϕ \)</span>  and <span class="math notranslate nohighlight">\( 𝜃\)</span> : Initial phase angles</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/P00243.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Instantaneous, Average, and RMS Power in AC</strong></p>
+<p>In AC systems, power is described in three forms:</p>
+<p>1.Instantaneous Power:</p>
+<p><span class="math notranslate nohighlight">\(p(t)=v(t)×i(t)\)</span></p>
+<p>2.Average Power:</p>
+<p>This is the mean value of power over a full cycle and is used in practical power calculations.</p>
+<p>3.Root Mean Square (RMS) Values:</p>
+<p>RMS values provide a DC-equivalent measure for voltage or current, reflecting their thermal effect:</p>
+<div class="math notranslate nohighlight">
+\[V_{rms} = \frac{V_{max}}{\sqrt{2}}\]</div>
+<div class="math notranslate nohighlight">
+\[I_{rms} = \frac{I_{max}}{\sqrt{2}}\]</div>
+<p><strong>Comparison of AC and DC</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>DC</p></th>
+<th class="head"><p>AC</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Current Direction</p></td>
+<td><p>Constant</p></td>
+<td><p>Alternating</p></td>
+</tr>
+<tr class="row-odd"><td><p>Time Variation</p></td>
+<td><p>None</p></td>
+<td><p>Present (Periodic)</p></td>
+</tr>
+<tr class="row-even"><td><p>Applications</p></td>
+<td><p>Batteries, DC power supplies</p></td>
+<td><p>Power grid, AC motors</p></td>
+</tr>
+<tr class="row-odd"><td><p>Power Transmission</p></td>
+<td><p>Suitable for short distances</p></td>
+<td><p>Efficient for long-distance use</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Such converters must transform alternating power into usable direct power efficiently and reliably, with minimal energy loss and waveform distortion.</p>
+</section>
+<section id="chapter-3-discusses-the-main-components-used-in-rectifier-circuits">
+<h2>Chapter 3: discusses the main components used in rectifier circuits<a class="headerlink" href="#chapter-3-discusses-the-main-components-used-in-rectifier-circuits" title="Link to this heading">#</a></h2>
+<p><strong>1. Transformer</strong></p>
+<p>Function: Steps up or steps down the AC voltage to match the needs of the circuit</p>
+<p>Working Principle:</p>
+<p>Uses electromagnetic induction to change voltage without altering the frequency</p>
+<p>Often includes a center tap in full-wave rectifiers to allow more efficient conversion</p>
+<p>Benefits:
+Electrical isolation from the power source</p>
+<p>Voltage adaptation for safety and compatibility</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/photo_2025-05-01_20-19-22.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/1.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>2. Rectifier Circuit</strong></p>
+<p>Function:</p>
+<p>Converts AC voltage to pulsating DC voltage</p>
+<p>Common Components:</p>
+<p>Diodes for uncontrolled rectification</p>
+<p>SCRs (Thyristors) or other controlled switches for adjustable output</p>
+<p>Typical Types:</p>
+<p>Half-Wave Rectifier: Uses only one half-cycle of AC; simple but inefficient</p>
+<p>Full-Wave Rectifier (Center Tap or Bridge): Uses both half-cycles for higher efficiency and lower ripple</p>
+<p>Notes:</p>
+<p>A diode bridge uses four diodes</p>
+<p>In controlled rectifiers, firing angle can be adjusted to regulate output voltage</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/images.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/2.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>3. Filter (Capacitor / Inductor)</strong></p>
+<p>Function: Smooths out fluctuations (ripple) in the rectified DC signal</p>
+<p>Main Filtering Components:</p>
+<p>Capacitor:
+Role: Stores and releases charge to fill voltage gaps</p>
+<p>Effect: Significantly reduces voltage ripple</p>
+<p>Placement: Connected in parallel with the load</p>
+<p>Inductor:
+Role: Resists rapid changes in current</p>
+<p>Effect: Smooths the DC current flow</p>
+<p>Placement: Typically in series with the load or part of LC/π filters</p>
+<p>Combo: Using both capacitor and inductor in LC or π-filter configurations results in better DC quality</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/capacitor-filter.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/3.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>4. Voltage Regulator</strong></p>
+<p>Role:</p>
+<p>Stabilizes the output DC voltage to protect the load and reduce residual fluctuations.</p>
+<p>Application:
+After filtering, the voltage may still fluctuate slightly or be slightly higher than required. Regulators (such as 7805 for 5V, 7812 for 12V, etc.) are responsible for keeping the DC output at a certain and stable value. In more complex systems, switching regulators are also used.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/regulator-ic-500x500.webp" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/4.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="chapter-4-categorization-of-ac-to-dc-converters-and-comparison-of-their-characteristics">
+<h2>Chapter 4 : Categorization of AC to DC Converters and Comparison of Their Characteristics<a class="headerlink" href="#chapter-4-categorization-of-ac-to-dc-converters-and-comparison-of-their-characteristics" title="Link to this heading">#</a></h2>
+<p>AC to DC converters, also known as rectifiers, are essential components in power electronics. Their main function is to convert alternating current (AC) into direct current (DC). These converters are widely used in power supplies, battery chargers, industrial devices, and electronic systems. In this chapter, we will introduce different types of rectifiers and compare their features.</p>
+<section id="general-classification-of-ac-to-dc-converters">
+<h3>General Classification of AC to DC Converters<a class="headerlink" href="#general-classification-of-ac-to-dc-converters" title="Link to this heading">#</a></h3>
+<p>AC to DC converters can be classified based on structure, control type, and number of phases:</p>
+<ol class="arabic simple">
+<li><p>By Structure:</p></li>
+</ol>
+<p>Half-wave rectifier</p>
+<p>Full-wave rectifier</p>
+<ol class="arabic simple" start="2">
+<li><p>By Control Method:</p></li>
+</ol>
+<p>Uncontrolled rectifier</p>
+<p>Controlled rectifier</p>
+<ol class="arabic simple" start="3">
+<li><p>By Number of Phases:</p></li>
+</ol>
+<p>Single-phase</p>
+<p>Three-phase</p>
+</section>
+<section id="half-wave-rectifier">
+<h3>Half-Wave Rectifier<a class="headerlink" href="#half-wave-rectifier" title="Link to this heading">#</a></h3>
+<p>This type of rectifier allows only the positive half-cycle of the AC waveform to pass and blocks the negative half. It typically uses a single diode.</p>
+<p>Advantages:</p>
+<p>Simple and inexpensive</p>
+<p>Suitable for low-power applications</p>
+<p>Disadvantages:</p>
+<p>Low efficiency</p>
+<p>High ripple in the output voltage</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/Half-wave-Rectifier.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="full-wave-rectifier">
+<h3>Full-Wave Rectifier<a class="headerlink" href="#full-wave-rectifier" title="Link to this heading">#</a></h3>
+<p>In a full-wave rectifier, both positive and negative half-cycles of AC are utilized. It can be implemented using a center-tapped transformer or a bridge of four diodes.</p>
+<p>Advantages:</p>
+<p>Higher efficiency than half-wave</p>
+<p>Lower ripple</p>
+<p>Smoother DC output</p>
+<p>Disadvantages:</p>
+<p>More complex than half-wave</p>
+<p>Requires more components (diodes or transformer)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/images11.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="Alt text" src="../../_images/fullwaverectifier.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="uncontrolled-rectifier">
+<h3>Uncontrolled Rectifier<a class="headerlink" href="#uncontrolled-rectifier" title="Link to this heading">#</a></h3>
+<p>This rectifier uses diodes that conduct automatically when forward-biased. There is no control over the timing of conduction.</p>
+<p>Applications:</p>
+<p>Basic power supplies</p>
+<p>Simple chargers</p>
+</section>
+<section id="controlled-rectifier">
+<h3>Controlled Rectifier<a class="headerlink" href="#controlled-rectifier" title="Link to this heading">#</a></h3>
+<p>Controlled rectifiers use thyristors (SCRs) or other controlled switches. The output can be regulated by adjusting the firing angle.</p>
+<p>Advantages:</p>
+<p>Adjustable output voltage</p>
+<p>Suitable for motor speed control and industrial systems</p>
+<p>Disadvantages:</p>
+<p>Requires a control circuit</p>
+<p>More complex design</p>
+</section>
+<section id="comparison-of-converter-characteristics">
+<h3>Comparison of Converter Characteristics<a class="headerlink" href="#comparison-of-converter-characteristics" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Converter Type</p></th>
+<th class="head"><p>Efficiency</p></th>
+<th class="head"><p>Ripple Level</p></th>
+<th class="head"><p>Control Capability</p></th>
+<th class="head"><p>Applications</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Half-Wave</p></td>
+<td><p>Low</p></td>
+<td><p>High</p></td>
+<td><p>No</p></td>
+<td><p>Simple, educational circuits</p></td>
+</tr>
+<tr class="row-odd"><td><p>Full-Wave</p></td>
+<td><p>Medium–High</p></td>
+<td><p>Medium</p></td>
+<td><p>No</p></td>
+<td><p>Household &amp; industrial power supplies</p></td>
+</tr>
+<tr class="row-even"><td><p>Single-Phase Controlled</p></td>
+<td><p>High</p></td>
+<td><p>Adjustable</p></td>
+<td><p>Yes</p></td>
+<td><p>Motor control, industrial chargers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Three-Phase Controlled</p></td>
+<td><p>Very High</p></td>
+<td><p>Low</p></td>
+<td><p>Yes</p></td>
+<td><p>Heavy-duty industrial systems</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="chapter-5-explores-the-design-and-simulation-of-ac-to-dc-converters">
+<h2>Chapter 5: explores the design and simulation of AC to DC converters<a class="headerlink" href="#chapter-5-explores-the-design-and-simulation-of-ac-to-dc-converters" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw.elements</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">elm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">dsp</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span>
+    <span class="n">tr</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Transformer</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Transformer&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;p1&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">s1</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">rec</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Rectifier</span><span class="p">()</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Rectifier&#39;</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Gap</span><span class="p">()</span><span class="o">.</span><span class="n">toy</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">p2</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;AC IN&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">s2</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">toy</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">W</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">lineRec</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">*</span><span class="mf">1.3</span><span class="p">)</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="n">lineOne</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">E</span><span class="p">)</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span>
+    <span class="n">lineTwo</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">lineThree</span> <span class="o">=</span> <span class="n">dsp</span><span class="o">.</span><span class="n">Square</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Regulator&#39;</span><span class="p">)</span>
+    <span class="n">lineFour</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">lineFive</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Gap</span><span class="p">()</span><span class="o">.</span><span class="n">toy</span><span class="p">(</span><span class="n">lineRec</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;DC OUT&#39;</span><span class="p">,</span> <span class="s1">&#39;–&#39;</span><span class="p">])</span>
+    <span class="n">lineFiveEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">length</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">lineThreeEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">lineThree</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">lineTwoEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">lineTwo</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">lineEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+    <span class="n">lineOneEnd</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">lineOne</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">tox</span><span class="p">(</span><span class="n">lineRec</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">lineOne</span><span class="o">.</span><span class="n">end</span><span class="p">,</span><span class="n">lineOneEnd</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Filter&#39;</span><span class="p">)</span>
+    
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">endpoints</span><span class="p">(</span><span class="n">lineTwoEnd</span><span class="o">.</span><span class="n">start</span><span class="p">,</span><span class="n">lineThree</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+    
+
+
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/25b49fcba4a23e5e7e5de839c4721095dad35086c167b43adc6aa802976c14ba.svg" src="../../_images/25b49fcba4a23e5e7e5de839c4721095dad35086c167b43adc6aa802976c14ba.svg" />
+</div>
+</div>
+</section>
+<section id="chapter-6-industrial-applications-and-technological-advancements-in-ac-to-dc-converters">
+<h2>Chapter 6: Industrial Applications and Technological Advancements in AC to DC Converters<a class="headerlink" href="#chapter-6-industrial-applications-and-technological-advancements-in-ac-to-dc-converters" title="Link to this heading">#</a></h2>
+<p>AC to DC converters are not only fundamental in small electronic circuits but also play a vital role in many industrial systems. Their ability to convert alternating current (AC) to direct current (DC) makes them essential in power systems, manufacturing processes, and modern technologies.</p>
+<p><strong>Industrial Applications</strong></p>
+<p>Consumer Electronics and Telecommunications:
+Nearly all modern electronic devices – from computers to smartphones – require DC voltage, which is supplied through AC/DC power converters.</p>
+<p>Automotive Industry:
+Electric and hybrid vehicles use AC to DC converters for charging batteries and powering internal electronic systems.</p>
+<p>Control Systems and Automation:
+In industrial automation, devices like PLCs, sensors, and motor drives operate on DC power. Converters provide stable voltage for these control systems.</p>
+<p>Industrial Power Supplies:
+Switch-mode power supplies (SMPS) in industrial applications rely on efficient AC to DC conversion for high-performance and energy-saving operations.</p>
+<p><strong>Technological Advancements</strong></p>
+<p>Recent technological developments have significantly improved the performance of AC to DC converters:</p>
+<p>Advanced Semiconductor Materials (SiC, GaN) :
+These materials are used to build faster and more efficient power devices with lower losses.</p>
+<p>High-Efficiency and Compact Designs :
+Modern converters are designed to be smaller, lighter, and more efficient, using advanced topologies and control methods.</p>
+<p>Digital Control and Smart Features  :
+Integration of microcontrollers and digital signal processing allows for smarter and more precise regulation of output voltage and current.</p>
+</section>
+<section id="chapter-7-investigation-of-challenges-and-issues-in-ac-to-dc-conversion">
+<h2>Chapter 7: Investigation of Challenges and Issues in AC to DC Conversion<a class="headerlink" href="#chapter-7-investigation-of-challenges-and-issues-in-ac-to-dc-conversion" title="Link to this heading">#</a></h2>
+<p>While AC to DC converters are essential in various applications, their design and operation face several challenges. These issues range from technical and design-related problems to efficiency concerns and safety risks.</p>
+<p><strong>Technical Challenges</strong></p>
+<p>Ripple Voltage:</p>
+<p>Even after rectification, the output DC voltage is not completely smooth. Ripple can cause instability or malfunction in sensitive electronic circuits.</p>
+<p>Voltage Drop in Diodes:</p>
+<p>Every diode has a forward voltage drop (typically ~0.7V for silicon diodes), which reduces the overall efficiency, especially in low-voltage applications.</p>
+<p>Heat Loss:</p>
+<p>Power components such as regulators and diodes produce heat, and without proper thermal management, performance may degrade or components may fail.</p>
+<p><strong>Design and Economic Challenges</strong></p>
+<p>Size and Weight at High Power Levels:</p>
+<p>High-power converters require large components like transformers or capacitors, increasing the size and weight of the system.</p>
+<p>Cost of Advanced Components:</p>
+<p>While using modern semiconductors like GaN or SiC improves performance, it significantly raises the design and production costs.</p>
+<p>Complex Control Requirements:</p>
+<p>Smart or digital AC/DC converters often require precise control algorithms and microcontrollers, making the system more complex to design and maintain.</p>
+</section>
+<section id="chapter-8-conclusion">
+<h2>Chapter 8: Conclusion<a class="headerlink" href="#chapter-8-conclusion" title="Link to this heading">#</a></h2>
+<p>The conversion of AC to DC is a fundamental process in modern electrical and electronic systems, with applications spanning from small electronic devices to large-scale industrial power systems. Throughout this research, we explored the principles, classifications, circuit analysis, industrial applications, and key challenges associated with AC to DC converters.</p>
+<p>In conclusion, AC to DC conversion remains a vital field in electrical engineering, with continuous innovations driving progress toward higher efficiency, reduced environmental impact, and enhanced power management. Future research should focus on developing more efficient semiconductor devices, smart control algorithms, and hybrid energy solutions to further improve the performance of power conversion systems.</p>
+</section>
+<section id="refrences">
+<h2>Refrences:<a class="headerlink" href="#refrences" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://youtu.be/jsBn2r94BDA?si=WxSIM1ooNQ5aNvDk">https://youtu.be/jsBn2r94BDA?si=WxSIM1ooNQ5aNvDk</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/JXJaRPXPwjQ">https://youtu.be/JXJaRPXPwjQ</a></p></li>
+<li><p><em>Power Ponverter Circuits William shepherd Li zhang</em></p></li>
+<li><p><a class="reference external" href="https://www.rohm.com/electronics-basics/ac-dc-converters/acdc_what1">https://www.rohm.com/electronics-basics/ac-dc-converters/acdc_what1</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\ACToDc"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../MOSFETamplifier_miniproject/MOSFET.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Enhancement-mode common source mosfet amplifier</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Contact_Me.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contact Me</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-1-introduction">Chapter 1: Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-importance-of-ac-to-dc-converters">Definition and Importance of AC to DC Converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#various-applications-in-industry-and-daily-life">Various Applications in Industry and Daily Life</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-the-research">Structure of the Research</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-fundamental-concepts-of-ac-and-dc-power">Chapter 2: Fundamental Concepts of AC and DC Power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-3-discusses-the-main-components-used-in-rectifier-circuits">Chapter 3: discusses the main components used in rectifier circuits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-4-categorization-of-ac-to-dc-converters-and-comparison-of-their-characteristics">Chapter 4 : Categorization of AC to DC Converters and Comparison of Their Characteristics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-classification-of-ac-to-dc-converters">General Classification of AC to DC Converters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-wave-rectifier">Half-Wave Rectifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-wave-rectifier">Full-Wave Rectifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncontrolled-rectifier">Uncontrolled Rectifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlled-rectifier">Controlled Rectifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-converter-characteristics">Comparison of Converter Characteristics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-5-explores-the-design-and-simulation-of-ac-to-dc-converters">Chapter 5: explores the design and simulation of AC to DC converters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-6-industrial-applications-and-technological-advancements-in-ac-to-dc-converters">Chapter 6: Industrial Applications and Technological Advancements in AC to DC Converters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-7-investigation-of-challenges-and-issues-in-ac-to-dc-conversion">Chapter 7: Investigation of Challenges and Issues in AC to DC Conversion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-8-conclusion">Chapter 8: Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refrences">Refrences:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>LDR sensor &#8212; Dr.Hadi Sadoghi Yazdi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'StudentEffort/LDRpresentation/LDR presentation/LDR/LDR ';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../Introduction_StudentEffort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../Introduction_StudentEffort.html">
+                    Enduring Efforts of Students
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teaching assistant</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../PySpice_Installation_Manual.html">PySpice Installation Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PySpice_circuit_example1.html">Example 1: RESISTIVE DIVIDER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PySpice_circuit_example2.html">Example 2: DIODE CIRCUIT</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Students effort</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../DiodeCharacteristicCurve.html">Diode Characteristic Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../SchemdrawGuide1.html">Schemdraw Guide book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../independentcurrentandvoltagesources/miniProject.html">Independent current/voltage sources</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../AveragePower.html"><strong>Average power</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PassiveComponents/Passive%20Components.html">Passive Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Supermesh/Supermesh.html">Supermesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Active%20component/diode.html">Active components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ACToDc/ACTODC.html">Convert AC to DC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Impedimetric_Sensors/impedimetric_Sensors.html">Impedimetric Sensors</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Contact_Me.html">Contact Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../About_Me.html">About Me</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2FStudentEffort/LDRpresentation/LDR presentation/LDR/LDR .html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/StudentEffort/LDRpresentation/LDR presentation/LDR/LDR .ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>LDR sensor</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">LDR sensor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ldr-working-circuit-and-construction">LDR Working, Circuit, and Construction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-a-light-dependent-resistor">construction of a Light Dependent Resistor</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-and-design">Materials and Design:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-light-dependent-resistors">Types of Light Dependent Resistors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photoconductive-ldrs">Photoconductive LDRs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photoresistive-ldrs">Photoresistive LDRs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-ldrs-based-on-light-sensitivity">Types of LDRs based on Light Sensitivity</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-principle-of-ldr">Working Principle of LDR</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photoconductivity-explained">Photoconductivity Explained:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-transition-and-bandgap">Electron Transition and Bandgap:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charge-carriers-and-conductivity">Charge Carriers and Conductivity:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#light-intensity-and-resistance">Light Intensity and Resistance:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-photoconductivity">Applications of Photoconductivity:</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ldr-sensor">
+<h1>LDR sensor<a class="headerlink" href="#ldr-sensor" title="Link to this heading">#</a></h1>
+<p>saman varasteh</p>
+<p>The Light-dependent resistors made with photosensitive semiconductor materials like Cadmium Sulphides (CdS), lead sulfide, lead selenide, indium antimonide, or cadmium selenide and they are placed in a Zig-Zag shape as you can see in the pic below.
+<img alt="alt text" src="StudentEffort/LDRpresentation/LDR presentation/LDR/LDR%20pic/ldr%20sensor%20.png" /></p>
+<p>Two metal contacts are placed on both ends of the Zig-Zag shape these metal contacts help in creating a connection with the LDRs.</p>
+<p>Now, a transparent coating is applied on the top so that the zig-zag-shaped photosensitive material gets protected and as the coating is transparent the LDR will be able to capture light from the outer environment for its working.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ldr-working-circuit-and-construction">
+<h1>LDR Working, Circuit, and Construction<a class="headerlink" href="#ldr-working-circuit-and-construction" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="construction-of-a-light-dependent-resistor">
+<h1>construction of a Light Dependent Resistor<a class="headerlink" href="#construction-of-a-light-dependent-resistor" title="Link to this heading">#</a></h1>
+<p>The construction of Light Dependent Resistors (LDRs) is a precise process designed to optimize both functionality and environmental safety. The key component of an LDR is a photosensitive material, which is applied to an insulating substrate, often made of ceramic. This substrate forms the foundational layer upon which the LDR operates.</p>
+<section id="materials-and-design">
+<h2>Materials and Design:<a class="headerlink" href="#materials-and-design" title="Link to this heading">#</a></h2>
+<p>The foundation of an LDR construction involves applying a photosensitive material onto an insulating substrate, typically made of ceramic. This material is most commonly cadmium sulphide (CdS), known for its effective photoconductive properties. It is arranged in a zigzag pattern across the ceramic substrate to maximize the reactive surface area, which is critical for enhancing the light-absorbing efficiency of the LDR. This pattern not only optimizes light absorption but also creates distinct zones within the device, each contributing to the desired electrical resistance and power handling characteristics.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="types-of-light-dependent-resistors">
+<h1>Types of Light Dependent Resistors<a class="headerlink" href="#types-of-light-dependent-resistors" title="Link to this heading">#</a></h1>
+<p>Light-dependent resistors (LDRs) are sophisticated sensors that play a pivotal role in a variety of electronic systems by responding to changes in light conditions. These devices come in various forms, each tailored to specific light wavelengths and application requirements.</p>
+<p>Among these, photoconductive and photoresistive LDRs are particularly notable.
+Photoconductive LDRs leverage semiconductor materials like gallium arsenide to enhance conductivity with increased light exposure, while photoresistive LDRs adjust their resistance in response to light and temperature changes, using materials such as carbon on ceramic substrates.</p>
+<section id="photoconductive-ldrs">
+<h2>Photoconductive LDRs<a class="headerlink" href="#photoconductive-ldrs" title="Link to this heading">#</a></h2>
+<p>Photoconductive LDRs are primarily built from semiconductor materials like gallium arsenide or silicon. These LDRs work on a straightforward principle: exposure to light increases their conductivity.</p>
+<p>As light intensity enhances, these devices allow an increased flow of electrical current by reducing resistance, thereby demonstrating lower resistance values under illuminated conditions compared to when they are in darkness.</p>
+<p>Typically characterized by their rapid response times, photoconductive LDRs’ sensitivity can vary significantly based on their specific design attributes.</p>
+</section>
+<section id="photoresistive-ldrs">
+<h2>Photoresistive LDRs<a class="headerlink" href="#photoresistive-ldrs" title="Link to this heading">#</a></h2>
+<p>On the other hand, photoresistive LDRs depend not only on light but also on ambient temperature variations, which makes them particularly useful for applications requiring precise and consistent operation over prolonged periods despite fluctuating environmental light.</p>
+<p>These LDRs utilize thin layers of carbon materials deposited on ceramic substrates, which expand or contract in response to heat and light exposure.</p>
+<p>This alteration in size consequently modifies their resistance, necessitating frequent calibrations often managed through automated systems incorporating capacitors and other measuring inputs.</p>
+</section>
+<section id="types-of-ldrs-based-on-light-sensitivity">
+<h2>Types of LDRs based on Light Sensitivity<a class="headerlink" href="#types-of-ldrs-based-on-light-sensitivity" title="Link to this heading">#</a></h2>
+<p>LDRs can also be distinguished based on the type of light they are most sensitive to:</p>
+<ol class="arabic simple">
+<li><p>Ultraviolet LDRs:
+These are highly responsive to UV light and are typically made from materials like cadmium sulfide and cadmium selenide, ideal for applications in UV exploration.</p></li>
+<li><p>Infrared LDRs:
+Constructed from substances such as lead sulfide and indium antimonide, infrared LDRs are essential in high-tech applications like missile guidance, geographic exploration, and non-contact measurements.</p></li>
+<li><p>Visible Light LDRs:
+These are sensitive to visible spectrum and are used in various photoelectric control systems. They control everything from street lights to automated industrial processes, proving their versatility and critical utility in everyday technology.</p></li>
+</ol>
+<p><img alt="alt text" src="StudentEffort/LDRpresentation/LDR presentation/LDR/LDR%20pic/ldr%20.jpg" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="working-principle-of-ldr">
+<h1>Working Principle of LDR<a class="headerlink" href="#working-principle-of-ldr" title="Link to this heading">#</a></h1>
+<p>The functionality of Light Dependent Resistors (LDRs) is governed by the phenomenon of photoconductivity, an optical effect where the conductivity of a material increases with light absorption. This section delves into how LDRs use this principle to respond to changes in light conditions, making them invaluable in various light-sensing applications.</p>
+<section id="photoconductivity-explained">
+<h2>Photoconductivity Explained:<a class="headerlink" href="#photoconductivity-explained" title="Link to this heading">#</a></h2>
+<p>At the core of an LDR’s functionality is photoconductivity. This principle dictates that the electrical conductivity of a material can changes in response to light exposure. The process begins when light strikes the LDR, energizing electrons within the photosensitive material’s valence band—the energy state where electrons are normally present.  This process can be described by the bandgap energy equation:</p>
+<p><span class="math notranslate nohighlight">\(E_{\text{photon}} \geq E_g\)</span></p>
+</section>
+<section id="electron-transition-and-bandgap">
+<h2>Electron Transition and Bandgap:<a class="headerlink" href="#electron-transition-and-bandgap" title="Link to this heading">#</a></h2>
+<p>For electrons to contribute to electrical conductivity, they must transition to the conduction band, a higher energy state where electrons can move freely and carry current. This transition is not spontaneous; it requires that the incident photons have enough energy to overcome the material’s band gap, which is the energy difference between the valence band and the conduction band.</p>
+</section>
+<section id="charge-carriers-and-conductivity">
+<h2>Charge Carriers and Conductivity:<a class="headerlink" href="#charge-carriers-and-conductivity" title="Link to this heading">#</a></h2>
+<p>When exposed to sufficient light, the photons’ energy breaks the covalent bonds within the photosensitive material, releasing both electrons and holes (the absence of an electron which acts as a positive charge carrier). These freed electrons and holes gain enough energy to jump from the valence band to the conduction band.</p>
+<p>As the number of these charge carriers increases, the material’s overall resistance decreases, and its conductivity increases. The number of charge carriers is crucial for the reduction in resistance, which can be further quantified by:</p>
+<p><span class="math notranslate nohighlight">\(\text{Conductivity} (\sigma) = e \left( n\mu_n + p\mu_p \right)\)</span></p>
+<p>Where:</p>
+<ul class="simple">
+<li><p>e is the electron charge,</p></li>
+<li><p>n and p are the concentrations of electrons and holes, respectively,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu_n\)</span> and <span class="math notranslate nohighlight">\(\mu_p\)</span> are the mobilities of electrons and holes.</p></li>
+</ul>
+</section>
+<section id="light-intensity-and-resistance">
+<h2>Light Intensity and Resistance:<a class="headerlink" href="#light-intensity-and-resistance" title="Link to this heading">#</a></h2>
+<p>The relationship between light intensity and resistance in an LDR is inversely proportional. Under dark conditions, the LDR exhibits high resistance, often in the megaohms range, due to the scarcity of free charge carriers.</p>
+<p>However, as the light intensity increases, more electrons are excited to the conduction band, lowering the resistance dramatically. This unique property is what allows LDRs to act as effective light sensors, adjusting their resistance based on the ambient light levels. The relationship between light intensity and resistance is typically described by:</p>
+<p><span class="math notranslate nohighlight">\(R = A \cdot E^a\)</span></p>
+<p>Where:</p>
+<ul class="simple">
+<li><p>R is resistance,</p></li>
+<li><p>E is illumination in lux,</p></li>
+<li><p>A and a are material-specific constants, usually reflecting the non-linear response of the LDR to light.</p></li>
+</ul>
+</section>
+<section id="applications-of-photoconductivity">
+<h2>Applications of Photoconductivity:<a class="headerlink" href="#applications-of-photoconductivity" title="Link to this heading">#</a></h2>
+<p>This inverse relationship between light exposure and resistance is critical in applications requiring light sensitivity, such as automatic lighting systems, where lights need to be activated or deactivated based on the natural light available.</p>
+<p>The principle of photoconductivity enables LDRs to perform reliably in environments where light conditions are continuously changing, providing an essential functionality in many technological applications.</p>
+<p>references:</p>
+<p>open circuit book(page 204-205)</p>
+<p><a class="reference external" href="https://www.electronicsforu.com/technology-trends/learn-electronics/ldr-light-dependent-resistors-basics">https://www.electronicsforu.com/technology-trends/learn-electronics/ldr-light-dependent-resistors-basics</a></p>
+<p><a class="reference external" href="https://www.electronicsforu.com/technology-trends/learn-electronics/types-of-ldr">https://www.electronicsforu.com/technology-trends/learn-electronics/types-of-ldr</a></p>
+<p><a class="reference external" href="https://www.electronicsforu.com/technology-trends/learn-electronics/ldr-working-circuit">https://www.electronicsforu.com/technology-trends/learn-electronics/ldr-working-circuit</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./StudentEffort\LDRpresentation\LDR presentation\LDR"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">LDR sensor</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ldr-working-circuit-and-construction">LDR Working, Circuit, and Construction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-a-light-dependent-resistor">construction of a Light Dependent Resistor</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-and-design">Materials and Design:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-light-dependent-resistors">Types of Light Dependent Resistors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photoconductive-ldrs">Photoconductive LDRs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photoresistive-ldrs">Photoresistive LDRs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-ldrs-based-on-light-sensitivity">Types of LDRs based on Light Sensitivity</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-principle-of-ldr">Working Principle of LDR</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photoconductivity-explained">Photoconductivity Explained:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-transition-and-bandgap">Electron Transition and Bandgap:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#charge-carriers-and-conductivity">Charge Carriers and Conductivity:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#light-intensity-and-resistance">Light Intensity and Resistance:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-photoconductivity">Applications of Photoconductivity:</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Hadi Sadoghi Yazdi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Pattern Recognition Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

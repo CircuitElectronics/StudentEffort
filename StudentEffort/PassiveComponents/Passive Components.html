@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -69,7 +66,6 @@
     <link rel="prev" title="Average power" href="../AveragePower.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +81,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -94,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +109,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,17 +156,21 @@
     
     
     <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-light" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
-    <img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark pst-js-only" alt="Dr.Hadi Sadoghi Yazdi - Home"/>
+    <script>document.write(`<img src="../../_static/Hadi_Sadoghi_Yazdi.png" class="logo__image only-dark" alt="Dr.Hadi Sadoghi Yazdi - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -188,13 +199,14 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Passive Components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Linearization/LinearizationProject.html"><strong>Linear approximation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../batteryModel/battery_model.html">Battery Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NTC/NTCPTCResistors.html">NTC &amp; PTC Resistors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Sensitivity_analysis1.html">Sensitivity analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WhatBias/bias1.html"><strong>Bias:</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Supermesh/Supermesh.html">Supermesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../KVL_and_KCL/note%20book.html">KVL &amp; KCL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../R-2R%20DAC/R-2R%20DAC.html">R-2R DAC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Active%20component/diode.html">Active components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/mini-project.html">Voltage Dividers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Voltage%20Dividers/VoltDiv.html">Voltage Dividers</a></li>
 
 
 
@@ -209,7 +221,219 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../UsingBJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTasCurrentSource/BJT_As_currentSource.html">Using The BJT as Current Source</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Supernode/Supernode1.html">Supernode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ComplexNumberInPhasors/ComplexNumberInPhasors.html">Complex Number in Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linear_Non_Inductor/Linear_Non_Inductor.html">Linear and Non-Linear inductors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Phasors1/Phasors1.html">Phasors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PowerSupply_DC_AC/diffrencebetweenACandDCpower.html"><strong>What is AC and DC power/current</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biasInAI/bias.html">Bias in Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resistor_and_capacitor/ResistorandCapacitor1.html">RESISTOR &amp; CAPACITOR DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VaractorDiode.html">What is a Varactor Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Capacitor/CapacitorHandbookChapter1.html">Capacitor Handbook Chapter(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Wheatstone/miniproject.html">Wheatstone bridge for strain gauges</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../SuperpositionF/Superposition.html"><strong>Superposition theorem</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ZenerDiode2/ZenerDiode1.html">Zener Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SwitchesAliAkhavan/Switches1.html"><strong>Switches</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../nonlinearresistor/nonlinearresistor.html">Nonlinear Resistors: Analysis and Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rms_voltage/RMSVOLTAGE.html"><strong>RMS VOLTAGE</strong></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VolatageDivider_Transistor/Voltage_Dividers_Transitor.html">Voltage Dividers Transistor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Transformator/transformer1.html">Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PhasorAnalysis/PhasorAnalysis.html">Phasor Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BuckConverter/BuckConverter.html"><strong>Buck Converters</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../example1-2/example.html">Example: currect and charge relation</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Darlington/darlingtontransistor2.html">Introduction</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../JFET_TRansistor/JFETTrans.html">Junction Field Effect Transistor (JFET)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parsahosseiniMOSFETsminiproject/main.html">MOSFETs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phasor/phasor.html">Exploring Euler’s Formula and Phasors in Electronics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BJTACModel/BJTACModel.html">AC Model of BJT</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DifferentialAmplifier1/DifferentialAmplifier1.html">Differential Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WildarWilson/sample.html">Widlar Current Source and Wilson Current Mirror</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LinearNonLinear/linearnonlinearlevel1_6.html">linear-nonlinear</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../PowerAmplifier/PoweAmplifiers.html"><strong>Powe Amplifier Handbook:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miniProject_Crystal/project_Crystal.html">Crystal oscillator</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Boost/BoostConverter.html"><strong>Boost Converters</strong></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../powerinaccircuit/AC_Power.html">power in AC circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DiodeACModel/DiodeACModel.html">AC Model of Diode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Multivibrator/Multivibrator.html">Multivibrator: Astable, Monostable, and Bistable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CapacitorHandbookChapter%282%29/CapacitorHandbookChapter_2.html">Capacitor Handbook Chapter(2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LogandAntiLogAmplifiers/Log_and_Anti_Log_Amplifiers.html">Log and Anti-Log Amplifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TunnelDiodeRoozbehSalehabadi/TunnelDiode.html">What is a Tunnel Diode?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Inductor/Inductor11.html">inductor</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../LDRpresentation/LDR.html">LDR sensor</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Circuit_FourierLaplaceAnalysis/Circuit_FourierLaplaceAnalysis1.html">Analaysing Circuits using Transformation: Laplace, Fourier and Complex Frequency Domain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crystal/Ctrystal.html">Electronic Crystal</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MOSFETamplifier_miniproject/MOSFET.html">Enhancement-mode common source mosfet amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACToDc/ACTODC.html">Author Information</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
 <ul class="nav bd-sidenav">
@@ -369,16 +593,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -469,8 +701,8 @@ where V is the voltage across the resistor, R is the resistance of the resistor,
 <p>resistor :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span>
@@ -478,7 +710,7 @@ where V is the voltage across the resistor, R is the resistance of the resistor,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1c129c3c4518c2f3afc3d919349dab73de7a2fc426df517aba38b7c88f4261be.svg" src="../../_images/1c129c3c4518c2f3afc3d919349dab73de7a2fc426df517aba38b7c88f4261be.svg" />
+<img alt="../../_images/6f969b6186368573c92a95e11642e75cbee1b23144bdf8c9b3575f8c5ab11a8f.svg" src="../../_images/6f969b6186368573c92a95e11642e75cbee1b23144bdf8c9b3575f8c5ab11a8f.svg" />
 </div>
 </div>
 <p>variable resistor :
@@ -488,8 +720,8 @@ The basic formula related to resistance is :
 where R is the resistance, ρ is the resistivity, L is the length, and A is the cross-sectional area.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">ResistorVar</span><span class="p">()</span>
@@ -497,7 +729,7 @@ where R is the resistance, ρ is the resistivity, L is the length, and A is the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/277048b9344706baff8d988cce0dd070f243f30f2d8c1bfa94f24c2af391fa25.svg" src="../../_images/277048b9344706baff8d988cce0dd070f243f30f2d8c1bfa94f24c2af391fa25.svg" />
+<img alt="../../_images/48ecb1a4c2f91670b2e9566cc41775bf14696a43b0448eb497595a5083ad2533.svg" src="../../_images/48ecb1a4c2f91670b2e9566cc41775bf14696a43b0448eb497595a5083ad2533.svg" />
 </div>
 </div>
 </section>
@@ -506,8 +738,8 @@ where R is the resistance, ρ is the resistivity, L is the length, and A is the 
 <p>The total resistance of resistors connected in series is the sum of their individual resistance values :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span>
@@ -520,15 +752,15 @@ where R is the resistance, ρ is the resistivity, L is the length, and A is the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/607045185fd1b18c43879958797ac3581c2bdd87bdbdfaaa5cc34b3470527251.svg" src="../../_images/607045185fd1b18c43879958797ac3581c2bdd87bdbdfaaa5cc34b3470527251.svg" />
+<img alt="../../_images/3ffdad0278deb04051eb5d67e8159ca59545d372ea677af6a7f615326878cac1.svg" src="../../_images/3ffdad0278deb04051eb5d67e8159ca59545d372ea677af6a7f615326878cac1.svg" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\( R_{eq} = \sum_{i=1}^{n} R_i = R_1 + R_2 + \cdots + R_n \)</span></p>
 <p>The total resistance of resistors connected in parallel is the reciprocal of the sum of the reciprocals of the individual resistors :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">d1</span><span class="p">:</span>
     <span class="n">d1</span> <span class="o">+=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span>
@@ -552,7 +784,7 @@ where R is the resistance, ρ is the resistivity, L is the length, and A is the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/74369dba90183f2f872ec8ae9dc99aed5f9dc7cda5172e1c58bb2b10e7a096aa.svg" src="../../_images/74369dba90183f2f872ec8ae9dc99aed5f9dc7cda5172e1c58bb2b10e7a096aa.svg" />
+<img alt="../../_images/1b09d5a76d937eac4723799231af8b703ffb1517e8d65e167fb8e19e2b665907.svg" src="../../_images/1b09d5a76d937eac4723799231af8b703ffb1517e8d65e167fb8e19e2b665907.svg" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\( R_{eq} = \left( \sum_{i=1}^{n} \frac{1}{R_i} \right)^{-1} = \left( \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots + \frac{1}{R_n} \right)^{-1} \)</span></p>
@@ -564,8 +796,8 @@ where R is the resistance, ρ is the resistivity, L is the length, and A is the 
 <p>Resistors are commonly used to limit the amount of current flowing through a circuit. Many circuit components (such as LEDs) require the current flowing through them to be limited, but do not themselves limit the amount of current. Therefore, oftentimes resistors will be added to prevent overcurrent situations. Additionally, oftentimes circuits do not need the amount of current that would be otherwise flowing through them, so resistors can be added to limit the power consumption of such circuits.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span>
@@ -576,7 +808,7 @@ where R is the resistance, ρ is the resistivity, L is the length, and A is the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9e9028e62a8c02bb829544c660cf21d1eb65f9d02207825a52a94315758383d0.svg" src="../../_images/9e9028e62a8c02bb829544c660cf21d1eb65f9d02207825a52a94315758383d0.svg" />
+<img alt="../../_images/9539e4f87d00b199ee7050e5180955967224a9bfc8ca654df985ba8b3da53ef3.svg" src="../../_images/9539e4f87d00b199ee7050e5180955967224a9bfc8ca654df985ba8b3da53ef3.svg" />
 </div>
 </div>
 </section>
@@ -585,8 +817,8 @@ where R is the resistance, ρ is the resistivity, L is the length, and A is the 
 <p>Oftentimes circuits need to provide various reference voltages for other circuits (such as voltage comparators). A fixed voltage can be obtained by taking two resistors in series between two other fixed voltages (such as the source voltage and ground). The terminal between the two resistors will be at a voltage that is between the two voltages, at a linear distance based on the relative resistances of the two resistors. For instance, if a 200 ohm resistor and a 400 ohm resistor are placed in series between 6 V and 0 V, the terminal between them will be at 4 V.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span>
@@ -597,7 +829,7 @@ where R is the resistance, ρ is the resistivity, L is the length, and A is the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/359f8751e113772add477b652d85f817ee8f4b292c2b1321937588003a2a23e1.svg" src="../../_images/359f8751e113772add477b652d85f817ee8f4b292c2b1321937588003a2a23e1.svg" />
+<img alt="../../_images/7414ea8522e47781e1280a5ed0c400693547f317c6f37602e72f2939bd63bbc7.svg" src="../../_images/7414ea8522e47781e1280a5ed0c400693547f317c6f37602e72f2939bd63bbc7.svg" />
 </div>
 </div>
 <p>A voltage divider circuit, in its simplest form, is a circuit made from two resistors and a voltage supply. The output voltage is measured from between the two resistors. This results in a lower voltage than the input voltage supply.</p>
@@ -611,7 +843,7 @@ where R is the resistance, ρ is the resistivity, L is the length, and A is the 
 <h3>Resistor value<a class="headerlink" href="#resistor-value" title="Link to this heading">#</a></h3>
 <p>Many resistors are so small that it would be difficult to print their value and % tolerance on their body in digits. To overcome this, a coding system based on bands of distinctive colours was developed to assist in identification. Learning this colour code is not as necessary as it used to be (thanks to accurate, low cost digital multimeters!), but its not hard to learn and its quite useful knowledge anyway.
 The first thing to know is that there are two different resistor colour coding systems in use: one using a total of 4 colour bands, and the other 5. The 5-band system is generally used for 2% and closer tolerance resistors, even though the 4-band system is quite capable of handling any resistors with E12 or E24 values. Both systems use the same band colours to represent the various digits; the main difference is that 5-band resistors have an additional third band, which is almost always BLACK to represent a third digit of 0. Heres how both systems work in practice:</p>
-<p><img alt="Alt text" src="../../_images/img.png" /></p>
+<p><img alt="Alt text" src="../../_images/img1.png" /></p>
 </section>
 </section>
 <section id="capacitors">
@@ -633,8 +865,8 @@ The first thing to know is that there are two different resistor colour coding s
 <p>capacitor :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span>
@@ -642,7 +874,7 @@ The first thing to know is that there are two different resistor colour coding s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3afe67c79b81014ad3240f30cd25ea3ef380de6d823e3693a05e154d7994ee53.svg" src="../../_images/3afe67c79b81014ad3240f30cd25ea3ef380de6d823e3693a05e154d7994ee53.svg" />
+<img alt="../../_images/a300599e01b11bf8a58e5d8c91510795ee196196cd43f537ef206656f5adea34.svg" src="../../_images/a300599e01b11bf8a58e5d8c91510795ee196196cd43f537ef206656f5adea34.svg" />
 </div>
 </div>
 <p>variable capacitor :
@@ -652,8 +884,8 @@ The basic formula related to capacitance is :
 where C is the capacitance , ε is the dielectric coefficient , A is area of the plate, and D is the distance between two plates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">CapacitorVar</span><span class="p">()</span>
@@ -661,7 +893,7 @@ where C is the capacitance , ε is the dielectric coefficient , A is area of the
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f3069c0ffa0d0c849646b71bb011170b4d9181a78573c7d0a0be7626dce9f55c.svg" src="../../_images/f3069c0ffa0d0c849646b71bb011170b4d9181a78573c7d0a0be7626dce9f55c.svg" />
+<img alt="../../_images/171d67698c0cad55aecdc19dcbdc8b887faaadfd890cd72551426d1e3087c101.svg" src="../../_images/171d67698c0cad55aecdc19dcbdc8b887faaadfd890cd72551426d1e3087c101.svg" />
 </div>
 </div>
 </section>
@@ -672,8 +904,8 @@ where C is the capacitance , ε is the dielectric coefficient , A is area of the
 <p>The primary application of a capacitor is to store electric energy when it is connected to an electric circuit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">V1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;5V&#39;</span><span class="p">)</span>
@@ -687,7 +919,7 @@ where C is the capacitance , ε is the dielectric coefficient , A is area of the
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/261c848d374fe30ad85ba3ff8204af86a0528d32fd1c3d0d86405324e2e65cd9.svg" src="../../_images/261c848d374fe30ad85ba3ff8204af86a0528d32fd1c3d0d86405324e2e65cd9.svg" />
+<img alt="../../_images/ee4a576905c9103b3bac4b6ed1f96606ab27dba154879accb02d27935e209f83.svg" src="../../_images/ee4a576905c9103b3bac4b6ed1f96606ab27dba154879accb02d27935e209f83.svg" />
 </div>
 </div>
 </section>
@@ -704,7 +936,7 @@ where C is the capacitance , ε is the dielectric coefficient , A is area of the
 <h3>Capacitor value<a class="headerlink" href="#capacitor-value" title="Link to this heading">#</a></h3>
 <p>Virtually all of the capacitors stocked by Jaycar have their electrical values printed directly on their body, in digits and letters. However theres often still a coding system, which can make it a bit tricky to work out the capacitance, voltage rating, tolerance and so on until you know how it works. This is explained below.
 Incidentally, so-called greencaps (which can actually be brown, dark red or even blue!) are one type of metallised polyester film capacitor, like the MKT type which tends to be smaller, and in a more tightly controlled rectangular package. Similarly the monolithic type is a type of multilayer ceramic capacitor, designed to combine high capacitance with very low self-inductance.</p>
-<p><img alt="Alt text" src="../../_images/img1.png" /></p>
+<p><img alt="Alt text" src="../../_images/img11.png" /></p>
 </section>
 </section>
 <section id="inductors-coil">
@@ -726,8 +958,8 @@ where V is the voltage across the inductor, L is the inductance and <span class=
 <p>Inductor:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
-<span class="kn">from</span> <span class="nn">schemdraw</span> <span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">schemdraw</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">schemdraw</span><span class="w"> </span><span class="kn">import</span> <span class="n">elements</span> <span class="k">as</span> <span class="n">elm</span>
 
 <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Inductor2</span><span class="p">()</span>
@@ -735,7 +967,7 @@ where V is the voltage across the inductor, L is the inductance and <span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9db6c4d608f9db79668e029335214c78ff66bb8f22f73d28a8a3981f74434f22.svg" src="../../_images/9db6c4d608f9db79668e029335214c78ff66bb8f22f73d28a8a3981f74434f22.svg" />
+<img alt="../../_images/957fb23cb13cdd1688bdee81880df4e717e4328361d2894291d7d9b76e885734.svg" src="../../_images/957fb23cb13cdd1688bdee81880df4e717e4328361d2894291d7d9b76e885734.svg" />
 </div>
 </div>
 </section>
@@ -821,8 +1053,7 @@ where V is the voltage across the inductor, L is the inductance and <span class=
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -918,8 +1149,8 @@ By Dr.Hadi Sadoghi Yazdi
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
